@@ -1,0 +1,584 @@
+
+/* Shop popup */
+.basel-promo-popup {
+    max-width: 900px;
+}
+
+.site-logo {
+    width: 20%;
+}
+
+.site-logo img {
+    max-width: 196px;
+    max-height: 95px;
+}
+
+.widgetarea-head,
+.main-nav {
+    width: 40%;
+}
+
+.right-column {
+    width: 40%;
+}
+
+
+.basel-woocommerce-layered-nav .basel-scroll {
+    max-height: 181px;
+}
+
+/* header Banner */
+.header-banner {
+    height: 40px;
+}
+
+.header-banner-display .website-wrapper {
+    margin-top:40px;
+}
+
+/* Topbar height configs */
+
+.topbar-menu ul > li {
+    line-height: 42px;
+}
+
+.topbar-wrapp,
+.topbar-content:before {
+    height: 42px;
+}
+
+.sticky-header-prepared.basel-top-bar-on .header-shop,
+.sticky-header-prepared.basel-top-bar-on .header-split,
+.enable-sticky-header.basel-header-overlap.basel-top-bar-on .main-header {
+    top: 42px;
+}
+
+/* Header height configs */
+
+/* Limit logo image height for according to header height */
+.site-logo img {
+    max-height: 95px;
+}
+
+/* And for sticky header logo also */
+.act-scroll .site-logo img,
+.header-clone .site-logo img {
+    max-height: 60px;
+}
+
+/* Set sticky headers height for cloned headers based on menu links line height */
+.header-clone .main-nav .menu > li > a {
+    height: 60px;
+    line-height: 60px;
+}
+
+/* Height for switch logos */
+
+.sticky-header-real:not(.global-header-menu-top) .switch-logo-enable .basel-logo {
+    height: 95px;
+}
+
+.sticky-header-real:not(.global-header-menu-top) .act-scroll .switch-logo-enable .basel-logo {
+    height: 60px;
+}
+
+.sticky-header-real:not(.global-header-menu-top) .act-scroll .switch-logo-enable {
+    transform: translateY(-60px);
+    -webkit-transform: translateY(-60px);
+}
+
+/* Header height for these layouts based on it's menu links line height */
+.main-nav .menu > li > a {
+    height: 95px;
+    line-height: 95px;
+}
+/* The same for sticky header */
+.act-scroll .main-nav .menu > li > a {
+    height: 60px;
+    line-height: 60px;
+}
+
+
+/* Set line height for header links for shop header layout. Based in the header height option */
+.header-shop .right-column .header-links {
+    height: 95px;
+    line-height: 95px;
+}
+
+/* The same for sticky header */
+.header-shop.act-scroll .right-column .header-links {
+    height: 60px;
+    line-height: 60px;
+}
+
+
+/* Page headings settings for heading overlap. Calculate on the header height base */
+
+.basel-header-overlap .title-size-default,
+.basel-header-overlap .title-size-small,
+.basel-header-overlap .title-shop.without-title.title-size-default,
+.basel-header-overlap .title-shop.without-title.title-size-small {
+    padding-top: 135px;
+}
+
+
+.basel-header-overlap .title-shop.without-title.title-size-large,
+.basel-header-overlap .title-size-large {
+    padding-top: 215px;
+}
+
+@media (max-width: 991px) {
+
+    /* header Banner */
+    .header-banner {
+        height: 40px;
+    }
+
+    .header-banner-display .website-wrapper {
+        margin-top:40px;
+    }
+
+    /* Topbar height configs */
+    .topbar-menu ul > li {
+        line-height: 38px;
+    }
+
+    .topbar-wrapp,
+    .topbar-content:before {
+        height: 38px;
+    }
+
+    .sticky-header-prepared.basel-top-bar-on .header-shop,
+    .sticky-header-prepared.basel-top-bar-on .header-split,
+    .enable-sticky-header.basel-header-overlap.basel-top-bar-on .main-header {
+        top: 38px;
+    }
+
+    /* Set header height for mobile devices */
+    .main-header .wrapp-header {
+        min-height: 60px;
+    }
+
+    /* Limit logo image height for mobile according to mobile header height */
+    .site-logo img {
+        max-height: 60px;
+    }
+
+    /* Limit logo on sticky header. Both header real and header cloned */
+    .act-scroll .site-logo img,
+    .header-clone .site-logo img {
+        max-height: 60px;
+    }
+
+    /* Height for switch logos */
+
+    .main-header .switch-logo-enable .basel-logo {
+        height: 60px;
+    }
+
+    .sticky-header-real:not(.global-header-menu-top) .act-scroll .switch-logo-enable .basel-logo {
+        height: 60px;
+    }
+
+    .sticky-header-real:not(.global-header-menu-top) .act-scroll .switch-logo-enable {
+        transform: translateY(-60px);
+        -webkit-transform: translateY(-60px);
+    }
+
+    /* Page headings settings for heading overlap. Calculate on the MOBILE header height base */
+    .basel-header-overlap .title-size-default,
+    .basel-header-overlap .title-size-small,
+    .basel-header-overlap .title-shop.without-title.title-size-default,
+    .basel-header-overlap .title-shop.without-title.title-size-small {
+        padding-top: 80px;
+    }
+
+    .basel-header-overlap .title-shop.without-title.title-size-large,
+    .basel-header-overlap .title-size-large {
+        padding-top: 120px;
+    }
+
+}
+
+/* hovers small img width */
+
+.product-category-thumbnail img,
+.category-grid-item .category-link {
+    width: 100%;
+}
+
+/* product hovers small img width */
+
+.product-grid-item .product-element-top>a img,
+.basel-hover-alt .hover-img img,
+.product-list-image .hover-img img {
+    width:100%;
+}
+
+/* beer version products with transparent background */
+
+#product-28083 .product-images .image-action-zoom figure img[src$=".png"],
+#product-28083 .product-images .image-action-zoom .owl-item,
+#product-28084 .product-images .image-action-zoom figure img[src$=".png"],
+#product-28084 .product-images .image-action-zoom .owl-item,
+#product-28085 .product-images .image-action-zoom figure img[src$=".png"],
+#product-28085 .product-images .image-action-zoom .owl-item,
+#product-28078 .product-images .image-action-zoom figure img[src$=".png"],
+#product-28078 .product-images .image-action-zoom .owl-item {
+    background: white;
+}
+
+/* hide "other" category */
+
+.basel-product-categories>li.cat-item-109 {
+    display: none;
+}
+
+/* hide "other" category children on header search */
+
+.main-header form.has-categories-dropdown .search-by-category ul .children {
+    display:none;
+}
+
+/* five column grid for home demo menu */
+
+.col-five > .vc_col-sm-2 {
+    width:20%;
+}
+
+iframe[name='google_conversion_frame'] {
+    height: 0 !important;
+    width: 0 !important;
+    line-height: 0 !important;
+    font-size: 0 !important;
+    margin-top: -13px;
+    float: left;
+}
+
+.dropdown-scroll > .sub-menu-dropdown {
+    height: 540px;
+    overflow: hidden;
+}
+
+.header-spacing + .header-menu-top {
+    margin-top:-40px;
+}
+
+.woocommerce-ordering.with-list .selected-order {
+    font-weight:bold;
+}
+
+.header-categories .main-nav .menu li.menu-item-design-full-width>.sub-menu-dropdown {
+    margin-top: -78px;
+}
+
+.hide-pag .owl-pagination,
+.hide-pag .owl-buttons {
+    display:none;
+}
+
+.color-scheme-light .testimonial .testimonial-content footer>span {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.color-scheme-light .owl-theme:hover .owl-controls.clickable .owl-buttons div.disabled {
+    color:rgba(255, 255, 255, 0.6);
+}
+
+.color-scheme-light .owl-theme .owl-controls .owl-buttons div {
+    color:rgba(255, 255, 255, 0.8);
+}
+
+.color-scheme-light .owl-theme .owl-controls.clickable .owl-buttons div:hover {
+    color:rgba(255, 255, 255, 1);
+}
+
+.color-scheme-light .owl-theme .owl-controls .owl-page span {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.color-scheme-light .owl-theme .owl-controls .owl-page.active span,
+.color-scheme-light .owl-theme .owl-controls.clickable .owl-page:hover span {
+    background-color: white;
+}
+
+.basel-buttons .product-compare-button>a,
+.single-product-content .entry-summary .button.compare,
+.basel-hover-base .basel-add-btn>a,
+.basel-hover-base .product-compare-button a {
+    text-transform:none;
+}
+
+.rtl .has-border,
+.rtl .has-border > .vc_column-inner {
+    border:none!important;
+}
+
+.related-and-upsells .product-grid-item .hover-img img {
+    width:100%;
+}
+
+.hidden-nav-button {
+    display:none!important;
+}
+
+.dropdown-scroll .wpb_single_image {
+    border: 2px solid #f7f7f7;
+}
+
+.page-id-25728 .dropdown-scroll .wpb_single_image,
+.page-id-23954 .dropdown-scroll .wpb_single_image {
+    border: 2px solid rgba(255,255,255,0.1);
+}
+
+.widget_product_categories .cat-item-109 .cat-item:nth-child(even) {
+    display: none;
+}
+
+@media (max-width: 1024px) and (min-width: 991px) {
+
+    .header-categories .categories-menu-dropdown .sub-menu-dropdown {
+        width: 680px;
+    }
+}
+
+@media (max-width: 991px) {
+
+    .sticky-footer-on .footer-container {
+        visibility: visible;
+    }
+}
+
+.menu-item-19907 > .sub-menu-dropdown {
+    background-size: contain;
+}
+
+.woocommerce-checkout-review-order-table td {
+    width: 50%
+}
+
+.basel-dark .cart-widget-side .widget_shopping_cart .buttons a:not(.checkout) {
+    border-color: #333;
+    background-color: #333;
+}
+
+.basel-dark .cart-widget-side .widget_shopping_cart .buttons a:not(.checkout):hover {
+    opacity: .7;
+}
+
+.blazy-image-loading{
+    position: relative;
+}
+.blazy-image-loading:after {
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    margin-left: -15px;
+    opacity: 0.3;
+    left:50%;
+    content: " ";
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
+    border: 1px solid #000;
+    border-radius: 50%;
+    border-left-color: transparent!important;
+    border-right-color: transparent!important;
+    -webkit-animation: load-spin 450ms infinite linear;
+    animation: load-spin 450ms infinite linear;
+}
+
+/* light header product title fix */
+
+.color-scheme-light .color-scheme-dark .product-grid-item .product-title>a {
+    color: #252222;
+}
+
+.woocommerce-password-strength:empty { /* fixed in css */
+    margin: 0;
+    padding: 0;
+}
+
+.basel-pagination:before {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.basel-hover-button .basel-buttons .product-compare-button>a:before,
+.basel-hover-button .basel-buttons .quick-view>a:before,
+.basel-hover-info .basel-buttons .product-compare-button>a:before,
+.basel-hover-info .basel-buttons .quick-view>a:before {
+    border-color: #FFF !important;
+}
+
+.single-product .site-content > .woocommerce-message {
+    display: none;
+}
+
+/* hide modified date */
+
+.basel-entry-meta li.modified-date {
+    display: none!important;
+}
+
+/* owl-carousle masonry date position (need to add in css) */
+
+.owl-carousel .blog-design-masonry.has-post-thumbnail .post-date {
+    left: 10px;
+}
+
+/* instagram in carousel fix */
+
+.instagram-widget.instagram-slider .instagram-pics li {
+    -webkit-flex-basis: 100%;
+    -ms-flex-basis: 100%;
+    flex-basis: 100%;
+    max-width: 100%;
+}
+
+/* variable images select fix */
+
+.slick-slide.active-thumb {
+    transition: none !important;
+}
+
+/* responsive text font weight fix */
+
+.basel-font-weight-600 {
+    font-weight: 600;
+}
+
+@media (min-width: 992px) { /* buy basel button */
+
+    .buy-basel {
+        position: fixed;
+        bottom: 40px;
+        left: 40px;
+        background-color: black;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 30px;
+        text-transform: uppercase;
+        transition: all .3s ease;
+        z-index:1000;
+    }
+
+    .buy-basel img {
+        margin-right: 10px;
+        margin-bottom: 1px;
+    }
+
+    .buy-basel:hover,
+    .buy-basel:focus {
+        background-color: #97ca58;
+        color: white;
+        text-decoration: none;
+        border-color: black;
+    }
+
+    .rtl .buy-basel {
+        left: auto;
+        right: 40px;
+    }
+
+    .rtl .buy-basel img {
+        margin-right: 0;
+        margin-left: 10px;
+    } }@media (min-width: 768px) and (max-width: 991px) {/* buy basel button */
+
+    .buy-basel {
+        display:none;
+    }
+
+    .swatch-on-grid .basel-tooltip-label {
+        display:none;
+    }
+
+    .dropdown-scroll > .sub-menu-dropdown {
+        display:none;
+    }
+
+    .basel-back-btn>span:before, .basel-products-nav .product-btn>a span:before {
+        top: 0px;
+    }
+
+    .shop-loop-head {
+        width:100%;
+    }
+
+    .single-product-content .product-images .thumbs-position-left .thumbnails {
+        margin-top: 4px;
+    }
+
+    /* remove parallax on mobile (need to add in css) */
+
+    body .basel-parallax {
+        background-attachment: scroll!important;
+    } }@media (min-width: 481px) and (max-width: 767px) { /* buy basel button */
+
+    .buy-basel {
+        display:none;
+    }
+
+    .swatch-on-grid .basel-tooltip-label {
+        display:none;
+    }
+
+    .dropdown-scroll > .sub-menu-dropdown {
+        display:none;
+    }
+
+    .basel-back-btn>span:before, .basel-products-nav .product-btn>a span:before {
+        top: 0px;
+    }
+
+    .single-product-content .product-images .thumbs-position-left .thumbnails {
+        margin-top: 4px;
+    }
+
+    /* remove parallax on mobile (need to add in css) */
+
+    body .basel-parallax {
+        background-attachment: scroll!important;
+    }
+
+    /* responsive mobile responsive-text width fix */
+
+    .basel-text-block-wrapper .basel-text-block {
+        max-width: 100%;
+    } }@media (max-width: 480px) { /* buy basel button */
+
+    .buy-basel {
+        display:none;
+    }
+
+    .swatch-on-grid .basel-tooltip-label {
+        display:none;
+    }
+
+    .dropdown-scroll > .sub-menu-dropdown {
+        display:none;
+    }
+
+    .basel-back-btn>span:before, .basel-products-nav .product-btn>a span:before {
+        top: 0px;
+    }
+
+    .single-product-content .product-images .thumbs-position-left .thumbnails {
+        margin-top: 4px;
+    }
+
+    /* remove parallax on mobile (need to add in css) */
+
+    body .basel-parallax {
+        background-attachment: scroll!important;
+    }
+
+    /* responsive mobile responsive-text width fix */
+
+    .basel-text-block-wrapper .basel-text-block {
+        max-width: 100%;
+    }
+}

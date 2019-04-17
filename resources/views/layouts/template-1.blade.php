@@ -12,106 +12,33 @@
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="pingback" href="https://demo.xtemos.com/basel/xmlrpc.php">
     <script>document.documentElement.className = document.documentElement.className + ' yes-js js_active js'</script>
-    <title>Products &#8211; Basel</title>
+
+    @stack('title')
+
     <style>
-        .wishlist_table .add_to_cart, a.add_to_wishlist.button.alt { border-radius: 16px; -moz-border-radius: 16px; -webkit-border-radius: 16px; }			</style>
-    <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+        .wishlist_table .add_to_cart, a.add_to_wishlist.button.alt { border-radius: 16px; -moz-border-radius: 16px; -webkit-border-radius: 16px; }
+    </style>
+
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
     <link rel="alternate" type="application/rss+xml" title="Basel &raquo; Feed" href="https://demo.xtemos.com/basel/feed/" />
     <link rel="alternate" type="application/rss+xml" title="Basel &raquo; Comments Feed" href="https://demo.xtemos.com/basel/comments/feed/" />
     <link rel="alternate" type="application/rss+xml" title="Basel &raquo; Products Feed" href="https://demo.xtemos.com/basel/shop/feed/" />
-    <!-- This site uses the Google Analytics by MonsterInsights plugin v7.3.2 - Using Analytics tracking - https://www.monsterinsights.com/ -->
-    <script type="text/javascript" data-cfasync="false">
-        var mi_version         = '7.3.2';
-        var mi_track_user      = true;
-        var mi_no_track_reason = '';
-
-        var disableStr = 'ga-disable-UA-66371494-3';
-
-        /* Function to detect opted out users */
-        function __gaTrackerIsOptedOut() {
-            return document.cookie.indexOf(disableStr + '=true') > -1;
-        }
-
-        /* Disable tracking if the opt-out cookie exists. */
-        if ( __gaTrackerIsOptedOut() ) {
-            window[disableStr] = true;
-        }
-
-        /* Opt-out function */
-        function __gaTrackerOptout() {
-            document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
-            window[disableStr] = true;
-        }
-
-        if ( mi_track_user ) {
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
-
-            __gaTracker('create', 'UA-66371494-3', 'auto');
-            __gaTracker('set', 'forceSSL', true);
-            __gaTracker('send','pageview');
-        } else {
-            console.log( "" );
-            (function() {
-                /* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
-                var noopfn = function() {
-                    return null;
-                };
-                var noopnullfn = function() {
-                    return null;
-                };
-                var Tracker = function() {
-                    return null;
-                };
-                var p = Tracker.prototype;
-                p.get = noopfn;
-                p.set = noopfn;
-                p.send = noopfn;
-                var __gaTracker = function() {
-                    var len = arguments.length;
-                    if ( len === 0 ) {
-                        return;
-                    }
-                    var f = arguments[len-1];
-                    if ( typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function' ) {
-                        console.log( 'Not running function __gaTracker(' + arguments[0] + " ....) because you are not being tracked. " + mi_no_track_reason );
-                        return;
-                    }
-                    try {
-                        f.hitCallback();
-                    } catch (ex) {
-
-                    }
-                };
-                __gaTracker.create = function() {
-                    return new Tracker();
-                };
-                __gaTracker.getByName = noopnullfn;
-                __gaTracker.getAll = function() {
-                    return [];
-                };
-                __gaTracker.remove = noopfn;
-                window['__gaTracker'] = __gaTracker;
-            })();
-        }
-    </script>
+    @include('google.analytics-1')
     <!-- / Google Analytics by MonsterInsights -->
-    <link rel='stylesheet' id='contact-form-7-css'  href='https://demo.xtemos.com/basel/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.0.5' type='text/css' media='all' />
-    <style id='woocommerce-inline-inline-css' type='text/css'>
+    <link rel="stylesheet" id="contact-form-7-css"  href="{{asset('plugins/contact-form-7/css/styles.css')}}?ver=5.0.5" type="text/css" media="all" />
+    <style id="woocommerce-inline-inline-css" type="text/css">
         .woocommerce form .form-row .required { visibility: visible; }
     </style>
-    <link rel='stylesheet' id='woocommerce_prettyPhoto_css-css'  href='https://demo.xtemos.com/basel/wp-content/plugins/woocommerce/assets/css/prettyPhoto.css?ver=3.5.2' type='text/css' media='all' />
-    <link rel='stylesheet' id='jquery-selectBox-css'  href='https://demo.xtemos.com/basel/wp-content/plugins/yith-woocommerce-wishlist/assets/css/jquery.selectBox.css?ver=1.2.0' type='text/css' media='all' />
-    <link rel='stylesheet' id='yith-wcwl-main-css'  href='https://demo.xtemos.com/basel/wp-content/plugins/yith-woocommerce-wishlist/assets/css/style.css?ver=2.2.5' type='text/css' media='all' />
-    <link rel='stylesheet' id='js_composer_front-css'  href='https://demo.xtemos.com/basel/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=5.6' type='text/css' media='all' />
-    <link rel='stylesheet' id='mc4wp-form-basic-css'  href='https://demo.xtemos.com/basel/wp-content/plugins/mailchimp-for-wp/assets/css/form-basic.min.css?ver=3.1.11' type='text/css' media='all' />
-    <link rel='stylesheet' id='redux-google-fonts-basel_options-css'  href='https://fonts.googleapis.com/css?family=Karla%3A400%2C700%2C400italic%2C700italic%7CLora%3A400%2C700%2C400italic%2C700italic%7CLato%3A100%2C300%2C400%2C700%2C900%2C100italic%2C300italic%2C400italic%2C700italic%2C900italic&#038;subset=latin&#038;ver=1546694001' type='text/css' media='all' />
-    <link rel='stylesheet' id='bootstrap-css'  href='https://demo.xtemos.com/basel/wp-content/themes/basel/css/bootstrap.min.css?ver=4.4.2' type='text/css' media='all' />
-    <link rel='stylesheet' id='basel-style-css'  href='https://demo.xtemos.com/basel/wp-content/themes/basel/style.min.css?ver=4.4.2' type='text/css' media='all' />
-    <link rel='stylesheet' id='font-awesome-css'  href='https://demo.xtemos.com/basel/wp-content/plugins/js_composer/assets/lib/bower/font-awesome/css/font-awesome.min.css?ver=5.6' type='text/css' media='all' />
-    <style id='font-awesome-inline-css' type='text/css'>
+    <link rel="stylesheet" id="woocommerce_prettyPhoto_css-css"  href="https://demo.xtemos.com/basel/wp-content/plugins/woocommerce/assets/css/prettyPhoto.css?ver=3.5.2" type="text/css" media="all" />
+    <link rel="stylesheet" id="jquery-selectBox-css"  href="https://demo.xtemos.com/basel/wp-content/plugins/yith-woocommerce-wishlist/assets/css/jquery.selectBox.css?ver=1.2.0" type="text/css" media="all" />
+    <link rel="stylesheet" id="yith-wcwl-main-css"  href="https://demo.xtemos.com/basel/wp-content/plugins/yith-woocommerce-wishlist/assets/css/style.css?ver=2.2.5" type="text/css" media="all" />
+    <link rel="stylesheet" id="js_composer_front-css"  href="{{asset('plugins/js_composer/css/js_composer.min.css')}}?ver=5.6" type="text/css" media="all" />
+    <link rel="stylesheet" id="mc4wp-form-basic-css"  href="https://demo.xtemos.com/basel/wp-content/plugins/mailchimp-for-wp/assets/css/form-basic.min.css?ver=3.1.11" type="text/css" media="all" />
+    <link rel="stylesheet" id="redux-google-fonts-basel_options-css"  href="https://fonts.googleapis.com/css?family=Karla%3A400%2C700%2C400italic%2C700italic%7CLora%3A400%2C700%2C400italic%2C700italic%7CLato%3A100%2C300%2C400%2C700%2C900%2C100italic%2C300italic%2C400italic%2C700italic%2C900italic&#038;subset=latin&#038;ver=1546694001" type="text/css" media="all" />
+    <link rel="stylesheet" id="bootstrap-css"  href="https://demo.xtemos.com/basel/wp-content/themes/basel/css/bootstrap.min.css?ver=4.4.2" type="text/css" media="all" />
+    <link rel="stylesheet" id="basel-style-css"  href="https://demo.xtemos.com/basel/wp-content/themes/basel/style.min.css?ver=4.4.2" type="text/css" media="all" />
+    <link rel="stylesheet" id="font-awesome-css"  href="{{asset('plugins/js_composer/lib/bower/font-awesome/css/font-awesome.min.css')}}?ver=5.6" type="text/css" media="all" />
+    <style id="font-awesome-inline-css" type="text/css">
         [data-font="FontAwesome"]:before {font-family: 'FontAwesome' !important;content: attr(data-icon) !important;speak: none !important;font-weight: normal !important;font-variant: normal !important;text-transform: none !important;line-height: 1 !important;font-style: normal !important;-webkit-font-smoothing: antialiased !important;-moz-osx-font-smoothing: grayscale !important;}
     </style>
     <script type="text/template" id="tmpl-variation-template">
@@ -128,618 +55,46 @@
     <script type="text/template" id="tmpl-unavailable-variation-template">
         <p>Sorry, this product is unavailable. Please choose a different combination.</p>
     </script>
-    <script type='text/javascript'>
+    <script type="text/javascript">
         /* <![CDATA[ */
         var monsterinsights_frontend = {"js_events_tracking":"true","is_debug_mode":"false","download_extensions":"doc,exe,js,pdf,ppt,tgz,zip,xls","inbound_paths":"","home_url":"https:\/\/demo.xtemos.com\/basel","track_download_as":"event","internal_label":"int","hash_tracking":"false"};
         /* ]]> */
     </script>
-    <script type='text/javascript' src='https://demo.xtemos.com/basel/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend.min.js?ver=7.3.2'></script>
-    <script type='text/javascript' src='https://demo.xtemos.com/basel/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
-    <script type='text/javascript' src='https://demo.xtemos.com/basel/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
-    <script type='text/javascript' src='https://demo.xtemos.com/basel/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.70'></script>
-    <script type='text/javascript'>
-        /* <![CDATA[ */
-        var wc_add_to_cart_params = {"ajax_url":"\/basel\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/basel\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"https:\/\/demo.xtemos.com\/basel\/cart\/","is_cart":"","cart_redirect_after_add":"no"};
-        /* ]]> */
+    <script type="text/javascript" src="{{asset('plugins/google/analytics-frontend.min.js')}}?ver=7.3.2"></script>
+    <script type="text/javascript" src="{{asset('includes/js/jquery/jquery.min.js')}}?ver=1.12.4"></script>
+    <script type="text/javascript" src="{{asset('includes/js/jquery/jquery-migrate.min.js')}}?ver=1.4.1"></script>
+    <script type="text/javascript" src="{{asset('plugins/jquery-blockui/jquery.blockUI.min.js')}}?ver=2.70"></script>
+
+
+    <script type="text/javascript">
+        var wc_add_to_cart_params = {!! json_encode([
+            "ajax_url" => route('cart.add'),
+            "wc_ajax_url" => route('cart.add'),
+            "i18n_view_cart" => "Ver Carrrinho",
+            "cart_url" => route('cart'),
+            "is_cart" => ""
+        ]) !!};
     </script>
-    <script type='text/javascript' src='https://demo.xtemos.com/basel/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=3.5.2'></script>
-    <script type='text/javascript' src='https://demo.xtemos.com/basel/wp-content/plugins/js_composer/assets/js/vendors/woocommerce-add-to-cart.js?ver=5.6'></script>
+    <script type="text/javascript" src="{{asset('plugins/cart/js/add-to-cart.min.js')}}?ver=3.5.2"></script>
+    <script type="text/javascript" src="{{asset('plugins/cart/js/avd-add-to-cart.js')}}?ver=5.6"></script>
     <!--[if lt IE 9]>
-    <script type='text/javascript' src='https://demo.xtemos.com/basel/wp-content/themes/basel/js/html5.js?ver=4.4.2'></script>
+        <script type="text/javascript" src="{{asset('themes/js/html5.min.js')}}?ver=4.4.2"></script>
     <![endif]-->
-    <script type='text/javascript' src='https://demo.xtemos.com/basel/wp-content/themes/basel/js/device.min.js?ver=4.4.2'></script>
-    <link rel='https://api.w.org/' href='https://demo.xtemos.com/basel/wp-json/' />
+    <script type="text/javascript" src="{{asset('themes/js/device.min.js')}}?ver=4.4.2"></script>
+
+
+
+
+    <link rel="https://api.w.org/" href="https://demo.xtemos.com/basel/wp-json/" />
     <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://demo.xtemos.com/basel/xmlrpc.php?rsd" />
     <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://demo.xtemos.com/basel/wp-includes/wlwmanifest.xml" />
     <meta name="generator" content="WordPress 4.9.8" />
     <meta name="generator" content="WooCommerce 3.5.2" />
-    <!--script type="text/javascript">(function(){var externallyFramed=false;try{externallyFramed=top.location.host!=location.host;}catch(err){externallyFramed=true;}if(externallyFramed){top.location='https://demo.xtemos.com/basel/';}})();</script--><style>
-    </style>
-    <link rel="shortcut icon" href="https://demo.xtemos.com/basel/wp-content/themes/basel/images/icons/favicon.png">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://demo.xtemos.com/basel/wp-content/themes/basel/images/icons/apple-touch-icon-152x152-precomposed.png">
-    <style type="text/css">
 
-        /* Shop popup */
+    <link rel="shortcut icon" href="{{asset('themes/images/icons/favicon.png')}}">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{asset('themes/images/icons/apple-touch-icon-152x152-precomposed.png')}}">
 
-        .basel-promo-popup {
-            max-width: 900px;
-        }
-
-        .site-logo {
-            width: 20%;
-        }
-
-        .site-logo img {
-            max-width: 196px;
-            max-height: 95px;
-        }
-
-        .widgetarea-head,
-        .main-nav {
-            width: 40%;
-        }
-
-        .right-column {
-            width: 40%;
-        }
-
-
-        .basel-woocommerce-layered-nav .basel-scroll {
-            max-height: 181px;
-        }
-
-        /* header Banner */
-        .header-banner {
-            height: 40px;
-        }
-
-        .header-banner-display .website-wrapper {
-            margin-top:40px;
-        }
-
-        /* Topbar height configs */
-
-        .topbar-menu ul > li {
-            line-height: 42px;
-        }
-
-        .topbar-wrapp,
-        .topbar-content:before {
-            height: 42px;
-        }
-
-        .sticky-header-prepared.basel-top-bar-on .header-shop,
-        .sticky-header-prepared.basel-top-bar-on .header-split,
-        .enable-sticky-header.basel-header-overlap.basel-top-bar-on .main-header {
-            top: 42px;
-        }
-
-        /* Header height configs */
-
-        /* Limit logo image height for according to header height */
-        .site-logo img {
-            max-height: 95px;
-        }
-
-        /* And for sticky header logo also */
-        .act-scroll .site-logo img,
-        .header-clone .site-logo img {
-            max-height: 60px;
-        }
-
-        /* Set sticky headers height for cloned headers based on menu links line height */
-        .header-clone .main-nav .menu > li > a {
-            height: 60px;
-            line-height: 60px;
-        }
-
-        /* Height for switch logos */
-
-        .sticky-header-real:not(.global-header-menu-top) .switch-logo-enable .basel-logo {
-            height: 95px;
-        }
-
-        .sticky-header-real:not(.global-header-menu-top) .act-scroll .switch-logo-enable .basel-logo {
-            height: 60px;
-        }
-
-        .sticky-header-real:not(.global-header-menu-top) .act-scroll .switch-logo-enable {
-            transform: translateY(-60px);
-            -webkit-transform: translateY(-60px);
-        }
-
-        /* Header height for these layouts based on it's menu links line height */
-        .main-nav .menu > li > a {
-            height: 95px;
-            line-height: 95px;
-        }
-        /* The same for sticky header */
-        .act-scroll .main-nav .menu > li > a {
-            height: 60px;
-            line-height: 60px;
-        }
-
-
-        /* Set line height for header links for shop header layout. Based in the header height option */
-        .header-shop .right-column .header-links {
-            height: 95px;
-            line-height: 95px;
-        }
-
-        /* The same for sticky header */
-        .header-shop.act-scroll .right-column .header-links {
-            height: 60px;
-            line-height: 60px;
-        }
-
-
-        /* Page headings settings for heading overlap. Calculate on the header height base */
-
-        .basel-header-overlap .title-size-default,
-        .basel-header-overlap .title-size-small,
-        .basel-header-overlap .title-shop.without-title.title-size-default,
-        .basel-header-overlap .title-shop.without-title.title-size-small {
-            padding-top: 135px;
-        }
-
-
-        .basel-header-overlap .title-shop.without-title.title-size-large,
-        .basel-header-overlap .title-size-large {
-            padding-top: 215px;
-        }
-
-        @media (max-width: 991px) {
-
-            /* header Banner */
-            .header-banner {
-                height: 40px;
-            }
-
-            .header-banner-display .website-wrapper {
-                margin-top:40px;
-            }
-
-            /* Topbar height configs */
-            .topbar-menu ul > li {
-                line-height: 38px;
-            }
-
-            .topbar-wrapp,
-            .topbar-content:before {
-                height: 38px;
-            }
-
-            .sticky-header-prepared.basel-top-bar-on .header-shop,
-            .sticky-header-prepared.basel-top-bar-on .header-split,
-            .enable-sticky-header.basel-header-overlap.basel-top-bar-on .main-header {
-                top: 38px;
-            }
-
-            /* Set header height for mobile devices */
-            .main-header .wrapp-header {
-                min-height: 60px;
-            }
-
-            /* Limit logo image height for mobile according to mobile header height */
-            .site-logo img {
-                max-height: 60px;
-            }
-
-            /* Limit logo on sticky header. Both header real and header cloned */
-            .act-scroll .site-logo img,
-            .header-clone .site-logo img {
-                max-height: 60px;
-            }
-
-            /* Height for switch logos */
-
-            .main-header .switch-logo-enable .basel-logo {
-                height: 60px;
-            }
-
-            .sticky-header-real:not(.global-header-menu-top) .act-scroll .switch-logo-enable .basel-logo {
-                height: 60px;
-            }
-
-            .sticky-header-real:not(.global-header-menu-top) .act-scroll .switch-logo-enable {
-                transform: translateY(-60px);
-                -webkit-transform: translateY(-60px);
-            }
-
-            /* Page headings settings for heading overlap. Calculate on the MOBILE header height base */
-            .basel-header-overlap .title-size-default,
-            .basel-header-overlap .title-size-small,
-            .basel-header-overlap .title-shop.without-title.title-size-default,
-            .basel-header-overlap .title-shop.without-title.title-size-small {
-                padding-top: 80px;
-            }
-
-            .basel-header-overlap .title-shop.without-title.title-size-large,
-            .basel-header-overlap .title-size-large {
-                padding-top: 120px;
-            }
-
-        }
-
-        /* hovers small img width */
-
-        .product-category-thumbnail img,
-        .category-grid-item .category-link {
-            width: 100%;
-        }
-
-        /* product hovers small img width */
-
-        .product-grid-item .product-element-top>a img,
-        .basel-hover-alt .hover-img img,
-        .product-list-image .hover-img img {
-            width:100%;
-        }
-
-        /* beer version products with transparent background */
-
-        #product-28083 .product-images .image-action-zoom figure img[src$=".png"],
-        #product-28083 .product-images .image-action-zoom .owl-item,
-        #product-28084 .product-images .image-action-zoom figure img[src$=".png"],
-        #product-28084 .product-images .image-action-zoom .owl-item,
-        #product-28085 .product-images .image-action-zoom figure img[src$=".png"],
-        #product-28085 .product-images .image-action-zoom .owl-item,
-        #product-28078 .product-images .image-action-zoom figure img[src$=".png"],
-        #product-28078 .product-images .image-action-zoom .owl-item {
-            background: white;
-        }
-
-        /* hide "other" category */
-
-        .basel-product-categories>li.cat-item-109 {
-            display: none;
-        }
-
-        /* hide "other" category children on header search */
-
-        .main-header form.has-categories-dropdown .search-by-category ul .children {
-            display:none;
-        }
-
-        /* five column grid for home demo menu */
-
-        .col-five > .vc_col-sm-2 {
-            width:20%;
-        }
-
-        iframe[name='google_conversion_frame'] {
-            height: 0 !important;
-            width: 0 !important;
-            line-height: 0 !important;
-            font-size: 0 !important;
-            margin-top: -13px;
-            float: left;
-        }
-
-        .dropdown-scroll > .sub-menu-dropdown {
-            height: 540px;
-            overflow: hidden;
-        }
-
-        .header-spacing + .header-menu-top {
-            margin-top:-40px;
-        }
-
-        .woocommerce-ordering.with-list .selected-order {
-            font-weight:bold;
-        }
-
-        .header-categories .main-nav .menu li.menu-item-design-full-width>.sub-menu-dropdown {
-            margin-top: -78px;
-        }
-
-        .hide-pag .owl-pagination,
-        .hide-pag .owl-buttons {
-            display:none;
-        }
-
-        .color-scheme-light .testimonial .testimonial-content footer>span {
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .color-scheme-light .owl-theme:hover .owl-controls.clickable .owl-buttons div.disabled {
-            color:rgba(255, 255, 255, 0.6);
-        }
-
-        .color-scheme-light .owl-theme .owl-controls .owl-buttons div {
-            color:rgba(255, 255, 255, 0.8);
-        }
-
-        .color-scheme-light .owl-theme .owl-controls.clickable .owl-buttons div:hover {
-            color:rgba(255, 255, 255, 1);
-        }
-
-        .color-scheme-light .owl-theme .owl-controls .owl-page span {
-            background-color: rgba(255, 255, 255, 0.6);
-        }
-
-        .color-scheme-light .owl-theme .owl-controls .owl-page.active span,
-        .color-scheme-light .owl-theme .owl-controls.clickable .owl-page:hover span {
-            background-color: white;
-        }
-
-        .basel-buttons .product-compare-button>a,
-        .single-product-content .entry-summary .button.compare,
-        .basel-hover-base .basel-add-btn>a,
-        .basel-hover-base .product-compare-button a {
-            text-transform:none;
-        }
-
-        .rtl .has-border,
-        .rtl .has-border > .vc_column-inner {
-            border:none!important;
-        }
-
-        .related-and-upsells .product-grid-item .hover-img img {
-            width:100%;
-        }
-
-        .hidden-nav-button {
-            display:none!important;
-        }
-
-        .dropdown-scroll .wpb_single_image {
-            border: 2px solid #f7f7f7;
-        }
-
-        .page-id-25728 .dropdown-scroll .wpb_single_image,
-        .page-id-23954 .dropdown-scroll .wpb_single_image {
-            border: 2px solid rgba(255,255,255,0.1);
-        }
-
-        .widget_product_categories .cat-item-109 .cat-item:nth-child(even) {
-            display: none;
-        }
-
-        @media (max-width: 1024px) and (min-width: 991px) {
-
-            .header-categories .categories-menu-dropdown .sub-menu-dropdown {
-                width: 680px;
-            }
-        }
-
-        @media (max-width: 991px) {
-
-            .sticky-footer-on .footer-container {
-                visibility: visible;
-            }
-        }
-
-        .menu-item-19907 > .sub-menu-dropdown {
-            background-size: contain;
-        }
-
-        .woocommerce-checkout-review-order-table td {
-            width: 50%
-        }
-
-        .basel-dark .cart-widget-side .widget_shopping_cart .buttons a:not(.checkout) {
-            border-color: #333;
-            background-color: #333;
-        }
-
-        .basel-dark .cart-widget-side .widget_shopping_cart .buttons a:not(.checkout):hover {
-            opacity: .7;
-        }
-
-        .blazy-image-loading{
-            position: relative;
-        }
-        .blazy-image-loading:after {
-            position: absolute;
-            top: 50%;
-            margin-top: -15px;
-            margin-left: -15px;
-            opacity: 0.3;
-            left:50%;
-            content: " ";
-            width: 35px;
-            height: 35px;
-            display: inline-block;
-            vertical-align: middle;
-            border: 1px solid #000;
-            border-radius: 50%;
-            border-left-color: transparent!important;
-            border-right-color: transparent!important;
-            -webkit-animation: load-spin 450ms infinite linear;
-            animation: load-spin 450ms infinite linear;
-        }
-
-        /* light header product title fix */
-
-        .color-scheme-light .color-scheme-dark .product-grid-item .product-title>a {
-            color: #252222;
-        }
-
-        .woocommerce-password-strength:empty { /* fixed in css */
-            margin: 0;
-            padding: 0;
-        }
-
-        .basel-pagination:before {
-            content: '';
-            display: block;
-            clear: both;
-        }
-
-        .basel-hover-button .basel-buttons .product-compare-button>a:before,
-        .basel-hover-button .basel-buttons .quick-view>a:before,
-        .basel-hover-info .basel-buttons .product-compare-button>a:before,
-        .basel-hover-info .basel-buttons .quick-view>a:before {
-            border-color: #FFF !important;
-        }
-
-        .single-product .site-content > .woocommerce-message {
-            display: none;
-        }
-
-        /* hide modified date */
-
-        .basel-entry-meta li.modified-date {
-            display: none!important;
-        }
-
-        /* owl-carousle masonry date position (need to add in css) */
-
-        .owl-carousel .blog-design-masonry.has-post-thumbnail .post-date {
-            left: 10px;
-        }
-
-        /* instagram in carousel fix */
-
-        .instagram-widget.instagram-slider .instagram-pics li {
-            -webkit-flex-basis: 100%;
-            -ms-flex-basis: 100%;
-            flex-basis: 100%;
-            max-width: 100%;
-        }
-
-        /* variable images select fix */
-
-        .slick-slide.active-thumb {
-            transition: none !important;
-        }
-
-        /* responsive text font weight fix */
-
-        .basel-font-weight-600 {
-            font-weight: 600;
-        }@media (min-width: 992px) { /* buy basel button */
-
-            .buy-basel {
-                position: fixed;
-                bottom: 40px;
-                left: 40px;
-                background-color: black;
-                color: white;
-                padding: 10px 20px;
-                border-radius: 30px;
-                text-transform: uppercase;
-                transition: all .3s ease;
-                z-index:1000;
-            }
-
-            .buy-basel img {
-                margin-right: 10px;
-                margin-bottom: 1px;
-            }
-
-            .buy-basel:hover,
-            .buy-basel:focus {
-                background-color: #97ca58;
-                color: white;
-                text-decoration: none;
-                border-color: black;
-            }
-
-            .rtl .buy-basel {
-                left: auto;
-                right: 40px;
-            }
-
-            .rtl .buy-basel img {
-                margin-right: 0;
-                margin-left: 10px;
-            } }@media (min-width: 768px) and (max-width: 991px) {/* buy basel button */
-
-            .buy-basel {
-                display:none;
-            }
-
-            .swatch-on-grid .basel-tooltip-label {
-                display:none;
-            }
-
-            .dropdown-scroll > .sub-menu-dropdown {
-                display:none;
-            }
-
-            .basel-back-btn>span:before, .basel-products-nav .product-btn>a span:before {
-                top: 0px;
-            }
-
-            .shop-loop-head {
-                width:100%;
-            }
-
-            .single-product-content .product-images .thumbs-position-left .thumbnails {
-                margin-top: 4px;
-            }
-
-            /* remove parallax on mobile (need to add in css) */
-
-            body .basel-parallax {
-                background-attachment: scroll!important;
-            } }@media (min-width: 481px) and (max-width: 767px) { /* buy basel button */
-
-            .buy-basel {
-                display:none;
-            }
-
-            .swatch-on-grid .basel-tooltip-label {
-                display:none;
-            }
-
-            .dropdown-scroll > .sub-menu-dropdown {
-                display:none;
-            }
-
-            .basel-back-btn>span:before, .basel-products-nav .product-btn>a span:before {
-                top: 0px;
-            }
-
-            .single-product-content .product-images .thumbs-position-left .thumbnails {
-                margin-top: 4px;
-            }
-
-            /* remove parallax on mobile (need to add in css) */
-
-            body .basel-parallax {
-                background-attachment: scroll!important;
-            }
-
-            /* responsive mobile responsive-text width fix */
-
-            .basel-text-block-wrapper .basel-text-block {
-                max-width: 100%;
-            } }@media (max-width: 480px) { /* buy basel button */
-
-            .buy-basel {
-                display:none;
-            }
-
-            .swatch-on-grid .basel-tooltip-label {
-                display:none;
-            }
-
-            .dropdown-scroll > .sub-menu-dropdown {
-                display:none;
-            }
-
-            .basel-back-btn>span:before, .basel-products-nav .product-btn>a span:before {
-                top: 0px;
-            }
-
-            .single-product-content .product-images .thumbs-position-left .thumbnails {
-                margin-top: 4px;
-            }
-
-            /* remove parallax on mobile (need to add in css) */
-
-            body .basel-parallax {
-                background-attachment: scroll!important;
-            }
-
-            /* responsive mobile responsive-text width fix */
-
-            .basel-text-block-wrapper .basel-text-block {
-                max-width: 100%;
-            } }        </style>
+    <link rel="stylesheet" id="categories" href="{{asset('themes/css/categories.min.css')}}?ver=1.0.0" type="text/css" media="all" />
 
     <script type="text/javascript">
         jQuery(document).ready(function() {
@@ -873,7 +228,8 @@
 
                 }
             };
-            onePageMenuFix();                    });
+            onePageMenuFix();
+        });
     </script>
 
     <noscript>
@@ -882,7 +238,11 @@
     <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
     <meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress."/>
     <!--[if lte IE 9]>
-    <link rel="stylesheet" type="text/css" href="https://demo.xtemos.com/basel/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css" media="screen"><![endif]--><style type="text/css" title="dynamic-css" class="options-output">.page-title-default{background-color:#0a0a0a;background-size:cover;}.topbar-wrapp{background-color:#1daaa3;}.main-header{border-bottom:2px solid #f5f5f5;}.footer-container{background-color:#000000;}body,p,
+     <link rel="stylesheet" type="text/css" href="{{asset('plugins/js_composer/css/vc_lte_ie9.min.css')}}" media="screen">
+    <![endif]-->
+
+
+    <style type="text/css" title="dynamic-css" class="options-output">.page-title-default{background-color:#0a0a0a;background-size:cover;}.topbar-wrapp{background-color:#1daaa3;}.main-header{border-bottom:2px solid #f5f5f5;}.footer-container{background-color:#000000;}body,p,
                                                                                                                                                                                                                                                                                                                                                                                                                                                                   .widget_nav_mega_menu .menu > li > a,
                                                                                                                                                                                                                                                                                                                                                                                                                                                                   .mega-navigation .menu > li > a,
                                                                                                                                                                                                                                                                                                                                                                                                                                                                   .basel-navigation .menu > li.menu-item-design-full-width .sub-sub-menu li a,
@@ -1110,7 +470,7 @@
     document.body.className=c;
 </script>
 
-<script type='text/javascript'>
+<script type="text/javascript">
     var wpcf7= {
         "apiSettings": {
             "root": "https:\/\/demo.xtemos.com\/basel\/wp-json\/contact-form-7\/v1", "namespace": "contact-form-7\/v1"
@@ -1126,24 +486,27 @@
     };
 </script>
 
-<script type='text/javascript' src='https://demo.xtemos.com/basel/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.0.5'></script>
-<script type='text/javascript' src='https://demo.xtemos.com/basel/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4'></script>
-<script type='text/javascript'>
+<script type="text/javascript" src="{{asset('plugins/contact-form-7/js/scripts.js')}}?ver=5.0.5"></script>
+<script type="text/javascript" src="{{asset('plugins/js-cookie/js.cookie.min.js')}}?ver=2.1.4"></script>
+<script type="text/javascript">
     var woocommerce_params= {
         "ajax_url": "\/basel\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/basel\/?wc-ajax=%%endpoint%%"
     };
 </script>
 
-<script type='text/javascript' src='https://demo.xtemos.com/basel/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=3.5.2'></script>
-<script type='text/javascript'>
+<script type="text/javascript" src="{{asset('plugins/frontend/avdesign.min.js')}}?ver=3.5.2"></script>
+<script type="text/javascript">
     var wc_cart_fragments_params= {
-        "ajax_url": "\/basel\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/basel\/?wc-ajax=%%endpoint%%", "cart_hash_key": "wc_cart_hash_8ec5d0c0d1062d0bfd7420fffa38d7d5", "fragment_name": "wc_fragments_8ec5d0c0d1062d0bfd7420fffa38d7d5"
+        "ajax_url": "\/basel\/wp-admin\/admin-ajax.php",
+        "wc_ajax_url": "\/basel\/?wc-ajax=%%endpoint%%",
+        "cart_hash_key": "wc_cart_hash_8ec5d0c0d1062d0bfd7420fffa38d7d5",
+        "fragment_name": "wc_fragments_8ec5d0c0d1062d0bfd7420fffa38d7d5"
     };
 </script>
 
-<script type='text/javascript' src='https://demo.xtemos.com/basel/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=3.5.2'></script>
-<script type='text/javascript' src='https://demo.xtemos.com/basel/wp-content/plugins/yith-woocommerce-wishlist/assets/js/jquery.selectBox.min.js?ver=1.2.0'></script>
-<script type='text/javascript'>
+<script type="text/javascript" src="{{asset('plugins/cart/js/cart-fragments.min.js')}}?ver=3.5.2"></script>
+<script type="text/javascript" src="{{asset('plugins/yith-wishlist/js/jquery.selectBox.min.js')}}?ver=1.2.0"></script>
+<script type="text/javascript">
     var yith_wcwl_l10n= {
         "ajax_url":"\/basel\/wp-admin\/admin-ajax.php",
         "redirect_to_cart":"no",
@@ -1162,8 +525,11 @@
     };
 </script>
 
-<script type='text/javascript' src='https://demo.xtemos.com/basel/wp-content/plugins/yith-woocommerce-wishlist/assets/js/jquery.yith-wcwl.js?ver=2.2.5'></script> <script type='text/javascript' src='https://demo.xtemos.com/basel/wp-content/plugins/js_composer/assets/lib/bower/isotope/dist/isotope.pkgd.min.js?ver=5.6'></script> <script type='text/javascript' src='https://demo.xtemos.com/basel/wp-content/plugins/js_composer/assets/lib/waypoints/waypoints.min.js?ver=5.6'></script> <script type='text/javascript' src='https://demo.xtemos.com/basel/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js?ver=5.6'></script>
-<script type='text/javascript'>
+<script type="text/javascript" src="{{asset('plugins/yith-wishlist/js/jquery.yith-wcwl.js')}}?ver=2.2.5"></script>
+<script type="text/javascript" src="{{asset('plugins/isotope/isotope.pkgd.min.js')}}?ver=5.6"></script>
+<script type="text/javascript" src="{{asset('plugins/waypoints/waypoints.min.js')}}?ver=5.6"></script>
+<script type="text/javascript" src="{{asset('plugins/js_composer/js/js_composer_front.min.js')}}?ver=5.6"></script>
+<script type="text/javascript">
     var basel_settings= {
         "adding_to_cart":"Processing",
         "added_to_cart":"Product was successfully added to your cart.",
@@ -1226,11 +592,11 @@
     var basel_variation_gallery_data=null;
 </script>
 
-<script type='text/javascript' src='https://demo.xtemos.com/basel/wp-content/themes/basel/js/theme.min.js?ver=4.4.2'>
+<script type="text/javascript" src="{{asset('themes/js/theme.min.js')}}?ver=4.4.2">
 </script>
 
-<script type='text/javascript' src='https://demo.xtemos.com/basel/wp-includes/js/underscore.min.js?ver=1.8.3'></script>
-<script type='text/javascript'>
+<script type="text/javascript" src="https://demo.xtemos.com/basel/wp-includes/js/underscore.min.js?ver=1.8.3"></script>
+<script type="text/javascript">
     var _wpUtilSettings= {
         "ajax": {
             "url": "\/basel\/wp-admin\/admin-ajax.php"
@@ -1238,14 +604,17 @@
     };
 </script>
 
-<script type='text/javascript' src='https://demo.xtemos.com/basel/wp-includes/js/wp-util.min.js?ver=4.9.8'></script>
-<script type='text/javascript'>
+<script type="text/javascript" src="https://demo.xtemos.com/basel/wp-includes/js/wp-util.min.js?ver=4.9.8"></script>
+<script type="text/javascript">
     var wc_add_to_cart_variation_params= {
-        "wc_ajax_url": "\/basel\/?wc-ajax=%%endpoint%%", "i18n_no_matching_variations_text": "Sorry, no products matched your selection. Please choose a different combination.", "i18n_make_a_selection_text": "Please select some product options before adding this product to your cart.", "i18n_unavailable_text": "Sorry, this product is unavailable. Please choose a different combination."
+        "wc_ajax_url": "\/basel\/?wc-ajax=%%endpoint%%",
+        "i18n_no_matching_variations_text": "Sorry, no products matched your selection. Please choose a different combination.",
+        "i18n_make_a_selection_text": "Please select some product options before adding this product to your cart.",
+        "i18n_unavailable_text": "Sorry, this product is unavailable. Please choose a different combination."
     };
 </script>
 
-<script type='text/javascript' src='https://demo.xtemos.com/basel/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart-variation.min.js?ver=3.5.2'></script>
+<script type="text/javascript" src="{{asset('plugins/cart/js/add-to-cart-variation.min.js')}}?ver=3.5.2"></script>
 
 <div class="basel-promo-popup">
     <div class="basel-popup-inner">
