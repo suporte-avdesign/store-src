@@ -2,713 +2,55 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71684e94-d254-414c-9705-84cab959a1f4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/contact-form-7/images/ajax-loader.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/lib/monosocialiconsfont/fonts/MonoSocialIconsFont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/lib/monosocialiconsfont/fonts/MonoSocialIconsFont.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/lib/monosocialiconsfont/fonts/MonoSocialIconsFont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/lib/monosocialiconsfont/fonts/MonoSocialIconsFont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/lib/typicons/src/font/typicons.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/lib/typicons/src/font/typicons.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/lib/typicons/src/font/typicons.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/lib/vc-entypo/fonts/vc_entypo.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/lib/vc-entypo/fonts/vc_entypo.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/lib/vc-entypo/fonts/vc_entypo.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/lib/vc-linecons/fonts/vc_linecons.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/lib/vc-linecons/fonts/vc_linecons.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/lib/vc-linecons/fonts/vc_linecons.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/lib/vc-material/fonts/vc_material.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/lib/vc-material/fonts/vc_material.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/lib/vc-open-iconic/fonts/vc_openiconic.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/lib/vc-open-iconic/fonts/vc_openiconic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/lib/vc-open-iconic/fonts/vc_openiconic.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/ui-custom-theme/images/ui-bg_flat_0_aaaaaa_40x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/ui-custom-theme/images/ui-bg_flat_0_eeeeee_40x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/ui-custom-theme/images/ui-bg_flat_55_ffffff_40x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/ui-custom-theme/images/ui-bg_flat_75_ffffff_40x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/ui-custom-theme/images/ui-bg_glass_65_ffffff_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/ui-custom-theme/images/ui-bg_highlight-soft_100_f6f6f6_1x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/ui-custom-theme/images/ui-bg_highlight-soft_25_eaf2fa_1x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/ui-custom-theme/images/ui-bg_highlight-soft_50_dddddd_1x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/ui-custom-theme/images/ui-icons_1982d1_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/ui-custom-theme/images/ui-icons_333333_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/ui-custom-theme/images/ui-icons_454545_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/ui-custom-theme/images/ui-icons_ff0046_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/ui-custom-theme/images/ui-resize-icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/fonts/vc_grid/vc_grid_v1.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/fonts/vc_grid/vc_grid_v1.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/fonts/vc_grid/vc_grid_v1.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/fonts/vc_icons/fonts/VC-Icons.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/fonts/vc_icons/fonts/VC-Icons.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/images/flickr.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/images/icons/address-book.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/images/icons/alarm-clock.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/images/icons/anchor.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/images/icons/application-image.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/images/icons/arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/images/icons/asterisk.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/images/icons/auction-hammer.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/images/icons/balloon-buzz.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/images/icons/balloon-facebook.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/images/icons/balloon-twitter.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/images/icons/balloon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/images/icons/battery-full.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/images/icons/binocular.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/images/icons/blue-document-excel.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/images/icons/blue-document-image.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/images/icons/blue-document-music.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/images/icons/blue-document-office.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/images/icons/blue-document-pdf.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/images/icons/blue-document-powerpoint.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/images/icons/blue-document-word.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/images/icons/bookmark.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/images/icons/camcorder.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/images/icons/camera.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/images/icons/chart-pie.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/images/icons/chart.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/images/icons/clock.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/images/icons/control.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/images/icons/fire.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/images/icons/heart.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/images/icons/mail.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/images/icons/plus-shield.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/images/icons/video.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/images/spinner.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/images/toggle_close.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/images/toggle_open.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/flexslider/fonts/flexslider-icon.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/flexslider/fonts/flexslider-icon.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/flexslider/fonts/flexslider-icon.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/flexslider/images/bg_play_pause.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/font-awesome/fonts/FontAwesome.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/font-awesome/fonts/fontawesome-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/font-awesome/fonts/fontawesome-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/font-awesome/fonts/fontawesome-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/font-awesome/fonts/fontawesome-webfont.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/nivoslider/themes/default/arrows.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/nivoslider/themes/default/bullets.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/nivoslider/themes/default/loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/owl-carousel2-dist/assets/owl.video.play.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/dark_rounded/btnNext.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/dark_rounded/btnPrevious.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/dark_rounded/contentPattern.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/dark_rounded/default_thumbnail.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/dark_rounded/loader.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/dark_rounded/sprite.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/dark_square/btnNext.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/dark_square/btnPrevious.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/dark_square/contentPattern.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/dark_square/default_thumbnail.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/dark_square/loader.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/dark_square/sprite.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/default/default_thumb.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/default/loader.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/default/sprite.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/default/sprite_next.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/default/sprite_prev.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/default/sprite_x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/default/sprite_y.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/facebook/btnNext.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/facebook/btnPrevious.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/facebook/contentPatternBottom.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/facebook/contentPatternLeft.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/facebook/contentPatternRight.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/facebook/contentPatternTop.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/facebook/default_thumbnail.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/facebook/loader.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/facebook/sprite.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/light_rounded/btnNext.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/light_rounded/btnPrevious.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/light_rounded/default_thumbnail.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/light_rounded/loader.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/light_rounded/sprite.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/light_square/btnNext.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/light_square/btnPrevious.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/light_square/default_thumbnail.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/light_square/loader.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/images/prettyPhoto/light_square/sprite.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/vc_carousel/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/vc_carousel/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/vc_carousel/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/3rd-party/jwplayer.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/add.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/alert.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/atm_controls.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/blank.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/column_offset_screen_size.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/controls.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/drag_handler.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/editors/ui/vc_ui-header-graphics/vc_ui-header-graphic.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/editors/ui/vc_ui-header-graphics/vc_ui-icon-pixel-search.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/editors/ui/vc_ui-icon-pixel/controls.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/editors/ui/vc_ui-icon-pixel/vc_ui-sprite.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/elements_icons_sprite.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/empty_row.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/exclamation.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/fe/close_panel.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/fe/controls.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/fe/empty_row_sprite.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/fe/expand.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/fe/eye_ico.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/fe/js_icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/fe/layout_sprite.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/fe/modal_minimize.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/fe/move.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/fe/preloader.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/fe/screen_sizes/ipad_h.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/fe/screen_sizes/ipad_v.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/fe/screen_sizes/iphone_h.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/fe/screen_sizes/iphone_v.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/fe/screen_sizes/laptop.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/fe/social/fb/box_count.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/fe/social/fb/button_count.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/fe/social/fb/standart.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/fe/social/gp/medium.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/fe/social/gp/medium_bubble.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/fe/social/gp/medium_desc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/fe/social/gp/small.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/fe/social/gp/small_bubble.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/fe/social/gp/small_desc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/fe/social/gp/standard.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/fe/social/gp/standard_bubble.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/fe/social/gp/standard_desc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/fe/social/gp/tall.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/fe/social/gp/tall_bubble.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/fe/social/gp/tall_desc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/fe/social/pinterest/horizontal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/fe/social/pinterest/none.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/fe/social/pinterest/vertical.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/fe/social/tw/none.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/fe/visual_composer_32.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/gb_additional_content.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/info.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/item_icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/logo/64x64.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/logo_ce.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/minus.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/navbar_controls.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/no_image.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/pattern.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/plus.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/remove.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/row_layouts/1.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/row_layouts/12_12.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/row_layouts/13_13_13.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/row_layouts/13_23.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/row_layouts/14_12_14.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/row_layouts/14_14_14_14.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/row_layouts/14_34.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/row_layouts/14_46_16.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/row_layouts/16_16_16_12.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/row_layouts/16_16_16_16_16_16.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/row_layouts/23_13.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/row_layouts/56_16.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/rowbg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/search.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/separator.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/tick.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/vc-welcome/01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/vc-welcome/02.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/vc-welcome/03.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/vc-welcome/screenshot.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/vc_gitem_image.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/visual_composer.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/visual_composer_32.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/yith-wishlist/images/ajax-loader.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/yith-wishlist/images/email.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/yith-wishlist/images/facebook.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/yith-wishlist/images/googleplus.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/yith-wishlist/images/jquery.selectBox-arrow.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/yith-wishlist/images/jquery.selectBox-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/yith-wishlist/images/pinterest.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/yith-wishlist/images/twitter.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/includes/js/jquery/jquery-migrate.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/includes/js/jquery/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/cart/js/add-to-cart-variation.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/cart/js/add-to-cart-variation.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/cart/js/add-to-cart.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/cart/js/add-to-cart.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/cart/js/avd-add-to-cart.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/cart/js/cart-fragments.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/cart/js/cart-fragments.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/contact-form-7/css/styles.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/contact-form-7/js/scripts.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/frontend/avdesign.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/frontend/avdesign.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/google/analytics-frontend.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/google/analytics-frontend.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/isotope/isotope.pkgd.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/isotope/isotope.pkgd.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/jquery-blockui/jquery.blockUI.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js-cookie/js.cookie.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js-cookie/js.cookie.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/js_composer.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/js_composer_backend_editor.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/js_composer_frontend_editor.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/js_composer_frontend_editor_iframe.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/js_composer_settings.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/js_composer_tta.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/lib/isotope.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/lib/monosocialiconsfont/fonts/MonoSocialIconsFont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/lib/monosocialiconsfont/monosocialiconsfont.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/lib/typicons/src/font/LICENCE.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/lib/typicons/src/font/typicons.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/lib/typicons/src/font/typicons.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/lib/vc-entypo/fonts/vc_entypo.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/lib/vc-entypo/vc_entypo.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/lib/vc-linecons/fonts/vc_linecons.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/lib/vc-linecons/vc_linecons_icons.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/lib/vc-material/fonts/vc_material.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/lib/vc-material/vc_material.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/lib/vc-material/vc_material.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/lib/vc-open-iconic/fonts/vc_openiconic.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/lib/vc-open-iconic/vc_openiconic.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/ui-custom-theme/jquery-ui-less.custom.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/css/vc_lte_ie9.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/fonts/vc_grid/vc_grid_v1.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/fonts/vc_icons/VC Icons.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/fonts/vc_icons/aliases.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/fonts/vc_icons/fonts/VC-Icons.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/fonts/vc_icons/init.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/fonts/vc_icons/style.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/fonts/vc_icons/variables.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/dist/backend-actions.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/dist/backend.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/dist/edit-form.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/dist/frontend-editor.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/dist/grid-builder.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/dist/js_composer_front.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/dist/page_editable.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/dist/settings.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/dist/vc_grid.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/editors/templates-preview.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/frontend_editor/shortcodes/charts/vc_line_chart.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/frontend_editor/shortcodes/charts/vc_pie.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/frontend_editor/shortcodes/charts/vc_round_chart.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/frontend_editor/shortcodes/containers/container.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/frontend_editor/shortcodes/containers/container_with_parent.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/frontend_editor/shortcodes/containers/vc_column.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/frontend_editor/shortcodes/containers/vc_column_inner.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/frontend_editor/shortcodes/containers/vc_row.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/frontend_editor/shortcodes/containers/vc_row_inner.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/frontend_editor/shortcodes/containers/vc_section.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/frontend_editor/shortcodes/content/vc_column_text.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/frontend_editor/shortcodes/content/vc_flickr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/frontend_editor/shortcodes/content/vc_posts_slider.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/frontend_editor/shortcodes/content/vc_raw_js.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/frontend_editor/shortcodes/content/vc_toggle.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/frontend_editor/shortcodes/deprecated/tabs/vc_accordion.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/frontend_editor/shortcodes/deprecated/tabs/vc_accordion_tab.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/frontend_editor/shortcodes/deprecated/tabs/vc_tab.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/frontend_editor/shortcodes/deprecated/tabs/vc_tabs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/frontend_editor/shortcodes/deprecated/tabs/vc_tour.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/frontend_editor/shortcodes/deprecated/vc_carousel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/frontend_editor/shortcodes/grids/vc_basic_grid.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/frontend_editor/shortcodes/grids/vc_masonry_grid.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/frontend_editor/shortcodes/grids/vc_masonry_media_grid.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/frontend_editor/shortcodes/grids/vc_media_grid.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/frontend_editor/shortcodes/images/vc_gallery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/frontend_editor/shortcodes/images/vc_images_carousel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/frontend_editor/shortcodes/images/vc_single_image.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/frontend_editor/shortcodes/tta/tta_events.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/frontend_editor/shortcodes/tta/vc_tta_accordion.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/frontend_editor/shortcodes/tta/vc_tta_pageable.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/frontend_editor/shortcodes/tta/vc_tta_section.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/frontend_editor/shortcodes/tta/vc_tta_tabs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/frontend_editor/shortcodes/tta/vc_tta_tour.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/frontend_editor/vendors/plugins/jwplayer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/js_composer_front.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/vendors/advanced_custom_fields.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/vendors/qtranslate_backend.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/vendors/qtranslate_frontend.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/vendors/qtranslatex_backend.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/vendors/qtranslatex_frontend.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/vendors/woocommerce-add-to-cart.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/vendors/woocommerce.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/vendors/yoast.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/content_block.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/empty_containers.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/rows_columns.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/vc_accordion.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/vc_accordion_tab.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/vc_button.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/vc_button3.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/vc_call_to_action3.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/vc_charts.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/vc_column_text.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/vc_cta_button.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/vc_empty_space.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/vc_facebook.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/vc_flickr.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/vc_gallery.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/vc_gmaps.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/vc_googleplus.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/vc_images_carousel.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/vc_message_box.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/vc_pie.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/vc_pinterest.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/vc_posts_slider.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/vc_progress_bar.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/vc_raw_html.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/vc_raw_js.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/vc_separator.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/vc_single_image.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/vc_tab.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/vc_tabs.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/vc_teaser_grid.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/vc_toggle.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/vc_tour.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/vc_tta.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/vc_tweetmeme.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/vc_twitter.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/vc_video.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/vc_widget_sidebar.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/backend_shortcodes/vc_wp_widget.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/config/admin_variables.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/config/variables.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/config/variables_colors.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/config/variables_common.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/js_composer.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/js_composer_backend_editor.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/js_composer_frontend_editor.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/js_composer_frontend_editor_iframe.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/js_composer_settings.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/js_composer_tta.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/lib/backend_controls.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/lib/backend_draganddrop.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/lib/backend_grid_element_pointers.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/lib/bootstrap-components.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/lib/controls.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/lib/css3_animations.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/lib/editor.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/lib/elements_icons.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/lib/front.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/lib/frontend_draganddrop.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/lib/frontend_editor_controls.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/lib/frontend_vc_elements.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/lib/grid.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/lib/media-gallery.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/lib/panel_preview.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/lib/parallax.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/lib/pixel_icons.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/lib/resizable_modal.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/lib/responsive-utilities.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/lib/utils.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/lib/vc_font.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/lib/vc_mixins.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/lib/vc_pointer.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/lib/wpb_icon.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/modules/ui/vc_ui-button.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/modules/ui/vc_ui-dropdown.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/modules/ui/vc_ui-flex-bootstrap.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/modules/ui/vc_ui-fonts.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/modules/ui/vc_ui-gaps.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/modules/ui/vc_ui-helper.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/modules/ui/vc_ui-icon-pixel.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/modules/ui/vc_ui-list-bar.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/modules/ui/vc_ui-loaders.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/modules/ui/vc_ui-panel-edit-element.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/modules/ui/vc_ui-panel-preset.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/modules/ui/vc_ui-panel-row-layout.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/modules/ui/vc_ui-panel-templates.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/modules/ui/vc_ui-panel/vc_ui-panel-content.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/modules/ui/vc_ui-panel/vc_ui-panel-footer.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/modules/ui/vc_ui-panel/vc_ui-panel-header.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/modules/ui/vc_ui-panel/vc_ui-panel-window.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/modules/ui/vc_ui-panel/vc_ui-panel.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/modules/ui/vc_ui-prompt.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/modules/ui/vc_ui-tabs-line.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/modules/vc_buttons.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/modules/vc_fullscreen.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/modules/vc_helper.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/modules/vc_messages.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/modules/vc_modals.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/modules/vc_navbar.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/modules/vc_panels.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/modules/vc_placeholder.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/modules/vc_preloader.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/modules/vc_switcher.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/modules/vc_table.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/modules/vc_teaser_box.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/modules/vc_welcome.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/pages/vc_welcome.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/params/autocomplete.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/params/colorpicker.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/params/column_offset.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/params/css_editor.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/params/dropdown.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/params/hidden.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/params/iconpicker.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/params/loop.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/params/options_field.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/params/param_group.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/params/sorted_list.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/params/vc_grid.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/params/vc_grid_element.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/params/vc_grid_item/navbar.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/params/vc_grid_item/preview.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/params/vc_grid_item/shortcodes/vc_gitem_animated_block.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/params/vc_grid_item/shortcodes/vc_gitem_animated_block_admin.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/params/vc_grid_item/shortcodes/vc_gitem_col.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/params/vc_grid_item/shortcodes/vc_gitem_gitem_zone_height_mode.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/params/vc_grid_item/shortcodes/vc_gitem_post_categories.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/params/vc_grid_item/shortcodes/vc_gitem_post_data.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/params/vc_grid_item/shortcodes/vc_gitem_row.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/params/vc_grid_item/shortcodes/vc_gitem_row_admin.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/params/vc_grid_item/shortcodes/vc_gitem_zone.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/params/vc_grid_item/shortcodes/vc_gitem_zone_a.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/params/vc_grid_item/shortcodes/vc_gitem_zone_admin.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/params/vc_grid_item/shortcodes/vc_gitem_zone_b.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/params/vc_grid_item/shortcodes/vc_gitem_zone_c.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/params/vc_grid_item/vc_gitem_editor.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/params/vc_grid_item/vc_grid_item.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/params/vc_link.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/params/vc_message_color.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/popups/modal_add_element.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/popups/panel_edit_form.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/popups/panel_template_library.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/settings_tabs/automapper.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/settings_tabs/custom_css.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/settings_tabs/design_options.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/settings_tabs/element_css.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/settings_tabs/general_settings.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/settings_tabs/product_license.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/settings_tabs/tabs_ui.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/settings_tabs/user-group.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/settings_tabs/vc_roles.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/_shortcodes_container.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/frontend_vc_row.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/tta/vc_tta-colors.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/tta/vc_tta-core.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/tta/vc_tta-frontend-editor.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/tta/vc_tta-icon-controls.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/tta/vc_tta-mixins.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/tta/vc_tta-options.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/tta/vc_tta-pagination.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/tta/vc_tta-variables.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_alert.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_basic_grid/filter_styles/filter_bordered.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_basic_grid/filter_styles/filter_default.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_basic_grid/filter_styles/filter_default_less_rounded.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_basic_grid/filter_styles/filter_dropdown.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_basic_grid/filter_styles/filter_filled.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_basic_grid/vc_grid.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_basic_grid/vc_grid_arrows.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_basic_grid/vc_grid_carousel.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_basic_grid/vc_grid_filter.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_basic_grid/vc_grid_gap.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_basic_grid/vc_grid_loading.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_basic_grid/vc_grid_pagination_dots.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_basic_grid/vc_grid_pagination_numbers.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_basic_grid/vc_grid_style.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_button.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_button3.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_button3_editform.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_call_to_action.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_call_to_action3.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_carousel.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_charts.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_cta3_editform.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_custom_heading.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_flickr.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_google_maps.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_hoverbox.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_icon_element.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_image_gallery.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_message_box/vc_message_box_2.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_message_box/vc_message_box_front.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_message_box/vc_message_box_mixins.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_message_box/vc_message_box_variables.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_pagination.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_pie.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_post_slider.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_progress_bar.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_responsive.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_row.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_section.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_separator.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_single_image.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_social_btns.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_tabs_tour_accordion.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_teaser_grid.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_toggle.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_tta.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_video_widget.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_widgetised_column.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_zigzag.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_zoom.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/vc_lte_ie9.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/vendor/contact_form_7.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/vendor/gravity_form.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/vendor/jwplayer.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/vendor/layerslider.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/vendor/rev_slider.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/vendor/woocommerce.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/wp/accordion.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/wp/form.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/ace-builds/src-min-noconflict/ace.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/ace-builds/src-min-noconflict/mode-css.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/ace-builds/src-min-noconflict/theme-chrome.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/ace-builds/src-min-noconflict/worker-css.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/animate-css/animate.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/dist/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/js/affix.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/js/alert.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/js/button.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/js/carousel.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/js/collapse.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/js/dropdown.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/js/modal.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/js/popover.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/js/scrollspy.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/js/tab.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/js/tooltip.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/js/transition.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/alerts.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/badges.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/bootstrap.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/breadcrumbs.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/button-groups.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/buttons.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/carousel.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/close.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/code.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/component-animations.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/dropdowns.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/forms.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/glyphicons.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/grid.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/input-groups.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/jumbotron.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/labels.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/list-group.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/media.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/mixins.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/mixins/alerts.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/mixins/background-variant.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/mixins/border-radius.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/mixins/buttons.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/mixins/center-block.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/mixins/clearfix.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/mixins/forms.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/mixins/gradients.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/mixins/grid-framework.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/mixins/grid.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/mixins/hide-text.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/mixins/image.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/mixins/labels.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/mixins/list-group.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/mixins/nav-divider.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/mixins/nav-vertical-align.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/mixins/opacity.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/mixins/pagination.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/mixins/panels.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/mixins/progress-bar.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/mixins/reset-filter.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/mixins/resize.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/mixins/responsive-visibility.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/mixins/size.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/mixins/tab-focus.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/mixins/table-row.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/mixins/text-emphasis.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/mixins/text-overflow.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/mixins/vendor-prefixes.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/modals.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/navbar.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/navs.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/normalize.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/pager.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/pagination.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/panels.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/popovers.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/print.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/progress-bars.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/responsive-embed.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/responsive-utilities.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/scaffolding.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/tables.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/theme.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/thumbnails.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/tooltip.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/type.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/utilities.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/variables.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/wells.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/chartjs/Chart.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/chartjs/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/flexslider/README.mdown" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/flexslider/flexslider.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/flexslider/fonts/flexslider-icon.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/flexslider/jquery.flexslider-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/font-awesome/css/font-awesome.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/font-awesome/fonts/fontawesome-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/imagesloaded/imagesloaded.pkgd.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/isotope/README.mdown" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/isotope/dist/isotope.pkgd.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/jquery-ui-tabs-rotate/README" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/jquery-ui-tabs-rotate/jquery-ui-tabs-rotate.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/json-js/README" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/json-js/json2.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/lessjs/dist/less.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/masonry/README.mdown" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/masonry/dist/masonry.pkgd.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/nivoslider/jquery.nivo.slider.pack.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/nivoslider/license.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/nivoslider/nivo-slider.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/nivoslider/themes/default/default.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/progress-circle/ProgressCircle.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/progress-circle/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/scrollTo/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/scrollTo/jquery.scrollTo.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/skrollr/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/skrollr/dist/skrollr.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/twbs-pagination/jquery.twbsPagination.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/vcIconPicker/css/jquery.fonticonpicker.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/vcIconPicker/jquery.fonticonpicker.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/vcIconPicker/themes/grey-theme/jquery.fonticonpicker.vcgrey.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/zoom/jquery.zoom.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/zoom/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/owl-carousel2-dist/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/owl-carousel2-dist/assets/owl.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/owl-carousel2-dist/owl.carousel.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/php.default/php.default.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/README" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/css/prettyPhoto.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/js/jquery.prettyPhoto.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/vc-tta-autoplay/vc-tta-autoplay.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/vc_accordion/vc-accordion.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/vc_carousel/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/vc_carousel/css/vc_carousel.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/vc_carousel/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/vc_carousel/js/transition.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/vc_carousel/js/vc_carousel.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/vc_chart/jquery.vc_chart.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/vc_image_zoom/vc_image_zoom.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/vc_line_chart/vc_line_chart.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/vc_round_chart/vc_round_chart.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/vc_tabs/vc-tabs.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/waypoints/waypoints.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/blur.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/loaders/spinner-light.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/js_composer/vc/loaders/spinner.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/waypoints/waypoints.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/yith-wishlist/css/jquery.selectBox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/yith-wishlist/css/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/yith-wishlist/js/jquery.selectBox.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/yith-wishlist/js/jquery.yith-wcwl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/yith-wishlist/js/jquery.yith-wcwl.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/themes/css/categories.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/themes/css/categories.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/themes/js/device.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/themes/js/html5.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/themes/js/theme.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/carts/mini-cart-list-1.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/carts/mini-cart-qty-1.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/carts/mini-cart-total-1.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/google/analytics-1.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/teste.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/prettyPhoto/fonts/WooCommerce.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/prettyPhoto/fonts/WooCommerce.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/prettyPhoto/fonts/WooCommerce.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/prettyPhoto/fonts/star.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/prettyPhoto/fonts/star.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/prettyPhoto/fonts/star.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Helpers/avdFilesHerper.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Helpers/avdHerper.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/bootstrap/css/bootstrap.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/font-awesome/css/font-awesome.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/mailchimp/css/form-basic.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/prettyPhoto/css/prettyPhoto.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/prettyPhoto/fonts/WooCommerce.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/prettyPhoto/fonts/star.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/prettyPhoto/js/prettyPhoto.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/themes/css/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/themes/css/style.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/themes/css/theme.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/themes/css/theme.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/themes/js/theme.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/categories/cetegory-1.blade.php" afterPath="$PROJECT_DIR$/resources/views/categories/cetegory-1.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/CartController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/CartController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app.js" afterPath="$PROJECT_DIR$/public/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/plugins/cart/js/add-to-cart.min.js" afterPath="$PROJECT_DIR$/public/plugins/cart/js/add-to-cart.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/plugins/cart/js/cart-fragments.js" afterPath="$PROJECT_DIR$/public/plugins/cart/js/cart-fragments.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/plugins/cart/js/cart-fragments.min.js" afterPath="$PROJECT_DIR$/public/plugins/cart/js/cart-fragments.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/plugins/js_composer/js/dist/backend.min.js" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/dist/backend.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/plugins/js_composer/js/dist/frontend-editor.min.js" afterPath="$PROJECT_DIR$/public/plugins/js_composer/js/dist/frontend-editor.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/plugins/js_composer/less/lib/frontend_editor_controls.less" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/lib/frontend_editor_controls.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/plugins/js_composer/less/modules/vc_buttons.less" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/modules/vc_buttons.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_icon_element.less" afterPath="$PROJECT_DIR$/public/plugins/js_composer/less/shortcodes/vc_icon_element.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/ace-builds/src-min-noconflict/ace.js" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/ace-builds/src-min-noconflict/ace.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/ace-builds/src-min-noconflict/mode-css.js" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/ace-builds/src-min-noconflict/mode-css.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/ace-builds/src-min-noconflict/theme-chrome.js" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/ace-builds/src-min-noconflict/theme-chrome.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/ace-builds/src-min-noconflict/worker-css.js" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/ace-builds/src-min-noconflict/worker-css.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/button-groups.less" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/button-groups.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/forms.less" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/forms.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/input-groups.less" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/input-groups.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/normalize.less" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/normalize.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/type.less" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/type.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/variables.less" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/bootstrap3/less/variables.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/lessjs/dist/less.min.js" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/lessjs/dist/less.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/js/jquery.prettyPhoto.min.js" afterPath="$PROJECT_DIR$/public/plugins/js_composer/lib/prettyphoto/js/jquery.prettyPhoto.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/plugins/yith-wishlist/js/jquery.yith-wcwl.js" afterPath="$PROJECT_DIR$/public/plugins/yith-wishlist/js/jquery.yith-wcwl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/themes/css/categories.css" afterPath="$PROJECT_DIR$/public/themes/css/categories.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/themes/js/theme.min.js" afterPath="$PROJECT_DIR$/public/themes/js/theme.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/carts/mini-cart-qty-1.blade.php" afterPath="$PROJECT_DIR$/resources/views/carts/mini-cart-qty-1.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/carts/mini-cart-total-1.blade.php" afterPath="$PROJECT_DIR$/resources/views/carts/mini-cart-total-1.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/template-1.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/template-1.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
     </list>
@@ -722,46 +64,116 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="template-1.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/template-1.blade.php">
+      <file leaf-file-name="CartController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Web/CartController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="533" column="38" lean-forward="true" selection-start-line="533" selection-start-column="38" selection-end-line="533" selection-end-column="38" />
-              <folding>
-                <element signature="e#7070#11796#0#HTML" expanded="false" />
-                <element signature="e#7112#8471#0#HTML" expanded="false" />
-                <element signature="e#8507#8552#0#HTML" expanded="false" />
-                <element signature="e#8620#9329#0#HTML" expanded="false" />
-                <element signature="e#9524#11755#0#HTML" expanded="false" />
-                <element signature="e#9576#10001#0#HTML" expanded="false" />
-                <element signature="e#10056#10518#0#HTML" expanded="false" />
-                <element signature="e#10597#10991#0#HTML" expanded="false" />
-                <element signature="e#11052#11741#0#HTML" expanded="false" />
-                <marker date="1555526755574" expanded="true" signature="5315:6630" ph="..." />
-                <marker date="1555526755574" expanded="true" signature="5468:5705" ph="..." />
-                <marker date="1555526755574" expanded="true" signature="5481:5703" ph="..." />
-                <marker date="1555526755574" expanded="true" signature="5482:5702" ph="..." />
-                <marker date="1555526755574" expanded="true" signature="6008:6630" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vc_lte_ie9.min.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/plugins/js_composer/css/vc_lte_ie9.min.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="215" lean-forward="false" selection-start-line="0" selection-start-column="215" selection-end-line="0" selection-end-column="215" />
+            <state relative-caret-position="108">
+              <caret line="28" column="18" lean-forward="true" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="js_composer.min.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/plugins/js_composer/css/js_composer.min.css">
+      <file leaf-file-name="WishlistController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Web/WishlistController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="0" column="24185" lean-forward="false" selection-start-line="0" selection-start-column="24182" selection-end-line="0" selection-end-column="24185" />
+            <state relative-caret-position="-1203">
+              <caret line="26" column="37" lean-forward="false" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="template-1.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/layouts/template-1.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="70" column="53" lean-forward="true" selection-start-line="70" selection-start-column="53" selection-end-line="70" selection-end-column="53" />
+              <folding>
+                <marker date="1555553291395" expanded="true" signature="4980:6367" ph="..." />
+                <marker date="1555553291395" expanded="true" signature="5133:5442" ph="..." />
+                <marker date="1555553291395" expanded="true" signature="5146:5440" ph="..." />
+                <marker date="1555553291395" expanded="true" signature="5147:5439" ph="..." />
+                <marker date="1555553291395" expanded="true" signature="15906:16293" ph="..." />
+                <marker date="1555553291395" expanded="true" signature="15919:16291" ph="..." />
+                <marker date="1555553291395" expanded="true" signature="15920:16290" ph="..." />
+                <marker date="1555553291395" expanded="true" signature="15952:16061" ph="..." />
+                <marker date="1555553291395" expanded="true" signature="16093:16259" ph="..." />
+                <marker date="1555553291395" expanded="true" signature="16126:16201" ph="..." />
+                <marker date="1555553291395" expanded="true" signature="16585:16699" ph="..." />
+                <marker date="1555553291395" expanded="true" signature="16598:16697" ph="..." />
+                <marker date="1555553291395" expanded="true" signature="16599:16696" ph="..." />
+                <marker date="1555553291395" expanded="true" signature="16888:17090" ph="..." />
+                <marker date="1555553291395" expanded="true" signature="16901:17088" ph="..." />
+                <marker date="1555553291395" expanded="true" signature="16902:17087" ph="..." />
+                <marker date="1555553291395" expanded="true" signature="17393:18402" ph="..." />
+                <marker date="1555553291395" expanded="true" signature="17406:18400" ph="..." />
+                <marker date="1555553291395" expanded="true" signature="17407:18399" ph="..." />
+                <marker date="1555553291395" expanded="true" signature="17799:18059" ph="..." />
+                <marker date="1555553291395" expanded="true" signature="18089:18393" ph="..." />
+                <marker date="1555553291395" expanded="true" signature="18916:21202" ph="..." />
+                <marker date="1555553291395" expanded="true" signature="18916:31971" ph="..." />
+                <marker date="1555553291395" expanded="true" signature="18929:21200" ph="..." />
+                <marker date="1555553291395" expanded="true" signature="18930:21199" ph="..." />
+                <marker date="1555553291395" expanded="true" signature="20084:20498" ph="..." />
+                <marker date="1555553291395" expanded="true" signature="20159:20488" ph="..." />
+                <marker date="1555553291395" expanded="true" signature="20267:20474" ph="..." />
+                <marker date="1555553291395" expanded="true" signature="25565:26263" ph="..." />
+                <marker date="1555553291395" expanded="true" signature="25622:26229" ph="..." />
+                <marker date="1555553291395" expanded="true" signature="25827:26051" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery.yith-wcwl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/plugins/yith-wishlist/js/jquery.yith-wcwl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="221" column="67" lean-forward="false" selection-start-line="221" selection-start-column="12" selection-end-line="221" selection-end-column="67" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="theme.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/themes/js/theme.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="222">
+              <caret line="12568" column="41" lean-forward="true" selection-start-line="12568" selection-start-column="41" selection-end-line="12568" selection-end-column="41" />
+              <folding>
+                <marker date="1555550901694" expanded="true" signature="14235:14242" ph="×" />
+                <marker date="1555550901694" expanded="true" signature="73197:73238" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="448">
+              <caret line="38" column="70" lean-forward="true" selection-start-line="38" selection-start-column="70" selection-end-line="38" selection-end-column="85" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add-to-cart.min.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/plugins/cart/js/add-to-cart.min.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="205">
+              <caret line="41" column="56" lean-forward="false" selection-start-line="41" selection-start-column="56" selection-end-line="41" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add-to-cart.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/plugins/cart/js/add-to-cart.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="78" column="25" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="162" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -771,31 +183,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>data</find>
-      <find>&lt;body</find>
-      <find>footer</find>
-      <find>add-to-cart</find>
-      <find>'</find>
-      <find>add-to-cart-v</find>
-      <find>wc_cart_fragments_params</find>
-      <find>add_to</find>
-      <find>add_to_cart_v</find>
-      <find>wordpress/assets/js/frontend.js</find>
-      <find>analytics</find>
-      <find>152x152-precomposed.png</find>
-      <find>theme.min</find>
-      <find>basel_settings</find>
-      <find>body</find>
-      <find>scripts.js</find>
-      <find>pet</find>
-      <find>pret</find>
-      <find>headers</find>
-      <find>POST</find>
       <find>iso</find>
       <find>waypoints</find>
-      <find>js_composer</find>
       <find>img</find>
+      <find>js_composer</find>
+      <find>style</find>
+      <find>/style</find>
+      <find>.basel-compare-col .added_to_cart:hover</find>
+      <find>.basel-compare-col .added_to_cart:hover,</find>
       <find>url</find>
+      <find>.wishlist_table tr td.product-add-to-cart&gt;.add_to_cart.button:focus,</find>
+      <find>cant update cart widget</find>
+      <find>Não</find>
+      <find>X-CSRF-TOKEN</find>
+      <find>wishlist</find>
+      <find>number</find>
+      <find>basel_wishlist_number</find>
+      <find>_number</find>
+      <find>num</find>
+      <find>basel_settings.wishlist</find>
+      <find>basel_settings</find>
+      <find>wishlist_number</find>
+      <find>remove_from_cart</find>
+      <find>remove_from_car</find>
+      <find>remove_from_cart</find>
+      <find>add_to_cart</find>
+      <find>product_id</find>
+      <find>POS</find>
+      <find>wc_add_to_cart_params</find>
+      <find>product_sk</find>
+      <find>_from_</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;</replace>
@@ -807,24 +224,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/pakage.json" />
-        <option value="$PROJECT_DIR$/resources/views/categories/infinit_scrolling.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/footers/footer-1.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/headers/tops/top-1.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/headers/header-1.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/carts/mini-cart-1.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/carts/mini-cart-1-total.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/carts/mini-cart-qty-1.blade.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Web/CartController.php" />
-        <option value="$PROJECT_DIR$/public/plugins/cart/js/add-to-cart-variation.js" />
-        <option value="$PROJECT_DIR$/public/plugins/cart/js/add-to-cart-variation.min.js" />
         <option value="$PROJECT_DIR$/public/plugins/google/analytics.frontend.min.js" />
         <option value="$PROJECT_DIR$/public/plugins/google/analytics-frontend.js" />
         <option value="$PROJECT_DIR$/public/includes/js/jquery/jquery.js" />
         <option value="$PROJECT_DIR$/public/includes/js/jquery/jquery-migrate.min.js" />
-        <option value="$PROJECT_DIR$/public/plugins/cart/js/add-to-cart.min.js" />
         <option value="$PROJECT_DIR$/public/plugins/cart/js/add-to-cart.js" />
         <option value="$PROJECT_DIR$/public/plugins/cart/js/avd-add-to-cart.js" />
         <option value="$PROJECT_DIR$/public/themes/js/html5.js" />
@@ -832,7 +235,6 @@
         <option value="$PROJECT_DIR$/public/themes/css/categories.css" />
         <option value="$PROJECT_DIR$/public/themes/css/categories.min.css" />
         <option value="$PROJECT_DIR$/resources/views/teste.blade.php" />
-        <option value="$PROJECT_DIR$/public/themes/js/theme.min.js" />
         <option value="$PROJECT_DIR$/resources/views/google/analytics.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/google/analytics-1.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/categories/cetegory-1.blade.php" />
@@ -841,9 +243,7 @@
         <option value="$PROJECT_DIR$/public/plugins/js-cookie/js.cookie.min.js" />
         <option value="$PROJECT_DIR$/public/plugins/js-cookie/js.cookie.js" />
         <option value="$PROJECT_DIR$/public/plugins/frontend/avdesign.min.js" />
-        <option value="$PROJECT_DIR$/public/plugins/cart/js/cart-fragments.js" />
         <option value="$PROJECT_DIR$/public/plugins/yith-wishlist/js/jquery.selectBox.min.js" />
-        <option value="$PROJECT_DIR$/public/plugins/yith-wishlist/js/jquery.yith-wcwl.js" />
         <option value="$PROJECT_DIR$/public/plugins/yith-wishlist/js/jquery.yith-wcwl.min.js" />
         <option value="$PROJECT_DIR$/public/plugins/isotope/isotope.pkgd.js" />
         <option value="$PROJECT_DIR$/public/plugins/isotope/isotope.pkgd.min.js" />
@@ -852,7 +252,29 @@
         <option value="$PROJECT_DIR$/public/plugins/js_composer/css/js_composer.min.css" />
         <option value="$PROJECT_DIR$/public/plugins/js_composer/lib/bower/font-awesome/css/font-awesome.min.css" />
         <option value="$PROJECT_DIR$/public/plugins/js_composer/css/vc_lte_ie9.min.css" />
+        <option value="$PROJECT_DIR$/public/plugins/prettyPhoto/css/prettyPhoto.css" />
+        <option value="$PROJECT_DIR$/public/plugins/yith-wishlist/css/jquery.selectBox.css" />
+        <option value="$PROJECT_DIR$/public/plugins/yith-wishlist/css/style.css" />
+        <option value="$PROJECT_DIR$/public/plugins/mailchimp/css/form-basic.min.css" />
+        <option value="$PROJECT_DIR$/public/themes/css/style.css" />
+        <option value="$PROJECT_DIR$/public/plugins/bootstrap/css/bootstrap.min.css" />
+        <option value="$PROJECT_DIR$/public/themes/css/theme.css" />
+        <option value="$PROJECT_DIR$/public/themes/css/theme.min.css" />
+        <option value="$PROJECT_DIR$/public/plugins/font-awesome/css/font-awesome.min.css" />
+        <option value="$PROJECT_DIR$/public/themes/js/theme.min.js" />
+        <option value="$PROJECT_DIR$/public/plugins/cart/js/cart-fragments.min.js" />
+        <option value="$PROJECT_DIR$/public/plugins/cart/js/cart-fragments.js" />
+        <option value="$PROJECT_DIR$/resources/views/carts/mini-cart-qty-1.blade.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/app/Helpers/avdHerper.php" />
+        <option value="$PROJECT_DIR$/resources/views/carts/mini-cart-total-1.blade.php" />
+        <option value="$PROJECT_DIR$/public/plugins/yith-wishlist/js/jquery.yith-wcwl.js" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Web/WishlistController.php" />
+        <option value="$PROJECT_DIR$/public/themes/js/theme.js" />
         <option value="$PROJECT_DIR$/resources/views/layouts/template-1.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Web/CartController.php" />
+        <option value="$PROJECT_DIR$/public/plugins/cart/js/add-to-cart.min.js" />
       </list>
     </option>
   </component>
@@ -887,7 +309,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -910,6 +332,96 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="routes" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque-calcados" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque-calcados" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque-calcados" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque-calcados" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque-calcados" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque-calcados" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="carts" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque-calcados" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque-calcados" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque-calcados" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque-calcados" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="public" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -928,69 +440,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque-calcados" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque-calcados" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js_composer" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque-calcados" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque-calcados" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js_composer" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque-calcados" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque-calcados" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
+              <option name="myItemId" value="themes" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -1012,8 +462,190 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="themes" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque-calcados" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque-calcados" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugins" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yith-wishlist" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque-calcados" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque-calcados" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugins" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yith-wishlist" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque-calcados" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque-calcados" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugins" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque-calcados" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque-calcados" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugins" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cart" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cart-fragments.js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NestingTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque-calcados" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque-calcados" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugins" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cart" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque-calcados" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque-calcados" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugins" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cart" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="add-to-cart-variation.js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NestingTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque-calcados" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque-calcados" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugins" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cart" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="add-to-cart.js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NestingTreeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -1098,7 +730,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1109,17 +741,18 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/plugins/font-awesome/css" />
       <recent name="$PROJECT_DIR$/public/themes/images/icons" />
       <recent name="$PROJECT_DIR$/public/includes/js/jquery" />
       <recent name="$PROJECT_DIR$/public/includes/js" />
       <recent name="$PROJECT_DIR$/public/plugins/cart/js" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/public/themes/css" />
+      <recent name="$PROJECT_DIR$/public/plugins" />
       <recent name="$PROJECT_DIR$/public/plugins/js_composer" />
       <recent name="$PROJECT_DIR$/public/plugins/js_composer/css" />
-      <recent name="$PROJECT_DIR$/public/plugins/js_composer/js" />
-      <recent name="$PROJECT_DIR$/public/plugins" />
-      <recent name="$PROJECT_DIR$/public/plugins/isotope" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1216,12 +849,13 @@
       <workItem from="1555457988034" duration="6070000" />
       <workItem from="1555465471908" duration="1606000" />
       <workItem from="1555468146917" duration="10434000" />
-      <workItem from="1555480109338" duration="24759000" />
+      <workItem from="1555480109338" duration="38612000" />
+      <workItem from="1555544086521" duration="11630000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42869000" />
+    <option name="totallyTimeSpent" value="68352000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1236,15 +870,14 @@
     <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39681274" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.00876494" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="1.0" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1252,6 +885,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -1259,12 +893,12 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26454183" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32988048" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1281,252 +915,16 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="29" column="53" lean-forward="false" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Web/CartController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-825">
-          <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding>
-            <element signature="e#44#72#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/plugins/google/analytics-frontend.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="22" lean-forward="true" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/plugins/google/analytics-frontend.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/plugins/cart/js/add-to-cart-variation.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="12752" lean-forward="false" selection-start-line="0" selection-start-column="12752" selection-end-line="0" selection-end-column="12752" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/plugins/cart/js/add-to-cart-variation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/includes/js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/includes/js/jquery/jquery.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="20" lean-forward="false" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/includes/js/jquery/jquery-migrate.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="9959" lean-forward="false" selection-start-line="1" selection-start-column="9959" selection-end-line="1" selection-end-column="9959" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/includes/js/jquery/jquery.blockUI.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/plugins/jquery-blockui/jquery.blockUI.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/plugins/cart/js/add-to-cart.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="2558" lean-forward="true" selection-start-line="0" selection-start-column="2558" selection-end-line="0" selection-end-column="2558" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/plugins/cart/js/add-to-cart.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-648">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/themes/js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/themes/js/html5.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/themes/images/icons/favicon.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/themes/js/device.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="3061" lean-forward="false" selection-start-line="0" selection-start-column="3061" selection-end-line="0" selection-end-column="3061" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/woocommerce-3.5.2/i18n/states/BR.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-108">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/woocommerce-3.5.2/templates/cart/cart-totals.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/themes/css/categories.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="9290" lean-forward="false" selection-start-line="0" selection-start-column="9290" selection-end-line="0" selection-end-column="9290" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/themes/css/categories.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10440">
-          <caret line="583" column="0" lean-forward="false" selection-start-line="583" selection-start-column="0" selection-end-line="583" selection-end-column="0" />
-          <folding>
-            <element signature="e#111#158#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/teste.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
-          <folding>
-            <element signature="e#95#4842#0#HTML" expanded="false" />
-            <element signature="e#137#1496#0#HTML" expanded="false" />
-            <element signature="e#1532#1577#0#HTML" expanded="false" />
-            <element signature="e#1645#2354#0#HTML" expanded="false" />
-            <element signature="e#2549#4780#0#HTML" expanded="false" />
-            <element signature="e#2601#3026#0#HTML" expanded="false" />
-            <element signature="e#3081#3543#0#HTML" expanded="false" />
-            <element signature="e#3622#4016#0#HTML" expanded="false" />
-            <element signature="e#4077#4766#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/themes/js/theme.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="13556" lean-forward="false" selection-start-line="16" selection-start-column="13556" selection-end-line="16" selection-end-column="13556" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/google/analytics-1.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="87" lean-forward="false" selection-start-line="1" selection-start-column="55" selection-end-line="1" selection-end-column="87" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/categories/cetegory-1.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="14" lean-forward="true" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/plugins/contact-form-7/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="48" column="19" lean-forward="true" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1554,7 +952,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1038">
           <caret line="532" column="6" lean-forward="false" selection-start-line="532" selection-start-column="6" selection-end-line="532" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1562,7 +959,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1570,33 +966,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="1402" lean-forward="false" selection-start-line="0" selection-start-column="1402" selection-end-line="0" selection-end-column="1402" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/plugins/cart/js/avd-add-to-cart.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/plugins/cart/js/cart-fragments.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/plugins/cart/js/cart-fragments.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="163" column="3" lean-forward="false" selection-start-line="163" selection-start-column="3" selection-end-line="163" selection-end-column="3" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1604,23 +973,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="19" column="193" lean-forward="false" selection-start-line="19" selection-start-column="192" selection-end-line="19" selection-end-column="193" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/plugins/yith-wishlist/js/jquery.selectBox.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/plugins/yith-wishlist/js/jquery.yith-wcwl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="221" column="69" lean-forward="true" selection-start-line="221" selection-start-column="12" selection-end-line="221" selection-end-column="69" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1628,7 +980,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1440">
           <caret line="7" column="32" lean-forward="true" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1646,7 +997,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="26" lean-forward="true" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1654,7 +1004,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="523">
           <caret line="0" column="19706" lean-forward="false" selection-start-line="0" selection-start-column="19706" selection-end-line="0" selection-end-column="19706" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1662,7 +1011,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-72">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1670,18 +1018,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/plugins/js_composer/js_composer.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/plugins/js_composer/js_composer.min.css" />
     <entry file="file://$PROJECT_DIR$/public/plugins/js_composer/lib/bower/masonry/dist/masonry.pkgd.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1696,30 +1036,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-486">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/template-1.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/plugins/js_composer/css/js_composer.min.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="533" column="38" lean-forward="true" selection-start-line="533" selection-start-column="38" selection-end-line="533" selection-end-column="38" />
-          <folding>
-            <element signature="e#7070#11796#0#HTML" expanded="false" />
-            <element signature="e#7112#8471#0#HTML" expanded="false" />
-            <element signature="e#8507#8552#0#HTML" expanded="false" />
-            <element signature="e#8620#9329#0#HTML" expanded="false" />
-            <element signature="e#9524#11755#0#HTML" expanded="false" />
-            <element signature="e#9576#10001#0#HTML" expanded="false" />
-            <element signature="e#10056#10518#0#HTML" expanded="false" />
-            <element signature="e#10597#10991#0#HTML" expanded="false" />
-            <element signature="e#11052#11741#0#HTML" expanded="false" />
-            <marker date="1555526755574" expanded="true" signature="5315:6630" ph="..." />
-            <marker date="1555526755574" expanded="true" signature="5468:5705" ph="..." />
-            <marker date="1555526755574" expanded="true" signature="5481:5703" ph="..." />
-            <marker date="1555526755574" expanded="true" signature="5482:5702" ph="..." />
-            <marker date="1555526755574" expanded="true" signature="6008:6630" ph="..." />
-          </folding>
+        <state relative-caret-position="159">
+          <caret line="0" column="23568" lean-forward="true" selection-start-line="0" selection-start-column="23568" selection-end-line="0" selection-end-column="23568" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1727,14 +1051,297 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="215" lean-forward="false" selection-start-line="0" selection-start-column="215" selection-end-line="0" selection-end-column="215" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/plugins/prettyPhoto/css/prettyPhoto.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="9152" lean-forward="false" selection-start-line="0" selection-start-column="9152" selection-end-line="0" selection-end-column="9152" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/plugins/prettyPhoto/js/prettyPhoto.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/plugins/yith-wishlist/css/jquery.selectBox.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="48" column="11" lean-forward="true" selection-start-line="48" selection-start-column="11" selection-end-line="48" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/plugins/yith-wishlist/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/plugins/mailchimp/css/form-basic.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="981" lean-forward="true" selection-start-line="0" selection-start-column="981" selection-end-line="0" selection-end-column="981" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/themes/css/theme.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="770" column="30" lean-forward="false" selection-start-line="770" selection-start-column="30" selection-end-line="770" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/themes/css/theme.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="34278" lean-forward="false" selection-start-line="0" selection-start-column="34278" selection-end-line="0" selection-end-column="34278" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/themes/css/style.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="0" column="636" lean-forward="false" selection-start-line="0" selection-start-column="636" selection-end-line="0" selection-end-column="636" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/themes/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="28" lean-forward="false" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+          <folding>
+            <element signature="e#122732#124359#2" expanded="false" />
+            <element signature="e#726019#727382#2" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/plugins/bootstrap/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/plugins/font-awesome/fonts/fontawesome-webfont.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-378">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/plugins/font-awesome/css/font-awesome.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="17" lean-forward="true" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/plugins/js_composer/css/js_composer.min.css">
+    <entry file="file://$PROJECT_DIR$/public/themes/js/theme.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="0" column="24185" lean-forward="false" selection-start-line="0" selection-start-column="24182" selection-end-line="0" selection-end-column="24185" />
+        <state relative-caret-position="270">
+          <caret line="15" column="20226" lean-forward="false" selection-start-line="15" selection-start-column="20226" selection-end-line="15" selection-end-column="20226" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/carts/mini-cart-qty-1.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="42" lean-forward="false" selection-start-line="0" selection-start-column="42" selection-end-line="0" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Helpers/avdFilesHerper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Helpers/avdHerper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="10" column="15" lean-forward="false" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/carts/mini-cart-list-1.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="35" lean-forward="false" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="40" column="10" lean-forward="false" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/carts/mini-cart-total-1.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="7" lean-forward="true" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/plugins/yith-wishlist/js/jquery.selectBox.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/plugins/cart/js/add-to-cart-variation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="19" lean-forward="true" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/plugins/cart/js/cart-fragments.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="77" column="59" lean-forward="false" selection-start-line="77" selection-start-column="53" selection-end-line="77" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/plugins/cart/js/avd-add-to-cart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/plugins/cart/js/cart-fragments.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="77" column="59" lean-forward="false" selection-start-line="77" selection-start-column="53" selection-end-line="77" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/plugins/cart/js/add-to-cart-variation.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Web/WishlistController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1203">
+          <caret line="26" column="37" lean-forward="false" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Web/CartController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="28" column="18" lean-forward="true" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="38" column="70" lean-forward="true" selection-start-line="38" selection-start-column="70" selection-end-line="38" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/plugins/cart/js/add-to-cart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="78" column="25" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="162" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/themes/js/theme.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="12568" column="41" lean-forward="true" selection-start-line="12568" selection-start-column="41" selection-end-line="12568" selection-end-column="41" />
+          <folding>
+            <marker date="1555550901694" expanded="true" signature="14235:14242" ph="×" />
+            <marker date="1555550901694" expanded="true" signature="73197:73238" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/template-1.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="70" column="53" lean-forward="true" selection-start-line="70" selection-start-column="53" selection-end-line="70" selection-end-column="53" />
+          <folding>
+            <marker date="1555553291395" expanded="true" signature="4980:6367" ph="..." />
+            <marker date="1555553291395" expanded="true" signature="5133:5442" ph="..." />
+            <marker date="1555553291395" expanded="true" signature="5146:5440" ph="..." />
+            <marker date="1555553291395" expanded="true" signature="5147:5439" ph="..." />
+            <marker date="1555553291395" expanded="true" signature="15906:16293" ph="..." />
+            <marker date="1555553291395" expanded="true" signature="15919:16291" ph="..." />
+            <marker date="1555553291395" expanded="true" signature="15920:16290" ph="..." />
+            <marker date="1555553291395" expanded="true" signature="15952:16061" ph="..." />
+            <marker date="1555553291395" expanded="true" signature="16093:16259" ph="..." />
+            <marker date="1555553291395" expanded="true" signature="16126:16201" ph="..." />
+            <marker date="1555553291395" expanded="true" signature="16585:16699" ph="..." />
+            <marker date="1555553291395" expanded="true" signature="16598:16697" ph="..." />
+            <marker date="1555553291395" expanded="true" signature="16599:16696" ph="..." />
+            <marker date="1555553291395" expanded="true" signature="16888:17090" ph="..." />
+            <marker date="1555553291395" expanded="true" signature="16901:17088" ph="..." />
+            <marker date="1555553291395" expanded="true" signature="16902:17087" ph="..." />
+            <marker date="1555553291395" expanded="true" signature="17393:18402" ph="..." />
+            <marker date="1555553291395" expanded="true" signature="17406:18400" ph="..." />
+            <marker date="1555553291395" expanded="true" signature="17407:18399" ph="..." />
+            <marker date="1555553291395" expanded="true" signature="17799:18059" ph="..." />
+            <marker date="1555553291395" expanded="true" signature="18089:18393" ph="..." />
+            <marker date="1555553291395" expanded="true" signature="18916:21202" ph="..." />
+            <marker date="1555553291395" expanded="true" signature="18916:31971" ph="..." />
+            <marker date="1555553291395" expanded="true" signature="18929:21200" ph="..." />
+            <marker date="1555553291395" expanded="true" signature="18930:21199" ph="..." />
+            <marker date="1555553291395" expanded="true" signature="20084:20498" ph="..." />
+            <marker date="1555553291395" expanded="true" signature="20159:20488" ph="..." />
+            <marker date="1555553291395" expanded="true" signature="20267:20474" ph="..." />
+            <marker date="1555553291395" expanded="true" signature="25565:26263" ph="..." />
+            <marker date="1555553291395" expanded="true" signature="25622:26229" ph="..." />
+            <marker date="1555553291395" expanded="true" signature="25827:26051" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/plugins/yith-wishlist/js/jquery.yith-wcwl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="221" column="67" lean-forward="false" selection-start-line="221" selection-start-column="12" selection-end-line="221" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/plugins/cart/js/add-to-cart.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="41" column="56" lean-forward="false" selection-start-line="41" selection-start-column="56" selection-end-line="41" selection-end-column="56" />
           <folding />
         </state>
       </provider>

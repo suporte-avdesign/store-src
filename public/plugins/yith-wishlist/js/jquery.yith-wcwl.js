@@ -219,7 +219,7 @@ jQuery( document ).ready( function( $ ){
         $.ajax({
             type: 'POST',
             url: yith_wcwl_l10n.ajax_url,
-            headers: { 'X-CSRF-TOKEN': wc_add_to_cart_params.token },
+            headers: { 'X-CSRF-TOKEN': yith_wcwl_l10n.csrf_token },
             data: data,
             dataType: 'json',
             beforeSend: function(){
@@ -376,7 +376,7 @@ jQuery( document ).ready( function( $ ){
         $.ajax({
             type: 'POST',
             url: yith_wcwl_l10n.ajax_url,
-            headers: { 'X-CSRF-TOKEN': wc_add_to_cart_params.token },
+            headers: { 'X-CSRF-TOKEN': yith_wcwl_l10n.csrf_token },
             data: data,
             dataType    : 'html',
             beforeSend: function(){
@@ -595,3 +595,6 @@ jQuery( document ).ready( function( $ ){
         return s;
     }
 });
+
+
+

@@ -28,3 +28,12 @@ Route::post('cart/add/product', 'Web\CartController@addProduct')->name('cart.add
 Route::post('cart/update', 'Web\CartController@update')->name('cart.update');
 Route::post('cart/remove', 'Web\CartController@destroy')->name('cart.remove');
 Route::get('cart/undo/{id}', 'Web\CartController@undo')->name('cart.undo');
+
+
+/*
+|--------------------------------------------------------------------------
+| Routes Wishlist
+|--------------------------------------------------------------------------
+*/
+Route::post('wishlist/store', 'Web\WishlistController@store')->name('wishlist.store');
+Route::get('wishlist/create', 'Web\WishlistController@create')->name('wishlist.create');

@@ -1,1 +1,1 @@
-<span class="basel-cart-number">1</span>
+<span class="basel-cart-number">{{$qty}}</span>
