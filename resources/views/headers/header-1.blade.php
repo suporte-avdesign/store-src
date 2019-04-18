@@ -1,8 +1,8 @@
 <div class="mobile-nav">
-    <form role="search" method="get" id="searchform" class="searchform  basel-ajax-search" action="https://demo.xtemos.com/basel/" data-thumbnail="1" data-price="1" data-count="5" data-post_type="product">
+    <form role="search" method="get" id="searchform" class="searchform  basel-ajax-search" action="{{route('product.search')}}/" data-thumbnail="1" data-price="1" data-count="5" data-post_type="product">
         <div>
             <label class="screen-reader-text">Buscar produtos:</label>
-            <input type="text" class="search-field" placeholder="Search for products" value="" name="s" id="s" />
+            <input type="text" class="search-field" placeholder="Buscar produtos" value="" name="s" id="s" />
             <input type="hidden" name="post_type" id="post_type" value="product">
             <button type="submit" id="searchsubmit" value="Search">Busca</button>
 
@@ -15,98 +15,108 @@
     </div>
     <div class="menu-mobile-nav-container">
         <ul id="menu-mobile-nav" class="site-mobile-menu">
-            <li id="menu-item-21215" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-has-children menu-item-21215 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/">Home</a>
+            <li id="menu-item-21215" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-21215 menu-item-design-default item-event-hover">
+                <a href="#">Home</a>
+            </li>
+
+            <li id="menu-item-21220" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children current-menu-item current_page_item menu-item-21220 menu-item-design-default item-event-hover">
+                <a href="#">Feminino</a>
                 <div class="sub-menu-dropdown color-scheme-dark">
-
                     <div class="container">
-
                         <ul class="sub-menu color-scheme-dark">
-                            <li id="menu-item-26137" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26137 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/home-agency/">Agency</a></li>
-                            <li id="menu-item-28476" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28476 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/home-bakery/">Bakery</a></li>
-                            <li id="menu-item-22138" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-22138 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/">Base</a></li>
-                            <li id="menu-item-28121" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28121 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/home-beer/">Beer</a></li>
-                            <li id="menu-item-23974" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23974 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/home-bicycle/">Bicycle</a></li>
-                            <li id="menu-item-27040" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27040 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/home-cars/">Cars</a></li>
-                            <li id="menu-item-24803" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24803 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/home-coffee/">Coffee</a></li>
-                            <li id="menu-item-27266" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27266 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/home-construction/">Сonstruction</a></li>
-                            <li id="menu-item-26138" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26138 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/home-corporate/">Corporate</a></li>
-                            <li id="menu-item-23929" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23929 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/home-cosmetics/">Сosmetics</a></li>
-                            <li id="menu-item-25989" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25989 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/home-dark/">Dark</a></li>
-                            <li id="menu-item-23596" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23596 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/home-electronics/">Electronics</a></li>
-                            <li id="menu-item-28968" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-28968 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/home-fashion-new/">Fashion 4.0</a></li>
-                            <li id="menu-item-22886" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22886 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/home-fashion/">Fashion</a></li>
-                            <li id="menu-item-23822" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23822 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/home-fashion-flat/">Fashion flat</a></li>
-                            <li id="menu-item-24260" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24260 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/home-flat-full-width/">Flat full-width</a></li>
-                            <li id="menu-item-22137" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22137 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/home-flowers/">Flowers</a></li>
-                            <li id="menu-item-25559" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25559 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/home-food/">Food</a></li>
-                            <li id="menu-item-22887" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22887 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/furniture/">Furniture</a></li>
-                            <li id="menu-item-27650" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27650 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/home-games/">Games</a></li>
-                            <li id="menu-item-22142" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22142 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/hero-slider/">Hero slider</a></li>
-                            <li id="menu-item-27825" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27825 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/home-hookahs/">Hookahs</a></li>
-                            <li id="menu-item-23418" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23418 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/home-jewellery/">Jewellery</a></li>
-                            <li id="menu-item-24153" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24153 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/home-landing/">Landing</a></li>
-                            <li id="menu-item-28659" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-28659 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/home-lighting/">Lighting</a></li>
-                            <li id="menu-item-23322" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23322 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/home-lingerie/">Lingerie</a></li>
-                            <li id="menu-item-25357" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25357 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/home-marketplace/">Marketplace</a></li>
-                            <li id="menu-item-28303" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28303 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/home-medical/">Medical</a></li>
-                            <li id="menu-item-23213" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23213 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/home-minimalist/">Minimalist</a></li>
-                            <li id="menu-item-25065" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25065 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/home-organic/">Organic</a></li>
-                            <li id="menu-item-25064" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25064 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/home-parallax/">Parallax</a></li>
-                            <li id="menu-item-27649" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27649 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/home-pets/">Pets</a></li>
-                            <li id="menu-item-25356" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25356 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/home-portfolio/">Portfolio</a></li>
-                            <li id="menu-item-27648" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27648 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/home-posters/">Posters</a></li>
-                            <li id="menu-item-25561" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25561 menu-item-design-default item-event-hover"><a href="http://demo.xtemos.com/basel/?rtl">RTL Ready</a></li>
-                            <li id="menu-item-25988" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25988 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/home-shoes/">Shoes</a></li>
-                            <li id="menu-item-24154" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24154 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/home-sport/">Sport</a></li>
-                            <li id="menu-item-27973" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27973 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/home-sushi/">Sushi</a></li>
-                            <li id="menu-item-22141" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22141 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/watch-demo/">Watches</a></li>
-                            <li id="menu-item-23930" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23930 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/home-wine/">Wine</a></li>
+                            <li id="menu-item-22144" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item menu-item-22144 menu-item-design-default item-event-hover">
+                                <a href="#">Categoria 1</a>
+                            </li>
+                            <li id="menu-item-22147" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-22147 menu-item-design-default item-event-hover">
+                                <a href="#">Cetegoria 2</a>
+                            </li>
+                            <li id="menu-item-22145" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22145 menu-item-design-default item-event-hover">
+                                <a href="#">Categoria 3</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </li>
-            <li id="menu-item-21220" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children current-menu-item current_page_item menu-item-21220 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/shop/">Shop</a>
+
+            <li id="menu-item-12120" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children current-menu-item current_page_item menu-item-12120 menu-item-design-default item-event-hover">
+                <a href="#">Masculino</a>
                 <div class="sub-menu-dropdown color-scheme-dark">
-
                     <div class="container">
-
                         <ul class="sub-menu color-scheme-dark">
-                            <li id="menu-item-22144" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item menu-item-22144 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/shop/">Shop</a></li>
-                            <li id="menu-item-22147" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-22147 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/shop/accessories/london-ampersand-cushion/">Single product</a></li>
-                            <li id="menu-item-22145" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22145 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/checkout/">Checkout</a></li>
+                            <li id="menu-item-12144" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item menu-item-12144 menu-item-design-default item-event-hover">
+                                <a href="#">Categoria 1</a>
+                            </li>
+                            <li id="menu-item-12147" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-12147 menu-item-design-default item-event-hover">
+                                <a href="#">Cetegoria 2</a>
+                            </li>
+                            <li id="menu-item-12145" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12145 menu-item-design-default item-event-hover">
+                                <a href="#">Categoria 3</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </li>
-            <li id="menu-item-21216" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21216 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/blog/">Blog</a></li>
-            <li id="menu-item-22157" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22157 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/portfolio/">Portfolio</a></li>
-            <li id="menu-item-27318" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-27318 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/faqs/">Pages</a>
+
+            <li id="menu-item-46460" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children current-menu-item current_page_item menu-item-46460 menu-item-design-default item-event-hover">
+                <a href="#">Infantil</a>
                 <div class="sub-menu-dropdown color-scheme-dark">
-
                     <div class="container">
-
                         <ul class="sub-menu color-scheme-dark">
-                            <li id="menu-item-22149" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22149 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/contact-us-2/">Contact Us</a></li>
-                            <li id="menu-item-22150" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22150 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/contact-us-3/">Contact Us 2</a></li>
-                            <li id="menu-item-22151" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22151 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/faqs/">FaQs</a></li>
-                            <li id="menu-item-22152" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22152 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/our-company/">Our Company</a></li>
-                            <li id="menu-item-22154" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22154 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/our-services/">Our Services</a></li>
-                            <li id="menu-item-27153" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27153 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/our-shop/">Our shop</a></li>
-                            <li id="menu-item-22156" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22156 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/team-member/">Team Member</a></li>
-                            <li id="menu-item-22153" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22153 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/our-gallery/">Our Gallery</a></li>
+                            <li id="menu-item-46144" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item menu-item-46144 menu-item-design-default item-event-hover">
+                                <a href="#">Categoria 1</a>
+                            </li>
+                            <li id="menu-item-46147" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-46147 menu-item-design-default item-event-hover">
+                                <a href="#">Cetegoria 2</a>
+                            </li>
+                            <li id="menu-item-46145" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46145 menu-item-design-default item-event-hover">
+                                <a href="#">Categoria 3</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </li>
-            <li id="menu-item-21217" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21217 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/cart/">Cart</a></li>
-            <li id="menu-item-22146" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22146 menu-item-design-default item-event-hover"><a href="https://demo.xtemos.com/basel/my-account/">My Account</a></li>
+
+
+            <li id="menu-item-27318" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-27318 menu-item-design-default item-event-hover">
+                <a href="#">Minha Conta</a>
+                <div class="sub-menu-dropdown color-scheme-dark">
+                    <div class="container">
+                        <ul class="sub-menu color-scheme-dark">
+                            <li id="menu-item-22149" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22149 menu-item-design-default item-event-hover">
+                                <a href="#">Logar</a>
+                            </li>
+                            <li id="menu-item-22150" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22150 menu-item-design-default item-event-hover">
+                                <a href="#">Meus Pedidos</a>
+                            </li>
+                            <li id="menu-item-22152" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22152 menu-item-design-default item-event-hover">
+                                <a href="#">Lista de Desejo</a>
+                            </li>
+                            <li id="menu-item-22154" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22154 menu-item-design-default item-event-hover">
+                                <a href="#">Alterar Senha</a>
+                            </li>
+                            <li id="menu-item-27153" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27153 menu-item-design-default item-event-hover">
+                                <a href="#">Alterar Dados</a>
+                            </li>
+                            <li id="menu-item-22151" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22151 menu-item-design-default item-event-hover">
+                                <a href="#">Endereço de Entrega</a>
+                            </li>
+                            <li id="menu-item-22156" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22156 menu-item-design-default item-event-hover">
+                                <a href="#">Sair da Conta</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li id="menu-item-21217" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21217 menu-item-design-default item-event-hover">
+                <a href="https://demo.xtemos.com/basel/cart/">Carrinho</a>
+            </li>
         </ul>
     </div>
     <div class="header-links my-account-with-text">
         <ul>
-            <li class="wishlist"><a href="https://demo.xtemos.com/basel/wishlist/">Wishlist</a></li>
-            <li class="my-account"><a href="https://demo.xtemos.com/basel/my-account/">My Account</a></li>
-            <li class="logout"><a href="https://demo.xtemos.com/basel/my-account/customer-logout/?_wpnonce=5239b18137">Logout</a></li>
+            <li class="wishlist"><a href="#">Contato</a></li>
+            <li class="my-account"><a href="#">Cadastre-se</a></li>
+            <li class="logout"><a href="#">FAQ</a></li>
         </ul>
     </div>
 </div>

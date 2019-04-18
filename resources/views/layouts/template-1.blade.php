@@ -9,8 +9,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="profile" href="http://gmpg.org/xfn/11">
-    <link rel="pingback" href="https://demo.xtemos.com/basel/xmlrpc.php">
     <script>document.documentElement.className = document.documentElement.className + ' yes-js js_active js'</script>
 
     @stack('title')
@@ -20,9 +18,6 @@
     </style>
 
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-    <link rel="alternate" type="application/rss+xml" title="Basel &raquo; Feed" href="https://demo.xtemos.com/basel/feed/" />
-    <link rel="alternate" type="application/rss+xml" title="Basel &raquo; Comments Feed" href="https://demo.xtemos.com/basel/comments/feed/" />
-    <link rel="alternate" type="application/rss+xml" title="Basel &raquo; Products Feed" href="https://demo.xtemos.com/basel/shop/feed/" />
     @include('google.analytics-1')
     <!-- / Google Analytics by MonsterInsights -->
     <link rel="stylesheet" id="contact-form-7"  href="{{asset('plugins/contact-form-7/css/styles.css')}}?ver=5.0.5" type="text/css" media="all" />
@@ -54,7 +49,7 @@
         </div>
     </script>
     <script type="text/template" id="tmpl-unavailable-variation-template">
-        <p>Sorry, this product is unavailable. Please choose a different combination.</p>
+        <p>Desculpe, este produto não está disponível. Por favor, escolha uma combinação diferente.</p>
     </script>
     <script type="text/javascript">
         /* <![CDATA[ */
@@ -84,14 +79,6 @@
     <![endif]-->
     <script type="text/javascript" src="{{asset('themes/js/device.min.js')}}?ver=4.4.2"></script>
 
-
-
-
-    <link rel="https://api.w.org/" href="https://demo.xtemos.com/basel/wp-json/" />
-    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://demo.xtemos.com/basel/xmlrpc.php?rsd" />
-    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://demo.xtemos.com/basel/wp-includes/wlwmanifest.xml" />
-    <meta name="generator" content="WordPress 4.9.8" />
-    <meta name="generator" content="WooCommerce 3.5.2" />
 
     <link rel="shortcut icon" href="{{asset('themes/images/icons/favicon.png')}}">
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{asset('themes/images/icons/apple-touch-icon-152x152-precomposed.png')}}">
@@ -235,32 +222,25 @@
         });
     </script>
 
-    <noscript>
-        <style>.woocommerce-product-gallery{ opacity: 1 !important; }</style>
-    </noscript>
+    <noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+
     <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
     <meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress."/>
     <!--[if lte IE 9]>
      <link rel="stylesheet" type="text/css" href="{{asset('plugins/js_composer/css/vc_lte_ie9.min.css')}}" media="screen">
     <![endif]-->
 
-
-    <style type="text/css" title="dynamic-css" class="options-output">
-    </style>
-    <noscript>
-        <style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style>
-    </noscript>
+    <noscript><style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript>
 </head>
 @stack('body')
 
 <div class="website-wrapper">
 
-@include('headers.header-1')
+    @include('headers.header-1')
 
-@yield('content')
+    @yield('content')
 
-@include('footers.footer-1')
-<!-- FOOTER -->
+    @include('footers.footer-1')
 
 </div>
 <!-- end wrapper -->
@@ -390,24 +370,24 @@
 <script type="text/javascript" src="{{asset('plugins/js_composer/js/js_composer_front.min.js')}}?ver=5.6"></script>
 <script type="text/javascript">
     var basel_settings = {!! json_encode([
-        "adding_to_cart" => "Processing",
-        "added_to_cart" => "Product was successfully added to your cart.",
-        "continue_shopping" => "Continue shopping",
-        "view_cart" => "View Cart",
-        "go_to_checkout" => "Checkout",
-        "countdown_days" => "days",
-        "countdown_hours" => "hr",
-        "countdown_mins" => "min",
-        "countdown_sec" => "sc",
-        "loading" => "Loading...",
-        "close" => "Close (Esc)",
-        "share_fb" => "Share on Facebook",
+        "adding_to_cart" => "Carregando",
+        "added_to_cart" => "O produto foi adicionado com sucesso ao seu carrinho.",
+        "continue_shopping" => "Continue comprando",
+        "view_cart" => "Ver Carrinho",
+        "go_to_checkout" => "Finalizar",
+        "countdown_days" => "dias",
+        "countdown_hours" => "h",
+        "countdown_mins" => "m",
+        "countdown_sec" => "s",
+        "loading" => "Carregando...",
+        "close" => "Fechar (Esc)",
+        "share_fb" => "Compartilhe no Facebook",
         "pin_it" => "Pin it",
         "tweet" => "Tweet",
-        "download_image" => "Download image",
+        "download_image" => "Download da Imagem",
         "wishlist" => "yes",
         "cart_url" => "https:\/\/demo.xtemos.com\/basel\/cart\/",
-        "ajaxurl" => route('wishlist.create'),
+        "ajaxurl" => route('product.search'),
         "add_to_cart_action" => "widget",
         "categories_toggle" => "yes",
         "enable_popup" => "yes",
@@ -417,7 +397,7 @@
         "popup_pages" => "0",
         "promo_popup_hide_mobile" => "yes",
         "product_images_captions" => "no",
-        "all_results" => "View all results",
+        "all_results" => "Ver todos os resultados",
         "product_gallery" => array(
             "images_slider" => true,
             "thumbs_slider" => array(
@@ -453,197 +433,39 @@
         "one_page_menu_offset" => "150"
     ]) !!};
     var basel_variation_gallery_data=null;
-
-
-
 </script>
 
 <script type="text/javascript" src="{{asset('themes/js/theme.min.js')}}?ver=4.4.2">
 </script>
 
-<script type="text/javascript" src="https://demo.xtemos.com/basel/wp-includes/js/underscore.min.js?ver=1.8.3"></script>
-<script type="text/javascript">
-    var _wpUtilSettings= {
-        "ajax": {
-            "url": "\/basel\/wp-admin\/admin-ajax.php"
-        }
-    };
+<script type="text/javascript" src="{{asset('includes/underscore/js/underscore.min.js')}}?ver=1.8.3"></script>
+<script type='text/javascript'>
+    var _wpUtilSettings = {!! json_encode([
+        "ajax" => array(
+            "url" => "/underscore"
+        )
+    ]) !!};
 </script>
 
-<script type="text/javascript" src="https://demo.xtemos.com/basel/wp-includes/js/wp-util.min.js?ver=4.9.8"></script>
-<script type="text/javascript">
-    var wc_add_to_cart_variation_params= {
-        "wc_ajax_url": "\/basel\/?wc-ajax=%%endpoint%%",
-        "i18n_no_matching_variations_text": "Sorry, no products matched your selection. Please choose a different combination.",
-        "i18n_make_a_selection_text": "Please select some product options before adding this product to your cart.",
-        "i18n_unavailable_text": "Sorry, this product is unavailable. Please choose a different combination."
-    };
+<script type="text/javascript" src="{{asset('includes/util/avd-util.min.js')}}?ver=4.9.8"></script>
+<script type='text/javascript'>
+    var wc_add_to_cart_variation_params = {!! json_encode([
+        "wc_ajax_url" => "remover/item/?removed_item=1&wc-ajax=%%endpoint%%",
+        "i18n_no_matching_variations_text" => "Desculpe, nenhum produto corresponde à sua seleção. Escolha uma combinação diferente.",
+        "i18n_make_a_selection_text" => "Selecione a cor, o tamanho e a quantidade antes de prosseguir.",
+        "i18n_unavailable_text" => "Desculpe, este produto não está disponível. Escolha uma combinação diferente."
+    ]) !!};
 </script>
 
 <script type="text/javascript" src="{{asset('plugins/cart/js/add-to-cart-variation.min.js')}}?ver=3.5.2"></script>
 
-<div class="basel-promo-popup">
-    <div class="basel-popup-inner">
-        <div class="vc_row wpb_row vc_row-fluid vc_row-o-content-middle vc_row-flex">
-            <div class="wpb_column vc_column_container vc_col-sm-6">
-                <div class="vc_column-inner">
-                    <div class="wpb_wrapper">
-                        <div class="wpb_single_image wpb_content_element vc_align_left vc_custom_1459944906701">
-                            <figure class="wpb_wrapper vc_figure">
-                                <div class="vc_single_image-wrapper   vc_box_border_grey">
-                                    <img
-                                        width="760"
-                                        height="800"
-                                        src="https://demo.xtemos.com/basel/wp-content/uploads/2015/08/news-later-popap.jpg"
-                                        class="vc_single_image-img attachment-full"
-                                        alt=""
-                                        srcset="https://demo.xtemos.com/basel/wp-content/uploads/2015/08/news-later-popap.jpg 760w,
-                                                https://demo.xtemos.com/basel/wp-content/uploads/2015/08/news-later-popap-285x300.jpg 285w,
-                                                https://demo.xtemos.com/basel/wp-content/uploads/2015/08/news-later-popap-270x284.jpg 270w,
-                                                https://demo.xtemos.com/basel/wp-content/uploads/2015/08/news-later-popap-266x280.jpg 266w,
-                                                https://demo.xtemos.com/basel/wp-content/uploads/2015/08/news-later-popap-263x277.jpg 263w,
-                                                https://demo.xtemos.com/basel/wp-content/uploads/2015/08/news-later-popap-526x554.jpg 526w"
-                                        sizes="(max-width: 760px) 100vw, 760px"
-                                    />
-                                </div>
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="wpb_column vc_column_container vc_col-sm-6">
-                <div class="vc_column-inner">
-                    <div class="wpb_wrapper">
-                        <div class="wpb_text_column wpb_content_element vc_custom_1459945099927">
-                            <div class="wpb_wrapper">
-                                <h1 style="margin-bottom: 0px; text-align: center;">
-                                    <strong>HEY YOU,SIGN UP AND</strong>
-                                </h1>
-                                <h1 style="text-align: center;">
-                                    <strong>CONNECT TO<span style="color: #0f8a7e;"> BASEL &amp;CO.</span></strong>
-                                </h1>
-                                <p style="text-align: center; font-size: 16px;">
-                                    Be the first to learn about our latest trends<br />
-                                    and get exclusive offers.
-                                </p>
-                                <script type="text/javascript">(function() {
-                                    if (!window.mc4wp) {
-                                        window.mc4wp= {
-                                            listeners: [], forms: {
-                                                on: function (event, callback) {
-                                                    window.mc4wp.listeners.push({
-                                                        event: event, callback: callback
-                                                    });
-                                                }
-                                            }
-                                        }
-                                    }
-                                })();
-                                </script>
+@include('extras.popup-newsletter-1')
 
-                                <!-- MailChimp for WordPress v3.1.11 - https: //wordpress.org/plugins/mailchimp-for-wp/ -->
-                                <form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-21436 mc4wp-form-basic" method="post" data-id="21436" data-name="Default sign-up form" >
-                                    <div class="mc4wp-form-fields">
-                                        <p class="mailchimp-input-icon">
-                                            <label>Email address: </label>
-                                            <input type="email" name="EMAIL" placeholder="Your email address" required />
-                                        </p>
-                                        <p> <input type="submit" value="Sign up" /> </p>
-                                        <div style="display: none;">
-                                            <input type="text" name="_mc4wp_honeypot" value="" tabindex="-1" autocomplete="off" />
-                                        </div>
-                                        <input type="hidden" name="_mc4wp_timestamp" value="1555457222" />
-                                        <input type="hidden" name="_mc4wp_form_id" value="21436" />
-                                        <input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1" />
-                                    </div>
-                                    <div class="mc4wp-response"></div>
-                                </form>
-                                <!-- / MailChimp for WordPress Plugin -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <style type="text/css" data-type="vc_shortcodes-custom-css">
-            .vc_custom_1459944906701 {
-                margin-top: -20px !important;
-                margin-right: -20px !important;
-                margin-bottom: -20px !important;
-                margin-left: -20px !important;
-            }
+@include('extras.cookies-popup-1')
 
-            .vc_custom_1459945099927 {
-                margin-bottom: 0px !important;
-                padding-top: 40px !important;
-                padding-right: 20px !important;
-                padding-bottom: 40px !important;
-                padding-left: 20px !important;
-            }
-        </style>
-    </div>
-</div>
+@include('extras.btn-link-1')
 
-<div class="basel-cookies-popup">
-    <div class="basel-cookies-inner">
-        <div class="cookies-info-text">
-            We use cookies to improve your experience on our website. By browsing this website,you agree to our use of cookies.
-        </div>
-        <div class="cookies-buttons">
-            <a href="#" class="cookies-accept-btn">Accept</a>
-            <a href="https://demo.xtemos.com/basel/terms-conditions/" class="cookies-more-btn">More info</a>
-        </div>
-    </div>
-</div>
-<a class="buy-basel" href="http://themeforest.net/item/basel-responsive-ecommerce-theme/14906749?license=regular&open_purchase_for_item_id=14906749&purchasable=source">
-    <img src="//xtemos2.r.worldssl.net/basel/wp-content/plugins/xz-system/envt-icon.png" width="20" height="20" alt="Purchase on Themeforest" />
-    Purchase <strong>Basel</strong>
-</a>
-<!-- Root element of PhotoSwipe. Must have class pswp. -->
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-    <!-- Background of PhotoSwipe. It's a separate element as animating opacity is faster than rgba(). -->
-    <div class="pswp__bg"></div>
-    <!-- Slides wrapper with overflow:hidden. -->
-    <div class="pswp__scroll-wrap">
-        <!-- Container that holds slides. PhotoSwipe keeps only 3 of them in the DOM to save memory. Don't modify these 3 pswp__item elements, data is added later on. -->
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-        <div class="pswp__ui pswp__ui--hidden">
-            <div class="pswp__top-bar">
-                <!-- Controls are self-explanatory. Order can be changed. -->
-                <div class="pswp__counter"></div>
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                <!-- Preloader demo http: //codepen.io/dimsemenov/pen/yyBWoR -->
-                <!-- element will get class pswp__preloader--active when preloader is running -->
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                        <div class="pswp__preloader__cut">
-                            <div class="pswp__preloader__donut"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div>
-            </div>
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"> </button>
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"> </button>
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
+@include('extras.container-photo-swipe-ui-1')
 
 </body>
 </html>
