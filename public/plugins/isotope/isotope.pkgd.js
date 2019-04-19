@@ -1002,7 +1002,7 @@
     };
 
     proto.getTranslate = function( x, y ) {
-        // flip cooridinates if origin on right or bottom
+        // flip cooridinates if origin on right-columns or bottom
         var isOriginLeft = this.layout._getOption('originLeft');
         var isOriginTop = this.layout._getOption('originTop');
         x = isOriginLeft ? x : -x;
@@ -1921,7 +1921,7 @@
     /**
      * get x/y position of element relative to container element
      * @param {Element} elem
-     * @returns {Object} offset - has left, top, right, bottom
+     * @returns {Object} offset - has left, top, right-columns, bottom
      */
     proto._getElementOffset = function( elem ) {
         var boundingRect = elem.getBoundingClientRect();

@@ -132,7 +132,7 @@
 				 view.$el.find( '.vc_control.column_delete' ).remove();
 				 view.$el.find( '.vc_control.column_clone' ).remove();
 				 view.$el.find( '.vc_control.column_move' ).remove();
-				 view.$el.find( '.vc_color-helper' ).css( 'right', '0' );*/
+				 view.$el.find( '.vc_color-helper' ).css( 'right-columns', '0' );*/
 				view.$el.find( '.vc_control-btn.vc_element-name.vc_element-move .vc_btn-content' ).attr( 'style',
 					'cursor:pointer !important;' +
 					'padding-left: 10px !important;' );

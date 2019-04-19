@@ -65,14 +65,15 @@
     <script type="text/javascript">
         var wc_add_to_cart_params = {!! json_encode([
             "ajax_url" => route('cart.add'),
-            "wc_ajax_url" => route('cart.add')."/?wc-ajax=%%endpoint%%",
+            "wc_ajax_url" => route('cart.remove')."/?wc-ajax=%%endpoint%%",
             "i18n_view_cart" => "Ver Carrrinho",
             "cart_url" => route('cart'),
             "is_cart" => "",
-            "cart_redirect_after_add" => "no"
+            "cart_redirect_after_add" => "no",
+            "csrf_token" => csrf_token()
         ]) !!};
     </script>
-    <script type="text/javascript" src="{{asset('plugins/cart/js/add-to-cart.min.js')}}?ver=3.5.2"></script>
+    <script type="text/javascript" src="{{asset('plugins/cart/js/add-to-cart.min.js')}}?ver=4.5.4"></script>
     <script type="text/javascript" src="{{asset('plugins/cart/js/avd-add-to-cart.js')}}?ver=5.6"></script>
     <!--[if lt IE 9]>
         <script type="text/javascript" src="{{asset('themes/js/html5.min.js')}}?ver=4.4.2"></script>
@@ -334,7 +335,7 @@
     var wc_cart_fragments_params = {!! json_encode([
         "ajax_url" => route('cart'),
         "wc_ajax_url" => route('cart.fragments'),
-        "fragment_name" => "wc_fragments_648848747847",
+        "fragment_name" => "wc_fragments_".time(),
         "csrf_token" => csrf_token()
     ]) !!};
 </script>

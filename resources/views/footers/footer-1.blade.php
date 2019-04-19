@@ -96,7 +96,7 @@
                             <br>
                             <i class="fa fa-mobile" style="width: 15px; text-align: center; margin-right: 4px; color: #676767;"></i> Phone: (064) 332-1233
                             <br>
-                            <!--p><i class="fa fa-envelope-o" style="width: 15px; text-align: center; margin-right: 4px; color: #676767;"></i> Fax: (099) 453-1357<br></p-->
+                            <!--p><i class="fa fa-envelope-o" style="width: 15px; text-align: center; marright-columnsight: 4px; color: #676767;"></i> Fax: (099) 453-1357<br></p-->
                         </div>
                         <br>
                         <p><img src="//xtemos3.r.worldssl.net/basel/wp-content/uploads/2015/08/payments.png"></p>

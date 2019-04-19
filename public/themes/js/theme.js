@@ -2948,7 +2948,7 @@
                 option: "arrowEl",
                 onTap: a.prev
             }, {
-                name: "button--arrow--right",
+                name: "button--arrow--right-columns",
                 option: "arrowEl",
                 onTap: a.next
             }, {
@@ -6962,7 +6962,7 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
                 g = function(a, b, c, d) {
                     this.a = a, this.b = b, this.c = c, this.d = d, this.da = d - a, this.ca = c - a, this.ba = b - a
                 },
-                h = ",x,y,z,left,top,right,bottom,marginTop,marginLeft,marginRight,marginBottom,paddingLeft,paddingTop,paddingRight,paddingBottom,backgroundPosition,backgroundPosition_y,",
+                h = ",x,y,z,left,top,right-columns,bottom,marginTop,marginLeft,marginRight,marginBottom,paddingLeft,paddingTop,paddingRight,paddingBottom,backgroundPosition,backgroundPosition_y,",
                 i = function(a, b, c, d) {
                     var e = {
                             a: a
@@ -12069,8 +12069,8 @@ var baselThemeModule;
                 if (d.hasClass("enable-sticky-header") && !d.hasClass("global-header-vertical") && 0 != e.length) {
                     var l = e.find(".site-logo").clone().html(),
                         m = e.find(".main-nav").clone().html(),
-                        n = e.find(".right-column").clone().html(),
-                        o = ['<div class="sticky-header header-clone">', '<div class="container">', '<div class="site-logo">' + l + "</div>", '<div class="main-nav site-navigation basel-navigation">' + m + "</div>", '<div class="right-column">' + n + "</div>", "</div>", "</div>"].join("");
+                        n = e.find(".right-columns-column").clone().html(),
+                        o = ['<div class="sticky-header header-clone">', '<div class="container">', '<div class="site-logo">' + l + "</div>", '<div class="main-nav site-navigation basel-navigation">' + m + "</div>", '<div class="right-columns-column">' + n + "</div>", "</div>", "</div>"].join("");
                     if (a(".topbar-wrapp").length > 0 && (j = a(".topbar-wrapp").outerHeight()), a(".header-banner").length > 0 && d.hasClass("header-banner-display") && (j += a(".header-banner").outerHeight()), d.hasClass("sticky-header-real")) {
                         var p = a("<div/>").addClass("header-spacing");
                         e.before(p), a(window).on("resize", c);
