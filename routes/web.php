@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('categories.cetegory-1');
+    return view('categories.category-1');
 });
 
 
@@ -21,14 +21,15 @@ Route::get('/', function () {
 | Routes Categories
 |--------------------------------------------------------------------------
 */
-Route::get('category', 'Web\CategoryController@index')->name('category');
-
+Route::get('categories', 'Web\CategoryController@index')->name('category');
 
 /*
 |--------------------------------------------------------------------------
 | Routes Products
 |--------------------------------------------------------------------------
 */
+Route::get('product/{category}/{section}/{slug}', 'Web\ProductController@index')->name('product');
+Route::post('product/show', 'Web\ProductController@show')->name('product.show');
 Route::get('product/search', 'Web\ProductController@search')->name('product.search');
 
 
@@ -53,3 +54,10 @@ Route::get('cart/undo/{id}', 'Web\CartController@undo')->name('cart.undo');
 */
 Route::post('wishlist/store', 'Web\WishlistController@store')->name('wishlist.store');
 Route::get('wishlist/create', 'Web\WishlistController@create')->name('wishlist.create');
+
+/*
+|--------------------------------------------------------------------------
+| Routes Compare
+|--------------------------------------------------------------------------
+*/
+Route::post('compare/store', 'Web\CompareController@store')->name('compare.store');

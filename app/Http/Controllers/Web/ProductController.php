@@ -14,7 +14,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        return view('products.product-1');
+
     }
 
     public function search(Request $request)
@@ -23,6 +24,7 @@ class ProductController extends Controller
         $action = $request['action'];
         $number = $request['number'];
         $query = $request['query'];
+
 
         $products[] = array(
             "value" => "Produto 1",
@@ -148,9 +150,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
-        //
+        return view('products.product-1-view');
     }
 
     /**

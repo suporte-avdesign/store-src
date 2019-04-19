@@ -12205,13 +12205,14 @@ var baselThemeModule;
                         e = d.data("id"),
                         f = d.data("added-text");
                     return d.hasClass("added") ? !0 : (c.preventDefault(), d.addClass("loading"), void jQuery.ajax({
-                        url: basel_settings.ajaxurl,
+                        url: basel_settings.compare_url,
                         data: {
+                            _token: basel_settings.csrf_token,
                             action: "basel_add_to_compare",
                             id: e
                         },
                         dataType: "json",
-                        method: "GET",
+                        method: "POST",
                         success: function(a) {
                             a.table ? b(a) : console.log("something wrong loading compare data ", a)
                         },
@@ -12247,9 +12248,13 @@ var baselThemeModule;
                     })
                 })
             },
+
+
             promoPopup: function() {
                 var b = basel_settings.promo_version;
-                if (!(a("body").hasClass("page-template-maintenance") || "yes" != basel_settings.enable_popup || "yes" == basel_settings.promo_popup_hide_mobile && a(window).width() < 768)) {
+                if (!(a("body").hasClass("page-template-maintenance") ||
+                    "yes" != basel_settings.enable_popup ||
+                    "yes" == basel_settings.promo_popup_hide_mobile && a(window).width() < 768)) {
                     var c = (a(".basel-promo-popup"), !1),
                         d = Cookies.get("basel_shown_pages"),
                         e = function() {
@@ -12280,13 +12285,15 @@ var baselThemeModule;
                     }), d || (d = 0), d < basel_settings.popup_pages ? (d++, Cookies.set("basel_shown_pages", d, {
                         expires: 7,
                         path: "/"
-                    }), !1) : void("shown" != Cookies.get("basel_popup_" + b) && ("scroll" == basel_settings.popup_event ? a(window).scroll(function() {
-                        return c ? !1 : void(a(document).scrollTop() >= basel_settings.popup_scroll && (e(), c = !0))
+                    }), !1) : void("shown" != Cookies.get("basel_popup_" + b) &&
+                        ("scroll" == basel_settings.popup_event ? a(window).scroll(function() {
+                            return c ? !1 : void(a(document).scrollTop() >= basel_settings.popup_scroll && (e(), c = !0))
                     }) : setTimeout(function() {
                         e()
                     }, basel_settings.popup_delay)))
                 }
             },
+
             productVideo: function() {
                 a(".product-video-button a").magnificPopup({
                     tClose: basel_settings.close,
@@ -12308,6 +12315,7 @@ var baselThemeModule;
                     fixedContentPos: !1
                 })
             },
+
             product360Button: function() {
                 a(".product-360-button a").magnificPopup({
                     tClose: basel_settings.close,
@@ -12325,6 +12333,7 @@ var baselThemeModule;
                     }
                 })
             },
+
             cookiesPopup: function() {
                 var b = basel_settings.cookies_version;
                 if ("accepted" != Cookies.get("basel_cookies_" + b)) {
@@ -12342,6 +12351,7 @@ var baselThemeModule;
                     }
                 }
             },
+
             googleMap: function() {
                 var b = a(".google-map-container-with-content");
                 a(window).resize(function() {
@@ -12350,29 +12360,36 @@ var baselThemeModule;
                     })
                 })
             },
+
             woocommerceWrappTable: function() {
                 var b = a(".woocommerce .shop_table:not(.wishlist_table)"),
                     c = a(".woocommerce .cart_totals table");
                 b.wrap("<div class='responsive-table'></div>"), c.wrap("<div class='responsive-table'></div>")
             },
+
             menuSetUp: function() {
                 var b = a(".basel-navigation").find("ul.menu"),
                     c = (b.find(" > li"), "item-menu-opened");
                 b.on("click", " > .item-event-click.menu-item-has-children > a", function(b) {
-                    b.preventDefault(), a(this).parent().hasClass(c) || a("." + c).removeClass(c), a(this).parent().toggleClass(c)
+                    b.preventDefault(), a(this).parent().hasClass(c) ||
+                    a("." + c).removeClass(c), a(this).parent().toggleClass(c)
                 }), a(document).click(function(d) {
                     var e = d.target;
-                    return a("." + c).length > 0 && !a(e).is(".item-event-hover") && !a(e).parents().is(".item-event-hover") && !a(e).parents().is("." + c) ? (b.find("." + c).removeClass(c), !1) : void 0
-                });
+                    return a("." + c).length > 0 && !a(e).is(".item-event-hover") &&
+                          !a(e).parents().is(".item-event-hover") &&
+                          !a(e).parents().is("." + c) ? (b.find("." + c).removeClass(c), !1) : void 0
+                    });
                 var d = function() {
                     a(window).width() <= 1024 ? b.find(" > .item-event-hover").each(function() {
                         a(this).data("original-event", "hover").removeClass("item-event-hover").addClass("item-event-click")
                     }) : b.find(" > .item-event-click").each(function() {
-                        "hover" == a(this).data("original-event") && a(this).removeClass("item-event-click").addClass("item-event-hover")
+                        "hover" == a(this).data("original-event") &&
+                                   a(this).removeClass("item-event-click").addClass("item-event-hover")
                     })
                 };
                 a(window).on("resize", d)
             },
+
             menuOffsets: function() {
                 var b = a(window),
                     c = a(".main-header"),
@@ -12389,9 +12406,13 @@ var baselThemeModule;
                         h = e.offset(),
                         i = b.width(),
                         j = f.outerWidth() + f.offset().left,
-                        k = a("body").hasClass("wrapper-boxed") || a("body").hasClass("wrapper-boxed-small") ? j : i;
+                        k = a("body").hasClass("wrapper-boxed") ||
+                            a("body").hasClass("wrapper-boxed-small") ? j : i;
                     if (g && h) {
-                        if (a("body").hasClass("rtl") && h.left <= 0 && d.hasClass("menu-item-design-sized") && !c.hasClass("header-vertical")) {
+                        if (a("body").hasClass("rtl") &&
+                            h.left <= 0 &&
+                            d.hasClass("menu-item-design-sized") &&
+                            !c.hasClass("header-vertical")) {
                             var l = -h.left;
                             e.css({
                                 right: -l - 10
@@ -12417,6 +12438,7 @@ var baselThemeModule;
                     f(a(this)), a(this).addClass("with-offsets")
                 })
             },
+
             onePageMenu: function() {
                 var b = function(b) {
                         var d = a(".#" + b);
@@ -12432,7 +12454,8 @@ var baselThemeModule;
                     c = function(b) {
                         var c;
                         a(".onepage-link").each(function() {
-                            c = a(this).find("> a").attr("href").split("#")[1], c == b && (a(".onepage-link").removeClass("current-menu-item"), a(this).addClass("current-menu-item"))
+                            c = a(this).find("> a").attr("href").split("#")[1], c == b &&
+                                (a(".onepage-link").removeClass("current-menu-item"), a(this).addClass("current-menu-item"))
                         })
                     };
                 if (a("body").on("click", ".onepage-link > a", function(c) {
@@ -12452,6 +12475,7 @@ var baselThemeModule;
                     }, 500)
                 }
             },
+
             mobileNavigation: function() {
                 function b() {
                     d.addClass("act-mobile-menu")
@@ -13272,6 +13296,7 @@ var baselThemeModule;
                     }, 800), !1
                 })
             },
+
             quickViewInit: function() {
                 var b = this;
                 a(document).on("click", ".open-quick-view", function(c) {
@@ -13283,13 +13308,15 @@ var baselThemeModule;
                         h = "",
                         i = a(".quick-view").find('[data-loop-name="' + e + '"]'),
                         j = a(this);
-                    j.addClass("loading"), "undefined" != typeof i[f - 1] && (g = i.eq(f - 1).addClass("quick-view-prev"), g = a("<div>").append(g.clone()).html()), "undefined" != typeof i[f + 1] && (h = i.eq(f + 1).addClass("quick-view-next"), h = a("<div>").append(h.clone()).html()), b.quickViewLoad(d, j, g, h)
+                        j.addClass("loading"), "undefined" != typeof i[f - 1] &&
+                            (g = i.eq(f - 1).addClass("quick-view-prev"), g = a("<div>").append(g.clone()).html()), "undefined" != typeof i[f + 1] && (h = i.eq(f + 1).addClass("quick-view-next"), h = a("<div>").append(h.clone()).html()), b.quickViewLoad(d, j, g, h)
                 })
             },
             quickViewLoad: function(c, d, e, f) {
                 var g = {
                         id: c,
-                        action: "basel_quick_view"
+                        action: "basel_quick_view",
+                        _token: basel_settings.csrf_token
                     },
                     h = function(c) {
                         a.magnificPopup.open({
@@ -13315,9 +13342,9 @@ var baselThemeModule;
                         })
                     };
                 a.ajax({
-                    url: basel_settings.ajaxurl,
+                    url: basel_settings.quickview_url,
                     data: g,
-                    method: "get",
+                    method: "POST",
                     success: function(b) {
                         basel_settings.quickview_in_popup_fix ? (a.magnificPopup.close(), setTimeout(function() {
                             h(b)
@@ -13329,6 +13356,7 @@ var baselThemeModule;
                     error: function() {}
                 })
             },
+
             quickShop: function() {
                 function b(a) {
                     a.find(".variations_form").wc_variation_form().find(".variations select:eq(0)").change(), a.find(".variations_form").trigger("wc_variation_form")

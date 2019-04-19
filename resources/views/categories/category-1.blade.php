@@ -35,7 +35,7 @@
                             <a class="pf-value" href="#" data-val="accessories" data-title="Categoria 3">Categoria 3</a>
                         </li>
                         <li class="cat-item cat-item-64 ">
-                            <a class="pf-value" href="#" data-val="teste" data-title="Outras">Outras</a>
+                            <a class="pf-value" href="#" data-val="other" data-title="Outras">Outras</a>
                             <ul class='children'>
                                 <li class="cat-item cat-item-160 ">
                                     <a class="pf-value" href="#" data-val="bakery" data-title="Categoria 1">Categotia 1</a>
@@ -67,85 +67,146 @@
                         <p class="woocommerce-result-count">Pagina 1 &ndash; 12 de 307 resultados</p>
                         <div class="basel-show-sidebar-btn">
                             <span class="basel-side-bar-icon"></span>
-                            <span>Barra lateral</span>
+                            <span>Mostrar barra lateral</span>
                         </div>
                         <div class="basel-filter-buttons">
-                            <a href="#" class="open-filters">Filtros</a>
+                            <a href="#" class="open-filters">Filtrar</a>
                         </div>
                     </div>
 
                     <div class="filters-area">
                         <div class="filters-inner-area row">
                             <div id="BASEL_Widget_Sorting" class="filter-widget widget-count-4 col-xs-12 col-sm-6 col-md-3">
-                                <h5 class="widget-title">Sort by</h5>
+                                <h5 class="widget-title">Ordenar por:</h5>
                                 <form class="woocommerce-ordering with-list" method="get">
                                     <ul>
                                         <li>
-                                            <a href="https://demo.xtemos.com/basel/shop/?infinit_scrolling&#038;orderby=menu_order" data-order="menu_order" class="selected-order">Default</a>
+                                            <a href="{{route('category')}}?orderby=menu_order" data-order="menu_order" @if($orderby == 'menu_order') class="selected-order" @endif>Padrão</a>
                                         </li>
                                         <li>
-                                            <a href="https://demo.xtemos.com/basel/shop/?infinit_scrolling&#038;orderby=popularity" data-order="popularity" class="">Popularity</a>
+                                            <a href="{{route('category')}}?orderby=popularity" data-order="popularity" @if($orderby == 'popularity') class="selected-order" @endif>Popular</a>
                                         </li>
                                         <li>
-                                            <a href="https://demo.xtemos.com/basel/shop/?infinit_scrolling&#038;orderby=rating" data-order="rating" class="">Average rating</a>
+                                            <a href="{{route('category')}}?orderby=rating" data-order="rating" @if($orderby == 'rating') class="selected-order" @endif>Classificação</a>
                                         </li>
                                         <li>
-                                            <a href="https://demo.xtemos.com/basel/shop/?infinit_scrolling&#038;orderby=date" data-order="date" class="">Newness</a>
+                                            <a href="{{route('category')}}?orderby=date" data-order="date" @if($orderby == 'date') class="selected-order" @endif>Novidade</a>
                                         </li>
                                         <li>
-                                            <a href="https://demo.xtemos.com/basel/shop/?infinit_scrolling&#038;orderby=price" data-order="price" class="">Price: low to high</a>
+                                            <a href="{{route('category')}}?orderby=price" data-order="price" @if($orderby == 'price') class="selected-order" @endif>Preço: baixo para alto</a>
                                         </li>
                                         <li>
-                                            <a href="https://demo.xtemos.com/basel/shop/?infinit_scrolling&#038;orderby=price-desc" data-order="price-desc" class="">Price: high to low</a>
+                                            <a href="{{route('category')}}?orderby=price-desc" data-order="price-desc" @if($orderby == 'price-desc') class="selected-order" @endif>Preço: alto para baixo</a>
                                         </li>
                                     </ul>
                                     <input type="hidden" name="infinit_scrolling" value="" />
                                 </form>
                             </div>
                             <div id="BASEL_Widget_Price_Filter" class="filter-widget widget-count-4 col-xs-12 col-sm-6 col-md-3">
-                                <h5 class="widget-title">Price filter</h5>
+                                <h5 class="widget-title">Filtrar por preço {{$min_price}}</h5>
                                 <div class="basel-price-filter">
                                     <ul>
                                         <li>
-                                            <a rel="nofollow" href="https://demo.xtemos.com/basel/shop/?infinit_scrolling" class="">All</a>
+                                            <a rel="nofollow" href="{{route('category')}}" class="">Todos</a>
                                         </li>
                                         <li>
-                                            <a rel="nofollow" href="https://demo.xtemos.com/basel/shop/?infinit_scrolling&#038;min_price=0&#038;max_price=150" class=""><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&pound;</span>0.00</span> - <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&pound;</span>150.00</span></a>
+                                            <a rel="nofollow" href="{{route('category')}}?min_price=0&max_price=20" @if($max_price == 20) class="current-state" @endif>
+                                                <span class="woocommerce-Price-amount amount">
+                                                    <span class="woocommerce-Price-currencySymbol">R$ </span>0.00
+                                                </span> -
+                                                <span class="woocommerce-Price-amount amount">
+                                                    <span class="woocommerce-Price-currencySymbol">R$ </span>20,00
+                                                </span>
+                                            </a>
                                         </li>
                                         <li>
-                                            <a rel="nofollow" href="https://demo.xtemos.com/basel/shop/?infinit_scrolling&#038;min_price=150&#038;max_price=300" class=""><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&pound;</span>150.00</span> - <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&pound;</span>300.00</span></a>
+                                            <a rel="nofollow" href="{{route('category')}}?min_price=20&#038;max_price=30" @if($max_price == 30) class="current-state" @endif>
+                                                <span class="woocommerce-Price-amount amount">
+                                                    <span class="woocommerce-Price-currencySymbol">R$ </span>20,00
+                                                </span> -
+                                                <span class="woocommerce-Price-amount amount">
+                                                    <span class="woocommerce-Price-currencySymbol">R$ </span>30,00
+                                                </span></a>
                                         </li>
                                         <li>
-                                            <a rel="nofollow" href="https://demo.xtemos.com/basel/shop/?infinit_scrolling&#038;min_price=300&#038;max_price=450" class=""><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&pound;</span>300.00</span> - <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&pound;</span>450.00</span></a>
+                                            <a rel="nofollow" href="{{route('category')}}?min_price=30&#038;max_price=45" @if($max_price == 45) class="current-state" @endif>
+                                                <span class="woocommerce-Price-amount amount">
+                                                    <span class="woocommerce-Price-currencySymbol">R$ </span>30,00
+                                                </span> -
+                                                <span class="woocommerce-Price-amount amount">
+                                                    <span class="woocommerce-Price-currencySymbol">R$ </span>45,00
+                                                </span></a>
                                         </li>
                                         <li>
-                                            <a rel="nofollow" href="https://demo.xtemos.com/basel/shop/?infinit_scrolling&#038;min_price=450&#038;max_price=580" class=""><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&pound;</span>450.00</span> +</a>
+                                            <a rel="nofollow" href="{{route('category')}}?min_price=45&#038;max_price=60" @if($min_price == 45) class="current-state" @endif>
+                                                <span class="woocommerce-Price-amount amount">
+                                                    <span class="woocommerce-Price-currencySymbol">R$ </span>45,00
+                                                </span> +
+                                            </a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                             <div id="basel-woocommerce-layered-nav-16" class="filter-widget widget-count-4 col-xs-12 col-sm-6 col-md-3 basel-woocommerce-layered-nav">
-                                <h5 class="widget-title">Filter by color</h5>
+                                <h5 class="widget-title">Filtrar por cor</h5>
                                 <div class="basel-scroll">
                                     <ul class="show-labels-on swatches-normal swatches-display-list basel-scroll-content">
-                                        <li class="wc-layered-nav-term  with-swatch-color">
-                                            <a href="https://demo.xtemos.com/basel/shop/?filter_color=black">
-                                                <div class="filter-swatch"><span style="background-color: #0a0a0a;"></span></div>Black</a> <span class="count">(26)</span></li>
-                                        <li class="wc-layered-nav-term  with-swatch-color">
-                                            <a href="https://demo.xtemos.com/basel/shop/?filter_color=brown">
-                                                <div class="filter-swatch"><span style="background-color: #ba6d09;"></span></div>Brown</a> <span class="count">(24)</span></li>
-                                        <li class="wc-layered-nav-term  with-swatch-color">
-                                            <a href="https://demo.xtemos.com/basel/shop/?filter_color=yellow">
-                                                <div class="filter-swatch"><span style="background-color: #eded55;"></span></div>Yellow</a> <span class="count">(13)</span></li>
-                                        <li class="wc-layered-nav-term  with-swatch-color">
-                                            <a href="https://demo.xtemos.com/basel/shop/?filter_color=red">
-                                                <div class="filter-swatch"><span style="background-color: #dd3333;"></span></div>Red</a> <span class="count">(19)</span></li>
-                                        <li class="wc-layered-nav-term  with-swatch-color">
-                                            <a href="https://demo.xtemos.com/basel/shop/?filter_color=green">
-                                                <div class="filter-swatch"><span style="background-color: #61a058;"></span></div>Green</a> <span class="count">(20)</span></li>
-                                        <li class="wc-layered-nav-term  with-swatch-color">
-                                            <a href="https://demo.xtemos.com/basel/shop/?filter_color=blue">
-                                                <div class="filter-swatch"><span style="background-color: #769ec1;"></span></div>Blue</a> <span class="count">(24)</span></li>
+                                        <li class="wc-layered-nav-term  with-swatch-color @if($filter_color == 'preto') chosen @endif">
+                                            <a href="{{route('category')}}?filter_color=preto">
+                                                <div class="filter-swatch">
+                                                    <span style="background-color: #0a0a0a;"></span>
+                                                </div>Preto
+                                            </a>
+                                            <span class="count">(26)</span>
+                                        </li>
+                                        <li class="wc-layered-nav-term  with-swatch-color" @if($filter_color == 'branco') chosen @endif>
+                                            <a href="{{route('category')}}?filter_color=branco">
+                                                <div class="filter-swatch">
+                                                    <span style="background-color: #ffffff;"></span>
+                                                </div>Branco
+                                            </a>
+                                            <span class="count">(13)</span>
+                                        </li>
+                                        <li class="wc-layered-nav-term  with-swatch-color @if($filter_color == 'marrom') chosen @endif">
+                                            <a href="{{route('category')}}?filter_color=marrom">
+                                                <div class="filter-swatch">
+                                                    <span style="background-color: #ba6d09;"></span>
+                                                </div>Marrom
+                                            </a>
+                                            <span class="count">(24)</span>
+                                        </li>
+                                        <li class="wc-layered-nav-term  with-swatch-color" @if($filter_color == 'amarelo') chosen @endif>
+                                            <a href="{{route('category')}}?filter_color=amarelo">
+                                                <div class="filter-swatch">
+                                                    <span style="background-color: #eded55;"></span>
+                                                </div>Amarelo
+                                            </a>
+                                            <span class="count">(13)</span>
+                                        </li>
+                                        <li class="wc-layered-nav-term with-swatch-color" @if($filter_color == 'vermelho') chosen @endif>
+                                            <a href="{{route('category')}}?filter_color=vermelho">
+                                                <div class="filter-swatch">
+                                                    <span style="background-color: #dd3333;"></span>
+                                                </div>Vermelho
+                                            </a>
+                                            <span class="count">(3)</span>
+                                        </li>
+                                        <li class="wc-layered-nav-term  with-swatch-color"@if($filter_color == 'verde') chosen @endif>
+                                            <a href="{{route('category')}}?filter_color=verde">
+                                                <div class="filter-swatch">
+                                                    <span style="background-color: #61a058;"></span>
+                                                </div>Verde
+                                            </a>
+                                            <span class="count">(20)</span>
+                                        </li>
+                                        <li class="wc-layered-nav-term  with-swatch-color" @if($filter_color == 'azul') chosen @endif>
+                                            <a href="{{route('category')}}?filter_color=azul">
+                                                <div class="filter-swatch">
+                                                    <span style="background-color: #769ec1;"></span>
+                                                </div>Azul
+                                            </a>
+                                            <span class="count">(24)</span>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -153,53 +214,91 @@
                                 <h5 class="widget-title">Filter by size</h5>
                                 <div class="basel-scroll">
                                     <ul class="show-labels-on swatches-normal swatches-display-inline basel-scroll-content">
-                                        <li class="wc-layered-nav-term  with-swatch-text"><a href="https://demo.xtemos.com/basel/shop/?filter_size=l">L</a> <span class="count">(9)</span></li>
-                                        <li class="wc-layered-nav-term  with-swatch-text"><a href="https://demo.xtemos.com/basel/shop/?filter_size=m">M</a> <span class="count">(14)</span></li>
-                                        <li class="wc-layered-nav-term  with-swatch-text"><a href="https://demo.xtemos.com/basel/shop/?filter_size=s">S</a> <span class="count">(12)</span></li>
-                                        <li class="wc-layered-nav-term  with-swatch-text"><a href="https://demo.xtemos.com/basel/shop/?filter_size=xl">XL</a> <span class="count">(9)</span></li>
-                                        <li class="wc-layered-nav-term  with-swatch-text"><a href="https://demo.xtemos.com/basel/shop/?filter_size=xs">XS</a> <span class="count">(7)</span></li>
+                                        <li class="wc-layered-nav-term  with-swatch-text"><a href="{{route('category')}}?filter_size=l">L</a>
+                                            <span class="count">(9)</span>
+                                        </li>
+                                        <li class="wc-layered-nav-term  with-swatch-text"><a href="{{route('category')}}?filter_size=m">M</a> <span class="count">(14)</span>
+                                        </li>
+                                        <li class="wc-layered-nav-term  with-swatch-text"><a href="{{route('category')}}?filter_size=s">S</a> <span class="count">(12)</span></li>
+                                        <li class="wc-layered-nav-term  with-swatch-text"><a href="{{route('category')}}?filter_size=xl">XL</a> <span class="count">(9)</span></li>
+                                        <li class="wc-layered-nav-term  with-swatch-text"><a href="{{route('category')}}?filter_size=xs">XS</a> <span class="count">(7)</span></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="basel-active-filters"></div>
 
+                    <div class="basel-active-filters">
+                        <div class="basel-clear-filters-wrapp">
+                            <a class="basel-clear-filters" href="/basel/shop/">Clear filters</a>
+                        </div>
+                        <div class="widget woocommerce widget_layered_nav_filters">
+                            <ul>
+                                <li class="chosen"><a rel="nofollow" aria-label="Remove filter" href="https://demo.xtemos.com/basel/shop/?min_price=420&amp;max_price=560&amp;filter_size=xl">Red</a></li>
+                                <li class="chosen"><a rel="nofollow" aria-label="Remove filter" href="https://demo.xtemos.com/basel/shop/?min_price=420&amp;max_price=560&amp;filter_color=red">XL</a></li>
+                                <li class="chosen"><a rel="nofollow" aria-label="Remove filter" href="https://demo.xtemos.com/basel/shop/?max_price=560&amp;filter_color=red&amp;filter_size=xl">Min <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">£</span>420.00</span></a></li>
+                                <li class="chosen"><a rel="nofollow" aria-label="Remove filter" href="https://demo.xtemos.com/basel/shop/?min_price=420&amp;filter_color=red&amp;filter_size=xl">Max <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">£</span>560.00</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
 
 
                     <div class="basel-shop-loader"></div>
 
 
-                    <div class="products elements-grid basel-products-holder  basel-spacing- products-spacing- pagination-infinit row grid-columns-4" data-min_price="" data-max_price="" data-source="main_loop">	<div class="product-grid-item basel-hover-alt product  col-xs-6 col-sm-4 col-md-3 first  post-19655 type-product status-publish has-post-thumbnail product_cat-bags product_tag-new product_tag-whte first instock featured shipping-taxable purchasable product-type-variable has-default-attributes" data-loop="1" data-id="19655">
+                    <div class="products elements-grid basel-products-holder  basel-spacing- products-spacing- pagination-infinit row grid-columns-4" data-min_price="" data-max_price="" data-source="main_loop">
 
+                        <!-- first select options -->
+                        <div class="product-grid-item basel-hover-alt product  col-xs-6 col-sm-4 col-md-3 first  post-19655 type-product status-publish has-post-thumbnail product_cat-bags product_tag-new product_tag-whte first instock featured shipping-taxable purchasable product-type-variable has-default-attributes" data-loop="1" data-id="19655">
                             <div class="product-element-top">
-                                <a href="https://demo.xtemos.com/basel/shop/bags/nombined-strapped-backpack/">
-                                    <img width="273" height="348" src="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-25.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" srcset="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-25.jpg 870w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-25-235x300.jpg 235w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-25-768x980.jpg 768w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-25-803x1024.jpg 803w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-25-266x340.jpg 266w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-25-219x280.jpg 219w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-25-263x336.jpg 263w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-25-526x671.jpg 526w" sizes="(max-width: 273px) 100vw, 273px" />	</a>
+                                <a href="#">
+                                    <img width="273" height="348" src="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-25.jpg"
+                                         class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
+                                         alt=""
+                                         srcset="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-25.jpg 870w,
+                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-25-235x300.jpg 235w,
+                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-25-768x980.jpg 768w,
+                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-25-803x1024.jpg 803w,
+                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-25-266x340.jpg 266w,
+                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-25-219x280.jpg 219w,
+                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-25-263x336.jpg 263w,
+                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-25-526x671.jpg 526w"
+                                         sizes="(max-width: 273px) 100vw, 273px" />
+                                </a>
                                 <div class="hover-img">
                                     <a href="https://demo.xtemos.com/basel/shop/bags/nombined-strapped-backpack/">
-                                        <img width="273" height="348" src="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-21.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" srcset="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-21.jpg 870w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-21-235x300.jpg 235w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-21-768x980.jpg 768w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-21-803x1024.jpg 803w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-21-266x340.jpg 266w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-21-219x280.jpg 219w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-21-263x336.jpg 263w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-21-526x671.jpg 526w" sizes="(max-width: 273px) 100vw, 273px" />				</a>
+                                        <img width="273" height="348" src="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-21.jpg"
+                                             class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
+                                             alt=""
+                                             srcset="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-21.jpg 870w,
+                                                     https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-21-235x300.jpg 235w,
+                                                     https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-21-768x980.jpg 768w,
+                                                     https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-21-803x1024.jpg 803w,
+                                                     https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-21-266x340.jpg 266w,
+                                                     https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-21-219x280.jpg 219w,
+                                                     https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-21-263x336.jpg 263w,
+                                                     https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-21-526x671.jpg 526w"
+                                             sizes="(max-width: 273px) 100vw, 273px" />
+                                    </a>
                                 </div>
                                 <div class="basel-buttons">
 
                                     <div class="yith-wcwl-add-to-wishlist add-to-wishlist-19655">
                                         <div class="yith-wcwl-add-button show" style="display:block">
-
-
-                                            <a href="/basel/shop/?infinit_scrolling&#038;add_to_wishlist=19655" rel="nofollow" data-product-id="19655" data-product-type="variable" class="add_to_wishlist" >
-                                                Add to Wishlist</a>
-                                            <img src="https://demo.xtemos.com/basel/wp-content/plugins/yith-woocommerce-wishlist/assets/images/wpspin_light.gif" class="ajax-loading" alt="loading" width="16" height="16" style="visibility:hidden" />
+                                            <a href="/basel/shop/?infinit_scrolling&#038;add_to_wishlist=19655" rel="nofollow" data-product-id="19655" data-product-type="variable" class="add_to_wishlist">
+                                                Adicionar a lista de desejos
+                                            </a>
+                                            <img src="{{asset('themes/images/loader/wpspin_light.gif')}}" class="ajax-loading" alt="loading" width="16" height="16" style="visibility:hidden"/>
                                         </div>
 
                                         <div class="yith-wcwl-wishlistaddedbrowse hide" style="display:none;">
-                                            <span class="feedback">Product added!</span>
-                                            <a href="https://demo.xtemos.com/basel/wishlist/" rel="nofollow">
-                                                Browse Wishlist	        </a>
+                                            <span class="feedback">Produto Adicionado!</span>
+                                            <a href="https://demo.xtemos.com/basel/wishlist/" rel="nofollow">Navegar na lista de desejos</a>
                                         </div>
 
                                         <div class="yith-wcwl-wishlistexistsbrowse hide" style="display:none">
-                                            <span class="feedback">The product is already in the wishlist!</span>
-                                            <a href="https://demo.xtemos.com/basel/wishlist/" rel="nofollow">
-                                                Browse Wishlist	        </a>
+                                            <span class="feedback">O produto já está na lista de desejos!</span>
+                                            <a href="https://demo.xtemos.com/basel/wishlist/" rel="nofollow">Navegar na lista de desejos</a>
                                         </div>
 
                                         <div style="clear:both"></div>
@@ -207,35 +306,87 @@
 
                                     </div>
 
-                                    <div class="clear"></div>		<div class="basel-compare-btn product-compare-button"><a class="button" href="https://demo.xtemos.com/basel/compare/" data-added-text="Compare products" data-id="19655">Compare</a></div>					<div class="quick-view">
-                                        <a
-                                                href="https://demo.xtemos.com/basel/shop/bags/nombined-strapped-backpack/"
-                                                class="open-quick-view"
-                                                data-id="19655">Quick View</a>
+                                    <div class="clear"></div>
+
+                                    <div class="basel-compare-btn product-compare-button">
+                                        <a class="button" href="https://demo.xtemos.com/basel/compare/" data-added-text="Compare products" data-id="19655">Compare</a></div>
+                                    <div class="quick-view">
+                                        <a href="{{url('product.show')}}" class="open-quick-view" data-id="19655">Vusualização Rapida</a>
                                     </div>
                                 </div>
                             </div>
-                            <h3 class="product-title"><a href="https://demo.xtemos.com/basel/shop/bags/nombined-strapped-backpack/">Backpack double strap</a></h3>
+                            <h3 class="product-title">
+                                <a href="{{url('product')}}/categoria/secao/produto-19655">Produto 1</a></h3>
 
                             <div class="wrap-price">
                                 <div class="wrapp-swap">
                                     <div class="swap-elements">
-                                        <div class="star-rating"><span style="width:80%">Rated <strong class="rating">4.00</strong> out of 5</span></div>
-                                        <span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&pound;</span>12.00</span> &ndash; <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&pound;</span>15.00</span></span>
+                                        <!-- Avaliação -->
+                                        <div class="star-rating">
+                                            <span style="width:80%">Avaliado <strong class="rating">4</strong> fora de 5</span>
+                                        </div>
+
+                                        <span class="price">
+                                            <span class="woocommerce-Price-amount amount">
+                                                <span class="woocommerce-Price-currencySymbol">R$ </span>12,00
+                                            </span> &ndash;
+                                            <span class="woocommerce-Price-amount amount">
+                                                <span class="woocommerce-Price-currencySymbol">R$ </span>15,00
+                                            </span>
+                                        </span>
+                                        <!-- redireciona para selecionar as opções -->
                                         <div class="btn-add">
-                                            <a href="https://demo.xtemos.com/basel/shop/bags/nombined-strapped-backpack/" data-quantity="1" class="button product_type_variable add_to_cart_button" data-product_id="19655" data-product_sku="" aria-label="Select options for &ldquo;Backpack double strap&rdquo;" rel="nofollow">Select options</a>			</div>
+                                            <a href="https://demo.xtemos.com/basel/shop/bags/nombined-strapped-backpack/"
+                                               data-quantity="1" class="button product_type_variable add_to_cart_button"
+                                               data-product_id="19655"
+                                               data-product_sku=""
+                                               aria-label="Selecione as opções dde cores do produto 1" rel="nofollow">Selecione as opções
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="swatches-on-grid"><div class="swatch-on-grid basel-tooltip swatch-has-image swatch-size-" style="background-color:#0a0a0a;" data-image-src="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-21.jpg" data-image-srcset="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-21.jpg 870w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-21-235x300.jpg 235w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-21-768x980.jpg 768w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-21-803x1024.jpg 803w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-21-266x340.jpg 266w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-21-219x280.jpg 219w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-21-263x336.jpg 263w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-21-526x671.jpg 526w" data-image-sizes="(max-width: 870px) 100vw, 870px">Black</div><div class="swatch-on-grid basel-tooltip swatch-has-image swatch-size-" style="background-color:#769ec1;" data-image-src="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-22.jpg" data-image-srcset="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-22.jpg 870w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-22-235x300.jpg 235w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-22-768x980.jpg 768w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-22-803x1024.jpg 803w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-22-266x340.jpg 266w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-22-219x280.jpg 219w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-22-263x336.jpg 263w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-22-526x671.jpg 526w" data-image-sizes="(max-width: 870px) 100vw, 870px">Blue</div></div></div>
-
-
-
+                                <!-- OPÇÃO DE CORES -->
+                                <div class="swatches-on-grid">
+                                    <div class="swatch-on-grid basel-tooltip swatch-has-image swatch-size-"
+                                         style="background-color:#0a0a0a;"
+                                         data-image-src="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-21.jpg"
+                                         data-image-srcset="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-21.jpg 870w,
+                                                            https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-21-235x300.jpg 235w,
+                                                            https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-21-768x980.jpg 768w,
+                                                            https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-21-803x1024.jpg 803w,
+                                                            https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-21-266x340.jpg 266w,
+                                                            https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-21-219x280.jpg 219w,
+                                                            https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-21-263x336.jpg 263w,
+                                                            https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-21-526x671.jpg 526w"
+                                         data-image-sizes="(max-width: 870px) 100vw, 870px">Preto
+                                    </div>
+                                    <div class="swatch-on-grid basel-tooltip swatch-has-image swatch-size-"
+                                         style="background-color:#769ec1;"
+                                         data-image-src="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-22.jpg"
+                                         data-image-srcset="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-22.jpg 870w,
+                                                            https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-22-235x300.jpg 235w,
+                                                            https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-22-768x980.jpg 768w,
+                                                            https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-22-803x1024.jpg 803w,
+                                                            https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-22-266x340.jpg 266w,
+                                                            https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-22-219x280.jpg 219w,
+                                                            https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-22-263x336.jpg 263w,
+                                                            https://demo.xtemos.com/basel/wp-content/uploads/2015/10/bag-22-526x671.jpg 526w"
+                                         data-image-sizes="(max-width: 870px) 100vw, 870px">Azul
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+
+
                         <div class="product-grid-item basel-hover-alt product  col-xs-6 col-sm-4 col-md-3 post-19616 type-product status-publish has-post-thumbnail product_cat-shoes instock featured shipping-taxable purchasable product-type-variable has-default-attributes" data-loop="2" data-id="19616">
 
                             <div class="product-element-top">
                                 <a href="https://demo.xtemos.com/basel/shop/shoes/basic-contrast-sneakers/">
-                                    <div class="product-labels labels-rounded"><span class="new product-label">New</span></div><img width="273" height="348" src="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/shoes12.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" srcset="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/shoes12.jpg 870w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/shoes12-235x300.jpg 235w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/shoes12-768x980.jpg 768w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/shoes12-803x1024.jpg 803w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/shoes12-266x340.jpg 266w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/shoes12-219x280.jpg 219w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/shoes12-263x336.jpg 263w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/shoes12-526x671.jpg 526w" sizes="(max-width: 273px) 100vw, 273px" />	</a>
+                                    <div class="product-labels labels-rounded">
+                                        <span class="new product-label">New</span>
+                                    </div>
+                                    <img width="273" height="348" src="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/shoes12.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" srcset="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/shoes12.jpg 870w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/shoes12-235x300.jpg 235w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/shoes12-768x980.jpg 768w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/shoes12-803x1024.jpg 803w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/shoes12-266x340.jpg 266w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/shoes12-219x280.jpg 219w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/shoes12-263x336.jpg 263w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/shoes12-526x671.jpg 526w" sizes="(max-width: 273px) 100vw, 273px" />	</a>
                                 <div class="hover-img">
                                     <a href="https://demo.xtemos.com/basel/shop/shoes/basic-contrast-sneakers/">
                                         <img width="273" height="348" src="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/shoes12-1.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" srcset="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/shoes12-1.jpg 870w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/shoes12-1-235x300.jpg 235w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/shoes12-1-768x980.jpg 768w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/shoes12-1-803x1024.jpg 803w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/shoes12-1-266x340.jpg 266w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/shoes12-1-219x280.jpg 219w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/shoes12-1-263x336.jpg 263w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/shoes12-1-526x671.jpg 526w" sizes="(max-width: 273px) 100vw, 273px" />				</a>
@@ -292,7 +443,11 @@
 
 
                         </div>
-                        <div class="clearfix visible-xs-block"></div>	<div class="product-grid-item basel-hover-alt product  col-xs-6 col-sm-4 col-md-3 post-19515 type-product status-publish has-post-thumbnail product_cat-woman instock shipping-taxable purchasable product-type-variable has-default-attributes" data-loop="3" data-id="19515">
+
+                        <div class="clearfix visible-xs-block"></div>
+
+
+                        <div class="product-grid-item basel-hover-alt product  col-xs-6 col-sm-4 col-md-3 post-19515 type-product status-publish has-post-thumbnail product_cat-woman instock shipping-taxable purchasable product-type-variable has-default-attributes" data-loop="3" data-id="19515">
 
                             <div class="product-element-top">
                                 <a href="https://demo.xtemos.com/basel/shop/woman/basic-knit-dress-chest/">

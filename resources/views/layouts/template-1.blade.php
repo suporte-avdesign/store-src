@@ -389,6 +389,8 @@
         "wishlist" => "yes",
         "cart_url" => "https:\/\/demo.xtemos.com\/basel\/cart\/",
         "ajaxurl" => route('product.search'),
+        "quickview_url" => route('product.show'),
+        "compare_url" => route('compare.store'),
         "add_to_cart_action" => "widget",
         "categories_toggle" => "yes",
         "enable_popup" => "yes",
@@ -431,12 +433,13 @@
         "shop_filters_close" => "no",
         "sticky_desc_scroll" => "1",
         "quickview_in_popup_fix" => "",
-        "one_page_menu_offset" => "150"
+        "one_page_menu_offset" => "150",
+        "csrf_token" => csrf_token(),
     ]) !!};
     var basel_variation_gallery_data=null;
 </script>
 
-<script type="text/javascript" src="{{asset('themes/js/theme.min.js')}}?ver=4.4.2">
+<script type="text/javascript" src="{{asset('themes/js/theme.min.js')}}?ver=4.4.9">
 </script>
 
 <script type="text/javascript" src="{{asset('includes/underscore/js/underscore.min.js')}}?ver=1.8.3"></script>

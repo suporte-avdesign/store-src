@@ -5,37 +5,16 @@ namespace App\Http\Controllers\Web;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class CategoryController extends Controller
+class CompareController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $_pjax = $request->input('_pjax');
-        $orderby = $request->input('orderby');
-        $min_price = $request->input('min_price');
-        $max_price = $request->input('max_price');
-        $filter_color = $request->input('filter_color');
-        $filter_size = $request->input('filter_size');
-
-        $input = $request->input();
-        $str = '?';
-        foreach ($input as $key => $value) {
-            $str .= $key.'='.$value.'&';
-        }
-
-        $parameter = substr($str, 0, -1);
-
-        if ($_pjax) {
-            return view('categories.category-1-filter');
-        } else {
-            return view('categories.category-1',
-                compact('parameter','orderby','min_price','max_price','filter_color','filter_size')
-            );
-        }
+        //
     }
 
     /**
@@ -56,7 +35,17 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $id =  $request->input('id'); // product_id
+        $action =  $request->input('action');//basel_add_to_compare
+
+        $compare = view('compare.compare-1')->render();
+        $out = array(
+            "count" => 1,
+            "table" => $compare
+        );
+
+        return response()->json($out);
+
     }
 
     /**
