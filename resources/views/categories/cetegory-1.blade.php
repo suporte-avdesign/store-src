@@ -20,83 +20,31 @@
             <div class="container">
                 <div class="nav-shop">
 
-
-
-                    <a href="#" class="basel-show-categories">Categories</a><ul class="basel-product-categories"><li class="cat-link shop-all-link"><a href="https://demo.xtemos.com/basel/shop/">All</a></li>	<li class="cat-item cat-item-163 wc-default-cat"><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/uncategorized/" data-val="uncategorized" data-title="Uncategorized" >Uncategorized</a>
+                    <a href="#" class="basel-show-categories">Categorias</a>
+                    <ul class="basel-product-categories">
+                        <li class="cat-link shop-all-link">
+                            <a href="#">Todos</a>
                         </li>
-                        <li class="cat-item cat-item-58 "><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/bags/" data-val="bags" data-title="Bags" >Bags</a>
+                        <li class="cat-item cat-item-163 wc-default-cat">
+                            <a class="pf-value" href="#" data-val="categoria-1" data-title="Categoria 1">Categoria 1</a>
                         </li>
-                        <li class="cat-item cat-item-63 "><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/accessories/" data-val="accessories" data-title="Accessories" >Accessories</a>
+                        <li class="cat-item cat-item-58">
+                            <a class="pf-value" href="#" data-val="bags" data-title="Categoria 2">Categoria 2</a>
                         </li>
-                        <li class="cat-item cat-item-62 "><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/jewellery/" data-val="jewellery" data-title="Jewellery" >Jewellery</a>
+                        <li class="cat-item cat-item-63 ">
+                            <a class="pf-value" href="#" data-val="accessories" data-title="Categoria 3">Categoria 3</a>
                         </li>
-                        <li class="cat-item cat-item-50 "><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/man/" data-val="man" data-title="Man" >Man</a>
-                        </li>
-                        <li class="cat-item cat-item-60 "><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/shoes/" data-val="shoes" data-title="Shoes" >Shoes</a>
-                        </li>
-                        <li class="cat-item cat-item-56 "><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/watches/" data-val="watches" data-title="Watches" >Watches</a>
-                        </li>
-                        <li class="cat-item cat-item-49 "><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/woman/" data-val="woman" data-title="Woman" >Woman</a>
-                        </li>
-                        <li class="cat-item cat-item-109 "><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/other/" data-val="other" data-title="Other" >Other</a>
+                        <li class="cat-item cat-item-64 ">
+                            <a class="pf-value" href="#" data-val="teste" data-title="Outras">Outras</a>
                             <ul class='children'>
-                                <li class="cat-item cat-item-160 "><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/other/bakery/" data-val="bakery" data-title="Bakery" >Bakery</a>
+                                <li class="cat-item cat-item-160 ">
+                                    <a class="pf-value" href="#" data-val="bakery" data-title="Categoria 1">Categotia 1</a>
                                 </li>
-                                <li class="cat-item cat-item-158 "><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/other/beer/" data-val="beer" data-title="Beer" >Beer</a>
+                                <li class="cat-item cat-item-158 ">
+                                    <a class="pf-value" href="#" data-val="beer" data-title="Categoria 2">Categoria 2</a>
                                 </li>
-                                <li class="cat-item cat-item-113 "><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/other/bicycles/" data-val="bicycles" data-title="Bicycles" >Bicycles</a>
-                                </li>
-                                <li class="cat-item cat-item-136 "><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/other/boots/" data-val="boots" data-title="Boots" >Boots</a>
-                                </li>
-                                <li class="cat-item cat-item-138 "><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/other/cars/" data-val="cars" data-title="Cars" >Cars</a>
-                                </li>
-                                <li class="cat-item cat-item-124 "><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/other/coffee/" data-val="coffee" data-title="Coffee" >Coffee</a>
-                                </li>
-                                <li class="cat-item cat-item-139 "><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/other/construction/" data-val="construction" data-title="Construction" >Construction</a>
-                                </li>
-                                <li class="cat-item cat-item-119 "><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/other/cosmetics/" data-val="cosmetics" data-title="Cosmetics" >Cosmetics</a>
-                                </li>
-                                <li class="cat-item cat-item-135 "><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/other/dark/" data-val="dark" data-title="Dark" >Dark</a>
-                                </li>
-                                <li class="cat-item cat-item-116 "><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/other/electronics/" data-val="electronics" data-title="Electronics" >Electronics</a>
-                                </li>
-                                <li class="cat-item cat-item-162 "><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/other/fashion-new/" data-val="fashion-new" data-title="Fashion New" >Fashion New</a>
-                                </li>
-                                <li class="cat-item cat-item-123 "><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/other/flat-brands/" data-val="flat-brands" data-title="Flat brands" >Flat brands</a>
-                                </li>
-                                <li class="cat-item cat-item-134 "><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/other/food/" data-val="food" data-title="Food" >Food</a>
-                                </li>
-                                <li class="cat-item cat-item-140 "><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/other/games/" data-val="games" data-title="Games" >Games</a>
-                                </li>
-                                <li class="cat-item cat-item-143 "><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/other/hookahs/" data-val="hookahs" data-title="Hookahs" >Hookahs</a>
-                                </li>
-                                <li class="cat-item cat-item-122 "><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/other/landing/" data-val="landing" data-title="Landing" >Landing</a>
-                                </li>
-                                <li class="cat-item cat-item-161 "><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/other/lightning/" data-val="lightning" data-title="Lightning" >Lightning</a>
-                                </li>
-                                <li class="cat-item cat-item-115 "><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/other/lingerie/" data-val="lingerie" data-title="Lingerie" >Lingerie</a>
-                                </li>
-                                <li class="cat-item cat-item-133 "><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/other/marketplace/" data-val="marketplace" data-title="Marketplace" >Marketplace</a>
-                                </li>
-                                <li class="cat-item cat-item-159 "><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/other/medicine/" data-val="medicine" data-title="Medicine" >Medicine</a>
-                                </li>
-                                <li class="cat-item cat-item-118 "><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/other/new-brands/" data-val="new-brands" data-title="New brands" >New brands</a>
-                                </li>
-                                <li class="cat-item cat-item-132 "><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/other/organic/" data-val="organic" data-title="Organic" >Organic</a>
-                                </li>
-                                <li class="cat-item cat-item-141 "><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/other/pets/" data-val="pets" data-title="Pets" >Pets</a>
-                                </li>
-                                <li class="cat-item cat-item-142 "><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/other/posters/" data-val="posters" data-title="Posters" >Posters</a>
-                                </li>
-                                <li class="cat-item cat-item-120 "><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/other/sport/" data-val="sport" data-title="Sport" >Sport</a>
-                                </li>
-                                <li class="cat-item cat-item-157 "><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/other/sushi/" data-val="sushi" data-title="Sushi" >Sushi</a>
-                                </li>
-                                <li class="cat-item cat-item-117 "><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/other/wine/" data-val="wine" data-title="Wine" >Wine</a>
-                                </li>
-                                <li class="cat-item cat-item-108 "><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/other/furniture/" data-val="furniture" data-title="Furniture" >Furniture</a>
-                                </li>
-                                <li class="cat-item cat-item-99 "><a class="pf-value" href="https://demo.xtemos.com/basel/product-category/other/flowers/" data-val="flowers" data-title="Flowers" >Flowers</a>
+                                <li class="cat-item cat-item-99 ">
+                                    <a class="pf-value" href="#" data-val="flowers" data-title="Categoria">Categoria 3</a>
                                 </li>
                             </ul>
                         </li>
@@ -111,18 +59,26 @@
             <div class="row">
                 <div class="site-content shop-content-area col-sm-12 content-with-products description-area-before" role="main">
                     <div class="shop-loop-head">
-                        <nav class="woocommerce-breadcrumb"><a href="https://demo.xtemos.com/basel">Home</a><span class="breadcrumb-last"> Shop</span></nav><div class="woocommerce-notices-wrapper"></div><p class="woocommerce-result-count">
-                            Showing 1&ndash;12 of 307 results</p>
+                        <nav class="woocommerce-breadcrumb">
+                            <a href="#">Home</a>
+                            <span class="breadcrumb-last">Feminino</span>
+                        </nav>
+                        <div class="woocommerce-notices-wrapper"></div>
+                        <p class="woocommerce-result-count">Pagina 1 &ndash; 12 de 307 resultados</p>
                         <div class="basel-show-sidebar-btn">
                             <span class="basel-side-bar-icon"></span>
-                            <span>Show sidebar</span>
+                            <span>Barra lateral</span>
                         </div>
                         <div class="basel-filter-buttons">
-                            <a href="#" class="open-filters">Filters</a>
+                            <a href="#" class="open-filters">Filtros</a>
                         </div>
                     </div>
 
-                    <div class="filters-area"><div class="filters-inner-area row"><div id="BASEL_Widget_Sorting" class="filter-widget widget-count-4 col-xs-12 col-sm-6 col-md-3"><h5 class="widget-title">Sort by</h5><form class="woocommerce-ordering with-list" method="get">
+                    <div class="filters-area">
+                        <div class="filters-inner-area row">
+                            <div id="BASEL_Widget_Sorting" class="filter-widget widget-count-4 col-xs-12 col-sm-6 col-md-3">
+                                <h5 class="widget-title">Sort by</h5>
+                                <form class="woocommerce-ordering with-list" method="get">
                                     <ul>
                                         <li>
                                             <a href="https://demo.xtemos.com/basel/shop/?infinit_scrolling&#038;orderby=menu_order" data-order="menu_order" class="selected-order">Default</a>
@@ -143,8 +99,12 @@
                                             <a href="https://demo.xtemos.com/basel/shop/?infinit_scrolling&#038;orderby=price-desc" data-order="price-desc" class="">Price: high to low</a>
                                         </li>
                                     </ul>
-                                    <input type="hidden" name="infinit_scrolling" value="" /></form>
-                            </div><div id="BASEL_Widget_Price_Filter" class="filter-widget widget-count-4 col-xs-12 col-sm-6 col-md-3"><h5 class="widget-title">Price filter</h5>					<div class="basel-price-filter">
+                                    <input type="hidden" name="infinit_scrolling" value="" />
+                                </form>
+                            </div>
+                            <div id="BASEL_Widget_Price_Filter" class="filter-widget widget-count-4 col-xs-12 col-sm-6 col-md-3">
+                                <h5 class="widget-title">Price filter</h5>
+                                <div class="basel-price-filter">
                                     <ul>
                                         <li>
                                             <a rel="nofollow" href="https://demo.xtemos.com/basel/shop/?infinit_scrolling" class="">All</a>
@@ -163,9 +123,49 @@
                                         </li>
                                     </ul>
                                 </div>
-                            </div><div id="basel-woocommerce-layered-nav-16" class="filter-widget widget-count-4 col-xs-12 col-sm-6 col-md-3 basel-woocommerce-layered-nav"><h5 class="widget-title">Filter by color</h5><div class="basel-scroll"><ul class="show-labels-on swatches-normal swatches-display-list basel-scroll-content"><li class="wc-layered-nav-term  with-swatch-color"><a href="https://demo.xtemos.com/basel/shop/?filter_color=black"><div class="filter-swatch"><span style="background-color: #0a0a0a;"></span></div>Black</a> <span class="count">(26)</span></li><li class="wc-layered-nav-term  with-swatch-color"><a href="https://demo.xtemos.com/basel/shop/?filter_color=brown"><div class="filter-swatch"><span style="background-color: #ba6d09;"></span></div>Brown</a> <span class="count">(24)</span></li><li class="wc-layered-nav-term  with-swatch-color"><a href="https://demo.xtemos.com/basel/shop/?filter_color=yellow"><div class="filter-swatch"><span style="background-color: #eded55;"></span></div>Yellow</a> <span class="count">(13)</span></li><li class="wc-layered-nav-term  with-swatch-color"><a href="https://demo.xtemos.com/basel/shop/?filter_color=red"><div class="filter-swatch"><span style="background-color: #dd3333;"></span></div>Red</a> <span class="count">(19)</span></li><li class="wc-layered-nav-term  with-swatch-color"><a href="https://demo.xtemos.com/basel/shop/?filter_color=green"><div class="filter-swatch"><span style="background-color: #61a058;"></span></div>Green</a> <span class="count">(20)</span></li><li class="wc-layered-nav-term  with-swatch-color"><a href="https://demo.xtemos.com/basel/shop/?filter_color=blue"><div class="filter-swatch"><span style="background-color: #769ec1;"></span></div>Blue</a> <span class="count">(24)</span></li></ul></div></div><div id="basel-woocommerce-layered-nav-17" class="filter-widget widget-count-4 col-xs-12 col-sm-6 col-md-3 basel-woocommerce-layered-nav"><h5 class="widget-title">Filter by size</h5><div class="basel-scroll"><ul class="show-labels-on swatches-normal swatches-display-inline basel-scroll-content"><li class="wc-layered-nav-term  with-swatch-text"><a href="https://demo.xtemos.com/basel/shop/?filter_size=l">L</a> <span class="count">(9)</span></li><li class="wc-layered-nav-term  with-swatch-text"><a href="https://demo.xtemos.com/basel/shop/?filter_size=m">M</a> <span class="count">(14)</span></li><li class="wc-layered-nav-term  with-swatch-text"><a href="https://demo.xtemos.com/basel/shop/?filter_size=s">S</a> <span class="count">(12)</span></li><li class="wc-layered-nav-term  with-swatch-text"><a href="https://demo.xtemos.com/basel/shop/?filter_size=xl">XL</a> <span class="count">(9)</span></li><li class="wc-layered-nav-term  with-swatch-text"><a href="https://demo.xtemos.com/basel/shop/?filter_size=xs">XS</a> <span class="count">(7)</span></li></ul></div></div></div></div>
-                    <div class="basel-active-filters">
+                            </div>
+                            <div id="basel-woocommerce-layered-nav-16" class="filter-widget widget-count-4 col-xs-12 col-sm-6 col-md-3 basel-woocommerce-layered-nav">
+                                <h5 class="widget-title">Filter by color</h5>
+                                <div class="basel-scroll">
+                                    <ul class="show-labels-on swatches-normal swatches-display-list basel-scroll-content">
+                                        <li class="wc-layered-nav-term  with-swatch-color">
+                                            <a href="https://demo.xtemos.com/basel/shop/?filter_color=black">
+                                                <div class="filter-swatch"><span style="background-color: #0a0a0a;"></span></div>Black</a> <span class="count">(26)</span></li>
+                                        <li class="wc-layered-nav-term  with-swatch-color">
+                                            <a href="https://demo.xtemos.com/basel/shop/?filter_color=brown">
+                                                <div class="filter-swatch"><span style="background-color: #ba6d09;"></span></div>Brown</a> <span class="count">(24)</span></li>
+                                        <li class="wc-layered-nav-term  with-swatch-color">
+                                            <a href="https://demo.xtemos.com/basel/shop/?filter_color=yellow">
+                                                <div class="filter-swatch"><span style="background-color: #eded55;"></span></div>Yellow</a> <span class="count">(13)</span></li>
+                                        <li class="wc-layered-nav-term  with-swatch-color">
+                                            <a href="https://demo.xtemos.com/basel/shop/?filter_color=red">
+                                                <div class="filter-swatch"><span style="background-color: #dd3333;"></span></div>Red</a> <span class="count">(19)</span></li>
+                                        <li class="wc-layered-nav-term  with-swatch-color">
+                                            <a href="https://demo.xtemos.com/basel/shop/?filter_color=green">
+                                                <div class="filter-swatch"><span style="background-color: #61a058;"></span></div>Green</a> <span class="count">(20)</span></li>
+                                        <li class="wc-layered-nav-term  with-swatch-color">
+                                            <a href="https://demo.xtemos.com/basel/shop/?filter_color=blue">
+                                                <div class="filter-swatch"><span style="background-color: #769ec1;"></span></div>Blue</a> <span class="count">(24)</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="basel-woocommerce-layered-nav-17" class="filter-widget widget-count-4 col-xs-12 col-sm-6 col-md-3 basel-woocommerce-layered-nav">
+                                <h5 class="widget-title">Filter by size</h5>
+                                <div class="basel-scroll">
+                                    <ul class="show-labels-on swatches-normal swatches-display-inline basel-scroll-content">
+                                        <li class="wc-layered-nav-term  with-swatch-text"><a href="https://demo.xtemos.com/basel/shop/?filter_size=l">L</a> <span class="count">(9)</span></li>
+                                        <li class="wc-layered-nav-term  with-swatch-text"><a href="https://demo.xtemos.com/basel/shop/?filter_size=m">M</a> <span class="count">(14)</span></li>
+                                        <li class="wc-layered-nav-term  with-swatch-text"><a href="https://demo.xtemos.com/basel/shop/?filter_size=s">S</a> <span class="count">(12)</span></li>
+                                        <li class="wc-layered-nav-term  with-swatch-text"><a href="https://demo.xtemos.com/basel/shop/?filter_size=xl">XL</a> <span class="count">(9)</span></li>
+                                        <li class="wc-layered-nav-term  with-swatch-text"><a href="https://demo.xtemos.com/basel/shop/?filter_size=xs">XS</a> <span class="count">(7)</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <div class="basel-active-filters"></div>
+
+
 
                     <div class="basel-shop-loader"></div>
 

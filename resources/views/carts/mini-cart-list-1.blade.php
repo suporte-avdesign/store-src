@@ -13,7 +13,7 @@
                 </a>
                 <span class="quantity">2 &times;
                 <span class="woocommerce-Price-amount amount">
-                    <span class="woocommerce-Price-currencySymbol">R&#36; </span>86,00
+                    <span class="woocommerce-Price-currencySymbol">R$ </span>86,00
                 </span>
             </span>
             </li>
@@ -22,12 +22,12 @@
         <p class="woocommerce-mini-cart__total total">
             <strong>Subtotal:</strong>
             <span class="woocommerce-Price-amount amount">
-                <span class="woocommerce-Price-currencySymbol">R$</span>19.00
+                <span class="woocommerce-Price-currencySymbol">R$ </span>{{$total}}
             </span>
         </p>
         <p class="woocommerce-mini-cart__buttons buttons">
-            <a href="https://demo.xtemos.com/basel/cart/" class="button btn-cart wc-forward">View cart</a>
-            <a href="https://demo.xtemos.com/basel/checkout/" class="button checkout wc-forward">Checkout</a>
+            <a href="#" class="button btn-cart wc-forward">Ver Carrinho</a>
+            <a href="#" class="button checkout wc-forward">Checkout</a>
         </p>
 
     </div>

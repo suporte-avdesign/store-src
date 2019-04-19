@@ -4,14 +4,15 @@
             <li class="my-account">
                 <a href="#">Minha Conta</a>
             </li>
-            <li class="login">
-                <a href="#">Login</a>
-            </li>
-            <!--
-            <li class="logout">
-                <a href="#">Sair</a>
-            </li>
-            -->
+            @auth
+                <li class="logout">
+                    <a href="#">Sair</a>
+                </li>
+            @else
+                <li class="login">
+                    <a href="#">Login</a>
+                </li>
+            @endauth
         </ul>
     </div>
     <div class="search-button basel-search-full-screen">
