@@ -22,7 +22,7 @@ Route::get('/', function () {
 |--------------------------------------------------------------------------
 */
 Route::get('categories', 'Web\CategoryController@index')->name('category');
-
+Route::get('categories/{section}/{pag}/{num}/', 'Web\CategoryController@infinitScroll')->name('category.infinit');
 /*
 |--------------------------------------------------------------------------
 | Routes Products

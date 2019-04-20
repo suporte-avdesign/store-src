@@ -2,16 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="852cb8bc-a610-44a3-b791-e2f6cd79de72" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/compare/compare-1-table.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/wishlists/wishlist-1.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/categories/category-1-infinit-scrolling.blade.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/faker/product_photos/img13-f.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/faker/product_photos/img13-l.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/faker/product_photos/img13-s.jpg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/faker/product_photos/img11-l.jpg" afterPath="$PROJECT_DIR$/public/faker/product_photos/img11-l.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/faker/product_photos/img12-l.jpg" afterPath="$PROJECT_DIR$/public/faker/product_photos/img12-l.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/faker/product_photos/img12-s.jpg" afterPath="$PROJECT_DIR$/public/faker/product_photos/img12-s.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/CompareController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/CompareController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/WishlistController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/WishlistController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/plugins/yith-wishlist/js/jquery.yith-wcwl.min.js" afterPath="$PROJECT_DIR$/public/plugins/yith-wishlist/js/jquery.yith-wcwl.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/themes/js/theme.js" afterPath="$PROJECT_DIR$/public/themes/js/theme.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/CategoryController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/CategoryController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/categories/category-1.blade.php" afterPath="$PROJECT_DIR$/resources/views/categories/category-1.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/compare/compare-1.blade.php" afterPath="$PROJECT_DIR$/resources/views/compare/compare-1.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/template-1.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/template-1.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,135 +27,32 @@
       <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="63" column="67" lean-forward="false" selection-start-line="63" selection-start-column="67" selection-end-line="63" selection-end-column="67" />
+            <state relative-caret-position="205">
+              <caret line="24" column="45" lean-forward="false" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="theme.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/themes/js/theme.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="11749" column="33" lean-forward="true" selection-start-line="11749" selection-start-column="33" selection-end-line="11749" selection-end-column="33" />
-              <folding>
-                <marker date="1555721352251" expanded="true" signature="14235:14242" ph="×" />
-                <marker date="1555721352251" expanded="true" signature="73197:73238" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jquery.yith-wcwl.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/plugins/yith-wishlist/js/jquery.yith-wcwl.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="274" column="65" lean-forward="false" selection-start-line="274" selection-start-column="36" selection-end-line="274" selection-end-column="65" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="theme.min.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/themes/js/theme.min.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="15" column="30607" lean-forward="false" selection-start-line="15" selection-start-column="30607" selection-end-line="15" selection-end-column="30607" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="category-1.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="category-1.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/categories/category-1.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="1252" column="200" lean-forward="false" selection-start-line="1252" selection-start-column="200" selection-end-line="1252" selection-end-column="200" />
+            <state relative-caret-position="231">
+              <caret line="251" column="0" lean-forward="true" selection-start-line="251" selection-start-column="0" selection-end-line="251" selection-end-column="0" />
               <folding>
-                <element signature="e#936#2884#0#HTML" expanded="false" />
                 <element signature="e#4021#16673#0#HTML" expanded="false" />
                 <element signature="e#16695#18179#0#HTML" expanded="false" />
-                <element signature="e#18542#28918#0#HTML" expanded="false" />
-                <element signature="e#23181#23199#0#HTML" expanded="true" />
-                <element signature="e#24507#24524#0#HTML" expanded="true" />
-                <element signature="e#26341#26374#0#HTML" expanded="true" />
-                <element signature="e#29005#39543#0#HTML" expanded="false" />
-                <element signature="e#29576#30783#0#HTML" expanded="false" />
-                <element signature="e#30816#32217#0#HTML" expanded="false" />
-                <element signature="e#32250#34544#0#HTML" expanded="false" />
-                <element signature="e#32961#32986#0#HTML" expanded="true" />
-                <element signature="e#33796#33814#0#HTML" expanded="true" />
-                <element signature="e#34802#39511#0#HTML" expanded="false" />
-                <element signature="e#35123#35140#0#HTML" expanded="true" />
-                <element signature="e#35564#35571#0#HTML" expanded="true" />
-                <element signature="e#36957#36990#0#HTML" expanded="true" />
-                <element signature="e#38272#38305#0#HTML" expanded="true" />
-                <element signature="e#39754#47422#0#HTML" expanded="false" />
-                <element signature="e#40053#45153#0#HTML" expanded="false" />
-                <element signature="e#43498#43523#0#HTML" expanded="true" />
-                <element signature="e#44333#44351#0#HTML" expanded="true" />
-                <element signature="e#45347#47391#0#HTML" expanded="false" />
-                <element signature="e#45668#45685#0#HTML" expanded="true" />
-                <element signature="e#46109#46116#0#HTML" expanded="true" />
-                <element signature="e#47643#55516#0#HTML" expanded="false" />
-                <element signature="e#51563#51588#0#HTML" expanded="true" />
-                <element signature="e#52398#52416#0#HTML" expanded="true" />
-                <element signature="e#53762#53779#0#HTML" expanded="true" />
-                <element signature="e#54203#54210#0#HTML" expanded="true" />
-                <element signature="e#55764#62233#0#HTML" expanded="false" />
-                <element signature="e#62315#68596#0#HTML" expanded="false" />
-                <element signature="e#68763#75346#0#HTML" expanded="false" />
-                <element signature="e#75372#81589#0#HTML" expanded="false" />
-                <element signature="e#81773#92008#0#HTML" expanded="false" />
-                <element signature="e#92104#98455#0#HTML" expanded="false" />
-                <element signature="e#98551#105130#0#HTML" expanded="false" />
-                <element signature="e#105156#114179#0#HTML" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="template-1.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/template-1.blade.php">
+      <file leaf-file-name="CategoryController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Web/CategoryController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="367" column="89" lean-forward="false" selection-start-line="367" selection-start-column="82" selection-end-line="367" selection-end-column="89" />
-              <folding>
-                <marker date="1555721406042" expanded="true" signature="4608:4962" ph="..." />
-                <marker date="1555721406042" expanded="true" signature="4621:4960" ph="..." />
-                <marker date="1555721406042" expanded="true" signature="4622:4959" ph="..." />
-                <marker date="1555721406042" expanded="true" signature="14860:15247" ph="..." />
-                <marker date="1555721406042" expanded="true" signature="14873:15245" ph="..." />
-                <marker date="1555721406042" expanded="true" signature="14874:15244" ph="..." />
-                <marker date="1555721406042" expanded="true" signature="14906:15015" ph="..." />
-                <marker date="1555721406042" expanded="true" signature="15047:15213" ph="..." />
-                <marker date="1555721406042" expanded="true" signature="15080:15155" ph="..." />
-                <marker date="1555721406042" expanded="true" signature="15539:15653" ph="..." />
-                <marker date="1555721406042" expanded="true" signature="15552:15651" ph="..." />
-                <marker date="1555721406042" expanded="true" signature="15553:15650" ph="..." />
-                <marker date="1555721406042" expanded="true" signature="15842:16039" ph="..." />
-                <marker date="1555721406042" expanded="true" signature="15855:16037" ph="..." />
-                <marker date="1555721406042" expanded="true" signature="15856:16036" ph="..." />
-                <marker date="1555721406042" expanded="true" signature="16342:17351" ph="..." />
-                <marker date="1555721406042" expanded="true" signature="16355:17349" ph="..." />
-                <marker date="1555721406042" expanded="true" signature="16356:17348" ph="..." />
-                <marker date="1555721406042" expanded="true" signature="16748:17008" ph="..." />
-                <marker date="1555721406042" expanded="true" signature="17038:17342" ph="..." />
-                <marker date="1555721406042" expanded="true" signature="17865:20319" ph="..." />
-                <marker date="1555721406042" expanded="true" signature="17878:20317" ph="..." />
-                <marker date="1555721406042" expanded="true" signature="17879:20316" ph="..." />
-                <marker date="1555721406042" expanded="true" signature="19162:19576" ph="..." />
-                <marker date="1555721406042" expanded="true" signature="19237:19566" ph="..." />
-                <marker date="1555721406042" expanded="true" signature="19345:19552" ph="..." />
-                <marker date="1555721406042" expanded="true" signature="20645:20737" ph="..." />
-                <marker date="1555721406042" expanded="true" signature="20658:20735" ph="..." />
-                <marker date="1555721406042" expanded="true" signature="20659:20734" ph="..." />
-                <marker date="1555721406042" expanded="true" signature="20684:20728" ph="..." />
-                <marker date="1555721406042" expanded="true" signature="20930:21386" ph="..." />
-                <marker date="1555721406042" expanded="true" signature="20943:21384" ph="..." />
-                <marker date="1555721406042" expanded="true" signature="20944:21383" ph="..." />
-              </folding>
+            <state relative-caret-position="79">
+              <caret line="62" column="9" lean-forward="true" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -178,6 +75,8 @@
       <find>data</find>
       <find>categories-masonry</find>
       <find>star-rating</find>
+      <find>labels-rounded</find>
+      <find>loop</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -201,9 +100,12 @@
         <option value="$PROJECT_DIR$/resources/views/wishlists/wishlist-1.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/compare/compare-1-table.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/compare/compare-1.blade.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Web/CompareController.php" />
+        <option value="$PROJECT_DIR$/resources/views/categories/category-1-infinit.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/views/categories/category-1-infinit-scrolling.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/categories/category-1.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Web/CategoryController.php" />
       </list>
     </option>
   </component>
@@ -217,10 +119,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="64" />
-    <option name="y" value="-11" />
-    <option name="width" value="1303" />
-    <option name="height" value="780" />
+    <option name="x" value="65" />
+    <option name="y" value="-4" />
+    <option name="width" value="1301" />
+    <option name="height" value="772" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -261,20 +163,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="routes" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque-calcados" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque-calcados" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -301,29 +189,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="wishlists" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque-calcados" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque-calcados" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layouts" />
+              <option name="myItemId" value="categories" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -351,249 +217,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque-calcados" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque-calcados" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="theme.js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NestingTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque-calcados" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque-calcados" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque-calcados" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque-calcados" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque-calcados" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque-calcados" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yith-wishlist" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jquery.yith-wcwl.js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NestingTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque-calcados" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque-calcados" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yith-wishlist" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque-calcados" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque-calcados" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yith-wishlist" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque-calcados" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque-calcados" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque-calcados" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque-calcados" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque-calcados" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque-calcados" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque-calcados" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque-calcados" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controllers" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque-calcados" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque-calcados" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controllers" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Web" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -603,8 +227,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../fabiolapezzi/sitepezzi" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/categories" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -684,6 +313,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="852cb8bc-a610-44a3-b791-e2f6cd79de72" name="Default" comment="" />
@@ -692,18 +324,17 @@
       <option name="presentableId" value="Default" />
       <updated>1555710552945</updated>
       <workItem from="1555710556723" duration="657000" />
-      <workItem from="1555712025063" duration="19611000" />
+      <workItem from="1555712025063" duration="42960000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20268000" />
+    <option name="totallyTimeSpent" value="43617000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
-    <editor active="true" />
+    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988048" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35537848" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -731,7 +362,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -772,22 +403,6 @@
             <element signature="n#style#0;n#div#1;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#2;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Web/CategoryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-54">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Web/CartController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="35" column="10" lean-forward="false" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="82" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1270,14 +885,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="63" column="67" lean-forward="false" selection-start-line="63" selection-start-column="67" selection-end-line="63" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/themes/js/theme.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -1286,50 +893,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/carts/mini-cart-list-1.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="24" column="45" lean-forward="false" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Web/CartController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1311">
+          <caret line="46" column="38" lean-forward="true" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/categories/category-1-infinit-scrolling.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="1084" column="32" lean-forward="true" selection-start-line="1084" selection-start-column="32" selection-end-line="1084" selection-end-column="32" />
+          <folding>
+            <element signature="n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#!!top" expanded="false" />
+            <element signature="n#div#8;n#!!top" expanded="false" />
+            <element signature="n#div#9;n#!!top" expanded="false" />
+            <element signature="n#div#12;n#!!top" expanded="false" />
+            <element signature="n#div#13;n#!!top" expanded="false" />
+            <element signature="n#div#16;n#!!top" expanded="false" />
+            <element signature="n#div#18;n#!!top" expanded="false" />
+            <element signature="n#div#20;n#!!top" expanded="false" />
+            <element signature="n#div#21;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/categories/category-1.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="1252" column="200" lean-forward="false" selection-start-line="1252" selection-start-column="200" selection-end-line="1252" selection-end-column="200" />
+        <state relative-caret-position="231">
+          <caret line="251" column="0" lean-forward="true" selection-start-line="251" selection-start-column="0" selection-end-line="251" selection-end-column="0" />
           <folding>
-            <element signature="e#936#2884#0#HTML" expanded="false" />
             <element signature="e#4021#16673#0#HTML" expanded="false" />
             <element signature="e#16695#18179#0#HTML" expanded="false" />
-            <element signature="e#18542#28918#0#HTML" expanded="false" />
-            <element signature="e#23181#23199#0#HTML" expanded="true" />
-            <element signature="e#24507#24524#0#HTML" expanded="true" />
-            <element signature="e#26341#26374#0#HTML" expanded="true" />
-            <element signature="e#29005#39543#0#HTML" expanded="false" />
-            <element signature="e#29576#30783#0#HTML" expanded="false" />
-            <element signature="e#30816#32217#0#HTML" expanded="false" />
-            <element signature="e#32250#34544#0#HTML" expanded="false" />
-            <element signature="e#32961#32986#0#HTML" expanded="true" />
-            <element signature="e#33796#33814#0#HTML" expanded="true" />
-            <element signature="e#34802#39511#0#HTML" expanded="false" />
-            <element signature="e#35123#35140#0#HTML" expanded="true" />
-            <element signature="e#35564#35571#0#HTML" expanded="true" />
-            <element signature="e#36957#36990#0#HTML" expanded="true" />
-            <element signature="e#38272#38305#0#HTML" expanded="true" />
-            <element signature="e#39754#47422#0#HTML" expanded="false" />
-            <element signature="e#40053#45153#0#HTML" expanded="false" />
-            <element signature="e#43498#43523#0#HTML" expanded="true" />
-            <element signature="e#44333#44351#0#HTML" expanded="true" />
-            <element signature="e#45347#47391#0#HTML" expanded="false" />
-            <element signature="e#45668#45685#0#HTML" expanded="true" />
-            <element signature="e#46109#46116#0#HTML" expanded="true" />
-            <element signature="e#47643#55516#0#HTML" expanded="false" />
-            <element signature="e#51563#51588#0#HTML" expanded="true" />
-            <element signature="e#52398#52416#0#HTML" expanded="true" />
-            <element signature="e#53762#53779#0#HTML" expanded="true" />
-            <element signature="e#54203#54210#0#HTML" expanded="true" />
-            <element signature="e#55764#62233#0#HTML" expanded="false" />
-            <element signature="e#62315#68596#0#HTML" expanded="false" />
-            <element signature="e#68763#75346#0#HTML" expanded="false" />
-            <element signature="e#75372#81589#0#HTML" expanded="false" />
-            <element signature="e#81773#92008#0#HTML" expanded="false" />
-            <element signature="e#92104#98455#0#HTML" expanded="false" />
-            <element signature="e#98551#105130#0#HTML" expanded="false" />
-            <element signature="e#105156#114179#0#HTML" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Web/CategoryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="62" column="9" lean-forward="true" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>

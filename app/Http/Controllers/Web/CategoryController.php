@@ -20,6 +20,9 @@ class CategoryController extends Controller
         $max_price = $request->input('max_price');
         $filter_color = $request->input('filter_color');
         $filter_size = $request->input('filter_size');
+        $num = 2;
+        $page = 'page';
+        $section = 'shop';
 
         $input = $request->input();
         $str = '?';
@@ -33,7 +36,7 @@ class CategoryController extends Controller
             return view('categories.category-1-filter');
         } else {
             return view('categories.category-1',
-                compact('parameter','orderby','min_price','max_price','filter_color','filter_size')
+                compact('section','page','num','parameter','orderby','min_price','max_price','filter_color','filter_size')
             );
         }
     }
@@ -43,64 +46,42 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function infinitScroll(Request $request, $section, $pag, $num)
     {
-        //
+        $loop = $request->input('loop');
+        $page = 'page';
+        $section = 'shop';
+
+
+        $input = $request->input();
+        $str = '/?';
+        foreach ($input as $key => $value) {
+            if ($key == 'loop' && $value == 12){
+                $value = 24;
+            }
+            $str .= $key.'='.$value.'&';
+        }
+
+        $parameter = substr($str, 0, -1);
+
+        if($loop == 24) {
+            $num = 3;
+            $status = 'no-more-posts';
+            $nextPage = "";
+        } else {
+            $status = "have-posts";
+            $nextPage = route('category.infinit', [$section, $page, $num]).$parameter;
+        }
+
+        $products = view('categories.category-1-infinit-scrolling')->render();
+
+        $out = array(
+            "items" => $products,
+            "status" => $status,
+            "nextPage" => $nextPage
+        );
+
+        return response()->json($out);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }
