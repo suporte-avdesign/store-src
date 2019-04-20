@@ -13492,6 +13492,7 @@ var baselThemeModule;
                         return baselThemeModule.productImagesGallery(), a(".woocommerce-product-gallery__image").trigger("zoom.destroy"), g() || baselThemeModule.initZoom(), !0
                     }
             },
+
             swatchesOnGrid: function() {
                 a("body").on("click", ".swatch-on-grid", function() {
                     var b, c, d, e = a(this).data("image-src"),
@@ -13503,7 +13504,12 @@ var baselThemeModule;
                             j = i.data("original-src"),
                             k = i.data("original-srcset"),
                             l = i.data("original-sizes");
-                        "undefined" == typeof j && i.data("original-src", i.attr("src")), "undefined" == typeof k && i.data("original-srcset", i.attr("srcset")), "undefined" == typeof l && i.data("original-sizes", i.attr("sizes")), a(this).hasClass("current-swatch") ? (b = j, c = k, d = l, a(this).removeClass("current-swatch"), h.removeClass("product-swatched")) : (a(this).parent().find(".current-swatch").removeClass("current-swatch"), a(this).addClass("current-swatch"), h.addClass("product-swatched"), b = e, c = f, d = g), i.attr("src") != b && (h.addClass("loading-image"), i.attr("src", b).attr("srcset", c).attr("image_sizes", d).one("load", function() {
+                        "undefined" == typeof j && i.data("original-src", i.attr("src")),
+                        "undefined" == typeof k && i.data("original-srcset", i.attr("srcset")),
+                        "undefined" == typeof l && i.data("original-sizes", i.attr("sizes")),
+                            a(this).hasClass("current-swatch") ?
+                                (b = j, c = k, d = l, a(this)
+                                    .removeClass("current-swatch"), h.removeClass("product-swatched")) : (a(this).parent().find(".current-swatch").removeClass("current-swatch"), a(this).addClass("current-swatch"), h.addClass("product-swatched"), b = e, c = f, d = g), i.attr("src") != b && (h.addClass("loading-image"), i.attr("src", b).attr("srcset", c).attr("image_sizes", d).one("load", function() {
                             h.removeClass("loading-image")
                         }))
                     }

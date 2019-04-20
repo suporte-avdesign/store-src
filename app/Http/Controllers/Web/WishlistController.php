@@ -14,7 +14,7 @@ class WishlistController extends Controller
      */
     public function index()
     {
-        //
+        return view('wishlists.wishlist-1');
     }
 
     /**
@@ -61,7 +61,7 @@ class WishlistController extends Controller
                 "result" => "true",
                 "message" => "Produto adicionado!",
                 "user_wishlists" => $user_wishlists,
-                "wishlist_url" => "https://minha-lista/Y2XKS2STEUIY/"
+                "wishlist_url" => route('wishlist')
             );
 
         }

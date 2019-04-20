@@ -14,18 +14,9 @@ class CompareController extends Controller
      */
     public function index()
     {
-        //
+        return view('compare.compare-1');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -38,7 +29,7 @@ class CompareController extends Controller
         $id =  $request->input('id'); // product_id
         $action =  $request->input('action');//basel_add_to_compare
 
-        $compare = view('compare.compare-1')->render();
+        $compare = view('compare.compare-1-table')->render();
         $out = array(
             "count" => 1,
             "table" => $compare
@@ -48,39 +39,6 @@ class CompareController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.

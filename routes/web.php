@@ -52,6 +52,7 @@ Route::get('cart/undo/{id}', 'Web\CartController@undo')->name('cart.undo');
 | Routes Wishlist
 |--------------------------------------------------------------------------
 */
+Route::get('wishlist', 'Web\WishlistController@index')->name('wishlist');
 Route::post('wishlist/store', 'Web\WishlistController@store')->name('wishlist.store');
 Route::get('wishlist/create', 'Web\WishlistController@create')->name('wishlist.create');
 
@@ -60,4 +61,5 @@ Route::get('wishlist/create', 'Web\WishlistController@create')->name('wishlist.c
 | Routes Compare
 |--------------------------------------------------------------------------
 */
+Route::get('compare', 'Web\CompareController@index')->name('compare');
 Route::post('compare/store', 'Web\CompareController@store')->name('compare.store');
