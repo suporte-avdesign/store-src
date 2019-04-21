@@ -1,155 +1,30 @@
-<html>
 
 
-<head>
-
-    <script type="text/javascript">
-        jQuery(document).ready(function() {
-            var scrollMenu = function() {
-                var scrollMenu = jQuery('.dropdown-scroll > .sub-menu-dropdown');
-
-                scrollMenu.each(function() {
-                    var $this = jQuery(this);
-                    var innerContent = $this.find('> .container');
-
-                    $this.on('mousemove', function(e) {
-                        var parentOffset = $this.offset();
-                        //or $(this).offset(); if you really just want the current element's offset
-                        var relY = e.pageY - parentOffset.top;
-
-                        var deltaHeight = innerContent.outerHeight() - $this.height();
-
-                        if( deltaHeight < 0 ) return;
-
-                        var percentY = relY / $this.height();
-
-                        var margin = 0;
-
-                        if( percentY <= 0 ) {
-                            margin = 0;
-                        } else if( percentY >= 1 ) {
-                            margin = - deltaHeight;
-                        } else {
-                            margin = - percentY * deltaHeight;
-                        }
-
-                        margin = parseInt(margin);
-
-                        innerContent.css({
-                            'position': 'relative',
-                            'top': margin
-                        });
-                    });
-                });
-
-            }
-
-            setTimeout(function() {
-                scrollMenu();
-            }, 1000);
-
-            scrollMenu();
-
-            function lazyload(){
-                var lazy = jQuery( '.basel-lasy-image' );
-
-                lazy.each( function() {
-                    var _this = jQuery( this ),
-                        ImageSrc = _this.data( 'blazy-src' );
-
-                    if ( !_this.parent().hasClass( 'blazy-image-loaded' ) ) {
-                        _this.attr( 'src', ImageSrc );
-                        _this.parent().addClass('blazy-image-loading');
-                        _this.on('load', function() {
-                            _this.parent().removeClass('blazy-image-loading');
-                            _this.parent().addClass( 'blazy-image-loaded' );
-                        })
-                    }
-                })
-
-            }
-            jQuery( document ).on( 'mouseenter mouseleave mousemove','.dropdown-scroll', function( e ) {
-                lazyload();
-            });
-
-            var onePageMenuFix = function() {
-
-                var scrollToRow = function(hash) {
-                    var row = jQuery('#' + hash);
-
-                    if( row.length < 1 ) return;
-
-                    var position = row.offset().top;
-
-                    jQuery('html, body').stop().animate({
-                        scrollTop: position - basel_settings.one_page_menu_offset
-                    }, 800, function() {
-                        activeMenuItem(hash);
-                    });
-                };
-
-                var activeMenuItem = function(hash) {
-                    var itemHash;
-                    jQuery('.onepage-link').each(function() {
-                        itemHash = jQuery(this).find('> a').attr('href').split('#')[1];
-
-                        if( itemHash == hash ) {
-                            jQuery('.onepage-link').removeClass('current-menu-item');
-                            jQuery(this).addClass('current-menu-item');
-                        }
-
-                    });
-                };
-
-                jQuery('body').on('click', '.onepage-link > a', function(e) {
-                    var jQuerythis = jQuery(this),
-                        hash = jQuerythis.attr('href').split('#')[1];
-
-                    if( jQuery('#' + hash).length < 1 ) return;
-
-                    e.preventDefault();
-
-                    scrollToRow(hash);
-
-                    // close mobile menu
-                    jQuery('.basel-close-side').trigger('click');
-                });
-
-                if( jQuery('.onepage-link').length > 0 ) {
-                    jQuery('.entry-content > .vc_section, .entry-content > .vc_row').waypoint(function () {
-                        var hash = jQuery(this).attr('id');
-                        activeMenuItem(hash);
-                    }, { offset: 0 });
-
-                    // jQuery('.onepage-link').removeClass('current-menu-item');
-
-
-                    // URL contains hash
-                    var locationHash = window.location.hash.split('#')[1];
-
-                    if(window.location.hash.length > 1) {
-                        setTimeout(function(){
-                            scrollToRow(locationHash);
-                        }, 500);
-                    }
-
-                }
-            };
-            onePageMenuFix();                    ,
-        });
-    </script>
-
-
-</head>
-
-
-
-<body>
-
-
-
-
-</body>
-
-
-</html>
+                    <div class="filters-area"><div class="filters-inner-area row"><div id="BASEL_Widget_Sorting" class="filter-widget widget-count-4 col-xs-12 col-sm-6 col-md-3"><h5 class="widget-title">Sort by</h5><form class="woocommerce-ordering with-list" method="get">
+                                    <ul>
+                                        <li>
+                                            <a href="https://demo.xtemos.com/basel/shop/?filter_size=l%2Cm&#038;filter_color=blue%2Cbrown%2Cblack&#038;orderby=menu_order" data-order="menu_order" class="">Default</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://demo.xtemos.com/basel/shop/?filter_size=l%2Cm&#038;filter_color=blue%2Cbrown%2Cblack&#038;orderby=popularity" data-order="popularity" class="">Popularity</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://demo.xtemos.com/basel/shop/?filter_size=l%2Cm&#038;filter_color=blue%2Cbrown%2Cblack&#038;orderby=rating" data-order="rating" class="">Average rating</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://demo.xtemos.com/basel/shop/?filter_size=l%2Cm&#038;filter_color=blue%2Cbrown%2Cblack&#038;orderby=date" data-order="date" class="selected-order">Newness</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://demo.xtemos.com/basel/shop/?filter_size=l%2Cm&#038;filter_color=blue%2Cbrown%2Cblack&#038;orderby=price" data-order="price" class="">Price: low to high</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://demo.xtemos.com/basel/shop/?filter_size=l%2Cm&#038;filter_color=blue%2Cbrown%2Cblack&#038;orderby=price-desc" data-order="price-desc" class="">Price: high to low</a>
+                                        </li>
+                                    </ul>
+                                    <input type="hidden" name="filter_size" value="l,m" /><input type="hidden" name="filter_color" value="blue,brown,black" /></form>
+                            </div><div id="basel-woocommerce-layered-nav-16" class="filter-widget widget-count-4 col-xs-12 col-sm-6 col-md-3 basel-woocommerce-layered-nav"><h5 class="widget-title">Filter by color</h5><div class="basel-scroll"><ul class="show-labels-on swatches-normal swatches-display-list basel-scroll-content"><li class="wc-layered-nav-term chosen with-swatch-color"><a href="https://demo.xtemos.com/basel/shop/?orderby=date&#038;filter_size=l%2Cm&#038;filter_color=blue,brown"><div class="filter-swatch"><span style="background-color: #0a0a0a;"></span></div>Black</a> <span class="count">(1)</span></li><li class="wc-layered-nav-term chosen with-swatch-color"><a href="https://demo.xtemos.com/basel/shop/?orderby=date&#038;filter_size=l%2Cm&#038;filter_color=blue,black"><div class="filter-swatch"><span style="background-color: #ba6d09;"></span></div>Brown</a> <span class="count">(1)</span></li><li class="wc-layered-nav-term chosen with-swatch-color"><a href="https://demo.xtemos.com/basel/shop/?orderby=date&#038;filter_size=l%2Cm&#038;filter_color=brown,black"><div class="filter-swatch"><span style="background-color: #769ec1;"></span></div>Blue</a> <span class="count">(1)</span></li></ul></div></div><div id="basel-woocommerce-layered-nav-17" class="filter-widget widget-count-4 col-xs-12 col-sm-6 col-md-3 basel-woocommerce-layered-nav"><h5 class="widget-title">Filter by size</h5><div class="basel-scroll"><ul class="show-labels-on swatches-normal swatches-display-inline basel-scroll-content"><li class="wc-layered-nav-term chosen with-swatch-text"><a href="https://demo.xtemos.com/basel/shop/?orderby=date&#038;filter_color=blue%2Cbrown%2Cblack&#038;filter_size=m">L</a> <span class="count">(1)</span></li><li class="wc-layered-nav-term chosen with-swatch-text"><a href="https://demo.xtemos.com/basel/shop/?orderby=date&#038;filter_color=blue%2Cbrown%2Cblack&#038;filter_size=l">M</a> <span class="count">(1)</span></li><li class="wc-layered-nav-term  with-swatch-text"><a href="https://demo.xtemos.com/basel/shop/?orderby=date&#038;filter_color=blue%2Cbrown%2Cblack&#038;filter_size=l,m,xs">XS</a> <span class="count">(1)</span></li></ul></div></div></div></div>
+                    <div class="basel-active-filters">
+                        <div class="basel-clear-filters-wrapp">
+                            <a class="basel-clear-filters" href="/basel/shop/">Clear filters</a>
+                        </div>
+                        <div class="widget woocommerce widget_layered_nav_filters"><ul><li class="chosen"><a rel="nofollow" aria-label="Remove filter" href="https://demo.xtemos.com/basel/shop/?orderby=date&#038;filter_color=blue%2Cbrown%2Cblack&#038;filter_size=m">L</a></li><li class="chosen"><a rel="nofollow" aria-label="Remove filter" href="https://demo.xtemos.com/basel/shop/?orderby=date&#038;filter_color=blue%2Cbrown%2Cblack&#038;filter_size=l">M</a></li><li class="chosen"><a rel="nofollow" aria-label="Remove filter" href="https://demo.xtemos.com/basel/shop/?orderby=date&#038;filter_size=l%2Cm&#038;filter_color=brown,black">Blue</a></li><li class="chosen"><a rel="nofollow" aria-label="Remove filter" href="https://demo.xtemos.com/basel/shop/?orderby=date&#038;filter_size=l%2Cm&#038;filter_color=blue,black">Brown</a></li><li class="chosen"><a rel="nofollow" aria-label="Remove filter" href="https://demo.xtemos.com/basel/shop/?orderby=date&#038;filter_size=l%2Cm&#038;filter_color=blue,brown">Black</a></li></ul></div></div>

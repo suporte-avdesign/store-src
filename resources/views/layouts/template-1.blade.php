@@ -430,7 +430,7 @@
         "promo_version" => "1",
         "pjax_timeout" => "5000",
         "split_nav_fix" => "",
-        "shop_filters_close" => "no",
+        "shop_filters_close" => "yes",
         "sticky_desc_scroll" => "1",
         "quickview_in_popup_fix" => "",
         "one_page_menu_offset" => "150",
@@ -439,7 +439,7 @@
     var basel_variation_gallery_data=null;
 </script>
 
-<script type="text/javascript" src="{{asset('themes/js/theme.min.js')}}?ver=4.5.1">
+<script type="text/javascript" src="{{asset('themes/js/theme.js')}}?ver=4.5.1">
 </script>
 
 <script type="text/javascript" src="{{asset('includes/underscore/js/underscore.min.js')}}?ver=1.8.3"></script>

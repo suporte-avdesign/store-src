@@ -14,29 +14,33 @@ class CategoryController extends Controller
      */
     public function index(Request $request)
     {
+        //sleep(10);
         $_pjax = $request->input('_pjax');
         $orderby = $request->input('orderby');
         $min_price = $request->input('min_price');
         $max_price = $request->input('max_price');
         $filter_color = $request->input('filter_color');
         $filter_size = $request->input('filter_size');
+
         $num = 2;
         $page = 'page';
         $section = 'shop';
 
-        $input = $request->input();
         $str = '?';
-        foreach ($input as $key => $value) {
+        foreach ($request->input() as $key => $value) {
             $str .= $key.'='.$value.'&';
         }
 
         $parameter = substr($str, 0, -1);
 
         if ($_pjax) {
-            return view('categories.category-1-filter');
-        } else {
-            return view('categories.category-1',
-                compact('section','page','num','parameter','orderby','min_price','max_price','filter_color','filter_size')
+            return view('categories.theme-1-filtered',
+                compact('section','page','num','_pjax','parameter','orderby','min_price','max_price','filter_color','filter_size')
+            );
+        }
+        else {
+            return view('categories.theme-1-list',
+                compact('section','page','num','_pjax','parameter','orderby','min_price','max_price','filter_color','filter_size')
             );
         }
     }
@@ -73,7 +77,7 @@ class CategoryController extends Controller
             $nextPage = route('category.infinit', [$section, $page, $num]).$parameter;
         }
 
-        $products = view('categories.category-1-infinit-scrolling')->render();
+        $products = view('categories.category-1-products')->render();
 
         $out = array(
             "items" => $products,
@@ -82,6 +86,31 @@ class CategoryController extends Controller
         );
 
         return response()->json($out);
+    }
+
+
+    public function filter(Request $request) {
+
+        $_pjax = $request->input('_pjax');
+        $orderby = $request->input('orderby');
+        $min_price = $request->input('min_price');
+        $max_price = $request->input('max_price');
+        $filter_color = $request->input('filter_color');
+        $filter_size = $request->input('filter_size');
+
+        $input = $request->input();
+        $str = '?';
+        foreach ($input as $key => $value) {
+            $str .= $key.'='.$value.'&';
+        }
+
+        $parameter = substr($str, 0, -1);
+
+        if ($_pjax) {
+            return view('categories.theme-1-filtered',
+                compact('section','page','num','parameter','orderby','min_price','max_price','filter_color','filter_size')
+            );
+        }
     }
 
 }

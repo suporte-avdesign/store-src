@@ -21,7 +21,7 @@ Route::get('/', function () {
 | Routes Categories
 |--------------------------------------------------------------------------
 */
-Route::get('categories', 'Web\CategoryController@index')->name('category');
+Route::get('categories/filter/', 'Web\CategoryController@index')->name('category');
 Route::get('categories/{section}/{pag}/{num}/', 'Web\CategoryController@infinitScroll')->name('category.infinit');
 /*
 |--------------------------------------------------------------------------

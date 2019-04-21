@@ -71,7 +71,7 @@
         </div>
     </div>
     <h3 class="product-title">
-        <a href="{{url('product')}}/categoria/secao/produto-1001">Produto 1</a>
+        <a href="{{url('product')}}/categoria/secao/produto-1001">Produto 1 </a>
     </h3>
     <div class="wrap-price">
         <div class="wrapp-swap">
@@ -260,7 +260,7 @@
                                     {{asset('faker/product_photos/img3-f.jpg')}} 219w,
                                     {{asset('faker/product_photos/img3-f.jpg')}} 263w,
                                     {{asset('faker/product_photos/img3-f.jpg')}} 526w"
-                data-image-sizes="(max-width: 870px) 100vw, 870px">Branco
+                 data-image-sizes="(max-width: 870px) 100vw, 870px">Branco
             </div>
         </div>
     </div>

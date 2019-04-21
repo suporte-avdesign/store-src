@@ -11539,6 +11539,7 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
         }
     }(jQuery);
 var baselThemeModule;
+
 ! function(a) {
     "use strict";
     baselThemeModule = function() {
@@ -11605,6 +11606,8 @@ var baselThemeModule;
                     }), b
                 }
             },
+
+
             productFilters: function() {
                 var b = function(a, b) {
                     if (0 != a.length) {
@@ -11720,6 +11723,9 @@ var baselThemeModule;
                     b.prepend('<li class="selected-value" data-title="' + a(this).data("val") + '">' + a(this).data("title") + "</li>")
                 })
             },
+
+
+
             owlCarouselInit: function() {
                 a("[data-owl-carousel]").each(function() {
                     function b() {
@@ -13515,6 +13521,8 @@ var baselThemeModule;
                     }
                 })
             },
+
+
             ajaxFilters: function() {
                 if (a("body").hasClass("basel-ajax-shop-on")) {
                     var c = this,
@@ -13557,6 +13565,7 @@ var baselThemeModule;
                     }
                 }
             },
+
             shopPageInit: function() {
                 this.shopMasonry(), this.ajaxSearch(), this.btnsToolTips(), this.compare(), this.filterDropdowns(), this.categoriesMenuBtns(), this.sortByWidget(), this.categoriesAccordion(), this.woocommercePriceSlider(), this.updateCartWidgetFromLocalStorage(), this.nanoScroller(), this.countDownTimer(), this.shopLoader(), this.stickySidebarBtn(), this.productFilters(), baselThemeModule.clickOnScrollButton(b.shopLoadMoreBtn, !1), a(".woocommerce-ordering").on("change", "select.orderby", function() {
                     a(this).closest("form").find('[name="_pjax"]').remove(), a(this).closest("form").submit()
@@ -13577,6 +13586,8 @@ var baselThemeModule;
                     }), e[0].dispatchEvent(d)
                 })
             },
+
+
             backHistory: function() {
                 history.go(-1), setTimeout(function() {
                     a(".filters-area").removeClass("filters-opened").stop().hide(), a(".open-filters").removeClass("btn-opened"), a(window).width() < 992 && (a(".basel-product-categories").removeClass("categories-opened").stop().hide(), a(".basel-show-categories").removeClass("button-open")), baselThemeModule.woocommercePriceSlider()
@@ -13654,6 +13665,8 @@ var baselThemeModule;
                     }, 10)
                 }
             },
+
+
             filtersArea: function() {
                 var c = a(".filters-area"),
                     d = (a(".open-filters"), 200);
