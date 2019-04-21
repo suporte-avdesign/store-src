@@ -33,7 +33,7 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/"
+            "AVD\\": "app/"
         },
         "files": [
             "app/Helpers/avdHerper.php",

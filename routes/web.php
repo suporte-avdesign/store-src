@@ -11,9 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('categories.category-1');
+Route::get('categories', function () {
+    return view('errors.404');
 });
+
+Route::get('/', 'Web\CategoryController@index')->name('category');
+
 
 
 /*
@@ -21,7 +24,7 @@ Route::get('/', function () {
 | Routes Categories
 |--------------------------------------------------------------------------
 */
-Route::get('categories/filter/', 'Web\CategoryController@index')->name('category');
+Route::get('categorias/filtrar/', 'Web\CategoryController@index')->name('category');
 Route::get('categories/{section}/{pag}/{num}/', 'Web\CategoryController@infinitScroll')->name('category.infinit');
 /*
 |--------------------------------------------------------------------------

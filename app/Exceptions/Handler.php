@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Exceptions;
+namespace AVD\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
@@ -46,6 +46,11 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        $message = $exception->getMessage();
+        if ($exception->getCode() === 404) {
+            return view('errors.401', compact('message'));
+        }
+
         return parent::render($request, $exception);
     }
 }

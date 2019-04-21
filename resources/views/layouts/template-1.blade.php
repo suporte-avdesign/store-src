@@ -84,8 +84,6 @@
     <link rel="shortcut icon" href="{{asset('themes/images/icons/favicon.png')}}">
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{asset('themes/images/icons/apple-touch-icon-152x152-precomposed.png')}}">
 
-    <link rel="stylesheet" id="categories" href="{{asset('themes/css/categories.css')}}?ver=1.0.0" type="text/css" media="all" />
-    <link rel="stylesheet" id="theme" href="{{asset('themes/css/theme.min.css')}}?ver=1.0.0" type="text/css" media="all" />
 
     <script type="text/javascript">
         jQuery(document).ready(function() {
@@ -231,6 +229,12 @@
      <link rel="stylesheet" type="text/css" href="{{asset('plugins/js_composer/css/vc_lte_ie9.min.css')}}" media="screen">
     <![endif]-->
 
+    <link rel="stylesheet" id="styles-css" href="{{asset('themes/css/styles.min.css')}}?ver=1.0.0" type="text/css" media="all" />
+    <link rel="stylesheet" id="theme-css" href="{{asset('themes/css/theme.min.css')}}?ver=1.0.0" type="text/css" media="all" />
+
+
+    @stack('styles')
+
     <noscript><style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript>
 </head>
 @stack('body')
@@ -239,67 +243,18 @@
 
     @include('headers.header-1')
 
-    @yield('content')
+    <div class="clear"></div>
 
-    @include('footers.footer-1')
+    <div class="main-page-wrapper">
 
-</div>
-<!-- end wrapper -->
+        @yield('content')
+
+        @include('footers.footer-1')
+    </div><!-- .main-page-wrapper -->
+</div><!-- end wrapper -->
 <div class="basel-close-side"></div>
 <a href="#" class="scrollToTop basel-tooltip">Role para cima</a>
-<script type="application/ld+json"> {
-    "@context":"https:\/\/schema.org\/",
-    "@graph":[ {
-        "@type": "Product", "@id": "https:\/\/demo.xtemos.com\/basel\/shop\/bags\/nombined-strapped-backpack\/", "name": "Backpack double strap", "url": "https:\/\/demo.xtemos.com\/basel\/shop\/bags\/nombined-strapped-backpack\/"
-    }
-    ,
-    {
-        "@type": "Product", "@id": "https:\/\/demo.xtemos.com\/basel\/shop\/shoes\/basic-contrast-sneakers\/", "name": "Basic contrast sneakers", "url": "https:\/\/demo.xtemos.com\/basel\/shop\/shoes\/basic-contrast-sneakers\/"
-    }
-    ,
-    {
-        "@type": "Product", "@id": "https:\/\/demo.xtemos.com\/basel\/shop\/woman\/basic-knit-dress-chest\/", "name": "Basic knit dress chest", "url": "https:\/\/demo.xtemos.com\/basel\/shop\/woman\/basic-knit-dress-chest\/"
-    }
-    ,
-    {
-        "@type": "Product", "@id": "https:\/\/demo.xtemos.com\/basel\/shop\/man\/hooded-jacquard-jumper\/", "name": "Basic Korean-style coat", "url": "https:\/\/demo.xtemos.com\/basel\/shop\/man\/hooded-jacquard-jumper\/"
-    }
-    ,
-    {
-        "@type": "Product", "@id": "https:\/\/demo.xtemos.com\/basel\/shop\/accessories\/before-decaf-phone-case\/", "name": "Before decaf phone case", "url": "https:\/\/demo.xtemos.com\/basel\/shop\/accessories\/before-decaf-phone-case\/"
-    }
-    ,
-    {
-        "@type": "Product", "@id": "https:\/\/demo.xtemos.com\/basel\/shop\/jewellery\/black-sphere-and-beads\/", "name": "Black sphere and beads", "url": "https:\/\/demo.xtemos.com\/basel\/shop\/jewellery\/black-sphere-and-beads\/"
-    }
-    ,
-    {
-        "@type": "Product", "@id": "https:\/\/demo.xtemos.com\/basel\/shop\/accessories\/black-umbrella-in-handle\/", "name": "Black umbrella in handle", "url": "https:\/\/demo.xtemos.com\/basel\/shop\/accessories\/black-umbrella-in-handle\/"
-    }
-    ,
-    {
-        "@type": "Product", "@id": "https:\/\/demo.xtemos.com\/basel\/shop\/watches\/19564\/", "name": "Bold metallic watch", "url": "https:\/\/demo.xtemos.com\/basel\/shop\/watches\/19564\/"
-    }
-    ,
-    {
-        "@type": "Product", "@id": "https:\/\/demo.xtemos.com\/basel\/shop\/woman\/jur-detail-jacket\/", "name": "Cem and cutwork jacket", "url": "https:\/\/demo.xtemos.com\/basel\/shop\/woman\/jur-detail-jacket\/"
-    }
-    ,
-    {
-        "@type": "Product", "@id": "https:\/\/demo.xtemos.com\/basel\/shop\/shoes\/hrim-sports-shoes\/", "name": "Cen\u2019s dress shoes", "url": "https:\/\/demo.xtemos.com\/basel\/shop\/shoes\/hrim-sports-shoes\/"
-    }
-    ,
-    {
-        "@type": "Product", "@id": "https:\/\/demo.xtemos.com\/basel\/shop\/accessories\/classic-square-buckle-belt\/", "name": "Classic Square Buckle Belt", "url": "https:\/\/demo.xtemos.com\/basel\/shop\/accessories\/classic-square-buckle-belt\/"
-    }
-    ,
-    {
-        "@type": "Product", "@id": "https:\/\/demo.xtemos.com\/basel\/shop\/bags\/clutch-printed-bag\/", "name": "Clutch printed bag", "url": "https:\/\/demo.xtemos.com\/basel\/shop\/bags\/clutch-printed-bag\/"
-    }
-    ]
-}
-</script>
-
+@stack('scripts')
 <script type="text/javascript">
     var c=document.body.className;
     c=c.replace(/woocommerce-no-js/, 'woocommerce-js');
