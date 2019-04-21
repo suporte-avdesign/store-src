@@ -77,7 +77,7 @@ class CategoryController extends Controller
             $nextPage = route('category.infinit', [$section, $page, $num]).$parameter;
         }
 
-        $products = view('categories.category-1-products')->render();
+        $products = view('categories.theme-1-products')->render();
 
         $out = array(
             "items" => $products,

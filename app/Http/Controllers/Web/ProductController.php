@@ -153,10 +153,11 @@ class ProductController extends Controller
     public function show(Request $request)
     {
 
+        // BRANCO 34
         $out[] = array(
             "attributes" => array(
-                "attribute_pa_color" => "yellow",
-                "attribute_pa_size" => "xl"
+                "attribute_pa_color" => "branco",
+                "attribute_pa_size" => "34"
             ),
             "availability_html" => "",
             "backorders_allowed" => false,
@@ -169,77 +170,24 @@ class ProductController extends Controller
             "display_price" => 559,
             "display_regular_price" => 559,
             "image" => array(
-                "title" => "woman (7)",
+                "title" => "Produto 1",
                 "caption" => "",
-                "url" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7.jpg",
+                "url" => asset('faker/product_photos/img3-f.jpg'),
                 "alt" => "",
-                "src" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7.jpg",
-                "srcset" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7.jpg 870w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-546x697.jpg 546w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-273x348.jpg 273w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-235x300.jpg 235w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-768x980.jpg 768w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-803x1024.jpg 803w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-266x340.jpg 266w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-219x280.jpg 219w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-263x336.jpg 263w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-526x671.jpg 526w",
+                "src" => asset('faker/product_photos/img3-f.jpg'),
+                "srcset" => asset('faker/product_photos/img3-f.jpg')." 870w, ".asset('faker/product_photos/img3-f.jpg')." 546w, ".asset('faker/product_photos/img3-f.jpg')." 273w, ".asset('faker/product_photos/img3-f.jpg')." 235w, ".asset('faker/product_photos/img3-f.jpg')." 768w, ".asset('faker/product_photos/img3-f.jpg')." 803w, ".asset('faker/product_photos/img3-f.jpg')." 266w, ".asset('faker/product_photos/img3-f.jpg')." 219w, ".asset('faker/product_photos/img3-f.jpg')." 263w, ".asset('faker/product_photos/img3-f.jpg')." 526w",
                 "sizes" => "(max-width => 870px) 100vw, 870px",
-                "full_src" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7.jpg",
+                "full_src" => asset('faker/product_photos/img3-f.jpg'),
                 "full_src_w" => 870,
-                "full_src_h" => 1110,
-                "gallery_thumbnail_src" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7.jpg",
+                "full_src_h" => 870,
+                "gallery_thumbnail_src" => asset('faker/product_photos/img3-f.jpg'),
                 "gallery_thumbnail_src_w" => 870,
-                "gallery_thumbnail_src_h" => 1110,
-                "thumb_src" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-273x348.jpg",
+                "gallery_thumbnail_src_h" => 870,
+                "thumb_src" => asset('faker/product_photos/img3-f.jpg'),
                 "thumb_src_w" => 273,
-                "thumb_src_h" => 348,
+                "thumb_src_h" => 273,
                 "src_w" => 870,
-                "src_h" => 1110
-            ),
-            "image_id" => "19506",
-            "is_downloadable" => false,
-            "is_in_stock" => true,
-            "is_purchasable" => true,
-            "is_sold_individually" => "no",
-            "is_virtual" => false,
-            "max_qty" => "",
-            "min_qty" => 1,
-            "price_html" => "",
-            "sku" => "",
-            "variation_description" => "",
-            "variation_id" => 19747,
-            "variation_is_active" => true,
-            "variation_is_visible" => true,
-            "weight" => "",
-            "weight_html" => "N/A"
-        );
-
-        $out[] = array(
-            "attributes" => array(
-                "attribute_pa_color" => "red",
-                "attribute_pa_size" => "s"
-            ),
-            "availability_html" => "",
-            "backorders_allowed" => false,
-            "dimensions" => array(
-                "length" => "",
-                "width" => "",
-                "height" => ""
-            ),
-            "dimensions_html" => "N/A",
-            "display_price" => 559,
-            "display_regular_price" => 559,
-            "image" => array(
-                "title" => "woman (4)",
-                "caption" => "",
-                "url" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-4.jpg",
-                "alt" => "",
-                "src" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-4.jpg",
-                "srcset" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-4.jpg 870w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-4-546x697.jpg 546w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-4-273x348.jpg 273w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-4-235x300.jpg 235w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-4-768x980.jpg 768w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-4-803x1024.jpg 803w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-4-266x340.jpg 266w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-4-219x280.jpg 219w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-4-263x336.jpg 263w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-4-526x671.jpg 526w",
-                "sizes" => "(max-width => 870px) 100vw, 870px",
-                "full_src" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-4.jpg",
-                "full_src_w" => 870,
-                "full_src_h" => 1110,
-                "gallery_thumbnail_src" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-4.jpg",
-                "gallery_thumbnail_src_w" => 870,
-                "gallery_thumbnail_src_h" => 1110,
-                "thumb_src" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-4-273x348.jpg",
-                "thumb_src_w" => 273,
-                "thumb_src_h" => 348,
-                "src_w" => 870,
-                "src_h" => 1110
+                "src_h" => 870
             ),
             "image_id" => "19503",
             "is_downloadable" => false,
@@ -258,11 +206,11 @@ class ProductController extends Controller
             "weight" => "",
             "weight_html" => "N/A"
         );
-
+        // BRANCO 35
         $out[] = array(
             "attributes" => array(
-            "attribute_pa_color" => "blue",
-                "attribute_pa_size" => "m"
+            "attribute_pa_color" => "branco",
+                "attribute_pa_size" => "35"
             ),
             "availability_html" => "",
             "backorders_allowed" => false,
@@ -275,183 +223,24 @@ class ProductController extends Controller
             "display_price" => 559,
             "display_regular_price" => 559,
             "image" => array(
-            "title" => "woman (22)",
+                "title" => "Produto 1",
                 "caption" => "",
-                "url" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22.jpg",
+                "url" => asset('faker/product_photos/img3-f.jpg'),
                 "alt" => "",
-                "src" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22.jpg",
-                "srcset" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22.jpg 870w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22-546x697.jpg 546w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22-273x348.jpg 273w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22-235x300.jpg 235w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22-768x980.jpg 768w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22-803x1024.jpg 803w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22-266x340.jpg 266w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22-219x280.jpg 219w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22-263x336.jpg 263w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22-526x671.jpg 526w",
+                "src" => asset('faker/product_photos/img3-f.jpg'),
+                "srcset" => asset('faker/product_photos/img3-f.jpg')." 870w, ".asset('faker/product_photos/img3-f.jpg')." 546w, ".asset('faker/product_photos/img3-f.jpg')." 273w, ".asset('faker/product_photos/img3-f.jpg')." 235w, ".asset('faker/product_photos/img3-f.jpg')." 768w, ".asset('faker/product_photos/img3-f.jpg')." 803w, ".asset('faker/product_photos/img3-f.jpg')." 266w, ".asset('faker/product_photos/img3-f.jpg')." 219w, ".asset('faker/product_photos/img3-f.jpg')." 263w, ".asset('faker/product_photos/img3-f.jpg')." 526w",
                 "sizes" => "(max-width => 870px) 100vw, 870px",
-                "full_src" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22.jpg",
+                "full_src" => asset('faker/product_photos/img3-f.jpg'),
                 "full_src_w" => 870,
-                "full_src_h" => 1110,
-                "gallery_thumbnail_src" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22.jpg",
+                "full_src_h" => 870,
+                "gallery_thumbnail_src" => asset('faker/product_photos/img3-f.jpg'),
                 "gallery_thumbnail_src_w" => 870,
-                "gallery_thumbnail_src_h" => 1110,
-                "thumb_src" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22-273x348.jpg",
+                "gallery_thumbnail_src_h" => 870,
+                "thumb_src" => asset('faker/product_photos/img3-f.jpg'),
                 "thumb_src_w" => 273,
-                "thumb_src_h" => 348,
+                "thumb_src_h" => 273,
                 "src_w" => 870,
-                "src_h" => 1110
-            ),
-            "image_id" => "19512",
-            "is_downloadable" => false,
-            "is_in_stock" => true,
-            "is_purchasable" => true,
-            "is_sold_individually" => "no",
-            "is_virtual" => false,
-            "max_qty" => "",
-            "min_qty" => 1,
-            "price_html" => "",
-            "sku" => "",
-            "variation_description" => "",
-            "variation_id" => 19749,
-            "variation_is_active" => true,
-            "variation_is_visible" => true,
-            "weight" => "",
-            "weight_html" => "N/A"
-        );
-
-        $out[] = array(
-            "attributes" => array(
-            "attribute_pa_color" => "blue",
-                "attribute_pa_size" => "xl"
-            ),
-            "availability_html" => "",
-            "backorders_allowed" => false,
-            "dimensions" => array(
-            "length" => "",
-                "width" => "",
-                "height" => ""
-            ),
-            "dimensions_html" => "N/A",
-            "display_price" => 559,
-            "display_regular_price" => 559,
-            "image" => array(
-            "title" => "woman (22)",
-                "caption" => "",
-                "url" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22.jpg",
-                "alt" => "",
-                "src" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22.jpg",
-                "srcset" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22.jpg 870w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22-546x697.jpg 546w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22-273x348.jpg 273w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22-235x300.jpg 235w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22-768x980.jpg 768w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22-803x1024.jpg 803w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22-266x340.jpg 266w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22-219x280.jpg 219w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22-263x336.jpg 263w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22-526x671.jpg 526w",
-                "sizes" => "(max-width => 870px) 100vw, 870px",
-                "full_src" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22.jpg",
-                "full_src_w" => 870,
-                "full_src_h" => 1110,
-                "gallery_thumbnail_src" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22.jpg",
-                "gallery_thumbnail_src_w" => 870,
-                "gallery_thumbnail_src_h" => 1110,
-                "thumb_src" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22-273x348.jpg",
-                "thumb_src_w" => 273,
-                "thumb_src_h" => 348,
-                "src_w" => 870,
-                "src_h" => 1110
-            ),
-            "image_id" => "19512",
-            "is_downloadable" => false,
-            "is_in_stock" => true,
-            "is_purchasable" => true,
-            "is_sold_individually" => "no",
-            "is_virtual" => false,
-            "max_qty" => "",
-            "min_qty" => 1,
-            "price_html" => "",
-            "sku" => "",
-            "variation_description" => "",
-            "variation_id" => 23725,
-            "variation_is_active" => true,
-            "variation_is_visible" => true,
-            "weight" => "",
-            "weight_html" => "N/A"
-        );
-
-        $out[] = array(
-            "attributes" => array(
-            "attribute_pa_color" => "blue",
-                "attribute_pa_size" => "s"
-            ),
-            "availability_html" => "",
-            "backorders_allowed" => false,
-            "dimensions" => array(
-            "length" => "",
-                "width" => "",
-                "height" => ""
-            ),
-            "dimensions_html" => "N/A",
-            "display_price" => 559,
-            "display_regular_price" => 559,
-            "image" => array(
-            "title" => "woman (22)",
-                "caption" => "",
-                "url" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22.jpg",
-                "alt" => "",
-                "src" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22.jpg",
-                "srcset" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22.jpg 870w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22-546x697.jpg 546w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22-273x348.jpg 273w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22-235x300.jpg 235w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22-768x980.jpg 768w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22-803x1024.jpg 803w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22-266x340.jpg 266w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22-219x280.jpg 219w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22-263x336.jpg 263w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22-526x671.jpg 526w",
-                "sizes" => "(max-width => 870px) 100vw, 870px",
-                "full_src" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22.jpg",
-                "full_src_w" => 870,
-                "full_src_h" => 1110,
-                "gallery_thumbnail_src" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22.jpg",
-                "gallery_thumbnail_src_w" => 870,
-                "gallery_thumbnail_src_h" => 1110,
-                "thumb_src" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-22-273x348.jpg",
-                "thumb_src_w" => 273,
-                "thumb_src_h" => 348,
-                "src_w" => 870,
-                "src_h" => 1110
-            ),
-            "image_id" => "19512",
-            "is_downloadable" => false,
-            "is_in_stock" => true,
-            "is_purchasable" => true,
-            "is_sold_individually" => "no",
-            "is_virtual" => false,
-            "max_qty" => "",
-            "min_qty" => 1,
-            "price_html" => "",
-            "sku" => "",
-            "variation_description" => "",
-            "variation_id" => 23726,
-            "variation_is_active" => true,
-            "variation_is_visible" => true,
-            "weight" => "",
-            "weight_html" => "N/A"
-        );
-
-        $out[] = array(
-            "attributes" => array(
-            "attribute_pa_color" => "red",
-                "attribute_pa_size" => "xl"
-            ),
-            "availability_html" => "",
-            "backorders_allowed" => false,
-            "dimensions" => array(
-            "length" => "",
-                "width" => "",
-                "height" => ""
-            ),
-            "dimensions_html" => "N/A",
-            "display_price" => 559,
-            "display_regular_price" => 559,
-            "image" => array(
-            "title" => "woman (4)",
-                "caption" => "",
-                "url" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-4.jpg",
-                "alt" => "",
-                "src" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-4.jpg",
-                "srcset" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-4.jpg 870w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-4-546x697.jpg 546w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-4-273x348.jpg 273w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-4-235x300.jpg 235w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-4-768x980.jpg 768w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-4-803x1024.jpg 803w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-4-266x340.jpg 266w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-4-219x280.jpg 219w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-4-263x336.jpg 263w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-4-526x671.jpg 526w",
-                "sizes" => "(max-width => 870px) 100vw, 870px",
-                "full_src" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-4.jpg",
-                "full_src_w" => 870,
-                "full_src_h" => 1110,
-                "gallery_thumbnail_src" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-4.jpg",
-                "gallery_thumbnail_src_w" => 870,
-                "gallery_thumbnail_src_h" => 1110,
-                "thumb_src" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-4-273x348.jpg",
-                "thumb_src_w" => 273,
-                "thumb_src_h" => 348,
-                "src_w" => 870,
-                "src_h" => 1110
+                "src_h" => 870
             ),
             "image_id" => "19503",
             "is_downloadable" => false,
@@ -471,10 +260,11 @@ class ProductController extends Controller
             "weight_html" => "N/A"
         );
 
+        // BRANCO 33
         $out[] = array(
             "attributes" => array(
-            "attribute_pa_color" => "red",
-                "attribute_pa_size" => "m"
+            "attribute_pa_color" => "branco",
+                "attribute_pa_size" => "33"
             ),
             "availability_html" => "",
             "backorders_allowed" => false,
@@ -487,24 +277,24 @@ class ProductController extends Controller
             "display_price" => 559,
             "display_regular_price" => 559,
             "image" => array(
-            "title" => "woman (7)",
+                "title" => "Produto 1",
                 "caption" => "",
-                "url" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7.jpg",
+                "url" => asset('faker/product_photos/img3-f.jpg'),
                 "alt" => "",
-                "src" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7.jpg",
-                "srcset" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7.jpg 870w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-546x697.jpg 546w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-273x348.jpg 273w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-235x300.jpg 235w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-768x980.jpg 768w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-803x1024.jpg 803w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-266x340.jpg 266w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-219x280.jpg 219w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-263x336.jpg 263w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-526x671.jpg 526w",
+                "src" => asset('faker/product_photos/img3-f.jpg'),
+                "srcset" => asset('faker/product_photos/img3-f.jpg')." 870w, ".asset('faker/product_photos/img3-f.jpg')." 546w, ".asset('faker/product_photos/img3-f.jpg')." 273w, ".asset('faker/product_photos/img3-f.jpg')." 235w, ".asset('faker/product_photos/img3-f.jpg')." 768w, ".asset('faker/product_photos/img3-f.jpg')." 803w, ".asset('faker/product_photos/img3-f.jpg')." 266w, ".asset('faker/product_photos/img3-f.jpg')." 219w, ".asset('faker/product_photos/img3-f.jpg')." 263w, ".asset('faker/product_photos/img3-f.jpg')." 526w",
                 "sizes" => "(max-width => 870px) 100vw, 870px",
-                "full_src" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7.jpg",
+                "full_src" => asset('faker/product_photos/img3-f.jpg'),
                 "full_src_w" => 870,
-                "full_src_h" => 1110,
-                "gallery_thumbnail_src" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7.jpg",
+                "full_src_h" => 870,
+                "gallery_thumbnail_src" => asset('faker/product_photos/img3-f.jpg'),
                 "gallery_thumbnail_src_w" => 870,
-                "gallery_thumbnail_src_h" => 1110,
-                "thumb_src" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-273x348.jpg",
+                "gallery_thumbnail_src_h" => 870,
+                "thumb_src" => asset('faker/product_photos/img3-f.jpg'),
                 "thumb_src_w" => 273,
-                "thumb_src_h" => 348,
+                "thumb_src_h" => 273,
                 "src_w" => 870,
-                "src_h" => 1110
+                "src_h" => 870
             ),
             "image_id" => "19506",
             "is_downloadable" => false,
@@ -524,15 +314,16 @@ class ProductController extends Controller
             "weight_html" => "N/A"
         );
 
+        // AMARELO 35
         $out[] = array(
             "attributes" => array(
-            "attribute_pa_color" => "yellow",
-                "attribute_pa_size" => "s"
+                "attribute_pa_color" => "amarelo",
+                "attribute_pa_size" => "35"
             ),
             "availability_html" => "",
             "backorders_allowed" => false,
             "dimensions" => array(
-            "length" => "",
+                "length" => "",
                 "width" => "",
                 "height" => ""
             ),
@@ -540,24 +331,77 @@ class ProductController extends Controller
             "display_price" => 559,
             "display_regular_price" => 559,
             "image" => array(
-            "title" => "woman (7)",
+                "title" => "Produto 1",
                 "caption" => "",
-                "url" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7.jpg",
+                "url" => asset('faker/product_photos/img2-f.jpg'),
                 "alt" => "",
-                "src" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7.jpg",
-                "srcset" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7.jpg 870w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-546x697.jpg 546w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-273x348.jpg 273w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-235x300.jpg 235w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-768x980.jpg 768w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-803x1024.jpg 803w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-266x340.jpg 266w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-219x280.jpg 219w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-263x336.jpg 263w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-526x671.jpg 526w",
+                "src" => asset('faker/product_photos/img2-f.jpg'),
+                "srcset" => asset('faker/product_photos/img2-f.jpg')." 870w, ".asset('faker/product_photos/img2-f.jpg')." 546w, ".asset('faker/product_photos/img2-f.jpg')." 273w, ".asset('faker/product_photos/img2-f.jpg')." 235w, ".asset('faker/product_photos/img2-f.jpg')." 768w, ".asset('faker/product_photos/img2-f.jpg')." 803w, ".asset('faker/product_photos/img2-f.jpg')." 266w, ".asset('faker/product_photos/img2-f.jpg')." 219w, ".asset('faker/product_photos/img2-f.jpg')." 263w, ".asset('faker/product_photos/img2-f.jpg')." 526w",
                 "sizes" => "(max-width => 870px) 100vw, 870px",
-                "full_src" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7.jpg",
+                "full_src" => asset('faker/product_photos/img2-f.jpg'),
                 "full_src_w" => 870,
-                "full_src_h" => 1110,
-                "gallery_thumbnail_src" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7.jpg",
+                "full_src_h" => 870,
+                "gallery_thumbnail_src" => asset('faker/product_photos/img2-f.jpg'),
                 "gallery_thumbnail_src_w" => 870,
-                "gallery_thumbnail_src_h" => 1110,
-                "thumb_src" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-273x348.jpg",
+                "gallery_thumbnail_src_h" => 870,
+                "thumb_src" => asset('faker/product_photos/img2-f.jpg'),
                 "thumb_src_w" => 273,
-                "thumb_src_h" => 348,
+                "thumb_src_h" => 273,
                 "src_w" => 870,
-                "src_h" => 1110
+                "src_h" => 870
+            ),
+            "image_id" => "19506",
+            "is_downloadable" => false,
+            "is_in_stock" => true,
+            "is_purchasable" => true,
+            "is_sold_individually" => "no",
+            "is_virtual" => false,
+            "max_qty" => "",
+            "min_qty" => 1,
+            "price_html" => "",
+            "sku" => "",
+            "variation_description" => "",
+            "variation_id" => 19747,
+            "variation_is_active" => true,
+            "variation_is_visible" => true,
+            "weight" => "",
+            "weight_html" => "N/A"
+        );
+        // AMARELO 34
+        $out[] = array(
+            "attributes" => array(
+                "attribute_pa_color" => "amarelo",
+                "attribute_pa_size" => "34"
+            ),
+            "availability_html" => "",
+            "backorders_allowed" => false,
+            "dimensions" => array(
+                "length" => "",
+                "width" => "",
+                "height" => ""
+            ),
+            "dimensions_html" => "N/A",
+            "display_price" => 559,
+            "display_regular_price" => 559,
+            "image" => array(
+                "title" => "Produto 1",
+                "caption" => "",
+                "url" => asset('faker/product_photos/img2-f.jpg'),
+                "alt" => "",
+                "src" => asset('faker/product_photos/img2-f.jpg'),
+                "srcset" => asset('faker/product_photos/img2-f.jpg')." 870w, ".asset('faker/product_photos/img2-f.jpg')." 546w, ".asset('faker/product_photos/img2-f.jpg')." 273w, ".asset('faker/product_photos/img2-f.jpg')." 235w, ".asset('faker/product_photos/img2-f.jpg')." 768w, ".asset('faker/product_photos/img2-f.jpg')." 803w, ".asset('faker/product_photos/img2-f.jpg')." 266w, ".asset('faker/product_photos/img2-f.jpg')." 219w, ".asset('faker/product_photos/img2-f.jpg')." 263w, ".asset('faker/product_photos/img2-f.jpg')." 526w",
+                "sizes" => "(max-width => 870px) 100vw, 870px",
+                "full_src" => asset('faker/product_photos/img2-f.jpg'),
+                "full_src_w" => 870,
+                "full_src_h" => 870,
+                "gallery_thumbnail_src" => asset('faker/product_photos/img2-f.jpg'),
+                "gallery_thumbnail_src_w" => 870,
+                "gallery_thumbnail_src_h" => 870,
+                "thumb_src" => asset('faker/product_photos/img2-f.jpg'),
+                "thumb_src_w" => 273,
+                "thumb_src_h" => 273,
+                "src_w" => 870,
+                "src_h" => 870
             ),
             "image_id" => "19506",
             "is_downloadable" => false,
@@ -576,17 +420,16 @@ class ProductController extends Controller
             "weight" => "",
             "weight_html" => "N/A"
         );
-
-
+        // AMARELO 33
         $out[] = array(
             "attributes" => array(
-            "attribute_pa_color" => "yellow",
-                "attribute_pa_size" => "m"
+                "attribute_pa_color" => "amarelo",
+                "attribute_pa_size" => "33"
             ),
             "availability_html" => "",
             "backorders_allowed" => false,
             "dimensions" => array(
-            "length" => "",
+                "length" => "",
                 "width" => "",
                 "height" => ""
             ),
@@ -594,24 +437,24 @@ class ProductController extends Controller
             "display_price" => 559,
             "display_regular_price" => 559,
             "image" => array(
-            "title" => "woman (7)",
+                "title" => "Produto 1",
                 "caption" => "",
-                "url" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7.jpg",
+                "url" => asset('faker/product_photos/img2-f.jpg'),
                 "alt" => "",
-                "src" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7.jpg",
-                "srcset" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7.jpg 870w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-546x697.jpg 546w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-273x348.jpg 273w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-235x300.jpg 235w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-768x980.jpg 768w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-803x1024.jpg 803w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-266x340.jpg 266w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-219x280.jpg 219w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-263x336.jpg 263w, https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-526x671.jpg 526w",
+                "src" => asset('faker/product_photos/img2-f.jpg'),
+                "srcset" => asset('faker/product_photos/img2-f.jpg')." 870w, ".asset('faker/product_photos/img2-f.jpg')." 546w, ".asset('faker/product_photos/img2-f.jpg')." 273w, ".asset('faker/product_photos/img2-f.jpg')." 235w, ".asset('faker/product_photos/img2-f.jpg')." 768w, ".asset('faker/product_photos/img2-f.jpg')." 803w, ".asset('faker/product_photos/img2-f.jpg')." 266w, ".asset('faker/product_photos/img2-f.jpg')." 219w, ".asset('faker/product_photos/img2-f.jpg')." 263w, ".asset('faker/product_photos/img2-f.jpg')." 526w",
                 "sizes" => "(max-width => 870px) 100vw, 870px",
-                "full_src" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7.jpg",
+                "full_src" => asset('faker/product_photos/img2-f.jpg'),
                 "full_src_w" => 870,
-                "full_src_h" => 1110,
-                "gallery_thumbnail_src" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7.jpg",
+                "full_src_h" => 870,
+                "gallery_thumbnail_src" => asset('faker/product_photos/img2-f.jpg'),
                 "gallery_thumbnail_src_w" => 870,
-                "gallery_thumbnail_src_h" => 1110,
-                "thumb_src" => "https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-7-273x348.jpg",
+                "gallery_thumbnail_src_h" => 870,
+                "thumb_src" => asset('faker/product_photos/img2-f.jpg'),
                 "thumb_src_w" => 273,
-                "thumb_src_h" => 348,
+                "thumb_src_h" => 273,
                 "src_w" => 870,
-                "src_h" => 1110
+                "src_h" => 870
             ),
             "image_id" => "19506",
             "is_downloadable" => false,
@@ -631,6 +474,179 @@ class ProductController extends Controller
             "weight_html" => "N/A"
         );
 
+        // AZUL 33
+        $out[] = array(
+            "attributes" => array(
+            "attribute_pa_color" => "azul",
+                "attribute_pa_size" => "33"
+            ),
+            "availability_html" => "",
+            "backorders_allowed" => false,
+            "dimensions" => array(
+            "length" => "",
+                "width" => "",
+                "height" => ""
+            ),
+            "dimensions_html" => "N/A",
+            "display_price" => 559,
+            "display_regular_price" => 559,
+            "image" => array(
+                "title" => "Produto 1",
+                "caption" => "",
+                "url" => asset('faker/product_photos/img1-f.jpg'),
+                "alt" => "",
+                "src" => asset('faker/product_photos/img1-f.jpg'),
+                "srcset" => asset('faker/product_photos/img1-f.jpg')." 870w, ".asset('faker/product_photos/img1-f.jpg')." 546w, ".asset('faker/product_photos/img1-f.jpg')." 273w, ".asset('faker/product_photos/img1-f.jpg')." 235w, ".asset('faker/product_photos/img1-f.jpg')." 768w, ".asset('faker/product_photos/img1-f.jpg')." 803w, ".asset('faker/product_photos/img1-f.jpg')." 266w, ".asset('faker/product_photos/img1-f.jpg')." 219w, ".asset('faker/product_photos/img1-f.jpg')." 263w, ".asset('faker/product_photos/img1-f.jpg')." 526w",
+                "sizes" => "(max-width => 870px) 100vw, 870px",
+                "full_src" => asset('faker/product_photos/img1-f.jpg'),
+                "full_src_w" => 870,
+                "full_src_h" => 870,
+                "gallery_thumbnail_src" => asset('faker/product_photos/img1-f.jpg'),
+                "gallery_thumbnail_src_w" => 870,
+                "gallery_thumbnail_src_h" => 870,
+                "thumb_src" => asset('faker/product_photos/img1-f.jpg'),
+                "thumb_src_w" => 273,
+                "thumb_src_h" => 273,
+                "src_w" => 870,
+                "src_h" => 870
+            ),
+            "image_id" => "19512",
+            "is_downloadable" => false,
+            "is_in_stock" => true,
+            "is_purchasable" => true,
+            "is_sold_individually" => "no",
+            "is_virtual" => false,
+            "max_qty" => "",
+            "min_qty" => 1,
+            "price_html" => "",
+            "sku" => "",
+            "variation_description" => "",
+            "variation_id" => 19749,
+            "variation_is_active" => true,
+            "variation_is_visible" => true,
+            "weight" => "",
+            "weight_html" => "N/A"
+        );
+        // AZUL 35
+        $out[] = array(
+            "attributes" => array(
+            "attribute_pa_color" => "azul",
+                "attribute_pa_size" => "35"
+            ),
+            "availability_html" => "",
+            "backorders_allowed" => false,
+            "dimensions" => array(
+            "length" => "",
+                "width" => "",
+                "height" => ""
+            ),
+            "dimensions_html" => "N/A",
+            "display_price" => 559,
+            "display_regular_price" => 559,
+            "image" => array(
+                "title" => "Produto 1",
+                "caption" => "",
+                "url" => asset('faker/product_photos/img1-f.jpg'),
+                "alt" => "",
+                "src" => asset('faker/product_photos/img1-f.jpg'),
+                "srcset" => asset('faker/product_photos/img1-f.jpg')." 870w, ".asset('faker/product_photos/img1-f.jpg')." 546w, ".asset('faker/product_photos/img1-f.jpg')." 273w, ".asset('faker/product_photos/img1-f.jpg')." 235w, ".asset('faker/product_photos/img1-f.jpg')." 768w, ".asset('faker/product_photos/img1-f.jpg')." 803w, ".asset('faker/product_photos/img1-f.jpg')." 266w, ".asset('faker/product_photos/img1-f.jpg')." 219w, ".asset('faker/product_photos/img1-f.jpg')." 263w, ".asset('faker/product_photos/img1-f.jpg')." 526w",
+                "sizes" => "(max-width => 870px) 100vw, 870px",
+                "full_src" => asset('faker/product_photos/img1-f.jpg'),
+                "full_src_w" => 870,
+                "full_src_h" => 870,
+                "gallery_thumbnail_src" => asset('faker/product_photos/img1-f.jpg'),
+                "gallery_thumbnail_src_w" => 870,
+                "gallery_thumbnail_src_h" => 870,
+                "thumb_src" => asset('faker/product_photos/img1-f.jpg'),
+                "thumb_src_w" => 273,
+                "thumb_src_h" => 273,
+                "src_w" => 870,
+                "src_h" => 870
+            ),
+            "image_id" => "19512",
+            "is_downloadable" => false,
+            "is_in_stock" => true,
+            "is_purchasable" => true,
+            "is_sold_individually" => "no",
+            "is_virtual" => false,
+            "max_qty" => "",
+            "min_qty" => 1,
+            "price_html" => "",
+            "sku" => "",
+            "variation_description" => "",
+            "variation_id" => 23725,
+            "variation_is_active" => true,
+            "variation_is_visible" => true,
+            "weight" => "",
+            "weight_html" => "N/A"
+        );
+        // AZUL 34
+        $out[] = array(
+            "attributes" => array(
+            "attribute_pa_color" => "azul",
+                "attribute_pa_size" => "34"
+            ),
+            "availability_html" => "",
+            "backorders_allowed" => false,
+            "dimensions" => array(
+            "length" => "",
+                "width" => "",
+                "height" => ""
+            ),
+            "dimensions_html" => "N/A",
+            "display_price" => 559,
+            "display_regular_price" => 559,
+            "image" => array(
+                "title" => "Produto 1",
+                "caption" => "",
+                "url" => asset('faker/product_photos/img1-f.jpg'),
+                "alt" => "",
+                "src" => asset('faker/product_photos/img1-f.jpg'),
+                "srcset" => asset('faker/product_photos/img1-f.jpg')." 870w, ".asset('faker/product_photos/img1-f.jpg')." 546w, ".asset('faker/product_photos/img1-f.jpg')." 273w, ".asset('faker/product_photos/img1-f.jpg')." 235w, ".asset('faker/product_photos/img1-f.jpg')." 768w, ".asset('faker/product_photos/img1-f.jpg')." 803w, ".asset('faker/product_photos/img1-f.jpg')." 266w, ".asset('faker/product_photos/img1-f.jpg')." 219w, ".asset('faker/product_photos/img1-f.jpg')." 263w, ".asset('faker/product_photos/img1-f.jpg')." 526w",
+                "sizes" => "(max-width => 870px) 100vw, 870px",
+                "full_src" => asset('faker/product_photos/img1-f.jpg'),
+                "full_src_w" => 870,
+                "full_src_h" => 870,
+                "gallery_thumbnail_src" => asset('faker/product_photos/img1-f.jpg'),
+                "gallery_thumbnail_src_w" => 870,
+                "gallery_thumbnail_src_h" => 870,
+                "thumb_src" => asset('faker/product_photos/img1-f.jpg'),
+                "thumb_src_w" => 273,
+                "thumb_src_h" => 273,
+                "src_w" => 870,
+                "src_h" => 870
+            ),
+            "image_id" => "19512",
+            "is_downloadable" => false,
+            "is_in_stock" => true,
+            "is_purchasable" => true,
+            "is_sold_individually" => "no",
+            "is_virtual" => false,
+            "max_qty" => "",
+            "min_qty" => 1,
+            "price_html" => "",
+            "sku" => "",
+            "variation_description" => "",
+            "variation_id" => 23726,
+            "variation_is_active" => true,
+            "variation_is_visible" => true,
+            "weight" => "",
+            "weight_html" => "N/A"
+        );
+
+
+
+
+
+
+
+
+
+
+
+
+        // Substituir aspas pelo código html <form product_variations"[{}]"
+        //$product_variations = str_replace('"', "&quot;", json_encode($out));
         $product_variations = json_encode($out);
 
 
