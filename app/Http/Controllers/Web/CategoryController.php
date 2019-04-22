@@ -34,12 +34,12 @@ class CategoryController extends Controller
         $parameter = substr($str, 0, -1);
 
         if ($_pjax) {
-            return view('categories.theme-1-filtered',
+            return view('categories.category-1-filtered',
                 compact('section','page','num','_pjax','parameter','orderby','min_price','max_price','filter_color','filter_size')
             );
         }
         else {
-            return view('categories.theme-1-list',
+            return view('categories.category-1-list',
                 compact('section','page','num','_pjax','parameter','orderby','min_price','max_price','filter_color','filter_size')
             );
         }
@@ -77,7 +77,7 @@ class CategoryController extends Controller
             $nextPage = route('category.infinit', [$section, $page, $num]).$parameter;
         }
 
-        $products = view('categories.theme-1-products')->render();
+        $products = view('categories.category-1-products')->render();
 
         $out = array(
             "items" => $products,
@@ -107,7 +107,7 @@ class CategoryController extends Controller
         $parameter = substr($str, 0, -1);
 
         if ($_pjax) {
-            return view('categories.theme-1-filtered',
+            return view('categories.category-1-filtered',
                 compact('section','page','num','parameter','orderby','min_price','max_price','filter_color','filter_size')
             );
         }

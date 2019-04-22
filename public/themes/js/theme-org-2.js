@@ -121,6 +121,8 @@
             } else b.wH = a || v.height();
             b.fixedContentPos || b.wrap.css("height", b.wH), y("Resize")
         },
+
+
         updateItemHTML: function() {
             var c = b.items[b.index];
             b.contentContainer.detach(), b.content && b.content.detach(), c.parsed || (c = b.parseEl(b.index));
@@ -686,9 +688,7 @@
                 a(this).off("touchstart" + f + " click" + f), c && v.off("touchmove" + f + " touchend" + f)
             }
         }(), A()
-}),
-
-! function(a, b, c, d) {
+}), ! function(a, b, c, d) {
     function e(b, c) {
         this.settings = null, this.options = a.extend({}, e.Defaults, c), this.$element = a(b), this._handlers = {}, this._plugins = {}, this._supress = {}, this._current = null, this._speed = null, this._coordinates = [], this._breakpoint = null, this._width = null, this._items = [], this._clones = [], this._mergers = [], this._widths = [], this._invalidated = {}, this._pipe = [], this._drag = {
             time: null,
@@ -1209,7 +1209,6 @@
             for (c in Object.getOwnPropertyNames(this)) "function" != typeof this[c] && (this[c] = null)
         }, a.fn.owlCarousel.Constructor.Plugins.AutoRefresh = e
     }(window.Zepto || window.jQuery, window, document),
-
     function(a, b, c, d) {
         var e = function(b) {
             this._core = b, this._loaded = [], this._handlers = {
@@ -1476,9 +1475,6 @@
             for (b in Object.getOwnPropertyNames(this)) "function" != typeof this[b] && (this[b] = null)
         }, a.fn.owlCarousel.Constructor.Plugins.autoplay = e
     }(window.Zepto || window.jQuery, window, document),
-
-
-
     function(a, b, c, d) {
         "use strict";
         var e = function(b) {
@@ -8732,14 +8728,11 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
             h = !1
         }
     }("undefined" != typeof module && module.exports && "undefined" != typeof global ? global : this || window, "TweenMax"),
-
     function(a) {
         return "function" == typeof define && define.amd ? define(["jquery"], function(b) {
             return a(b, window, document)
         }) : "object" == typeof exports ? module.exports = a(require("jquery"), window, document) : a(jQuery, window, document)
-    }
-
-    (function(a, b, c) {
+    }(function(a, b, c) {
         "use strict";
         var d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, A, B, C, D, E, F, G, H;
         z = {
@@ -8924,7 +8917,6 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
             })
         }, a.fn.nanoScroller.Constructor = q
     }),
-
     function(a, b, c, d) {
         function e(b, c) {
             this.element = b, this.settings = a.extend({}, g, c), this._defaults = g, this._name = f, this.init()
@@ -8979,7 +8971,6 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
             })
         }
     }(jQuery, window, document),
-
     function(a) {
         var b = a(window),
             c = b.height();
@@ -9005,7 +8996,6 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
             }, (arguments.length < 1 || null === d) && (d = "50%"), (arguments.length < 2 || null === e) && (e = .1), (arguments.length < 3 || null === f) && (f = !0), b.bind("scroll", g).resize(g), g()
         }
     }(jQuery),
-
     function(a, b) {
         "use strict";
 
@@ -9247,9 +9237,7 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
         }, "function" == typeof define && define.amd ? define([], function() {
             return d
         }) : "object" == typeof exports ? module.exports = d : a.Vivus = d
-    }(window, document),
-
-    ! function(a, b) {
+    }(window, document), ! function(a, b) {
     "object" == typeof exports && "undefined" != typeof module ? module.exports = b() : "function" == typeof define && define.amd ? define(b) : a.moment = b()
 }(this, function() {
     "use strict";
@@ -11552,7 +11540,6 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
             }
         }
     }(jQuery);
-
 var baselThemeModule;
 
 ! function(a) {
@@ -11622,11 +11609,8 @@ var baselThemeModule;
                 }
             },
 
-            /**
-             *-------------------------------------------------------------------------------------------------------------------------------------------
-             * Product filters
-             *-------------------------------------------------------------------------------------------------------------------------------------------
-             */
+
+
             productFilters: function () {
                 //Select checkboxes value
                 var removeValue = function ($mainInput, currentVal) {
@@ -11856,6 +11840,9 @@ var baselThemeModule;
                     resultsWrapper.prepend('<li class="selected-value" data-title="' + a(this).data('val') + '">' + a(this).data('title') + '</li>');
                 });
             },
+
+
+
             owlCarouselInit: function() {
                 a("[data-owl-carousel]").each(function() {
                     function b() {
@@ -12069,6 +12056,7 @@ var baselThemeModule;
                         return b.hasClass("basel-login-side-opened")
                     }
             },
+
             /**
              *-------------------------------------------------------------------------------------------------------------------------------------------
              * Header banner
@@ -12098,7 +12086,6 @@ var baselThemeModule;
                 };
             },
 
-
             shopHiddenSidebar: function() {
                 a("body").on("click", ".basel-show-sidebar-btn, .basel-sticky-sidebar-opener", function(c) {
                     c.preventDefault(), a(".sidebar-container").hasClass("show-hidden-sidebar") ? baselThemeModule.hideShopSidebar() : b()
@@ -12114,17 +12101,30 @@ var baselThemeModule;
                     })
                 }
             },
+
             hideShopSidebar: function() {
                 a(".basel-show-sidebar-btn").removeClass("btn-clicked"), a(".sidebar-container").removeClass("show-hidden-sidebar"), a("body").removeClass("basel-show-hidden-sidebar"), a(".sidebar-inner.basel-scroll").nanoScroller({
                     destroy: !0
                 })
             },
+
+            /**
+             *-------------------------------------------------------------------------------------------------------------------------------------------
+             * Mobile search icon
+             *-------------------------------------------------------------------------------------------------------------------------------------------
+             */
             mobileSearchIcon: function() {
                 var b = a("body");
                 a(".mobile-search-icon.search-button").on("click", function(c) {
                     a(window).width() > 1024 || (c.preventDefault(), b.hasClass("act-mobile-menu") || (b.addClass("act-mobile-menu"), a(".mobile-nav .searchform").find('input[type="text"]').focus()))
                 })
             },
+            /**
+                                            *-------------------------------------------------------------------------------------------------------------------------------------------
+            * Content in popup element
+                     *-------------------------------------------------------------------------------------------------------------------------------------------
+             */
+
             contentPopup: function() {
                 a(".basel-popup-with-content").magnificPopup({
                     type: "inline",
@@ -12141,6 +12141,7 @@ var baselThemeModule;
                     }
                 })
             },
+
             addToCartAllTypes: function() {
                 0 != basel_settings.ajax_add_to_cart && a("body").on("submit", "form.cart", function(b) {
                     var c = a(this).parents(".single-product-page");
@@ -12435,8 +12436,8 @@ var baselThemeModule;
                         expires: 7,
                         path: "/"
                     }), !1) : void("shown" != Cookies.get("basel_popup_" + b) &&
-                    ("scroll" == basel_settings.popup_event ? a(window).scroll(function() {
-                        return c ? !1 : void(a(document).scrollTop() >= basel_settings.popup_scroll && (e(), c = !0))
+                        ("scroll" == basel_settings.popup_event ? a(window).scroll(function() {
+                            return c ? !1 : void(a(document).scrollTop() >= basel_settings.popup_scroll && (e(), c = !0))
                     }) : setTimeout(function() {
                         e()
                     }, basel_settings.popup_delay)))
@@ -12525,15 +12526,15 @@ var baselThemeModule;
                 }), a(document).click(function(d) {
                     var e = d.target;
                     return a("." + c).length > 0 && !a(e).is(".item-event-hover") &&
-                    !a(e).parents().is(".item-event-hover") &&
-                    !a(e).parents().is("." + c) ? (b.find("." + c).removeClass(c), !1) : void 0
-                });
+                          !a(e).parents().is(".item-event-hover") &&
+                          !a(e).parents().is("." + c) ? (b.find("." + c).removeClass(c), !1) : void 0
+                    });
                 var d = function() {
                     a(window).width() <= 1024 ? b.find(" > .item-event-hover").each(function() {
                         a(this).data("original-event", "hover").removeClass("item-event-hover").addClass("item-event-click")
                     }) : b.find(" > .item-event-click").each(function() {
                         "hover" == a(this).data("original-event") &&
-                        a(this).removeClass("item-event-click").addClass("item-event-hover")
+                                   a(this).removeClass("item-event-click").addClass("item-event-hover")
                     })
                 };
                 a(window).on("resize", d)
@@ -12556,7 +12557,7 @@ var baselThemeModule;
                         i = b.width(),
                         j = f.outerWidth() + f.offset().left,
                         k = a("body").hasClass("wrapper-boxed") ||
-                        a("body").hasClass("wrapper-boxed-small") ? j : i;
+                            a("body").hasClass("wrapper-boxed-small") ? j : i;
                     if (g && h) {
                         if (a("body").hasClass("rtl") &&
                             h.left <= 0 &&
@@ -12604,7 +12605,7 @@ var baselThemeModule;
                         var c;
                         a(".onepage-link").each(function() {
                             c = a(this).find("> a").attr("href").split("#")[1], c == b &&
-                            (a(".onepage-link").removeClass("current-menu-item"), a(this).addClass("current-menu-item"))
+                                (a(".onepage-link").removeClass("current-menu-item"), a(this).addClass("current-menu-item"))
                         })
                     };
                 if (a("body").on("click", ".onepage-link > a", function(c) {
@@ -13457,8 +13458,8 @@ var baselThemeModule;
                         h = "",
                         i = a(".quick-view").find('[data-loop-name="' + e + '"]'),
                         j = a(this);
-                    j.addClass("loading"), "undefined" != typeof i[f - 1] &&
-                    (g = i.eq(f - 1).addClass("quick-view-prev"), g = a("<div>").append(g.clone()).html()), "undefined" != typeof i[f + 1] && (h = i.eq(f + 1).addClass("quick-view-next"), h = a("<div>").append(h.clone()).html()), b.quickViewLoad(d, j, g, h)
+                        j.addClass("loading"), "undefined" != typeof i[f - 1] &&
+                            (g = i.eq(f - 1).addClass("quick-view-prev"), g = a("<div>").append(g.clone()).html()), "undefined" != typeof i[f + 1] && (h = i.eq(f + 1).addClass("quick-view-next"), h = a("<div>").append(h.clone()).html()), b.quickViewLoad(d, j, g, h)
                 })
             },
             quickViewLoad: function(c, d, e, f) {
@@ -13665,11 +13666,7 @@ var baselThemeModule;
                 })
             },
 
-            /**
-             *-------------------------------------------------------------------------------------------------------------------------------------------
-             * Ajax filters
-             *-------------------------------------------------------------------------------------------------------------------------------------------
-             */
+
             ajaxFilters: function() {
                 if (a("body").hasClass("basel-ajax-shop-on")) {
                     var c = this,
@@ -13713,45 +13710,13 @@ var baselThemeModule;
                 }
             },
 
-
-            /**
-             *-------------------------------------------------------------------------------------------------------------------------------------------
-             * init shop page JS functions
-             *-------------------------------------------------------------------------------------------------------------------------------------------
-             */
             shopPageInit: function() {
-                this.shopMasonry(),
-                this.ajaxSearch(),
-                this.btnsToolTips(),
-                this.compare(),
-                this.filterDropdowns(),
-                this.categoriesMenuBtns(),
-                this.sortByWidget(),
-                this.categoriesAccordion(),
-                this.woocommercePriceSlider(),
-                this.updateCartWidgetFromLocalStorage(),
-                this.nanoScroller(),
-                this.countDownTimer(),
-                this.shopLoader(),
-                this.stickySidebarBtn(),
-                this.productFilters(),
-
-                baselThemeModule.clickOnScrollButton(baselTheme.shopLoadMoreBtn, false);
-
-                a('.woocommerce-ordering').on('change', 'select.orderby', function () {
-                    a(this).closest('form').find('[name="_pjax"]').remove();
-                    a(this).closest('form').submit();
-                });
-
-                a(document.body).on('updated_wc_div', function () {
-                    a(document).trigger('basel-images-loaded');
-                });
-
-                a(document).trigger('resize.vcRowBehaviour');
+                this.shopMasonry(), this.ajaxSearch(), this.btnsToolTips(), this.compare(), this.filterDropdowns(), this.categoriesMenuBtns(), this.sortByWidget(), this.categoriesAccordion(), this.woocommercePriceSlider(), this.updateCartWidgetFromLocalStorage(), this.nanoScroller(), this.countDownTimer(), this.shopLoader(), this.stickySidebarBtn(), this.productFilters(), baselThemeModule.clickOnScrollButton(b.shopLoadMoreBtn, !1), a(".woocommerce-ordering").on("change", "select.orderby", function() {
+                    a(this).closest("form").find('[name="_pjax"]').remove(), a(this).closest("form").submit()
+                }), a(document.body).on("updated_wc_div", function() {
+                    a(document).trigger("basel-images-loaded")
+                }), a(document).trigger("resize.vcRowBehaviour")
             },
-
-
-
             filterDropdowns: function() {
                 a(".basel-woocommerce-layered-nav").on("change", "select", function() {
                     var b = a(this).val(),
@@ -13816,7 +13781,6 @@ var baselThemeModule;
                 }
             },
             woocommercePriceSlider: function() {
-
                 if ("undefined" == typeof woocommerce_price_slider_params || a(".price_slider_amount #min_price").length < 1 || !a.fn.slider) return !1;
                 var b = a(".price_slider");
                 if (void 0 === b.slider("instance")) {

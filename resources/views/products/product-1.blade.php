@@ -24,30 +24,31 @@
                         </nav>
                         <!-- Anteriores e Próximos -->
                         <div class="basel-products-nav">
+
                             <div class="product-btn product-prev">
-                                <a href="https://demo.xtemos.com/basel/shop/woman/lasic-open-sided-long-top/">
+                                <a href="{{route('product', $product_prev)}}">
                                     Produto Anterior<span></span>
                                 </a>
                                 <div class="wrapper-short">
                                     <div class="product-short">
-                                        <a href="https://demo.xtemos.com/basel/shop/woman/lasic-open-sided-long-top/" class="product-thumb">
-                                            <img width="273" height="348"
-                                                 src="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-8-273x348.jpg"
+                                        <a href="{{route('product', $product_prev)}}" class="product-thumb">
+                                            <img width="273" height="273"
+                                                 src="{{asset('faker/product_photos/img4-f.jpg')}}"
                                                  class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
-                                                 alt="" srcset="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-8-273x348.jpg 273w,
-                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-8-546x697.jpg 546w,
-                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-8-235x300.jpg 235w,
-                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-8-768x980.jpg 768w,
-                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-8-803x1024.jpg 803w,
-                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-8-266x340.jpg 266w,
-                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-8-219x280.jpg 219w,
-                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-8-263x336.jpg 263w,
-                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-8-526x671.jpg 526w,
-                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-8.jpg 870w"
+                                                 alt="" srcset="{{asset('faker/product_photos/img4-f.jpg')}} 273w,
+                                                 {{asset('faker/product_photos/img4-f.jpg')}} 546w,
+                                                 {{asset('faker/product_photos/img4-f.jpg')}} 235w,
+                                                 {{asset('faker/product_photos/img4-f.jpg')}} 768w,
+                                                 {{asset('faker/product_photos/img4-f.jpg')}} 803w,
+                                                 {{asset('faker/product_photos/img4-f.jpg')}} 266w,
+                                                 {{asset('faker/product_photos/img4-f.jpg')}} 219w,
+                                                 {{asset('faker/product_photos/img4-f.jpg')}} 263w,
+                                                 {{asset('faker/product_photos/img4-f.jpg')}} 526w,
+                                                 {{asset('faker/product_photos/img4-f.jpg')}} 870w"
                                                  sizes="(max-width: 273px) 100vw, 273px"
                                             />
                                         </a>
-                                        <a href="https://demo.xtemos.com/basel/shop/woman/lasic-open-sided-long-top/" class="product-title">
+                                        <a href="{{route('product', $product_prev)}}" class="product-title">
                                             Produto 1
                                         </a>
                                         <span class="price">
@@ -67,29 +68,31 @@
                             </div>
 
                             <div class="product-btn product-next">
-                                <a href="https://demo.xtemos.com/basel/shop/man/long-eleeve-allover/">Próximo Produto
+                                <a href="{{route('product', $product_next)}}">Próximo Produto
                                     <span></span>
                                 </a>
                                 <div class="wrapper-short">
                                     <div class="product-short">
-                                        <a href="https://demo.xtemos.com/basel/shop/man/long-eleeve-allover/" class="product-thumb">
+                                        <a href="{{route('product', $product_next)}}" class="product-thumb">
                                             <img width="273" height="273"
-                                                 src="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/man-9.jpg"
+                                                 src="{{asset('faker/product_photos/img8-f.jpg')}}"
                                                  class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
-                                                 alt=""
-                                                 srcset="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/man-9.jpg 870w,
-                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/man-9-235x300.jpg 235w,
-                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/man-9-768x980.jpg 768w,
-                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/man-9-803x1024.jpg 803w,
-                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/man-9-266x340.jpg 266w,
-                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/man-9-219x280.jpg 219w,
-                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/man-9-263x336.jpg 263w,
-                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/man-9-526x671.jpg 526w"
+                                                 alt="" srcset="{{asset('faker/product_photos/img8-f.jpg')}} 273w,
+                                                 {{asset('faker/product_photos/img8-f.jpg')}} 546w,
+                                                 {{asset('faker/product_photos/img8-f.jpg')}} 235w,
+                                                 {{asset('faker/product_photos/img8-f.jpg')}} 768w,
+                                                 {{asset('faker/product_photos/img8-f.jpg')}} 803w,
+                                                 {{asset('faker/product_photos/img8-f.jpg')}} 266w,
+                                                 {{asset('faker/product_photos/img8-f.jpg')}} 219w,
+                                                 {{asset('faker/product_photos/img8-f.jpg')}} 263w,
+                                                 {{asset('faker/product_photos/img8-f.jpg')}} 526w,
+                                                 {{asset('faker/product_photos/img8-f.jpg')}} 870w"
                                                  sizes="(max-width: 273px) 100vw, 273px"
                                             />
                                         </a>
-                                        <a href="https://demo.xtemos.com/basel/shop/man/long-eleeve-allover/" class="product-title">
-                                            Produto 2
+
+                                        <a href="{{route('product', $product_next)}}" class="product-title">
+                                            Produto  <span>3</span>
                                         </a>
                                         <span class="price">
                                             <span class="woocommerce-Price-amount amount">
@@ -99,6 +102,7 @@
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -118,182 +122,77 @@
                                             <div class="col-md-9 col-md-push-3">
                                                 <figure class="woocommerce-product-gallery__wrapper owl-carousel">
 
-                                                    <figure data-thumb="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-10.jpg" class="woocommerce-product-gallery__image">
-                                                        <a href="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-10.jpg">
+                                                    <figure data-thumb="{{asset('faker/product_photos/img1-f.jpg')}}" class="woocommerce-product-gallery__image">
+                                                        <a href="{{asset('faker/product_photos/img1-f.jpg')}}">
                                                             <img width="870" height="870"
-                                                                 src="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-10.jpg"
+                                                                 src="{{asset('faker/product_photos/img1-f.jpg')}}"
                                                                  class="wp-post-image wp-post-image"
-                                                                 alt="" title="woman (10)"
+                                                                 alt="Produto 2 - Cor Azul" title="Produto 2 - cor Azul"
                                                                  data-caption=""
-                                                                 data-src="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-10.jpg"
-                                                                 data-large_image="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-10.jpg"
-                                                                 data-large_image_width="870"
-                                                                 data-large_image_height="1110"
-                                                                 srcset="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-10.jpg 870w,
-                                                                         https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-10-235x300.jpg 235w,
-                                                                         https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-10-768x980.jpg 768w,
-                                                                         https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-10-803x1024.jpg 803w,
-                                                                         https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-10-266x340.jpg 266w,
-                                                                         https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-10-219x280.jpg 219w,
-                                                                         https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-10-263x336.jpg 263w,
-                                                                         https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-10-526x671.jpg 526w"
-                                                                 sizes="(max-width: 870px) 100vw, 870px"
-                                                            />
-                                                        </a>
-                                                    </figure>
-
-                                                    <figure data-thumb="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-16.jpg" class="woocommerce-product-gallery__image">
-                                                        <a href="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-16.jpg">
-                                                            <img width="870" height="870"
-                                                                 src="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-16.jpg"
-                                                                 class="attachment-woocommerce_single size-woocommerce_single"
-                                                                 alt=""
-                                                                 title="woman (16)"
-                                                                 data-caption=""
-                                                                 data-src="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-16.jpg"
-                                                                 data-large_image="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-16.jpg"
-                                                                 data-large_image_width="870"
-                                                                 data-large_image_height="1110"
-                                                                 srcset="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-16.jpg 870w,
-                                                                         https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-16-235x300.jpg 235w,
-                                                                         https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-16-768x980.jpg 768w,
-                                                                         https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-16-803x1024.jpg 803w,
-                                                                         https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-16-266x340.jpg 266w,
-                                                                         https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-16-219x280.jpg 219w,
-                                                                         https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-16-263x336.jpg 263w,
-                                                                         https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-16-526x671.jpg 526w"
-                                                                 sizes="(max-width: 870px) 100vw, 870px"
-                                                            />
-                                                        </a>
-                                                    </figure>
-
-                                                    <figure data-thumb="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-18.jpg" class="woocommerce-product-gallery__image">
-                                                        <a href="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-18.jpg">
-                                                            <img width="870" height="1110"
-                                                                 src="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-18.jpg"
-                                                                 class="attachment-woocommerce_single size-woocommerce_single"
-                                                                 alt=""
-                                                                 title="woman (18)"
-                                                                 data-caption=""
-                                                                 data-src="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-18.jpg"
-                                                                 data-large_image="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-18.jpg"
-                                                                 data-large_image_width="870"
-                                                                 data-large_image_height="1110"
-                                                                 srcset="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-18.jpg 870w,
-                                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-18-235x300.jpg 235w,
-                                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-18-768x980.jpg 768w,
-                                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-18-803x1024.jpg 803w,
-                                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-18-266x340.jpg 266w,
-                                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-18-219x280.jpg 219w,
-                                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-18-263x336.jpg 263w,
-                                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-18-526x671.jpg 526w"
-                                                                 sizes="(max-width: 870px) 100vw, 870px"
-                                                            />
-                                                        </a>
-                                                    </figure>
-
-                                                    <figure data-thumb="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-19.jpg" class="woocommerce-product-gallery__image">
-                                                        <a href="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-19.jpg">
-                                                            <img width="870" height="870"
-                                                                 src="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-19.jpg"
-                                                                 class="attachment-woocommerce_single size-woocommerce_single"
-                                                                 alt=""
-                                                                 title="woman (19)"
-                                                                 data-caption=""
-                                                                 data-src="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-19.jpg"
-                                                                 data-large_image="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-19.jpg"
-                                                                 data-large_image_width="870"
-                                                                 data-large_image_height="1110"
-                                                                 srcset="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-19.jpg 870w,
-                                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-19-235x300.jpg 235w,
-                                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-19-768x980.jpg 768w,
-                                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-19-803x1024.jpg 803w,
-                                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-19-266x340.jpg 266w,
-                                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-19-219x280.jpg 219w,
-                                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-19-263x336.jpg 263w,
-                                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-19-526x671.jpg 526w"
-                                                                 sizes="(max-width: 870px) 100vw, 870px"
-                                                            />
-                                                        </a>
-                                                    </figure>
-
-                                                    <figure data-thumb="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-15.jpg" class="woocommerce-product-gallery__image">
-                                                        <a href="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-15.jpg">
-                                                            <img width="870" height="870"
-                                                                 src="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-15.jpg"
-                                                                 class="attachment-woocommerce_single size-woocommerce_single"
-                                                                 alt=""
-                                                                 title="woman (15)"
-                                                                 data-caption=""
-                                                                 data-src="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-15.jpg"
-                                                                 data-large_image="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-15.jpg"
+                                                                 data-src="{{asset('faker/product_photos/img1-f.jpg')}}"
+                                                                 data-large_image="{{asset('faker/product_photos/img1-f.jpg')}}"
                                                                  data-large_image_width="870"
                                                                  data-large_image_height="870"
-                                                                 srcset="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-15.jpg 870w,
-                                                                         https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-15-235x300.jpg 235w,
-                                                                         https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-15-768x980.jpg 768w,
-                                                                         https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-15-803x1024.jpg 803w,
-                                                                         https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-15-266x340.jpg 266w,
-                                                                         https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-15-219x280.jpg 219w,
-                                                                         https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-15-263x336.jpg 263w,
-                                                                         https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-15-526x671.jpg 526w"
+                                                                 srcset="{{asset('faker/product_photos/img1-f.jpg')}} 870w,
+                                                                         {{asset('faker/product_photos/img1-f.jpg')}} 235w,
+                                                                         {{asset('faker/product_photos/img1-f.jpg')}} 768w,
+                                                                         {{asset('faker/product_photos/img1-f.jpg')}} 803w,
+                                                                         {{asset('faker/product_photos/img1-f.jpg')}} 266w,
+                                                                         {{asset('faker/product_photos/img1-f.jpg')}} 219w,
+                                                                         {{asset('faker/product_photos/img1-f.jpg')}} 263w,
+                                                                         {{asset('faker/product_photos/img1-f.jpg')}} 526w"
                                                                  sizes="(max-width: 870px) 100vw, 870px"
                                                             />
                                                         </a>
                                                     </figure>
 
-                                                    <figure data-thumb="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-11.jpg" class="woocommerce-product-gallery__image">
-                                                        <a href="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-11.jpg">
+                                                    <figure data-thumb="{{asset('faker/product_photos/img1-l.jpg')}}" class="woocommerce-product-gallery__image">
+                                                        <a href="{{asset('faker/product_photos/img1-l.jpg')}}">
                                                             <img width="870" height="870"
-                                                                 src="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-11.jpg"
-                                                                 class="attachment-woocommerce_single size-woocommerce_single"
-                                                                 alt=""
-                                                                 title="woman (11)"
+                                                                 src="{{asset('faker/product_photos/img1-l.jpg')}}"
+                                                                 class="wp-post-image wp-post-image"
+                                                                 alt="Produto 2 - Cor Azul" title="Produto 2 - cor Azul"
                                                                  data-caption=""
-                                                                 data-src="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-11.jpg"
-                                                                 data-large_image="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-11.jpg"
+                                                                 data-src="{{asset('faker/product_photos/img1-l.jpg')}}"
+                                                                 data-large_image="{{asset('faker/product_photos/img1-l.jpg')}}"
                                                                  data-large_image_width="870"
                                                                  data-large_image_height="870"
-                                                                 srcset="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-11.jpg 870w,
-                                                                         https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-11-235x300.jpg 235w,
-                                                                         https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-11-768x980.jpg 768w,
-                                                                         https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-11-803x1024.jpg 803w,
-                                                                         https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-11-266x340.jpg 266w,
-                                                                         https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-11-219x280.jpg 219w,
-                                                                         https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-11-263x336.jpg 263w,
-                                                                         https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-11-526x671.jpg 526w"
+                                                                 srcset="{{asset('faker/product_photos/img1-l.jpg')}} 870w,
+                                                                         {{asset('faker/product_photos/img1-l.jpg')}} 235w,
+                                                                         {{asset('faker/product_photos/img1-l.jpg')}} 768w,
+                                                                         {{asset('faker/product_photos/img1-l.jpg')}} 803w,
+                                                                         {{asset('faker/product_photos/img1-l.jpg')}} 266w,
+                                                                         {{asset('faker/product_photos/img1-l.jpg')}} 219w,
+                                                                         {{asset('faker/product_photos/img1-l.jpg')}} 263w,
+                                                                         {{asset('faker/product_photos/img1-l.jpg')}} 526w"
                                                                  sizes="(max-width: 870px) 100vw, 870px"
                                                             />
                                                         </a>
                                                     </figure>
 
-                                                    <figure data-thumb="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-9-273x348.jpg" class="woocommerce-product-gallery__image">
-                                                        <a href="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-9.jpg">
+                                                    <figure data-thumb="{{asset('faker/product_photos/img1-s.jpg')}}" class="woocommerce-product-gallery__image">
+                                                        <a href="{{asset('faker/product_photos/img1-s.jpg')}}">
                                                             <img width="870" height="870"
-                                                                 src="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-9.jpg"
-                                                                 class="attachment-woocommerce_single size-woocommerce_single"
-                                                                 alt=""
-                                                                 title="woman (9)"
+                                                                 src="{{asset('faker/product_photos/img1-s.jpg')}}"
+                                                                 class="wp-post-image wp-post-image"
+                                                                 alt="Produto 2 - Cor Azul" title="Produto 2 - cor Azul"
                                                                  data-caption=""
-                                                                 data-src="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-9.jpg"
-                                                                 data-large_image="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-9.jpg"
+                                                                 data-src="{{asset('faker/product_photos/img1-s.jpg')}}"
+                                                                 data-large_image="{{asset('faker/product_photos/img1-s.jpg')}}"
                                                                  data-large_image_width="870"
-                                                                 data-large_image_height="1110"
-                                                                 srcset="https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-9.jpg 870w,
-                                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-9-546x697.jpg 546w,
-                                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-9-273x348.jpg 273w,
-                                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-9-235x300.jpg 235w,
-                                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-9-768x980.jpg 768w,
-                                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-9-803x1024.jpg 803w,
-                                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-9-266x340.jpg 266w,
-                                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-9-219x280.jpg 219w,
-                                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-9-263x336.jpg 263w,
-                                                                 https://demo.xtemos.com/basel/wp-content/uploads/2015/10/woman-9-526x671.jpg 526w"
+                                                                 data-large_image_height="870"
+                                                                 srcset="{{asset('faker/product_photos/img1-s.jpg')}} 870w,
+                                                                         {{asset('faker/product_photos/img1-s.jpg')}} 235w,
+                                                                         {{asset('faker/product_photos/img1-s.jpg')}} 768w,
+                                                                         {{asset('faker/product_photos/img1-s.jpg')}} 803w,
+                                                                         {{asset('faker/product_photos/img1-s.jpg')}} 266w,
+                                                                         {{asset('faker/product_photos/img1-s.jpg')}} 219w,
+                                                                         {{asset('faker/product_photos/img1-s.jpg')}} 263w,
+                                                                         {{asset('faker/product_photos/img1-s.jpg')}} 526w"
                                                                  sizes="(max-width: 870px) 100vw, 870px"
                                                             />
                                                         </a>
                                                     </figure>
-
                                                 </figure>
 
                                                 <div class="basel-show-product-gallery-wrap">
@@ -301,7 +200,9 @@
                                                 </div>
 
                                             </div>
-                                            <div class="col-md-3 col-md-pull-9"><div class="thumbnails"></div></div>
+                                            <div class="col-md-3 col-md-pull-9">
+                                                <div class="thumbnails"></div>
+                                            </div>
                                         </div>
                                     </div>
                                     <!-- Descrição do produto -->
@@ -317,8 +218,9 @@
                                                 <div class="woocommerce-product-details__short-description">
                                                     <p>Aqui definir venda de atacado e varejo.</p>
                                                 </div>
-                                                <form class="variations_form cart" method="post" enctype='multipart/form-data' data-product_id="19531" data-product_variations="[{&quot;attributes&quot;:{&quot;attribute_pa_color&quot;:&quot;yellow&quot;,&quot;attribute_pa_size&quot;:&quot;xl&quot;},&quot;availability_html&quot;:&quot;&quot;,&quot;backorders_allowed&quot;:false,&quot;dimensions&quot;:{&quot;length&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;,&quot;height&quot;:&quot;&quot;},&quot;dimensions_html&quot;:&quot;N\/A&quot;,&quot;display_price&quot;:559,&quot;display_regular_price&quot;:559,&quot;image&quot;:{&quot;title&quot;:&quot;woman (7)&quot;,&quot;caption&quot;:&quot;&quot;,&quot;url&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7.jpg&quot;,&quot;srcset&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7.jpg 870w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-546x697.jpg 546w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-273x348.jpg 273w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-235x300.jpg 235w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-768x980.jpg 768w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-803x1024.jpg 803w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-266x340.jpg 266w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-219x280.jpg 219w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-263x336.jpg 263w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-526x671.jpg 526w&quot;,&quot;sizes&quot;:&quot;(max-width: 870px) 100vw, 870px&quot;,&quot;full_src&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7.jpg&quot;,&quot;full_src_w&quot;:870,&quot;full_src_h&quot;:1110,&quot;gallery_thumbnail_src&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7.jpg&quot;,&quot;gallery_thumbnail_src_w&quot;:870,&quot;gallery_thumbnail_src_h&quot;:1110,&quot;thumb_src&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-273x348.jpg&quot;,&quot;thumb_src_w&quot;:273,&quot;thumb_src_h&quot;:348,&quot;src_w&quot;:870,&quot;src_h&quot;:1110},&quot;image_id&quot;:&quot;19506&quot;,&quot;is_downloadable&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_purchasable&quot;:true,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;is_virtual&quot;:false,&quot;max_qty&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;price_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;&quot;,&quot;variation_description&quot;:&quot;&quot;,&quot;variation_id&quot;:19747,&quot;variation_is_active&quot;:true,&quot;variation_is_visible&quot;:true,&quot;weight&quot;:&quot;&quot;,&quot;weight_html&quot;:&quot;N\/A&quot;},{&quot;attributes&quot;:{&quot;attribute_pa_color&quot;:&quot;red&quot;,&quot;attribute_pa_size&quot;:&quot;s&quot;},&quot;availability_html&quot;:&quot;&quot;,&quot;backorders_allowed&quot;:false,&quot;dimensions&quot;:{&quot;length&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;,&quot;height&quot;:&quot;&quot;},&quot;dimensions_html&quot;:&quot;N\/A&quot;,&quot;display_price&quot;:559,&quot;display_regular_price&quot;:559,&quot;image&quot;:{&quot;title&quot;:&quot;woman (4)&quot;,&quot;caption&quot;:&quot;&quot;,&quot;url&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-4.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-4.jpg&quot;,&quot;srcset&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-4.jpg 870w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-4-546x697.jpg 546w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-4-273x348.jpg 273w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-4-235x300.jpg 235w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-4-768x980.jpg 768w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-4-803x1024.jpg 803w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-4-266x340.jpg 266w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-4-219x280.jpg 219w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-4-263x336.jpg 263w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-4-526x671.jpg 526w&quot;,&quot;sizes&quot;:&quot;(max-width: 870px) 100vw, 870px&quot;,&quot;full_src&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-4.jpg&quot;,&quot;full_src_w&quot;:870,&quot;full_src_h&quot;:1110,&quot;gallery_thumbnail_src&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-4.jpg&quot;,&quot;gallery_thumbnail_src_w&quot;:870,&quot;gallery_thumbnail_src_h&quot;:1110,&quot;thumb_src&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-4-273x348.jpg&quot;,&quot;thumb_src_w&quot;:273,&quot;thumb_src_h&quot;:348,&quot;src_w&quot;:870,&quot;src_h&quot;:1110},&quot;image_id&quot;:&quot;19503&quot;,&quot;is_downloadable&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_purchasable&quot;:true,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;is_virtual&quot;:false,&quot;max_qty&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;price_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;&quot;,&quot;variation_description&quot;:&quot;&quot;,&quot;variation_id&quot;:19748,&quot;variation_is_active&quot;:true,&quot;variation_is_visible&quot;:true,&quot;weight&quot;:&quot;&quot;,&quot;weight_html&quot;:&quot;N\/A&quot;},{&quot;attributes&quot;:{&quot;attribute_pa_color&quot;:&quot;blue&quot;,&quot;attribute_pa_size&quot;:&quot;m&quot;},&quot;availability_html&quot;:&quot;&quot;,&quot;backorders_allowed&quot;:false,&quot;dimensions&quot;:{&quot;length&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;,&quot;height&quot;:&quot;&quot;},&quot;dimensions_html&quot;:&quot;N\/A&quot;,&quot;display_price&quot;:559,&quot;display_regular_price&quot;:559,&quot;image&quot;:{&quot;title&quot;:&quot;woman (22)&quot;,&quot;caption&quot;:&quot;&quot;,&quot;url&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22.jpg&quot;,&quot;srcset&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22.jpg 870w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22-546x697.jpg 546w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22-273x348.jpg 273w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22-235x300.jpg 235w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22-768x980.jpg 768w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22-803x1024.jpg 803w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22-266x340.jpg 266w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22-219x280.jpg 219w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22-263x336.jpg 263w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22-526x671.jpg 526w&quot;,&quot;sizes&quot;:&quot;(max-width: 870px) 100vw, 870px&quot;,&quot;full_src&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22.jpg&quot;,&quot;full_src_w&quot;:870,&quot;full_src_h&quot;:1110,&quot;gallery_thumbnail_src&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22.jpg&quot;,&quot;gallery_thumbnail_src_w&quot;:870,&quot;gallery_thumbnail_src_h&quot;:1110,&quot;thumb_src&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22-273x348.jpg&quot;,&quot;thumb_src_w&quot;:273,&quot;thumb_src_h&quot;:348,&quot;src_w&quot;:870,&quot;src_h&quot;:1110},&quot;image_id&quot;:&quot;19512&quot;,&quot;is_downloadable&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_purchasable&quot;:true,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;is_virtual&quot;:false,&quot;max_qty&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;price_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;&quot;,&quot;variation_description&quot;:&quot;&quot;,&quot;variation_id&quot;:19749,&quot;variation_is_active&quot;:true,&quot;variation_is_visible&quot;:true,&quot;weight&quot;:&quot;&quot;,&quot;weight_html&quot;:&quot;N\/A&quot;},{&quot;attributes&quot;:{&quot;attribute_pa_color&quot;:&quot;blue&quot;,&quot;attribute_pa_size&quot;:&quot;xl&quot;},&quot;availability_html&quot;:&quot;&quot;,&quot;backorders_allowed&quot;:false,&quot;dimensions&quot;:{&quot;length&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;,&quot;height&quot;:&quot;&quot;},&quot;dimensions_html&quot;:&quot;N\/A&quot;,&quot;display_price&quot;:559,&quot;display_regular_price&quot;:559,&quot;image&quot;:{&quot;title&quot;:&quot;woman (22)&quot;,&quot;caption&quot;:&quot;&quot;,&quot;url&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22.jpg&quot;,&quot;srcset&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22.jpg 870w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22-546x697.jpg 546w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22-273x348.jpg 273w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22-235x300.jpg 235w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22-768x980.jpg 768w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22-803x1024.jpg 803w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22-266x340.jpg 266w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22-219x280.jpg 219w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22-263x336.jpg 263w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22-526x671.jpg 526w&quot;,&quot;sizes&quot;:&quot;(max-width: 870px) 100vw, 870px&quot;,&quot;full_src&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22.jpg&quot;,&quot;full_src_w&quot;:870,&quot;full_src_h&quot;:1110,&quot;gallery_thumbnail_src&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22.jpg&quot;,&quot;gallery_thumbnail_src_w&quot;:870,&quot;gallery_thumbnail_src_h&quot;:1110,&quot;thumb_src&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22-273x348.jpg&quot;,&quot;thumb_src_w&quot;:273,&quot;thumb_src_h&quot;:348,&quot;src_w&quot;:870,&quot;src_h&quot;:1110},&quot;image_id&quot;:&quot;19512&quot;,&quot;is_downloadable&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_purchasable&quot;:true,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;is_virtual&quot;:false,&quot;max_qty&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;price_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;&quot;,&quot;variation_description&quot;:&quot;&quot;,&quot;variation_id&quot;:23725,&quot;variation_is_active&quot;:true,&quot;variation_is_visible&quot;:true,&quot;weight&quot;:&quot;&quot;,&quot;weight_html&quot;:&quot;N\/A&quot;},{&quot;attributes&quot;:{&quot;attribute_pa_color&quot;:&quot;blue&quot;,&quot;attribute_pa_size&quot;:&quot;s&quot;},&quot;availability_html&quot;:&quot;&quot;,&quot;backorders_allowed&quot;:false,&quot;dimensions&quot;:{&quot;length&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;,&quot;height&quot;:&quot;&quot;},&quot;dimensions_html&quot;:&quot;N\/A&quot;,&quot;display_price&quot;:559,&quot;display_regular_price&quot;:559,&quot;image&quot;:{&quot;title&quot;:&quot;woman (22)&quot;,&quot;caption&quot;:&quot;&quot;,&quot;url&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22.jpg&quot;,&quot;srcset&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22.jpg 870w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22-546x697.jpg 546w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22-273x348.jpg 273w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22-235x300.jpg 235w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22-768x980.jpg 768w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22-803x1024.jpg 803w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22-266x340.jpg 266w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22-219x280.jpg 219w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22-263x336.jpg 263w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22-526x671.jpg 526w&quot;,&quot;sizes&quot;:&quot;(max-width: 870px) 100vw, 870px&quot;,&quot;full_src&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22.jpg&quot;,&quot;full_src_w&quot;:870,&quot;full_src_h&quot;:1110,&quot;gallery_thumbnail_src&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22.jpg&quot;,&quot;gallery_thumbnail_src_w&quot;:870,&quot;gallery_thumbnail_src_h&quot;:1110,&quot;thumb_src&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-22-273x348.jpg&quot;,&quot;thumb_src_w&quot;:273,&quot;thumb_src_h&quot;:348,&quot;src_w&quot;:870,&quot;src_h&quot;:1110},&quot;image_id&quot;:&quot;19512&quot;,&quot;is_downloadable&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_purchasable&quot;:true,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;is_virtual&quot;:false,&quot;max_qty&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;price_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;&quot;,&quot;variation_description&quot;:&quot;&quot;,&quot;variation_id&quot;:23726,&quot;variation_is_active&quot;:true,&quot;variation_is_visible&quot;:true,&quot;weight&quot;:&quot;&quot;,&quot;weight_html&quot;:&quot;N\/A&quot;},{&quot;attributes&quot;:{&quot;attribute_pa_color&quot;:&quot;red&quot;,&quot;attribute_pa_size&quot;:&quot;xl&quot;},&quot;availability_html&quot;:&quot;&quot;,&quot;backorders_allowed&quot;:false,&quot;dimensions&quot;:{&quot;length&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;,&quot;height&quot;:&quot;&quot;},&quot;dimensions_html&quot;:&quot;N\/A&quot;,&quot;display_price&quot;:559,&quot;display_regular_price&quot;:559,&quot;image&quot;:{&quot;title&quot;:&quot;woman (4)&quot;,&quot;caption&quot;:&quot;&quot;,&quot;url&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-4.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-4.jpg&quot;,&quot;srcset&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-4.jpg 870w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-4-546x697.jpg 546w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-4-273x348.jpg 273w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-4-235x300.jpg 235w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-4-768x980.jpg 768w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-4-803x1024.jpg 803w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-4-266x340.jpg 266w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-4-219x280.jpg 219w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-4-263x336.jpg 263w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-4-526x671.jpg 526w&quot;,&quot;sizes&quot;:&quot;(max-width: 870px) 100vw, 870px&quot;,&quot;full_src&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-4.jpg&quot;,&quot;full_src_w&quot;:870,&quot;full_src_h&quot;:1110,&quot;gallery_thumbnail_src&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-4.jpg&quot;,&quot;gallery_thumbnail_src_w&quot;:870,&quot;gallery_thumbnail_src_h&quot;:1110,&quot;thumb_src&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-4-273x348.jpg&quot;,&quot;thumb_src_w&quot;:273,&quot;thumb_src_h&quot;:348,&quot;src_w&quot;:870,&quot;src_h&quot;:1110},&quot;image_id&quot;:&quot;19503&quot;,&quot;is_downloadable&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_purchasable&quot;:true,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;is_virtual&quot;:false,&quot;max_qty&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;price_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;&quot;,&quot;variation_description&quot;:&quot;&quot;,&quot;variation_id&quot;:23727,&quot;variation_is_active&quot;:true,&quot;variation_is_visible&quot;:true,&quot;weight&quot;:&quot;&quot;,&quot;weight_html&quot;:&quot;N\/A&quot;},{&quot;attributes&quot;:{&quot;attribute_pa_color&quot;:&quot;red&quot;,&quot;attribute_pa_size&quot;:&quot;m&quot;},&quot;availability_html&quot;:&quot;&quot;,&quot;backorders_allowed&quot;:false,&quot;dimensions&quot;:{&quot;length&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;,&quot;height&quot;:&quot;&quot;},&quot;dimensions_html&quot;:&quot;N\/A&quot;,&quot;display_price&quot;:559,&quot;display_regular_price&quot;:559,&quot;image&quot;:{&quot;title&quot;:&quot;woman (7)&quot;,&quot;caption&quot;:&quot;&quot;,&quot;url&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7.jpg&quot;,&quot;srcset&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7.jpg 870w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-546x697.jpg 546w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-273x348.jpg 273w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-235x300.jpg 235w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-768x980.jpg 768w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-803x1024.jpg 803w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-266x340.jpg 266w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-219x280.jpg 219w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-263x336.jpg 263w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-526x671.jpg 526w&quot;,&quot;sizes&quot;:&quot;(max-width: 870px) 100vw, 870px&quot;,&quot;full_src&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7.jpg&quot;,&quot;full_src_w&quot;:870,&quot;full_src_h&quot;:1110,&quot;gallery_thumbnail_src&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7.jpg&quot;,&quot;gallery_thumbnail_src_w&quot;:870,&quot;gallery_thumbnail_src_h&quot;:1110,&quot;thumb_src&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-273x348.jpg&quot;,&quot;thumb_src_w&quot;:273,&quot;thumb_src_h&quot;:348,&quot;src_w&quot;:870,&quot;src_h&quot;:1110},&quot;image_id&quot;:&quot;19506&quot;,&quot;is_downloadable&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_purchasable&quot;:true,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;is_virtual&quot;:false,&quot;max_qty&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;price_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;&quot;,&quot;variation_description&quot;:&quot;&quot;,&quot;variation_id&quot;:23728,&quot;variation_is_active&quot;:true,&quot;variation_is_visible&quot;:true,&quot;weight&quot;:&quot;&quot;,&quot;weight_html&quot;:&quot;N\/A&quot;},{&quot;attributes&quot;:{&quot;attribute_pa_color&quot;:&quot;yellow&quot;,&quot;attribute_pa_size&quot;:&quot;s&quot;},&quot;availability_html&quot;:&quot;&quot;,&quot;backorders_allowed&quot;:false,&quot;dimensions&quot;:{&quot;length&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;,&quot;height&quot;:&quot;&quot;},&quot;dimensions_html&quot;:&quot;N\/A&quot;,&quot;display_price&quot;:559,&quot;display_regular_price&quot;:559,&quot;image&quot;:{&quot;title&quot;:&quot;woman (7)&quot;,&quot;caption&quot;:&quot;&quot;,&quot;url&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7.jpg&quot;,&quot;srcset&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7.jpg 870w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-546x697.jpg 546w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-273x348.jpg 273w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-235x300.jpg 235w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-768x980.jpg 768w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-803x1024.jpg 803w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-266x340.jpg 266w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-219x280.jpg 219w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-263x336.jpg 263w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-526x671.jpg 526w&quot;,&quot;sizes&quot;:&quot;(max-width: 870px) 100vw, 870px&quot;,&quot;full_src&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7.jpg&quot;,&quot;full_src_w&quot;:870,&quot;full_src_h&quot;:1110,&quot;gallery_thumbnail_src&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7.jpg&quot;,&quot;gallery_thumbnail_src_w&quot;:870,&quot;gallery_thumbnail_src_h&quot;:1110,&quot;thumb_src&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-273x348.jpg&quot;,&quot;thumb_src_w&quot;:273,&quot;thumb_src_h&quot;:348,&quot;src_w&quot;:870,&quot;src_h&quot;:1110},&quot;image_id&quot;:&quot;19506&quot;,&quot;is_downloadable&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_purchasable&quot;:true,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;is_virtual&quot;:false,&quot;max_qty&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;price_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;&quot;,&quot;variation_description&quot;:&quot;&quot;,&quot;variation_id&quot;:23729,&quot;variation_is_active&quot;:true,&quot;variation_is_visible&quot;:true,&quot;weight&quot;:&quot;&quot;,&quot;weight_html&quot;:&quot;N\/A&quot;},{&quot;attributes&quot;:{&quot;attribute_pa_color&quot;:&quot;yellow&quot;,&quot;attribute_pa_size&quot;:&quot;m&quot;},&quot;availability_html&quot;:&quot;&quot;,&quot;backorders_allowed&quot;:false,&quot;dimensions&quot;:{&quot;length&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;,&quot;height&quot;:&quot;&quot;},&quot;dimensions_html&quot;:&quot;N\/A&quot;,&quot;display_price&quot;:559,&quot;display_regular_price&quot;:559,&quot;image&quot;:{&quot;title&quot;:&quot;woman (7)&quot;,&quot;caption&quot;:&quot;&quot;,&quot;url&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7.jpg&quot;,&quot;srcset&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7.jpg 870w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-546x697.jpg 546w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-273x348.jpg 273w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-235x300.jpg 235w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-768x980.jpg 768w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-803x1024.jpg 803w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-266x340.jpg 266w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-219x280.jpg 219w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-263x336.jpg 263w, https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-526x671.jpg 526w&quot;,&quot;sizes&quot;:&quot;(max-width: 870px) 100vw, 870px&quot;,&quot;full_src&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7.jpg&quot;,&quot;full_src_w&quot;:870,&quot;full_src_h&quot;:1110,&quot;gallery_thumbnail_src&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7.jpg&quot;,&quot;gallery_thumbnail_src_w&quot;:870,&quot;gallery_thumbnail_src_h&quot;:1110,&quot;thumb_src&quot;:&quot;https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-7-273x348.jpg&quot;,&quot;thumb_src_w&quot;:273,&quot;thumb_src_h&quot;:348,&quot;src_w&quot;:870,&quot;src_h&quot;:1110},&quot;image_id&quot;:&quot;19506&quot;,&quot;is_downloadable&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_purchasable&quot;:true,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;is_virtual&quot;:false,&quot;max_qty&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;price_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;&quot;,&quot;variation_description&quot;:&quot;&quot;,&quot;variation_id&quot;:23730,&quot;variation_is_active&quot;:true,&quot;variation_is_visible&quot;:true,&quot;weight&quot;:&quot;&quot;,&quot;weight_html&quot;:&quot;N\/A&quot;}]">
+                                                <form class="variations_form cart" method="post" enctype="multipart/form-data" data-product_id="19531" data-product_variations='{{$product_variations}}'>
 
+                                                    <!--
                                                     <table class="variations" cellspacing="0">
                                                         <tbody>
                                                         <tr>
@@ -358,6 +260,52 @@
                                                         </tr>
                                                         </tbody>
                                                     </table>
+                                                    -->
+
+                                                    <table class="variations" cellspacing="0">
+                                                        <tbody>
+                                                        <tr>
+                                                            <strong>EXEMPLO PRODUTO NO VAREJO</strong>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="label"><label for="pa_color">Cores</label></td>
+                                                            <td class="value with-swatches">
+                                                                <div class="swatches-select" data-id="pa_color">
+                                                                    <div class="basel-swatch basel-tooltip  colored-swatch swatch-size-" data-value="amarelo"  style="background-color:#eded55">Amarelo</div>
+                                                                    <div class="basel-swatch basel-tooltip  colored-swatch swatch-size-" data-value="branco"  style="background-color:#ffffff">Branco</div>
+                                                                    <div class="basel-swatch basel-tooltip  colored-swatch swatch-size-" data-value="azul"  style="background-color:#769ec1">Azul</div>
+                                                                </div>
+                                                                <select id="pa_color" class="" name="attribute_pa_color" data-attribute_name="attribute_pa_color" data-show_option_none="yes">
+                                                                    <option value="">Selecione a Opção</option>
+                                                                    <option value="amarelo" >Amarelo</option>
+                                                                    <option value="branco" >Branco</option>
+                                                                    <option value="azul" >Azul</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="label"><label for="pa_size">Tamanhos</label></td>
+                                                            <td class="value with-swatches">
+                                                                <div class="swatches-select" data-id="pa_size">
+                                                                    <div class="basel-swatch basel-tooltip  text-only swatch-size-" data-value="33"  style="">33</div>
+                                                                    <div class="basel-swatch basel-tooltip  text-only swatch-size-" data-value="34"  style="">34</div>
+                                                                    <div class="basel-swatch basel-tooltip  text-only swatch-size-" data-value="35"  style="">35</div>
+                                                                </div>
+
+
+                                                                <select id="pa_size" class="" name="attribute_pa_size" data-attribute_name="attribute_pa_size" data-show_option_none="yes">
+                                                                    <option value="">Selecione a Opção</option>
+                                                                    <option value="33" >33</option>
+                                                                    <option value="34" >34</option>
+                                                                    <option value="35" >35</option>
+                                                                </select>
+                                                                <a class="reset_variations" href="#">Limpar</a>
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+
+
 
                                                     <div class="single_variation_wrap">
                                                         <div class="woocommerce-variation single_variation"></div>
@@ -459,13 +407,34 @@
 @endsection
 @push('scripts')
 <script type="application/ld+json">{"@context":"https:\/\/schema.org\/","@graph":[{"@context":"https:\/\/schema.org\/","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"name":"Home","@id":"https:\/\/demo.xtemos.com\/basel"}},{"@type":"ListItem","position":2,"item":{"name":"Shop","@id":"https:\/\/demo.xtemos.com\/basel\/shop\/"}},{"@type":"ListItem","position":3,"item":{"name":"Woman","@id":"https:\/\/demo.xtemos.com\/basel\/product-category\/woman\/"}},{"@type":"ListItem","position":4,"item":{"name":"Noose fit ripped jeans","@id":"https:\/\/demo.xtemos.com\/basel\/shop\/woman\/noose-fit-ripped-jeans\/"}}]},{"@context":"https:\/\/schema.org\/","@type":"Product","@id":"https:\/\/demo.xtemos.com\/basel\/shop\/woman\/noose-fit-ripped-jeans\/","name":"Noose fit ripped jeans","image":"https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-10.jpg","description":"<p>Pretium sagittis et nisl eget parturient porta parturient imperdiet id et vulputate ultricies a pretium egestas himenaeos ad adipiscing scelerisque fringilla ullamcorper a vestibulum lobortis id mauris ad.Est mus.<\/p>\n","sku":"","offers":[{"@type":"Offer","price":"559.00","priceSpecification":{"price":"559.00","priceCurrency":"GBP","valueAddedTaxIncluded":"false"},"priceCurrency":"GBP","availability":"https:\/\/schema.org\/InStock","url":"https:\/\/demo.xtemos.com\/basel\/shop\/woman\/noose-fit-ripped-jeans\/","seller":{"@type":"Organization","name":"Basel","url":"https:\/\/demo.xtemos.com\/basel"}}]}]}</script>
-<script type='text/javascript' src='https://demo.xtemos.com/basel/wp-content/plugins/woocommerce/assets/js/zoom/jquery.zoom.min.js?ver=1.7.21'></script>
-<script type='text/javascript'>
-    /* <![CDATA[ */
-    var wc_single_product_params = {"i18n_required_rating_text":"Please select a rating","review_rating_required":"yes","flexslider":{"rtl":false,"animation":"slide","smoothHeight":true,"directionNav":false,"controlNav":"thumbnails","slideshow":false,"animationSpeed":500,"animationLoop":false,"allowOneSlide":false},"zoom_enabled":"1","zoom_options":[],"photoswipe_enabled":"","photoswipe_options":{"shareEl":false,"closeOnScroll":false,"history":false,"hideAnimationDuration":0,"showAnimationDuration":0},"flexslider_enabled":""};
-    /* ]]> */
+<script type="text/javascript" src="{{asset('plugins/zoom/js/jquery.zoom.min.js')}}?ver=1.7.21"></script>
+<script type="text/javascript">
+    var wc_single_product_params = {
+        "i18n_required_rating_text":"Please select a rating",
+        "review_rating_required":"yes",
+        "flexslider":{
+            "rtl":false,
+            "animation":"slide",
+            "smoothHeight":true,
+            "directionNav":false,
+            "controlNav":"thumbnails",
+            "slideshow":false,
+            "animationSpeed":500,
+            "animationLoop":false,
+            "allowOneSlide":false},
+        "zoom_enabled":"1",
+        "zoom_options":[],
+        "photoswipe_enabled":"",
+        "photoswipe_options":{
+            "shareEl":false,
+            "closeOnScroll":false,
+            "history":false,
+            "hideAnimationDuration":0,
+            "showAnimationDuration":0},
+        "flexslider_enabled":""
+    };
 </script>
-<script type='text/javascript' src='https://demo.xtemos.com/basel/wp-content/plugins/woocommerce/assets/js/frontend/single-product.min.js?ver=3.5.2'></script>
-<script type='text/javascript' src='https://demo.xtemos.com/basel/wp-includes/js/comment-reply.min.js?ver=4.9.8'></script>
+<script type="text/javascript" src="https://demo.xtemos.com/basel/wp-content/plugins/woocommerce/assets/js/frontend/single-product.min.js?ver=3.5.2"></script>
+<script type="text/javascript" src="https://demo.xtemos.com/basel/wp-includes/js/comment-reply.min.js?ver=4.9.8"></script>
 
 @endpush

@@ -32,7 +32,7 @@
                              {{asset('faker/product_photos/img1-l.jpg')}} 266w,
                              {{asset('faker/product_photos/img1-l.jpg')}} 219w,
                              {{asset('faker/product_photos/img1-l.jpg')}} 263w,
-                             {{asset('faker/product_photos/img1-l.jpg')}} w"
+                             {{asset('faker/product_photos/img1-l.jpg')}} 526w"
                      sizes="(max-width: 273px) 100vw, 273px" />
             </a>
         </div>
@@ -166,7 +166,7 @@
                              {{asset('faker/product_photos/img3-l.jpg')}} 266w,
                              {{asset('faker/product_photos/img3-l.jpg')}} 219w,
                              {{asset('faker/product_photos/img3-l.jpg')}} 263w,
-                             {{asset('faker/product_photos/img3-l.jpg')}} w"
+                             {{asset('faker/product_photos/img3-l.jpg')}} 526w"
                      sizes="(max-width: 273px) 100vw, 273px" />
             </a>
         </div>
@@ -299,7 +299,7 @@
                             {{asset('faker/product_photos/img5-l.jpg')}} 266w,
                             {{asset('faker/product_photos/img5-l.jpg')}} 219w,
                             {{asset('faker/product_photos/img5-l.jpg')}} 263w,
-                            {{asset('faker/product_photos/img5-l.jpg')}} w"
+                            {{asset('faker/product_photos/img5-l.jpg')}} 526w"
                      sizes="(max-width: 273px) 100vw, 273px" />
             </a>
         </div>
@@ -408,7 +408,7 @@
                             {{asset('faker/product_photos/img6-l.jpg')}} 266w,
                             {{asset('faker/product_photos/img6-l.jpg')}} 219w,
                             {{asset('faker/product_photos/img6-l.jpg')}} 263w,
-                            {{asset('faker/product_photos/img6-l.jpg')}} w"
+                            {{asset('faker/product_photos/img6-l.jpg')}} 526w"
                      sizes="(max-width: 273px) 100vw, 273px" />
             </a>
         </div>
@@ -519,7 +519,7 @@
                             {{asset('faker/product_photos/img7-l.jpg')}} 266w,
                             {{asset('faker/product_photos/img7-l.jpg')}} 219w,
                             {{asset('faker/product_photos/img7-l.jpg')}} 263w,
-                            {{asset('faker/product_photos/img7-l.jpg')}} w"
+                            {{asset('faker/product_photos/img7-l.jpg')}} 526w"
                      sizes="(max-width: 273px) 100vw, 273px" />
             </a>
         </div>
@@ -624,7 +624,7 @@
                              {{asset('faker/product_photos/img8-l.jpg')}} 266w,
                              {{asset('faker/product_photos/img8-l.jpg')}} 219w,
                              {{asset('faker/product_photos/img8-l.jpg')}} 263w,
-                             {{asset('faker/product_photos/img8-l.jpg')}} w"
+                             {{asset('faker/product_photos/img8-l.jpg')}} 526w"
                      sizes="(max-width: 273px) 100vw, 273px" />
             </a>
         </div>
@@ -762,7 +762,7 @@
                              {{asset('faker/product_photos/img10-l.jpg')}} 266w,
                              {{asset('faker/product_photos/img10-l.jpg')}} 219w,
                              {{asset('faker/product_photos/img10-l.jpg')}} 263w,
-                             {{asset('faker/product_photos/img10-l.jpg')}} w"
+                             {{asset('faker/product_photos/img10-l.jpg')}} 526w"
                      sizes="(max-width: 273px) 100vw, 273px" />
             </a>
         </div>
@@ -896,7 +896,7 @@
                             {{asset('faker/product_photos/img12-l.jpg')}} 266w,
                             {{asset('faker/product_photos/img12-l.jpg')}} 219w,
                             {{asset('faker/product_photos/img12-l.jpg')}} 263w,
-                            {{asset('faker/product_photos/img12-l.jpg')}} w"
+                            {{asset('faker/product_photos/img12-l.jpg')}} 526w"
                      sizes="(max-width: 273px) 100vw, 273px" />
             </a>
         </div>
@@ -1005,7 +1005,7 @@
                             {{asset('faker/product_photos/img2-l.jpg')}} 266w,
                             {{asset('faker/product_photos/img2-l.jpg')}} 219w,
                             {{asset('faker/product_photos/img2-l.jpg')}} 263w,
-                            {{asset('faker/product_photos/img2-l.jpg')}} w"
+                            {{asset('faker/product_photos/img2-l.jpg')}} 526w"
                      sizes="(max-width: 273px) 100vw, 273px" />
             </a>
         </div>
@@ -1116,7 +1116,7 @@
                             {{asset('faker/product_photos/img9-l.jpg')}} 266w,
                             {{asset('faker/product_photos/img9-l.jpg')}} 219w,
                             {{asset('faker/product_photos/img9-l.jpg')}} 263w,
-                            {{asset('faker/product_photos/img9-l.jpg')}} w"
+                            {{asset('faker/product_photos/img9-l.jpg')}} 526w"
                      sizes="(max-width: 273px) 100vw, 273px" />
             </a>
         </div>
@@ -1225,7 +1225,7 @@
                             {{asset('faker/product_photos/img4-l.jpg')}} 266w,
                             {{asset('faker/product_photos/img4-l.jpg')}} 219w,
                             {{asset('faker/product_photos/img4-l.jpg')}} 263w,
-                            {{asset('faker/product_photos/img4-l.jpg')}} w"
+                            {{asset('faker/product_photos/img4-l.jpg')}} 526w"
                      sizes="(max-width: 273px) 100vw, 273px" />
             </a>
         </div>
@@ -1333,7 +1333,7 @@
                             {{asset('faker/product_photos/img11-l.jpg')}} 266w,
                             {{asset('faker/product_photos/img11-l.jpg')}} 219w,
                             {{asset('faker/product_photos/img11-l.jpg')}} 263w,
-                            {{asset('faker/product_photos/img11-l.jpg')}} w"
+                            {{asset('faker/product_photos/img11-l.jpg')}} 526w"
                      sizes="(max-width: 273px) 100vw, 273px" />
             </a>
         </div>

@@ -14,7 +14,504 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('products.product-1');
+
+        // Set product nex e prev
+        $product_prev = array('nome-categoria','nome-secao','none-produto-anterior');
+        $product_next = array('nome-categoria','nome-secao','none-produto-proximo');
+
+        // BRANCO 34
+        $out[] = array(
+            "attributes" => array(
+                "attribute_pa_color" => "branco",
+                "attribute_pa_size" => "34"
+            ),
+            "availability_html" => "",
+            "backorders_allowed" => false,
+            "dimensions" => array(
+                "length" => "",
+                "width" => "",
+                "height" => ""
+            ),
+            "dimensions_html" => "N/A",
+            "display_price" => 559,
+            "display_regular_price" => 559,
+            "image" => array(
+                "title" => "Produto 1",
+                "caption" => "",
+                "url" => asset('faker/product_photos/img3-f.jpg'),
+                "alt" => "",
+                "src" => asset('faker/product_photos/img3-f.jpg'),
+                "srcset" => asset('faker/product_photos/img3-f.jpg')." 870w, ".asset('faker/product_photos/img3-f.jpg')." 546w, ".asset('faker/product_photos/img3-f.jpg')." 273w, ".asset('faker/product_photos/img3-f.jpg')." 235w, ".asset('faker/product_photos/img3-f.jpg')." 768w, ".asset('faker/product_photos/img3-f.jpg')." 803w, ".asset('faker/product_photos/img3-f.jpg')." 266w, ".asset('faker/product_photos/img3-f.jpg')." 219w, ".asset('faker/product_photos/img3-f.jpg')." 263w, ".asset('faker/product_photos/img3-f.jpg')." 526w",
+                "sizes" => "(max-width => 870px) 100vw, 870px",
+                "full_src" => asset('faker/product_photos/img3-f.jpg'),
+                "full_src_w" => 870,
+                "full_src_h" => 870,
+                "gallery_thumbnail_src" => asset('faker/product_photos/img3-f.jpg'),
+                "gallery_thumbnail_src_w" => 870,
+                "gallery_thumbnail_src_h" => 870,
+                "thumb_src" => asset('faker/product_photos/img3-f.jpg'),
+                "thumb_src_w" => 273,
+                "thumb_src_h" => 273,
+                "src_w" => 870,
+                "src_h" => 870
+            ),
+            "image_id" => "19503",
+            "is_downloadable" => false,
+            "is_in_stock" => true,
+            "is_purchasable" => true,
+            "is_sold_individually" => "no",
+            "is_virtual" => false,
+            "max_qty" => "",
+            "min_qty" => 1,
+            "price_html" => "",
+            "sku" => "",
+            "variation_description" => "",
+            "variation_id" => 19748,
+            "variation_is_active" => true,
+            "variation_is_visible" => true,
+            "weight" => "",
+            "weight_html" => "N/A"
+        );
+        // BRANCO 35
+        $out[] = array(
+            "attributes" => array(
+                "attribute_pa_color" => "branco",
+                "attribute_pa_size" => "35"
+            ),
+            "availability_html" => "",
+            "backorders_allowed" => false,
+            "dimensions" => array(
+                "length" => "",
+                "width" => "",
+                "height" => ""
+            ),
+            "dimensions_html" => "N/A",
+            "display_price" => 559,
+            "display_regular_price" => 559,
+            "image" => array(
+                "title" => "Produto 1",
+                "caption" => "",
+                "url" => asset('faker/product_photos/img3-f.jpg'),
+                "alt" => "",
+                "src" => asset('faker/product_photos/img3-f.jpg'),
+                "srcset" => asset('faker/product_photos/img3-f.jpg')." 870w, ".asset('faker/product_photos/img3-f.jpg')." 546w, ".asset('faker/product_photos/img3-f.jpg')." 273w, ".asset('faker/product_photos/img3-f.jpg')." 235w, ".asset('faker/product_photos/img3-f.jpg')." 768w, ".asset('faker/product_photos/img3-f.jpg')." 803w, ".asset('faker/product_photos/img3-f.jpg')." 266w, ".asset('faker/product_photos/img3-f.jpg')." 219w, ".asset('faker/product_photos/img3-f.jpg')." 263w, ".asset('faker/product_photos/img3-f.jpg')." 526w",
+                "sizes" => "(max-width => 870px) 100vw, 870px",
+                "full_src" => asset('faker/product_photos/img3-f.jpg'),
+                "full_src_w" => 870,
+                "full_src_h" => 870,
+                "gallery_thumbnail_src" => asset('faker/product_photos/img3-f.jpg'),
+                "gallery_thumbnail_src_w" => 870,
+                "gallery_thumbnail_src_h" => 870,
+                "thumb_src" => asset('faker/product_photos/img3-f.jpg'),
+                "thumb_src_w" => 273,
+                "thumb_src_h" => 273,
+                "src_w" => 870,
+                "src_h" => 870
+            ),
+            "image_id" => "19503",
+            "is_downloadable" => false,
+            "is_in_stock" => true,
+            "is_purchasable" => true,
+            "is_sold_individually" => "no",
+            "is_virtual" => false,
+            "max_qty" => "",
+            "min_qty" => 1,
+            "price_html" => "",
+            "sku" => "",
+            "variation_description" => "",
+            "variation_id" => 23727,
+            "variation_is_active" => true,
+            "variation_is_visible" => true,
+            "weight" => "",
+            "weight_html" => "N/A"
+        );
+
+        // BRANCO 33
+        $out[] = array(
+            "attributes" => array(
+                "attribute_pa_color" => "branco",
+                "attribute_pa_size" => "33"
+            ),
+            "availability_html" => "",
+            "backorders_allowed" => false,
+            "dimensions" => array(
+                "length" => "",
+                "width" => "",
+                "height" => ""
+            ),
+            "dimensions_html" => "N/A",
+            "display_price" => 559,
+            "display_regular_price" => 559,
+            "image" => array(
+                "title" => "Produto 1",
+                "caption" => "",
+                "url" => asset('faker/product_photos/img3-f.jpg'),
+                "alt" => "",
+                "src" => asset('faker/product_photos/img3-f.jpg'),
+                "srcset" => asset('faker/product_photos/img3-f.jpg')." 870w, ".asset('faker/product_photos/img3-f.jpg')." 546w, ".asset('faker/product_photos/img3-f.jpg')." 273w, ".asset('faker/product_photos/img3-f.jpg')." 235w, ".asset('faker/product_photos/img3-f.jpg')." 768w, ".asset('faker/product_photos/img3-f.jpg')." 803w, ".asset('faker/product_photos/img3-f.jpg')." 266w, ".asset('faker/product_photos/img3-f.jpg')." 219w, ".asset('faker/product_photos/img3-f.jpg')." 263w, ".asset('faker/product_photos/img3-f.jpg')." 526w",
+                "sizes" => "(max-width => 870px) 100vw, 870px",
+                "full_src" => asset('faker/product_photos/img3-f.jpg'),
+                "full_src_w" => 870,
+                "full_src_h" => 870,
+                "gallery_thumbnail_src" => asset('faker/product_photos/img3-f.jpg'),
+                "gallery_thumbnail_src_w" => 870,
+                "gallery_thumbnail_src_h" => 870,
+                "thumb_src" => asset('faker/product_photos/img3-f.jpg'),
+                "thumb_src_w" => 273,
+                "thumb_src_h" => 273,
+                "src_w" => 870,
+                "src_h" => 870
+            ),
+            "image_id" => "19506",
+            "is_downloadable" => false,
+            "is_in_stock" => true,
+            "is_purchasable" => true,
+            "is_sold_individually" => "no",
+            "is_virtual" => false,
+            "max_qty" => "",
+            "min_qty" => 1,
+            "price_html" => "",
+            "sku" => "",
+            "variation_description" => "",
+            "variation_id" => 23728,
+            "variation_is_active" => true,
+            "variation_is_visible" => true,
+            "weight" => "",
+            "weight_html" => "N/A"
+        );
+
+        // AMARELO 35
+        $out[] = array(
+            "attributes" => array(
+                "attribute_pa_color" => "amarelo",
+                "attribute_pa_size" => "35"
+            ),
+            "availability_html" => "",
+            "backorders_allowed" => false,
+            "dimensions" => array(
+                "length" => "",
+                "width" => "",
+                "height" => ""
+            ),
+            "dimensions_html" => "N/A",
+            "display_price" => 559,
+            "display_regular_price" => 559,
+            "image" => array(
+                "title" => "Produto 1",
+                "caption" => "",
+                "url" => asset('faker/product_photos/img2-f.jpg'),
+                "alt" => "",
+                "src" => asset('faker/product_photos/img2-f.jpg'),
+                "srcset" => asset('faker/product_photos/img2-f.jpg')." 870w, ".asset('faker/product_photos/img2-f.jpg')." 546w, ".asset('faker/product_photos/img2-f.jpg')." 273w, ".asset('faker/product_photos/img2-f.jpg')." 235w, ".asset('faker/product_photos/img2-f.jpg')." 768w, ".asset('faker/product_photos/img2-f.jpg')." 803w, ".asset('faker/product_photos/img2-f.jpg')." 266w, ".asset('faker/product_photos/img2-f.jpg')." 219w, ".asset('faker/product_photos/img2-f.jpg')." 263w, ".asset('faker/product_photos/img2-f.jpg')." 526w",
+                "sizes" => "(max-width => 870px) 100vw, 870px",
+                "full_src" => asset('faker/product_photos/img2-f.jpg'),
+                "full_src_w" => 870,
+                "full_src_h" => 870,
+                "gallery_thumbnail_src" => asset('faker/product_photos/img2-f.jpg'),
+                "gallery_thumbnail_src_w" => 870,
+                "gallery_thumbnail_src_h" => 870,
+                "thumb_src" => asset('faker/product_photos/img2-f.jpg'),
+                "thumb_src_w" => 273,
+                "thumb_src_h" => 273,
+                "src_w" => 870,
+                "src_h" => 870
+            ),
+            "image_id" => "19506",
+            "is_downloadable" => false,
+            "is_in_stock" => true,
+            "is_purchasable" => true,
+            "is_sold_individually" => "no",
+            "is_virtual" => false,
+            "max_qty" => "",
+            "min_qty" => 1,
+            "price_html" => "",
+            "sku" => "",
+            "variation_description" => "",
+            "variation_id" => 19747,
+            "variation_is_active" => true,
+            "variation_is_visible" => true,
+            "weight" => "",
+            "weight_html" => "N/A"
+        );
+        // AMARELO 34
+        $out[] = array(
+            "attributes" => array(
+                "attribute_pa_color" => "amarelo",
+                "attribute_pa_size" => "34"
+            ),
+            "availability_html" => "",
+            "backorders_allowed" => false,
+            "dimensions" => array(
+                "length" => "",
+                "width" => "",
+                "height" => ""
+            ),
+            "dimensions_html" => "N/A",
+            "display_price" => 559,
+            "display_regular_price" => 559,
+            "image" => array(
+                "title" => "Produto 1",
+                "caption" => "",
+                "url" => asset('faker/product_photos/img2-f.jpg'),
+                "alt" => "",
+                "src" => asset('faker/product_photos/img2-f.jpg'),
+                "srcset" => asset('faker/product_photos/img2-f.jpg')." 870w, ".asset('faker/product_photos/img2-f.jpg')." 546w, ".asset('faker/product_photos/img2-f.jpg')." 273w, ".asset('faker/product_photos/img2-f.jpg')." 235w, ".asset('faker/product_photos/img2-f.jpg')." 768w, ".asset('faker/product_photos/img2-f.jpg')." 803w, ".asset('faker/product_photos/img2-f.jpg')." 266w, ".asset('faker/product_photos/img2-f.jpg')." 219w, ".asset('faker/product_photos/img2-f.jpg')." 263w, ".asset('faker/product_photos/img2-f.jpg')." 526w",
+                "sizes" => "(max-width => 870px) 100vw, 870px",
+                "full_src" => asset('faker/product_photos/img2-f.jpg'),
+                "full_src_w" => 870,
+                "full_src_h" => 870,
+                "gallery_thumbnail_src" => asset('faker/product_photos/img2-f.jpg'),
+                "gallery_thumbnail_src_w" => 870,
+                "gallery_thumbnail_src_h" => 870,
+                "thumb_src" => asset('faker/product_photos/img2-f.jpg'),
+                "thumb_src_w" => 273,
+                "thumb_src_h" => 273,
+                "src_w" => 870,
+                "src_h" => 870
+            ),
+            "image_id" => "19506",
+            "is_downloadable" => false,
+            "is_in_stock" => true,
+            "is_purchasable" => true,
+            "is_sold_individually" => "no",
+            "is_virtual" => false,
+            "max_qty" => "",
+            "min_qty" => 1,
+            "price_html" => "",
+            "sku" => "",
+            "variation_description" => "",
+            "variation_id" => 23729,
+            "variation_is_active" => true,
+            "variation_is_visible" => true,
+            "weight" => "",
+            "weight_html" => "N/A"
+        );
+        // AMARELO 33
+        $out[] = array(
+            "attributes" => array(
+                "attribute_pa_color" => "amarelo",
+                "attribute_pa_size" => "33"
+            ),
+            "availability_html" => "",
+            "backorders_allowed" => false,
+            "dimensions" => array(
+                "length" => "",
+                "width" => "",
+                "height" => ""
+            ),
+            "dimensions_html" => "N/A",
+            "display_price" => 559,
+            "display_regular_price" => 559,
+            "image" => array(
+                "title" => "Produto 1",
+                "caption" => "",
+                "url" => asset('faker/product_photos/img2-f.jpg'),
+                "alt" => "",
+                "src" => asset('faker/product_photos/img2-f.jpg'),
+                "srcset" => asset('faker/product_photos/img2-f.jpg')." 870w, ".asset('faker/product_photos/img2-f.jpg')." 546w, ".asset('faker/product_photos/img2-f.jpg')." 273w, ".asset('faker/product_photos/img2-f.jpg')." 235w, ".asset('faker/product_photos/img2-f.jpg')." 768w, ".asset('faker/product_photos/img2-f.jpg')." 803w, ".asset('faker/product_photos/img2-f.jpg')." 266w, ".asset('faker/product_photos/img2-f.jpg')." 219w, ".asset('faker/product_photos/img2-f.jpg')." 263w, ".asset('faker/product_photos/img2-f.jpg')." 526w",
+                "sizes" => "(max-width => 870px) 100vw, 870px",
+                "full_src" => asset('faker/product_photos/img2-f.jpg'),
+                "full_src_w" => 870,
+                "full_src_h" => 870,
+                "gallery_thumbnail_src" => asset('faker/product_photos/img2-f.jpg'),
+                "gallery_thumbnail_src_w" => 870,
+                "gallery_thumbnail_src_h" => 870,
+                "thumb_src" => asset('faker/product_photos/img2-f.jpg'),
+                "thumb_src_w" => 273,
+                "thumb_src_h" => 273,
+                "src_w" => 870,
+                "src_h" => 870
+            ),
+            "image_id" => "19506",
+            "is_downloadable" => false,
+            "is_in_stock" => true,
+            "is_purchasable" => true,
+            "is_sold_individually" => "no",
+            "is_virtual" => false,
+            "max_qty" => "",
+            "min_qty" => 1,
+            "price_html" => "",
+            "sku" => "",
+            "variation_description" => "",
+            "variation_id" => 23730,
+            "variation_is_active" => true,
+            "variation_is_visible" => true,
+            "weight" => "",
+            "weight_html" => "N/A"
+        );
+
+        // AZUL 33
+        $out[] = array(
+            "attributes" => array(
+                "attribute_pa_color" => "azul",
+                "attribute_pa_size" => "33"
+            ),
+            "availability_html" => "",
+            "backorders_allowed" => false,
+            "dimensions" => array(
+                "length" => "",
+                "width" => "",
+                "height" => ""
+            ),
+            "dimensions_html" => "N/A",
+            "display_price" => 559,
+            "display_regular_price" => 559,
+            "image" => array(
+                "title" => "Produto 1",
+                "caption" => "",
+                "url" => asset('faker/product_photos/img1-f.jpg'),
+                "alt" => "",
+                "src" => asset('faker/product_photos/img1-f.jpg'),
+                "srcset" => asset('faker/product_photos/img1-f.jpg')." 870w, ".asset('faker/product_photos/img1-f.jpg')." 546w, ".asset('faker/product_photos/img1-f.jpg')." 273w, ".asset('faker/product_photos/img1-f.jpg')." 235w, ".asset('faker/product_photos/img1-f.jpg')." 768w, ".asset('faker/product_photos/img1-f.jpg')." 803w, ".asset('faker/product_photos/img1-f.jpg')." 266w, ".asset('faker/product_photos/img1-f.jpg')." 219w, ".asset('faker/product_photos/img1-f.jpg')." 263w, ".asset('faker/product_photos/img1-f.jpg')." 526w",
+                "sizes" => "(max-width => 870px) 100vw, 870px",
+                "full_src" => asset('faker/product_photos/img1-f.jpg'),
+                "full_src_w" => 870,
+                "full_src_h" => 870,
+                "gallery_thumbnail_src" => asset('faker/product_photos/img1-f.jpg'),
+                "gallery_thumbnail_src_w" => 870,
+                "gallery_thumbnail_src_h" => 870,
+                "thumb_src" => asset('faker/product_photos/img1-f.jpg'),
+                "thumb_src_w" => 273,
+                "thumb_src_h" => 273,
+                "src_w" => 870,
+                "src_h" => 870
+            ),
+            "image_id" => "19512",
+            "is_downloadable" => false,
+            "is_in_stock" => true,
+            "is_purchasable" => true,
+            "is_sold_individually" => "no",
+            "is_virtual" => false,
+            "max_qty" => "",
+            "min_qty" => 1,
+            "price_html" => "",
+            "sku" => "",
+            "variation_description" => "",
+            "variation_id" => 19749,
+            "variation_is_active" => true,
+            "variation_is_visible" => true,
+            "weight" => "",
+            "weight_html" => "N/A"
+        );
+        // AZUL 35
+        $out[] = array(
+            "attributes" => array(
+                "attribute_pa_color" => "azul",
+                "attribute_pa_size" => "35"
+            ),
+            "availability_html" => "",
+            "backorders_allowed" => false,
+            "dimensions" => array(
+                "length" => "",
+                "width" => "",
+                "height" => ""
+            ),
+            "dimensions_html" => "N/A",
+            "display_price" => 559,
+            "display_regular_price" => 559,
+            "image" => array(
+                "title" => "Produto 1",
+                "caption" => "",
+                "url" => asset('faker/product_photos/img1-f.jpg'),
+                "alt" => "",
+                "src" => asset('faker/product_photos/img1-f.jpg'),
+                "srcset" => asset('faker/product_photos/img1-f.jpg')." 870w, ".asset('faker/product_photos/img1-f.jpg')." 546w, ".asset('faker/product_photos/img1-f.jpg')." 273w, ".asset('faker/product_photos/img1-f.jpg')." 235w, ".asset('faker/product_photos/img1-f.jpg')." 768w, ".asset('faker/product_photos/img1-f.jpg')." 803w, ".asset('faker/product_photos/img1-f.jpg')." 266w, ".asset('faker/product_photos/img1-f.jpg')." 219w, ".asset('faker/product_photos/img1-f.jpg')." 263w, ".asset('faker/product_photos/img1-f.jpg')." 526w",
+                "sizes" => "(max-width => 870px) 100vw, 870px",
+                "full_src" => asset('faker/product_photos/img1-f.jpg'),
+                "full_src_w" => 870,
+                "full_src_h" => 870,
+                "gallery_thumbnail_src" => asset('faker/product_photos/img1-f.jpg'),
+                "gallery_thumbnail_src_w" => 870,
+                "gallery_thumbnail_src_h" => 870,
+                "thumb_src" => asset('faker/product_photos/img1-f.jpg'),
+                "thumb_src_w" => 273,
+                "thumb_src_h" => 273,
+                "src_w" => 870,
+                "src_h" => 870
+            ),
+            "image_id" => "19512",
+            "is_downloadable" => false,
+            "is_in_stock" => true,
+            "is_purchasable" => true,
+            "is_sold_individually" => "no",
+            "is_virtual" => false,
+            "max_qty" => "",
+            "min_qty" => 1,
+            "price_html" => "",
+            "sku" => "",
+            "variation_description" => "",
+            "variation_id" => 23725,
+            "variation_is_active" => true,
+            "variation_is_visible" => true,
+            "weight" => "",
+            "weight_html" => "N/A"
+        );
+        // AZUL 34
+        $out[] = array(
+            "attributes" => array(
+                "attribute_pa_color" => "azul",
+                "attribute_pa_size" => "34"
+            ),
+            "availability_html" => "",
+            "backorders_allowed" => false,
+            "dimensions" => array(
+                "length" => "",
+                "width" => "",
+                "height" => ""
+            ),
+            "dimensions_html" => "N/A",
+            "display_price" => 559,
+            "display_regular_price" => 559,
+            "image" => array(
+                "title" => "Produto 1",
+                "caption" => "",
+                "url" => asset('faker/product_photos/img1-f.jpg'),
+                "alt" => "",
+                "src" => asset('faker/product_photos/img1-f.jpg'),
+                "srcset" => asset('faker/product_photos/img1-f.jpg')." 870w, ".asset('faker/product_photos/img1-f.jpg')." 546w, ".asset('faker/product_photos/img1-f.jpg')." 273w, ".asset('faker/product_photos/img1-f.jpg')." 235w, ".asset('faker/product_photos/img1-f.jpg')." 768w, ".asset('faker/product_photos/img1-f.jpg')." 803w, ".asset('faker/product_photos/img1-f.jpg')." 266w, ".asset('faker/product_photos/img1-f.jpg')." 219w, ".asset('faker/product_photos/img1-f.jpg')." 263w, ".asset('faker/product_photos/img1-f.jpg')." 526w",
+                "sizes" => "(max-width => 870px) 100vw, 870px",
+                "full_src" => asset('faker/product_photos/img1-f.jpg'),
+                "full_src_w" => 870,
+                "full_src_h" => 870,
+                "gallery_thumbnail_src" => asset('faker/product_photos/img1-f.jpg'),
+                "gallery_thumbnail_src_w" => 870,
+                "gallery_thumbnail_src_h" => 870,
+                "thumb_src" => asset('faker/product_photos/img1-f.jpg'),
+                "thumb_src_w" => 273,
+                "thumb_src_h" => 273,
+                "src_w" => 870,
+                "src_h" => 870
+            ),
+            "image_id" => "19512",
+            "is_downloadable" => false,
+            "is_in_stock" => true,
+            "is_purchasable" => true,
+            "is_sold_individually" => "no",
+            "is_virtual" => false,
+            "max_qty" => "",
+            "min_qty" => 1,
+            "price_html" => "",
+            "sku" => "",
+            "variation_description" => "",
+            "variation_id" => 23726,
+            "variation_is_active" => true,
+            "variation_is_visible" => true,
+            "weight" => "",
+            "weight_html" => "N/A"
+        );
+
+
+        // Substituir aspas pelo código html <form product_variations"[{}]"
+        //$product_variations = str_replace('"', "&quot;", json_encode($out));
+        $product_variations = json_encode($out);
+
+
+
+        return view('products.product-1', compact(
+            'product_prev',
+            'product_next',
+            'product_variations'
+        ));
 
     }
 
@@ -633,16 +1130,6 @@ class ProductController extends Controller
             "weight" => "",
             "weight_html" => "N/A"
         );
-
-
-
-
-
-
-
-
-
-
 
 
         // Substituir aspas pelo código html <form product_variations"[{}]"

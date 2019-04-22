@@ -39,35 +39,48 @@ class WishlistController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request['action'] == 'add_to_wishlist')  {
+        $action = $request->input('action');
 
-            $add_to_wishlist = $request['add_to_wishlist'];
-            $product_type    = $request['product_type'];
+        if ($action == 'basel_wishlist_number') {
+
+            // count(totaL) table
+
+            return 2;
+        }
+
+        if ($action == 'add_to_wishlist')  {
+
+            $add_to_wishlist = $request->input('add_to_wishlist');
+            $product_type    = $request->input('product_type');
 
             // Salvar no Banco de Dados
 
-            $user_wishlists[] = array(
-                "ID" => "6047",
-                "user_id" => "7159",
-                "wishlist_slug" => "",
-                "wishlist_name" => "",
-                "wishlist_token" => "Y2XKS2STEUIY",
-                "wishlist_privacy" => "0",
-                "is_default" => "1",
-                "dateadded" => "2019-04-16 23:36:58"
-            );
+                $user_wishlists[] = array(
+                    "ID" => "6047",
+                    "user_id" => "7159",
+                    "wishlist_slug" => "",
+                    "wishlist_name" => "",
+                    "wishlist_token" => "Y2XKS2STEUIY",
+                    "wishlist_privacy" => "0",
+                    "is_default" => "1",
+                    "dateadded" => "2019-04-16 23:36:58"
+                );
 
-            $out = array(
-                "result" => "true",
-                "message" => "Produto adicionado!",
-                "user_wishlists" => $user_wishlists,
-                "wishlist_url" => route('wishlist')
-            );
+                $out = array(
+                    "result" => "true",
+                    "message" => "Produto adicionado!",
+                    "user_wishlists" => $user_wishlists,
+                    "wishlist_url" => route('wishlist')
+                );
+
+            return response()->json($out);
 
         }
 
 
-        return response()->json($out);
+
+
+
 
     }
 

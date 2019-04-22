@@ -46,15 +46,15 @@
     <div class="row">
         <div class="site-content shop-content-area col-sm-12 content-with-products description-area-before" role="main">
 
-            @include('categories.theme-1-breadcrumb')
+            @include('categories.category-1-breadcrumb')
 
-            @include('categories.theme-1-filters')
+            @include('categories.category-1-filters')
 
             <div class="basel-shop-loader"></div>
 
             <div class="products elements-grid basel-products-holder  basel-spacing- products-spacing- pagination-infinit row grid-columns-4" data-min_price="" data-max_price="" data-source="main_loop">
 
-                @include('categories.theme-1-products')
+                @include('categories.category-1-products')
 
             </div>
 

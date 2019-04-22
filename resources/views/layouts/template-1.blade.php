@@ -290,7 +290,7 @@
     var wc_cart_fragments_params = {!! json_encode([
         "ajax_url" => route('cart'),
         "wc_ajax_url" => route('cart.fragments'),
-        "fragment_name" => "wc_fragments_".time(),
+        "fragment_name" => "wc_fragments_anselmo_velame",
         "csrf_token" => csrf_token()
     ]) !!};
 </script>
@@ -369,8 +369,7 @@
                     "vertical_items" => 3
                 )
             )
-        )
-        ,
+        ),
         "zoom_enable" => "yes",
         "ajax_scroll" => "yes",
         "ajax_scroll_class" => ".main-page-wrapper",
@@ -394,7 +393,7 @@
     var basel_variation_gallery_data=null;
 </script>
 
-<script type="text/javascript" src="{{asset('themes/js/theme.js')}}?ver=4.5.1">
+<script type="text/javascript" src="{{asset('themes/js/theme-org.js')}}?ver=4.6.0">
 </script>
 
 <script type="text/javascript" src="{{asset('includes/underscore/js/underscore.min.js')}}?ver=1.8.3"></script>
