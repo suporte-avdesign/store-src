@@ -19,7 +19,7 @@
 
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
     @include('google.analytics-1')
-    <!-- / Google Analytics by MonsterInsights -->
+<!-- / Google Analytics by MonsterInsights -->
     <link rel="stylesheet" id="contact-form-7"  href="{{asset('plugins/contact-form-7/css/styles.css')}}?ver=5.0.5" type="text/css" media="all" />
     <style id="woocommerce-inline-inline-css" type="text/css">
         .woocommerce form .form-row .required { visibility: visible; }
@@ -76,7 +76,7 @@
     <script type="text/javascript" src="{{asset('plugins/cart/js/add-to-cart.min.js')}}?ver=4.5.4"></script>
     <script type="text/javascript" src="{{asset('plugins/cart/js/avd-add-to-cart.js')}}?ver=5.6"></script>
     <!--[if lt IE 9]>
-        <script type="text/javascript" src="{{asset('themes/js/html5.min.js')}}?ver=4.4.2"></script>
+    <script type="text/javascript" src="{{asset('themes/js/html5.min.js')}}?ver=4.4.2"></script>
     <![endif]-->
     <script type="text/javascript" src="{{asset('themes/js/device.min.js')}}?ver=4.4.2"></script>
 
@@ -226,7 +226,7 @@
     <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
     <meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress."/>
     <!--[if lte IE 9]>
-     <link rel="stylesheet" type="text/css" href="{{asset('plugins/js_composer/css/vc_lte_ie9.min.css')}}" media="screen">
+    <link rel="stylesheet" type="text/css" href="{{asset('plugins/js_composer/css/vc_lte_ie9.min.css')}}" media="screen">
     <![endif]-->
 
     <link rel="stylesheet" id="styles-css" href="{{asset('themes/css/styles.min.css')}}?ver=1.0.0" type="text/css" media="all" />
@@ -342,8 +342,9 @@
         "tweet" => "Tweet",
         "download_image" => "Download da Imagem",
         "wishlist" => "yes",
-        "cart_url" => "https:\/\/demo.xtemos.com\/basel\/cart\/",
-        "ajaxurl" => route('product.search'),
+        "cart_url" => route('cart'),
+        "ajaxurl" => route('cart.product'),
+        "search_url" => route('product.search'),
         "quickview_url" => route('product.show'),
         "compare_url" => route('compare.store'),
         "add_to_cart_action" => "widget",
@@ -388,12 +389,12 @@
         "sticky_desc_scroll" => "1",
         "quickview_in_popup_fix" => "",
         "one_page_menu_offset" => "150",
-        "csrf_token" => csrf_token(),
+        "csrf_token" => csrf_token(),9
     ]) !!};
     var basel_variation_gallery_data=null;
-</script>
+</script>7
 
-<script type="text/javascript" src="{{asset('themes/js/theme-org.js')}}?ver=4.6.0">
+<script type="text/javascript" src="{{asset('themes/js/theme-org.js')}}?ver=4.5.5">
 </script>
 
 <script type="text/javascript" src="{{asset('includes/underscore/js/underscore.min.js')}}?ver=1.8.3"></script>

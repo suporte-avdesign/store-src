@@ -193,7 +193,59 @@
                                                             />
                                                         </a>
                                                     </figure>
+
+                                                    <figure data-thumb="{{asset('faker/product_photos/img1-s.jpg')}}" class="woocommerce-product-gallery__image">
+                                                        <a href="{{asset('faker/product_photos/img1-s.jpg')}}">
+                                                            <img width="870" height="870"
+                                                                 src="{{asset('faker/product_photos/img1-s.jpg')}}"
+                                                                 class="wp-post-image wp-post-image"
+                                                                 alt="Produto 2 - Cor Azul" title="Produto 2 - cor Azul"
+                                                                 data-caption=""
+                                                                 data-src="{{asset('faker/product_photos/img1-s.jpg')}}"
+                                                                 data-large_image="{{asset('faker/product_photos/img1-s.jpg')}}"
+                                                                 data-large_image_width="870"
+                                                                 data-large_image_height="870"
+                                                                 srcset="{{asset('faker/product_photos/img1-s.jpg')}} 870w,
+                                                                         {{asset('faker/product_photos/img1-s.jpg')}} 235w,
+                                                                         {{asset('faker/product_photos/img1-s.jpg')}} 768w,
+                                                                         {{asset('faker/product_photos/img1-s.jpg')}} 803w,
+                                                                         {{asset('faker/product_photos/img1-s.jpg')}} 266w,
+                                                                         {{asset('faker/product_photos/img1-s.jpg')}} 219w,
+                                                                         {{asset('faker/product_photos/img1-s.jpg')}} 263w,
+                                                                         {{asset('faker/product_photos/img1-s.jpg')}} 526w"
+                                                                 sizes="(max-width: 870px) 100vw, 870px"
+                                                            />
+                                                        </a>
+                                                    </figure>
+
+
+                                                    <figure data-thumb="{{asset('faker/product_photos/img1-s.jpg')}}" class="woocommerce-product-gallery__image">
+                                                        <a href="{{asset('faker/product_photos/img1-s.jpg')}}">
+                                                            <img width="870" height="870"
+                                                                 src="{{asset('faker/product_photos/img1-s.jpg')}}"
+                                                                 class="wp-post-image wp-post-image"
+                                                                 alt="Produto 2 - Cor Azul" title="Produto 2 - cor Azul"
+                                                                 data-caption=""
+                                                                 data-src="{{asset('faker/product_photos/img1-s.jpg')}}"
+                                                                 data-large_image="{{asset('faker/product_photos/img1-s.jpg')}}"
+                                                                 data-large_image_width="870"
+                                                                 data-large_image_height="870"
+                                                                 srcset="{{asset('faker/product_photos/img1-s.jpg')}} 870w,
+                                                                         {{asset('faker/product_photos/img1-s.jpg')}} 235w,
+                                                                         {{asset('faker/product_photos/img1-s.jpg')}} 768w,
+                                                                         {{asset('faker/product_photos/img1-s.jpg')}} 803w,
+                                                                         {{asset('faker/product_photos/img1-s.jpg')}} 266w,
+                                                                         {{asset('faker/product_photos/img1-s.jpg')}} 219w,
+                                                                         {{asset('faker/product_photos/img1-s.jpg')}} 263w,
+                                                                         {{asset('faker/product_photos/img1-s.jpg')}} 526w"
+                                                                 sizes="(max-width: 870px) 100vw, 870px"
+                                                            />
+                                                        </a>
+                                                    </figure>
+
                                                 </figure>
+
+
 
                                                 <div class="basel-show-product-gallery-wrap">
                                                     <a href="#" class="basel-show-product-gallery basel-tooltip">Clique para Ampliar</a>
@@ -334,6 +386,7 @@
                                                             <input type="hidden" name="add-to-cart" value="19531" />
                                                             <input type="hidden" name="product_id" value="19531" />
                                                             <input type="hidden" name="variation_id" class="variation_id" value="0" />
+                                                            <input type="hidden" name="_token" value="{{csrf_token()}}" />
                                                         </div>
                                                     </div>
                                                 </form>

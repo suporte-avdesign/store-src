@@ -34,7 +34,7 @@
                         <a rel="nofollow" href="{{route('category')}}/" class="">Todos</a>
                     </li>
                     <li>
-                        <a rel="nofollow" href="{{route('category')}}/?min_price=0&max_price=20" @if($min_price == 0) class="current-state" @endif>
+                        <a rel="nofollow" href="{{route('category')}}/?min_price=0&max_price=20" @if(isset($min_price) && $min_price  == 0) class="current-state" @endif>
                             <span class="woocommerce-Price-amount amount">
                                 <span class="woocommerce-Price-currencySymbol">R$ </span>0.00
                             </span> -

@@ -44,7 +44,7 @@ Route::get('product/search', 'Web\ProductController@search')->name('product.sear
 Route::get('cart', 'Web\CartController@index')->name('cart');
 Route::post('cart/add', 'Web\CartController@store')->name('cart.add');
 Route::post('cart/fragments', 'Web\CartController@fragments')->name('cart.fragments');
-Route::post('cart/add/product', 'Web\CartController@addProduct')->name('cart.add.product');
+Route::post('cart/add/product', 'Web\CartController@product')->name('cart.product');
 Route::post('cart/update', 'Web\CartController@update')->name('cart.update');
 Route::post('cart/remove', 'Web\CartController@destroy')->name('cart.remove');
 Route::get('cart/undo/{id}', 'Web\CartController@undo')->name('cart.undo');

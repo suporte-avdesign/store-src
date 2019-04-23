@@ -28,17 +28,17 @@ class CartController extends Controller
     {
         $json = $request['wc-ajax'];
         $list = 1;
-        $qty = 2;
+        $quantity = 2;
         $total = '159,00';
 
-        $cart       = view('carts.mini-cart-list-1', compact('list','qty','total', 'json'))->render();
-        $cart_qty   = view('carts.mini-cart-qty-1', compact('qty'))->render();
-        $cart_total = view('carts.mini-cart-total-1', compact('total'))->render();
+        $fragments = view('carts.cart-1-fragments', compact('list','quantity','total', 'json'))->render();
+        $cart_quantity = view('carts.cart-1-quantity', compact('quantity'))->render();
+        $cart_total = view('carts.cart-1-total', compact('total'))->render();
 
         $out = array(
             "fragments" => array (
-                "div.widget_shopping_cart_content" => $cart,
-                "span.basel-cart-number" => $cart_qty,
+                "div.widget_shopping_cart_content" => $fragments,
+                "span.basel-cart-number" => $cart_quantity,
                 "span.basel-cart-subtotal" => $cart_total
             ),
             "cart_hash" => "0befc4f1367d4bf7341fb19d577d37a1"
@@ -83,17 +83,17 @@ class CartController extends Controller
     {
         $json = $request['wc-ajax'];
         $list = 1;
-        $qty = 0;
+        $quantity = 0;
         $total = '0,00';
 
-        $cart       = view('carts.mini-cart-list-1', compact('list', 'qty', 'total','json'))->render();
-        $cart_qty   = view('carts.mini-cart-qty-1', compact('qty'))->render();
-        $cart_total = view('carts.mini-cart-total-1', compact('total'))->render();
+        $fragments = view('carts.cart-1-fragments', compact('list', 'quantity', 'total','json'))->render();
+        $cart_quantity = view('carts.cart-1-quantity', compact('quantity'))->render();
+        $cart_total = view('carts.cart-1-total', compact('total'))->render();
 
         $out = array(
             "fragments" => array (
-                "div.widget_shopping_cart_content" => $cart,
-                "span.basel-cart-number" => $cart_qty,
+                "div.widget_shopping_cart_content" => $fragments,
+                "span.basel-cart-number" => $cart_quantity,
                 "span.basel-cart-subtotal" => $cart_total
             ),
             "cart_hash" => ""
@@ -104,25 +104,40 @@ class CartController extends Controller
     }
 
 
-    public function addProduct(Request $request)
+    public function product(Request $request)
     {
-        $json = $request['wc-ajax'];
-        $list = 1;
-        $qty = 2;
-        $total = '159,00';
+        sleep(2);
+        $action = $request->input('action');
+        $attribute_pa_color = $request->input('attribute_pa_color');
+        $attribute_pa_size = $request->input('attribute_pa_size');
+        $quantity = $request->input('quantity');
+        $add_to_cart = $request->input('add-to-cart');
+        $product_id = $request->input('product_id');
+        $variation_id = $request->input('variation_id');
 
-        $cart       = view('carts.mini-cart-list-1', compact('list','qty', 'total', 'json'))->render();
-        $cart_qty   = view('carts.mini-cart-qty-1-total', compact('qty'))->render();
-        $cart_total = view('carts.mini-cart-total-1-total', compact('total'))->render();
+        if ($action == 'basel_ajax_add_to_cart') {
+            $product = 'Produto 2';
+            $list = 1;
+            $quantity = 3;
+            $total = '259,00';
 
-        $out = array(
-            "fragments" => array (
-                "div.widget_shopping_cart_content" => $cart,
-                "span.basel-cart-number" => $cart_qty,
-                "span.basel-cart-subtotal" => $cart_total,
+            $notices = view('carts.cart-1-notices', compact('product','quantity'))->render();
+            $fragments = view('carts.cart-1-fragments', compact('list','quantity','total'))->render();
+            $cart_quantity = view('carts.cart-1-quantity', compact('quantity'))->render();
+            $cart_total = view('carts.cart-1-total', compact('total'))->render();
+
+            $out = array(
+                "notices" => $notices,
+                "fragments" => array(
+                "div.widget_shopping_cart_content" => $fragments,
+                    "span.basel-cart-number" => $cart_quantity,
+                    "span.basel-cart-subtotal" => $cart_total
+                ),
                 "cart_hash" => "0befc4f1367d4bf7341fb19d577d37a1"
-            )
-        );
+            );
+        }
+
+
 
         return response()->json($out);
 
@@ -132,20 +147,20 @@ class CartController extends Controller
 
     public function fragments(Request $request)
     {
-        $json = $request['wc-ajax'];
+        $action = $request->input('wc-ajax');
 
         $list = 1;
-        $qty = 2;
+        $quantity = 2;
         $total = '159,00';
 
-        $cart       = view('carts.mini-cart-list-1', compact('list','qty', 'total', 'json'))->render();
-        $cart_qty   = view('carts.mini-cart-qty-1', compact('qty'))->render();
-        $cart_total = view('carts.mini-cart-total-1', compact('total'))->render();
+        $fragments = view('carts.cart-1-fragments', compact('list','quantity','total'))->render();
+        $cart_quantity = view('carts.cart-1-quantity', compact('quantity'))->render();
+        $cart_total = view('carts.cart-1-total', compact('total'))->render();
 
         $out = array(
             "fragments" => array (
-                "div.widget_shopping_cart_content" => $cart,
-                "span.basel-cart-number" => $cart_qty,
+                "div.widget_shopping_cart_content" => $fragments,
+                "span.basel-cart-number" => $cart_quantity,
                 "span.basel-cart-subtotal" => $cart_total
             ),
             "cart_hash" => "0befc4f1367d4bf7341fb19d577d37a1"

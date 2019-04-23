@@ -1,4 +1,4 @@
-@if ($qty === 0)
+@if ($quantity === 0)
     <div class="widget_shopping_cart_content">
         <p class="woocommerce-mini-cart__empty-message empty">Nenhum produto no carrinho.</p>
     </div>
@@ -6,7 +6,7 @@
     <div class="widget_shopping_cart_content">
         <ul class="woocommerce-mini-cart cart_list product_list_widget ">
             <li class="woocommerce-mini-cart-item mini_cart_item">
-                <a href="{{route('cart.remove')}}?remove_item=abc{{time()}}&#038;_wpnonce=c{{time()}}" class="remove remove_from_cart_button" aria-label="Remove this item" data-product_id="456{{time()}}" data-cart_item_key="{{time()}}" data-product_sku="">&times;</a>
+                <a href="{{route('cart.remove')}}?remove_item=abc{{time()}}&_wpnonce=c{{time()}}" class="remove remove_from_cart_button" aria-label="Remove this item" data-product_id="456{{time()}}" data-cart_item_key="{{time()}}" data-product_sku="">&times;</a>
                 <a href="#">
                     <img width="273" height="273" src="{{asset('faker/product_photos/img5-f.jpg')}}?ver=1.0.0" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" />
                     Produto 1
@@ -27,10 +27,11 @@
         </p>
         <p class="woocommerce-mini-cart__buttons buttons">
             <a href="#" class="button btn-cart wc-forward">Ver Carrinho</a>
-            <a href="#" class="button checkout wc-forward">Checkout</a>
+            <a href="#" class="button checkout wc-forward">Finalizar</a>
         </p>
 
-    </div>
+
+
 @endif
 
 

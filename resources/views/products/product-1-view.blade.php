@@ -214,6 +214,7 @@
                                 <input type="hidden" name="add-to-cart" value="19531" />
                                 <input type="hidden" name="product_id" value="19531" />
                                 <input type="hidden" name="variation_id" class="variation_id" value="0" />
+                                <input type="hidden" name="_token" value="{{csrf_token()}}" />
                             </div>
                         </div>
                     </form>
