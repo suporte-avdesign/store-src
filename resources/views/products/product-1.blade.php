@@ -3,8 +3,7 @@
 <title> São Roque calçados nome do produto</title>
 @endpush
 @push('body')
-<body class="product-template-default single single-product postid-19531 logged-in woocommerce woocommerce-page woocommerce-no-js wrapper-full-width global-cart-design-1 global-search-full-screen global-header-shop mobile-nav-from-left basel-product-design-default basel-light catalog-mode-off categories-accordion-on global-wishlist-enable basel-top-bar-on basel-ajax-shop-on basel-ajax-search-on enable-sticky-header header-full-width sticky-header-real offcanvas-sidebar-mobile offcanvas-sidebar-tablet wpb-js-composer js-comp-ver-5.6 vc_responsive">
-@endpush
+<body class="product-template-default single single-product postid-19656 logged-in woocommerce woocommerce-page woocommerce-no-js wrapper-full-width global-cart-design-1 global-search-full-screen global-header-shop mobile-nav-from-left basel-product-design-default basel-light catalog-mode-off categories-accordion-on global-wishlist-enable basel-top-bar-on basel-ajax-shop-on basel-ajax-search-on enable-sticky-header header-full-width sticky-header-real offcanvas-sidebar-mobile offcanvas-sidebar-tablet wpb-js-composer js-comp-ver-5.6 vc_responsive">@endpush
 @section('content')
     <div class="container-fluid">
         <div class="row">
@@ -114,6 +113,7 @@
                 <div id="product-19531" class="single-product-page single-product-content product-design-default product-with-attachments post-19531 product type-product status-publish has-post-thumbnail product_cat-woman first instock featured shipping-taxable purchasable product-type-variable has-default-attributes">
                     <div class="container">
                         <div class="row">
+                            <!-- com sidbar col-sm-9 -->
                             <div class="product-image-summary col-sm-12">
                                 <div class="row">
                                     <!-- Imagens da Galeria -->
@@ -267,58 +267,15 @@
                                                         <span class="woocommerce-Price-currencySymbol">R$ </span>59,00
                                                     </span>
                                                 </p>
+
                                                 <div class="woocommerce-product-details__short-description">
-                                                    <p>Aqui definir venda de atacado e varejo.</p>
+                                                    <p>Descrição curta do produto.</p>
                                                 </div>
+                                                <h5 class="widget-title">Exemplo venda Varejo</h5>
                                                 <form class="variations_form cart" method="post" enctype="multipart/form-data" data-product_id="19531" data-product_variations='{{$product_variations}}'>
 
-                                                    <!--
                                                     <table class="variations" cellspacing="0">
                                                         <tbody>
-                                                        <tr>
-                                                            <td class="label"><label for="pa_color">Cor</label></td>
-                                                            <td class="value with-swatches">
-                                                                <div class="swatches-select" data-id="pa_color">
-                                                                    <div class="basel-swatch basel-tooltip  colored-swatch swatch-size-" data-value="yellow"  style="background-color:#eded55">Yellow</div>
-                                                                    <div class="basel-swatch basel-tooltip  colored-swatch swatch-size-" data-value="red"  style="background-color:#dd3333">Red</div>
-                                                                    <div class="basel-swatch basel-tooltip  colored-swatch swatch-size-" data-value="blue"  style="background-color:#769ec1">Blue</div>
-                                                                </div>
-                                                                <select id="pa_color" class="" name="attribute_pa_color" data-attribute_name="attribute_pa_color" data-show_option_none="yes">
-                                                                    <option value="">Choose an option</option>
-                                                                    <option value="yellow" >Yellow</option>
-                                                                    <option value="red" >Red</option>
-                                                                    <option value="blue" >Blue</option>
-                                                                </select>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="label">
-                                                                <label for="pa_size">Size</label>
-                                                            </td>
-                                                            <td class="value with-swatches">
-                                                                <div class="swatches-select" data-id="pa_size">
-                                                                    <div class="basel-swatch basel-tooltip  text-only swatch-size-" data-value="m"  style="">M</div>
-                                                                    <div class="basel-swatch basel-tooltip  text-only swatch-size-" data-value="s"  style="">S</div>
-                                                                    <div class="basel-swatch basel-tooltip  text-only swatch-size-" data-value="xl"  style="">XL</div>
-                                                                </div>
-                                                                <select id="pa_size" class="" name="attribute_pa_size" data-attribute_name="attribute_pa_size" data-show_option_none="yes">
-                                                                    <option value="">Choose an option</option>
-                                                                    <option value="m" >M</option>
-                                                                    <option value="s" >S</option>
-                                                                    <option value="xl" >XL</option>
-                                                                </select>
-                                                                <a class="reset_variations" href="#">Fechar</a>
-                                                            </td>
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
-                                                    -->
-
-                                                    <table class="variations" cellspacing="0">
-                                                        <tbody>
-                                                        <tr>
-                                                            <strong>EXEMPLO PRODUTO NO VAREJO</strong>
-                                                        </tr>
                                                         <tr>
                                                             <td class="label"><label for="pa_color">Cores</label></td>
                                                             <td class="value with-swatches">
@@ -358,7 +315,6 @@
                                                     </table>
 
 
-
                                                     <div class="single_variation_wrap">
                                                         <div class="woocommerce-variation single_variation"></div>
                                                         <div class="woocommerce-variation-add-to-cart variations_button">
@@ -374,7 +330,7 @@
                                                                     max=""
                                                                     name="quantity"
                                                                     value="1"
-                                                                    title="Qty"
+                                                                    title="Qtd"
                                                                     size="4"
                                                                     pattern="[0-9]*"
                                                                     inputmode="numeric"
@@ -389,11 +345,117 @@
                                                             <input type="hidden" name="_token" value="{{csrf_token()}}" />
                                                         </div>
                                                     </div>
+
+
                                                 </form>
+
+                                                <!-- Venda atacado -->
+                                                <div id="basel-woocommerce-layered-nav-17" class="filter-widget widget-count-4  basel-woocommerce-layered-nav">
+                                                    <h5 class="widget-title">Exemplo Venda Caixa</h5>
+                                                    <div class="basel-scroll">
+                                                        <ul class="show-labels-on swatches-normal swatches-display-inline basel-scroll-content">
+                                                            <li class="wc-layered-nav-term  with-swatch-text">
+                                                                <a href="javascript:void(0)">33</a>
+                                                                <span class="count">(1)</span>
+                                                            </li>
+                                                            <li class="wc-layered-nav-term  with-swatch-text">
+                                                                <a href="javascript:void(0)">34</a>
+                                                                <span class="count">(1)</span>
+                                                            </li>
+                                                            <li class="wc-layered-nav-term  with-swatch-text">
+                                                                <a href="javascript:void(0)">35</a>
+                                                                <span class="count">(2)</span>
+                                                            </li>
+                                                            <li class="wc-layered-nav-term  with-swatch-text">
+                                                                <a href="javascript:void(0)">36</a>
+                                                                <span class="count">(2)</span>
+                                                            </li>
+                                                            <li class="wc-layered-nav-term  with-swatch-text">
+                                                                <a href="javascript:void(0)">37</a>
+                                                                <span class="count">(1)</span>
+                                                            </li>
+                                                            <li class="wc-layered-nav-term  with-swatch-text">
+                                                                <a href="javascript:void(0)">38</a>
+                                                                <span class="count">(2)</span>
+                                                            </li>
+                                                            <li class="wc-layered-nav-term  with-swatch-text">
+                                                                <a href="javascript:void(0)">39</a>
+                                                                <span class="count">(2)</span>
+                                                            </li>
+                                                            <li class="wc-layered-nav-term  with-swatch-text">
+                                                                <a href="javascript:void(0)">40</a>
+                                                                <span class="count">(1)</span>
+                                                            </li>
+
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <form class="cart grouped_form">
+                                                    <table cellspacing="0" class="woocommerce-grouped-product-list group_table">
+                                                        <tbody>
+                                                        <tr id="product-23297" class="woocommerce-grouped-product-list-item post-23297 product type-product status-publish has-post-thumbnail product_cat-lingerie instock shipping-taxable purchasable product-type-simple">
+                                                            <td class="woocommerce-grouped-product-list-item__quantity">
+                                                                <div class="quantity">
+                                                                    <input type="button" value="-" class="minus">
+                                                                    <label class="screen-reader-text" for="quantity_5cbf0639a0370">Quantidade</label>
+                                                                    <input type="number" id="quantity_5cbf0639a0370" class="input-text qty text" step="1" min="0" max="12" name="quantity[23297]" value="0" title="Qtd" size="4" pattern="[0-9]*" inputmode="numeric" aria-labelledby="Amarelo">
+                                                                    <input type="button" value="+" class="plus">
+                                                                </div>
+                                                            </td>
+                                                            <td class="woocommerce-grouped-product-list-item__label">
+                                                                <label for="product-23297"><a href="#">Amarelo</a></label>
+                                                            </td>
+                                                            <td class="woocommerce-grouped-product-list-item__price">
+                                                                <span class="woocommerce-Price-amount amount">
+                                                                    <span class="woocommerce-Price-currencySymbol">R$ </span>160,00
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr id="product-23298" class="woocommerce-grouped-product-list-item post-23298 product type-product status-publish has-post-thumbnail product_cat-lingerie instock shipping-taxable purchasable product-type-simple">
+                                                            <td class="woocommerce-grouped-product-list-item__quantity">
+                                                                <div class="quantity">
+                                                                    <input type="button" value="-" class="minus">
+                                                                    <label class="screen-reader-text" for="quantity_5cbf0639a0370">Quantidade</label>
+                                                                    <input type="number" id="quantity_5cbf0639a0370" class="input-text qty text" step="1" min="0" max="12" name="quantity[23298]" value="0" title="Qtd" size="4" pattern="[0-9]*" inputmode="numeric" aria-labelledby="Branco">
+                                                                    <input type="button" value="+" class="plus">
+                                                                </div>
+                                                            </td>
+                                                            <td class="woocommerce-grouped-product-list-item__label">
+                                                                <label for="product-23298"><a href="#">Branco</a></label>
+                                                            </td>
+                                                            <td class="woocommerce-grouped-product-list-item__price">
+                                                                <span class="woocommerce-Price-amount amount">
+                                                                    <span class="woocommerce-Price-currencySymbol">R$ </span>160,00
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr id="product-23299" class="woocommerce-grouped-product-list-item post-23299 product type-product status-publish has-post-thumbnail product_cat-lingerie instock shipping-taxable purchasable product-type-simple">
+                                                            <td class="woocommerce-grouped-product-list-item__quantity">
+                                                                <div class="quantity">
+                                                                    <input type="button" value="-" class="minus">
+                                                                    <label class="screen-reader-text" for="quantity_5cbf0639a0370">Quantidade</label>
+                                                                    <input type="number" id="quantity_5cbf0639a0370" class="input-text qty text" step="1" min="0" max="12" name="quantity[23299]" value="0" title="Qtd" size="4" pattern="[0-9]*" inputmode="numeric" aria-labelledby="Azul">
+                                                                    <input type="button" value="+" class="plus">
+                                                                </div>
+                                                            </td>
+                                                            <td class="woocommerce-grouped-product-list-item__label">
+                                                                <label for="product-23299"><a href="#">Azul</a></label>
+                                                            </td>
+                                                            <td class="woocommerce-grouped-product-list-item__price">
+                                                                <span class="woocommerce-Price-amount amount">
+                                                                    <span class="woocommerce-Price-currencySymbol">R$ </span>160,00
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </form>
+
+
                                                 <!-- Lista de Desejo -->
                                                 <div class="yith-wcwl-add-to-wishlist add-to-wishlist-19531">
                                                     <div class="yith-wcwl-add-button show" style="display:block">
-                                                        <a href="/basel/shop/woman/noose-fit-ripped-jeans/?add_to_wishlist=19531" rel="nofollow" data-product-id="19531" data-product-type="variable" class="add_to_wishlist" >
+                                                        <a href="{{route('wishlist.store')}}" rel="nofollow" data-product-id="19531" data-product-type="variable" class="add_to_wishlist" >
                                                             Adicionar a lista de desejo
                                                         </a>
                                                         <img src="{{asset('themes/images/loader/wpspin_light.gif')}}" class="ajax-loading" alt="loading" width="16" height="16" style="visibility:hidden" />
@@ -421,7 +483,7 @@
 
                                                 <!-- Compare-->
                                                 <div class="compare-btn-wrapper">
-                                                    <a class="basel-compare-btn button" href="https://demo.xtemos.com/basel/compare/" data-added-text="Compare products" data-id="19531">Compare</a>
+                                                    <a class="basel-compare-btn button" href="{{route('compare')}}" data-added-text="Ver Produtos" data-id="19531">Compare</a>
                                                 </div>
 
                                                 <!-- Outros-->
@@ -445,8 +507,10 @@
                                         </div>
                                     </div>
                                 </div><!-- .summary -->
-
                             </div>
+
+                            <!-- include('products.includes.sidber-1') -->
+
                         </div>
                     </div>
                     <div class="container"></div>

@@ -324,6 +324,7 @@
 <script type="text/javascript" src="{{asset('plugins/isotope/isotope.pkgd.min.js')}}?ver=5.6"></script>
 <script type="text/javascript" src="{{asset('plugins/waypoints/waypoints.min.js')}}?ver=5.6"></script>
 <script type="text/javascript" src="{{asset('plugins/js_composer/js/js_composer_front.min.js')}}?ver=5.6"></script>
+
 <script type="text/javascript">
     var basel_settings = {!! json_encode([
         "adding_to_cart" => "Carregando",
@@ -392,7 +393,10 @@
         "csrf_token" => csrf_token(),9
     ]) !!};
     var basel_variation_gallery_data=null;
-</script>7
+</script>
+
+
+
 
 <script type="text/javascript" src="{{asset('themes/js/theme-org.js')}}?ver=4.5.5">
 </script>

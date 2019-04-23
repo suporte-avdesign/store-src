@@ -65,4 +65,4 @@ Route::get('wishlist/create', 'Web\WishlistController@create')->name('wishlist.c
 |--------------------------------------------------------------------------
 */
 Route::get('compare', 'Web\CompareController@index')->name('compare');
-Route::post('compare/store', 'Web\CompareController@store')->name('compare.store');
+Route::get('compare/store', 'Web\CompareController@store')->name('compare.store');
