@@ -28,7 +28,7 @@
             return features;
         } )();
 
-        $( 'div.wpcf7 > form' ).each( function() {
+        $( 'div.wpcf7 > address' ).each( function() {
             var $form = $( this );
             wpcf7.initForm( $form );
 
@@ -75,7 +75,7 @@
         // Free Text Option for Checkboxes and Radio Buttons
         $( '.wpcf7-list-item.has-free-text', $form ).each( function() {
             var $freetext = $( ':input.wpcf7-free-text', this );
-            var $wrap = $( this ).closest( '.wpcf7-form-control' );
+            var $wrap = $( this ).closest( '.wpcf7-address-control' );
 
             if ( $( ':checkbox, :radio', this ).is( ':checked' ) ) {
                 $freetext.prop( 'disabled', false );
@@ -246,7 +246,7 @@
                     $.each( data.invalidFields, function( i, n ) {
                         $( n.into, $form ).each( function() {
                             wpcf7.notValidTip( this, n.message );
-                            $( '.wpcf7-form-control', this ).addClass( 'wpcf7-not-valid' );
+                            $( '.wpcf7-address-control', this ).addClass( 'wpcf7-not-valid' );
                             $( '[aria-invalid]', this ).attr( 'aria-invalid', 'true' );
                         } );
                     } );
@@ -268,7 +268,7 @@
 
                     $( '[name="g-recaptcha-response"]', $form ).each( function() {
                         if ( '' === $( this ).val() ) {
-                            var $recaptcha = $( this ).closest( '.wpcf7-form-control-wrap' );
+                            var $recaptcha = $( this ).closest( '.wpcf7-address-control-wrap' );
                             wpcf7.notValidTip( $recaptcha, wpcf7.recaptcha.messages.empty );
                         }
                     } );
@@ -493,7 +493,7 @@
 
         $( '.wpcf7-not-valid-tip', $form ).remove();
         $( '[aria-invalid]', $form ).attr( 'aria-invalid', 'false' );
-        $( '.wpcf7-form-control', $form ).removeClass( 'wpcf7-not-valid' );
+        $( '.wpcf7-address-control', $form ).removeClass( 'wpcf7-not-valid' );
 
         $( '.wpcf7-response-output', $form )
             .hide().empty().removeAttr( 'role' )

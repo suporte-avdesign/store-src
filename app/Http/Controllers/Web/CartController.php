@@ -9,7 +9,16 @@ class CartController extends Controller
 {
     public function index()
     {
-        //
+        // Route('products')
+        $product = array(
+            "category" => "categoria",
+            "section" => "secao",
+            "slug" => "produto-1002"
+        );
+
+        $cart = [1];
+
+        return view('carts.cart-1', compact('product', 'cart'));
     }
 
     public function store(Request $request)
@@ -78,6 +87,68 @@ class CartController extends Controller
 
     }
 
+
+    public function endpoint(Request $request)
+    {
+
+        $ac = $request->input('ajax');
+        if ($ac == 'update_shipping_method') {
+            $this->method($request->all());
+        }
+
+        if ($ac == 'apply_coupon'){
+            $this->coupon($request->all());
+        }
+
+        if ($ac == 'remove_item'){
+            $this->remove($request->all());
+        }
+
+
+    }
+
+
+    public function shipping(Request $request)
+    {
+        $shipping  = $request['shipping_method'];
+        $method    = '';
+
+
+        $this->index();
+    }
+
+
+    public function method($input)
+    {
+        $shipping_method = $input['shipping_method'];
+        $method = $shipping_method[0];
+
+        $render = view('carts.cart-1-method', compact('method'))->render();
+
+        print $render;
+
+    }
+
+
+    public function coupon($input)
+    {
+        $render = '';
+        if(!$input['coupon_code']) {
+            $message = 'Favor prenche';
+            $render =view('messages.message-1-erro', compact('message'))->render();
+        }
+
+        print $render;
+    }
+
+
+    public function remove($input)
+    {
+        $item = $input['item'];
+        $_wpnonce = $input['_wpnonce'];
+
+    }
+
     public function fragments(Request $request)
     {
         sleep(2);
@@ -104,14 +175,23 @@ class CartController extends Controller
 
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        // Route('products')
+        $product = array(
+            "category" => "categoria",
+            "section" => "secao",
+            "slug" => "produto-1002"
+        );
+
+        $cart = [1];
+
+        return view('carts.cart-1', compact('product', 'cart'));
     }
 
-    public function undo(Request $request, $id)
+    public function undo(Request $request)
     {
-        //
+        $undo_item = $request['undo_item'];
     }
 
     public function destroy(Request $request)

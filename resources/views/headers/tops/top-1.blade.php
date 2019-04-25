@@ -24,7 +24,7 @@
 
     <div class="cart-widget-side">
         <div class="widget-heading">
-            <h3 class="widget-title">Carrinho de Compras</h3>
+            <h3 class="widget-title">Meu Carrinho</h3>
             <a href="#" class="widget-close">Fechar</a>
         </div>
         <div class="widget woocommerce widget_shopping_cart">

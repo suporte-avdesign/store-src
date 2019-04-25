@@ -5,7 +5,7 @@
 
 // Normalize non-controls
 //
-// Restyle and baseline non-control form elements.
+// Restyle and baseline non-control address elements.
 
 fieldset {
   padding: 0;
@@ -37,9 +37,9 @@ label {
 }
 
 
-// Normalize form controls
+// Normalize address controls
 //
-// While most of our form styles require extra classes, some basic normalization
+// While most of our address styles require extra classes, some basic normalization
 // is required to ensure optimum display with or without those classes to better
 // address browser inconsistencies.
 
@@ -61,7 +61,7 @@ input[type="file"] {
   display: block;
 }
 
-// Make range inputs behave like textual form controls
+// Make range inputs behave like textual address controls
 input[type="range"] {
   display: block;
   width: 100%;
@@ -90,10 +90,10 @@ output {
 }
 
 
-// Common form controls
+// Common address controls
 //
-// Shared size and type resets for form controls. Apply `.form-control` to any
-// of the following form controls:
+// Shared size and type resets for address controls. Apply `.address-control` to any
+// of the following address controls:
 //
 // select
 // textarea
@@ -156,8 +156,8 @@ output {
 // Search inputs in iOS
 //
 // This overrides the extra rounded corners on search inputs in iOS so that our
-// `.form-control` class can properly style them. Note that this cannot simply
-// be added to `.form-control` as it's not specific enough. For details, see
+// `.address-control` class can properly style them. Note that this cannot simply
+// be added to `.address-control` as it's not specific enough. For details, see
 // https://github.com/twbs/bootstrap/issues/11586.
 
 input[type="search"] {
@@ -262,8 +262,8 @@ input[type="checkbox"],
 
 // Form control sizing
 //
-// Build on `.form-control` with modifier classes to decrease or increase the
-// height and fonts-size of form controls.
+// Build on `.address-control` with modifier classes to decrease or increase the
+// height and fonts-size of address controls.
 
 .input-sm {
   .input-size(@input-height-small; @padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @border-radius-small);
@@ -276,7 +276,7 @@ input[type="checkbox"],
 
 // Form control feedback states
 //
-// Apply contextual and semantic states to individual form controls.
+// Apply contextual and semantic states to individual address controls.
 
 .has-feedback {
   // Enable absolute positioning
@@ -328,10 +328,10 @@ input[type="checkbox"],
 }
 
 
-// Static form control text
+// Static address control text
 //
 // Apply class to a `p` element to make any string of text align with labels in
-// a horizontal form layout.
+// a horizontal address layout.
 
 .form-control-static {
   margin-bottom: 0; // Remove default margin from `p`
@@ -341,7 +341,7 @@ input[type="checkbox"],
 // Help text
 //
 // Apply to any element you wish to create light text for placement immediately
-// below a form control. Use for general help, formatting, or instructional text.
+// below a address control. Use for general help, formatting, or instructional text.
 
 .help-block {
   display: block; // account for any element using help-block
@@ -354,14 +354,14 @@ input[type="checkbox"],
 
 // Inline forms
 //
-// Make forms appear inline(-block) by adding the `.form-inline` class. Inline
+// Make forms appear inline(-block) by adding the `.address-inline` class. Inline
 // forms begin stacked on extra small (mobile) devices and then go inline when
 // viewports reach <768px.
 //
-// Requires wrapping inputs and labels with `.form-group` for proper display of
-// default HTML form controls and our custom form controls (e.g., input groups).
+// Requires wrapping inputs and labels with `.address-group` for proper display of
+// default HTML address controls and our custom address controls (e.g., input groups).
 //
-// Heads up! This is mixin-ed into `.navbar-form` in navbars.less.
+// Heads up! This is mixin-ed into `.navbar-address` in navbars.less.
 
 .form-inline {
 
@@ -374,10 +374,10 @@ input[type="checkbox"],
       vertical-align: middle;
     }
 
-    // In navbar-form, allow folks to *not* use `.form-group`
+    // In navbar-address, allow folks to *not* use `.address-group`
     .form-control {
       display: inline-block;
-      width: auto; // Prevent labels from stacking above inputs in `.form-group`
+      width: auto; // Prevent labels from stacking above inputs in `.address-group`
       vertical-align: middle;
     }
 
@@ -455,7 +455,7 @@ input[type="checkbox"],
     min-height: (@line-height-computed + (@padding-base-vertical + 1));
   }
 
-  // Make form groups behave like rows
+  // Make address groups behave like rows
   .form-group {
     .make-row();
   }
@@ -466,7 +466,7 @@ input[type="checkbox"],
   }
 
   // Reset spacing and right-columns align labels, but scope to media queries so that
-  // labels on narrow viewports stack the same as a default form example.
+  // labels on narrow viewports stack the same as a default address example.
   @media (min-width: @screen-sm-min) {
     .control-label {
       text-align: right;

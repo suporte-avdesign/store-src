@@ -20177,7 +20177,7 @@ var baselThemeModule;
                         productCat = $this.find('[name="product_cat"]'),
                         $results = $this.parent().find('.basel-search-results'),
                         price = parseInt($this.data('price')),
-                        url = basel_settings.ajaxurl + '?action=basel_ajax_search',
+                        url = basel_settings.search_url + '?action=basel_ajax_search',
                         postType = $this.data('post_type');
 
                     if (number > 0) url += '&number=' + number;

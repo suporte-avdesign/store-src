@@ -9,7 +9,7 @@
                     <a href="#">Sair</a>
                 </li>
             @else
-                <li class="login">
+                <li class="login-side-opener">
                     <a href="#">Login</a>
                 </li>
             @endauth
@@ -22,12 +22,12 @@
         <div class="basel-search-wrapper">
             <div class="basel-search-inner">
                 <span class="basel-close-search">Fechar</span>
-                <form role="search" method="get" id="searchform" class="searchform  basel-ajax-search" action="#" data-thumbnail="1" data-price="1" data-count="5" data-post_type="product">
+                <form role="search" method="get" id="_searchform" class="searchform  basel-ajax-search" action="#" data-thumbnail="1" data-price="1" data-count="5" data-post_type="product">
                     <div>
                         <label class="screen-reader-text">Buscar por:</label>
-                        <input type="text" class="search-field" placeholder="Buscar Produtos" value="" name="s" id="s" />
-                        <input type="hidden" name="post_type" id="post_type" value="product">
-                        <button type="submit" id="searchsubmit" value="Buscar">Buscar</button>
+                        <input type="text" class="search-field" placeholder="Buscar Produtos" value="" name="s" id="_s" />
+                        <input type="hidden" name="_post_type" id="_post_type" value="product">
+                        <button type="submit" id="_searchsubmit" value="Buscar">Buscar</button>
                     </div>
                 </form>
                 <div class="search-results-wrapper">

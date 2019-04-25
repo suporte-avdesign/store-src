@@ -114,9 +114,12 @@
     </div>
     <div class="header-links my-account-with-text">
         <ul>
-            <li class="wishlist"><a href="#">Contato</a></li>
-            <li class="my-account"><a href="#">Cadastre-se</a></li>
-            <li class="logout"><a href="#">FAQ</a></li>
+            <li class="wishlist">
+                <a href="https://demo.xtemos.com/basel/wishlist/">Wishlist</a>
+            </li>
+            <li class="login-side-opener">
+                <a href="{{route('login')}}">Login / Cadastre-se</a>
+            </li>
         </ul>
     </div>
 </div>

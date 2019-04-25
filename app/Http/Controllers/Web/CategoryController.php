@@ -39,7 +39,7 @@ class CategoryController extends Controller
             );
         }
         else {
-            return view('categories.category-1-list',
+            return view('categories.category-1',
                 compact('section','page','num','_pjax','parameter','orderby','min_price','max_price','filter_color','filter_size')
             );
         }

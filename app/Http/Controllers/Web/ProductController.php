@@ -15,6 +15,7 @@ class ProductController extends Controller
     public function index()
     {
 
+
         // Set product nex e prev
         $product_prev = array('nome-categoria','nome-secao','none-produto-anterior');
         $product_next = array('nome-categoria','nome-secao','none-produto-proximo');
@@ -505,12 +506,113 @@ class ProductController extends Controller
         //$product_variations = str_replace('"', "&quot;", json_encode($out));
         $product_variations = json_encode($out);
 
+        /**
+         * Gerar json schema_org
+         * https://schema.org/
+         */
+        $itemListElement[] = array(
+            "@type" => "ListItem",
+            "position" => 1,
+            "item" => array(
+                "name" => "Home",
+                "@id" =>  route('home')
+            )
+        );
+        $itemListElement[] = array(
+            "@type" => "ListItem",
+            "position" => 2,
+            "item" => array(
+                "name" => "sandalias",
+                "@id" =>  route('home') //route category
+            )
+        );
+        $itemListElement[] = array(
+            "@type" => "ListItem",
+            "position" => 3,
+            "item" => array(
+                "name" => "feminino",
+                "@id" =>  route('home') //route section
+            )
+        );
+        $itemListElement[] = array(
+            "@type" => "ListItem",
+            "position" => 4,
+            "item" => array(
+                "name" => "produto",
+                "@id" =>  route('home') //route product
+            )
+        );
+        // se estiver em oferta
+        $offer[] = array(
+            "@type" => "Offer",
+            "price" => "45,00",
+            "priceSpecification" => array(
+                "price" => "45,00",
+                "priceCurrency" =>  "BRL",
+                "valueAddedTaxIncluded" => "false"
+            ),
+            "priceCurrency" => "BRL",
+            "availability" => "https://schema.org/InStock",
+            "url" => route('home'), // route product
+            "seller" => array(
+                "@type" => "Organization",
+                "name" => "Nome do Produto",
+                "url" => route('home')
+            )
+        );
+        $graph[] = array(
+            "@context" => "https://schema.org/",
+            "@type" => "BreadcrumbList",
+            "itemListElement" => $itemListElement
+        );
+        $graph[] = array(
+            "@context" => "https://schema.org/",
+            "@type" => "Product",
+            "@id" => route('home'), // route product
+            "name" => "Nome do produto",
+            "image" => asset('faker/product_photos/img1-f.jpg'),
+            "description" => "<p>Descrição do produto</p>",
+            "sku" => "",
+            "offers" => $offer,
+            "aggregateRating" => array(
+                "@type" =>  "AggregateRating",
+                "ratingValue" =>  "5.00",
+                "reviewCount" => 1
+            )
+        );
+        $graph[] = array(
+            "@context" => "https:\/\/schema.org\/",
+            "@type" => "Review",
+            "@id" => route('home')."#comment-81", // route product
+            "datePublished" => "2016-04-25T20:55:19+00:00",
+            "description" => "comentario!",
+            "itemReviewed" =>  array(
+                "@type" => "Product",
+                "name" => "Nome do Produto"
+            ),
+            "reviewRating" => array(
+                "@type" =>  "rating",
+                "ratingValue" =>  "5"
+            ),
+            "author" => array(
+                "@type" =>  "Person",
+                "name" =>  "Anselmo"
+            )
+            );
+
+        $schema_org = array(
+            "@context" => "https://schema.org/",
+            "@graph" => $graph
+        );
+
+
 
 
         return view('products.product-1', compact(
             'product_prev',
             'product_next',
-            'product_variations'
+            'product_variations',
+            'schema_org'
         ));
 
     }

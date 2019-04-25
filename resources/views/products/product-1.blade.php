@@ -3,7 +3,8 @@
 <title> São Roque calçados nome do produto</title>
 @endpush
 @push('body')
-<body class="product-template-default single single-product postid-19656 logged-in woocommerce woocommerce-page woocommerce-no-js wrapper-full-width global-cart-design-1 global-search-full-screen global-header-shop mobile-nav-from-left basel-product-design-default basel-light catalog-mode-off categories-accordion-on global-wishlist-enable basel-top-bar-on basel-ajax-shop-on basel-ajax-search-on enable-sticky-header header-full-width sticky-header-real offcanvas-sidebar-mobile offcanvas-sidebar-tablet wpb-js-composer js-comp-ver-5.6 vc_responsive">@endpush
+<body class="product-template-default single single-product postid-19656 logged-in woocommerce woocommerce-page woocommerce-no-js wrapper-full-width global-cart-design-1 global-search-full-screen global-header-shop mobile-nav-from-left basel-product-design-default basel-light catalog-mode-off categories-accordion-on global-wishlist-enable basel-top-bar-on basel-ajax-shop-on basel-ajax-search-on enable-sticky-header header-full-width sticky-header-real offcanvas-sidebar-mobile offcanvas-sidebar-tablet wpb-js-composer js-comp-ver-5.6 vc_responsive">
+@endpush
 @section('content')
     <div class="container-fluid">
         <div class="row">
@@ -16,7 +17,7 @@
                         </a>
                         <!--breadcrumb -->
                         <nav class="woocVoommerce-breadcrumb">
-                            <a href="#">Home</a>
+                            <a href="{{route('home')}}">Home</a>
                             <a href="#">Seção </a>
                             <a href="#">Categoria </a>
                             <span class="breadcrumb-last"> Produto 2</span>
@@ -65,6 +66,8 @@
                                     </div>
                                 </div>
                             </div>
+
+
 
                             <div class="product-btn product-next">
                                 <a href="{{route('product', $product_next)}}">Próximo Produto
@@ -522,36 +525,38 @@
         </div> <!-- fim row -->
     </div> <!-- fim container -->
 @endsection
+
 @push('scripts')
-<script type="application/ld+json">{"@context":"https:\/\/schema.org\/","@graph":[{"@context":"https:\/\/schema.org\/","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"name":"Home","@id":"https:\/\/demo.xtemos.com\/basel"}},{"@type":"ListItem","position":2,"item":{"name":"Shop","@id":"https:\/\/demo.xtemos.com\/basel\/shop\/"}},{"@type":"ListItem","position":3,"item":{"name":"Woman","@id":"https:\/\/demo.xtemos.com\/basel\/product-category\/woman\/"}},{"@type":"ListItem","position":4,"item":{"name":"Noose fit ripped jeans","@id":"https:\/\/demo.xtemos.com\/basel\/shop\/woman\/noose-fit-ripped-jeans\/"}}]},{"@context":"https:\/\/schema.org\/","@type":"Product","@id":"https:\/\/demo.xtemos.com\/basel\/shop\/woman\/noose-fit-ripped-jeans\/","name":"Noose fit ripped jeans","image":"https:\/\/demo.xtemos.com\/basel\/wp-content\/uploads\/2015\/10\/woman-10.jpg","description":"<p>Pretium sagittis et nisl eget parturient porta parturient imperdiet id et vulputate ultricies a pretium egestas himenaeos ad adipiscing scelerisque fringilla ullamcorper a vestibulum lobortis id mauris ad.Est mus.<\/p>\n","sku":"","offers":[{"@type":"Offer","price":"559.00","priceSpecification":{"price":"559.00","priceCurrency":"GBP","valueAddedTaxIncluded":"false"},"priceCurrency":"GBP","availability":"https:\/\/schema.org\/InStock","url":"https:\/\/demo.xtemos.com\/basel\/shop\/woman\/noose-fit-ripped-jeans\/","seller":{"@type":"Organization","name":"Basel","url":"https:\/\/demo.xtemos.com\/basel"}}]}]}</script>
+<script type="application/ld+json">{!! json_encode($schema_org) !!}</script>
 <script type="text/javascript" src="{{asset('plugins/zoom/js/jquery.zoom.min.js')}}?ver=1.7.21"></script>
 <script type="text/javascript">
-    var wc_single_product_params = {
-        "i18n_required_rating_text":"Please select a rating",
-        "review_rating_required":"yes",
-        "flexslider":{
-            "rtl":false,
-            "animation":"slide",
-            "smoothHeight":true,
-            "directionNav":false,
-            "controlNav":"thumbnails",
-            "slideshow":false,
-            "animationSpeed":500,
-            "animationLoop":false,
-            "allowOneSlide":false},
-        "zoom_enabled":"1",
-        "zoom_options":[],
-        "photoswipe_enabled":"",
-        "photoswipe_options":{
-            "shareEl":false,
-            "closeOnScroll":false,
-            "history":false,
-            "hideAnimationDuration":0,
-            "showAnimationDuration":0},
-        "flexslider_enabled":""
-    };
+    var wc_single_product_params = {!! json_encode([
+        "i18n_required_rating_text" => "Por favor, selecione uma classificação",
+        "review_rating_required" => "yes",
+        "flexslider" => array(
+            "rtl" => false,
+            "animation" => "slide",
+            "smoothHeight" => true,
+            "directionNav" => false,
+            "controlNav" => "thumbnails",
+            "slideshow" => false,
+            "animationSpeed" => 500,
+            "animationLoop" => false,
+            "allowOneSlide" => false
+        ),
+        "zoom_enabled" => "1",
+        "zoom_options" => [],
+        "photoswipe_enabled" => "",
+        "photoswipe_options" => array(
+            "shareEl" => false,
+            "closeOnScroll" => false,
+            "history" => false,
+            "hideAnimationDuration" => 0,
+            "showAnimationDuration" => 0
+        ),
+        "flexslider_enabled" => ""
+    ]) !!}}
 </script>
-<script type="text/javascript" src="https://demo.xtemos.com/basel/wp-content/plugins/woocommerce/assets/js/frontend/single-product.min.js?ver=3.5.2"></script>
-<script type="text/javascript" src="https://demo.xtemos.com/basel/wp-includes/js/comment-reply.min.js?ver=4.9.8"></script>
-
+<script type="text/javascript" src="{{asset('plugins/product/js/single-product.min.js')}}?ver=3.5.2"></script>
+<script type="text/javascript" src="{{asset('includes/comment/comment-reply.min.js')}}?ver=4.9.8"></script>
 @endpush

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--[if IE 8]>
 <html class="ie ie8" lang="{{ app()->getLocale() }}">
@@ -10,17 +9,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <script>document.documentElement.className = document.documentElement.className + ' yes-js js_active js'</script>
-
     @stack('title')
-
     <style>
         .wishlist_table .add_to_cart, a.add_to_wishlist.button.alt { border-radius: 16px; -moz-border-radius: 16px; -webkit-border-radius: 16px; }
     </style>
-
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
     @include('google.analytics-1')
 <!-- / Google Analytics by MonsterInsights -->
-    <link rel="stylesheet" id="contact-form-7"  href="{{asset('plugins/contact-form-7/css/styles.css')}}?ver=5.0.5" type="text/css" media="all" />
+    <link rel="stylesheet" id="contact-form-7"  href="{{asset('includes/contact-form-7/css/styles.css')}}?ver=5.0.5" type="text/css" media="all" />
     <style id="woocommerce-inline-inline-css" type="text/css">
         .woocommerce form .form-row .required { visibility: visible; }
     </style>
@@ -28,12 +24,11 @@
     <link rel="stylesheet" id="jquery-selectBox" href="{{asset('plugins/yith-wishlist/css/jquery.selectBox.css')}}" type="text/css" media="all" />
     <link rel="stylesheet" id="yith-wcwl-main" href="{{asset('plugins/yith-wishlist/css/style.css')}}" type="text/css" media="all" />
     <link rel="stylesheet" id="js_composer_front" href="{{asset('plugins/js_composer/css/js_composer.min.css')}}?ver=5.6" type="text/css" media="all" />
-    <link rel="stylesheet" id="mc4wp-form-basic" href="{{asset('plugins/mailchimp/css/form-basic.min.css')}}?ver=3.1.11" type="text/css" media="all" />
+    <link rel="stylesheet" id="mailchimp-form" href="{{asset('plugins/mailchimp/css/form-basic.min.css')}}?ver=3.1.11" type="text/css" media="all" />
     <link rel="stylesheet" id="redux-google-fonts-basel_options-css"  href="https://fonts.googleapis.com/css?family=Karla%3A400%2C700%2C400italic%2C700italic%7CLora%3A400%2C700%2C400italic%2C700italic%7CLato%3A100%2C300%2C400%2C700%2C900%2C100italic%2C300italic%2C400italic%2C700italic%2C900italic&#038;subset=latin&#038;ver=1546694001" type="text/css" media="all" />
     <link rel="stylesheet" id="bootstrap" href="{{asset('plugins/bootstrap/css/bootstrap.min.css')}}?ver=3.3.1" type="text/css" media="all" />
     <link rel="stylesheet" id="style-css" href="{{asset('themes/css/style.min.css')}}?ver=4.4.2" type="text/css" media="all" />
     <link rel="stylesheet" id="font-awesome" href="{{asset('plugins/font-awesome/css/font-awesome.min.css')}}?ver=4.7.0" type="text/css" media="all" />
-
     <style id="font-awesome-inline-css" type="text/css">
         [data-font="FontAwesome"]:before {font-family: 'FontAwesome' !important;content: attr(data-icon) !important;speak: none !important;font-weight: normal !important;font-variant: normal !important;text-transform: none !important;line-height: 1 !important;font-style: normal !important;-webkit-font-smoothing: antialiased !important;-moz-osx-font-smoothing: grayscale !important;}
     </style>
@@ -52,16 +47,12 @@
         <p>Desculpe, este produto não está disponível. Por favor, escolha uma combinação diferente.</p>
     </script>
     <script type="text/javascript">
-        /* <![CDATA[ */
         var monsterinsights_frontend = {"js_events_tracking":"true","is_debug_mode":"false","download_extensions":"doc,exe,js,pdf,ppt,tgz,zip,xls","inbound_paths":"","home_url":"https:\/\/demo.xtemos.com\/basel","track_download_as":"event","internal_label":"int","hash_tracking":"false"};
-        /* ]]> */
     </script>
     <script type="text/javascript" src="{{asset('plugins/google/analytics-frontend.min.js')}}?ver=7.3.2"></script>
     <script type="text/javascript" src="{{asset('includes/js/jquery/jquery.min.js')}}?ver=1.12.4"></script>
     <script type="text/javascript" src="{{asset('includes/js/jquery/jquery-migrate.min.js')}}?ver=1.4.1"></script>
     <script type="text/javascript" src="{{asset('plugins/jquery-blockui/jquery.blockUI.min.js')}}?ver=2.70"></script>
-
-
     <script type="text/javascript">
         var wc_add_to_cart_params = {!! json_encode([
             "ajax_url" => route('cart.add'),
@@ -76,15 +67,11 @@
     <script type="text/javascript" src="{{asset('plugins/cart/js/add-to-cart.min.js')}}?ver=4.5.4"></script>
     <script type="text/javascript" src="{{asset('plugins/cart/js/avd-add-to-cart.js')}}?ver=5.6"></script>
     <!--[if lt IE 9]>
-    <script type="text/javascript" src="{{asset('themes/js/html5.min.js')}}?ver=4.4.2"></script>
+        <script type="text/javascript" src="{{asset('themes/js/html5.min.js')}}?ver=4.4.2"></script>
     <![endif]-->
     <script type="text/javascript" src="{{asset('themes/js/device.min.js')}}?ver=4.4.2"></script>
-
-
     <link rel="shortcut icon" href="{{asset('themes/images/icons/favicon.png')}}">
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{asset('themes/images/icons/apple-touch-icon-152x152-precomposed.png')}}">
-
-
     <script type="text/javascript">
         jQuery(document).ready(function() {
             var scrollMenu = function() {
@@ -220,41 +207,39 @@
             onePageMenuFix();
         });
     </script>
-
     <noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
-
     <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
-    <meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress."/>
     <!--[if lte IE 9]>
     <link rel="stylesheet" type="text/css" href="{{asset('plugins/js_composer/css/vc_lte_ie9.min.css')}}" media="screen">
     <![endif]-->
-
     <link rel="stylesheet" id="styles-css" href="{{asset('themes/css/styles.min.css')}}?ver=1.0.0" type="text/css" media="all" />
     <link rel="stylesheet" id="theme-css" href="{{asset('themes/css/theme.min.css')}}?ver=1.0.0" type="text/css" media="all" />
-
-
     @stack('styles')
-
+    @stack('head')
     <noscript><style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript>
 </head>
 @stack('body')
 
-<div class="website-wrapper">
+    @include('messages.message-1-body')
 
-    @include('headers.header-1')
+    @include('auth.login-1-sidbar')
 
-    <div class="clear"></div>
+    <div class="website-wrapper">
 
-    <div class="main-page-wrapper">
+        @include('headers.header-1')
 
-        @yield('content')
+        <div class="clear"></div>
 
-        @include('footers.footer-1')
-    </div><!-- .main-page-wrapper -->
-</div><!-- end wrapper -->
-<div class="basel-close-side"></div>
-<a href="#" class="scrollToTop basel-tooltip">Role para cima</a>
-@stack('scripts')
+        <div class="main-page-wrapper">
+
+            @yield('content')
+
+            @include('footers.footer-1')
+        </div><!-- .main-page-wrapper -->
+    </div><!-- end wrapper -->
+    <div class="basel-close-side"></div>
+    <a href="#" class="scrollToTop basel-tooltip">Role para cima</a>
+
 <script type="text/javascript">
     var c=document.body.className;
     c=c.replace(/woocommerce-no-js/, 'woocommerce-js');
@@ -276,7 +261,7 @@
         "cached" => "1"
     ]) !!};
 </script>
-<script type="text/javascript" src="{{asset('plugins/contact-form-7/js/scripts.js')}}?ver=5.0.5"></script>
+<script type="text/javascript" src="{{asset('includes/contact-form-7/js/scripts.js')}}?ver=5.0.5"></script>
 <script type="text/javascript" src="{{asset('plugins/js-cookie/js.cookie.min.js')}}?ver=2.1.4"></script>
 <script type="text/javascript">
     var woocommerce_params  = {!! json_encode([
@@ -294,7 +279,7 @@
         "csrf_token" => csrf_token()
     ]) !!};
 </script>
-
+@stack('scripts')
 <script type="text/javascript" src="{{asset('plugins/cart/js/cart-fragments.min.js')}}?ver=3.5.2"></script>
 <script type="text/javascript" src="{{asset('plugins/yith-wishlist/js/jquery.selectBox.min.js')}}?ver=1.2.0"></script>
 <script type="text/javascript">
