@@ -316,7 +316,7 @@ jQuery( document ).ready( function( $ ){
                 per_page: per_page,
                 current_page: current_page,
                 wishlist_id: wishlist_id,
-                wishlist_token: wishlist_token
+                _token: yith_wcwl_l10n.csrf_token
             };
 
         $( '#yith-wcwl-message' ).html( '&nbsp;' );
@@ -331,7 +331,7 @@ jQuery( document ).ready( function( $ ){
             });
         }
 
-        $( '#yith-wcwl-form' ).load( yith_wcwl_l10n.ajax_url + ' #yith-wcwl-form', data, function(){
+        $( '#yith-wcwl-form' ).load( yith_wcwl_l10n.remove_url + ' #yith-wcwl-form', data, function(){
 
             if( typeof $.fn.unblock != 'undefined' ) {
                 table.stop(true).css('opacity', '1').unblock();

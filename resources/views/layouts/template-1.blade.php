@@ -47,7 +47,7 @@
         <p>Desculpe, este produto não está disponível. Por favor, escolha uma combinação diferente.</p>
     </script>
     <script type="text/javascript">
-        var monsterinsights_frontend = {"js_events_tracking":"true","is_debug_mode":"false","download_extensions":"doc,exe,js,pdf,ppt,tgz,zip,xls","inbound_paths":"","home_url":"https:\/\/demo.xtemos.com\/basel","track_download_as":"event","internal_label":"int","hash_tracking":"false"};
+        var monsterinsights_frontend = {"js_events_tracking":"true","is_debug_mode":"false","download_extensions":"doc,exe,js,pdf,ppt,tgz,zip,xls","inbound_paths":"","home_url":"{{route('home')}}","track_download_as":"event","internal_label":"int","hash_tracking":"false"};
     </script>
     <script type="text/javascript" src="{{asset('plugins/google/analytics-frontend.min.js')}}?ver=7.3.2"></script>
     <script type="text/javascript" src="{{asset('includes/js/jquery/jquery.min.js')}}?ver=1.12.4"></script>
@@ -285,6 +285,7 @@
 <script type="text/javascript">
     var yith_wcwl_l10n = {!! json_encode([
         "ajax_url" => route('wishlist.store'),
+        "remove_url" => route('wishlist.remove'),
         "redirect_to_cart" => "no",
         "multi_wishlist" => "",
         "hide_add_button" => "1",

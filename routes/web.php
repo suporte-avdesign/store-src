@@ -78,9 +78,11 @@ Route::get('cart-undo', 'Web\CartController@undo')->name('cart.undo');
 | Routes Wishlist
 |--------------------------------------------------------------------------
 */
-Route::get('wishlist', 'Web\WishlistController@index')->name('wishlist');
+Route::get('lista-de-desejo', 'Web\WishlistController@index')->name('wishlist');
 Route::post('wishlist/store', 'Web\WishlistController@store')->name('wishlist.store');
 Route::get('wishlist/create', 'Web\WishlistController@create')->name('wishlist.create');
+Route::post('wishlist-remove', 'Web\WishlistController@destroy')->name('wishlist.remove');
+Route::get('wishlist-cart', 'Web\WishlistController@cart')->name('wishlist.cart');
 
 /*
 |--------------------------------------------------------------------------
@@ -89,6 +91,18 @@ Route::get('wishlist/create', 'Web\WishlistController@create')->name('wishlist.c
 */
 Route::get('compare', 'Web\CompareController@index')->name('compare');
 Route::get('compare/store', 'Web\CompareController@store')->name('compare.store');
+
+
+/*
+|--------------------------------------------------------------------------
+| Routes Checkout
+|--------------------------------------------------------------------------
+*/
+Route::get('checkout', 'Web\CheckoutController@index')->name('checkout');
+Route::post('endpoint', 'Web\CheckoutController@endpoint')->name('checkout.endpoint');
+
+
+
 
 Auth::routes();
 

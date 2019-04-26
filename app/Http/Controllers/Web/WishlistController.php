@@ -14,7 +14,15 @@ class WishlistController extends Controller
      */
     public function index()
     {
-        return view('wishlists.wishlist-1');
+        $id = 3;
+        $product = array(
+            "category" => "categoria",
+            "section" => "secao",
+            "slug" => "produto-1002"
+        );
+
+
+        return view('wishlists.wishlist-1', compact('product','id'));
     }
 
     /**
@@ -118,14 +126,30 @@ class WishlistController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+
+    public function cart(Request $request)
     {
-        //
+        $id = 3;
+        $product = array(
+            "category" => "categoria",
+            "section" => "secao",
+            "slug" => "produto-1002"
+        );
+
+
+        return view('wishlists.wishlist-1', compact('product','id'));
+    }
+
+    public function destroy(Request $request)
+    {
+        $id = 3;
+        $product = array(
+            "category" => "categoria",
+            "section" => "secao",
+            "slug" => "produto-1002"
+        );
+
+
+        return view('wishlists.wishlist-1-list', compact('product','id'));
     }
 }
