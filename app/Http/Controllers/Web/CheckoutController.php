@@ -56,7 +56,6 @@ class CheckoutController extends Controller
 
     }
 
-
     public function login(Request $request)
     {
 
@@ -73,22 +72,6 @@ class CheckoutController extends Controller
 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $result = rand(1,2);
@@ -108,7 +91,7 @@ class CheckoutController extends Controller
             );
         } else {
             $id = 12345;
-            $order_name = 'pedido-recebido';
+            $order_name = 'order-received';
             $out = array(
                 "result" => "success",
                 "redirect" => route('checkout.received', [$order_name, $id])
@@ -126,9 +109,30 @@ class CheckoutController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($order, $id)
+    public function teste($order, $id)
     {
-        return view('checkouts.checkout-1-received');
+
+        $bank_name = 'BRADESCO';
+        $account_type = 'Conta Corrente';
+        $account_name = config('app.name');
+        $branch_number = "841";
+        $account_number = "10168-0";
+        $document_name = "CNPJ";
+        $document_number = "65.590.366/0001-03";
+        $reference_name = "Referencia";
+        $reference_number = $id;
+
+        return view('checkouts.checkout-1-received', compact(
+            'bank_name',
+            'account_type',
+            'account_name',
+            'branch_number',
+            'account_number',
+            'document_name',
+            'document_number',
+            'reference_name',
+            'reference_number'
+        ));
     }
 
     /**
