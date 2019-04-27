@@ -14,6 +14,7 @@ class CheckoutController extends Controller
      */
     public function index()
     {
+
         return view('checkouts.checkout-1');
     }
 
@@ -22,7 +23,13 @@ class CheckoutController extends Controller
         $ac = $request->input('ajax');
         if ($ac == 'update_order_review') {
 
-            $order = view('checkouts.checkout-1-order')->render();
+            $shipping_method = $request->input('shipping_method');
+            $method = $shipping_method[0];
+
+            ($method == null ? $method = 'legacy_flat_rate' : $method = $method);
+
+
+            $order = view('checkouts.checkout-1-order', compact('method'))->render();
             $payment = view('checkouts.checkout-1-payment')->render();
 
             $out = array(
@@ -39,7 +46,30 @@ class CheckoutController extends Controller
 
         }
 
+        if ($ac == "apply_coupon") {
 
+            $message = 'Por favor insira um código de cupom válido.';
+
+            return view('messages.message-1-error', compact('message'));
+        }
+
+
+    }
+
+
+    public function login(Request $request)
+    {
+
+        $login = $request->input('login');
+
+        if (isset($login)) {
+            $username = $request->input('username');
+            $password = $request->input('password');
+            $error = 'login';
+        }
+
+
+        return view('checkouts.checkout-1', compact('error'));
 
     }
 
@@ -61,8 +91,34 @@ class CheckoutController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $result = rand(1,2);
+        if ($result == 2) {
+            $terms = $request->input('terms');
+            // Error
+            $message = "Preencha os campos vazios {$result}";
+            if (empty($terms)) {
+                $message = 'Por favor ler e aceitar os termos e condições para prosseguir com o seu pedido.';
+            }
+            $messages = view('messages.message-1-error', compact('message'))->render();
+            $out = array(
+                "result" => "failure",
+                "messages" => $messages,
+                "refresh" => false,
+                "reload" => true
+            );
+        } else {
+            $id = 12345;
+            $order_name = 'pedido-recebido';
+            $out = array(
+                "result" => "success",
+                "redirect" => route('checkout.received', [$order_name, $id])
+            );
+        }
+
+        return response()->json($out);
     }
+
+
 
     /**
      * Display the specified resource.
@@ -70,9 +126,9 @@ class CheckoutController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($order, $id)
     {
-        //
+        return view('checkouts.checkout-1-received');
     }
 
     /**

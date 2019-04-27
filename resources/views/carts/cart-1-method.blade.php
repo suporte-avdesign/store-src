@@ -15,7 +15,7 @@
             <td data-title="Frete">
                 <ul id="shipping_method" class="woocommerce-shipping-methods">
                     <li>
-                        <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_legacy_flat_rate" value="legacy_flat_rate" class="shipping_method" @if($method == 'legacy_flat_rate')checked="checked @endif"/>
+                        <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_legacy_flat_rate" value="legacy_flat_rate" class="shipping_method" @if($method == 'legacy_flat_rate') checked="checked" @endif />
                         <label for="shipping_method_0_legacy_flat_rate">Taxa fixa:
                             <span class="woocommerce-Price-amount amount">
                                 <span class="woocommerce-Price-currencySymbol">R$ </span>12.00
@@ -23,7 +23,7 @@
                         </label>
                     </li>
                     <li>
-                        <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_legacy_free_shipping" value="legacy_free_shipping" class="shipping_method" @if($method == 'legacy_free_shipping')checked="checked @endif"/>
+                        <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_legacy_free_shipping" value="legacy_free_shipping" class="shipping_method" @if($method == 'legacy_free_shipping') checked="checked" @endif />
                         <label for="shipping_method_0_legacy_free_shipping">Frete grátis:
                             <span class="woocommerce-Price-amount amount">
                                 <span class="woocommerce-Price-currencySymbol">R$ </span>0.00
@@ -31,7 +31,7 @@
                         </label>
                     </li>
                     <li>
-                        <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_legacy_local_delivery" value="legacy_local_delivery" class="shipping_method" @if($method == 'legacy_local_delivery')checked="checked @endif"/>
+                        <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_legacy_local_delivery" value="legacy_local_delivery" class="shipping_method" @if($method == 'legacy_local_delivery') checked="checked" @endif />
                         <label for="shipping_method_0_legacy_local_delivery">Entrega local:
                             <span class="woocommerce-Price-amount amount">
                                 <span class="woocommerce-Price-currencySymbol">R$ </span>0.00

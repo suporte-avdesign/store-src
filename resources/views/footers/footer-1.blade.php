@@ -100,7 +100,7 @@
                 <div class="col-left">
                     Copyright <i class="fa fa-copyright"></i> {{config('app.name')}} 2012 / @php echo date('Y'); @endphp -Todos os direitos reservados.  Projeto
                     <a href="http://www.adesign.com.br" target="_blank">
-                        <img src="{{asset('themes/images/av-design.png')}}" >
+                        <img src="{{asset('themes/images/av-design.png')}}" width="50px;">
                     </a>
                 </div>
             </div>

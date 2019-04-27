@@ -39,7 +39,7 @@
                                 </div>
                             </div>
                             <form method="post" class="login woocommerce-form woocommerce-form-login hidden-form"  style="display:none;">
-
+                                @csrf
                                 <p> Se você já fez compras conosco, insira seus dados abaixo. Se você é um novo cliente, prossiga para o Faturamento de envio. </P>
                                 <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide form-row-username">
                                     <label for="username">Seu email <span class="required">*</span></label>
@@ -52,9 +52,9 @@
 
                                 <p class="form-row">
                                     <input type="hidden" id="woocommerce-login-nonce" name="woocommerce-login-nonce" value="090cc2b48f" />
-                                    <input type="hidden" name="_wp_http_referer" value="/basel/checkout/" />
-                                    <input type="hidden" name="redirect" value="{{route('checkout')}}" />
-                                    <button type="submit" class="button woocommerce-Button" name="login" value="Log in">Login</button>
+                                    <input type="hidden" name="_wp_http_referer" value="{{route('checkout')}}" />
+                                    <input type="hidden" name="redirect" value="{{route('checkout.login')}}" />
+                                    <button type="submit" class="button woocommerce-Button" name="login" value="Login">Login</button>
                                 </p>
 
                                 <div class="login-form-footer">
@@ -93,11 +93,23 @@
                             </form>
 
 
-                            <div class="woocommerce-notices-wrapper"></div>
+                            <div class="woocommerce-notices-wrapper">
+                                @isset($error)
+                                    @if($error == 'login')
+                                    <ul class="woocommerce-error" role="alert">
+                                        <li>
+                                            <strong>ERRO</strong>:
+                                            Nome de usuário ou senha inválido. <a href="{{route('password.request')}}">Esqueceu a senha?</a>
+                                        </li>
+                                    </ul>
+                                    @endif
+                                 @endisset
+                            </div>
 
 
                             <div class="row">
                                 <form name="checkout" method="post" class="checkout woocommerce-checkout" action="{{route('checkout')}}" enctype="multipart/form-data">
+                                    <input type="hidden" name="_token" value="{{csrf_token()}}" />
                                     <div class="col-sm-6">
                                         <div class="row" id="customer_details">
                                             <div class="col-sm-12">
@@ -106,10 +118,10 @@
                                                     <h3>Detalhes do faturamento</h3>
                                                     <div class="woocommerce-billing-fields__field-wrapper">
                                                         <p class="form-row form-row-first validate-required" id="billing_first_name_field" data-priority="10">
-                                                            <label for="billing_first_name" class="">Nome <abbr class="required" title="required">*</abbr>
+                                                            <label for="name" class="">Nome <abbr class="required" title="required">*</abbr>
                                                             </label>
                                                             <span class="woocommerce-input-wrapper">
-                                                                <input type="text" class="input-text " name="billing_first_name" id="billing_first_name" placeholder=""  value="" autocomplete="given-name" />
+                                                                <input type="text" class="input-text " name="name" id="name" placeholder=""  value=""/>
                                                             </span>
                                                         </p>
                                                         <p class="form-row form-row-last validate-required" id="billing_last_name_field" data-priority="20">
@@ -365,7 +377,7 @@
                                                             </div>
                                                             <p class="form-row validate-required">
                                                                 <label class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox">
-                                                                    <input type="checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox" name="terms"  id="terms"/>
+                                                                    <input type="checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox" name="terms" value="1"  id="terms"/>
                                                                     <span class="woocommerce-terms-and-conditions-checkbox-text">Li e aceito os
                                                                         <a href="#" class="woocommerce-terms-and-conditions-link" target="_blank">termos e condições</a> do site
                                                                     </span>
@@ -378,7 +390,6 @@
                                                         <button type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="Finalizar Pedido" data-value="Finalizar Pedido">Finalizar Pedido</button>
 
                                                         <input type="hidden" id="woocommerce-process-checkout-nonce" name="woocommerce-process-checkout-nonce" value="754af0147e" />
-                                                        <input type="hidden" name="_wp_http_referer" value="/basel/checkout/"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -431,7 +442,7 @@
         "apply_coupon_nonce" => "eb1224d043",
         "remove_coupon_nonce" => "a608480d18",
         "option_guest_checkout" => "yes",
-        "checkout_url" => route('checkout')."/?ajax=checkout",
+        "checkout_url" => route('checkout.store'),
         "is_checkout" => "1",
         "debug_mode" => "",
         "csrf_token" => csrf_token(),

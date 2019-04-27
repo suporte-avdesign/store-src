@@ -99,7 +99,10 @@ Route::get('compare/store', 'Web\CompareController@store')->name('compare.store'
 |--------------------------------------------------------------------------
 */
 Route::get('checkout', 'Web\CheckoutController@index')->name('checkout');
-Route::post('endpoint', 'Web\CheckoutController@endpoint')->name('checkout.endpoint');
+Route::post('checkout', 'Web\CheckoutController@login')->name('checkout.login');
+Route::post('checkout-endpoint', 'Web\CheckoutController@endpoint')->name('checkout.endpoint');
+Route::post('checkout-store', 'Web\CheckoutController@store')->name('checkout.store');
+Route::get('checkout/{$order}/{$id}/', 'Web\CheckoutController@show')->name('checkout.received');
 
 
 

@@ -471,6 +471,9 @@ jQuery( function( $ ) {
                     url:		wc_checkout_params.checkout_url,
                     data:		$form.serialize(),
                     dataType:   'json',
+                    beforeSend: function(){
+                        console.log( this.data );
+                    },
                     success:	function( result ) {
                         try {
                             if ( 'success' === result.result ) {
@@ -504,6 +507,7 @@ jQuery( function( $ ) {
                             }
                         }
                     },
+
                     error:	function( jqXHR, textStatus, errorThrown ) {
                         wc_checkout_form.submit_error( '<div class="woocommerce-error">' + errorThrown + '</div>' );
                     }
@@ -559,7 +563,8 @@ jQuery( function( $ ) {
 
             var data = {
                 security:		wc_checkout_params.apply_coupon_nonce,
-                coupon_code:	$form.find( 'input[name="coupon_code"]' ).val()
+                coupon_code:	$form.find( 'input[name="coupon_code"]' ).val(),
+                _token:         wc_checkout_params.csrf_token
             };
 
             $.ajax({

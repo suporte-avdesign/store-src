@@ -9,17 +9,17 @@
     <tr class="cart_item">
         <td class="product-name">Produto 1&nbsp;<strong class="product-quantity">&times; 2</strong>													</td>
         <td class="product-total">
-                                                                <span class="woocommerce-Price-amount amount">
-                                                                    <span class="woocommerce-Price-currencySymbol">R$ </span>18,00
-                                                                </span>
+            <span class="woocommerce-Price-amount amount">
+                <span class="woocommerce-Price-currencySymbol">R$ </span>18,00
+            </span>
         </td>
     </tr>
     <tr class="cart_item">
         <td class="product-name">Produto 4&nbsp;<strong class="product-quantity">&times; 1</strong></td>
         <td class="product-total">
-                                                                <span class="woocommerce-Price-amount amount">
-                                                                    <span class="woocommerce-Price-currencySymbol">R$ </span>22,00
-                                                                </span>
+            <span class="woocommerce-Price-amount amount">
+                <span class="woocommerce-Price-currencySymbol">R$ </span>22,00
+            </span>
         </td>
     </tr>
     </tbody>
@@ -37,15 +37,15 @@
         <td data-title="Shipping">
             <ul id="shipping_method" class="woocommerce-shipping-methods">
                 <li>
-                    <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_legacy_flat_rate" value="legacy_flat_rate" class="shipping_method"  checked='checked' />
-                    <label for="shipping_method_0_legacy_flat_rate">Frete Fixo:
+                    <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_legacy_flat_rate" value="legacy_flat_rate" class="shipping_method" @if($method == 'shipping_method_0_legacy_flat_rate') checked="checked" @endif/>
+                    <label for="shipping_method_0_legacy_flat_rate">Correio PAC:
                         <span class="woocommerce-Price-amount amount">
                             <span class="woocommerce-Price-currencySymbol">R$ </span>23,00
                         </span>
                     </label>
                 </li>
                 <li>
-                    <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_legacy_free_shipping" value="legacy_free_shipping" class="shipping_method"/>
+                    <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_legacy_free_shipping" value="legacy_free_shipping" class="shipping_method" @if($method == 'legacy_free_shipping') checked="checked" @endif/>
                     <label for="shipping_method_0_legacy_free_shipping">Retirar na Loja:
                         <span class="woocommerce-Price-amount amount">
                             <span class="woocommerce-Price-currencySymbol">R$ </span>0.00
@@ -53,10 +53,10 @@
                     </label>
                 </li>
                 <li>
-                    <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_legacy_local_delivery" value="legacy_local_delivery" class="shipping_method"/>
+                    <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_legacy_local_delivery" value="legacy_local_delivery" class="shipping_method" @if($method == 'legacy_local_delivery') checked="checked" @endif/>
                     <label for="shipping_method_0_legacy_local_delivery">Transportadora:
                         <span class="woocommerce-Price-amount amount">
-                            <span class="woocommerce-Price-currencySymbol">R$ </span>28,0000
+                            <span class="woocommerce-Price-currencySymbol">R$ </span>28,00
                         </span>
                     </label>
                 </li>
