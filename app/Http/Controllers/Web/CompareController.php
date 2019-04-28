@@ -14,7 +14,18 @@ class CompareController extends Controller
      */
     public function index()
     {
-        return view('compare.compare-1');
+        $page = 'remover';
+        $id = 12345;
+        // Route('products')
+        $product = array(
+            "category" => "categoria",
+            "section" => "secao",
+            "slug" => "produto-1002"
+        );
+
+        return view('compare.compare-1', compact(
+            'page', 'id', 'product'
+        ));
     }
 
 
@@ -29,7 +40,18 @@ class CompareController extends Controller
         $id =  $request->input('id'); // product_id
         $action =  $request->input('action');//basel_add_to_compare
 
-        $compare = view('compare.compare-1-table')->render();
+        $page = 'remover';
+        // Route('products')
+        $product = array(
+            "category" => "categoria",
+            "section" => "secao",
+            "slug" => "produto-1002"
+        );
+
+
+
+        $compare = view('compare.compare-1-table', compact(
+            'page','id', 'product'))->render();
         $out = array(
             "count" => 1,
             "table" => $compare
@@ -46,8 +68,34 @@ class CompareController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $page, $id)
     {
-        //
+        $id = $request->input('id');
+        $ac = $request->input('action');
+        $page = 'remover';
+        // Route('products')
+        $product = array(
+            "category" => "categoria",
+            "section" => "secao",
+            "slug" => "produto-1002"
+        );
+
+
+
+        if ($ac == 'remove') {
+
+            $compare = view('compare.compare-1-table', compact(
+                'page','id', 'product'))->render();
+            $out = array(
+                "count" => 1,
+                "table" => $compare
+            );
+
+            return response()->json($out);
+        }
+
+        return redirect()->route('compare');
+
+
     }
 }

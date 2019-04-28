@@ -334,6 +334,7 @@
         "search_url" => route('product.search'),
         "quickview_url" => route('product.show'),
         "compare_url" => route('compare.store'),
+        //"compare_remove" => route('compare.remove'),
         "add_to_cart_action" => "widget",
         "categories_toggle" => "yes",
         "enable_popup" => "yes",

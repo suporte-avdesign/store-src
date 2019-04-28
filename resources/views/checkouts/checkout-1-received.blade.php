@@ -142,7 +142,7 @@
             </div>
         </div>
     </div>
-
+@endsection
 @push('scripts')
 <script type="text/javascript" src="{{asset('plugins/select2/js/select2.full.min.js')}}?ver=1.0.4"></script>
 <script type="text/javascript">

@@ -90,13 +90,14 @@ class CheckoutController extends Controller
                 "reload" => true
             );
         } else {
-            $id = 12345;
-            $order_name = 'order-received';
+            $id = intValue(12345);
+            $order_name = 'pedido-recebido';
             $out = array(
                 "result" => "success",
                 "redirect" => route('checkout.received', [$order_name, $id])
             );
         }
+
 
         return response()->json($out);
     }
@@ -109,7 +110,7 @@ class CheckoutController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function teste($order, $id)
+    public function show($order, $id)
     {
 
         $bank_name = 'BRADESCO';
@@ -121,6 +122,8 @@ class CheckoutController extends Controller
         $document_number = "65.590.366/0001-03";
         $reference_name = "Referencia";
         $reference_number = $id;
+
+
 
         return view('checkouts.checkout-1-received', compact(
             'bank_name',

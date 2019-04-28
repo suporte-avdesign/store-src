@@ -91,6 +91,8 @@ Route::get('wishlist-cart', 'Web\WishlistController@cart')->name('wishlist.cart'
 */
 Route::get('compare', 'Web\CompareController@index')->name('compare');
 Route::get('compare/store', 'Web\CompareController@store')->name('compare.store');
+Route::get('compare/{page}/{id}', 'Web\CompareController@destroy')->name('compare.remove');
+Route::delete('compare/{page}/{id}', 'Web\CompareController@destroy');
 
 
 /*
@@ -102,7 +104,7 @@ Route::get('checkout', 'Web\CheckoutController@index')->name('checkout');
 Route::post('checkout', 'Web\CheckoutController@login')->name('checkout.login');
 Route::post('checkout-endpoint', 'Web\CheckoutController@endpoint')->name('checkout.endpoint');
 Route::post('checkout-store', 'Web\CheckoutController@store')->name('checkout.store');
-Route::get('checkout/{$order}/{$id}', 'Web\CheckoutController@teste')->name('checkout.received');
+Route::get('checkout/{order}/{id}', 'Web\CheckoutController@show')->name('checkout.received');
 
 
 

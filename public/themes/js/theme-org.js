@@ -16976,19 +16976,20 @@ var baselThemeModule;
 
                     e.preventDefault();
                     var $this = $(this),
-                        id = $this.data('id');
-
+                        id = $this.data('id'),
+                        url = $this.attr('href');
                     $table.addClass('loading');
                     $this.addClass('loading');
 
                     jQuery.ajax({
-                        url: basel_settings.ajaxurl,
+                        url: url,
                         data: {
-                            action: 'basel_remove_from_compare',
-                            id: id
+                            action: 'remove',
+                            id: id,
+                            _token: basel_settings.csrf_token
                         },
                         dataType: 'json',
-                        method: 'GET',
+                        method: 'DELETE',
                         success: function (response) {
                             if (response.table) {
                                 updateCompare(response);
