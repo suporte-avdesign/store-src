@@ -49,7 +49,7 @@
         <div class="basel-compare-col compare-field">Descrição</div>
 
         <div class="basel-compare-col compare-value" data-title="Descrição">
-            Descrição do  produto 3
+            Descrição do  produto 3 cor azul
         </div>
     </div>
     <div class="basel-compare-row compare-sku">
