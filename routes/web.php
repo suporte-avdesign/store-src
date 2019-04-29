@@ -35,11 +35,6 @@ Route::get('social', 'Web\SocialController@index')->name('social.auth');
 
 
 
-
-
-
-
-
 /*
 |--------------------------------------------------------------------------
 | Routes Categories

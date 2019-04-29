@@ -74,17 +74,17 @@
                                             />
                                         </a>
                                     </td>
-                                    <td class="product-name" data-title="Product Name">
+                                    <td class="product-name" data-title="Nomedo Produto">
                                         <a href="{{route('product', [$product['category'], $product['section'], $product['slug']])}}/?cor=preto-amarelo">Produto 2 - Preto/Amarelo</a>
                                     </td>
 
-                                    <td class="product-price" data-title="Unit Price">
+                                    <td class="product-price" data-title="Preço Und">
                                         <span class="woocommerce-Price-amount amount">
                                             <span class="woocommerce-Price-currencySymbol">R$ </span>47,00
                                         </span>
                                     </td>
 
-                                    <td class="product-stock-status" data-title="Stock Status">
+                                    <td class="product-stock-status" data-title="Estoque Status">
                                         <span class="wishlist-in-stock">Em Estoque</span>
                                     </td>
 
@@ -124,17 +124,17 @@
                                             />
                                         </a>
                                     </td>
-                                    <td class="product-name" data-title="Product Name">
+                                    <td class="product-name" data-title="Nomedo Produto">
                                         <a href="{{route('product', [$product['category'], $product['section'], $product['slug']])}}/?cor=preto-amarelo">Produto 2 - Preto/Amarelo</a>
                                     </td>
 
-                                    <td class="product-price" data-title="Unit Price">
+                                    <td class="product-price" data-title="Preço Und">
                                         <span class="woocommerce-Price-amount amount">
                                             <span class="woocommerce-Price-currencySymbol">R$ </span>47,00
                                         </span>
                                     </td>
 
-                                    <td class="product-stock-status" data-title="Stock Status">
+                                    <td class="product-stock-status" data-title="Estoque Status">
                                         <span class="wishlist-in-stock">Em Estoque</span>
                                     </td>
 

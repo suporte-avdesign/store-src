@@ -1,0 +1,8 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "demo1"]
+	url = ssh://root@159.65.241.145/repo/demo1.git
+	fetch = +refs/heads/*:refs/remotes/demo1/*

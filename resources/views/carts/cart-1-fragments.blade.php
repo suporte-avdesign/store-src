@@ -27,10 +27,8 @@
         </p>
         <p class="woocommerce-mini-cart__buttons buttons">
             <a href="{{route('cart')}}" class="button btn-cart wc-forward">Ver Carrinho</a>
-            <a href="#" class="button checkout wc-forward">Finalizar</a>
+            <a href="{{route('checkout')}}" class="button checkout wc-forward">Finalizar</a>
         </p>
-
-
 
 @endif
 

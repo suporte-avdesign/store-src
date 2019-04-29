@@ -6,6 +6,7 @@
 <link rel="stylesheet" id="select2-css"  href="{{asset('plugins/select2/css/select2.css')}}?ver=3.5.2" type="text/css" media="all" />
 @endpush
 @push('head')
+@push('head')
 <script type='text/javascript'>
     var _zxcvbnSettings = {!! json_encode(["src" => asset('includes/zxcvbn/js/zxcvbn-async.min.js')]) !!}
 </script>
@@ -294,7 +295,7 @@
 
                                                         <tr class="woocommerce-shipping-totals shipping">
                                                             <th>Frete</th>
-                                                            <td data-title="Shipping">
+                                                            <td data-title="Frete">
                                                                 <ul id="shipping_method" class="woocommerce-shipping-methods">
                                                                     <li>
                                                                         <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_legacy_flat_rate" value="legacy_flat_rate" class="shipping_method"  checked='checked' />

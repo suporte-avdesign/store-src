@@ -89,11 +89,11 @@
                                                 </a>
                                             </td>
 
-                                            <td class="product-name" data-title="Product">
+                                            <td class="product-name" data-title="Produto">
                                                 <a href="{{route('product', [$product['category'], $product['section'], $product['slug']])}}/?attribute_pa_color=brown">Produto 2 - Preto/Amarelo</a>
                                             </td>
 
-                                            <td class="product-price" data-title="Price">
+                                            <td class="product-price" data-title="Preço">
                                                 <span class="woocommerce-Price-amount amount">
                                                     <span class="woocommerce-Price-currencySymbol">R$ </span>47,00
                                                 </span>

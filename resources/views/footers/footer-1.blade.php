@@ -99,7 +99,7 @@
             <div class="min-footer">
                 <div class="col-left">
                     Copyright <i class="fa fa-copyright"></i> {{config('app.name')}} 2012 / @php echo date('Y'); @endphp -Todos os direitos reservados.  Projeto
-                    <a href="http://www.adesign.com.br" target="_blank">
+                    <a href="http://www.avdesign.com.br" target="_blank">
                         <img src="{{asset('themes/images/av-design.png')}}" width="50px;">
                     </a>
                 </div>

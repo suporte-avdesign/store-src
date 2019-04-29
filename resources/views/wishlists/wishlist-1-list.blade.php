@@ -48,28 +48,22 @@
                         />
                     </a>
                 </td>
-                <td class="product-name" data-title="Product Name">
+                <td class="product-name" data-title="Produto">
                     <a href="{{route('product', [$product['category'], $product['section'], $product['slug']])}}/?cor=preto-amarelo">Produto 2 - Preto/Amarelo</a>
                 </td>
 
-                <td class="product-price" data-title="Unit Price">
-                                            <span class="woocommerce-Price-amount amount">
-                                                <span class="woocommerce-Price-currencySymbol">R$ </span>47,00
-                                            </span>
+                <td class="product-price" data-title="Preço und">
+                        <span class="woocommerce-Price-amount amount">
+                            <span class="woocommerce-Price-currencySymbol">R$ </span>47,00
+                        </span>
                 </td>
 
-                <td class="product-stock-status" data-title="Stock Status">
+                <td class="product-stock-status" data-title="Estoque Status">
                     <span class="wishlist-in-stock">Em Estoque</span>
                 </td>
 
                 <td class="product-add-to-cart">
-                    <!-- Date added -->
-
-                    <!-- Add to cart button -->
-                    <a href="https://demo.xtemos.com/basel/shop/woman/basic-knit-dress-chest/?remove_from_wishlist_after_add_to_cart=19515" data-quantity="1" class="button product_type_variable add_to_cart_button add_to_cart button alt" data-product_id="19515" data-product_sku="" aria-label="Select options for &ldquo;Basic knit dress chest&rdquo;" rel="nofollow"> Select options</a>
-                    <!-- Change wishlist -->
-
-                    <!-- Remove from wishlist -->
+                    <a href="{{route('wishlist.cart')}}?remove_from_wishlist_after_add_to_cart=19515" data-quantity="1" class="button product_type_variable add_to_cart_button add_to_cart button alt" data-product_id="19515" data-product_sku="" aria-label="Select options for &ldquo;Basic knit dress chest&rdquo;" rel="nofollow"> Selecione as Opções</a>
                 </td>
             </tr>
             </tbody>
@@ -77,10 +71,7 @@
 
             <tfoot>
             <tr>
-                <td colspan="6">
-
-
-                </td>
+                <td colspan="6"></td>
             </tr>
             </tfoot>
 

@@ -2,7 +2,7 @@
         <div class="container">
             <div class="topbar-content">
                 <div class="top-bar-left">
-                    <i class="fa fa-phone-square" style="color:white;" > </i> NOSSO NÚMERO DE TELEFONE:
+                    <i class="fa fa-phone-square" style="color:white;" > </i> TELEFONE:
                     <span style="margin-left:10px; border-bottom: 1px solid rgba(255,255,255,0.3);">{{ env('PHONE') }}</span>
                 </div>
                 <div class="top-bar-right">

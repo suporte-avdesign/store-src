@@ -34,7 +34,7 @@
     </tr>
     <tr class="woocommerce-shipping-totals shipping">
         <th>Frete</th>
-        <td data-title="Shipping">
+        <td data-title="Frete">
             <ul id="shipping_method" class="woocommerce-shipping-methods">
                 <li>
                     <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_legacy_flat_rate" value="legacy_flat_rate" class="shipping_method" @if($method == 'shipping_method_0_legacy_flat_rate') checked="checked" @endif/>

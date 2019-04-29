@@ -108,14 +108,14 @@
                 </div>
             </li>
             <li id="menu-item-21217" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21217 menu-item-design-default item-event-hover">
-                <a href="https://demo.xtemos.com/basel/cart/">Carrinho</a>
+                <a href="{{route('cart')}}">Carrinho</a>
             </li>
         </ul>
     </div>
     <div class="header-links my-account-with-text">
         <ul>
             <li class="wishlist">
-                <a href="https://demo.xtemos.com/basel/wishlist/">Wishlist</a>
+                <a href="{{route('wishlist')}}">Lista de Desejo</a>
             </li>
             <li class="login-side-opener">
                 <a href="{{route('login')}}">Login / Cadastre-se</a>
@@ -228,7 +228,7 @@
 
             <div class="site-logo">
                 <div class="basel-logo-wrap">
-                    <a href="#" class="basel-logo basel-main-logo" rel="home">
+                    <a href="{{route('home')}}" class="basel-logo basel-main-logo" rel="home">
                         <img src="{{asset('themes/images/logo.png')}}" alt="" />
                     </a>
                 </div>

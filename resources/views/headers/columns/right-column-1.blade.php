@@ -10,7 +10,7 @@
                 </li>
             @else
                 <li class="login-side-opener">
-                    <a href="#">Login</a>
+                    <a href="{{route('login')}}">Login</a>
                 </li>
             @endauth
         </ul>
@@ -39,12 +39,12 @@
         </div>
     </div>
     <div class="wishlist-info-widget">
-        <a href="#">Lista de Desejo
+        <a href="{{route('wishlist')}}">Lista de Desejo
             <span class="wishlist-count">0</span>
         </a>
     </div>
     <div class="shopping-cart basel-cart-design-1 basel-cart-icon cart-widget-opener">
-        <a href="#"><span>Carrinho(<span>o</span>)</span>
+        <a href="{{route('cart')}}"><span>Carrinho(<span>o</span>)</span>
             <span class="basel-cart-totals">
 			    <span class="basel-cart-number">0</span>
                 <span class="subtotal-divider">/</span>

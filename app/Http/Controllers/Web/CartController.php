@@ -196,7 +196,6 @@ class CartController extends Controller
 
     public function destroy(Request $request)
     {
-        sleep(2);
         $json = $request['wc-ajax'];
         $list = 1;
         $quantity = 0;
