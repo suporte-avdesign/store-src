@@ -126,7 +126,8 @@ Route::get('minha-conta/lista-de-desejo', 'Web\AccountController@wishlist')->nam
 Route::get('minha-conta/pedidos', 'Web\AccountController@order')->name('account.order');
 Route::get('minha-conta/pedido/{id}', 'Web\AccountController@orderView')->name('order.view');
 Route::match(['get', 'put'], 'minha-conta/perfil', 'Web\AccountController@profile')->name('account.profile');
-
+Route::get('minha-conta/endereco-de-entrega', 'Web\AccountController@address')->name('account.address');
+Route::put('minha-conta/endereco-de-entrega/alterar', 'Web\AccountController@addressUpdate')->name('address.update');
 
 
 

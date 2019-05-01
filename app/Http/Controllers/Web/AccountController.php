@@ -34,47 +34,29 @@ class AccountController extends Controller
         return view('accounts.order-1', compact('id'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
     public function orderView($id)
     {
         return view('accounts.order-1-view');
     }
 
-    public function profile()
+    public function profile(Request $request)
     {
         return view('accounts.profile-1');
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function address()
     {
-        //
+        return view('accounts.address-1');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function addressUpdate(Request $request)
     {
-        //
+        return view('accounts.address-1');
     }
+
+
+
+
+
+
 }

@@ -110,13 +110,15 @@
 
                             <div class="row">
                                 <form name="checkout" method="post" class="checkout woocommerce-checkout" action="{{route('checkout')}}" enctype="multipart/form-data">
-                                    <input type="hidden" name="_token" value="{{csrf_token()}}" />
+                                    @csrf
+
                                     <div class="col-sm-6">
                                         <div class="row" id="customer_details">
                                             <div class="col-sm-12">
                                                 <!-- FORM FATURED -->
                                                 <div class="woocommerce-billing-fields">
                                                     <h3>Detalhes do faturamento</h3>
+
                                                     <div class="woocommerce-billing-fields__field-wrapper">
                                                         <p class="form-row form-row-first validate-required" id="billing_first_name_field" data-priority="10">
                                                             <label for="name" class="">Nome <abbr class="required" title="required">*</abbr>

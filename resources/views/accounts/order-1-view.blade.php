@@ -114,7 +114,7 @@
                                             <div class="woocommerce-column woocommerce-column--1 woocommerce-column--billing-address col-1">
                                                 <h2 class="woocommerce-column__title">Endereço de Cobrança</h2>
                                                 <address>
-                                                    São Roque Calçacod<br>
+                                                    São Roque Calçados<br>
                                                     Rua Cavalheiro, 243<br>
                                                     Brás - São Paulo<br>
                                                     CEP: 03010-000
@@ -126,7 +126,7 @@
                                             <div class="woocommerce-column woocommerce-column--2 woocommerce-column--shipping-address col-2">
                                                 <h2 class="woocommerce-column__title">Endereço de Entrega</h2>
                                                 <address>
-                                                    São Roque Calçacod<br>
+                                                    São Roque Calçados<br>
                                                     Rua Cavalheiro, 243<br>
                                                     Brás - São Paulo<br>
                                                     CEP: 03010-000

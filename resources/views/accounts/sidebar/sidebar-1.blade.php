@@ -12,7 +12,7 @@
                 <a href="#">Downloads</a>
             </li>
             <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-address">
-                <a href="#">Endereço de Entrega</a>
+                <a href="{{route('account.address')}}">Endereço de Entrega</a>
             </li>
             <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account">
                 <a href="{{route('account.profile')}}">Perfil da Conta</a>
