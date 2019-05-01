@@ -102,6 +102,32 @@ Route::post('checkout-store', 'Web\CheckoutController@store')->name('checkout.st
 Route::get('checkout/{order}/{id}', 'Web\CheckoutController@show')->name('checkout.received');
 
 
+/*
+|--------------------------------------------------------------------------
+| Routes Pages
+|--------------------------------------------------------------------------
+*/
+
+Route::get('termos-e-condicoes', 'Web\PagesController@terms')->name('terms-conditions');
+Route::get('politica-de-privacidade', 'Web\PagesController@privacy')->name('privacy-policy');
+
+
+Route::get('contato', 'Web\ContactController@index')->name('contact');
+Route::post('contato', 'Web\ContactController@store')->name('contact.store');
+
+
+/*
+|--------------------------------------------------------------------------
+| Routes Pages
+|--------------------------------------------------------------------------
+*/
+Route::get('minha-conta/', 'Web\AccountController@index')->name('account');
+Route::get('minha-conta/lista-de-desejo', 'Web\AccountController@wishlist')->name('account.wishlist');
+Route::get('minha-conta/pedidos', 'Web\AccountController@order')->name('account.order');
+Route::get('minha-conta/pedido/{id}', 'Web\AccountController@orderView')->name('order.view');
+Route::match(['get', 'put'], 'minha-conta/perfil', 'Web\AccountController@profile')->name('account.profile');
+
+
 
 
 Auth::routes();

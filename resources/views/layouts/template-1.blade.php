@@ -249,7 +249,7 @@
 <script type="text/javascript">
     var wpcf7  = {!! json_encode([
         "apiSettings" => array(
-            "root" => url("contact-form-7/v1"),
+            "root" => route('contact.store'),
             "namespace" => "form/contact-form-7/v1"
         ),
         "recaptcha" => array(

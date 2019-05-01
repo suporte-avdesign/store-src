@@ -52,9 +52,10 @@
                     <h5 class="widget-title">Outros</h5>
                     <div class="textwidget">
                         <ul class="menu">
-                            <li><a href="#">Cadastre-se</a></li>
-                            <li><a href="#">Fale Conosco</a></li>
-                            <li><a href="#">Política de Privacidade</a></li>
+                            <li><a href="{{route('login')}}">Cadastre-se</a></li>
+                            <li><a href="{{route('contact')}}">Fale Conosco</a></li>
+                            <li><a href="{{route('privacy-policy')}}">Política de Privacidade</a></li>
+                            <li><a href="{{route('terms-conditions')}}">Termos e Condições</a></li>
                         </ul>
                     </div>
                 </div>
@@ -62,7 +63,7 @@
 
             <div class="footer-column footer-column-5 col-md-2 col-sm-6">
                 <div id="text-21" class="footer-widget widget_text">
-                    <h5 class="widget-title">Horário de Funcionamento</h5>
+                    <h5 class="widget-title">Horários</h5>
                     <div class="textwidget">
                         <ul class="menu">
                             <li><a href="#">De Segunda a Sexta Feira</a></li>

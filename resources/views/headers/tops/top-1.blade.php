@@ -10,10 +10,20 @@
                         <div class="menu-top-bar-container">
 
                             <ul id="menu-top-bar" class="menu">
-                                <li id="menu-item-22357" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22357 menu-item-design-default item-event-hover"><a href="#"><i class="fa fa-user"></i>Minha Conta</a></li>
-                                <li id="menu-item-22845" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22845 menu-item-design-default item-event-hover"><a href="#"><i class="fa fa-file-text-o"></i>Cadastre-se</a></li>
-                                <li id="menu-item-20484" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20484 menu-item-design-default item-event-hover"><a href="#"><i class="fa fa-question"></i>FAQ</a></li>
-                                <li id="menu-item-20488" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20488 menu-item-design-default item-event-hover"><a href="#"><i class="fa fa-envelope-o"></i>Contato</a></li>
+                                <li id="menu-item-22357" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22357 menu-item-design-default item-event-hover">
+                                    <a href="#"><i class="fa fa-user"></i>Minha Conta</a>
+                                </li>
+                                <li id="menu-item-22845" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22845 menu-item-design-default item-event-hover">
+                                    <a href="{{route('login')}}"><i class="fa fa-file-text-o"></i>Cadastre-se</a>
+                                </li>
+                                <!--
+                                <li id="menu-item-20484" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20484 menu-item-design-default item-event-hover">
+                                    <a href="#"><i class="fa fa-question"></i>FAQ</a>
+                                </li>
+                                -->
+                                <li id="menu-item-20488" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20488 menu-item-design-default item-event-hover">
+                                    <a href="{{route('contact')}}"><i class="fa fa-envelope-o"></i>Contato</a>
+                                </li>
                             </ul>
                         </div>
                     </div>

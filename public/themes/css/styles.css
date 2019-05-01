@@ -582,3 +582,72 @@ iframe[name='google_conversion_frame'] {
         max-width: 100%;
     }
 }
+
+#basel-5c10fbabc027e .basel-text-block {
+    line-height: 26px;
+    font-size: 16px
+}
+
+#basel-5c10fc55df2d9 .basel-text-block {
+    line-height: 26px;
+    font-size: 16px
+}
+
+#basel-5c10fc87b36fc .basel-text-block {
+    line-height: 34px;
+    font-size: 24px
+}
+
+#basel-5c10e9c17b07b .basel-text-block {
+    line-height: 28px;
+    font-size: 18px
+}
+
+#basel-5c10e9c77e623 .basel-text-block {
+    line-height: 28px;
+    font-size: 18px
+}
+
+#basel-5c10e9cf8829c .basel-text-block {
+    line-height: 28px;
+    font-size: 18px
+}
+
+#basel-5c10e9d7a659a .basel-text-block {
+    line-height: 28px;
+    font-size: 18px
+}
+
+#basel-5c10e9de29ee7 .basel-text-block {
+    line-height: 28px;
+    font-size: 18px
+}
+
+#basel-5c10e9e48e9f3 .basel-text-block {
+    line-height: 28px;
+    font-size: 18px
+}
+
+#basel-5c10e9ebad971 .basel-text-block {
+    line-height: 28px;
+    font-size: 18px
+}
+
+@media (max-width:767px) {
+    #basel-5c10fb83ea90b .basel-text-block {
+        line-height: 38px;
+        font-size: 28px
+    }
+    #basel-5c10fbabc027e .basel-text-block {
+        line-height: 24px;
+        font-size: 14px
+    }
+    #basel-5c10fc55df2d9 .basel-text-block {
+        line-height: 24px;
+        font-size: 14px
+    }
+    #basel-5c10fc87b36fc .basel-text-block {
+        line-height: 32px;
+        font-size: 22px
+    }
+}

@@ -13,7 +13,7 @@
                     <span class="nobr">Produto</span>
                 </th>
                 <th class="product-price">
-                    <span class="nobr">Preço Unitário</span>
+                    <span class="nobr">Valor</span>
                 </th>
                 <th class="product-stock-status">
                     <span class="nobr">Estoque</span>

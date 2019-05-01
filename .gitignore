@@ -4,6 +4,7 @@
 /storage/*.key
 /vendor
 /gitserver2
+/github
 .env
 .phpunit.result.cache
 Homestead.json
