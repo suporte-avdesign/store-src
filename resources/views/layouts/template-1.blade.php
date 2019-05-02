@@ -17,9 +17,7 @@
     @include('google.analytics-1')
 <!-- / Google Analytics by MonsterInsights -->
     <link rel="stylesheet" id="contact-form-7"  href="{{asset('includes/contact-form-7/css/styles.css')}}?ver=5.0.5" type="text/css" media="all" />
-    <style id="woocommerce-inline-inline-css" type="text/css">
-        .woocommerce form .form-row .required { visibility: visible; }
-    </style>
+    <style id="woocommerce-inline-inline-css" type="text/css">.woocommerce form .form-row .required { visibility: visible; }</style>
     <link rel="stylesheet" id="prettyPhoto" href="{{asset('plugins/prettyPhoto/css/prettyPhoto.css')}}" type="text/css" media="all" />
     <link rel="stylesheet" id="jquery-selectBox" href="{{asset('plugins/yith-wishlist/css/jquery.selectBox.css')}}" type="text/css" media="all" />
     <link rel="stylesheet" id="yith-wcwl-main" href="{{asset('plugins/yith-wishlist/css/style.css')}}" type="text/css" media="all" />
@@ -27,21 +25,15 @@
     <link rel="stylesheet" id="mailchimp-form" href="{{asset('plugins/mailchimp/css/form-basic.min.css')}}?ver=3.1.11" type="text/css" media="all" />
     <link rel="stylesheet" id="redux-google-fonts-basel_options-css"  href="https://fonts.googleapis.com/css?family=Karla%3A400%2C700%2C400italic%2C700italic%7CLora%3A400%2C700%2C400italic%2C700italic%7CLato%3A100%2C300%2C400%2C700%2C900%2C100italic%2C300italic%2C400italic%2C700italic%2C900italic&#038;subset=latin&#038;ver=1546694001" type="text/css" media="all" />
     <link rel="stylesheet" id="bootstrap" href="{{asset('plugins/bootstrap/css/bootstrap.min.css')}}?ver=3.3.1" type="text/css" media="all" />
-    <link rel="stylesheet" id="style-css" href="{{asset('themes/css/style.min.css')}}?ver=4.4.2" type="text/css" media="all" />
+    <link rel="stylesheet" id="style-css" href="{{asset('themes/css/style.css')}}?ver=4.4.2" type="text/css" media="all" />
     <link rel="stylesheet" id="font-awesome" href="{{asset('plugins/font-awesome/css/font-awesome.min.css')}}?ver=4.7.0" type="text/css" media="all" />
     <style id="font-awesome-inline-css" type="text/css">
         [data-font="FontAwesome"]:before {font-family: 'FontAwesome' !important;content: attr(data-icon) !important;speak: none !important;font-weight: normal !important;font-variant: normal !important;text-transform: none !important;line-height: 1 !important;font-style: normal !important;-webkit-font-smoothing: antialiased !important;-moz-osx-font-smoothing: grayscale !important;}
     </style>
     <script type="text/template" id="tmpl-variation-template">
-        <div class="woocommerce-variation-description">
-            @{{{ data.variation.variation_description }}}
-        </div>
-        <div class="woocommerce-variation-price">
-            @{{{ data.variation.price_html }}}
-        </div>
-        <div class="woocommerce-variation-availability">
-            @{{{ data.variation.availability_html }}}
-        </div>
+        <div class="woocommerce-variation-description">@{{{ data.variation.variation_description }}}</div>
+        <div class="woocommerce-variation-price">@{{{ data.variation.price_html }}}</div>
+        <div class="woocommerce-variation-availability">@{{{ data.variation.availability_html }}}</div>
     </script>
     <script type="text/template" id="tmpl-unavailable-variation-template">
         <p>Desculpe, este produto não está disponível. Por favor, escolha uma combinação diferente.</p>
@@ -212,8 +204,9 @@
     <!--[if lte IE 9]>
     <link rel="stylesheet" type="text/css" href="{{asset('plugins/js_composer/css/vc_lte_ie9.min.css')}}" media="screen">
     <![endif]-->
+
     <link rel="stylesheet" id="styles-css" href="{{asset('themes/css/styles.min.css')}}?ver=1.0.0" type="text/css" media="all" />
-    <link rel="stylesheet" id="theme-css" href="{{asset('themes/css/theme.min.css')}}?ver=1.0.0" type="text/css" media="all" />
+    <link rel="stylesheet" id="theme-css" href="{{asset('themes/css/theme.css')}}?ver=1.0.0" type="text/css" media="all" />
     @stack('styles')
     @stack('head')
     <noscript><style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript>
@@ -334,7 +327,7 @@
         "search_url" => route('product.search'),
         "quickview_url" => route('product.show'),
         "compare_url" => route('compare.store'),
-        //"compare_remove" => route('compare.remove'),
+        "sections_tabs" => route('section.tabs'),
         "add_to_cart_action" => "widget",
         "categories_toggle" => "yes",
         "enable_popup" => "yes",
@@ -381,13 +374,7 @@
     ]) !!};
     var basel_variation_gallery_data=null;
 </script>
-
-
-
-
-<script type="text/javascript" src="{{asset('themes/js/theme-org.js')}}?ver=4.5.5">
-</script>
-
+<script type="text/javascript" src="{{asset('themes/js/theme-org.js')}}?ver=4.5.5"></script>
 <script type="text/javascript" src="{{asset('includes/underscore/js/underscore.min.js')}}?ver=1.8.3"></script>
 <script type='text/javascript'>
     var _wpUtilSettings = {!! json_encode([

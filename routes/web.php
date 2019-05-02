@@ -12,7 +12,9 @@
 */
 
 
-Route::get('/', 'Web\CategoryController@index')->name('home');
+Route::get('/', 'Web\HomeController@index')->name('home');
+
+
 Route::get('categorias', 'Web\CategoryController@index')->name('category');
 
 Route::get('404', function () {
@@ -32,6 +34,14 @@ Route::get('register','Auth\RegisterController@register');
 Route::post('register','Auth\RegisterController@showRegistrationFor')->name('register');
 
 Route::get('social', 'Web\SocialController@index')->name('social.auth');
+
+
+/*
+|--------------------------------------------------------------------------
+| Routes Sections
+|--------------------------------------------------------------------------
+*/
+Route::post('section-tabs', 'Web\SectionController@tabs')->name('section.tabs');
 
 
 

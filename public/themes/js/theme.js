@@ -218,7 +218,7 @@
 
 
             // Building markup
-            // main containers are created only once
+            // main carousel are created only once
             if(!mfp.bgOverlay) {
 
                 // Dark overlay

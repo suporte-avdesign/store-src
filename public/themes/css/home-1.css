@@ -1,0 +1,178 @@
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.title,
+table th,
+.wc-tabs li a,
+.masonry-filter li a,
+.woocommerce .cart-empty,
+.basel-navigation .menu > li.menu-item-design-full-width .sub-menu > li > a,
+.basel-navigation .menu > li.menu-item-design-sized .sub-menu > li > a {
+    font-family: "Open Sans", 'MS Sans Serif', Geneva, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.product-title a,
+.post-slide .entry-title a,
+.category-grid-item .hover-mask h3,
+.basel-search-full-screen .basel-search-inner input[type="text"],
+.blog-post-loop .entry-title,
+.single-product-content .entry-title,
+.font-title {
+    font-family: "Open Sans", 'MS Sans Serif', Geneva, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+body,
+p,
+.widget_nav_mega_menu .menu > li > a,
+.mega-navigation .menu > li > a,
+.basel-navigation .menu > li.menu-item-design-full-width .sub-sub-menu li a,
+.basel-navigation .menu > li.menu-item-design-sized .sub-sub-menu li a,
+.basel-navigation .menu > li.menu-item-design-default .sub-menu li a,
+.font-default {
+    font-family: Hind;
+}
+
+.main-nav .menu > li > a {
+    font-family: Hind;
+    font-weight: 600;
+}
+
+.hover-img img {
+    width: 100% !important;
+}
+
+
+.vc_custom_1477403044270 {
+    margin-top: -40px !important;
+    margin-bottom: 10vh !important;
+}
+
+.vc_custom_1477929174010 {
+    margin-bottom: 5vh !important;
+}
+
+.vc_custom_1477937331390 {
+    margin-bottom: 5vh !important;
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+    background-color: #f9f9f9 !important;
+}
+
+.vc_custom_1477552018282 {
+    margin-bottom: 0px !important;
+    padding-top: 20px !important;
+}
+
+.vc_custom_1477943846123 {
+    margin-top: 0px !important;
+    margin-bottom: 10px !important;
+}
+
+.vc_custom_1477937509795 {
+    margin-bottom: 8vh !important;
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+    background-color: #f9f9f9 !important;
+}
+
+.vc_custom_1477937519143 {
+    margin-bottom: 8vh !important;
+}
+
+.vc_custom_1477735778599 {
+    margin-bottom: -40px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    background-color: #f9f9f9 !important;
+}
+
+.vc_custom_1488187477623 {
+    margin-bottom: 60px !important;
+    padding-left: 120px !important;
+    background-image: url(https://demo.xtemos.com/basel/wp-content/uploads/2015/08/market-category-1.png?id=25263) !important;
+    background-position: 0 0 !important;
+    background-repeat: no-repeat !important;
+}
+
+.vc_custom_1488187533752 {
+    margin-bottom: 60px !important;
+    padding-left: 120px !important;
+    background-image: url(https://demo.xtemos.com/basel/wp-content/uploads/2015/08/market-category-4.png?id=25266) !important;
+    background-position: 0 0 !important;
+    background-repeat: no-repeat !important;
+}
+
+.vc_custom_1488187489197 {
+    margin-bottom: 60px !important;
+    padding-left: 120px !important;
+    background-image: url(https://demo.xtemos.com/basel/wp-content/uploads/2015/08/market-category-2.png?id=25264) !important;
+    background-position: 0 0 !important;
+    background-repeat: no-repeat !important;
+}
+
+.vc_custom_1488187522669 {
+    margin-bottom: 60px !important;
+    padding-left: 120px !important;
+    background-image: url(https://demo.xtemos.com/basel/wp-content/uploads/2015/08/market-category-5.png?id=25267) !important;
+    background-position: 0 0 !important;
+    background-repeat: no-repeat !important;
+}
+
+.vc_custom_1488187501809 {
+    margin-bottom: 60px !important;
+    padding-left: 120px !important;
+    background-image: url(https://demo.xtemos.com/basel/wp-content/uploads/2015/08/market-category-3.png?id=25265) !important;
+    background-position: 0 0 !important;
+    background-repeat: no-repeat !important;
+}
+
+.vc_custom_1488187511503 {
+    margin-bottom: 60px !important;
+    padding-left: 120px !important;
+    background-image: url(https://demo.xtemos.com/basel/wp-content/uploads/2015/08/market-category-6.png?id=25268) !important;
+    background-position: 0 0 !important;
+    background-repeat: no-repeat !important;
+}
+
+.vc_custom_1477735786181 {
+    border-right-width: 1px !important;
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+    border-right-color: #e0e0e0 !important;
+    border-right-style: solid !important;
+}
+
+.vc_custom_1477735838426 {
+    border-right-width: 1px !important;
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+    border-right-color: #e0e0e0 !important;
+    border-right-style: solid !important;
+}
+
+.vc_custom_1477735857513 {
+    border-right-width: 1px !important;
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+    border-right-color: #e0e0e0 !important;
+    border-right-style: solid !important;
+}
+
+.vc_custom_1477735910971 {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+}
+

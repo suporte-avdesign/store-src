@@ -152,7 +152,8 @@
                          {{asset('faker/product_photos/img3-f.jpg')}} 219w,
                          {{asset('faker/product_photos/img3-f.jpg')}} 263w,
                          {{asset('faker/product_photos/img3-f.jpg')}} 526w"
-                 sizes="(max-width: 273px) 100vw, 273px" />
+                 sizes="(max-width: 273px) 100vw, 273px"
+            />
         </a>
         <div class="hover-img">
             <a href="{{url('product')}}/categoria/secao/produto-1002">
@@ -338,7 +339,8 @@
         </div>
     </div>
     <h3 class="product-title">
-        <a href="{{url('product')}}/categoria/secao/produto-1003">Produto 3</a></h3>
+        <a href="{{url('product')}}/categoria/secao/produto-1003">Produto 3</a>
+    </h3>
 
     <div class="wrap-price">
         <div class="wrapp-swap">

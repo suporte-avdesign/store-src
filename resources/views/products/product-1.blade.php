@@ -509,5 +509,5 @@
     ]) !!}}
 </script>
 <script type="text/javascript" src="{{asset('plugins/product/js/single-product.min.js')}}?ver=3.5.2"></script>
-<script type="text/javascript" src="{{asset('includes/comment/comment-reply.min.js')}}?ver=4.9.8"></script>
+<script type="text/javascript" src="{{asset('banners')}}?ver=4.9.8"></script>
 @endpush

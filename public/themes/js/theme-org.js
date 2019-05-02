@@ -18119,10 +18119,11 @@ var baselThemeModule;
                     btn.addClass('loading');
 
                     $.ajax({
-                        url: basel_settings.ajaxurl,
+                        url: basel_settings.sections_tabs,
                         data: {
                             atts: atts,
-                            action: 'basel_get_products_tab_shortcode'
+                            action: 'basel_get_products_tab_shortcode',
+                            _token: basel_settings.csrf_token
                         },
                         dataType: 'json',
                         method: 'POST',
