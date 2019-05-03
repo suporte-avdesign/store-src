@@ -24,7 +24,7 @@
                 <span class="basel-close-search">Fechar</span>
                 <form role="search" method="get" id="_searchform" class="searchform  basel-ajax-search" action="#" data-thumbnail="1" data-price="1" data-count="5" data-post_type="product">
                     <div>
-                        <label class="screen-reader-text">Buscar por:</label>
+                        <label class="screen-reader-text">Buscar por 2:</label>
                         <input type="text" class="search-field" placeholder="Buscar Produtos" value="" name="s" id="_s" />
                         <input type="hidden" name="_post_type" id="_post_type" value="product">
                         <button type="submit" id="_searchsubmit" value="Buscar">Buscar</button>

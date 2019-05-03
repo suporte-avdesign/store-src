@@ -59,7 +59,7 @@
     <script type="text/javascript" src="{{asset('plugins/cart/js/add-to-cart.min.js')}}?ver=4.5.4"></script>
     <script type="text/javascript" src="{{asset('plugins/cart/js/avd-add-to-cart.js')}}?ver=5.6"></script>
     <!--[if lt IE 9]>
-    <script type="text/javascript" src="{{asset('themes/js/html5.min.js')}}?ver=4.4.2"></script>
+        <script type="text/javascript" src="{{asset('themes/js/html5.min.js')}}?ver=4.4.2"></script>
     <![endif]-->
     <script type="text/javascript" src="{{asset('themes/js/device.min.js')}}?ver=4.4.2"></script>
     <link rel="shortcut icon" href="{{asset('themes/images/icons/favicon.png')}}">
@@ -213,27 +213,25 @@
 </head>
 @stack('body')
 
-@include('messages.message-1-body')
+    @include('messages.message-1-body')
 
-@include('auth.login-1-sidbar')
+    @include('auth.login-1-sidbar')
 
-<div class="website-wrapper">
+    <div class="website-wrapper">
 
-    @include('headers.header-1')
+        @include('headers.header-1')
 
-    <div class="clear"></div>
+        <div class="clear"></div>
 
-    <div class="main-page-wrapper">
+        <div class="main-page-wrapper">
 
-        @yield('content')
+            @yield('content')
 
-        @include('footers.footer-1')
-    </div><!-- .main-page-wrapper -->
-</div><!-- end wrapper -->
-
-
-<div class="basel-close-side"></div>
-<a href="#" class="scrollToTop basel-tooltip">Role para cima</a>
+            @include('footers.footer-1')
+        </div><!-- .main-page-wrapper -->
+    </div><!-- end wrapper -->
+    <div class="basel-close-side"></div>
+    <a href="#" class="scrollToTop basel-tooltip">Role para cima</a>
 
 <script type="text/javascript">
     var c=document.body.className;
