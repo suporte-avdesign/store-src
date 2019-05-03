@@ -1,5 +1,5 @@
 
-<header class="main-header header-has-no-bg header-simple icons-design-line color-scheme-dark">
+<header class="main-header header-has-bg header-simple icons-design-line color-scheme-light">
     <div class="container">
         <div class="wrapp-header">
 

@@ -9,26 +9,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <script>document.documentElement.className = document.documentElement.className + ' yes-js js_active js'</script>
-    <title> {{config('app.name')}}</title>
-    <style>
-        .wishlist_table .add_to_cart, a.add_to_wishlist.button.alt { border-radius: 16px; -moz-border-radius: 16px; -webkit-border-radius: 16px; }
-    </style>
+    <title> Bem vindo! {{config('app.name')}}</title>
+    <style>.wishlist_table .add_to_cart, a.add_to_wishlist.button.alt { border-radius: 16px; -moz-border-radius: 16px; -webkit-border-radius: 16px; }</style>
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-@include('google.analytics-1')
-<!-- / Google Analytics by MonsterInsights -->
+    @include('scripts.analytics-1')
     <link rel="stylesheet" id="contact-form-7"  href="{{asset('includes/contact-form-7/css/styles.css')}}?ver=5.0.5" type="text/css" media="all" />
     <style id="woocommerce-inline-inline-css" type="text/css">.woocommerce form .form-row .required { visibility: visible; }</style>
     <link rel="stylesheet" id="rs-plugin-settings-css" href="{{asset('plugins/revslider/css/settings.css')}}?ver=5.4.8.1" type="text/css" media="all" />
-    <style id="rs-plugin-settings-inline-css" type="text/css">
-        .tp-caption a{color:#ff7302;text-shadow:none;-webkit-transition:all 0.2s ease-out;-moz-transition:all 0.2s ease-out;-o-transition:all 0.2s ease-out;-ms-transition:all 0.2s ease-out}.tp-caption a:hover{color:#ffa902}
-    </style>
-    <style id='woocommerce-inline-inline-css' type='text/css'>
-        .woocommerce form .form-row .required {
-            visibility: visible;
-        }
-    </style>
-
-
+    <style id="rs-plugin-settings-inline-css" type="text/css">.tp-caption a{color:#ff7302;text-shadow:none;-webkit-transition:all 0.2s ease-out;-moz-transition:all 0.2s ease-out;-o-transition:all 0.2s ease-out;-ms-transition:all 0.2s ease-out}.tp-caption a:hover{color:#ffa902}</style>
+    <style id='woocommerce-inline-inline-css' type='text/css'>.woocommerce form .form-row .required {visibility: visible;}</style>
     <link rel="stylesheet" id="prettyPhoto" href="{{asset('plugins/prettyPhoto/css/prettyPhoto.css')}}" type="text/css" media="all" />
     <link rel="stylesheet" id="jquery-selectBox" href="{{asset('plugins/yith-wishlist/css/jquery.selectBox.css')}}" type="text/css" media="all" />
     <link rel="stylesheet" id="yith-wcwl-main" href="{{asset('plugins/yith-wishlist/css/style.css')}}" type="text/css" media="all" />
@@ -38,9 +27,7 @@
     <link rel="stylesheet" id="bootstrap" href="{{asset('plugins/bootstrap/css/bootstrap.min.css')}}?ver=3.3.1" type="text/css" media="all" />
     <link rel="stylesheet" id="style-css" href="{{asset('themes/css/style.css')}}?ver=4.4.2" type="text/css" media="all" />
     <link rel="stylesheet" id="font-awesome" href="{{asset('plugins/font-awesome/css/font-awesome.min.css')}}?ver=4.7.0" type="text/css" media="all" />
-    <style id="font-awesome-inline-css" type="text/css">
-        [data-font="FontAwesome"]:before {font-family: 'FontAwesome' !important;content: attr(data-icon) !important;speak: none !important;font-weight: normal !important;font-variant: normal !important;text-transform: none !important;line-height: 1 !important;font-style: normal !important;-webkit-font-smoothing: antialiased !important;-moz-osx-font-smoothing: grayscale !important;}
-    </style>
+    <style id="font-awesome-inline-css" type="text/css">[data-font="FontAwesome"]:before {font-family: 'FontAwesome' !important;content: attr(data-icon) !important;speak: none !important;font-weight: normal !important;font-variant: normal !important;text-transform: none !important;line-height: 1 !important;font-style: normal !important;-webkit-font-smoothing: antialiased !important;-moz-osx-font-smoothing: grayscale !important;}</style>
     <script type="text/template" id="tmpl-variation-template">
         <div class="woocommerce-variation-description">@{{{ data.variation.variation_description }}}</div>
         <div class="woocommerce-variation-price">@{{{ data.variation.price_html }}}</div>
@@ -49,24 +36,12 @@
     <script type="text/template" id="tmpl-unavailable-variation-template">
         <p>Desculpe, este produto não está disponível. Por favor, escolha uma combinação diferente.</p>
     </script>
-    <script type="text/javascript">
-        var monsterinsights_frontend = {"js_events_tracking":"true","is_debug_mode":"false","download_extensions":"doc,exe,js,pdf,ppt,tgz,zip,xls","inbound_paths":"","home_url":"{{route('home')}}","track_download_as":"event","internal_label":"int","hash_tracking":"false"};
-    </script>
+    @include('scripts.monsterinsights_frontend')
     <script type="text/javascript" src="{{asset('plugins/google/analytics-frontend.min.js')}}?ver=7.3.2"></script>
     <script type="text/javascript" src="{{asset('includes/js/jquery/jquery.min.js')}}?ver=1.12.4"></script>
     <script type="text/javascript" src="{{asset('includes/js/jquery/jquery-migrate.min.js')}}?ver=1.4.1"></script>
     <script type="text/javascript" src="{{asset('plugins/jquery-blockui/jquery.blockUI.min.js')}}?ver=2.70"></script>
-    <script type="text/javascript">
-        var wc_add_to_cart_params = {!! json_encode([
-            "ajax_url" => route('cart.add'),
-            "wc_ajax_url" => route('cart.remove')."/?wc-ajax=%%endpoint%%",
-            "i18n_view_cart" => "Ver Carrrinho",
-            "cart_url" => route('cart'),
-            "is_cart" => "",
-            "cart_redirect_after_add" => "no",
-            "csrf_token" => csrf_token()
-        ]) !!};
-    </script>
+    @include('scripts.add_to_cart_params')
     <script type="text/javascript" src="{{asset('plugins/cart/js/add-to-cart.min.js')}}?ver=4.5.4"></script>
     <script type="text/javascript" src="{{asset('plugins/cart/js/avd-add-to-cart.js')}}?ver=5.6"></script>
     <!--[if lt IE 9]>
@@ -76,186 +51,18 @@
     <link rel="shortcut icon" href="{{asset('themes/images/icons/favicon.png')}}">
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{asset('themes/images/icons/apple-touch-icon-152x152-precomposed.png')}}">
     <link rel="stylesheet" id="theme-css" href="{{asset('themes/css/home-1.css')}}?ver=1.0.0" type="text/css" media="all" />
-    <script type="text/javascript">
-        jQuery(document).ready(function() {
-            var scrollMenu = function() {
-                var scrollMenu = jQuery('.dropdown-scroll > .sub-menu-dropdown');
-
-                scrollMenu.each(function() {
-                    var $this = jQuery(this);
-                    var innerContent = $this.find('> .container');
-
-                    $this.on('mousemove', function(e) {
-                        var parentOffset = $this.offset();
-                        //or $(this).offset(); if you really just want the current element's offset
-                        var relY = e.pageY - parentOffset.top;
-
-                        var deltaHeight = innerContent.outerHeight() - $this.height();
-
-                        if( deltaHeight < 0 ) return;
-
-                        var percentY = relY / $this.height();
-
-                        var margin = 0;
-
-                        if( percentY <= 0 ) {
-                            margin = 0;
-                        } else if( percentY >= 1 ) {
-                            margin = - deltaHeight;
-                        } else {
-                            margin = - percentY * deltaHeight;
-                        }
-
-                        margin = parseInt(margin);
-
-                        innerContent.css({
-                            'position': 'relative',
-                            'top': margin
-                        });
-                    });
-                });
-
-            }
-
-            setTimeout(function() {
-                scrollMenu();
-            }, 1000);
-
-            scrollMenu();
-
-            function lazyload(){
-                var lazy = jQuery( '.basel-lasy-image' );
-
-                lazy.each( function() {
-                    var _this = jQuery( this ),
-                        ImageSrc = _this.data( 'blazy-src' );
-
-                    if ( !_this.parent().hasClass( 'blazy-image-loaded' ) ) {
-                        _this.attr( 'src', ImageSrc );
-                        _this.parent().addClass('blazy-image-loading');
-                        _this.on('load', function() {
-                            _this.parent().removeClass('blazy-image-loading');
-                            _this.parent().addClass( 'blazy-image-loaded' );
-                        })
-                    }
-                })
-
-            }
-            jQuery( document ).on( 'mouseenter mouseleave mousemove','.dropdown-scroll', function( e ) {
-                lazyload();
-            });
-
-            var onePageMenuFix = function() {
-
-                var scrollToRow = function(hash) {
-                    var row = jQuery('#' + hash);
-
-                    if( row.length < 1 ) return;
-
-                    var position = row.offset().top;
-
-                    jQuery('html, body').stop().animate({
-                        scrollTop: position - basel_settings.one_page_menu_offset
-                    }, 800, function() {
-                        activeMenuItem(hash);
-                    });
-                };
-
-                var activeMenuItem = function(hash) {
-                    var itemHash;
-                    jQuery('.onepage-link').each(function() {
-                        itemHash = jQuery(this).find('> a').attr('href').split('#')[1];
-
-                        if( itemHash == hash ) {
-                            jQuery('.onepage-link').removeClass('current-menu-item');
-                            jQuery(this).addClass('current-menu-item');
-                        }
-
-                    });
-                };
-
-                jQuery('body').on('click', '.onepage-link > a', function(e) {
-                    var jQuerythis = jQuery(this),
-                        hash = jQuerythis.attr('href').split('#')[1];
-
-                    if( jQuery('#' + hash).length < 1 ) return;
-
-                    e.preventDefault();
-
-                    scrollToRow(hash);
-
-                    // close mobile menu
-                    jQuery('.basel-close-side').trigger('click');
-                });
-
-                if( jQuery('.onepage-link').length > 0 ) {
-                    jQuery('.entry-content > .vc_section, .entry-content > .vc_row').waypoint(function () {
-                        var hash = jQuery(this).attr('id');
-                        activeMenuItem(hash);
-                    }, { offset: 0 });
-
-                    // jQuery('.onepage-link').removeClass('current-menu-item');
-
-
-                    // URL contains hash
-                    var locationHash = window.location.hash.split('#')[1];
-
-                    if(window.location.hash.length > 1) {
-                        setTimeout(function(){
-                            scrollToRow(locationHash);
-                        }, 500);
-                    }
-
-                }
-            };
-            onePageMenuFix();
-        });
-    </script>
+    @include('scripts.scroll-menu')
     <noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
     <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
     <!--[if lte IE 9]>
     <link rel="stylesheet" type="text/css" href="{{asset('plugins/js_composer/css/vc_lte_ie9.min.css')}}" media="screen">
     <![endif]-->
-
-    <script type="text/javascript">
-        function setREVStartSize(e) {
-            try {
-                e.c = jQuery(e.c);
-                var i = jQuery(window).width(),
-                    t = 9999,
-                    r = 0,
-                    n = 0,
-                    l = 0,
-                    f = 0,
-                    s = 0,
-                    h = 0;
-                if (e.responsiveLevels && (jQuery.each(e.responsiveLevels, function(e, f) {
-                        f > i && (t = r = f, l = e), i > f && f > r && (r = f, n = e)
-                    }), t > r && (l = n)), f = e.gridheight[l] || e.gridheight[0] || e.gridheight, s = e.gridwidth[l] || e.gridwidth[0] || e.gridwidth, h = i / s, h = h > 1 ? 1 : h, f = Math.round(h * f), "fullscreen" == e.sliderLayout) {
-                    var u = (e.c.width(), jQuery(window).height());
-                    if (void 0 != e.fullScreenOffsetContainer) {
-                        var c = e.fullScreenOffsetContainer.split(",");
-                        if (c) jQuery.each(c, function(e, i) {
-                            u = jQuery(i).length > 0 ? u - jQuery(i).outerHeight(!0) : u
-                        }), e.fullScreenOffset.split("%").length > 1 && void 0 != e.fullScreenOffset && e.fullScreenOffset.length > 0 ? u -= jQuery(window).height() * parseInt(e.fullScreenOffset, 0) / 100 : void 0 != e.fullScreenOffset && e.fullScreenOffset.length > 0 && (u -= parseInt(e.fullScreenOffset, 0))
-                    }
-                    f = u
-                } else void 0 != e.minHeight && f < e.minHeight && (f = e.minHeight);
-                e.c.closest(".rev_slider_wrapper").css({
-                    height: f
-                })
-            } catch (d) {
-                console.log("Failure at Presize of Slider:" + d)
-            }
-        };
-    </script>
-
+    @include('scripts.home.setREVStartSize')
     <link rel="stylesheet" id="theme-css" href="{{asset('themes/css/theme-home-1.css')}}?ver=1.0.0" type="text/css" media="all" />
     <link rel="stylesheet" id="theme-css" href="{{asset('themes/css/theme.css')}}?ver=1.0.0" type="text/css" media="all" />
     <style type="text/css" data-type="vc_shortcodes-custom-css">.vc_custom_1477403044270{margin-top: -40px !important;margin-bottom: 10vh !important;}.vc_custom_1477929174010{margin-bottom: 5vh !important;}.vc_custom_1477937331390{margin-bottom: 5vh !important;padding-top: 50px !important;padding-bottom: 50px !important;background-color: #f9f9f9 !important;}.vc_custom_1477552018282{margin-bottom: 0px !important;padding-top: 20px !important;}.vc_custom_1477943846123{margin-top: 0px !important;margin-bottom: 10px !important;}.vc_custom_1477937509795{margin-bottom: 8vh !important;padding-top: 50px !important;padding-bottom: 50px !important;background-color: #f9f9f9 !important;}.vc_custom_1477937519143{margin-bottom: 8vh !important;}.vc_custom_1477735778599{margin-bottom: -40px !important;padding-top: 0px !important;padding-bottom: 0px !important;background-color: #f9f9f9 !important;}.vc_custom_1488187477623{margin-bottom: 60px !important;padding-left: 120px !important;background-image: url(https://demo.xtemos.com/basel/wp-content/uploads/2015/08/market-category-1.png?id=25263) !important;background-position: 0 0 !important;background-repeat: no-repeat !important;}.vc_custom_1488187533752{margin-bottom: 60px !important;padding-left: 120px !important;background-image: url(https://demo.xtemos.com/basel/wp-content/uploads/2015/08/market-category-4.png?id=25266) !important;background-position: 0 0 !important;background-repeat: no-repeat !important;}.vc_custom_1488187489197{margin-bottom: 60px !important;padding-left: 120px !important;background-image: url(https://demo.xtemos.com/basel/wp-content/uploads/2015/08/market-category-2.png?id=25264) !important;background-position: 0 0 !important;background-repeat: no-repeat !important;}.vc_custom_1488187522669{margin-bottom: 60px !important;padding-left: 120px !important;background-image: url(https://demo.xtemos.com/basel/wp-content/uploads/2015/08/market-category-5.png?id=25267) !important;background-position: 0 0 !important;background-repeat: no-repeat !important;}.vc_custom_1488187501809{margin-bottom: 60px !important;padding-left: 120px !important;background-image: url(https://demo.xtemos.com/basel/wp-content/uploads/2015/08/market-category-3.png?id=25265) !important;background-position: 0 0 !important;background-repeat: no-repeat !important;}.vc_custom_1488187511503{margin-bottom: 60px !important;padding-left: 120px !important;background-image: url(https://demo.xtemos.com/basel/wp-content/uploads/2015/08/market-category-6.png?id=25268) !important;background-position: 0 0 !important;background-repeat: no-repeat !important;}.vc_custom_1477735786181{border-right-width: 1px !important;padding-top: 40px !important;padding-bottom: 40px !important;border-right-color: #e0e0e0 !important;border-right-style: solid !important;}.vc_custom_1477735838426{border-right-width: 1px !important;padding-top: 40px !important;padding-bottom: 40px !important;border-right-color: #e0e0e0 !important;border-right-style: solid !important;}.vc_custom_1477735857513{border-right-width: 1px !important;padding-top: 40px !important;padding-bottom: 40px !important;border-right-color: #e0e0e0 !important;border-right-style: solid !important;}.vc_custom_1477735910971{padding-top: 40px !important;padding-bottom: 40px !important;}</style>
     <noscript><style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript>
 </head>
-
 <body class="page-template-default page page-id-25099 logged-in woocommerce-no-js wrapper-full-width global-cart-design-1 global-search-full-screen global-header-simple mobile-nav-from-left basel-light catalog-mode-off categories-accordion-on global-wishlist-enable basel-top-bar-on basel-ajax-shop-on basel-ajax-search-on enable-sticky-header sticky-header-clone offcanvas-sidebar-mobile offcanvas-sidebar-tablet wpb-js-composer js-comp-ver-5.6 vc_responsive">
 
 @include('messages.message-1-body')

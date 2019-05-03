@@ -19,7 +19,6 @@
         <div class="page-title page-title-default title-size-small title-design-centered color-scheme-light" style="">
             <div class="container">
                 <header class="entry-header">
-                    <h1 class="entry-title">Minha Conta</h1>
                     <div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
                         <a href="#" rel="v:url" property="v:title">Home</a>
                         &raquo; <span class="current">Minha Conta</span>
@@ -63,7 +62,7 @@
                                                     </label>
                                                 </div>
 
-                                                <span class="social-login-title">Or login with</span>
+                                                <span class="social-login-title">OU FAÇA O LOGIN COM</span>
                                                 <div class="basel-social-login">
                                                     <div class="social-login-btn">
                                                         <a href="{{route('social.auth')}}/?social_auth=facebook" class="btn login-fb-link">Facebook</a>
@@ -112,7 +111,7 @@
                                         </div>
 
                                         <div class="col-2 col-register-text">
-                                            <span class="register-or">Ou</span>                                                <h2>Cadastre-se</h2>
+                                            <span class="register-or">Ou</span> <h2>Cadastre-se</h2>
                                             <div class="registration-info">
                                                 <p style="text-align: center;">O registro para este site permite que você acesse o status e o histórico do seu pedido. Basta preencher os campos abaixo e teremos uma nova conta configurada para você em breve. Só lhe pediremos informações necessárias para tornar o processo de compra mais rápido e fácil.</p>
 

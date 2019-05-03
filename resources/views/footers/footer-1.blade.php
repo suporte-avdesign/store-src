@@ -9,9 +9,7 @@
                         <p style="text-align:center; margin-bottom:0px;">
                             <img src="{{asset('themes/images/logo-white.png')}}" alt="{{env('APP_NAME')}}" title="{{env('APP_NAME')}}" style="max-width:300px;" />
                         </p>
-
-                        @include('social.social-1')
-
+                        <!--include('social.social-1')-->
                         <br>
                     </div>
                 </div>
@@ -24,10 +22,10 @@
                     <h5 class="widget-title">Minha Conta</h5>
                     <div class="textwidget">
                         <ul class="menu">
-                            <li><a href="#">Seu Painel / Login</a></li>
-                            <li><a href="#">Histórico dos pedidos</a></li>
-                            <li><a href="#">Endereço de entrega</a></li>
-                            <li><a href="#">Forma de Pagamento</a></li>
+                            <li><a href="{{route('account')}}">Minha Conta</a></li>
+                            <li><a href="{{route('account.order')}}">Histórico dos pedidos</a></li>
+                            <li><a href="{{route('account.address')}}">Endereço de entrega</a></li>
+                            <li><a href="{{route('login')}}">Login</a></li>
                         </ul>
                     </div>
                 </div>
@@ -37,10 +35,10 @@
                     <h5 class="widget-title">Informações</h5>
                     <div class="textwidget">
                         <ul class="menu">
-                            <li><a href="#">Compras no Atacado</a></li>
-                            <li><a href="#">Trocas e Devoluções</a></li>
-                            <li><a href="#">Forma de Pagamento</a></li>
-                            <li><a href="#">Sobre Entregas</a></li>
+                            <li><a href="{{route('privacy-policy')}}">Compras no Atacado</a></li>
+                            <li><a href="{{route('privacy-policy')}}">Trocas e Devoluções</a></li>
+                            <li><a href="{{route('privacy-policy')}}">Forma de Pagamento</a></li>
+                            <li><a href="{{route('privacy-policy')}}">Sobre Entregas</a></li>
                         </ul>
                     </div>
                 </div>
@@ -66,10 +64,10 @@
                     <h5 class="widget-title">Horários</h5>
                     <div class="textwidget">
                         <ul class="menu">
-                            <li><a href="#">De Segunda a Sexta Feira</a></li>
-                            <li><a href="#">das 07:00hs as 17:30hs</a></li>
+                            <li><a href="javascript:void(0)">De Segunda a Sexta Feira</a></li>
+                            <li><a href="javascript:void(0)">das 07:00hs as 17:30hs</a></li>
                             <li><span>&nbsp;</span></li>
-                            <li><a href="#">Sábado das 07:30 as 12:00hs</a></li>
+                            <li><a href="javascript:void(0)">Sábado das 07:30 as 12:00hs</a></li>
                         </ul>
                     </div>
                 </div>
@@ -80,11 +78,11 @@
                     <div class="textwidget">
                         <p>LOJA - Distribuidora de calçados desde 2012. Vendemos mais de 1000 produtos de marca em nosso site.</p>
                         <div style="line-height: 2;">
-                            <i class="fa fa-location-arrow" style="width: 15px; text-align: center; margin-right: 4px; color: #676767;"></i> {{env('ADDRESS')}}
+                            <i class="fa fa-location-arrow" style="width: 15px; text-align: center; margin-right: 4px; color: #ffffff;"></i> {{env('ADDRESS')}}
                             <br>
-                            <i class="fa fa-mobile" style="width: 15px; text-align: center; margin-right: 4px; color: #676767;"></i> {{env('PHONE')}}
+                            <i class="fa fa-mobile" style="width: 15px; text-align: center; margin-right: 4px; color: #ffffff;"></i> {{env('PHONE')}}
                             <br>
-                            <p><i class="fa fa-whatsapp" style="width: 15px; text-align: center; marright-columnsight: 4px; color: #676767;"></i> WhatsApp: {{env('WHATSAPP')}}<br></p>
+                            <p><i class="fa fa-whatsapp" style="width: 15px; text-align: center; marright-columnsight: 4px; color: #ffffff;"></i> WhatsApp: {{env('WHATSAPP')}}<br></p>
                         </div>
                         <br>
                         <p><img width="100px" src="{{asset('themes/images/payments.png')}}"></p>
@@ -100,7 +98,7 @@
             <div class="min-footer">
                 <div class="col-left">
                     Copyright <i class="fa fa-copyright"></i> {{config('app.name')}} 2012 / @php echo date('Y'); @endphp -Todos os direitos reservados.  Projeto
-                    <a href="http://www.avdesign.com.br" target="_blank">
+                    <a href="https://www.avdesign.com.br" target="_blank">
                         <img src="{{asset('themes/images/av-design.png')}}" width="50px;">
                     </a>
                 </div>

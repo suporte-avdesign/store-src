@@ -3,7 +3,7 @@
 <!--END MOBILE-NAV-->
 @include('headers.columns.cart-right-1')
 <!--END TOP HEADER-->
-<header class="main-header header-has-no-bg header-shop icons-design-line color-scheme-dark">
+<header class="main-header header-has-bg header-shop icons-design-line color-scheme-light">
     <div class="container">
         <div class="wrapp-header">
 

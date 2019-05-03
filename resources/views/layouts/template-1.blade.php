@@ -10,12 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <script>document.documentElement.className = document.documentElement.className + ' yes-js js_active js'</script>
     @stack('title')
-    <style>
-        .wishlist_table .add_to_cart, a.add_to_wishlist.button.alt { border-radius: 16px; -moz-border-radius: 16px; -webkit-border-radius: 16px; }
-    </style>
+    <style>.wishlist_table .add_to_cart, a.add_to_wishlist.button.alt { border-radius: 16px; -moz-border-radius: 16px; -webkit-border-radius: 16px; }</style>
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-    @include('google.analytics-1')
-<!-- / Google Analytics by MonsterInsights -->
+    @include('scripts.analytics-1')
     <link rel="stylesheet" id="contact-form-7"  href="{{asset('includes/contact-form-7/css/styles.css')}}?ver=5.0.5" type="text/css" media="all" />
     <style id="woocommerce-inline-inline-css" type="text/css">.woocommerce form .form-row .required { visibility: visible; }</style>
     <link rel="stylesheet" id="prettyPhoto" href="{{asset('plugins/prettyPhoto/css/prettyPhoto.css')}}" type="text/css" media="all" />
@@ -38,24 +35,12 @@
     <script type="text/template" id="tmpl-unavailable-variation-template">
         <p>Desculpe, este produto não está disponível. Por favor, escolha uma combinação diferente.</p>
     </script>
-    <script type="text/javascript">
-        var monsterinsights_frontend = {"js_events_tracking":"true","is_debug_mode":"false","download_extensions":"doc,exe,js,pdf,ppt,tgz,zip,xls","inbound_paths":"","home_url":"{{route('home')}}","track_download_as":"event","internal_label":"int","hash_tracking":"false"};
-    </script>
+    @include('scripts.monsterinsights_frontend')
     <script type="text/javascript" src="{{asset('plugins/google/analytics-frontend.min.js')}}?ver=7.3.2"></script>
     <script type="text/javascript" src="{{asset('includes/js/jquery/jquery.min.js')}}?ver=1.12.4"></script>
     <script type="text/javascript" src="{{asset('includes/js/jquery/jquery-migrate.min.js')}}?ver=1.4.1"></script>
     <script type="text/javascript" src="{{asset('plugins/jquery-blockui/jquery.blockUI.min.js')}}?ver=2.70"></script>
-    <script type="text/javascript">
-        var wc_add_to_cart_params = {!! json_encode([
-            "ajax_url" => route('cart.add'),
-            "wc_ajax_url" => route('cart.remove')."/?wc-ajax=%%endpoint%%",
-            "i18n_view_cart" => "Ver Carrrinho",
-            "cart_url" => route('cart'),
-            "is_cart" => "",
-            "cart_redirect_after_add" => "no",
-            "csrf_token" => csrf_token()
-        ]) !!};
-    </script>
+    @include('scripts.add_to_cart_params')
     <script type="text/javascript" src="{{asset('plugins/cart/js/add-to-cart.min.js')}}?ver=4.5.4"></script>
     <script type="text/javascript" src="{{asset('plugins/cart/js/avd-add-to-cart.js')}}?ver=5.6"></script>
     <!--[if lt IE 9]>
@@ -64,141 +49,7 @@
     <script type="text/javascript" src="{{asset('themes/js/device.min.js')}}?ver=4.4.2"></script>
     <link rel="shortcut icon" href="{{asset('themes/images/icons/favicon.png')}}">
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{asset('themes/images/icons/apple-touch-icon-152x152-precomposed.png')}}">
-    <script type="text/javascript">
-        jQuery(document).ready(function() {
-            var scrollMenu = function() {
-                var scrollMenu = jQuery('.dropdown-scroll > .sub-menu-dropdown');
-
-                scrollMenu.each(function() {
-                    var $this = jQuery(this);
-                    var innerContent = $this.find('> .container');
-
-                    $this.on('mousemove', function(e) {
-                        var parentOffset = $this.offset();
-                        //or $(this).offset(); if you really just want the current element's offset
-                        var relY = e.pageY - parentOffset.top;
-
-                        var deltaHeight = innerContent.outerHeight() - $this.height();
-
-                        if( deltaHeight < 0 ) return;
-
-                        var percentY = relY / $this.height();
-
-                        var margin = 0;
-
-                        if( percentY <= 0 ) {
-                            margin = 0;
-                        } else if( percentY >= 1 ) {
-                            margin = - deltaHeight;
-                        } else {
-                            margin = - percentY * deltaHeight;
-                        }
-
-                        margin = parseInt(margin);
-
-                        innerContent.css({
-                            'position': 'relative',
-                            'top': margin
-                        });
-                    });
-                });
-
-            }
-
-            setTimeout(function() {
-                scrollMenu();
-            }, 1000);
-
-            scrollMenu();
-
-            function lazyload(){
-                var lazy = jQuery( '.basel-lasy-image' );
-
-                lazy.each( function() {
-                    var _this = jQuery( this ),
-                        ImageSrc = _this.data( 'blazy-src' );
-
-                    if ( !_this.parent().hasClass( 'blazy-image-loaded' ) ) {
-                        _this.attr( 'src', ImageSrc );
-                        _this.parent().addClass('blazy-image-loading');
-                        _this.on('load', function() {
-                            _this.parent().removeClass('blazy-image-loading');
-                            _this.parent().addClass( 'blazy-image-loaded' );
-                        })
-                    }
-                })
-
-            }
-            jQuery( document ).on( 'mouseenter mouseleave mousemove','.dropdown-scroll', function( e ) {
-                lazyload();
-            });
-
-            var onePageMenuFix = function() {
-
-                var scrollToRow = function(hash) {
-                    var row = jQuery('#' + hash);
-
-                    if( row.length < 1 ) return;
-
-                    var position = row.offset().top;
-
-                    jQuery('html, body').stop().animate({
-                        scrollTop: position - basel_settings.one_page_menu_offset
-                    }, 800, function() {
-                        activeMenuItem(hash);
-                    });
-                };
-
-                var activeMenuItem = function(hash) {
-                    var itemHash;
-                    jQuery('.onepage-link').each(function() {
-                        itemHash = jQuery(this).find('> a').attr('href').split('#')[1];
-
-                        if( itemHash == hash ) {
-                            jQuery('.onepage-link').removeClass('current-menu-item');
-                            jQuery(this).addClass('current-menu-item');
-                        }
-
-                    });
-                };
-
-                jQuery('body').on('click', '.onepage-link > a', function(e) {
-                    var jQuerythis = jQuery(this),
-                        hash = jQuerythis.attr('href').split('#')[1];
-
-                    if( jQuery('#' + hash).length < 1 ) return;
-
-                    e.preventDefault();
-
-                    scrollToRow(hash);
-
-                    // close mobile menu
-                    jQuery('.basel-close-side').trigger('click');
-                });
-
-                if( jQuery('.onepage-link').length > 0 ) {
-                    jQuery('.entry-content > .vc_section, .entry-content > .vc_row').waypoint(function () {
-                        var hash = jQuery(this).attr('id');
-                        activeMenuItem(hash);
-                    }, { offset: 0 });
-
-                    // jQuery('.onepage-link').removeClass('current-menu-item');
-
-
-                    // URL contains hash
-                    var locationHash = window.location.hash.split('#')[1];
-
-                    if(window.location.hash.length > 1) {
-                        setTimeout(function(){
-                            scrollToRow(locationHash);
-                        }, 500);
-                    }
-
-                }
-            };
-            onePageMenuFix();
-        });
-    </script>
+    @include('scripts.scroll-menu')
     <noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
     <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
     <!--[if lte IE 9]>
@@ -235,177 +86,32 @@
 <div class="basel-close-side"></div>
 <a href="#" class="scrollToTop basel-tooltip">Role para cima</a>
 
-<script type="text/javascript">
-    var c=document.body.className;
-    c=c.replace(/woocommerce-no-js/, 'woocommerce-js');
-    document.body.className=c;
-</script>
-
-<script type="text/javascript">
-    var wpcf7  = {!! json_encode([
-        "apiSettings" => array(
-            "root" => route('contact.store'),
-            "namespace" => "form/contact-form-7/v1"
-        ),
-        "recaptcha" => array(
-            "messages" => array(
-                "empty" => "Verifique se você não é um robô."
-            ),
-            "namespace" => "contact-form-7/v1"
-        ),
-        "cached" => "1"
-    ]) !!};
-</script>
+@include('scripts.c-document-body')
+@include('scripts.wpcf7')
 <script type="text/javascript" src="{{asset('includes/contact-form-7/js/scripts.js')}}?ver=5.0.5"></script>
 <script type="text/javascript" src="{{asset('plugins/js-cookie/js.cookie.min.js')}}?ver=2.1.4"></script>
-<script type="text/javascript">
-    var woocommerce_params  = {!! json_encode([
-        "ajax_url" => "woocommerce_params",
-        "wc_ajax_url" => "woocommerce_params_2"
-    ]) !!};
-</script>
-
+@include('scripts.woocommerce_params')
 <script type="text/javascript" src="{{asset('plugins/frontend/avdesign.min.js')}}?ver=3.5.2"></script>
-<script type='text/javascript'>
-    var wc_cart_fragments_params = {!! json_encode([
-        "ajax_url" => route('cart'),
-        "wc_ajax_url" => route('cart.fragments'),
-        "fragment_name" => "wc_fragments_anselmo_velame",
-        "csrf_token" => csrf_token()
-    ]) !!};
-</script>
+@include('scripts.wc_cart_fragments_params')
 @stack('scripts')
 <script type="text/javascript" src="{{asset('plugins/cart/js/cart-fragments.min.js')}}?ver=3.5.2"></script>
 <script type="text/javascript" src="{{asset('plugins/yith-wishlist/js/jquery.selectBox.min.js')}}?ver=1.2.0"></script>
-<script type="text/javascript">
-    var yith_wcwl_l10n = {!! json_encode([
-        "ajax_url" => route('wishlist.store'),
-        "remove_url" => route('wishlist.remove'),
-        "redirect_to_cart" => "no",
-        "multi_wishlist" => "",
-        "hide_add_button" => "1",
-        "is_user_logged_in" => "",
-        "ajax_loader_url" => asset('plugins/yith-wishlist/images/ajax-loader.gif'),
-        "remove_from_wishlist_after_add_to_cart" => "yes",
-        "csrf_token" => csrf_token(),
-        "labels" => array(
-            "cookie_disabled" => "Lamentamos, mas esse recurso está disponível somente se os cookies estiverem ativados no seu navegador.",
-            "added_to_cart_message" => '<div class="woocommerce-message">Produto adicionado ao carrinho</div>'
-        ),
-        "actions" => array(
-            "add_to_wishlist_action" => "add_to_wishlist",
-            "remove_from_wishlist_action" => "remove_from_wishlist",
-            "move_to_another_wishlist_action" => "move_to_another_wishlsit",
-            "reload_wishlist_and_adding_elem_action" => "reload_wishlist_and_adding_elem"
-        )
-    ]) !!};
-</script>
-
+@include('scripts.yith_wcwl_l10n')
 <script type="text/javascript" src="{{asset('plugins/yith-wishlist/js/jquery.yith-wcwl.js')}}?ver=2.2.5"></script>
 <script type="text/javascript" src="{{asset('plugins/isotope/isotope.pkgd.min.js')}}?ver=5.6"></script>
 <script type="text/javascript" src="{{asset('plugins/waypoints/waypoints.min.js')}}?ver=5.6"></script>
 <script type="text/javascript" src="{{asset('plugins/js_composer/js/js_composer_front.min.js')}}?ver=5.6"></script>
-
-<script type="text/javascript">
-    var basel_settings = {!! json_encode([
-        "adding_to_cart" => "Carregando",
-        "added_to_cart" => "O produto foi adicionado com sucesso ao seu carrinho.",
-        "continue_shopping" => "Continue comprando",
-        "view_cart" => "Ver Carrinho",
-        "go_to_checkout" => "Finalizar",
-        "countdown_days" => "dias",
-        "countdown_hours" => "h",
-        "countdown_mins" => "m",
-        "countdown_sec" => "s",
-        "loading" => "Carregando...",
-        "close" => "Fechar (Esc)",
-        "share_fb" => "Compartilhe no Facebook",
-        "pin_it" => "Pin it",
-        "tweet" => "Tweet",
-        "download_image" => "Download da Imagem",
-        "wishlist" => "yes",
-        "cart_url" => route('cart'),
-        "ajaxurl" => route('cart.product'),
-        "search_url" => route('product.search'),
-        "quickview_url" => route('product.show'),
-        "compare_url" => route('compare.store'),
-        "sections_tabs" => route('section.tabs'),
-        "add_to_cart_action" => "widget",
-        "categories_toggle" => "yes",
-        "enable_popup" => "yes",
-        "popup_delay" => "2000",
-        "popup_event" => "scroll",
-        "popup_scroll" => "800",
-        "popup_pages" => "0",
-        "promo_popup_hide_mobile" => "yes",
-        "product_images_captions" => "no",
-        "all_results" => "Ver todos os resultados",
-        "product_gallery" => array(
-            "images_slider" => true,
-            "thumbs_slider" => array(
-                "enabled" =>  true,
-                "position" => "left",
-                "items" => array(
-                    "desktop" => 4,
-                    "desktop_small" => 3,
-                    "tablet" => 4,
-                    "mobile" => 3,
-                    "vertical_items" => 3
-                )
-            )
-        ),
-        "zoom_enable" => "yes",
-        "ajax_scroll" => "yes",
-        "ajax_scroll_class" => ".main-page-wrapper",
-        "ajax_scroll_offset" => "100",
-        "product_slider_auto_height" => "no",
-        "product_slider_autoplay" => "",
-        "ajax_add_to_cart" => "1",
-        "cookies_version" => "1",
-        "header_banner_version" => "1",
-        "header_banner_close_btn" => "1",
-        "header_banner_enabled" => "",
-        "promo_version" => "1",
-        "pjax_timeout" => "5000",
-        "split_nav_fix" => "",
-        "shop_filters_close" => "yes",
-        "sticky_desc_scroll" => "1",
-        "quickview_in_popup_fix" => "",
-        "one_page_menu_offset" => "150",
-        "csrf_token" => csrf_token(),9
-    ]) !!};
-    var basel_variation_gallery_data=null;
-</script>
+@include('scripts.basel_settings')
 <script type="text/javascript" src="{{asset('themes/js/theme-org.js')}}?ver=4.5.5"></script>
 <script type="text/javascript" src="{{asset('includes/underscore/js/underscore.min.js')}}?ver=1.8.3"></script>
-<script type='text/javascript'>
-    var _wpUtilSettings = {!! json_encode([
-        "ajax" => array(
-            "url" => "/underscore"
-        )
-    ]) !!};
-</script>
-
+@include('scripts._wpUtilSettings')
 <script type="text/javascript" src="{{asset('includes/util/avd-util.min.js')}}?ver=4.9.8"></script>
-<script type='text/javascript'>
-    var wc_add_to_cart_variation_params = {!! json_encode([
-        "wc_ajax_url" => "remover/item/?removed_item=1&wc-ajax=%%endpoint%%",
-        "i18n_no_matching_variations_text" => "Desculpe, nenhum produto corresponde à sua seleção. Escolha uma combinação diferente.",
-        "i18n_make_a_selection_text" => "Selecione a cor, o tamanho e a quantidade antes de prosseguir.",
-        "i18n_unavailable_text" => "Desculpe, este produto não está disponível. Escolha uma combinação diferente."
-    ]) !!};
-</script>
-
+@include('scripts.wc_add_to_cart_variation_params')
 <script type="text/javascript" src="{{asset('plugins/cart/js/add-to-cart-variation.min.js')}}?ver=3.5.2"></script>
-
 @include('extras.popup-newsletter-1')
-
 @include('extras.cookies-popup-1')
-
 @include('extras.btn-link-1')
-
 @include('extras.container-photo-swipe-ui-1')
-
 </body>
 </html>
 
