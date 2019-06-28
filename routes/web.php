@@ -38,7 +38,7 @@ Route::get('social', 'Web\SocialController@index')->name('social.auth');
 
 /*
 |--------------------------------------------------------------------------
-| Routes Sections
+| Routes Sections teste
 |--------------------------------------------------------------------------
 */
 Route::post('section-tabs', 'Web\SectionController@tabs')->name('section.tabs');
