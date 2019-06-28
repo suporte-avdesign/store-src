@@ -5,45 +5,90 @@ namespace AVD\Http\Controllers\Web;
 use Illuminate\Http\Request;
 use AVD\Http\Controllers\Controller;
 
+use AVD\Interfaces\Web\CategoryInterface as InterModel;
+use AVD\Interfaces\Web\SectionInterface as InterSection;
+use AVD\Interfaces\Web\ConfigSiteInterface as ConfigSite;
+use AVD\Interfaces\Web\ConfigProductInterface as ConfigProduct;
+use AVD\Interfaces\Web\ConfigKeywordInterface as ConfigKeyword;
+use AVD\Interfaces\Web\ConfigColorPositionInterface as ConfigImages;
+
 class CategoryController extends Controller
 {
+
+    public function __construct(
+        ConfigSite $configSite,
+        InterModel $interModel,
+        InterSection $interSection,
+        ConfigImages $configImages,
+        ConfigKeyword $configKeyword,
+        ConfigProduct $configProduct)
+    {
+        //$this->middleware('auth');
+
+        $this->configSite    = $configSite->setId(1);
+        $this->interModel    = $interModel;
+        $this->interSection  = $interSection;
+        $this->configImages  = $configImages;
+        $this->configKeyword = $configKeyword->random();
+        $this->configProduct = $configProduct->setId(1);
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index($slug)
     {
+
+        $menu          = $this->interSection->getMenu();
+        $category      = $this->interModel->get($slug);
+        $path          = env('APP_PANEL_URL');
+        $configImage   = $this->configImages->setName('default', 'N');
+        $photoUrl      = $path.$configImage->path;
+        $configSite    = $this->configSite;
+        $configProduct = $this->configProduct;
+        $configKeyword = $this->configKeyword;
+
+
+
+
         //sleep(10);
-        $_pjax = $request->input('_pjax');
-        $orderby = $request->input('orderby');
-        $min_price = $request->input('min_price');
-        $max_price = $request->input('max_price');
-        $filter_color = $request->input('filter_color');
-        $filter_size = $request->input('filter_size');
+        $_pjax = '';
+        $orderby = '';
+        $min_price = '';
+        $max_price = '';
+        $filter_color = '';
+        $filter_size = '';
 
         $num = 2;
         $page = 'page';
         $section = 'shop';
+        $parameter = '';
 
-        $str = '?';
-        foreach ($request->input() as $key => $value) {
-            $str .= $key.'='.$value.'&';
-        }
-
-        $parameter = substr($str, 0, -1);
 
         if ($_pjax) {
             return view('categories.category-1-filtered',
-                compact('section','page','num','_pjax','parameter','orderby','min_price','max_price','filter_color','filter_size')
+                compact('slug','section','page','num','_pjax','parameter','orderby','min_price','max_price','filter_color','filter_size')
             );
         }
         else {
-            return view('categories.category-1',
-                compact('section','page','num','_pjax','parameter','orderby','min_price','max_price','filter_color','filter_size')
+            return view('frontend.categories.category-1', compact(
+                'configSite',
+                'configKeyword',
+                'configProduct',
+                'configImage',
+                'category',
+                'photoUrl',
+                'menu',
+                'slug',
+                'section','page','num','_pjax','parameter','orderby','min_price','max_price','filter_color','filter_size')
             );
         }
+
     }
+
+
 
     /**
      * Show the form for creating a new resource.

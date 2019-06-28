@@ -2,82 +2,24 @@
 <div class="main-nav site-navigation basel-navigation menu-left" role="navigation">
     <div class="menu-main-navigation-container">
         <ul id="menu-main-navigation" class="menu">
-            <li id="menu-item-22134" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-22134 menu-item-design-default item-event-hover iitem-with-label item-label-hot">
-                <a href="#">Feminino <span class="menu-label menu-label-hot">Em ofertas</span></a>
-                <div class="sub-menu-dropdown color-scheme-dark">
-                    <div class="container">
-                        <ul class="sub-menu color-scheme-dark">
-                            <li id="menu-item-18908" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19908 menu-item-design-default item-event-hover">
-                                <a href="#">Categoria 1</a>
-                            </li>
-                            <li id="menu-item-24121" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-24121 menu-item-design-default item-event-hover item-with-label item-label-new">
-                                <a href="#">Categoria 2 <span class="menu-label menu-label-new">Novos</span></a>
-                            </li>
-                            <li id="menu-item-25122" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25122 menu-item-design-default item-event-hover">
-                                <a href="#">Categoria 3</a>
-                            </li>
-                            <li id="menu-item-26123" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-26123 menu-item-design-default item-event-hover item-with-label item-label-hot">
-                                <a href="#">Categoria 4 <span class="menu-label menu-label-hot">Saldão</span></a>
-                            </li>
-                            <li id="menu-item-27124" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27124 menu-item-design-default item-event-hover">
-                                <a href="#">Categoria 5</a>
-                            </li>
-                        </ul>
+            @forelse($menu as $section)
+                <li id="menu-item-{{$section->id}}" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-{{$section->id}} menu-item-design-default item-event-hover iitem-with-label item-label-hot">
+                    <a href="{{url(setRoute('section').$section->slug)}}">{{$section->name}} <!--<span class="menu-label menu-label-hot">Em ofertas</span>--></a>
+                    <div class="sub-menu-dropdown color-scheme-dark">
+                        <div class="container">
+                            <ul class="sub-menu color-scheme-dark">
+                                @forelse($section->categories as $category)
+                                    <li id="menu-item-{{$category->id}}" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-{{$category->id}} menu-item-design-default item-event-hover item-with-label item-label-new">
+                                        <a href="{{url(setRoute('category').$category->slug)}}">{{$category->name}} <!--<span class="menu-label menu-label-new">Novos</span>--></a>
+                                    </li>
+                                @empty
+                                @endforelse
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </li>
-
-            <li id="menu-item-22135" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-22135 menu-item-design-default item-event-hover item-with-label item-label-new">
-                <a href="#">Masculino <span class="menu-label menu-label-new">Lançamentos</span></a>
-                <div class="sub-menu-dropdown color-scheme-dark">
-                    <div class="container">
-                        <ul class="sub-menu color-scheme-dark">
-                            <li id="menu-item-19908" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19908 menu-item-design-default item-event-hover">
-                                <a href="#">Categoria 1</a>
-                            </li>
-                            <li id="menu-item-20121" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20121 menu-item-design-default item-event-hover item-with-label item-label-new">
-                                <a href="#">Categoria 2 <span class="menu-label menu-label-new">New</span></a>
-                            </li>
-                            <li id="menu-item-20122" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20122 menu-item-design-default item-event-hover">
-                                <a href="#">Categoria 3</a>
-                            </li>
-                            <li id="menu-item-20123" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20123 menu-item-design-default item-event-hover item-with-label item-label-hot">
-                                <a href="#">Categoria 4 <span class="menu-label menu-label-hot">Saldão</span></a>
-                            </li>
-                            <li id="menu-item-20124" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20124 menu-item-design-default item-event-hover">
-                                <a href="#">Categoria 5</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </li>
-
-            <li id="menu-item-22126" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-22126 menu-item-design-default item-event-hover item-with-label item-label-new">
-                <a href="#">Infantil <span class="menu-label menu-label-new">Lançamentos</span></a>
-                <div class="sub-menu-dropdown color-scheme-dark">
-                    <div class="container">
-                        <ul class="sub-menu color-scheme-dark">
-                            <li id="menu-item-19911" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19911 menu-item-design-default item-event-hover">
-                                <a href="#">Categoria 1</a>
-                            </li>
-                            <li id="menu-item-27121" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27121 menu-item-design-default item-event-hover">
-                                <a href="#">Categoria 2</a>
-                            </li>
-                            <li id="menu-item-20145" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20145 menu-item-design-default item-event-hover">
-                                <a href="#">Categoria 3</a>
-                            </li>
-                            <li id="menu-item-20172" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20172 menu-item-design-default item-event-hover">
-                                <a href="#">Categoria 4 </a>
-                            </li>
-                            <li id="menu-item-20173" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20173 menu-item-design-default item-event-hover">
-                                <a href="#">Categoria 5</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </li>
-
-
+                </li>
+            @empty
+            @endforelse
             <li id="menu-item-26107" class="hidden-nav-button menu-item menu-item-type-custom menu-item-object-custom menu-item-26107 menu-item-design-default item-event-hover callto-btn">
                 <a href="#">Black Friday</a>
             </li>

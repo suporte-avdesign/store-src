@@ -1,5 +1,51 @@
 <?php
 
+use AVD\Interfaces\Web\ConfigKeywordInterface as Keyword;
+
+
+
+
+/**
+ * Return config language
+ */
+if ( !function_exists('constLang'))
+{
+    function constLang($key)
+    {
+
+        return config('lang_pt-BR.'. $key);
+    }
+}
+
+
+/**
+ * Route Section
+ *
+ * @param  string $title
+ */
+if (! function_exists('setRoute')) {
+    function setRoute($route){
+
+        $keyword = app(Keyword::class);
+
+        switch ($route) {
+            case 'section':
+                return $keyword->routeSection();
+                break;
+            case 'category':
+                return $keyword->routeCategory();
+                break;
+            case 'product':
+                return $keyword->routeProduct();
+                break;
+            case 'color':
+                return $keyword->routeColor();
+                break;
+        }
+    }
+}
+
+
 
 /**
  * Valor em real
@@ -11,6 +57,38 @@ if (! function_exists('setReal')) {
 		return number_format((float)$value,2,',','.');
 	}
 }
+
+/**
+ * Porcentagem
+ *
+ * @param  string $numero
+ */
+if (! function_exists('setPercent')) {
+    function setPercent($value){
+        return number_format((float)$value,2,'.','.');
+    }
+}
+
+
+/**
+ * Limitar o texto de uma string
+ *
+ * @param  string $numero
+ */
+if (! function_exists('limitText')) {
+    function limitText($str, $limit=100, $clear=true, $point=false){
+        if($clear = true){
+            $str = strip_tags($str);
+        }
+        if(strlen($str) <= $limit){
+            return $str;
+        }
+        $limit_str = substr($str, 0, $limit);
+        $last = strrpos($limit_str, ' ');
+        return substr($limit_str, 0, $last).'...';
+    }
+}
+
 
 /**
  * Trocar números por letras e vice versa.
@@ -54,6 +132,20 @@ if (! function_exists('numLetter')) {
 }
 
 /**
+ * Define path images
+ *
+ * @var string str
+ * @return  void
+ */
+if (! function_exists('urf')) {
+    function urf($str){
+
+        return env('APP_URF').'/'.$str;
+
+    }
+}
+
+/**
  * Verifica se existe uma string no array.
  *
  * @var string str
@@ -68,4 +160,44 @@ if (! function_exists('strInArray')) {
 			return false;
 		}
 	}
-}	
+}
+
+if (! function_exists('ary_diff')) {
+    function ary_diff( $ary_1, $ary_2 ) {
+        // compare the value of 2 array
+        // get differences that in ary_1 but not in ary_2
+        // get difference that in ary_2 but not in ary_1
+        // return the unique difference between value of 2 array
+        $diff = array();
+
+        // get differences that in ary_1 but not in ary_2
+        foreach ( $ary_1 as $v1 ) {
+            $flag = 0;
+            foreach ( $ary_2 as $v2 ) {
+                $flag |= ( $v1 == $v2 );
+                if ( $flag ) break;
+            }
+            if ( !$flag ) array_push( $diff, $v1 );
+        }
+
+        // get difference that in ary_2 but not in ary_1
+        foreach ( $ary_2 as $v2 ) {
+            $flag = 0;
+            foreach ( $ary_1 as $v1 ) {
+                $flag |= ( $v1 == $v2 );
+                if ( $flag ) break;
+            }
+            if ( !$flag && !in_array( $v2, $diff ) ) array_push( $diff, $v2 );
+        }
+
+        return $diff;
+    }
+
+}
+
+
+
+
+
+
+

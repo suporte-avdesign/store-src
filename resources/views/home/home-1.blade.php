@@ -64,7 +64,6 @@
     <noscript><style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript>
 </head>
 <body class="page-template-default page page-id-25099 logged-in woocommerce-no-js wrapper-full-width global-cart-design-1 global-search-full-screen global-header-simple mobile-nav-from-left basel-light catalog-mode-off categories-accordion-on global-wishlist-enable basel-top-bar-on basel-ajax-shop-on basel-ajax-search-on enable-sticky-header sticky-header-clone offcanvas-sidebar-mobile offcanvas-sidebar-tablet wpb-js-composer js-comp-ver-5.6 vc_responsive">
-
 @include('messages.message-1-body')
 @include('auth.login-1-sidbar')
 @include('headers.tops.top-1')
@@ -111,8 +110,10 @@
 
     </div>
 
+
     <!-- FOOTER -->
     @include('footers.footer-1')
+
 
 
 </div> <!-- end wrapper -->
@@ -151,17 +152,17 @@
     ]) !!};
 </script>
 <script type="text/javascript" src="{{asset('includes/contact-form-7/js/scripts.js')}}?ver=5.0.5"></script>
-<script type="text/javascript" src="{{asset('plugins/revslider/js/jquery.themepunch.tools.min.js')}}?ver=5.4.8.1" defer="defer"></script>
-<script type="text/javascript" src="{{asset('plugins/revslider/js/jquery.themepunch.revolution.min.js')}}?ver=5.4.8.1" defer="defer"></script>
-<script type="text/javascript" src="{{asset('plugins/revslider/js/extensions/revolution.extension.actions.min.js')}}?ver=5.4.8.1"></script>
-<script type="text/javascript" src="{{asset('plugins/revslider/js/extensions/revolution.extension.carousel.min.js')}}?ver=5.4.8.1"></script>
-<script type="text/javascript" src="{{asset('plugins/revslider/js/extensions/revolution.extension.kenburn.min.js')}}?ver=5.4.8.1"></script>
-<script type="text/javascript" src="{{asset('plugins/revslider/js/extensions/revolution.extension.layeranimation.min.js')}}?ver=5.4.8.1"></script>
-<script type="text/javascript" src="{{asset('plugins/revslider/js/extensions/revolution.extension.migration.min.js')}}?ver=5.4.8.1"></script>
-<script type="text/javascript" src="{{asset('plugins/revslider/js/extensions/revolution.extension.navigation.min.js')}}?ver=5.4.8.1"></script>
-<script type="text/javascript" src="{{asset('plugins/revslider/js/extensions/revolution.extension.parallax.min.js')}}?ver=5.4.8.1"></script>
-<script type="text/javascript" src="{{asset('plugins/revslider/js/extensions/revolution.extension.slideanims.min.js')}}?ver=5.4.8.1"></script>
-<script type="text/javascript" src="{{asset('plugins/revslider/js/extensions/revolution.extension.video.min.js')}}?ver=5.4.8.1"></script>
+<script type="text/javascript" src="{{asset('plugins/revslider/js/jquery.themepunch.tools.min.js')}}" defer="defer"></script>
+<script type="text/javascript" src="{{asset('plugins/revslider/js/jquery.themepunch.revolution.min.js')}}" defer="defer"></script>
+<script type="text/javascript" src="{{asset('plugins/revslider/js/extensions/revolution.extension.actions.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('plugins/revslider/js/extensions/revolution.extension.carousel.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('plugins/revslider/js/extensions/revolution.extension.kenburn.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('plugins/revslider/js/extensions/revolution.extension.layeranimation.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('plugins/revslider/js/extensions/revolution.extension.migration.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('plugins/revslider/js/extensions/revolution.extension.navigation.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('plugins/revslider/js/extensions/revolution.extension.parallax.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('plugins/revslider/js/extensions/revolution.extension.slideanims.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('plugins/revslider/js/extensions/revolution.extension.video.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('plugins/js-cookie/js.cookie.min.js')}}?ver=2.1.4"></script>
 <script type="text/javascript">
     var woocommerce_params  = {!! json_encode([
@@ -278,6 +279,7 @@
     ]) !!};
     var basel_variation_gallery_data=null;
 </script>
+
 <script type="text/javascript" src="{{asset('themes/js/theme-org.js')}}?ver=4.5.5"></script>
 <script type="text/javascript" src="{{asset('banners')}}?ver=1.8.3"></script>
 <script type='text/javascript'>
@@ -296,7 +298,9 @@
         "i18n_unavailable_text" => "Desculpe, este produto não está disponível. Escolha uma combinação diferente."
     ]) !!};
 </script>
+
 <script type="text/javascript" src="{{asset('plugins/cart/js/add-to-cart-variation.min.js')}}?ver=3.5.2"></script>
+
 <script>
     var htmlDiv = document.getElementById("rs-plugin-settings-inline-css");
     var htmlDivCss = "";
@@ -308,6 +312,8 @@
         document.getElementsByTagName("head")[0].appendChild(htmlDiv.childNodes[0]);
     }
 </script>
+
+
 <script type="text/javascript">
     if (setREVStartSize !== undefined) setREVStartSize({
         c: '#rev_slider_31_1',
@@ -333,7 +339,7 @@
             } else {
                 revapi31 = tpj("#rev_slider_31_1").show().revolution({
                     sliderType: "standard",
-                    jsFileLocation: "//demo.xtemos.com/basel/wp-content/plugins/revslider/public/assets/js/",
+                    jsFileLocation: "{{asset('plugins/revslider/js/')}}",
                     sliderLayout: "auto",
                     dottedOverlay: "none",
                     delay: 10000,
@@ -402,7 +408,7 @@
                     fallbacks: {
                         simplifyAll: "off",
                         nextSlideOnWindowFocus: "off",
-                        disableFocusListener: false,
+                        disableFocusListener: false
                     }
                 });
             }; /* END OF revapi call */
@@ -410,6 +416,7 @@
         }; /* END OF ON LOAD FUNCTION */
     }()); /* END OF WRAPPING FUNCTION */
 </script>
+
 
 @include('extras.popup-newsletter-1')
 

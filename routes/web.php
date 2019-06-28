@@ -15,7 +15,6 @@
 Route::get('/', 'Web\HomeController@index')->name('home');
 
 
-Route::get('categorias', 'Web\CategoryController@index')->name('category');
 
 Route::get('404', function () {
     return view('errors.404');
@@ -38,9 +37,13 @@ Route::get('social', 'Web\SocialController@index')->name('social.auth');
 
 /*
 |--------------------------------------------------------------------------
-| Routes Sections teste
+| Routes Sections
 |--------------------------------------------------------------------------
 */
+Route::get(setRoute('section').'{slug}', 'Web\SectionController@index');
+Route::get(setRoute('section').'{slug}/filtrar/', 'Web\SectionController@filter');
+Route::get(setRoute('section').'{slug}/{pag}/{num}/', 'Web\SectionController@infinitScroll');
+
 Route::post('section-tabs', 'Web\SectionController@tabs')->name('section.tabs');
 
 
@@ -50,17 +53,23 @@ Route::post('section-tabs', 'Web\SectionController@tabs')->name('section.tabs');
 | Routes Categories
 |--------------------------------------------------------------------------
 */
-Route::get('categorias/filtrar/', 'Web\CategoryController@index')->name('category.filter');
-Route::get('categories/{section}/{pag}/{num}/', 'Web\CategoryController@infinitScroll')->name('category.infinit');
+Route::get(setRoute('category').'{slug}', 'Web\CategoryController@index');
+Route::get(setRoute('category').'{slug}/filtrar/', 'Web\CategoryController@filter');
+Route::get(setRoute('category').'{slug}/{pag}/{num}/', 'Web\CategoryController@infinitScroll');
 /*
 |--------------------------------------------------------------------------
 | Routes Products
 |--------------------------------------------------------------------------
 */
-Route::get('product/{category}/{section}/{slug}', 'Web\ProductController@index')->name('product');
-Route::post('product/show', 'Web\ProductController@show')->name('product.show');
-Route::get('product/search', 'Web\ProductController@search')->name('product.search');
 
+Route::get(setRoute('product').'search', 'Web\ImageColorController@search');
+/*
+|--------------------------------------------------------------------------
+| Routes Colors
+|--------------------------------------------------------------------------
+*/
+Route::get(setRoute('color').'{slug}', 'Web\ImageColorController@index');
+Route::post(setRoute('color').'show', 'Web\ImageColorController@show');
 
 /*
 |--------------------------------------------------------------------------

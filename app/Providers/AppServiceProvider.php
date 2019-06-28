@@ -17,6 +17,22 @@ class AppServiceProvider extends ServiceProvider
             $this->app['request']->server->set('HTTPS', true);
         }
 
+        $models = array(
+            'Category',
+            'ConfigKeyword',
+            'ConfigImages',
+            'ConfigColorPosition',
+            'ConfigProduct',
+            'ConfigSite',
+            'ImageColor',
+            'Section',
+            'SocialShare'
+        );
+
+        foreach ($models as $model) {
+            $this->app->bind("AVD\Interfaces\Web\\{$model}Interface", "AVD\Repositories\Web\\{$model}Repository");
+        }
+
     }
 
     /**

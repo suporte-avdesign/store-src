@@ -5,15 +5,90 @@ namespace AVD\Http\Controllers\Web;
 use Illuminate\Http\Request;
 use AVD\Http\Controllers\Controller;
 
+use AVD\Interfaces\Web\SectionInterface as InterModel;
+use AVD\Interfaces\Web\ConfigSiteInterface as ConfigSite;
+use AVD\Interfaces\Web\CategoryInterface as InterCategory;
+use AVD\Interfaces\Web\ConfigProductInterface as ConfigProduct;
+use AVD\Interfaces\Web\ConfigKeywordInterface as ConfigKeyword;
+use AVD\Interfaces\Web\ConfigColorPositionInterface as ConfigImages;
+
+
 class SectionController extends Controller
 {
+    private $view = 'frontend.sections';
 
-
-
-
-    public function index()
+    public function __construct(
+        ConfigSite $configSite,
+        InterModel $interModel,
+        ConfigImages $configImages,
+        InterCategory $interCategory,
+        ConfigKeyword $configKeyword,
+        ConfigProduct $configProduct)
     {
-        //
+        //$this->middleware('auth');
+
+        $this->configSite    = $configSite->setId(1);
+        $this->interModel    = $interModel;
+        $this->configImages  = $configImages;
+        $this->interCategory = $interCategory;
+        $this->configKeyword = $configKeyword->random();
+        $this->configProduct = $configProduct->setId(1);
+    }
+
+
+    public function index($slug)
+    {
+
+
+        $menu          = $this->interModel->getMenu();
+        $section       = $this->interModel->get($slug);
+        $path          = env('APP_PANEL_URL');
+        $categories    = $this->interCategory->getAll($this->configSite, $this->configProduct, $section->id);
+        $configImage   = $this->configImages->setName('default', 'N');
+        $photoUrl      = $path.$configImage->path;
+        $configSite    = $this->configSite;
+        $configProduct = $this->configProduct;
+        $configKeyword = $this->configKeyword;
+
+
+        //dd($configKeyword);
+
+
+
+        //sleep(10);
+        $_pjax = '';
+        $orderby = '';
+        $min_price = '';
+        $max_price = '';
+        $filter_color = '';
+        $filter_size = '';
+
+        $num = 2;
+        $page = 'page';
+        $parameter = '';
+
+
+        if ($_pjax) {
+            return view("{$this->view}.section-1-filtered",
+                compact('slug','section','page','num','_pjax','parameter','orderby','min_price','max_price','filter_color','filter_size')
+            );
+        }
+        else {
+
+            return view("{$this->view}.section-1",compact(
+                'configSite',
+                'configKeyword',
+                'configProduct',
+                'configImage',
+                'menu',
+                'slug',
+                'section',
+                'categories',
+                'photoUrl',
+                'page',
+                'num','_pjax','parameter','orderby','min_price','max_price','filter_color','filter_size')
+            );
+        }
     }
 
     public function tabs(Request $request)
