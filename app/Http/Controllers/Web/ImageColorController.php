@@ -87,13 +87,15 @@ class ImageColorController extends Controller
         foreach ($colors as $color) {
             foreach ($color->grids as $item) {
                 if ($product->kit == 1){
+                    $attribute_pa_color = Str::slug($color->color).'|'.$item->id;
                     $attribute_pa_size = $item->units.Str::slug($product->measure);
                 } else {
+                    $attribute_pa_color = Str::slug($color->color);
                     $attribute_pa_size = $item->grid;
                 }
                 $out[] = array(
                     "attributes" => array(
-                        "attribute_pa_color" => Str::slug($color->color),
+                        "attribute_pa_color" => $attribute_pa_color,
                         "attribute_pa_size" => $attribute_pa_size
                     ),
                     "availability_html" => "",
@@ -145,6 +147,10 @@ class ImageColorController extends Controller
                 );
             }
         }
+
+
+        //dd($out);
+
         /*
         $attributes = array();
         if ($product->kit == 1) {
@@ -170,7 +176,7 @@ class ImageColorController extends Controller
         */
 
 
-       //dd($out);
+
 
         // Substituir aspas pelo código html <form product_variations"[{}]"
         //$product_variations = str_replace('"', "&quot;", json_encode($out));

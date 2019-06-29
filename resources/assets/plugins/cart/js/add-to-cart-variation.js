@@ -65,6 +65,8 @@
         form.variationData = form.$form.data( 'product_variations' );
         form.useAjax       = false === form.variationData;
         form.$form.trigger( 'check_variations' );
+
+
     };
 
     /**
@@ -74,6 +76,7 @@
         event.preventDefault();
         event.data.variationForm.$form.find( '.single_add_to_cart_button' ).removeClass( 'wc-variation-is-unavailable' ).addClass( 'disabled wc-variation-selection-needed' );
         event.data.variationForm.$form.find( '.woocommerce-variation-add-to-cart' ).removeClass( 'woocommerce-variation-add-to-cart-enabled' ).addClass( 'woocommerce-variation-add-to-cart-disabled' );
+
     };
 
     /**
@@ -99,7 +102,7 @@
 
             if ( $( this ).is('.wc-variation-is-unavailable') ) {
                 window.alert( wc_add_to_cart_variation_params.i18n_unavailable_text );
-            } else if ( $( this ).is('.wc-variation-selection-needed') ) {
+            } else  if ( $( this ).is('.wc-variation-selection-needed') ) {
                 window.alert( wc_add_to_cart_variation_params.i18n_make_a_selection_text );
             }
         }
@@ -128,9 +131,11 @@
      * Looks for matching variations for current selected attributes.
      */
     VariationForm.prototype.onFindVariation = function( event ) {
+
         var form              = event.data.variationForm,
             attributes        = form.getChosenAttributes(),
             currentAttributes = attributes.data;
+            //console.log('onFindVariation '+attributes);
 
         if ( attributes.count === attributes.chosenCount ) {
             if ( form.useAjax ) {
@@ -435,6 +440,7 @@
             'chosenCount': chosen,
             'data'       : data
         };
+
     };
 
     /**

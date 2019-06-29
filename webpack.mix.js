@@ -57,7 +57,7 @@ mix.scripts('resources/assets/plugins/js_composer/js/js_composer_front.min.js', 
 mix.scripts('resources/assets/themes/js/theme-org.js', 'public/themes/js/theme-org.js');
 mix.scripts('resources/assets/includes/underscore/js/underscore.min.js', 'public/includes/underscore/js/underscore.min.js');
 mix.scripts('resources/assets/includes/util/avd-util.min.js', 'public/includes/util/avd-util.min.js');
-mix.scripts('resources/assets/plugins/cart/js/add-to-cart-variation.min.js', 'public/plugins/cart/js/add-to-cart-variation.min.js');
+mix.scripts('resources/assets/plugins/cart/js/add-to-cart-variation.js', 'public/plugins/cart/js/add-to-cart-variation.min.js');
 
 //Product
 mix.scripts('resources/assets/plugins/zoom/js/jquery.zoom.js', 'public/plugins/zoom/js/jquery.zoom.min.js');

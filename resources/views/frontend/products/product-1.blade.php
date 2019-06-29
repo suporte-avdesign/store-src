@@ -95,7 +95,7 @@
                                                 <!-- Outros-->
                                                 <div class="product_meta">
                                                     <span class="sku_wrapper">SKU: <span class="sku">N/F</span></span>
-                                                    <span class="posted_in">Categoria: <a href="#" rel="tag">Feminino</a></span>
+                                                    <span class="posted_in">Categoria: <a href="#" rel="tag">{{$category->name}}</a></span>
                                                 </div>
                                                 @if($configSite->social_share == 1)
                                                     @include('frontend.products.includes.social-share-1')
@@ -127,6 +127,7 @@
     var wc_single_product_params = {!! json_encode([
         "i18n_required_rating_text" => "Por favor, selecione uma classificação",
         "review_rating_required" => "yes",
+        "product_kit" => ($product->kit == 1 ? "yes" : "not"),
         "flexslider" => array(
             "rtl" => false,
             "animation" => "slide",
