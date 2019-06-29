@@ -86,10 +86,15 @@ class ImageColorController extends Controller
 
         foreach ($colors as $color) {
             foreach ($color->grids as $item) {
+                if ($product->kit == 1){
+                    $attribute_pa_size = $item->units.Str::slug($product->measure);
+                } else {
+                    $attribute_pa_size = $item->grid;
+                }
                 $out[] = array(
                     "attributes" => array(
-                        "attribute_pa_color" => Str::slug($color->color, '-'),
-                        "attribute_pa_size" => $item->grid
+                        "attribute_pa_color" => Str::slug($color->color),
+                        "attribute_pa_size" => $attribute_pa_size
                     ),
                     "availability_html" => "",
                     "backorders_allowed" => false,
@@ -140,6 +145,32 @@ class ImageColorController extends Controller
                 );
             }
         }
+        /*
+        $attributes = array();
+        if ($product->kit == 1) {
+            foreach ($out as $val) {
+                $array1[] = $val['attributes'];
+            }
+
+            foreach ($array1 as $attr) {
+                $array2['pa_size'][] = $attr['attribute_pa_size'];
+                $array2['name'][] = $attr['attribute_size_name'];
+            }
+
+            $array3['name'] = array_unique($array2['name']);
+            $array3['pa_size'] = array_unique($array2['pa_size']);
+            $pa_name  = collect($array3['name'])->values();
+            $pa_size  = collect($array3['pa_size'])->values();
+
+            for ($i = 0; $i <= count($pa_size)-1; $i++) {
+                $attributes[$i] = array($pa_size[$i] => $pa_name[$i]);
+            }
+        }
+
+        */
+
+
+       //dd($out);
 
         // Substituir aspas pelo código html <form product_variations"[{}]"
         //$product_variations = str_replace('"', "&quot;", json_encode($out));
@@ -253,9 +284,12 @@ class ImageColorController extends Controller
 
 
         return view('frontend.products.product-1', compact(
-            'configSite',
+            'product_variations',
             'configKeyword',
             'configProduct',
+            'schema_org',
+            'configSite',
+            'attributes',
             'category',
             'section',
             'product',
@@ -263,9 +297,7 @@ class ImageColorController extends Controller
             'colors',
             'data',
             'path',
-            'menu',
-            'product_variations',
-            'schema_org'
+            'menu'
         ));
 
     }
@@ -375,26 +407,7 @@ class ImageColorController extends Controller
     }
 
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.
@@ -895,37 +908,4 @@ class ImageColorController extends Controller
         return view('products.product-1-view', compact('product_variations'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

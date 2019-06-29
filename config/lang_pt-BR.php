@@ -124,6 +124,7 @@ return [
     'note' => 'Observação',
     'of' => 'de',
     'offer' => 'Oferta',
+    'on_offer' => 'Em Oferta',
     'order' => 'Ordem',
     'orderby' => 'Ordenar por',
     'order_false' => 'Não foi possível alterar a ordem',

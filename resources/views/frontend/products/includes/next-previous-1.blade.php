@@ -88,7 +88,7 @@
                                     {{$next->name}}<span></span>
                                 </a>
                                 <span class="price">
-                                    @foreach($previous->prices as $nextprice)
+                                    @foreach($next->prices as $nextprice)
                                         @if($nextprice->profile == $configProduct->price_default)
                                             @if($product->offer == 1)
                                                 <del>

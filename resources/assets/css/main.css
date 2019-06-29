@@ -15547,8 +15547,8 @@ p.demo_store {
   font-size: 16px; }
 .single-product-content .entry-title {
   font-family: "Lora", "MS Sans Serif", Geneva, sans-serif;
-  font-size: 38px;
-  margin-bottom: 10px; }
+  font-size: 20px;
+  margin-bottom: 2px; }
 .single-product-content .woocommerce-breadcrumb,
 .single-product-content .yoast-breadcrumb {
   margin-bottom: 40px;
@@ -15573,7 +15573,7 @@ p.demo_store {
 .single-product-content p.price {
   margin-bottom: 12px; }
 .single-product-content .price {
-  font-size: 28px; }
+  font-size: 18px; }
   .single-product-content .price del {
     font-size: 16px; }
     .single-product-content .price del .amount {

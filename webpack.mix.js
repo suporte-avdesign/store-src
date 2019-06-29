@@ -60,8 +60,8 @@ mix.scripts('resources/assets/includes/util/avd-util.min.js', 'public/includes/u
 mix.scripts('resources/assets/plugins/cart/js/add-to-cart-variation.min.js', 'public/plugins/cart/js/add-to-cart-variation.min.js');
 
 //Product
-mix.scripts('resources/assets/plugins/zoom/js/jquery.zoom.min.js', 'public/plugins/zoom/js/jquery.zoom.min.js');
-mix.scripts('resources/assets/plugins/product/js/single-product.min.js', 'public/plugins/product/js/single-product.min.js');
+mix.scripts('resources/assets/plugins/zoom/js/jquery.zoom.js', 'public/plugins/zoom/js/jquery.zoom.min.js');
+mix.scripts('resources/assets/plugins/product/js/single-product.js', 'public/plugins/product/js/single-product.min.js');
 
 /*
 mix.sass([
