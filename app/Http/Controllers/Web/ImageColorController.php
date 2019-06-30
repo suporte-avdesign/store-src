@@ -41,7 +41,12 @@ class ImageColorController extends Controller
     }
 
 
-
+    /**
+     * Date: 06/29/2019
+     * 
+     * @param $slug
+     * @return View
+     */
     public function index($slug)
     {
         $url = env('APP_PANEL_URL');
@@ -64,18 +69,17 @@ class ImageColorController extends Controller
         $configProduct = $this->configProduct;
         $configKeyword = $this->configKeyword;
 
-
-        $data = $this->interModel->get($slug);
-
+        $data     = $this->interModel->get($slug);
         $section  = $data->product->section()->first();
         $category = $data->product->category()->first();
         $product  = $data->product()->first();
         $colors   = $product->images;
-
+        $offer_cash = '';
+        $price_cash = '';
         foreach ($data->product->prices as $value) {
             if ($value->profile == $configProduct->price_default) {
-                $display_price = $value->price_cash;
-                $display_regular_price = $value->price_card;
+                $price = $value->price_cash;
+                $regular_price = $value->price_card;
 
                 if ($product->offer == 1) {
                     $price_cash = $value->price_cash;
@@ -87,207 +91,22 @@ class ImageColorController extends Controller
         foreach ($colors as $color) {
             foreach ($color->grids as $item) {
                 if ($product->kit == 1){
-                    $attribute_pa_color = Str::slug($color->color).'|'.$item->id;
-                    $attribute_pa_size = $item->units.Str::slug($product->measure);
+                    $pa_color = Str::slug($color->color).'|'.$item->id;
+                    $pa_size = $item->units.Str::slug($product->measure);
                 } else {
-                    $attribute_pa_color = Str::slug($color->color);
-                    $attribute_pa_size = $item->grid;
+                    $pa_color = Str::slug($color->color);
+                    $pa_size = $item->grid;
                 }
-                $out[] = array(
-                    "attributes" => array(
-                        "attribute_pa_color" => $attribute_pa_color,
-                        "attribute_pa_size" => $attribute_pa_size
-                    ),
-                    "availability_html" => "",
-                    "backorders_allowed" => false,
-                    "dimensions" => array(
-                        "length" => "",
-                        "width" => "",
-                        "height" => ""
-                    ),
-                    "dimensions_html" => "N/A",
-                    "display_price" => (int) $display_price,
-                    "display_regular_price" => (int) $display_regular_price,
-                    "image" => array(
-                        "title" => $data->product->name,
-                        "caption" => "",
-                        "url" => asset($path['G'].$color->image),
-                        "alt" => "",
-                        "src" => asset($path['G'].$color->image),
-                        "srcset" => asset($path['Z'].$color->image) . " 1000w, " . asset($path['G'].$color->image) . " 800w, " . asset($path['N'].$color->image) . " 370w, " . asset($path['T'].$color->image) . " 100w",
-                        "sizes" => "(max-width => 870px) 100vw, 870px",
-                        "full_src" => asset($path['Z'].$color->image),
-                        "full_src_w" => 1000,
-                        "full_src_h" => 1000,
-                        "gallery_thumbnail_src" => asset($path['T'].$color->image),
-                        "gallery_thumbnail_src_w" => 800,
-                        "gallery_thumbnail_src_h" => 800,
-                        "thumb_src" => asset($path['N'].$color->image),
-                        "thumb_src_w" => 370,
-                        "thumb_src_h" => 370,
-                        "src_w" => 800,
-                        "src_h" => 800
-                    ),
-                    "image_id" => "{$data->id}",
-                    "is_downloadable" => false,
-                    "is_in_stock" => true,
-                    "is_purchasable" => true,
-                    "is_sold_individually" => "no",
-                    "is_virtual" => false,
-                    "max_qty" => $item->stock,
-                    "min_qty" => 1,
-                    "price_html" => "",
-                    "sku" => "",
-                    "variation_description" => "",
-                    "variation_id" => $item->id,
-                    "variation_is_active" => true,
-                    "variation_is_visible" => true,
-                    "weight" => "",
-                    "weight_html" => "N/A"
-                );
+
+                $attributes[] = $this->getAttributes($pa_color, $pa_size, $price, $regular_price, $data, $path, $color, $item);
             }
         }
 
-
-        //dd($out);
-
-        /*
-        $attributes = array();
-        if ($product->kit == 1) {
-            foreach ($out as $val) {
-                $array1[] = $val['attributes'];
-            }
-
-            foreach ($array1 as $attr) {
-                $array2['pa_size'][] = $attr['attribute_pa_size'];
-                $array2['name'][] = $attr['attribute_size_name'];
-            }
-
-            $array3['name'] = array_unique($array2['name']);
-            $array3['pa_size'] = array_unique($array2['pa_size']);
-            $pa_name  = collect($array3['name'])->values();
-            $pa_size  = collect($array3['pa_size'])->values();
-
-            for ($i = 0; $i <= count($pa_size)-1; $i++) {
-                $attributes[$i] = array($pa_size[$i] => $pa_name[$i]);
-            }
-        }
-
-        */
-
-
-
-
-        // Substituir aspas pelo código html <form product_variations"[{}]"
-        //$product_variations = str_replace('"', "&quot;", json_encode($out));
-        $product_variations = json_encode($out);
-
-        /**
-         * Gerar json schema_org
-         * https://schema.org/
-         */
-        $itemListElement[] = array(
-            "@type" => "ListItem",
-            "position" => 1,
-            "item" => array(
-                "name" => "Home",
-                "@id" =>  route('home')
-            )
-        );
-        $itemListElement[] = array(
-            "@type" => "ListItem",
-            "position" => 2,
-            "item" => array(
-                "name" => "sandalias",
-                "@id" =>  route('home') //route category
-            )
-        );
-        $itemListElement[] = array(
-            "@type" => "ListItem",
-            "position" => 3,
-            "item" => array(
-                "name" => "feminino",
-                "@id" =>  route('home') //route section
-            )
-        );
-        $itemListElement[] = array(
-            "@type" => "ListItem",
-            "position" => 4,
-            "item" => array(
-                "name" => "produto",
-                "@id" =>  route('home') //route product
-            )
-        );
-        $offer = array();
-        if ($product->offer == 1) {
-            $offer[] = array(
-                "@type" => "Offer",
-                "price" => "45,00",
-                "priceSpecification" => array(
-                    "price" => "45,00",
-                    "priceCurrency" => "BRL",
-                    "valueAddedTaxIncluded" => "false"
-                ),
-                "priceCurrency" => "BRL",
-                "availability" => "https://schema.org/InStock",
-                "url" => route('home'), // route product
-                "seller" => array(
-                    "@type" => "Organization",
-                    "name" => "{$product->name}",
-                    "url" => url(setRoute('color') . $data->slug)
-                )
-            );
-        }
-
-
-        $graph[] = array(
-            "@context" => "https://schema.org/",
-            "@type" => "BreadcrumbList",
-            "itemListElement" => $itemListElement
-        );
-        $graph[] = array(
-            "@context" => "https://schema.org/",
-            "@type" => "Product",
-            "@id" => url(setRoute('color').$data->slug),
-            "name" => "{$product->name}",
-            "image" => asset($path['G'].$data->image),
-            "description" => "<p>{$product->description}</p>",
-            "sku" => "",
-            "offers" => $offer,
-            "aggregateRating" => array(
-                "@type" =>  "AggregateRating",
-                "ratingValue" =>  "5.00",
-                "reviewCount" => 1
-            )
-        );
-        // comment
-        $graph[] = array(
-            "@context" => "https://schema.org/",
-            "@type" => "Review",
-            "@id" => url(setRoute('color').$data->slug)."#comment-81",
-            "datePublished" => "{$product->	updated_at}",
-            "description" => constLang('comment').'!',
-            "itemReviewed" =>  array(
-                "@type" => "Product",
-                "name" => "{$product->name}",
-            ),
-            "reviewRating" => array(
-                "@type" =>  "rating",
-                "ratingValue" =>  "5"
-            ),
-            "author" => array(
-                "@type" =>  "Person",
-                "name" =>  "Anselmo Velame"
-            )
-        );
-
+        $product_variations = json_encode($attributes);
         $schema_org = array(
             "@context" => "https://schema.org/",
-            "@graph" => $graph
+            "@graph" => $this->schemaOrg($data, $section, $category, $product, $path, $offer_cash)
         );
-
-
-
 
         return view('frontend.products.product-1', compact(
             'product_variations',
@@ -912,6 +731,195 @@ class ImageColorController extends Controller
 
 
         return view('products.product-1-view', compact('product_variations'));
+    }
+
+
+    /**
+     * Date: 06/29/2019
+     *
+     * @param $pa_color
+     * @param $pa_size
+     * @param $price
+     * @param $regular_price
+     * @param $data
+     * @param $path
+     * @param $color
+     * @param $item
+     * @return array
+     */
+    public function getAttributes($pa_color, $pa_size, $price, $regular_price, $data, $path, $color, $item)
+    {
+        $out = array(
+            "attributes" => array(
+                "attribute_pa_color" => $pa_color,
+                "attribute_pa_size" => $pa_size
+            ),
+            "availability_html" => "",
+            "backorders_allowed" => false,
+            "dimensions" => array(
+                "length" => "",
+                "width" => "",
+                "height" => ""
+            ),
+            "dimensions_html" => "N/A",
+            "display_price" => (int) $price,
+            "display_regular_price" => (int) $regular_price,
+            "image" => array(
+                "title" => $data->product->name,
+                "caption" => "",
+                "url" => asset($path['G'].$color->image),
+                "alt" => "",
+                "src" => asset($path['G'].$color->image),
+                "srcset" => asset($path['Z'].$color->image) . " 1000w, " . asset($path['G'].$color->image) . " 800w, " . asset($path['N'].$color->image) . " 370w, " . asset($path['T'].$color->image) . " 100w",
+                "sizes" => "(max-width => 870px) 100vw, 870px",
+                "full_src" => asset($path['Z'].$color->image),
+                "full_src_w" => 1000,
+                "full_src_h" => 1000,
+                "gallery_thumbnail_src" => asset($path['T'].$color->image),
+                "gallery_thumbnail_src_w" => 800,
+                "gallery_thumbnail_src_h" => 800,
+                "thumb_src" => asset($path['N'].$color->image),
+                "thumb_src_w" => 370,
+                "thumb_src_h" => 370,
+                "src_w" => 800,
+                "src_h" => 800
+            ),
+            "image_id" => "{$data->id}",
+            "is_downloadable" => false,
+            "is_in_stock" => true,
+            "is_purchasable" => true,
+            "is_sold_individually" => "no",
+            "is_virtual" => false,
+            "max_qty" => $item->stock,
+            "min_qty" => 1,
+            "price_html" => "",
+            "sku" => "",
+            "variation_description" => "",
+            "variation_id" => $item->id,
+            "variation_is_active" => true,
+            "variation_is_visible" => true,
+            "weight" => "",
+            "weight_html" => "N/A"
+        );
+
+        return $out;
+
+    }
+
+    /**
+     * Date: 06/29/2019
+     *
+     * @param $data
+     * @param $section
+     * @param $category
+     * @param $product
+     * @param $path
+     * @return array
+     */
+    public function schemaOrg($data, $section, $category, $product, $path, $offer_cash)
+    {
+        /**
+         * Gerar json schema_org
+         * https://schema.org/
+         */
+        $itemListElement[] = array(
+            "@type" => "ListItem",
+            "position" => 1,
+            "item" => array(
+                "name" => "Home",
+                "@id" =>  route('home')
+            )
+        );
+        $itemListElement[] = array(
+            "@type" => "ListItem",
+            "position" => 2,
+            "item" => array(
+                "name" => $category->name,
+                "@id" =>  url(setRoute('category').$category->slug)
+            )
+        );
+        $itemListElement[] = array(
+            "@type" => "ListItem",
+            "position" => 3,
+            "item" => array(
+                "name" => $section->name,
+                "@id" =>  url(setRoute('section').$section->slug)
+            )
+        );
+        $itemListElement[] = array(
+            "@type" => "ListItem",
+            "position" => 4,
+            "item" => array(
+                "name" => $product->name,
+                "@id" =>  url(setRoute('color').$data->slug)
+            )
+        );
+        $offer = array();
+        if ($product->offer == 1) {
+            $offer[] = array(
+                "@type" => "Offer",
+                "price" => "{$offer_cash}",
+                "priceSpecification" => array(
+                    "price" => "{$offer_cash}",
+                    "priceCurrency" => "BRL",
+                    "valueAddedTaxIncluded" => "false"
+                ),
+                "priceCurrency" => "BRL",
+                "availability" => "https://schema.org/InStock",
+                "url" => url(setRoute('color').$data->slug),
+                "seller" => array(
+                    "@type" => "Organization",
+                    "name" => "{$product->name}",
+                    "url" => url(setRoute('color').$data->slug)
+                )
+            );
+        }
+
+
+        $graph[] = array(
+            "@context" => "https://schema.org/",
+            "@type" => "BreadcrumbList",
+            "itemListElement" => $itemListElement
+        );
+        $graph[] = array(
+            "@context" => "https://schema.org/",
+            "@type" => "Product",
+            "@id" => url(setRoute('color').$data->slug),
+            "name" => "{$product->name}",
+            "image" => asset($path['G'].$data->image),
+            "description" => "<p>{$product->description}</p>",
+            "sku" => "",
+            "offers" => $offer,
+            "aggregateRating" => array(
+                "@type" =>  "AggregateRating",
+                "ratingValue" =>  "5.00",
+                "reviewCount" => 1
+            )
+        );
+        // comment
+        $graph[] = array(
+            "@context" => "https://schema.org/",
+            "@type" => "Review",
+            "@id" => url(setRoute('color').$data->slug)."#comment-81",
+            "datePublished" => $product->updated_at,
+            "description" => constLang('comment').'!',
+            "itemReviewed" =>  array(
+                "@type" => "Product",
+                "name" => $product->name,
+            ),
+            "reviewRating" => array(
+                "@type" =>  "rating",
+                "ratingValue" =>  "5"
+            ),
+            "author" => array(
+                "@type" =>  "Person",
+                "name" =>  "Anselmo Velame"
+            )
+        );
+
+
+        return $graph;
+
     }
 
 }

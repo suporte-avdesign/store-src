@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="780e81c4-7e35-425b-b3b6-a52a887dd07b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Helpers/avdHerper.php" afterPath="$PROJECT_DIR$/app/Helpers/avdHerper.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/ImageColorController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/ImageColorController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/plugins/cart/js/add-to-cart-variation.min.js" afterPath="$PROJECT_DIR$/public/plugins/cart/js/add-to-cart-variation.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/plugins/cart/js/add-to-cart-variation.js" afterPath="$PROJECT_DIR$/resources/assets/plugins/cart/js/add-to-cart-variation.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/products/includes/product-kit.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/products/includes/product-kit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/products/product-1.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/products/product-1.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.mix.js" afterPath="$PROJECT_DIR$/webpack.mix.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/products/includes/product-unit.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/products/includes/product-unit.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,35 +32,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ImageColorController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ImageColorController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Web/ImageColorController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="151" column="10" lean-forward="false" selection-start-line="151" selection-start-column="10" selection-end-line="151" selection-end-column="10" />
+            <state relative-caret-position="-655">
+              <caret line="45" column="7" lean-forward="false" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="7" />
               <folding>
                 <element signature="e#44#72#0#PHP" expanded="true" />
-                <element signature="e#10867#16396#0#PHP" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="product-kit.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/frontend/products/includes/product-kit.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="73" column="203" lean-forward="false" selection-start-line="73" selection-start-column="203" selection-end-line="73" selection-end-column="203" />
-              <folding>
-                <marker date="1561844428116" expanded="true" signature="9:385" ph="..." />
-                <marker date="1561844428116" expanded="true" signature="9:447" ph="..." />
-                <marker date="1561844428116" expanded="true" signature="9:448" ph="..." />
-                <marker date="1561844428116" expanded="true" signature="37:236" ph="..." />
-                <marker date="1561844428116" expanded="true" signature="79:229" ph="..." />
-                <marker date="1561844428116" expanded="true" signature="238:385" ph="..." />
-                <marker date="1561844428116" expanded="true" signature="281:384" ph="..." />
-                <marker date="1561844428116" expanded="true" signature="318:378" ph="..." />
-                <marker date="1561844428116" expanded="true" signature="380:384" ph="..." />
-                <marker date="1561844428116" expanded="true" signature="2956:2975" ph="..." />
+                <element signature="e#4223#9752#0#PHP" expanded="false" />
+                <element signature="e#9888#33101#0#PHP" expanded="false" />
+                <element signature="e#33354#35701#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -170,16 +146,16 @@
         <option value="$PROJECT_DIR$/resources/views/frontend/products/includes/social-share-1.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/headers/navs/main-nav-1.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/products/includes/next-previous-1.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/frontend/products/includes/product-unit.blade.php" />
         <option value="$PROJECT_DIR$/resources/assets/css/main.css" />
         <option value="$PROJECT_DIR$/config/lang_pt-BR.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/products/includes/prices-1.blade.php" />
         <option value="$PROJECT_DIR$/webpack.mix.js" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Web/ImageColorController.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/products/product-1.blade.php" />
         <option value="$PROJECT_DIR$/resources/assets/plugins/cart/js/add-to-cart-variation.js" />
         <option value="$PROJECT_DIR$/app/Helpers/avdHerper.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/products/includes/product-kit.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/products/includes/product-unit.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Web/ImageColorController.php" />
       </list>
     </option>
   </component>
@@ -314,6 +290,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="products" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="products" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="includes" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -528,18 +534,18 @@
       <workItem from="1560994060794" duration="27450000" />
       <workItem from="1561080671492" duration="63576000" />
       <workItem from="1561383198415" duration="167701000" />
-      <workItem from="1561810299819" duration="19480000" />
+      <workItem from="1561810299819" duration="24194000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="296731000" />
+    <option name="totallyTimeSpent" value="301445000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.039043825" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -769,13 +775,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/products/includes/product-unit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1386">
-          <caret line="77" column="10" lean-forward="false" selection-start-line="77" selection-start-column="10" selection-end-line="77" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/frontend/sections/section-1.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -931,17 +930,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Web/ImageColorController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="151" column="10" lean-forward="false" selection-start-line="151" selection-start-column="10" selection-end-line="151" selection-end-column="10" />
-          <folding>
-            <element signature="e#44#72#0#PHP" expanded="true" />
-            <element signature="e#10867#16396#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/assets/plugins/product/js/single-product.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -1008,21 +996,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/products/includes/product-unit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1386">
+          <caret line="77" column="0" lean-forward="true" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/frontend/products/includes/product-kit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="73" column="203" lean-forward="false" selection-start-line="73" selection-start-column="203" selection-end-line="73" selection-end-column="203" />
+        <state relative-caret-position="1332">
+          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
           <folding>
-            <marker date="1561844428116" expanded="true" signature="9:385" ph="..." />
-            <marker date="1561844428116" expanded="true" signature="9:447" ph="..." />
-            <marker date="1561844428116" expanded="true" signature="9:448" ph="..." />
-            <marker date="1561844428116" expanded="true" signature="37:236" ph="..." />
-            <marker date="1561844428116" expanded="true" signature="79:229" ph="..." />
-            <marker date="1561844428116" expanded="true" signature="238:385" ph="..." />
-            <marker date="1561844428116" expanded="true" signature="281:384" ph="..." />
-            <marker date="1561844428116" expanded="true" signature="318:378" ph="..." />
-            <marker date="1561844428116" expanded="true" signature="380:384" ph="..." />
-            <marker date="1561844428116" expanded="true" signature="2956:2975" ph="..." />
+            <marker date="1561846066678" expanded="true" signature="9:385" ph="..." />
+            <marker date="1561846066678" expanded="true" signature="9:428" ph="..." />
+            <marker date="1561846066678" expanded="true" signature="9:430" ph="..." />
+            <marker date="1561846066678" expanded="true" signature="37:236" ph="..." />
+            <marker date="1561846066678" expanded="true" signature="79:229" ph="..." />
+            <marker date="1561846066678" expanded="true" signature="238:385" ph="..." />
+            <marker date="1561846066678" expanded="true" signature="281:384" ph="..." />
+            <marker date="1561846066678" expanded="true" signature="318:378" ph="..." />
+            <marker date="1561846066678" expanded="true" signature="380:384" ph="..." />
+            <marker date="1561846066678" expanded="true" signature="2938:2957" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Web/ImageColorController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-655">
+          <caret line="45" column="7" lean-forward="false" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="7" />
+          <folding>
+            <element signature="e#44#72#0#PHP" expanded="true" />
+            <element signature="e#4223#9752#0#PHP" expanded="false" />
+            <element signature="e#9888#33101#0#PHP" expanded="false" />
+            <element signature="e#33354#35701#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>

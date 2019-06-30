@@ -45,8 +45,6 @@
         </tr>
         </tbody>
     </table>
-
-
     <div class="single_variation_wrap">
         <div class="woocommerce-variation single_variation"></div>
         <div class="woocommerce-variation-add-to-cart variations_button">
@@ -54,19 +52,19 @@
                 <input type="button" value="-" class="minus" />
                 <label class="screen-reader-text" for="quantity_5cba02707fe6e">{{constLang('quantity')}}</label>
                 <input
-                        type="number"
-                        id="quantity_5cba02707fe6e"
-                        class="input-text qty text"
-                        step="1"
-                        min="1"
-                        max=""
-                        name="quantity"
-                        value="1"
-                        title="{{constLang('qty')}}"
-                        size="4"
-                        pattern="[0-9]*"
-                        inputmode="numeric"
-                        aria-labelledby="{{$product->name}} {{constLang('quantity')}}" />
+                    type="number"
+                    id="quantity_5cba02707fe6e"
+                    class="input-text qty text"
+                    step="1"
+                    min="1"
+                    max=""
+                    name="quantity"
+                    value="1"
+                    title="{{constLang('qty')}}"
+                    size="4"
+                    pattern="[0-9]*"
+                    inputmode="numeric"
+                    aria-labelledby="{{$product->name}} {{constLang('quantity')}}" />
                 <input type="button" value="+" class="plus" />
             </div>
             <button type="submit" class="single_add_to_cart_button button alt">{{constLang('add')}}</button>
