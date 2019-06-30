@@ -43,12 +43,17 @@ class SectionController extends Controller
         $menu          = $this->interModel->getMenu();
         $section       = $this->interModel->get($slug);
         $path          = env('APP_PANEL_URL');
-        $categories    = $this->interCategory->getAll($this->configSite, $this->configProduct, $section->id);
         $configImage   = $this->configImages->setName('default', 'N');
         $photoUrl      = $path.$configImage->path;
         $configSite    = $this->configSite;
         $configProduct = $this->configProduct;
         $configKeyword = $this->configKeyword;
+
+        if ($configSite->list == 1) {
+            $categories = $this->interCategory->getSectionProducts($this->configSite, $this->configProduct, $section->id);
+        } elseif ($configSite->list == 2) {
+            $categories = $this->interCategory->getSectionColors($this->configSite, $this->configProduct, $section->id);
+        }
 
 
         //dd($configKeyword);

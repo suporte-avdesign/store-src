@@ -22,19 +22,91 @@ class CategoryRepository implements CategoryInterface
     }
 
     /**
-     * @param $slug
+     * Date; 06/30/2019
+     *
+     * @param $configSite
+     * @param $configProduct
+     * @param $id
      * @return mixed
      */
-    public function getAll($configSite, $configProduct, $id)
+    public function getSectionProducts($configSite, $configProduct, $id)
     {
-
         $query = $this->model->orderBy('name')->where(['active' => constLang('active_true'), 'section_id' => $id])
             ->with([
                 'products' => function ($query) use ($configSite, $configProduct) {
-
                     if ($configSite->order_products == 'random') {
-                        $query->inRandomOrder()->where('active', 1)
-                            ->limit($configSite->limit_products)->with([
+                        $query->inRandomOrder()->where('active', 1)->with([
+                            'prices' => function ($query) {
+                                $query->where('price_cash', '!=', null)->get();
+                            },
+                            'images' => function ($query) {
+                                $query->orderBy('cover', 'desc')->where('active', constLang('active_true'))->with([
+                                    'positions' => function ($query) {
+                                        $query->orderBy('order')->where('active', constLang('active_true'))->get();
+                                    },
+                                    'grids' => function ($query) {
+                                        $query->where('grid', '!=', null)->get();
+                                    }
+                                ]);
+                            }
+                        ])->get();
+                    } else {
+                        $query->orderBy('id', $configSite->order_products)
+                            ->where('active', 1)->get();
+                    }
+                }
+            ])
+            ->get();
+
+        return $query;
+
+    }
+
+
+    public function getSectionColors($configSite, $configProduct, $id)
+    {
+        $query = $this->model->orderBy('name')->where(['active' => constLang('active_true'), 'section_id' => $id])
+            ->with([
+                'products' => function ($query) use ($configSite, $configProduct) {
+                    $query->where('active', 1)->with([
+                        'prices' => function ($query) {
+                            $query->where('price_cash', '!=', null)->get();
+                        },
+                        'images' => function ($query) use($configSite, $configProduct) {
+                            if ($configSite->order_products == 'random') {
+                                $query->inRandomOrder()->orderBy('cover', 'desc')->where('active', constLang('active_true'))->with([
+                                    'positions' => function ($query) {
+                                        $query->orderBy('order')->where('active', constLang('active_true'))->get();
+                                    },
+                                    'grids' => function ($query) {
+                                        $query->where('grid', '!=', null)->get();
+                                    }
+                                ])->get();
+                            } else {
+                                $query->orderBy('id', $configSite->order_products)
+                                    ->orderBy('cover', 'desc')->where('active', constLang('active_true'))->get();
+                            }
+                        }
+                    ]);
+                }
+
+            ])->get();
+
+        return $query;
+
+    }
+
+    /**
+     * @param $slug
+     * @return mixed
+     */
+    public function getProducts($configSite, $configProduct, $slug)
+    {
+        $query = $this->model->orderBy('name')->where(['active' => constLang('active_true'), 'slug' => $slug])
+            ->with([
+                'products' => function ($query) use ($configSite, $configProduct) {
+                    if ($configSite->order_products == 'random') {
+                        $query->inRandomOrder()->where('active', 1)->with([
                                 'prices' => function ($query) {
                                     $query->where('price_cash', '!=', null)->get();
                                 },
@@ -48,44 +120,49 @@ class CategoryRepository implements CategoryInterface
                                         }
                                     ]);
                                 }
-                            ]);
+                            ])->get();
                     } else {
-                        $query->orderBy('id', $configSite->order_products)
-                            ->where('active', 1)
-                            ->limit($configSite->limit_products);
+                        $query->orderBy('id', $configSite->order_products)->where('active', 1)->get();
                     }
-
-
-
-
                 }
             ])
-            ->get();
+            ->first();
 
 
         return $query;
-
     }
 
 
-    /**
-     * Istance
-     *
-     * @param  int Id
-     * @return mixed
-     */
-    public function setId($id)
+    public function getColors($configSite, $configProduct, $slug)
     {
-        return $this->model->find($id);
-    }
+        $query = $this->model->orderBy('name')->where(['active' => constLang('active_true'), 'slug' => $slug])
+            ->with([
+                'products' => function ($query) use ($configSite, $configProduct) {
+                    $query->where('active', 1)->with([
+                        'prices' => function ($query) {
+                            $query->where('price_cash', '!=', null)->get();
+                        },
+                        'images' => function ($query) use($configSite, $configProduct) {
+                            if ($configSite->order_products == 'random') {
+                                $query->inRandomOrder()->orderBy('cover', 'desc')->where('active', constLang('active_true'))->with([
+                                        'positions' => function ($query) {
+                                            $query->orderBy('order')->where('active', constLang('active_true'))->get();
+                                        },
+                                        'grids' => function ($query) {
+                                            $query->where('grid', '!=', null)->get();
+                                        }
+                                    ])->get();
+                            } else {
+                                $query->orderBy('id', $configSite->order_products)
+                                    ->orderBy('cover', 'desc')->where('active', constLang('active_true'))->get();
+                            }
+                        }
+                    ]);
+                }
 
-    /**
-     * @param $slug
-     * @return mixed
-     */
-    public function get($slug)
-    {
-        return $this->model->where(['active' => constLang('active_true'), 'slug' => $slug])->first();
+            ])->first();
+
+        return $query;
     }
 
 

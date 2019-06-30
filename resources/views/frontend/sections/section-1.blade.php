@@ -14,9 +14,7 @@
 
             <a href="#" class="basel-show-categories">{{constLang('categories')}}</a>
             <ul class="basel-product-categories">
-                <li class="cat-link shop-all-link">
-                    <a href="#">{{constLang('all')}}</a>
-                </li>
+                <!--<li class="cat-link shop-all-link"><a href="#">{{constLang('all')}}</a></li>-->
                 @forelse($categories as $category)
                     @if (count($category->products) >= 1)
                         @foreach($category->products as $product)
@@ -52,7 +50,7 @@
 
             @include('frontend.sections.include.breadcrumb-1')
 
-            @include('frontend.sections.include.filters-1')
+            <!--include('frontend.sections.include.filters-1')-->
 
             <div class="basel-shop-loader"></div>
 

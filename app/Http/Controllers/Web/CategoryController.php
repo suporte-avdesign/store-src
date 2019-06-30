@@ -42,15 +42,18 @@ class CategoryController extends Controller
     {
 
         $menu          = $this->interSection->getMenu();
-        $category      = $this->interModel->get($slug);
         $path          = env('APP_PANEL_URL');
+        $configSite    = $this->configSite;
         $configImage   = $this->configImages->setName('default', 'N');
         $photoUrl      = $path.$configImage->path;
-        $configSite    = $this->configSite;
         $configProduct = $this->configProduct;
         $configKeyword = $this->configKeyword;
 
-
+        if ($configSite->list == 1) {
+            $category = $this->interModel->getProducts($configSite, $configProduct, $slug);
+        } else if ($configSite->list == 2) {
+            $category = $this->interModel->getColors($configSite, $configProduct, $slug);
+        }
 
 
         //sleep(10);

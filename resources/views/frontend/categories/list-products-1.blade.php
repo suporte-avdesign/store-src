@@ -82,36 +82,40 @@
                 @endif
                 <div class="basel-buttons">
 
-                    <div class="yith-wcwl-add-to-wishlist add-to-wishlist-1001">
-                        <div class="yith-wcwl-add-button show">
-                            <a href="{{route('wishlist.store')}}?infinit_scrolling&add_to_wishlist=1001" rel="nofollow" data-product-id="1001" data-product-type="variable" class="add_to_wishlist">
-                                {{constLang('messages.wishlist.add')}}
-                            </a>
-                            <img src="{{asset('themes/images/loader/wpspin_light.gif')}}" class="ajax-loading" alt="carregando" width="16" height="16" style="visibility:hidden"/>
-                        </div>
-
-                        <div class="yith-wcwl-wishlistaddedbrowse hide">
-                            <span class="feedback">{{constLang('added')}} {{constLang('product')}}!</span>
-                            <a href="{{route('wishlist')}}" rel="nofollow">{{constLang('messages.wishlist.view')}}</a>
-                        </div>
-
-                        <div class="yith-wcwl-wishlistexistsbrowse hide">
-                            <span class="feedback">{{constLang('messages.wishlist.added')}}</span>
-                            <a href="{{route('wishlist')}}" rel="nofollow">{{constLang('messages.wishlist.view')}}</a>
-                        </div>
-
-                        <div style="clear:both"></div>
-                        <div class="yith-wcwl-wishlistaddresponse"></div>
-
-                    </div>
-
                     <div class="clear"></div>
+                    @if($configProduct->compare == 1)
+                        <div class="basel-compare-btn product-compare-button">
+                            <a class="button" href="{{route('compare')}}" data-added-text="{{constLang('compare')}} {{constLang('product')}}" data-id="1001">{{constLang('compare')}}</a>
+                        </div>
+                    @endif
 
-                    <div class="basel-compare-btn product-compare-button">
-                        <a class="button" href="{{route('compare')}}" data-added-text="{{constLang('compare')}} {{constLang('product')}}" data-id="1001">{{constLang('compare')}}</a></div>
-                    <div class="quick-view">
-                        <a href="{{url('product.show')}}" class="open-quick-view" data-id="{{$product->id}}">{{constLang('quick_view')}}</a>
-                    </div>
+                    @if($configProduct->quickview == 1)
+                        <div class="yith-wcwl-add-to-wishlist add-to-wishlist-1001">
+                            <div class="yith-wcwl-add-button show">
+                                <a href="{{route('wishlist.store')}}?infinit_scrolling&add_to_wishlist=1001" rel="nofollow" data-product-id="1001" data-product-type="variable" class="add_to_wishlist">
+                                    {{constLang('messages.wishlist.add')}}
+                                </a>
+                                <img src="{{asset('themes/images/loader/wpspin_light.gif')}}" class="ajax-loading" alt="carregando" width="16" height="16" style="visibility:hidden"/>
+                            </div>
+
+                            <div class="yith-wcwl-wishlistaddedbrowse hide">
+                                <span class="feedback">{{constLang('added')}} {{constLang('product')}}!</span>
+                                <a href="{{route('wishlist')}}" rel="nofollow">{{constLang('messages.wishlist.view')}}</a>
+                            </div>
+
+                            <div class="yith-wcwl-wishlistexistsbrowse hide">
+                                <span class="feedback">{{constLang('messages.wishlist.added')}}</span>
+                                <a href="{{route('wishlist')}}" rel="nofollow">{{constLang('messages.wishlist.view')}}</a>
+                            </div>
+
+                            <div style="clear:both"></div>
+                            <div class="yith-wcwl-wishlistaddresponse"></div>
+                        </div>
+
+                        <div class="quick-view">
+                            <a href="{{url('product.show')}}" class="open-quick-view" data-id="{{$product->id}}">{{constLang('quick_view')}}</a>
+                        </div>
+                    @endif
                 </div>
             </div>
             <h3 class="product-title"><a href="{{url(setRoute('color').$color->slug)}}">{{$product->name}} </a></h3>
@@ -131,7 +135,4 @@
 @empty <!-- /product -->
 
 @endforelse <!-- /products -->
-<div class="clearfix visible-xs-block"></div>
-<div class="clearfix visible-sm-block"></div>
-<div class="clearfix visible-md-block visible-lg-block"></div>
 

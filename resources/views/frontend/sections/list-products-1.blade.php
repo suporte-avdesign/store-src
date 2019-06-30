@@ -53,79 +53,89 @@
                         $srcset_position = $photoUrl.$position->image.' 370w,'.$photoUrl.$position->image.' 100w,'.$photoUrl.$position->image.' 800w,'.$photoUrl.$position->image.' 1000w,';
                     @endphp
                 @endforeach <!-- /positions -->
-            @endforeach  <!-- /colors -->
-            <div class="product-grid-item basel-hover-alt product  col-xs-6 col-sm-4 col-md-3 @if($loop->first) first @endif post-1001 type-product status-publish has-post-thumbnail product_cat-bags product_tag-new product_tag-whte instock featured shipping-taxable purchasable product-type-variable has-default-attributes" data-loop="13" data-id="1001">
-                <div class="product-element-top">
-                    @if($product->offer == 1)
-                        <div class="product-labels labels-rounded">
-                            <span class="onsale product-label">-{{$price_cash_percent}}%</span>
-                        </div>
-                    @else
-                        @if($product->new == 1)
+
+                <div class="product-grid-item basel-hover-alt product  col-xs-6 col-sm-4 col-md-3 @if($loop->first) first @endif post-1001 type-product status-publish has-post-thumbnail product_cat-bags product_tag-new product_tag-whte instock featured shipping-taxable purchasable product-type-variable has-default-attributes" data-loop="13" data-id="1001">
+                    <div class="product-element-top">
+                        @if($product->offer == 1)
                             <div class="product-labels labels-rounded">
-                                <span class="new product-label">{{constLang('new')}}</span>
+                                <span class="onsale product-label">-{{$price_cash_percent}}%</span>
                             </div>
+                        @else
+                            @if($product->new == 1)
+                                <div class="product-labels labels-rounded">
+                                    <span class="new product-label">{{constLang('new')}}</span>
+                                </div>
+                            @endif
                         @endif
-                    @endif
-                    <a href="{{url(setRoute('color').$color->slug)}}">
-                        <img width="273" height="273" alt="{{$alt_colors}}" src="{{$src_colors}}" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" srcset="{{$srcset_colors}}" sizes="(max-width: 273px) 100vw, 273px" />
-                    </a>
-                    @if (count($color->positions) >= 1)
-                        @if($configSite->image_positions == 1)
-                            <div class="hover-img">
-                                <a href="{{url(setRoute('color').$color->slug)}}">
-                                    <img width="273" height="273" src="{{$src_position}}" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="{{$alt_position}}" srcset="{{$srcset_position}}" sizes="(max-width: 273px) 100vw, 273px" />
-                                </a>
-                            </div>
+                        <a href="{{url(setRoute('color').$color->slug)}}">
+                            <img width="273" height="273" alt="{{$alt_colors}}" src="{{$src_colors}}" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" srcset="{{$srcset_colors}}" sizes="(max-width: 273px) 100vw, 273px" />
+                        </a>
+                        @if (count($color->positions) >= 1)
+                            @if($configSite->image_positions == 1)
+                                <div class="hover-img">
+                                    <a href="{{url(setRoute('color').$color->slug)}}">
+                                        <img width="273" height="273" src="{{$src_position}}" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="{{$alt_position}}" srcset="{{$srcset_position}}" sizes="(max-width: 273px) 100vw, 273px" />
+                                    </a>
+                                </div>
+                            @endif
                         @endif
-                    @endif
-                    <div class="basel-buttons">
+                        <div class="basel-buttons">
 
-                        <div class="yith-wcwl-add-to-wishlist add-to-wishlist-1001">
-                            <div class="yith-wcwl-add-button show">
-                                <a href="{{route('wishlist.store')}}?infinit_scrolling&add_to_wishlist=1001" rel="nofollow" data-product-id="1001" data-product-type="variable" class="add_to_wishlist">
-                                    {{constLang('messages.wishlist.add')}}
-                                </a>
-                                <img src="{{asset('themes/images/loader/wpspin_light.gif')}}" class="ajax-loading" alt="carregando" width="16" height="16" style="visibility:hidden"/>
-                            </div>
 
-                            <div class="yith-wcwl-wishlistaddedbrowse hide">
-                                <span class="feedback">{{constLang('added')}} {{constLang('product')}}!</span>
-                                <a href="{{route('wishlist')}}" rel="nofollow">{{constLang('messages.wishlist.view')}}</a>
-                            </div>
+                            <div class="clear"></div>
+                            @if($configSite->compare == 1)
+                                <div class="basel-compare-btn product-compare-button">
+                                    <a class="button" href="{{route('compare')}}" data-added-text="{{constLang('compare')}} {{constLang('product')}}" data-id="1001">{{constLang('compare')}}</a>
+                                </div>
+                            @endif
 
-                            <div class="yith-wcwl-wishlistexistsbrowse hide">
-                                <span class="feedback">{{constLang('messages.wishlist.added')}}</span>
-                                <a href="{{route('wishlist')}}" rel="nofollow">{{constLang('messages.wishlist.view')}}</a>
-                            </div>
 
-                            <div style="clear:both"></div>
-                            <div class="yith-wcwl-wishlistaddresponse"></div>
+                            @if($configSite->wishlist == 1)
+                                <div class="quick-view">
+                                    <a href="{{url(setRoute('color').'show')}}" class="open-quick-view" data-id="{{$product->id}}">{{constLang('quick_view')}}</a>
+                                </div>
 
-                        </div>
+                                <div class="yith-wcwl-add-to-wishlist add-to-wishlist-1001">
+                                    <div class="yith-wcwl-add-button show">
+                                        <a href="{{route('wishlist.store')}}?infinit_scrolling&add_to_wishlist=1001" rel="nofollow" data-product-id="1001" data-product-type="variable" class="add_to_wishlist">
+                                            {{constLang('messages.wishlist.add')}}
+                                        </a>
+                                        <img src="{{asset('themes/images/loader/wpspin_light.gif')}}" class="ajax-loading" alt="carregando" width="16" height="16" style="visibility:hidden"/>
+                                    </div>
 
-                        <div class="clear"></div>
+                                    <div class="yith-wcwl-wishlistaddedbrowse hide">
+                                        <span class="feedback">{{constLang('added')}} {{constLang('product')}}!</span>
+                                        <a href="{{route('wishlist')}}" rel="nofollow">{{constLang('messages.wishlist.view')}}</a>
+                                    </div>
 
-                        <div class="basel-compare-btn product-compare-button">
-                            <a class="button" href="{{route('compare')}}" data-added-text="{{constLang('compare')}} {{constLang('product')}}" data-id="1001">{{constLang('compare')}}</a></div>
-                        <div class="quick-view">
-                            <a href="{{url(setRoute('color').'show')}}" class="open-quick-view" data-id="{{$product->id}}">{{constLang('quick_view')}}</a>
+                                    <div class="yith-wcwl-wishlistexistsbrowse hide">
+                                        <span class="feedback">{{constLang('messages.wishlist.added')}}</span>
+                                        <a href="{{route('wishlist')}}" rel="nofollow">{{constLang('messages.wishlist.view')}}</a>
+                                    </div>
+
+                                    <div style="clear:both"></div>
+                                    <div class="yith-wcwl-wishlistaddresponse"></div>
+
+                                </div>
+                            @endif
+
                         </div>
                     </div>
-                </div>
-                <h3 class="product-title"><a href="{{url(setRoute('color').$color->slug)}}">{{$product->name}} </a></h3>
+                    <h3 class="product-title"><a href="{{url(setRoute('color').$color->slug)}}">{{$product->name}} </a></h3>
 
-                @include('frontend.sections.include.prices-1')
-            </div>
-            @if(($loop->iteration % 2) == 0)
-                <div class="clearfix visible-xs-block"></div>
-            @endif
-            @if(($loop->iteration % 3) == 0)
-                <div class="clearfix visible-sm-block"></div>
-            @endif
-            @if(($loop->iteration % 4) == 0)
-                <div class="clearfix visible-md-block visible-lg-block"></div>
-            @endif
+                    @include('frontend.sections.include.prices-1')
+                </div>
+                @if(($loop->iteration % 2) == 0)
+                    <div class="clearfix visible-xs-block"></div>
+                @endif
+                @if(($loop->iteration % 3) == 0)
+                    <div class="clearfix visible-sm-block"></div>
+                @endif
+                @if(($loop->iteration % 4) == 0)
+                    <div class="clearfix visible-md-block visible-lg-block"></div>
+                @endif
+
+            @endforeach  <!-- /colors -->
         @endif <!-- count $category->products -->
      @empty <!-- /product -->
 
@@ -133,6 +143,3 @@
 @empty <!-- category -->
 
 @endforelse <!-- /category -->
-<div class="clearfix visible-xs-block"></div>
-<div class="clearfix visible-sm-block"></div>
-<div class="clearfix visible-md-block visible-lg-block"></div>

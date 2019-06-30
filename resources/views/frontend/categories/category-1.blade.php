@@ -15,7 +15,7 @@
 
             @include('frontend.categories.include.breadcrumb-1')
 
-            @include('frontend.categories.include.filters-1')
+            <!--include('frontend.categories.include.filters-1')-->
 
             <div class="basel-shop-loader"></div>
 
@@ -30,12 +30,11 @@
                 @endif
 
             </div>
-
+            <!--
             <div class="products-footer">
-                <!--
                 <a href="{{url(setRoute('category').$slug.'/'.$page.'/'.$num)}}/?infinit_scrolling" rel="nofollow" class="btn basel-load-more basel-products-load-more load-on-scroll">Carregar mais produtos</a>
-                -->
             </div>
+            -->
 
         </div>
     </div> <!-- end row -->

@@ -9,8 +9,9 @@ interface CategoryInterface
      *
      * @return \AVD\Repositories\Web\CategoryRepository
      */
-    public function setId($id);
-    public function get($slug);
-    public function getAll($configSite, $configProduct, $id);
+    public function getProducts($configSite, $configProduct, $slug);
+    public function getColors($configSite, $configProduct, $slug);
+    public function getSectionProducts($configSite, $configProduct, $id);
+    public function getSectionColors($configSite, $configProduct, $id);
 
 }
