@@ -3,9 +3,9 @@
     <div class="container">
         <div class="wrapp-header">
 
-            @include('headers.columns.logo-1')
+            @include('frontend.headers.columns.logo-1')
 
-            @include('headers.navs.main-nav-1')
+            @include('frontend.headers.navs.main-nav-1')
 
 
             <div class="right-column">

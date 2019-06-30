@@ -1,4 +1,4 @@
-@extends('layouts.template-1')
+@extends('frontend.layouts.template-1')
 @push('title')
 <title>Login / Cadastro - {{config('app.name')}}</title>
 @endpush

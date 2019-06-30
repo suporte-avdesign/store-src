@@ -1,4 +1,4 @@
-@extends('layouts.template-1')
+@extends('frontend.layouts.template-1')
 @push('title')
 <title>{{$configKeyword->description}} {{$category->name}} {{config('app.name')}}</title>
     <meta name="description" content="{{$configKeyword->description}} , {{$configKeyword->genders}}">

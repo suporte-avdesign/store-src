@@ -12,7 +12,7 @@
     @stack('title')
     <style>.wishlist_table .add_to_cart, a.add_to_wishlist.button.alt { border-radius: 16px; -moz-border-radius: 16px; -webkit-border-radius: 16px; }</style>
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-    @include('scripts.analytics-1')
+    @include('frontend.scripts.analytics-1')
     <link rel="stylesheet" id="contact-form-7"  href="{{mix('includes/contact-form-7/css/styles.css')}}" type="text/css" media="all" />
 
     <style id="woocommerce-inline-inline-css" type="text/css">.woocommerce form .form-row .required { visibility: visible; }</style>
@@ -38,12 +38,12 @@
     <script type="text/template" id="tmpl-unavailable-variation-template">
         <p>Desculpe, este produto não está disponível. Por favor, escolha uma combinação diferente.</p>
     </script>
-    @include('scripts.monsterinsights_frontend')
+    @include('frontend.scripts.monsterinsights_frontend')
     <script type="text/javascript" src="{{asset('plugins/google/analytics-frontend.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('includes/js/jquery/jquery.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('includes/js/jquery/jquery-migrate.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('plugins/jquery-blockui/jquery.blockUI.min.js')}}"></script>
-    @include('scripts.add_to_cart_params')
+    @include('frontend.scripts.add_to_cart_params')
     <script type="text/javascript" src="{{asset('plugins/cart/js/add-to-cart.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('plugins/cart/js/avd-add-to-cart.js')}}"></script>
     <!--[if lt IE 9]>
@@ -52,7 +52,7 @@
     <script type="text/javascript" src="{{asset('themes/js/device.min.js')}}"></script>
     <link rel="shortcut icon" href="{{asset('themes/images/icons/favicon.png')}}">
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{asset('themes/images/icons/apple-touch-icon-152x152-precomposed.png')}}">
-    @include('scripts.scroll-menu')
+    @include('frontend.scripts.scroll-menu')
     <noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
     <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
     <!--[if lte IE 9]>
@@ -67,13 +67,13 @@
 </head>
 @stack('body')
 
-@include('messages.message-1-body')
+@include('frontend.messages.message-1-body')
 
 @include('auth.login-1-sidbar')
 
 <div class="website-wrapper">
 
-    @include('headers.header-1')
+    @include('frontend.headers.header-1')
 
     <div class="clear"></div>
 
@@ -81,7 +81,7 @@
 
         @yield('content')
 
-        @include('footers.footer-1')
+        @include('frontend.footers.footer-1')
     </div><!-- .main-page-wrapper -->
 </div><!-- end wrapper -->
 
@@ -89,31 +89,31 @@
 <div class="basel-close-side"></div>
 <a href="#" class="scrollToTop basel-tooltip">Role para cima</a>
 
-@include('scripts.c-document-body')
-@include('scripts.wpcf7')
+@include('frontend.scripts.c-document-body')
+@include('frontend.scripts.wpcf7')
 <script type="text/javascript" src="{{asset('includes/contact-form-7/js/scripts.js')}}"></script>
 <script type="text/javascript" src="{{asset('plugins/js-cookie/js.cookie.min.js')}}"></script>
-@include('scripts.woocommerce_params')
+@include('frontend.scripts.woocommerce_params')
 <script type="text/javascript" src="{{asset('plugins/frontend/avdesign.min.js')}}"></script>
-@include('scripts.wc_cart_fragments_params')
+@include('frontend.scripts.wc_cart_fragments_params')
 @stack('scripts')
 <script type="text/javascript" src="{{asset('plugins/cart/js/cart-fragments.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('plugins/yith-wishlist/js/jquery.selectBox.min.js')}}"></script>
-@include('scripts.yith_wcwl_l10n')
+@include('frontend.scripts.yith_wcwl_l10n')
 <script type="text/javascript" src="{{asset('plugins/yith-wishlist/js/jquery.yith-wcwl.js')}}"></script>
 <script type="text/javascript" src="{{asset('plugins/isotope/isotope.pkgd.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('plugins/waypoints/waypoints.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('plugins/js_composer/js/js_composer_front.min.js')}}"></script>
-@include('scripts.basel_settings')
+@include('frontend.scripts.basel_settings')
 <script type="text/javascript" src="{{asset('themes/js/theme-org.js')}}"></script>
 <script type="text/javascript" src="{{asset('includes/underscore/js/underscore.min.js')}}"></script>
-@include('scripts._wpUtilSettings')
+@include('frontend.scripts._wpUtilSettings')
 <script type="text/javascript" src="{{asset('includes/util/avd-util.min.js')}}"></script>
-@include('scripts.wc_add_to_cart_variation_params')
+@include('frontend.scripts.wc_add_to_cart_variation_params')
 <script type="text/javascript" src="{{asset('plugins/cart/js/add-to-cart-variation.min.js')}}"></script>
-@include('extras.popup-newsletter-1')
-@include('extras.cookies-popup-1')
-@include('extras.btn-link-1')
-@include('extras.container-photo-swipe-ui-1')
+@include('frontend.extras.popup-newsletter-1')
+@include('frontend.extras.cookies-popup-1')
+@include('frontend.extras.btn-link-1')
+@include('frontend.extras.container-photo-swipe-ui-1')
 </body>
 </html>

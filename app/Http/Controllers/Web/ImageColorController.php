@@ -43,7 +43,7 @@ class ImageColorController extends Controller
 
     /**
      * Date: 06/29/2019
-     * 
+     *
      * @param $slug
      * @return View
      */
