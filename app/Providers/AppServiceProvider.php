@@ -25,6 +25,7 @@ class AppServiceProvider extends ServiceProvider
             'ConfigProduct',
             'ConfigSite',
             'ImageColor',
+            'Product',
             'Section',
             'SocialShare'
         );

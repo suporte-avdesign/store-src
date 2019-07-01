@@ -85,6 +85,8 @@ return [
     'deleted' => 'Excluiu',
     'description' => 'Descrição',
     'description_painel' => 'Painel Administrativo',
+    'detail' => 'Detalhe',
+    'details_view' => 'Ver Detalhes',
     'edit' => 'Editar',
     'entry' => 'Entrada',
     'error' => [

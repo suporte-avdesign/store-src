@@ -6,7 +6,7 @@
 <!-- PRODUTO 1 first select options -->
 @forelse($category->products as $product)
         <!-- Prices Offers -->
-    @if($configProduct->view_prices == 1)
+    @if($configProduct->view_prices == 1)0--=ukl
         @foreach($product->prices as $price)
             @php
                 if ($product->offer == 1) {
@@ -81,15 +81,8 @@
                     @endif
                 @endif
                 <div class="basel-buttons">
-
                     <div class="clear"></div>
-                    @if($configProduct->compare == 1)
-                        <div class="basel-compare-btn product-compare-button">
-                            <a class="button" href="{{route('compare')}}" data-added-text="{{constLang('compare')}} {{constLang('product')}}" data-id="1001">{{constLang('compare')}}</a>
-                        </div>
-                    @endif
-
-                    @if($configProduct->quickview == 1)
+                    @if($configProduct->wishlist == 1)
                         <div class="yith-wcwl-add-to-wishlist add-to-wishlist-1001">
                             <div class="yith-wcwl-add-button show">
                                 <a href="{{route('wishlist.store')}}?infinit_scrolling&add_to_wishlist=1001" rel="nofollow" data-product-id="1001" data-product-type="variable" class="add_to_wishlist">
@@ -111,9 +104,15 @@
                             <div style="clear:both"></div>
                             <div class="yith-wcwl-wishlistaddresponse"></div>
                         </div>
-
+                    @endif
+                    @if($configProduct->compare == 1)
+                        <div class="basel-compare-btn product-compare-button">
+                            <a class="button" href="{{route('compare')}}" data-added-text="{{constLang('compare')}} {{constLang('product')}}" data-id="1001">{{constLang('compare')}}</a>
+                        </div>
+                    @endif
+                    @if($configProduct->quickview == 1)
                         <div class="quick-view">
-                            <a href="{{url('product.show')}}" class="open-quick-view" data-id="{{$product->id}}">{{constLang('quick_view')}}</a>
+                            <a href="{{url(setRoute('color').$color->slug)}}" class="open-quick-view" data-id="{{$product->id}}">{{constLang('quick_view')}}</a>
                         </div>
                     @endif
                 </div>
@@ -135,4 +134,7 @@
 @empty <!-- /product -->
 
 @endforelse <!-- /products -->
+<div class="clearfix visible-xs-block"></div>
+<div class="clearfix visible-sm-block"></div>
+<div class="clearfix visible-md-block visible-lg-block"></div>
 

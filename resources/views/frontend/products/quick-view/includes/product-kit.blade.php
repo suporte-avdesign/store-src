@@ -20,7 +20,7 @@
 <div id="basel-woocommerce-layered-nav-17" class="filter-widget widget-count-4  basel-woocommerce-layered-nav">
     @foreach($grids as $key => $grid)
         <div class="basel-scroll">
-            <ul class="show-labels-on swatches-normal swatches-display-inline  basel-scroll-content">
+            <ul class="show-labels-on swatches-normal swatches-display-inline">
                 <li class="wc-layered-nav-term  with-swatch-text">
                     <a href="javascript:void(0)">{{$key}}</a>
                 </li>

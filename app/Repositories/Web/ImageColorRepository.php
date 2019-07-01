@@ -60,7 +60,7 @@ class ImageColorRepository implements ImageColorInterface
                         },
                         'section' => function ($query) {
                             $query->where('active', constLang('active_true'))->get();
-                        },
+                        }
                     ]);
                 },
                 'positions' => function ($query) {
@@ -75,6 +75,9 @@ class ImageColorRepository implements ImageColorInterface
         return $query;
 
     }
+
+
+
 
 
 

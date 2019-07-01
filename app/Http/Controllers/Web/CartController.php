@@ -9,6 +9,8 @@ class CartController extends Controller
 {
     public function index()
     {
+
+        dd('index');
         // Route('products')
         $product = array(
             "category" => "categoria",
@@ -23,6 +25,7 @@ class CartController extends Controller
 
     public function store(Request $request)
     {
+        dd('store');
         sleep(2);
         $json = $request['wc-ajax'];
         $list = 1;
@@ -49,6 +52,7 @@ class CartController extends Controller
 
     public function product(Request $request)
     {
+        dd($request->all());
         sleep(2);
         $action = $request->input('action');
         $attribute_pa_color = $request->input('attribute_pa_color');

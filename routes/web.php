@@ -62,6 +62,8 @@ Route::get(setRoute('category').'{slug}/{pag}/{num}/', 'Web\CategoryController@i
 |--------------------------------------------------------------------------
 */
 
+Route::post(setRoute('product').'show', 'Web\ProductController@show')->name('show');
+
 Route::get(setRoute('product').'search', 'Web\ImageColorController@search');
 /*
 |--------------------------------------------------------------------------
@@ -69,7 +71,6 @@ Route::get(setRoute('product').'search', 'Web\ImageColorController@search');
 |--------------------------------------------------------------------------
 */
 Route::get(setRoute('color').'{slug}', 'Web\ImageColorController@index');
-Route::post(setRoute('color').'show', 'Web\ImageColorController@show');
 
 /*
 |--------------------------------------------------------------------------

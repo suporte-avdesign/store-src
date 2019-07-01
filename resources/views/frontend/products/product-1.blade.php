@@ -1,11 +1,11 @@
 @extends('frontend.layouts.template-1')
 @push('title')
-<title>{{$configKeyword->description}} {{$data->product->name}} {{config('app.name')}}</title>
+<title>{{$configKeyword->description}} {{$product->name}} {{config('app.name')}}</title>
     <meta name="description" content="{{$configKeyword->description}} , {{$configKeyword->genders}}">
     <meta name="keywords" content="{{$configKeyword->keywords}},{{$configKeyword->categories}},{{$configKeyword->genders}}">
 @endpush
 @push('body')
-<body class="product-template-default single single-product postid-19656 logged-in woocommerce woocommerce-page woocommerce-no-js wrapper-full-width global-cart-design-1 global-search-full-screen global-header-shop mobile-nav-from-left basel-product-design-default basel-light catalog-mode-off categories-accordion-on global-wishlist-enable basel-top-bar-on basel-ajax-shop-on basel-ajax-search-on enable-sticky-header header-full-width sticky-header-real offcanvas-sidebar-mobile offcanvas-sidebar-tablet wpb-js-composer js-comp-ver-5.6 vc_responsive">
+<body class="product-template-default single single-product postid-{{$product->id}} logged-in woocommerce woocommerce-page woocommerce-no-js wrapper-full-width global-cart-design-1 global-search-full-screen global-header-shop mobile-nav-from-left basel-product-design-default basel-light catalog-mode-off categories-accordion-on global-wishlist-enable basel-top-bar-on basel-ajax-shop-on basel-ajax-search-on enable-sticky-header header-full-width sticky-header-real offcanvas-sidebar-mobile offcanvas-sidebar-tablet wpb-js-composer js-comp-ver-5.6 vc_responsive">
 @endpush
 @section('content')
     <div class="container-fluid">
@@ -33,16 +33,15 @@
                                 <div class="row">
                                     <!-- images gallery colorr/positions-->
                                     @if(!empty($data->positions) && $configProduct->positions == 1)
-                                        @include('frontend.products.includes.gallery-positions-1')
+                                        @include('frontend.products.gallery-positions-1')
                                     @else
-                                        @include('frontend.products.includes.gallery-colors-1')
+                                        @include('frontend.products.gallery-colors-1')
                                     @endif
                                     <!-- Descrição do produto -->
                                     <div class="col-sm-6 summary entry-summary">
                                         <div class="summary-inner ">
                                             <div class="basel-scroll-content">
                                                 <p itemprop="name" class="product_title entry-title">{{$product->name}}</p>
-                                                <p itemprop="brand" class="product_title entry-title">{{$product->brand}}</p>
 
                                                 @include('frontend.products.includes.prices-1')
 
@@ -127,7 +126,6 @@
     var wc_single_product_params = {!! json_encode([
         "i18n_required_rating_text" => "Por favor, selecione uma classificação",
         "review_rating_required" => "yes",
-        "product_kit" => ($product->kit == 1 ? "yes" : "not"),
         "flexslider" => array(
             "rtl" => false,
             "animation" => "slide",
@@ -150,7 +148,7 @@
             "showAnimationDuration" => 0
         ),
         "flexslider_enabled" => ""
-    ]) !!}}
+    ]) !!}
 </script>
 <script type="text/javascript" src="{{asset('plugins/product/js/single-product.min.js')}}"></script>
 @endpush
