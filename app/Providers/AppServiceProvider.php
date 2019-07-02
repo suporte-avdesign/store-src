@@ -18,6 +18,7 @@ class AppServiceProvider extends ServiceProvider
         }
 
         $models = array(
+            'Cart',
             'Category',
             'ConfigKeyword',
             'ConfigImages',
@@ -25,6 +26,7 @@ class AppServiceProvider extends ServiceProvider
             'ConfigProduct',
             'ConfigSite',
             'ImageColor',
+            'GridProduct',
             'Product',
             'Section',
             'SocialShare'

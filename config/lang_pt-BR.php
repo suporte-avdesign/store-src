@@ -65,6 +65,7 @@ return [
     'category' => 'Categoria',
     'categories' => 'Categorias',
     'card' => 'Cartão',
+    'cart' => 'Carrinho',
     'cash' => 'À Vista',
     'cell' => 'Celular',
     'close' => 'Fechar',
@@ -292,6 +293,11 @@ return [
         ],
         'colors' => [
             'btn_zoom' => 'Clique para Ampliar',
+        ],
+        'cart' => [
+            'cart_view' => 'Ver Carrinho',
+            'product_added' => 'foi adicionado ao seu carrinho.',
+            'cart_empty' => 'Seu carrinho está vazio.'
         ]
 
 

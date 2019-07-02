@@ -22,10 +22,24 @@ class ProductRepository implements ProductInterface
     }
 
     /**
-     * @param $slug
+     * Date: 07/01/2019
+     *
+     * @param $id
      * @return mixed
      */
     public function setId($id)
+    {
+        return $this->model->find($id);
+    }
+
+
+    /**
+     * Date: 06/30/2019
+     *
+     * @param $id
+     * @return mixed
+     */
+    public function getId($id)
     {
         $query = $this->model->where(['active' => 1, 'id' => $id])->with([
             'prices' => function ($query) {
@@ -61,10 +75,11 @@ class ProductRepository implements ProductInterface
 
         ])->first();
 
-
         return $query;
-
     }
+
+
+
 
 
 

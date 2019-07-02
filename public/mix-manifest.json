@@ -28,7 +28,7 @@
     "/plugins/isotope/isotope.pkgd.min.js": "/plugins/isotope/isotope.pkgd.min.js",
     "/plugins/waypoints/waypoints.min.js": "/plugins/waypoints/waypoints.min.js",
     "/plugins/js_composer/js/js_composer_front.min.js": "/plugins/js_composer/js/js_composer_front.min.js",
-    "/themes/js/theme-org.js": "/themes/js/theme-org.js",
+    "/themes/js/theme.min.js": "/themes/js/theme.min.js",
     "/includes/underscore/js/underscore.min.js": "/includes/underscore/js/underscore.min.js",
     "/includes/util/avd-util.min.js": "/includes/util/avd-util.min.js",
     "/plugins/cart/js/add-to-cart-variation.min.js": "/plugins/cart/js/add-to-cart-variation.min.js",

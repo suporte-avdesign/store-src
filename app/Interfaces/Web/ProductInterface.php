@@ -9,6 +9,7 @@ interface ProductInterface
      *
      * @return \AVD\Repositories\Web\ProductRepository
      */
+    public function getId($id);
     public function setId($id);
 
 }

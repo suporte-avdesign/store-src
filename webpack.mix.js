@@ -54,7 +54,7 @@ mix.scripts('resources/assets/plugins/yith-wishlist/js/jquery.yith-wcwl.js', 'pu
 mix.scripts('resources/assets/plugins/isotope/isotope.pkgd.min.js', 'public/plugins/isotope/isotope.pkgd.min.js');
 mix.scripts('resources/assets/plugins/waypoints/waypoints.min.js', 'public/plugins/waypoints/waypoints.min.js');
 mix.scripts('resources/assets/plugins/js_composer/js/js_composer_front.min.js', 'public/plugins/js_composer/js/js_composer_front.min.js');
-mix.scripts('resources/assets/themes/js/theme-org.js', 'public/themes/js/theme-org.js');
+mix.scripts('resources/assets/themes/js/theme.js', 'public/themes/js/theme.min.js');
 mix.scripts('resources/assets/includes/underscore/js/underscore.min.js', 'public/includes/underscore/js/underscore.min.js');
 mix.scripts('resources/assets/includes/util/avd-util.min.js', 'public/includes/util/avd-util.min.js');
 mix.scripts('resources/assets/plugins/cart/js/add-to-cart-variation.js', 'public/plugins/cart/js/add-to-cart-variation.min.js');

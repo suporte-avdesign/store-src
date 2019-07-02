@@ -105,7 +105,7 @@
 <script type="text/javascript" src="{{asset('plugins/waypoints/waypoints.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('plugins/js_composer/js/js_composer_front.min.js')}}"></script>
 @include('frontend.scripts.basel_settings')
-<script type="text/javascript" src="{{asset('themes/js/theme-org.js')}}"></script>
+<script type="text/javascript" src="{{asset('themes/js/theme.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('includes/underscore/js/underscore.min.js')}}"></script>
 @include('frontend.scripts._wpUtilSettings')
 <script type="text/javascript" src="{{asset('includes/util/avd-util.min.js')}}"></script>

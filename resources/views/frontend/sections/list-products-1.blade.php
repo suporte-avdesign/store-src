@@ -6,38 +6,37 @@
 <!-- PRODUTO 1 first select options -->
 @forelse($categories as $category)
     @forelse($category->products as $product)
-        <!-- Prices Offers -->
-        @if($configProduct->view_prices == 1)
-            @foreach($product->prices as $price)
-                @php
-                    if ($product->offer == 1) {
-                        if ($price->profile == $configProduct->price_default) {
-                            $price_cash_percent = floatval($price->price_cash_percent);
-                            $price_card_percent = floatval($price->price_card_percent);
-                            $profile_default_name = $price->profile;
-                            $price_default_cash = setReal($price->offer_cash);
-                            $price_default_card = setReal($price->offer_card);
-                        } else {
-                            $price_cash_percent = floatval($price->price_cash_percent);
-                            $price_card_percent = floatval($price->price_card_percent);
-                            $profile_other_name = $price->profile;
-                            $price_other_cash = setReal($price->offer_cash);
-                            $price_other_card = setReal($price->offer_card);
-                        }
+
+        @foreach($product->prices as $price)
+            @php
+
+                if ($product->offer == 1) {
+                    if ($price->profile == $configProduct->price_default) {
+                        $price_cash_percent = floatval($price->price_cash_percent);
+                        $price_card_percent = floatval($price->price_card_percent);
+                        $profile_default_name = $price->profile;
+                        $price_default_cash = setReal($price->offer_cash);
+                        $price_default_card = setReal($price->offer_card);
                     } else {
-                        if ($price->profile == $configProduct->price_default) {
-                            $profile_default_name = $price->profile;
-                            $price_default_cash = setReal($price->price_cash);
-                            $price_default_card = setReal($price->price_card);
-                        } else {
-                            $profile_other_name = $price->profile;
-                            $price_other_cash = setReal($price->price_cash);
-                            $price_other_card = setReal($price->price_card);
-                        }
+                        $price_cash_percent = floatval($price->price_cash_percent);
+                        $price_card_percent = floatval($price->price_card_percent);
+                        $profile_other_name = $price->profile;
+                        $price_other_cash = setReal($price->offer_cash);
+                        $price_other_card = setReal($price->offer_card);
                     }
-                @endphp
-            @endforeach
-        @endif
+                } else {
+                    if ($price->profile == $configProduct->price_default) {
+                        $profile_default_name = $price->profile;
+                        $price_default_cash = setReal($price->price_cash);
+                        $price_default_card = setReal($price->price_card);
+                    } else {
+                        $profile_other_name = $price->profile;
+                        $price_other_cash = setReal($price->price_cash);
+                        $price_other_card = setReal($price->price_card);
+                    }
+                }
+            @endphp
+        @endforeach
 
         @if (count($product->images) >= 1)
             @foreach($product->images()->where('active', constLang('active_true'))->orderBy('cover', 'desc')->limit(1)->get() as $color)
@@ -119,8 +118,13 @@
 
                     </div>
                     <h3 class="product-title"><a href="{{url(setRoute('color').$color->slug)}}">{{$product->name}} </a></h3>
-
-                    @include('frontend.sections.include.prices-1')
+                    @if($configProduct->view_prices == 0)
+                        @include('frontend.sections.include.prices-1')
+                    @else
+                        @if(\Illuminate\Support\Facades\Auth::user())
+                            @include('frontend.sections.include.prices-1')
+                        @endif
+                    @endif
                 </div>
                 @if(($loop->iteration % 2) == 0)
                     <div class="clearfix visible-xs-block"></div>

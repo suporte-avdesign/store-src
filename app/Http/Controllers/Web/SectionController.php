@@ -55,11 +55,6 @@ class SectionController extends Controller
             $categories = $this->interCategory->getSectionColors($this->configSite, $this->configProduct, $section->id);
         }
 
-
-        //dd($configKeyword);
-
-
-
         //sleep(10);
         $_pjax = '';
         $orderby = '';

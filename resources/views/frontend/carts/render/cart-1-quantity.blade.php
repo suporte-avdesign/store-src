@@ -1,0 +1,1 @@
+<span class="basel-cart-number">{{$total_quantity}}</span>

@@ -17,6 +17,7 @@ use AVD\Interfaces\Web\ConfigColorPositionInterface as ConfigImages;
 
 class ProductController extends Controller
 {
+    private $phatFiles;
 
     public function __construct(
         ConfigSite $configSite,
@@ -27,7 +28,7 @@ class ProductController extends Controller
         ConfigKeyword $configKeyword,
         ConfigProduct $configProduct)
     {
-
+        $this->phatFiles     = env('APP_PANEL_URL');
         $this->configSite    = $configSite->setId(1);
         $this->interModel    = $interModel;
         $this->interSocial   = $interSocial;
@@ -35,13 +36,14 @@ class ProductController extends Controller
         $this->configImages  = $configImages;
         $this->configKeyword = $configKeyword->random();
         $this->configProduct = $configProduct->setId(1);
+
     }
 
 
     public function show(Request $request)
     {
         $dataForm = $request->all();
-        $product  = $this->interModel->setId($dataForm['id']);
+        $product  = $this->interModel->getId($dataForm['id']);
         $section  = $product->section()->first();
         $category = $product->category()->first();
         $colors   = $product->images;
@@ -49,20 +51,7 @@ class ProductController extends Controller
         $configSite    = $this->configSite;
         $configProduct = $this->configProduct;
 
-        $url = env('APP_PANEL_URL');
-        $paths = $this->configImages->getAll();
-        foreach ($paths as $value) {
-            if ($value->default == 'T') {
-                $path['T'] = $url.$value->path;
-            } else if($value->default == 'N') {
-                $path['N'] = $url.$value->path;
-            } else if($value->default == 'G') {
-                $path['G'] = $url.$value->path;
-            } else if($value->default == 'Z') {
-                $path['Z'] = $url.$value->path;
-            }
-        }
-
+        $path = $this->getPhatImages($this->phatFiles);
 
         foreach ($product->prices as $value) {
             if ($value->profile == $configProduct->price_default) {
@@ -102,6 +91,7 @@ class ProductController extends Controller
 
         return view('frontend.products.quick-view.quick-view-1', compact(
             'product_variations',
+                'product_prices_id',
                 'configProduct',
                 'configSite',
                 'attributes',
@@ -188,4 +178,28 @@ class ProductController extends Controller
 
     }
 
+
+    /**
+     * Date: 07/01/2019
+     *
+     * @param $url
+     * @return mixed
+     */
+    public function getPhatImages($url)
+    {
+        $paths = $this->configImages->getAll();
+        foreach ($paths as $value) {
+            if ($value->default == 'T') {
+                $path['T'] = $url.$value->path;
+            } else if($value->default == 'N') {
+                $path['N'] = $url.$value->path;
+            } else if($value->default == 'G') {
+                $path['G'] = $url.$value->path;
+            } else if($value->default == 'Z') {
+                $path['Z'] = $url.$value->path;
+            }
+        }
+
+        return $path;
+    }
 }
