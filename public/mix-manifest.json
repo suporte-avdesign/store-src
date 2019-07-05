@@ -19,6 +19,7 @@
     "/plugins/cart/js/avd-add-to-cart.js": "/plugins/cart/js/avd-add-to-cart.js",
     "/themes/js/html5.min.js": "/themes/js/html5.min.js",
     "/themes/js/device.min.js": "/themes/js/device.min.js",
+    "/themes/js/theme.min.js": "/themes/js/theme.min.js",
     "/includes/contact-form-7/js/scripts.js": "/includes/contact-form-7/js/scripts.js",
     "/plugins/js-cookie/js.cookie.min.js": "/plugins/js-cookie/js.cookie.min.js",
     "/plugins/frontend/avdesign.min.js": "/plugins/frontend/avdesign.min.js",
@@ -28,10 +29,16 @@
     "/plugins/isotope/isotope.pkgd.min.js": "/plugins/isotope/isotope.pkgd.min.js",
     "/plugins/waypoints/waypoints.min.js": "/plugins/waypoints/waypoints.min.js",
     "/plugins/js_composer/js/js_composer_front.min.js": "/plugins/js_composer/js/js_composer_front.min.js",
-    "/themes/js/theme.min.js": "/themes/js/theme.min.js",
     "/includes/underscore/js/underscore.min.js": "/includes/underscore/js/underscore.min.js",
     "/includes/util/avd-util.min.js": "/includes/util/avd-util.min.js",
     "/plugins/cart/js/add-to-cart-variation.min.js": "/plugins/cart/js/add-to-cart-variation.min.js",
     "/plugins/zoom/js/jquery.zoom.min.js": "/plugins/zoom/js/jquery.zoom.min.js",
-    "/plugins/product/js/single-product.min.js": "/plugins/product/js/single-product.min.js"
+    "/plugins/product/js/single-product.min.js": "/plugins/product/js/single-product.min.js",
+    "/plugins/select2/css/select2.css": "/plugins/select2/css/select2.css",
+    "/includes/zxcvbn/js/zxcvbn-async.min.js": "/includes/zxcvbn/js/zxcvbn-async.min.js",
+    "/plugins/address/country-select.min.js": "/plugins/address/country-select.min.js",
+    "/plugins/address/address-i18n.min.js": "/plugins/address/address-i18n.min.js",
+    "/plugins/cart/js/cart.js": "/plugins/cart/js/cart.js",
+    "/plugins/select2/js/select2.full.min.js": "/plugins/select2/js/select2.full.min.js",
+    "/includes/zxcvbn/js/password-strength-meter.min.js": "/includes/zxcvbn/js/password-strength-meter.min.js"
 }

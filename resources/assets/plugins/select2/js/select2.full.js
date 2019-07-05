@@ -1,5 +1,5 @@
 /*!
- * SelectWoo 1.0.1
+ * SelectWoo 1.0.6
  * https://github.com/woocommerce/selectWoo
  *
  * Released under the MIT license
@@ -1924,7 +1924,7 @@
                 var $search = $(
                     '<li class="select2-search select2-search--inline">' +
                     '<input class="select2-search__field" type="text" tabindex="-1"' +
-                    ' autocomplete="off" autocorrect="off" autocapitalize="off"' +
+                    ' autocomplete="off" autocorrect="off" autocapitalize="none"' +
                     ' spellcheck="false" role="textbox" aria-autocomplete="list" />' +
                     '</li>'
                 );
@@ -3992,7 +3992,7 @@
                 var $search = $(
                     '<span class="select2-search select2-search--dropdown">' +
                     '<input class="select2-search__field" type="text" tabindex="-1"' +
-                    ' autocomplete="off" autocorrect="off" autocapitalize="off"' +
+                    ' autocomplete="off" autocorrect="off" autocapitalize="none"' +
                     ' spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="true" />' +
                     '</span>'
                 );
@@ -4047,7 +4047,7 @@
                 });
 
                 container.on('focus', function () {
-                    if (container.isOpen()) {
+                    if (!container.isOpen()) {
                         self.$search.focus();
                     }
                 });
@@ -6557,7 +6557,7 @@
                 $.fn.selectWoo.defaults = Defaults;
             }
 
-            // Also register select2 under select2 if select2 is not already present.
+            // Also register selectWoo under select2 if select2 is not already present.
             $.fn.select2 = $.fn.select2 || $.fn.selectWoo;
 
             return Select2;

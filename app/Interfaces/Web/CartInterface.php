@@ -10,9 +10,10 @@ interface CartInterface
      * @return \AVD\Repositories\Web\CartRepository
      */
     public function create($input);
-    public function update($input, $id);
-    public function delete($id);
-    public function getall($session);
+    public function update($input, $key);
+    public function delete($key);
+    public function undo($key);
+    public function getAll($session);
     public function existProduct($session, $grid_product_id);
 
 }

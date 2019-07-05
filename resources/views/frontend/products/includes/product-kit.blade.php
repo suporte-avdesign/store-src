@@ -16,25 +16,6 @@
     $sizes = ary_unique($array, 'units');
 
 @endphp
-
-<div id="basel-woocommerce-layered-nav-17" class="filter-widget widget-count-4  basel-woocommerce-layered-nav">
-    @foreach($grids as $key => $grid)
-        <div class="basel-scroll">
-            <ul class="show-labels-on swatches-normal swatches-display-inline  basel-scroll-content">
-                <li class="wc-layered-nav-term  with-swatch-text">
-                    <a href="javascript:void(0)">{{$key}}</a>
-                </li>
-                @foreach($grid as $key => $value)
-                    <li class="wc-layered-nav-term  with-swatch-text">
-                        <a href="javascript:void(0)">{{$value[1]}}</a>
-                        <span class="count">({{$value[0]}})</span>
-                    </li>
-                @endforeach
-            </ul>
-        </div>
-    @endforeach
-</div>
-
 <form class="variations_form cart" method="post" enctype="multipart/form-data" data-product_id="{{$product->id}}" data-product_variations='{{$product_variations}}'>
     <table class="variations" cellspacing="0">
         <tbody>
@@ -65,20 +46,22 @@
             </td>
         </tr>
         <tr>
-            <td class="label"><label for="pa_size">{{$product->kit_name}}</label></td>
-            <td class="value with-swatches">
-                <div class="swatches-select" data-id="pa_size">
-                        @foreach($sizes as $size)
-                            <div class="basel-swatch basel-tooltip text-only swatch-size-" data-value="{{$size['units'].\Illuminate\Support\Str::slug($product->measure)}}"  style="">({{$size['units']}}) {{\Illuminate\Support\Str::slug($product->measure)}}</div>
-                        @endforeach
-                </div>
-                <select id="pa_size" class="" name="attribute_pa_size" data-attribute_name="attribute_pa_size" data-show_option_none="yes">
-                    <option value="">{{constLang('select_options')}}</option>
-                        @foreach($sizes as $size)
-                            <option value="{{$size['units'].\Illuminate\Support\Str::slug($product->measure)}}">{{$size['units']}} {{$product->measure}}</option>
-                        @endforeach
-                </select>
-                <a class="reset_variations" href="#">{{constLang('reset')}}</a>
+            @foreach($grids as $key => $grid)
+                <td class="label"><label for="pa_size">{{$key}}</label></td>
+            @endforeach
+            <td class="basel-woocommerce-layered-nav">
+                @foreach($grids as $key => $grid)
+                    <div class="basel-scroll">
+                        <ul class="show-labels-on swatches-normal swatches-display-inline  basel-scroll-content">
+                            @foreach($grid as $key => $value)
+                                <li class="wc-layered-nav-term  with-swatch-text">
+                                    <a href="javascript:void(0)">{{$value[1]}}</a>
+                                    <span class="count">({{$value[0]}})</span>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endforeach
             </td>
         </tr>
         </tbody>

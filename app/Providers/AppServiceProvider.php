@@ -18,6 +18,7 @@ class AppServiceProvider extends ServiceProvider
         }
 
         $models = array(
+            'AccountType',
             'Cart',
             'Category',
             'ConfigKeyword',
@@ -29,6 +30,7 @@ class AppServiceProvider extends ServiceProvider
             'GridProduct',
             'Product',
             'Section',
+            'State',
             'SocialShare'
         );
 

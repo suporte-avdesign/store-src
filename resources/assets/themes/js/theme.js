@@ -15429,6 +15429,7 @@ var baselThemeModule;
 
             },
 
+
             /**
              *-------------------------------------------------------------------------------------------------------------------------------------------
              * Instagram AJAX
@@ -18931,8 +18932,8 @@ var baselThemeModule;
                 if (baselTheme.supports_html5_storage) {
 
                     try {
-                        var wishlistNumber = sessionStorage.getItem('basel_wishlist_number'),
-                            cookie_hash = Cookies.get('basel_wishlist_hash');
+                        var wishlistNumber = sessionStorage.getItem(yith_wcwl_l10n.hash_name+'_number'),
+                            cookie_hash = Cookies.get(yith_wcwl_l10n.hash_name);
 
 
                         if (wishlistNumber === null || wishlistNumber === undefined || wishlistNumber === '') {

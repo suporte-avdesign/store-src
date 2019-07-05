@@ -39,11 +39,13 @@ jQuery( function( $ ) {
                 data[ key ] = value;
             });
 
+            data['_token']  = yith_wcwl_l10n.csrf_token;
+
             // Trigger event.
             $( document.body ).trigger( 'adding_to_cart', [ $thisbutton, data ] );
 
             // Ajax action.
-            $.post( wc_add_to_cart_params.wc_ajax_url.toString().replace( '%%endpoint%%', 'add_to_cart' ), data, function( response ) {
+            $.post( wc_add_to_cart_params.ajax_url.toString().replace( '%%endpoint%%', 'add_to_cart' ), data, function( response ) {
                 if ( ! response ) {
                     return;
                 }
@@ -81,7 +83,7 @@ jQuery( function( $ ) {
             }
         });
 
-        $.post( wc_add_to_cart_params.wc_ajax_url.toString().replace( '%%endpoint%%', 'remove_from_cart' ), { cart_item_key : $thisbutton.data( 'cart_item_key' ) }, function( response ) {
+        $.post( wc_add_to_cart_params.wc_ajax_url.toString().replace( '%%endpoint%%', 'remove_from_cart' ), { cart_item_key : $thisbutton.data( 'cart_item_key'),  _token : wc_add_to_cart_params.csrf_token }, function( response ) {
             if ( ! response || ! response.fragments ) {
                 window.location = $thisbutton.attr( 'href' );
                 return;

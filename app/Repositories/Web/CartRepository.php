@@ -27,10 +27,13 @@ class CartRepository implements CartInterface
      * @param $session
      * @return mixed
      */
-    public function getall($session)
+    public function getAll($session)
     {
         return $this->model->where('session', $session)->get();
     }
+
+
+
 
     /**
      * Date: 07/01/2019
@@ -67,15 +70,10 @@ class CartRepository implements CartInterface
      * @param $id
      * @return bool
      */
-    public function update($input, $id)
+    public function update($input, $key)
     {
-        $data   = $this->model->find($id);
-        $update = $data->update($input);
-        if ($update) {
-            return $update;
-        }
-
-        return false;
+        $data   = $this->model->find($key);
+        return $data->update($input);
     }
 
     /**
@@ -84,15 +82,23 @@ class CartRepository implements CartInterface
      * @param $id
      * @return bool
      */
-    public function delete($id)
+    public function delete($key)
     {
-        $data = $this->model->find($id);
-        $delete = $data->delete();
-        if ($delete) {
-            return true;
-        }
-
-        return false;
+        $data = $this->model->where('key', $key)->first();
+        return $data->delete();
     }
+
+
+    /**
+     * Date: 07/04/2019
+     *
+     * @param $key
+     * @return mixed
+     */
+    public function undo($key)
+    {
+        return $this->model->where('key', $key)->first();
+    }
+
 
 }

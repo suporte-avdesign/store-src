@@ -3,6 +3,7 @@
         "ajax_url" => route('wishlist.store'),
         "remove_url" => route('wishlist.remove'),
         "redirect_to_cart" => "no",
+        "hash" => \Illuminate\Support\Str::slug('wishlist_'.config('app.name'), '-'),
         "multi_wishlist" => "",
         "hide_add_button" => "1",
         "is_user_logged_in" => "",

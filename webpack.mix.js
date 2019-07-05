@@ -34,15 +34,17 @@ mix.styles('resources/assets/plugins/js_composer/css/vc_lte_ie9.min.css', 'publi
 mix.styles('resources/assets/themes/css/styles.css', 'public/themes/css/styles.min.css');
 mix.styles('resources/assets/themes/css/theme.css', 'public/themes/css/theme.css');
 
-// head
+// template
 mix.scripts('resources/assets/plugins/google/analytics-frontend.js', 'public/plugins/google/analytics-frontend.min.js');
 mix.scripts('resources/assets/includes/js/jquery/jquery.min.js', 'public/includes/js/jquery/jquery.min.js');
 mix.scripts('resources/assets/includes/js/jquery/jquery-migrate.min.js', 'public/includes/js/jquery/jquery-migrate.min.js');
 mix.scripts('resources/assets/plugins/jquery-blockui/jquery.blockUI.min.js', 'public/plugins/jquery-blockui/jquery.blockUI.min.js');
-mix.scripts('resources/assets/plugins/cart/js/add-to-cart.min.js', 'public/plugins/cart/js/add-to-cart.min.js');
+mix.scripts('resources/assets/plugins/cart/js/add-to-cart.js', 'public/plugins/cart/js/add-to-cart.min.js');
 mix.scripts('resources/assets/plugins/cart/js/avd-add-to-cart.js', 'public/plugins/cart/js/avd-add-to-cart.js');
 mix.scripts('resources/assets/themes/js/html5.min.js', 'public/themes/js/html5.min.js');
 mix.scripts('resources/assets/themes/js/device.min.js', 'public/themes/js/device.min.js');
+mix.scripts('resources/assets/themes/js/theme-org.js', 'public/themes/js/theme.min.js');
+
 
 //footer
 mix.scripts('resources/assets/includes/contact-form-7/js/scripts.js', 'public/includes/contact-form-7/js/scripts.js');
@@ -54,18 +56,25 @@ mix.scripts('resources/assets/plugins/yith-wishlist/js/jquery.yith-wcwl.js', 'pu
 mix.scripts('resources/assets/plugins/isotope/isotope.pkgd.min.js', 'public/plugins/isotope/isotope.pkgd.min.js');
 mix.scripts('resources/assets/plugins/waypoints/waypoints.min.js', 'public/plugins/waypoints/waypoints.min.js');
 mix.scripts('resources/assets/plugins/js_composer/js/js_composer_front.min.js', 'public/plugins/js_composer/js/js_composer_front.min.js');
-mix.scripts('resources/assets/themes/js/theme.js', 'public/themes/js/theme.min.js');
 mix.scripts('resources/assets/includes/underscore/js/underscore.min.js', 'public/includes/underscore/js/underscore.min.js');
 mix.scripts('resources/assets/includes/util/avd-util.min.js', 'public/includes/util/avd-util.min.js');
 mix.scripts('resources/assets/plugins/cart/js/add-to-cart-variation.js', 'public/plugins/cart/js/add-to-cart-variation.min.js');
 
-//Product
+//Product footer
 mix.scripts('resources/assets/plugins/zoom/js/jquery.zoom.js', 'public/plugins/zoom/js/jquery.zoom.min.js');
 mix.scripts('resources/assets/plugins/product/js/single-product.js', 'public/plugins/product/js/single-product.min.js');
 
-/*
-mix.sass([
-    'resources/assets/css/login.css'
-], 'public/css/login.min.css');
 
-*/
+//Cart head
+mix.styles('resources/assets/plugins/select2/css/select2.css', 'public/plugins/select2/css/select2.css');
+mix.scripts('resources/assets/includes/zxcvbn/js/zxcvbn-async.min.js', 'public/includes/zxcvbn/js/zxcvbn-async.min.js');
+//Cart footer
+mix.scripts('resources/assets/plugins/address/country-select.min.js', 'public/plugins/address/country-select.min.js');
+mix.scripts('resources/assets/plugins/address/address-i18n.min.js', 'public/plugins/address/address-i18n.min.js');
+mix.scripts('resources/assets/plugins/cart/js/cart.js', 'public/plugins/cart/js/cart.js');
+mix.scripts('resources/assets/plugins/select2/js/select2.full.js', 'public/plugins/select2/js/select2.full.min.js');
+
+//Login head
+mix.scripts('resources/assets/includes/zxcvbn/js/zxcvbn-async.js', 'public/includes/zxcvbn/js/zxcvbn-async.min.js');
+mix.scripts('resources/assets/includes/zxcvbn/js/password-strength-meter.js', 'public/includes/zxcvbn/js/password-strength-meter.min.js');
+mix.scripts('resources/assets/includes/zxcvbn/js/zxcvbn-async.js', 'public/includes/zxcvbn/js/zxcvbn-async.min.js');

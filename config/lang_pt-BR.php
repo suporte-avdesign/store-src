@@ -69,6 +69,7 @@ return [
     'cash' => 'À Vista',
     'cell' => 'Celular',
     'close' => 'Fechar',
+    'checkout' => 'Finalizar',
     'code' => 'Código',
     'color' => 'Cor',
     'colors' => 'Cores',
@@ -96,7 +97,8 @@ return [
     ],
     'featured' => 'Destaque',
     'filter' => 'Filtrar',
-    'phone' => 'Telefone',
+    'phone' => 'Preço',
+    'price' => 'Telefone',
     'grid'  => 'Grade',
     'group'  => 'Grupo',
     'genders.required' => 'Os gêneros são obrigatórios',
@@ -136,9 +138,20 @@ return [
     'parcel' => 'Parcelado',
     'payment_card' => 'Cartão de Crédito',
     'payment_cash' => 'Pagamento à Vista',
+    'person_legal' => [
+        'name' => 'Pessoa Jurídica',
+        'document1' => 'CNPJ',
+        'document2' => 'Inscrição Estadual'
+    ],
+    'person_physical' => [
+        'name' => 'Pessoa Física',
+        'document1' => 'CPF',
+        'document2' => 'RG'
+    ],
     'photo' => 'Foto',
     'position' => 'Posição',
     'previous' => 'Anterior',
+    'price' => 'Preço',
     'product' => 'Produto',
     'profile' => 'Perfil',
     'profile_name' => [
@@ -157,6 +170,7 @@ return [
     'retail' => 'Varejo',
     'save' => 'Salvar',
     'section' => 'Seção',
+    'select_state' => 'Selecione o Estado',
     'select_options' => 'Selecione as opções',
     'share' => 'Compartilhar',
     'show' => 'Ver',
@@ -167,6 +181,7 @@ return [
     'status_true' => 'O status foi alterado',
     'status_false' => 'Não foi possível alterar o status',
     'stock' => 'Estoque',
+    'subtotal' => 'Subtotal',
     'tables_preference' => 'a configuração das cores das tabelas por uma de sua preferência',
     'ticket' => 'Boleto',
     'title_update' => 'Alterar',
@@ -295,10 +310,31 @@ return [
             'btn_zoom' => 'Clique para Ampliar',
         ],
         'cart' => [
-            'cart_view' => 'Ver Carrinho',
+            'empty' => 'Seu carrinho está vazio.',
+            'empty_text1' => 'Antes de prosseguir para o checkout, você deve adicionar alguns produtos ao seu carrinho de compras.',
+            'empty_text2' => 'Você encontrará muitos produtos interessantes em nossa página "Loja".',
             'product_added' => 'foi adicionado ao seu carrinho.',
-            'cart_empty' => 'Seu carrinho está vazio.'
+            'remove_item' => 'Remover este item',
+            'total' => 'Total do carrinho',
+            'title' => 'Seu Carrinho',
+            'update' => 'Atualizar Carrinho',
+            'view' => 'Ver Carrinho'
+        ],
+        'checkouts' => [
+            'btn_checkout' => 'Finalizar Pedido',
+            'checkout' => 'Finalizar',
+
+        ],
+        'coupons' => [
+            'coupon' => 'Cupom',
+            'apply' => 'Aplicar Cupom',
+            'code' => 'Código do Cupom',
+            'discount' => 'Cupom de desconto',
+        ],
+        'shipping' => [
+            'freight' => 'Frete'
         ]
+
 
 
     ]

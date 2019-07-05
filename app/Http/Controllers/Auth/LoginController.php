@@ -3,7 +3,12 @@
 namespace AVD\Http\Controllers\Auth;
 
 use AVD\Http\Controllers\Controller;
+
+use AVD\Interfaces\Web\SectionInterface as InterSection;
+
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+
+
 
 class LoginController extends Controller
 {
@@ -25,15 +30,47 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
+    private $view = 'frontend.auth';
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(
+        InterSection $interSection)
     {
         $this->middleware('guest')->except('logout');
+
+        $this->interSection  = $interSection;
     }
+
+
+    /**
+     * Show the application's login form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showLoginForm()
+    {
+        $menu = $this->interSection->getMenu();
+
+        return view("{$this->view}.login-1", compact('menu'));
+    }
+
+
+    /**
+     * Show the application's login form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function login()
+    {
+        $menu = $this->interSection->getMenu();
+
+        return view("{$this->view}.login-1", compact('menu'));
+    }
+
+
 }

@@ -64,23 +64,6 @@
                 </select>
             </td>
         </tr>
-        <tr>
-            <td class="label"><label for="pa_size">{{$product->kit_name}}</label></td>
-            <td class="value with-swatches">
-                <div class="swatches-select" data-id="pa_size">
-                        @foreach($sizes as $size)
-                            <div class="basel-swatch basel-tooltip text-only swatch-size-" data-value="{{$size['units'].\Illuminate\Support\Str::slug($product->measure)}}"  style="">({{$size['units']}}) {{\Illuminate\Support\Str::slug($product->measure)}}</div>
-                        @endforeach
-                </div>
-                <select id="pa_size" class="" name="attribute_pa_size" data-attribute_name="attribute_pa_size" data-show_option_none="yes">
-                    <option value="">{{constLang('select_options')}}</option>
-                        @foreach($sizes as $size)
-                            <option value="{{$size['units'].\Illuminate\Support\Str::slug($product->measure)}}">{{$size['units']}} {{$product->measure}}</option>
-                        @endforeach
-                </select>
-                <a class="reset_variations" href="#">{{constLang('reset')}}</a>
-            </td>
-        </tr>
         </tbody>
     </table>
 

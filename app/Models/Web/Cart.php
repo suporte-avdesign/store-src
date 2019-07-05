@@ -12,6 +12,7 @@ class Cart extends Model
         'product_id',
         'image_color_id',
         'grid_product_id',
+        'key',
         'grid',
         'quantity',
         'image',
