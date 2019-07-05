@@ -5,6 +5,9 @@ namespace AVD\Http\Controllers\Auth;
 use AVD\Http\Controllers\Controller;
 
 use AVD\Interfaces\Web\SectionInterface as InterSection;
+use AVD\Interfaces\Web\AccountTypeInterface as InterAccountType;
+use AVD\Interfaces\Web\ConfigProfileClientInterface as InterProfile;
+
 
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -39,11 +42,15 @@ class LoginController extends Controller
      * @return void
      */
     public function __construct(
-        InterSection $interSection)
+        InterSection $interSection,
+        InterProfile $interProfile,
+        InterAccountType $interAccountType)
     {
         $this->middleware('guest')->except('logout');
 
-        $this->interSection  = $interSection;
+        $this->interSection      = $interSection;
+        $this->interProfile      = $interProfile;
+        $this->interAccountType  = $interAccountType;
     }
 
 
@@ -54,9 +61,15 @@ class LoginController extends Controller
      */
     public function showLoginForm()
     {
-        $menu = $this->interSection->getMenu();
+        $menu     = $this->interSection->getMenu();
+        $types    = $this->interAccountType->getAll();
+        $profiles = $this->interProfile->getAll();
 
-        return view("{$this->view}.login-1", compact('menu'));
+        return view("{$this->view}.login-1", compact(
+            'menu',
+            'types',
+            'profiles')
+        );
     }
 
 
@@ -68,8 +81,13 @@ class LoginController extends Controller
     public function login()
     {
         $menu = $this->interSection->getMenu();
+        $types = $this->interAccountType->getAll();
 
-        return view("{$this->view}.login-1", compact('menu'));
+        return view("{$this->view}.login-1", compact(
+            'menu',
+            'types',
+            'profiles')
+        );
     }
 
 

@@ -25,13 +25,15 @@ class AppServiceProvider extends ServiceProvider
             'ConfigImages',
             'ConfigColorPosition',
             'ConfigProduct',
+            'ConfigProfileClient',
             'ConfigSite',
             'ImageColor',
             'GridProduct',
             'Product',
             'Section',
             'State',
-            'SocialShare'
+            'SocialShare',
+            'User',
         );
 
         foreach ($models as $model) {

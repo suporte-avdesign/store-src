@@ -2,12 +2,11 @@
 
 namespace AVD\Http\Controllers\Auth;
 
-use AVD\User;
 use AVD\Http\Controllers\Controller;
-use AVD\Http\Requests\Web\RegisterUserRequest;
+use AVD\Http\Requests\Web\Register as ValidateRegister;
+use AVD\Interfaces\Web\UserInterface as InterModel;
 
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
@@ -30,86 +29,42 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/login';
+    /**
+     * @var InterModel
+     */
+    private $interModel;
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(InterModel $interModel)
     {
         $this->middleware('guest');
+
+        $this->interModel = $interModel;
     }
 
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    protected function validator(array $data)
+
+    protected function register(ValidateRegister $request)
     {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
-    }
+        $dataForm = $request->all();
+        $input = $dataForm['register'];
+        $input['first_name'] = $input["first_name_{$input['type_id']}"];
+        $input['last_name']  = $input["last_name_{$input['type_id']}"];
+        $input['document1']  = $input["document1_{$input['type_id']}"];
+        $input['document2']  = $input["document2_{$input['type_id']}"];
+        $input['token']      = Str::random(40);
+        $input['ip']         = $request->ip();
 
-    protected function register(RegisterUserRequest $request)
-    {
-        $dataForm  = $request->all();
-        $address   = $dataForm['address'];
-        $user      = $dataForm['user'];
-        $ip        = $request->ip();
-
-        dd($dataForm);
-
-        /*
-
-        $user['email']     = strtolower($user['email']);
-        $user['token']     = str_random(40);
-        $user['ip']        = $ip;
-        $user['password']  = bcrypt($user['password']);
-
-        if (isset($user['newsletter'])){
-            $user['newsletter'] = 1;
-        }
-
-        $create = $this->interModel->create($user);
+        $create = $this->interModel->create($input);
         if ($create) {
-
-            $address['user_id']  = $create->id;
-            $address['delivery'] = 1;
-
-            event(new UserAddressCreatedEvent($address));
-
-            $location =  \Location::get($ip);
-            $desc     =  "Local: {$location->cityName}, ";
-            $desc    .=  "Estado:{$location->regionName}, ";
-            $desc    .=  "CEP:{$location->zipCode}, ";
-            $desc    .=  "IP:{$ip}, ";
-            $desc    .=  "Latitude:{$location->latitude}, ";
-            $desc    .=  "Longitude:{$location->longitude}";
-
-
-            $note = [
-                'user_id' => $create->id,
-                'Admin' => 'Cliente',
-                'label' => 'Cadastro',
-                'description' => $desc
-            ];
-
-            event(new UserNoteCreatedEvent($note));
-
-
+            $email = $create->email;
             if ($request->ajax()){
-
-                return response()->json(["success" => 'Foi enviado um código de validação para '.$create->email.'. 
-                    Abra este email para concluir o registro.<br/>
-                    Se você não receber este e-mail em sua caixa de entrada dentro de 15 minutos,
-                    procure na pasta de lixo eletrônico. Se ele estiver ali, marque-o como "Não é lixo eletrônico".']);
+                $success = view('frontend.auth.render.register-success-1', compact('email'))->render();
+                return response()->json(["success" => $success]);
 
             } else {
                 $request->session()->flash('success', 'Foi enviado um código de validação para '.$create->email.'. 
@@ -128,6 +83,5 @@ class RegisterController extends Controller
             }
         }
 
-        */
     }
 }

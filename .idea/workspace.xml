@@ -2,683 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="780e81c4-7e35-425b-b3b6-a52a887dd07b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Interfaces/Web/StateInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Repositories/Web/StateRepository.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/frontend/auth/login-1.blade.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/404.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/archive-portfolio.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/author-bio.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/class.theme-modules.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/comments.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/content-none.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/content-portfolio.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/content-slider.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/content.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/css/_banner.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/css/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/css/editor-style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/css/font-awesome.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/css/font-awesome.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/css/main.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/css/main.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/fonts/FontAwesome.otf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/fonts/Simple-Line-Icons.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/fonts/Simple-Line-Icons.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/fonts/Simple-Line-Icons.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/fonts/Simple-Line-Icons.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/fonts/Simple-Line-Icons.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/fonts/fontawesome-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/fonts/fontawesome-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/fonts/fontawesome-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/fonts/fontawesome-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/fonts/fontawesome-webfont.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/footer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/functions.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/header.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/AjaxLoader.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/checkout-border.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/cursor-zoom.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/default-skin.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/default-skin.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/grabbing.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/icons/apple-touch-icon-152x152-precomposed.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/icons/favicon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/lazy.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/logo-white.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/mockup-iphone.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/mockup-macbook.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/payments.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/sprites.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/star-silver.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/star.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/svg/clouds-bottom.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/svg/clouds-top.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/svg/curved-line-bottom.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/svg/curved-line-top.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/svg/diagonal-left-bottom.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/svg/diagonal-left-top.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/svg/diagonal-right-bottom.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/svg/diagonal-right-top.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/svg/filter-icon.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/svg/grid-style.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/svg/half-circle-bottom.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/svg/half-circle-top.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/svg/list-style.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/svg/paint-stroke-bottom.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/svg/paint-stroke-top.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/svg/size-quide-icon.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/svg/triangle-bottom.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/svg/triangle-top.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/svg/waves-small-bottom.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/svg/waves-small-top.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/svg/waves-wide-bottom.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/images/svg/waves-wide-top.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/admin/class.theme-modules.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/admin/dashboard/dashboard.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/admin/dashboard/views/footer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/admin/dashboard/views/header.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/admin/dashboard/views/tabs/additional.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/admin/dashboard/views/tabs/home.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/admin/dashboard/views/tabs/license.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/admin/dashboard/views/tabs/shop.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/admin/functions.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/admin/init.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/config.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/css/colorpicker.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/css/gradX.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/css/jquery-ui.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/css/jquery.edittable.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/css/theme-admin.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/basel-badge.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/google-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/gradient-icons/file-css.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/gradient-icons/plus.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/gradient-icons/preset.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/gradient-icons/remove.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/gradient-icons/tpnt.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/jquery-ui/ui-bg_glass_55_fbf9ee_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/jquery-ui/ui-bg_glass_65_ffffff_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/jquery-ui/ui-bg_glass_75_dadada_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/jquery-ui/ui-bg_glass_75_e6e6e6_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/jquery-ui/ui-bg_glass_95_fef1ec_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/jquery-ui/ui-bg_highlight-soft_75_cccccc_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/jquery-ui/ui-icons_222222_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/align/center.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/align/left.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/align/right.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/cmb2-align/bottom.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/cmb2-align/center.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/cmb2-align/left.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/cmb2-align/middle.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/cmb2-align/right.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/cmb2-align/top.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/footer-1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/footer-10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/footer-11.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/footer-12.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/footer-2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/footer-3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/footer-4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/footer-5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/footer-6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/footer-7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/footer-8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/footer-9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/header-base.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/header-categories.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/header-logo-center.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/header-menu-top.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/header-shop.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/header-simple.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/header-split.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/header-vertical.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/insta-placeholder.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/sidebar-layout/left.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/sidebar-layout/none.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/sidebar-layout/right.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/slider-navigation/arrow-style-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/slider-navigation/arrow-style-2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/slider-navigation/arrow-style-3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/slider-navigation/arrow-style-disable.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/slider-navigation/pagination-color-dark.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/slider-navigation/pagination-color-light.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/slider-navigation/pagination-style-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/slider-navigation/pagination-style-2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/settings/slider-navigation/pagination-style-disable.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/theme-admin-icon.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/360-degree.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/ajax-products-tabs.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/animated-counter.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/author-area.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/banners-carousel.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/blog.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/brands.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/button.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/compare.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/countdown-timer.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/extra-menu-list-item.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/extra-menu-list.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/google-maps.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/images-gallery.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/infobox-slider.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/information-box.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/instagram.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/list.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/mega-menu-widget.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/menu-price.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/popup.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/portfolio.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/posts-carousel.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/price-plan.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/pricing-tables.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/product-categories.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/product-filter-atribute.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/product-filter-categories.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/product-filter-price.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/product-filter.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/products-grid-or-carousel.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/promo-banner.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/section-divider.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/section-title.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/slider.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/social-buttons.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/team-member.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/testimonials.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/text-blox-res.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/timeline-breakpoint.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/timeline-item.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/timeline.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/vc-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/images/vc-icon/wc-product-widget.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/js/admin.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/js/colorpicker.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/js/gradX.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/js/jquery.edittable.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/js/vc-fields/colorpicker.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/js/vc-fields/frontend-editor-functions.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/js/vc-fields/image-select.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/js/vc-fields/responsive-size.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/js/vc-fields/slider.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/js/vc-fields/vc-functions.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/assets/sass/theme-admin.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/autoload.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/class.theme-modules.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/classes/Ajaxresponse.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/classes/Api.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/classes/Catalog.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/classes/Gradient.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/classes/Import.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/classes/Importversion.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/classes/Layout.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/classes/License.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/classes/Maintenance.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/classes/Metaboxes.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/classes/Notices.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/classes/Options.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/classes/Registry.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/classes/Search.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/classes/Swatches.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/classes/Theme.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/configs/base-options.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/configs/categories-designs.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/configs/product-hovers.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/configs/reset-options-product.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/configs/reset-options-shop.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/configs/reset-options-version.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/configs/selectors.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/configs/specific-options.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/configs/typography-selectors.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/configs/versions.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/configs/widgets-import.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/360-degree-view/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/about-me/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/agency/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/agency/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/ajax-products-tabs/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/animated-counter/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/bakery/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/bakery/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/banners/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/base/after.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/base/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/base/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/beer/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/beer/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/bicycle/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/bicycle/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/blog-element/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/brands-element/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/cars/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/cars/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/coffee/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/coffee/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/coming-soon-2/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/coming-soon/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/compare/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/construction/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/construction/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/construction/widgets.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/contact-us-2/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/contact-us/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/corporate/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/corporate/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/cosmetics/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/cosmetics/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/countdown-timer/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/dark/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/dark/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/electronics/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/electronics/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/element-products/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/extra-menu-list/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/faq/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/fashion-flat/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/fashion-flat/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/fashion-new/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/fashion-new/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/fashion/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/fashion/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/featured-products/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/flat-full-width/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/flat-full-width/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/flowers/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/flowers/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/food/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/food/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/furniture/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/furniture/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/games/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/games/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/google-maps/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/gradients/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/hero-slider/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/hero-slider/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/hookahs/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/hookahs/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/images-gallery/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/infobox/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/instagram/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/jewellery/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/jewellery/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/landing/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/landing/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/lighting/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/lighting/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/lingerie/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/lingerie/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/list-element/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/marketplace/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/marketplace/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/medical/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/medical/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/menu-price/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/minimalist/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/minimalist/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/minimalist/widgets.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/organic/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/organic/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/organic/widgets.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/our-company/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/our-gallery/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/our-services/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/our-shop/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/parallax/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/parallax/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/pets/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/pets/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/portfolio-element/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/portfolio/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/portfolio/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/posters/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/posters/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/pricing-tables/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/product-ajax-arrows/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/product-load-more/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/product_alt/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/product_bg/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/product_compact/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/product_default/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/product_imagelarge/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/product_imagesmall/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/product_sidebar_right/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/product_sticky/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/product_thumb_bottom/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/product_thumb_left/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/products-by-id/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/products-categories/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/products-category/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/products-slider/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/products-widgets/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/products-widgets/widgets.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/recent-products/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/sale-products/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/section-dividers/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/shoes/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/shoes/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/shoes/widgets.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/shop_alt/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/shop_fullwidth/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/shop_hover1/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/shop_hover2/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/shop_hover3/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/shop_hover4/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/shop_hover6/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/shop_hover8/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/shop_masonry/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/single-product/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/social-buttons/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/sport/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/sport/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/sushi/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/sushi/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/team-member/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/testimonials/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/timeline/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/titles/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/top-rated-products/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/watches/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/watches/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/wine/content.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/dummy-content/wine/options.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/functions.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/plugins/basel-post-types.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/settings.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/shortcodes/popup.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/shortcodes/product-filters.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/shortcodes/responsive-text-block.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/shortcodes/shortcodes.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/styles.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/template-tags.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/theme-setup.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/third-party/Taxonomy_MetaData/Taxonomy_MetaData.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/third-party/Taxonomy_MetaData/Taxonomy_MetaData_CMB2.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/third-party/cmb2-conditionals/cmb2-conditionals.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/third-party/cmb2-conditionals/cmb2-conditionals.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/third-party/cmb2-conditionals/example-functions.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/third-party/cmb2-conditionals/index.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/third-party/cmb2-fields/images-select.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/third-party/cmb2-fields/slider.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/third-party/nav-menu-images/inc/admin.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/third-party/nav-menu-images/inc/media-view.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/third-party/nav-menu-images/inc/nmi.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/third-party/nav-menu-images/inc/walker.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/third-party/nav-menu-images/nav-menu-images.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/third-party/nav-menu-images/readme.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/third-party/plugin-activation/class-tgm-plugin-activation.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/third-party/redux-fields/basel_gradient.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/third-party/redux-fields/basel_multi_fonts.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/third-party/redux-fields/basel_title.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/third-party/redux-fields/basel_typography.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/third-party/wph-widget-class.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/vc-element/compare.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/vc-element/popup.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/vc-element/product-filters.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/vc-element/responsive-text-block.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/vc-element/vc-config.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/vc-fields/colorpicker.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/vc-fields/css-id.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/vc-fields/dropdown.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/vc-fields/image-select.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/vc-fields/responsive-size.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/vc-fields/slider.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/vc-fields/vc-functions.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/widgets.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/widgets/class-author-area-widget.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/widgets/class-banner-widget.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/widgets/class-instagram-widget.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/widgets/class-static-block-widget.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/widgets/class-user-panel-widget.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/widgets/class-widget-layered-nav.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/widgets/class-widget-price-filter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/widgets/class-widget-search.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/widgets/class-widget-sorting.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/widgets/class-wp-nav-menu-widget.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/woocommerce.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/woocommerce/attributes-meta-boxes.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/woocommerce/compare.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/woocommerce/product-360-view.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/woocommerce/progress-bar.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/woocommerce/size-guide.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/woocommerce/variation-gallery.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/index.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/TweenMax.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/device.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/fastclick.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/functions.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/functions.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/html5.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/imagesloaded.pkgd.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/imagesloaded.pkgd.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/isotope.pkgd.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/isotope.pkgd.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/jquery.autocomplete.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/jquery.autocomplete.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/jquery.countdown.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/jquery.justifiedGallery.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/jquery.magnific-popup.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/jquery.magnific-popup.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/jquery.nanoscroller.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/jquery.nanoscroller.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/jquery.panr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/jquery.parallax-scroll.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/jquery.parallax-scroll.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/jquery.parallax.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/jquery.pjax.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/js.cookie.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/libraries.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/libraries.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/maplace-0.1.3.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/maplace-0.1.3.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/moment-timezone-with-data.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/moment.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/owl.carousel.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/owl.carousel.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/packery-mode.pkgd.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/packery-mode.pkgd.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/photoswipe-ui-default.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/photoswipe-ui-default.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/photoswipe.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/photoswipe.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/slick.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/slick.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/theme.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/threesixty.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/vivus.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/js/vivus.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/languages/basel.pot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/maintenance.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/page.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/portfolio.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/animations/_animations.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/base/_base.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/color-scheme/_dark.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/elements/_ajax-products-tabs.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/elements/_author-area.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/elements/_brands-widget.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/elements/_catalog-mode.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/elements/_countdown-timer.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/elements/_counter.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/elements/_device-carousel.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/elements/_divider.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/elements/_google-map.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/elements/_images-gallery.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/elements/_info-box.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/elements/_instagram.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/elements/_list-element.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/elements/_menu-price.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/elements/_posts-teaser.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/elements/_pricing-table.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/elements/_product-filters.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/elements/_products-tabs.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/elements/_section-title.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/elements/_slider.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/elements/_social-icons.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/elements/_team-member.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/elements/_testimonial.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/elements/_timeline.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/elements/_twitter.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/layout/_baners.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/layout/_buttons.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/layout/_footer.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/layout/_forms.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/layout/_header.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/layout/_labels.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/layout/_nav.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/layout/_other.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/layout/_search.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/layout/_side-bar.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/layout/_table.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/layout/_top-bar.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/main.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/mixin/_all.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/modules/_widgets.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/pages/_404.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/pages/_blog.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/pages/_compare-product.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/pages/_portfolio.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/pages/_search-results.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/pages/_shop.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/plugins/_360degree.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/plugins/_bbpress.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/plugins/_compare-product.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/plugins/_cookies-popup.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/plugins/_dokan.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/plugins/_gutenberg.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/plugins/_justified-gallery.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/plugins/_magnific-popup.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/plugins/_multi-vendors.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/plugins/_nanoScroller.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/plugins/_opentable.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/plugins/_owl-carousel.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/plugins/_paypal-express-checkout.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/plugins/_photo-swipe-skin.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/plugins/_photo-swipe.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/plugins/_rev-slider.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/plugins/_simple-line-icons.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/plugins/_slick.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/plugins/_stripe.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/plugins/_visual-composer.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/plugins/_wishlist.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/plugins/_woocommerce-germanized.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/plugins/_wpml.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/plugins/_zoom.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/responsive/_desktop.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/responsive/_mobile.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/responsive/_tablets.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/rtl/_rtl.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/tools/_helpers.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/tools/_site-settings.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/woocommerce/_mixins.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/woocommerce/_my-account.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/woocommerce/_register-login.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/woocommerce/_variables.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/woocommerce/_woo-cart.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/woocommerce/_woo-checkout.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/woocommerce/_woo-loyout.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/woocommerce/_woo-product-alt.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/woocommerce/_woo-product-compact.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/woocommerce/_woo-product-sticky.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/woocommerce/_woo-shop-page.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/woocommerce/_woo-table.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/woocommerce/_woo-thank-you.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/screenshot.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/searchform.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sidebar-footer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/sidebar.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/single-portfolio.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/single.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/style.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/taxonomy-project-cat.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/vc_templates/post_block/_item.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/vc_templates/vc_gallery.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/vc_templates/vc_images_carousel.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/archive-product.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/cart/cart.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/cart/cross-sells.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/cart/mini-cart.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/checkout/form-checkout.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/content-product-alt.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/content-product-base.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/content-product-button.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/content-product-excerpt.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/content-product-info.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/content-product-link.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/content-product-list.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/content-product-quick.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/content-product-standard.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/content-product.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/content-product_cat.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/content-quick-view.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/content-single-product.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/content-widget-product.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/global/breadcrumb.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/global/form-login.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/global/quantity-input.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/loop/loop-end.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/loop/loop-start.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/loop/no-products-found.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/loop/orderby.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/loop/pagination.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/loop/sale-flash.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/loop/title.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/myaccount/form-login.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/myaccount/navigation.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/product-searchform.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/quick-view/product-images.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/searchform-ajax.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/single-product.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/single-product/add-to-cart/variable-swatches.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/single-product/add-to-cart/variable.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/single-product/meta.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/single-product/photo-swipe-template.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/single-product/product-image.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/single-product/product-thumbnails.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/single-product/related.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/single-product/sale-flash.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/single-product/tabs/tabs.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/single-product/title.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/single-product/up-sells.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/woocommerce/wishlist-view.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/basel/wpml-config.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/includes/zxcvbn/js/password-strength-meter-2.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/includes/zxcvbn/js/password-strength-meter-2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/includes/zxcvbn/js/password-strength-meter.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/includes/zxcvbn/js/zxcvbn-async.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/plugins/select2/js/select2.full.min.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/assets/basel/css/editor-style-rtl.css" afterPath="$PROJECT_DIR$/resources/views/frontend/carts/includes/message-1.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/admin/dashboard/index.html" afterPath="$PROJECT_DIR$/resources/views/frontend/carts/includes/freight-1.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/admin/index.html" afterPath="$PROJECT_DIR$/resources/views/frontend/carts/includes/coupon-code-1.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/assets/basel/inc/classes/index.php" afterPath="$PROJECT_DIR$/resources/views/frontend/carts/includes/cart-empty-1.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/assets/basel/sass/plugins/_all.scss" afterPath="$PROJECT_DIR$/resources/views/frontend/carts/includes/breadcrumb-1.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Interfaces/Web/AccountTypeInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Interfaces/Web/ConfigProfileClientInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Interfaces/Web/UserInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Repositories/Web/AccountTypeRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Repositories/Web/ConfigProfileClientRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Repositories/Web/UserRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/plugins/jquery-maskedinput/jquery.maskedinput.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/themes/js/functions.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/frontend/auth/render/register-success-1.blade.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Http/Requests/Web/RegisterUserRequest.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/CartController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/CartController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Interfaces/Web/CartInterface.php" afterPath="$PROJECT_DIR$/app/Interfaces/Web/CartInterface.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/Web/Cart.php" afterPath="$PROJECT_DIR$/app/Models/Web/Cart.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Web/CartRepository.php" afterPath="$PROJECT_DIR$/app/Repositories/Web/CartRepository.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/lang_pt-BR.php" afterPath="$PROJECT_DIR$/config/lang_pt-BR.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/mix-manifest.json" afterPath="$PROJECT_DIR$/public/mix-manifest.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/themes/js/theme.min.js" afterPath="$PROJECT_DIR$/public/themes/js/theme.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/includes/zxcvbn/js/password-strength-meter.js" afterPath="$PROJECT_DIR$/resources/assets/includes/zxcvbn/js/password-strength-meter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/includes/zxcvbn/js/zxcvbn-async.js" afterPath="$PROJECT_DIR$/resources/assets/includes/zxcvbn/js/zxcvbn-async.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/plugins/cart/js/add-to-cart.js" afterPath="$PROJECT_DIR$/resources/assets/plugins/cart/js/add-to-cart.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/plugins/select2/js/select2.full.js" afterPath="$PROJECT_DIR$/resources/assets/plugins/select2/js/select2.full.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/themes/js/theme.js" afterPath="$PROJECT_DIR$/resources/assets/themes/js/theme.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/carts/cart-1.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/carts/cart-1.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/carts/render/cart-1-fragments.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/carts/render/cart-1-fragments.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/products/includes/product-kit.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/products/includes/product-kit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/products/quick-view/includes/product-kit.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/products/quick-view/includes/product-kit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/scripts/wc_add_to_cart_variation_params.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/scripts/wc_add_to_cart_variation_params.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/scripts/wc_cart_fragments_params.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/scripts/wc_cart_fragments_params.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/scripts/yith_wcwl_l10n.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/scripts/yith_wcwl_l10n.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/auth/login-1.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/auth/login-1.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/scripts/add_to_cart_params.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/scripts/add_to_cart_params.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.mix.js" afterPath="$PROJECT_DIR$/webpack.mix.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -691,33 +36,33 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="37" column="2" lean-forward="false" selection-start-line="37" selection-start-column="2" selection-end-line="37" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="RegisterController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="66" column="22" lean-forward="false" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
+            <state relative-caret-position="223">
+              <caret line="63" column="36" lean-forward="true" selection-start-line="63" selection-start-column="36" selection-end-line="63" selection-end-column="36" />
               <folding>
-                <element signature="e#45#58#0#PHP" expanded="true" />
+                <element signature="e#45#81#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RegisterUserRequest.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Requests/Web/RegisterUserRequest.php">
+      <file leaf-file-name="register-success-1.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/frontend/auth/render/register-success-1.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+            <state relative-caret-position="108">
+              <caret line="6" column="76" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="76" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lang_pt-BR.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/lang_pt-BR.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-353">
+              <caret line="296" column="13" lean-forward="false" selection-start-line="296" selection-start-column="5" selection-end-line="296" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -726,81 +71,26 @@
       <file leaf-file-name="login-1.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/frontend/auth/login-1.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="86" column="156" lean-forward="false" selection-start-line="86" selection-start-column="156" selection-end-line="86" selection-end-column="156" />
+            <state relative-caret-position="270">
+              <caret line="177" column="0" lean-forward="false" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
               <folding>
-                <element signature="e#6520#6526#0#HTML" expanded="true" />
-                <element signature="e#6526#6532#0#HTML" expanded="true" />
-                <element signature="e#6532#6538#0#HTML" expanded="true" />
-                <element signature="e#6538#6544#0#HTML" expanded="true" />
-                <element signature="e#6544#6550#0#HTML" expanded="true" />
-                <element signature="e#6550#6556#0#HTML" expanded="true" />
-                <marker date="1562283733272" expanded="true" signature="10247:10479" ph="..." />
-                <marker date="1562283733272" expanded="true" signature="10260:10477" ph="..." />
-                <marker date="1562283733272" expanded="true" signature="10261:10476" ph="..." />
-                <marker date="1562283733272" expanded="true" signature="11140:11467" ph="..." />
-                <marker date="1562283733272" expanded="true" signature="11153:11465" ph="..." />
-                <marker date="1562283733272" expanded="true" signature="11154:11464" ph="..." />
+                <marker date="1562369174300" expanded="true" signature="7578:7730" ph="..." />
+                <marker date="1562369174300" expanded="true" signature="18895:19127" ph="..." />
+                <marker date="1562369174300" expanded="true" signature="18908:19125" ph="..." />
+                <marker date="1562369174300" expanded="true" signature="18909:19124" ph="..." />
+                <marker date="1562369174300" expanded="true" signature="19330:19657" ph="..." />
+                <marker date="1562369174300" expanded="true" signature="19343:19655" ph="..." />
+                <marker date="1562369174300" expanded="true" signature="19344:19654" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lang_pt-BR.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/lang_pt-BR.php">
+      <file leaf-file-name="functions.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/assets/themes/js/functions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="130" column="24" lean-forward="true" selection-start-line="130" selection-start-column="24" selection-end-line="130" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AccountType.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Models/Web/AccountType.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AppServiceProvider.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/assets/css/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="4468" column="17" lean-forward="false" selection-start-line="4468" selection-start-column="12" selection-end-line="4468" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/auth/register.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="29" lean-forward="false" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="webpack.mix.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webpack.mix.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-326">
-              <caret line="36" column="11" lean-forward="false" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
+            <state relative-caret-position="210">
+              <caret line="59" column="103" lean-forward="false" selection-start-line="59" selection-start-column="103" selection-end-line="59" selection-end-column="103" />
               <folding />
             </state>
           </provider>
@@ -810,7 +100,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>remove_from_cart_button</find>
       <find>onRemoveFromCart</find>
       <find>cart_hash</find>
       <find>Volta</find>
@@ -840,6 +129,7 @@
       <find>form-row-wide</find>
       <find>form-row-</find>
       <find>radio</find>
+      <find>new_register</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -854,20 +144,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Models/Web/GridProduct.php" />
-        <option value="$PROJECT_DIR$/resources/views/frontend/carts/render/cart-1-notices.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/frontend/sections/include/prices-1.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Web/SectionController.php" />
-        <option value="$PROJECT_DIR$/resources/views/frontend/categories/list-products-1.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/frontend/categories/list-colors-1.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/frontend/sections/list-colors-1.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/frontend/sections/list-products-1.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Web/ProductController.php" />
-        <option value="$PROJECT_DIR$/resources/views/frontend/carts/render/cart-1-quantity.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/frontend/carts/render/cart-1-total.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/frontend/carts/includes/breadcrumb-1.blade.php" />
-        <option value="$PROJECT_DIR$/app/Interfaces/Web/StateInterface.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/Web/StateRepository.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/scripts/wc_add_to_cart_variation_params.blade.php" />
         <option value="$PROJECT_DIR$/resources/assets/plugins/cart/js/add-to-cart.min.js" />
         <option value="$PROJECT_DIR$/resources/views/frontend/layouts/template-1.blade.php" />
@@ -879,12 +155,10 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Web/ImageColorController.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/products/includes/product-kit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/products/quick-view/includes/product-kit.blade.php" />
-        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/resources/assets/plugins/cart/js/add-to-cart.js" />
         <option value="$PROJECT_DIR$/resources/views/frontend/scripts/yith_wcwl_l10n.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/scripts/wc_cart_fragments_params.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/carts/render/cart-1-fragments.blade.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/Web/CartRepository.php" />
         <option value="$PROJECT_DIR$/app/Interfaces/Web/CartInterface.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/carts/teste.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/carts/cart-undo-1.blade.php" />
@@ -895,16 +169,32 @@
         <option value="$PROJECT_DIR$/resources/assets/includes/zxcvbn/js/zxcvbn-async.js" />
         <option value="$PROJECT_DIR$/resources/assets/plugins/select2/js/select2.full.js" />
         <option value="$PROJECT_DIR$/resources/assets/includes/zxcvbn/js/password-strength-meter.js" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" />
-        <option value="$PROJECT_DIR$/webpack.mix.js" />
         <option value="$PROJECT_DIR$/resources/assets/themes/js/theme.js" />
         <option value="$PROJECT_DIR$/resources/assets/themes/js/theme-org.js" />
         <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/app/Interfaces/Web/AccountTypeInterface.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Web/AccounTypeRepository.php" />
+        <option value="$PROJECT_DIR$/resources/assets/plugins/jquery-maskedinput/jquery.maskedinput.min.js" />
+        <option value="$PROJECT_DIR$/webpack.mix.js" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/scripts/add_to_cart_params.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/Web/RegisterUserRequest.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
-        <option value="$PROJECT_DIR$/resources/views/frontend/auth/login-1.blade.php" />
-        <option value="$PROJECT_DIR$/config/lang_pt-BR.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/config/app.php" />
+        <option value="$PROJECT_DIR$/config/geoip.php" />
+        <option value="$PROJECT_DIR$/app/Interfaces/Web/ConfigProfileClientInterface.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Web/ConfigProfileClientRepository.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/Web/Register.php" />
+        <option value="$PROJECT_DIR$/app/Models/Web/User.php" />
+        <option value="$PROJECT_DIR$/app/Interfaces/Web/UserInterface.php" />
         <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Web/CartRepository.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Web/UserRepository.php" />
+        <option value="$PROJECT_DIR$/config/lang_pt-BR.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/auth/render/register-success-1.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/auth/login-1.blade.php" />
+        <option value="$PROJECT_DIR$/resources/assets/themes/js/functions.js" />
       </list>
     </option>
   </component>
@@ -1049,28 +339,6 @@
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="auth" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -1135,188 +403,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="theme.js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NestingTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="select2" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="select2" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="includes" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zxcvbn" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="includes" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -1362,7 +448,73 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Repositories" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Providers" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Models" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Interfaces" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Web" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -1474,19 +626,19 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/frontend/auth" />
-      <recent name="$PROJECT_DIR$/resources/views/frontend/carts" />
-      <recent name="$PROJECT_DIR$/app/Repositories/Web" />
-      <recent name="$PROJECT_DIR$/app/Interfaces/Web" />
-      <recent name="$PROJECT_DIR$/resources/views/frontend/products/includes" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/views/frontend/carts/render" />
       <recent name="$PROJECT_DIR$/resources/views/frontend" />
       <recent name="$PROJECT_DIR$/resources/views/frontend/products/quick-view/includes" />
       <recent name="$PROJECT_DIR$/resources/views/frontend/products" />
       <recent name="$PROJECT_DIR$/resources/views/frontend/products/quick-view" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Repositories/Web" />
+      <recent name="$PROJECT_DIR$/app/Interfaces/Web" />
+      <recent name="$PROJECT_DIR$/resources/assets/themes/js" />
+      <recent name="$PROJECT_DIR$/resources/views/frontend/auth" />
+      <recent name="$PROJECT_DIR$/resources/views/frontend/carts" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1596,17 +748,18 @@
       <workItem from="1562179111849" duration="11292000" />
       <workItem from="1562244664593" duration="24765000" />
       <workItem from="1562272651503" duration="4213000" />
-      <workItem from="1562277129131" duration="7935000" />
+      <workItem from="1562277129131" duration="53036000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="481144000" />
+    <option name="totallyTimeSpent" value="526245000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32988048" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.082868524" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1636,7 +789,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15378486" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31075698" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32868218" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1654,175 +807,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="15" />
+      <option name="time" value="20" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/carts/includes/freight-1.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1242">
-          <caret line="69" column="9" lean-forward="true" selection-start-line="69" selection-start-column="9" selection-end-line="69" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Web/SectionController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="49" column="46" lean-forward="true" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/sections/section-1.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Web/Cart.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/products/product-kit.blade.php" />
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/products/includes/product-kit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="846">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="44" column="32" lean-forward="true" selection-start-line="44" selection-start-column="32" selection-end-line="44" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/products/quick-view/includes/product-kit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/products/product-1.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="27" column="58" lean-forward="false" selection-start-line="27" selection-start-column="58" selection-end-line="27" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Web/ImageColorController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Web/ProductController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/plugins/cart/js/cart.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="529" column="17" lean-forward="true" selection-start-line="529" selection-start-column="17" selection-end-line="530" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/plugins/cart/js/add-to-cart-variation.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="0" column="12308" lean-forward="false" selection-start-line="0" selection-start-column="12277" selection-end-line="0" selection-end-column="12308" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/plugins/cart/js/add-to-cart-variation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="40" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/plugins/cart/js/add-to-cart.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="64" column="17" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="164" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/scripts/wc_add_to_cart_variation_params.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="19" lean-forward="false" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/layouts/template-1.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="44" column="82" lean-forward="true" selection-start-line="44" selection-start-column="82" selection-end-line="44" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/scripts/yith_wcwl_l10n.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="42" lean-forward="false" selection-start-line="1" selection-start-column="42" selection-end-line="1" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/scripts/wc_cart_fragments_params.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="33" lean-forward="false" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/scripts/add_to_cart_params.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="9" lean-forward="false" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/carts/render/cart-1-notices.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Web/CartRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="97" column="30" lean-forward="true" selection-start-line="97" selection-start-column="4" selection-end-line="97" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Interfaces/Web/CartInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="31" lean-forward="false" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/carts/teste.php" />
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/carts/render/cart-1-fragments.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="24" lean-forward="true" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/carts/cart-undo-1.blade.php" />
     <entry file="file://$PROJECT_DIR$/resources/views/frontend/carts/includes/message-1.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -1870,7 +859,7 @@
         <state relative-caret-position="846">
           <caret line="62" column="51" lean-forward="false" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="51" />
           <folding>
-            <element signature="e#45#72#0#PHP" expanded="true" />
+            <element signature="e#45#72#0#PHP" expanded="false" />
             <element signature="e#3831#5197#0#PHP" expanded="false" />
             <element signature="e#7807#9074#0#PHP" expanded="false" />
             <element signature="e#9084#9887#0#PHP" expanded="false" />
@@ -1901,7 +890,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1936,46 +925,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="64" column="6" lean-forward="false" selection-start-line="64" selection-start-column="6" selection-end-line="64" selection-end-column="6" />
-          <folding>
-            <element signature="e#45#81#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="37" column="2" lean-forward="false" selection-start-line="37" selection-start-column="2" selection-end-line="37" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Web/RegisterUserRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="66" column="22" lean-forward="false" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
-          <folding>
-            <element signature="e#45#58#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.mix.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-326">
-          <caret line="36" column="11" lean-forward="false" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
           <folding />
         </state>
       </provider>
@@ -1996,35 +949,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/auth/login-1.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="86" column="156" lean-forward="false" selection-start-line="86" selection-start-column="156" selection-end-line="86" selection-end-column="156" />
-          <folding>
-            <element signature="e#6520#6526#0#HTML" expanded="true" />
-            <element signature="e#6526#6532#0#HTML" expanded="true" />
-            <element signature="e#6532#6538#0#HTML" expanded="true" />
-            <element signature="e#6538#6544#0#HTML" expanded="true" />
-            <element signature="e#6544#6550#0#HTML" expanded="true" />
-            <element signature="e#6550#6556#0#HTML" expanded="true" />
-            <marker date="1562283733272" expanded="true" signature="10247:10479" ph="..." />
-            <marker date="1562283733272" expanded="true" signature="10260:10477" ph="..." />
-            <marker date="1562283733272" expanded="true" signature="10261:10476" ph="..." />
-            <marker date="1562283733272" expanded="true" signature="11140:11467" ph="..." />
-            <marker date="1562283733272" expanded="true" signature="11153:11465" ph="..." />
-            <marker date="1562283733272" expanded="true" signature="11154:11464" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/lang_pt-BR.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="130" column="24" lean-forward="true" selection-start-line="130" selection-start-column="24" selection-end-line="130" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/Web/AccountType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -2033,10 +957,291 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Interfaces/Web/AccountTypeInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Web/AccountTypeRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <folding>
+            <element signature="e#41#81#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/plugins/jquery-maskedinput/jquery.maskedinput.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="53" lean-forward="false" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.mix.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="80" column="63" lean-forward="false" selection-start-line="80" selection-start-column="63" selection-end-line="80" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/layouts/template-1.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="44" column="82" lean-forward="false" selection-start-line="44" selection-start-column="82" selection-end-line="44" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/scripts/add_to_cart_params.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="29" lean-forward="false" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="29" />
+          <folding>
+            <marker date="1562305237739" expanded="true" signature="67:456" ph="..." />
+            <marker date="1562305237739" expanded="true" signature="80:454" ph="..." />
+            <marker date="1562305237739" expanded="true" signature="81:453" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Web/RegisterUserRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="6" column="6" lean-forward="true" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/debug-server.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/trustedproxy.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-353">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/tinker.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-141">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/vendor/pagination/simple-default.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/vendor/pagination/semantic-ui.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-195">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/vendor/pagination/default.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/vendor/notifications/email.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-353">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1562351182541" expanded="true" signature="862:1102" ph="..." />
+            <marker date="1562351182541" expanded="true" signature="1023:1100" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="14" column="49" lean-forward="false" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-486">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="244" column="6" lean-forward="true" selection-start-line="244" selection-start-column="6" selection-end-line="244" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/geoip.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="119" column="21" lean-forward="false" selection-start-line="119" selection-start-column="21" selection-end-line="119" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Web/ConfigProfileClient.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="25" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Interfaces/Web/ConfigProfileClientInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="88" column="12" lean-forward="false" selection-start-line="88" selection-start-column="12" selection-end-line="88" selection-end-column="12" />
+          <folding>
+            <element signature="e#45#81#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Web/ConfigProfileClientRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#41#89#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Web/Register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="26" column="35" lean-forward="true" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Web/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="15" lean-forward="true" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Interfaces/Web/UserInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Web/CartRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Web/UserRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding>
+            <element signature="e#41#74#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+        <state relative-caret-position="180">
+          <caret line="22" column="23" lean-forward="true" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="63" column="36" lean-forward="true" selection-start-line="63" selection-start-column="36" selection-end-line="63" selection-end-column="36" />
+          <folding>
+            <element signature="e#45#81#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/lang_pt-BR.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-353">
+          <caret line="296" column="13" lean-forward="false" selection-start-line="296" selection-start-column="5" selection-end-line="296" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/auth/render/register-success-1.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="76" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/auth/login-1.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="177" column="0" lean-forward="false" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
+          <folding>
+            <marker date="1562369174300" expanded="true" signature="7578:7730" ph="..." />
+            <marker date="1562369174300" expanded="true" signature="18895:19127" ph="..." />
+            <marker date="1562369174300" expanded="true" signature="18908:19125" ph="..." />
+            <marker date="1562369174300" expanded="true" signature="18909:19124" ph="..." />
+            <marker date="1562369174300" expanded="true" signature="19330:19657" ph="..." />
+            <marker date="1562369174300" expanded="true" signature="19343:19655" ph="..." />
+            <marker date="1562369174300" expanded="true" signature="19344:19654" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/themes/js/functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="59" column="103" lean-forward="false" selection-start-line="59" selection-start-column="103" selection-end-line="59" selection-end-column="103" />
           <folding />
         </state>
       </provider>

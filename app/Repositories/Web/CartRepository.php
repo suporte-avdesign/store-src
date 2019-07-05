@@ -55,12 +55,7 @@ class CartRepository implements CartInterface
      */
     public function create($input)
     {
-        $data = $this->model->create($input);
-        if ($data) {
-            return $data;
-        }
-
-        return false;
+        return $this->model->create($input);
     }
 
     /**

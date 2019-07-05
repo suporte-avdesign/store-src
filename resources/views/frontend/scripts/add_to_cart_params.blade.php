@@ -6,6 +6,7 @@
             "cart_url" => route('cart'),
             "is_cart" => "",
             "cart_redirect_after_add" => "no",
+            "loader" => "Aguarde",
             "csrf_token" => csrf_token()
         ]) !!};
 </script>

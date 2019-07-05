@@ -81,6 +81,7 @@ return [
     'currency' => 'R$',
     'current' => 'Atual',
     'date' => 'Data',
+    'date_birth' => 'Data de Nascimento',
     'delete' => 'Excluir ',
     'delete_false' => 'Não foi possível excluir o registro',
     'delete_true' => 'O registro foi excluido',
@@ -90,6 +91,7 @@ return [
     'detail' => 'Detalhe',
     'details_view' => 'Ver Detalhes',
     'edit' => 'Editar',
+    'email' => 'Email',
     'entry' => 'Entrada',
     'error' => [
         'server' => 'Houve um erro no servidor!',
@@ -136,18 +138,26 @@ return [
     'order_true' => 'A ordem foi alterada',
     'page' => 'Página',
     'parcel' => 'Parcelado',
-    'payment_card' => 'Cartão de Crédito',
+    'parcel' => 'Parcelado',
+    'password' => 'Senha',
+    'password_confirm' => 'Confirme a Senha',
+    'password_lost' => 'Perdeu a senha?',
     'payment_cash' => 'Pagamento à Vista',
     'person_legal' => [
         'name' => 'Pessoa Jurídica',
         'document1' => 'CNPJ',
-        'document2' => 'Inscrição Estadual'
+        'document2' => 'Inscrição Estadual',
+        'first_name' => 'Razão Social',
+        'last_name' => 'Nome Fantasia',
     ],
     'person_physical' => [
         'name' => 'Pessoa Física',
         'document1' => 'CPF',
-        'document2' => 'RG'
+        'document2' => 'RG',
+        'first_name' => 'Nome',
+        'last_name' => 'Sobrenome',
     ],
+    'phone' => 'Telefone',
     'photo' => 'Foto',
     'position' => 'Posição',
     'previous' => 'Anterior',
@@ -163,7 +173,10 @@ return [
     'quick_view' => 'Vusualização Rapida',
     'rated' => 'Avaliado',
     'reminder' => 'Lebre-me',
+    'register' => 'Cadastro',
+    'registry' => 'Cadastre-se',
     'remove' => 'Remover',
+    'rememberme' => 'Lembre de mim',
     'reports' => 'Relatórios',
     'reset' => 'Limpar',
     'results' => 'Resultados',
@@ -173,6 +186,7 @@ return [
     'select_state' => 'Selecione o Estado',
     'select_options' => 'Selecione as opções',
     'share' => 'Compartilhar',
+    'send' => 'Enviar',
     'show' => 'Ver',
     'sidebar' => 'Barra Lateral',
     'sizes' => 'Tamanhos',
@@ -331,8 +345,23 @@ return [
             'code' => 'Código do Cupom',
             'discount' => 'Cupom de desconto',
         ],
+        'login' => [
+            'social_login_title' => 'OU FAÇA O LOGIN COM',
+        ],
         'shipping' => [
             'freight' => 'Frete'
+        ],
+
+        'register' => [
+            'new_register' => 'O registro para este site permite que você acesse o status e o histórico do seu pedido. Basta preencher os campos abaixo e teremos uma nova conta configurada para você em breve. Só lhe pediremos informações necessárias para tornar o processo de compra mais rápido e fácil.',
+            'success_text1' => 'Foi enviado um código de validação para o email',
+            'success_text2' => ', Abra este email para concluir o registro.',
+            'success_text3' => 'Se você não receber este e-mail em sua caixa de entrada dentro de 15 minutos,procure na pasta de lixo eletrônico. Se ele estiver ali, marque-o como "Não é lixo eletrônico"',
+
+
+        ],
+        'newsletter' => [
+            'register' => 'Quero receber informações e promoçoes de vocês.'
         ]
 
 

@@ -45,7 +45,7 @@
                                                     <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="log_username" id="log_username" autocomplete="username" value="" />
                                                 </p>
                                                 <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide form-row-password">
-                                                    <label for="password">Senha&nbsp;<span class="required">*</span></label>
+                                                    <label for="password">{{constLang('password')}}&nbsp;<span class="required">*</span></label>
                                                     <input class="woocommerce-Input woocommerce-Input--text input-text" type="log_password" name="log_password" id="log_password" autocomplete="current-password" />
                                                 </p>
                                                 <p class="form-row">
@@ -55,14 +55,14 @@
                                                 </p>
 
                                                 <div class="login-form-footer">
-                                                    <a href="{{route('password.request')}}" class="woocommerce-LostPassword lost_password">Perdeu a senha?</a>
+                                                    <a href="{{route('password.request')}}" class="woocommerce-LostPassword lost_password">{{constLang('password_lost')}}</a>
                                                     <label for="rememberme" class="remember-me-label inline">
                                                         <input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" value="forever"/>
-                                                        <span>Lembre de mim</span>
+                                                        <span>{{constLang('rememberme')}}</span>
                                                     </label>
                                                 </div>
 
-                                                <span class="social-login-title">OU FAÇA O LOGIN COM</span>
+                                                <span class="social-login-title">{{constLang('messages.register.social_login_title')}}</span>
                                                 <div class="basel-social-login">
                                                     <div class="social-login-btn">
                                                         <a href="{{route('social.auth')}}/?social_auth=facebook" class="btn login-fb-link">Facebook</a>
@@ -76,36 +76,111 @@
 
                                         <div class="u-column2 col-2 col-register">
 
-                                            <h2>Cadastre-se</h2>
+                                            <h2>{{constLang('register')}}</h2>
 
-                                            <form id="form_reg" method="post" class="woocommerce-form woocommerce-form-register register">
+                                            <form id="form_reg" method="post" action="{{route('register')}}" class="woocommerce-form woocommerce-form-register register">
                                                 @csrf
 
                                                 <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
-                                                    <input type="radio" class="input-radio" id="reg_email" name="user[type]" value="1" /> <b>Pessoa Física</b>
-                                                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                                                    <input type="radio" class="input-radio" id="reg_email" name="user[type]" value="1" /> <b>Pessoa Jurídica</b>
+                                                    @foreach($profiles as $profile)
+                                                        @if($loop->first)
+                                                            <input type="radio" class="input-radio" id="profile_{{$profile->id}}" name="register[profile_id]" value="{{$profile->id}}" checked /> <b>{{$profile->name}}</b>
+                                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                                        @endif
+                                                        @if($loop->last)
+                                                            <input type="radio" class="input-radio" id="profile_{{$profile->id}}" name="register[profile_id]" value="{{$profile->id}}" /> <b>{{$profile->name}}</b>
+                                                        @endif
+                                                    @endforeach
                                                 </p>
 
 
                                                 <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
-                                                    <label for="reg_email">Email &nbsp;<span class="required">*</span></label>
-                                                    <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" id="reg_email" name="reg[email]" autocomplete="email" value="" />
+                                                    @foreach($types as $type)
+                                                        @if($loop->first)
+                                                            <input type="radio" class="input-radio" id="register_type_{{$type->id}}" name="register[type_id]" value="{{$type->id}}" checked /> <b>{{$type->name}}</b>
+                                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                                        @endif
+                                                        @if($loop->last)
+                                                            <input type="radio" class="input-radio" id="register_type_{{$type->id}}" name="register[type_id]" value="{{$type->id}}" /> <b>{{$type->name}}</b>
+                                                        @endif
+                                                    @endforeach
                                                 </p>
 
-
-                                                <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
-                                                    <label for="reg_password">Senha&nbsp;<span class="required">*</span></label>
-                                                    <input type="password" class="woocommerce-Input woocommerce-Input--text input-text" id="reg_password" name="reg[password]" autocomplete="new-password" />
-                                                </p>
-
-                                                <div class="woocommerce-privacy-policy-text">
-                                                    <p>Os seus dados pessoais serão utilizados para apoiar a sua experiência em todo este site, para gerir o acesso à sua conta e para outros fins descritos na página.
-                                                        <a href="#" class="woocommerce-privacy-policy-link" target="_blank">política de Privacidade</a>.
+                                                <div id="person_legal" style="display:block">
+                                                    <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
+                                                        <label for="first_name_1">{{constLang('person_legal.first_name')}} &nbsp;<span class="required">*</span></label>
+                                                        <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" id="first_name_1" name="register[first_name_1]" value="" />
+                                                    </p>
+                                                    <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
+                                                        <label for="last_name_1">{{constLang('person_legal.last_name')}} &nbsp;<span class="required">*</span></label>
+                                                        <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" id="last_name_1" name="register[last_name_1]" value="" />
+                                                    </p>
+                                                    <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
+                                                        <label for="document1_1">{{constLang('person_legal.document1')}} &nbsp;<span class="required">*</span></label>
+                                                        <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" id="reg_document1_1" name="register[document1_1]" value="" />
+                                                    </p>
+                                                    <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
+                                                        <label for="document2_1">{{constLang('person_legal.document2')}} &nbsp;<span class="required">*</span></label>
+                                                        <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" id="document2_1" name="register[document2_1]" value="" />
                                                     </p>
                                                 </div>
+
+                                                <div id="person_physical" style="display: none">
+                                                    <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
+                                                        <label for="first_name_2">{{constLang('person_physical.first_name')}} &nbsp;<span class="required">*</span></label>
+                                                        <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" id="first_name_2" name="register[first_name_2]" value="" />
+                                                    </p>
+                                                    <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
+                                                        <label for="last_name_2">{{constLang('person_physical.last_name')}} &nbsp;<span class="required">*</span></label>
+                                                        <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" id="last_name_2" name="register[last_name_2]" value="" />
+                                                    </p>
+                                                    <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
+                                                        <label for="document1_2">{{constLang('person_physical.document1')}} &nbsp;<span class="required">*</span></label>
+                                                        <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" id="reg_document1_2" name="register[document1_2]" value="" />
+                                                    </p>
+                                                    <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
+                                                        <label for="document2_2">{{constLang('person_physical.document2')}} &nbsp;<span class="required">*</span></label>
+                                                        <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" id="document2_2" name="register[document2_2]" value="" />
+                                                    </p>
+                                                </div>
+                                                <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
+                                                    <label for="reg_date">{{constLang('date_birth')}} &nbsp;<span class="required">*</span></label>
+                                                    <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" id="reg_date" name="register[date]" value="" />
+                                                </p>
+                                                <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
+                                                    <label for="reg_cell">{{constLang('cell')}}/Whatsapp <span class="required">*</span></label>
+                                                    <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" id="reg_cell" name="register[cell]" value="" />
+                                                </p>
+                                                <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
+                                                    <label for="reg_phone">{{constLang('phone')}} &nbsp;<span class="required">*</span></label>
+                                                    <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" id="reg_phone" name="register[phone]" value="" />
+                                                </p>
+                                                <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
+                                                    <label for="reg_email">{{constLang('email')}} <span class="required">*</span></label>
+                                                    <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" id="reg_email" name="register[email]" autocomplete="email" value="" />
+                                                </p>
+                                                <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
+                                                    <label for="reg_password">{{constLang('password')}}&nbsp;<span class="required">*</span></label>
+                                                    <input type="password" class="woocommerce-Input woocommerce-Input--text input-text" id="reg_password" name="register[password]" value=""/>
+                                                </p>
+                                                <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
+                                                    <label for="reg_password_confirm">{{constLang('password_confirm')}} &nbsp;<span class="required">*</span></label>
+                                                    <input type="password" class="woocommerce-Input woocommerce-Input--text input-text" id="reg_password_confirm" name="register[password_confirmation]" value="" />
+                                                </p>
+
+                                                <div class="login-form-footer">
+                                                    <label for="newsletter" class="remember-me-label inline">
+                                                        <input class="woocommerce-form__input woocommerce-form__input-checkbox" name="register[newsletter]" type="checkbox" value="1" checked/>
+                                                        <span>{{constLang('messages.newsletter.register')}}</span>
+                                                    </label>
+                                                </div>
+
+
+
+                                                <div id="return-form_reg"></div>
+
                                                 <p class="woocommerce-FormRow form-row">
-                                                    <button type="button" class="woocommerce-Button button" onclick="registerUser()" value="Cadastre-se">Cadastre-se</button>
+                                                    <button type="button" id="form_reg-submit" class="woocommerce-Button button" onclick="postFormJson('form_reg')" value="{{constLang('send')}}">{{constLang('send')}}</button>
                                                 </p>
 
                                             </form>
@@ -113,13 +188,13 @@
 
 
                                         <div class="col-2 col-register-text">
-                                            <span class="register-or">Ou</span> <h2>Cadastre-se</h2>
+                                            <span class="register-or">{{constLang('or')}}</span> <h2>{{constLang('registry')}}</h2>
                                             <div class="registration-info">
-                                                <p style="text-align: center;">O registro para este site permite que você acesse o status e o histórico do seu pedido. Basta preencher os campos abaixo e teremos uma nova conta configurada para você em breve. Só lhe pediremos informações necessárias para tornar o processo de compra mais rápido e fácil.</p>
+                                                <p style="text-align: center;">{{constLang('messages.register.new_register')}}</p>
 
                                                 <div id="spoon-plugin-kncgbdglledmjmpnikebkagnchfdehbm-2" style="display: none;"></div>
                                             </div>
-                                            <a href="#" class="btn btn-color-black basel-switch-to-register" data-login="Login" data-register="Cadastre-se">Cadastre-se</a>
+                                            <a href="#" class="btn btn-color-black basel-switch-to-register" data-login="Login" data-register="{{constLang('registry')}}">{{constLang('registry')}}</a>
                                         </div>
                                     </div>
                                 </div>
@@ -142,25 +217,6 @@
         "strong" => "Forte",
         "mismatch" => "Incompatibilidade"
     ]) !!}
-
-    !(function($) {
-
-         registerUser = function() {
-            var $form = $("#form_reg");
-            $.ajax({
-                url: $form.attr('action'),
-                data: $form.serialize(),
-                method: 'POST',
-                success: function (data) {
-
-                },
-                error: function (data) {
-                    console.log('instagram ajax error');
-                }
-            });
-        }
-
-    })(jQuery);
 </script>
 <script type="text/javascript" src="{{asset('includes/zxcvbn/js/password-strength-meter.min.js')}}"></script>
 <script type="text/javascript">
@@ -169,5 +225,16 @@
         "i18n_password_error" => "Por favor, insira uma senha mais forte.",
         "i18n_password_hint" => "Dica: A senha deve ter pelo menos doze caracteres. Para torná-lo mais forte, use letras maiúsculas e minúsculas, números e símbolos como ! \" ? $ % ^ & )."
     ]) !!}
+</script>
+<script type="text/javascript" src="{{asset('plugins/jquery-maskedinput/jquery.maskedinput.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('themes/js/functions.min.js')}}"></script>
+<script type='text/javascript'>
+    jQuery( document ).ready(function($) {
+        $("#reg_phone").mask('(99)9999-9999?9');
+        $("#reg_cell").mask('(99)99999-9999');
+        $("#reg_date").mask('99/99/9999');
+        $("#reg_document1_1").mask('99.999.999/9999-99');
+        $("#reg_document1_2").mask('999.999.999-99');
+    });
 </script>
 @endpush
