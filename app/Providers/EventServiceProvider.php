@@ -21,6 +21,10 @@ class EventServiceProvider extends ServiceProvider
         'AVD\Events\UserRegisteredNoteEvent' => [
             'AVD\Listeners\UserRegisteredNoteListener',
         ],
+        'AVD\Events\UserRegisterConfirmedEvent' => [
+            'AVD\Listeners\UserRegisterConfirmedListener',
+        ],
+
 
     ];
 

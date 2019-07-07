@@ -9,9 +9,10 @@ use AVD\Interfaces\Web\ConfigKeywordInterface as Keyword;
  */
 if ( !function_exists('ipLocation'))
 {
-    function ipLocation($ip)
+    function ipLocation()
     {
-        $details = '';
+        (env('IP_PRODUCTION') == true ? $ip = $_SERVER['REMOTE_ADDR'] : $ip = null);
+        ($ip == '127.0.0.1' ? $details = constLang('access_local') : $details = '');
         if ($ip != '127.0.0.1') {
             $client   =  new \ipinfo\ipinfo\IPinfo(env('TOKEN_IPINFO'));
             $location =  $client->getDetails($ip);

@@ -21,7 +21,9 @@ class UserRegisteredSendMailListener implements ShouldQueue
     public function handle(UserRegisteredEvent $event)
     {
         $user = $event->getUser();
-        \Mail::to($user)->send(new UserRegistered($user));
+        $url  = route('register.confirm',['email' => $user->email, 'token' =>$user->token]);
+
+        \Mail::to($user)->send(new UserRegistered($user, $url));
 
     }
 }

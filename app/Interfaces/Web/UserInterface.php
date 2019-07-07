@@ -10,5 +10,6 @@ interface UserInterface
      * @return \AVD\Repositories\Web\UserRepository
      */
     public function setId($id);
+    public function setEmail($email);
     public function create($input);
 }

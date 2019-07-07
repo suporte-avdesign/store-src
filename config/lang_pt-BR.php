@@ -45,6 +45,7 @@ return [
     | Field texts
     |--------------------------------------------------------------------------
     */
+    'access_local' => 'Acesso "DUVIDOSO" ou um teste do administrador do sistema, entre em contato',
     'active_true' => 'Ativo',
     'active_false' => 'Inativo',
     'add' => 'Adicionar',
@@ -354,18 +355,21 @@ return [
         ],
 
         'register' => [
+            'account_inactive' => 'A sua conta está inativa, entre em contato com o administrador. Para reativala entre em contato com nossa equipe',
+            'active_token_null' => 'Sua conta já se encontra ativa. Faça o login abaixo:',
+            'error_server1' => 'Desculpe! Infelizmente houve um erro não identificado. Tente novamente mais tarde',
+            'error_server2' => 'Caso o problema persista, entre em contato com o administrador.',
             'new_register' => 'O registro para este site permite que você acesse o status e o histórico do seu pedido. Basta preencher os campos abaixo e teremos uma nova conta configurada para você em breve. Só lhe pediremos informações necessárias para tornar o processo de compra mais rápido e fácil.',
+            'no_account' => 'Não existe nenhum registro com essas credenciais, Para ter acesso a área do revendedor preencha os dados abaixo.',
             'success_text1' => 'Foi enviado um código de validação para seu email',
             'success_text2' => 'Abra este email e clique em concluir o registro.',
             'success_text3' => 'Se você não receber este e-mail em sua caixa de entrada dentro de 15 minutos,procure na pasta de lixo eletrônico. Se ele estiver ali, marque-o como "Não é lixo eletrônico"',
-            'error_server1' => 'Desculpe! Infelizmente houve um erro não identificado. Tente novamente mais tarde',
-            'error_server2' => 'Caso o problema persista, entre em contato com o administrador.'
+            'success_confirmed' => 'A sua conta foi confirmada com sucesso. Entre com seu email e senha abaixo:',
 
         ],
         'newsletter' => [
             'register' => 'Quero receber informações e promoçoes de vocês.'
         ]
-
 
 
     ]

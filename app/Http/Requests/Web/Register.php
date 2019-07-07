@@ -23,6 +23,7 @@ class Register extends FormRequest
      */
     public function rules()
     {
+
         $register = $this->get('register');
         $type = $register['type_id'];
 

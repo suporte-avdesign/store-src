@@ -2,10 +2,11 @@
 
 namespace AVD\Http\Controllers\Auth;
 
-use AVD\Events\UserRegisteredNoteEvent;
 use AVD\Http\Controllers\Controller;
-use AVD\Http\Requests\Web\Register as ValidateRegister;
+use AVD\Events\UserRegisteredNoteEvent;
+use AVD\Events\UserRegisterConfirmedEvent;
 use AVD\Interfaces\Web\UserInterface as InterModel;
+use AVD\Http\Requests\Web\Register as ValidateRegister;
 
 use Illuminate\Support\Str;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -49,7 +50,12 @@ class RegisterController extends Controller
         $this->interModel = $interModel;
     }
 
-
+    /**
+     * Date: 07/07/2019
+     *
+     * @param ValidateRegister $request
+     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     protected function register(ValidateRegister $request)
     {
         $dataForm = $request->all();
@@ -59,10 +65,9 @@ class RegisterController extends Controller
         $input['last_name']  = $input["last_name_{$input['type_id']}"];
         $input['document1']  = $input["document1_{$input['type_id']}"];
         $input['document2']  = $input["document2_{$input['type_id']}"];
+        $input['active']     = constLang('active_false');
         $input['token']      = Str::random(40);
         $input['ip']         = $request->ip();
-
-        $message = 'user_register';
 
         $create = $this->interModel->create($input);
         if ($create) {
@@ -71,12 +76,13 @@ class RegisterController extends Controller
                 'user_id' => $create->id,
                 'admin' => constLang('profile_name.user'),
                 'label' => constLang('register'),
-                'description' => ipLocation('179.197.25.108') //$_SERVER['REMOTE_ADDR']
+                'description' => ipLocation()
             ];
 
             event(new UserRegisteredNoteEvent($note));
 
-            $email = $create->email;
+            $email   = $create->email;
+            $message = 'user_register';
             $success = view('frontend.messages.success-1', compact('email','message'))->render();
 
             if ($request->ajax()){
@@ -105,29 +111,29 @@ class RegisterController extends Controller
         $user = $this->interModel->setEmail($email);
         if ($user) {
             if ($user->token == $token) {
-                $update = $user->update(['status' => 1, 'token' => NULL]);
+                $update = $user->update(['active' => constLang('active_true'), 'token' => NULL]);
                 if ($update) {
 
-                    //event(new UserRegisterConfirmedEvent($user));
+                    event(new UserRegisterConfirmedEvent($user));
 
-                    return redirect(route('login'))->with('success', 'A sua conta foi confirmada com sucesso. Entre com seu email e senha abaixo:');
+                    return redirect(route('login'))->with('success', constLang('success_confirmed'));
 
                 } else {
 
                     return redirect(route('register'))->with('error', 'Desculpe, houve um erro no sistema tente mais tarde.');
                 }
-            } elseif ($user->token == NULL && $user->status == 1) {
+            } elseif ($user->token == NULL && $user->active == constLang('active_true')) {
 
-                return redirect(route('login'))->with('success', 'Sua conta já se encontra ativa. Faça o login abaixo:');
+                return redirect(route('login'))->with('success', constLang('active_token_null'));
 
-            } elseif ($user->token == NULL && $user->status == 0) {
+            } elseif ($user->token == NULL && $user->active == constLang('active_false')) {
 
-                return redirect(route('contact'))->with('error', 'A sua conta está inativa, entre em contato com o administrador. Para reativala entre em contato com nossa equipe');
+                return redirect(route('contact'))->with('error', constLang('account_inactive'));
             }
 
         }
 
-        return redirect(route('register'))->with('error', 'Não existe nenhum registro com essas credenciais, Para ter acesso a área do revendedor preencha os dados abaixo.');
+        return redirect(route('register'))->with('error', constLang('no_account'));
 
 
     }

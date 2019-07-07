@@ -31,8 +31,9 @@ Route::get('password/reset','Auth\ForgotPasswordController@showLinkRequestForm')
 Route::get('password/reset/{token}','Auth\ResetPasswordController@showResetForm')->name('password.reset');
 
 
-Route::get('register','Auth\RegisterController@register');
 Route::post('register', 'Auth\RegisterController@register')->name('register');
+Route::get('cadastro/{email}/{token}', 'Auth\RegisterController@verifyToken')->name('register.confirm');
+
 
 Route::get('social', 'Web\SocialController@index')->name('social.auth');
 

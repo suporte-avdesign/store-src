@@ -34,6 +34,12 @@ class UserRepository implements UserInterface
     }
 
 
+    public function setEmail($email)
+    {
+        return $this->model->where('email', $email)->first();
+    }
+
+
     /**
      * Date: 07/01/2019
      *

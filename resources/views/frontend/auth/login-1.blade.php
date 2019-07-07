@@ -36,6 +36,18 @@
                                 <div class="woocommerce-notices-wrapper"></div>
                                 <div class="basel-registration-page basel-register-tabs">
                                     <div class="u-columns col2-set" id="customer_login">
+                                        @if (session('success'))
+                                            <div class="woocommerce-message woocommerce-message--info woocommerce-Message woocommerce-Message--info woocommerce-info">
+                                                {{session('success')}}
+                                            </div>
+                                        @endif
+
+                                        @if (session('error'))
+                                            <div class="woocommerce-message woocommerce-message--info woocommerce-Message woocommerce-Message--info woocommerce-info">
+                                                {{session('error')}}
+                                            </div>
+                                        @endif
+
                                         <div class="u-column1 col-1 col-login">
                                             <h2>Login</h2>
 

@@ -4,7 +4,7 @@
 Seu cadastro ainda não foi concluído! .
 Para ativa-lo agora, basta clicar no botão "Concluir Cadastro".
 
-@component('mail::button', ['url' => url('/cadastro/'.$user->email.'/'.$user->token)])
+@component('mail::button', ['url' => $url])
 Concluir Cadastro
 @endcomponent
 

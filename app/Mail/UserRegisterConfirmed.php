@@ -8,27 +8,23 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class UserRegistered extends Mailable implements ShouldQueue
+class UserRegisterConfirmed extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
     /**
      * @var User
      */
     public $user;
-    /**
-     * @var
-     */
-    public $url;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(User $user, $url)
+    public function __construct(User $user)
     {
+        //
         $this->user = $user;
-        $this->url  = $url;
     }
 
     /**
@@ -38,10 +34,8 @@ class UserRegistered extends Mailable implements ShouldQueue
      */
     public function build()
     {
-        $url = $this->url;
-
         return $this
-            ->subject('Confirme sua conta na '.config('app.name'))
-            ->markdown('frontend.emails.users.registered', compact('url'));
+            ->subject('Seu cadastro foi concluido com sucesso na '.config('app.name'))
+            ->markdown('frontend.emails.users.register-confirmed');
     }
 }
