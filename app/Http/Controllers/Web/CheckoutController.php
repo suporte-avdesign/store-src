@@ -50,7 +50,7 @@ class CheckoutController extends Controller
 
             $message = 'Por favor insira um código de cupom válido.';
 
-            return view('messages.message-1-error', compact('message'));
+            return view('frontend.messages.error-checkout-1', compact('message'));
         }
 
 
@@ -82,7 +82,7 @@ class CheckoutController extends Controller
             if (empty($terms)) {
                 $message = 'Por favor ler e aceitar os termos e condições para prosseguir com o seu pedido.';
             }
-            $messages = view('messages.message-1-error', compact('message'))->render();
+            $messages = view('frontend.messages.error-checkout-1', compact('message'))->render();
             $out = array(
                 "result" => "failure",
                 "messages" => $messages,

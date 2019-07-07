@@ -2,6 +2,8 @@
 
 namespace AVD\Providers;
 
+use AVD\Models\Web\User;
+use AVD\Observers\UserObserver;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -34,6 +36,7 @@ class AppServiceProvider extends ServiceProvider
             'State',
             'SocialShare',
             'User',
+            'UserNote',
         );
 
         foreach ($models as $model) {
@@ -49,6 +52,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+
     }
 }

@@ -47,6 +47,6 @@
 
     <div class="register-question">
         <span class="create-account-text">Ainda não tem conta?</span>
-        <a class="btn btn-style-link" href="{{route('register')}}">Crie a sua conta aqui</a>
+        <a class="btn btn-style-link" href="{{route('login')}}">Crie a sua conta aqui</a>
     </div>
 </div>

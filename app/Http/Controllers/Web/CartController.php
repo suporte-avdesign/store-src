@@ -20,6 +20,8 @@ use AVD\Interfaces\Web\ConfigKeywordInterface as ConfigKeyword;
 
 use AVD\Interfaces\Web\ConfigColorPositionInterface as ConfigImages;
 
+
+
 /*
 use AVD\Interfaces\Web\SocialShareInterface as InterSocial;
 use AVD\Interfaces\Web\ConfigKeywordInterface as ConfigKeyword;
@@ -67,6 +69,7 @@ class CartController extends Controller
         $configKeyword = $this->configKeyword;
 
         $user = Auth::user();
+
         if ($user) {
             $user_id = Auth::id();
             $session = md5($user_id);

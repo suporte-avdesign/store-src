@@ -29,11 +29,13 @@ Route::post('password/email','Auth\ForgotPasswordController@sendResetLinkEmail')
 Route::post('password/reset','Auth\ResetPasswordController@reset')->name('password.update');
 Route::get('password/reset','Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
 Route::get('password/reset/{token}','Auth\ResetPasswordController@showResetForm')->name('password.reset');
+
+
 Route::get('register','Auth\RegisterController@register');
+Route::post('register', 'Auth\RegisterController@register')->name('register');
 
 Route::get('social', 'Web\SocialController@index')->name('social.auth');
 
-Route::post('cadastro', 'Auth\RegisterController@register')->name('register');
 
 /*
 |--------------------------------------------------------------------------

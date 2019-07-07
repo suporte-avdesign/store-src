@@ -2,6 +2,7 @@
 
 namespace AVD\Models\Web;
 
+use AVD\Events\UserRegisteredEvent;
 use Illuminate\Database\Eloquent\Model;
 
 class User extends Model
@@ -28,6 +29,11 @@ class User extends Model
         'last_login',
         'logout'
     ];
+
+    protected $dispatchesEvents = [
+        'created' => UserRegisteredEvent::class,
+    ];
+
 
     /**
      *

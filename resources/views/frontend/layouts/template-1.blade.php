@@ -67,7 +67,7 @@
 </head>
 @stack('body')
 
-@include('frontend.messages.message-1-body')
+@include('frontend.messages.body-1')
 
 @include('auth.login-1-sidbar')
 

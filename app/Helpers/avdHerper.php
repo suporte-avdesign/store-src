@@ -4,6 +4,26 @@ use AVD\Interfaces\Web\ConfigKeywordInterface as Keyword;
 
 
 
+/**
+ * returns the location
+ */
+if ( !function_exists('ipLocation'))
+{
+    function ipLocation($ip)
+    {
+        $details = '';
+        if ($ip != '127.0.0.1') {
+            $client   =  new \ipinfo\ipinfo\IPinfo(env('TOKEN_IPINFO'));
+            $location =  $client->getDetails($ip);
+            foreach ($location->all as $key => $value) {
+                $details .= "{$key}:{$value}, ";
+            }
+            $details = substr($details, 0, -2);
+        }
+        return $details;
+    }
+}
+
 
 /**
  * Return config language

@@ -61,16 +61,18 @@
                                                         <span>{{constLang('rememberme')}}</span>
                                                     </label>
                                                 </div>
+                                                <!--
+                                                    <span class="social-login-title">{{constLang('messages.login.social_login_title')}}</span>
+                                                    <div class="basel-social-login">
+                                                        <div class="social-login-btn">
+                                                            <a href="{{route('social.auth')}}/?social_auth=facebook" class="btn login-fb-link">Facebook</a>
+                                                        </div>
+                                                        <div class="social-login-btn">
+                                                            <a href="{{route('social.auth')}}/?social_auth=google" class="btn login-goo-link">Google</a>
+                                                        </div>
+                                                    </div>
+                                                  -->
 
-                                                <span class="social-login-title">{{constLang('messages.register.social_login_title')}}</span>
-                                                <div class="basel-social-login">
-                                                    <div class="social-login-btn">
-                                                        <a href="{{route('social.auth')}}/?social_auth=facebook" class="btn login-fb-link">Facebook</a>
-                                                    </div>
-                                                    <div class="social-login-btn">
-                                                        <a href="{{route('social.auth')}}/?social_auth=google" class="btn login-goo-link">Google</a>
-                                                    </div>
-                                                </div>
                                             </form>
                                         </div>
 
@@ -143,6 +145,7 @@
                                                         <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" id="document2_2" name="register[document2_2]" value="" />
                                                     </p>
                                                 </div>
+
                                                 <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
                                                     <label for="reg_date">{{constLang('date_birth')}} &nbsp;<span class="required">*</span></label>
                                                     <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" id="reg_date" name="register[date]" value="" />
@@ -152,7 +155,7 @@
                                                     <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" id="reg_cell" name="register[cell]" value="" />
                                                 </p>
                                                 <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
-                                                    <label for="reg_phone">{{constLang('phone')}} &nbsp;<span class="required">*</span></label>
+                                                    <label for="reg_phone">{{constLang('other')}} {{constLang('phone')}}</label>
                                                     <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" id="reg_phone" name="register[phone]" value="" />
                                                 </p>
                                                 <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
@@ -174,8 +177,6 @@
                                                         <span>{{constLang('messages.newsletter.register')}}</span>
                                                     </label>
                                                 </div>
-
-
 
                                                 <div id="return-form_reg"></div>
 

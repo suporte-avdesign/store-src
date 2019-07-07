@@ -165,13 +165,12 @@ return [
         /*
          * Package Service Providers...
          *
-         * https://artisansweb.net/laravel-geoip-library-find-out-geolocation-using-ip-address/
-         * GeoIP Localização do local pelo IP
+         * https://github.com/ipinfo/php
+         * https://ipinfo.io autenticate google mail:suporte.avdesign@gmail
          *
          * Validação CNPJ,CPF.TEL,CEP...
          */
         LaravelLegends\PtBrValidator\ValidatorProvider::class,
-        Torann\GeoIP\GeoIPServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -236,10 +235,6 @@ return [
         /*
          * Package Service Providers...
          */
-        /*
-         * Localização do local pelo IP
-         */
-        'GeoIP' => Torann\GeoIP\Facades\GeoIP::class,
 
 
     ],
