@@ -1,5 +1,5 @@
 @php
-    $user = Auth::user();
+    $user = null;
     if ($user) {
         $session = md5($user_id);
     } else {

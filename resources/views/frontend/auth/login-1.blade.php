@@ -1,6 +1,8 @@
 @extends('frontend.layouts.template-1')
 @push('title')
-<title>Login / Cadastro - {{config('app.name')}}</title>
+<title>{{constLang('login')}} / {{constLang('register')}} : {{$configKeyword->description}} {{config('app.name')}}</title>
+    <meta name="description" content="{{$configKeyword->description}} , {{$configKeyword->genders}}">
+    <meta name="keywords" content="{{$configKeyword->keywords}},{{$configKeyword->categories}},{{$configKeyword->genders}}">
 @endpush
 @push('styles')
 <link rel="stylesheet" id="select2-css"  href="{{asset('plugins/select2/css/select2.css')}}" type="text/css" media="all" />
@@ -21,7 +23,7 @@
                 <header class="entry-header">
                     <div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
                         <a href="#" rel="v:url" property="v:title">Home</a>
-                        &raquo; <span class="current">Minha Conta</span>
+                        &raquo; <span class="current">{{constLang('my_account')}}</span>
                     </div>
                 </header>
             </div>
@@ -36,44 +38,51 @@
                                 <div class="woocommerce-notices-wrapper"></div>
                                 <div class="basel-registration-page basel-register-tabs">
                                     <div class="u-columns col2-set" id="customer_login">
-                                        @if (session('success'))
-                                            <div class="woocommerce-message woocommerce-message--info woocommerce-Message woocommerce-Message--info woocommerce-info">
-                                                {{session('success')}}
-                                            </div>
-                                        @endif
 
-                                        @if (session('error'))
-                                            <div class="woocommerce-message woocommerce-message--info woocommerce-Message woocommerce-Message--info woocommerce-info">
-                                                {{session('error')}}
-                                            </div>
-                                        @endif
+                                        <div class="woocommerce-notices-wrapper">
+                                            @if (session('success'))
+                                                <ul class="woocommerce-info" role="alert">
+                                                    <li>{{session('success')}} </li>
+                                                </ul>
+                                            @endif
+                                            @if (session('error'))
+                                                <ul class="woocommerce-error" role="alert">
+                                                    <li> {{session('error')}}</li>
+                                                </ul>
+                                            @endif
+                                        </div>
+
 
                                         <div class="u-column1 col-1 col-login">
+
                                             <h2>Login</h2>
 
-                                            <form method="post" class="login woocommerce-form woocommerce-form-logi">
-                                                <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide form-row-username">
-                                                    <label for="username">Nome de usuário ou email&nbsp;<span class="required">*</span></label>
-                                                    <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="log_username" id="log_username" autocomplete="username" value="" />
+                                            <form id="form_login" method="post" action="{{route('page-login')}}" class="login woocommerce-form woocommerce-form-logi">
+                                                @csrf
+                                                <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
+                                                    <label for="page_email">{{constLang('email')}} <span class="required">*</span></label>
+                                                    <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" id="page_email" name="page[email]" autocomplete="email" value="" />
                                                 </p>
                                                 <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide form-row-password">
-                                                    <label for="password">{{constLang('password')}}&nbsp;<span class="required">*</span></label>
-                                                    <input class="woocommerce-Input woocommerce-Input--text input-text" type="log_password" name="log_password" id="log_password" autocomplete="current-password" />
+                                                    <label for="page_password">{{constLang('password')}}&nbsp;<span class="required">*</span></label>
+                                                    <input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="page[password]" id="page_password" autocomplete="password" />
                                                 </p>
+                                                <div id="return-form_login"></div>
+
                                                 <p class="form-row">
-                                                    <input type="hidden" id="_woocommerce-login-nonce" name="woocommerce-login-nonce" value="ea245efaae" />
-                                                    <input type="hidden" name="_wp_http_referer" value="{{route('login')}}" />
-                                                    <button type="submit" class="button woocommerce-Button" name="log_login" value="Login">Login</button>
+                                                    <button type="button" id="form_login-submit" class="button woocommerce-Button" onclick="postFormJson('form_login')">{{constLang('login')}}</button>
                                                 </p>
 
                                                 <div class="login-form-footer">
                                                     <a href="{{route('password.request')}}" class="woocommerce-LostPassword lost_password">{{constLang('password_lost')}}</a>
                                                     <label for="rememberme" class="remember-me-label inline">
-                                                        <input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" value="forever"/>
+                                                        <input class="woocommerce-form__input woocommerce-form__input-checkbox" name="remember" type="checkbox" value="1" {{ old('remember') ? 'checked' : '' }}/>
                                                         <span>{{constLang('rememberme')}}</span>
                                                     </label>
                                                 </div>
-                                                <!--
+
+
+                                            <!--
                                                     <span class="social-login-title">{{constLang('messages.login.social_login_title')}}</span>
                                                     <div class="basel-social-login">
                                                         <div class="social-login-btn">

@@ -9,6 +9,7 @@ use AVD\Interfaces\Web\UserInterface as InterModel;
 use AVD\Http\Requests\Web\Register as ValidateRegister;
 
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
 
@@ -110,30 +111,43 @@ class RegisterController extends Controller
     {
         $user = $this->interModel->setEmail($email);
         if ($user) {
+
             if ($user->token == $token) {
-                $update = $user->update(['active' => constLang('active_true'), 'token' => NULL]);
+
+                $ip = $_SERVER['REMOTE_ADDR'];
+                $visits = $user->visits + 1;
+                $update = $user->update([
+                    'active' => constLang('active_true'),
+                    'last_login' => date('Y-m-d H:i:s'),
+                    'visits' => $visits,
+                    'token' => NULL,
+                    'ip' => $ip
+                ]);
                 if ($update) {
 
                     event(new UserRegisterConfirmedEvent($user));
 
-                    return redirect(route('login'))->with('success', constLang('success_confirmed'));
+                    Auth::loginUsingId($user->id, true);
+                    return redirect(route('account'));
 
                 } else {
 
-                    return redirect(route('register'))->with('error', 'Desculpe, houve um erro no sistema tente mais tarde.');
+                    session()->flash('error', constLang('error_server1'));
+
+                    return redirect(route('login'));
                 }
-            } elseif ($user->token == NULL && $user->active == constLang('active_true')) {
+            } elseif (empty($user->token) && $user->active == constLang('active_true')) {
 
                 return redirect(route('login'))->with('success', constLang('active_token_null'));
 
-            } elseif ($user->token == NULL && $user->active == constLang('active_false')) {
+            } elseif (empty($user->token) && $user->active == constLang('active_false')) {
 
                 return redirect(route('contact'))->with('error', constLang('account_inactive'));
             }
 
         }
 
-        return redirect(route('register'))->with('error', constLang('no_account'));
+        return redirect(route('login'))->with('error', constLang('no_account'));
 
 
     }

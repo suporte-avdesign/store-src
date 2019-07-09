@@ -1,18 +1,20 @@
 <div class="right-column">
     <div class="header-links my-account-with-text">
         <ul>
-            <li class="my-account">
-                <a href="#">Minha Conta</a>
-            </li>
-            @auth
-                <li class="logout">
-                    <a href="#">Sair</a>
+            @if (Route::has('login'))
+                <li class="my-account">
+                    <a href="{{route('account')}}">Minha Conta</a>
                 </li>
-            @else
-                <li class="login-side-opener">
-                    <a href="{{route('login')}}">Login</a>
-                </li>
-            @endauth
+                @auth
+                    <li class="logout">
+                        <a href="#">Sair</a>
+                    </li>
+                @else
+                    <li class="login-side-opener">
+                        <a href="{{route('login')}}">Login</a>
+                    </li>
+                @endauth
+             @endif
         </ul>
     </div>
     <div class="search-button basel-search-full-screen">

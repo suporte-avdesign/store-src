@@ -68,7 +68,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => AVD\User::class,
+            'model' => AVD\Models\Web\User::class,
         ],
 
         // 'users' => [

@@ -89,6 +89,23 @@
         }
     }
 
+    /**
+     * Logout User
+     * @param url
+     * @param token
+     */
+    logoutUser = function (url, token) {
+        var form = document.createElement("form");
+        var element1 = document.createElement("input");
+        form.method = "POST";
+        form.action = url;
+        element1.name="_token";
+        element1.value=token;
+        form.appendChild(element1);
+        document.body.appendChild(form);
+        form.submit();
+    }
+
 
     $("input[name='register[type_id]']:radio")
         .change(function() {

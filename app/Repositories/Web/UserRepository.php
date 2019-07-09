@@ -51,7 +51,11 @@ class UserRepository implements UserInterface
         return $this->model->create($input);
     }
 
-
+    public function update($input, $id)
+    {
+        $data   = $this->model->find($id);
+        return $data->update($input);
+    }
 
 
 }

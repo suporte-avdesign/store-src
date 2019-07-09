@@ -13,7 +13,8 @@
         "ipinfo/ipinfolaravel": "^1.0",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
-        "laravellegends/pt-br-validator": "5.1.*"
+        "laravellegends/pt-br-validator": "5.1.*",
+        "mnabialek/laravel-eloquent-filter": "^0.1.1"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

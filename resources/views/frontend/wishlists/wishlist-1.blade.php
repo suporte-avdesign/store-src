@@ -1,4 +1,4 @@
-@extends('layouts.template-1')
+@extends('frontend.layouts.template-1')
 @push('title')
 <title> Lista de Desejo - {{config('app.name')}}</title>
 @endpush
@@ -25,7 +25,7 @@
                     <div id="yith-wcwl-messages"></div>
                     <div class="wishlist-wrapper">
 
-                        @include('wishlists.wishlist-1-form')
+                        @include('frontend.wishlists.wishlist-1-form')
 
                     </div>
                 </div>

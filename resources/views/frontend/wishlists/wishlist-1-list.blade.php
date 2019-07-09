@@ -30,7 +30,7 @@
                     </div>
                 </td>
                 <td class="product-thumbnail">
-                    <a href="{{route('product', [$product['category'], $product['section'], $product['slug']])}}/?cor=preto-amarelo">
+                    <a href="#/?cor=preto-amarelo">
                         <img width="273" height="273"
                              src="{{asset('faker/product_photos/img4-f.jpg')}}"
                              class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
@@ -49,7 +49,7 @@
                     </a>
                 </td>
                 <td class="product-name" data-title="Produto">
-                    <a href="{{route('product', [$product['category'], $product['section'], $product['slug']])}}/?cor=preto-amarelo">Produto 2 - Preto/Amarelo</a>
+                    <a href="#/?cor=preto-amarelo">Produto 2 - Preto/Amarelo</a>
                 </td>
 
                 <td class="product-price" data-title="Preço und">

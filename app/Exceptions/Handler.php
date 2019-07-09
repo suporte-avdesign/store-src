@@ -3,7 +3,10 @@
 namespace AVD\Exceptions;
 
 use Exception;
+use Illuminate\Http\Exceptions\ThrottleRequestsException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+
+use Illuminate\Http\Response;
 
 class Handler extends ExceptionHandler
 {
@@ -34,6 +37,7 @@ class Handler extends ExceptionHandler
      */
     public function report(Exception $exception)
     {
+
         parent::report($exception);
     }
 
@@ -46,6 +50,17 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        if ($exception instanceof ThrottleRequestsException) {
+            return $this->response409();
+        }
         return parent::render($request, $exception);
+    }
+
+    public function response409()
+    {
+        $message = 'attempts-limit';
+        $error = view('frontend.messages.error-1', compact('message'))->render();
+
+        return response()->json(['success' => $error]);
     }
 }

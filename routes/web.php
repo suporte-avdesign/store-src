@@ -22,15 +22,20 @@ Route::get('404', function () {
 
 
 
-Route::get('login','Auth\LoginController@showLoginForm')->name('login');
-Route::post('login','Auth\LoginController@login');
+
+
+
 Route::post('logout','Auth\LoginController@logout')->name('logout');
 Route::post('password/email','Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::post('password/reset','Auth\ResetPasswordController@reset')->name('password.update');
 Route::get('password/reset','Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
 Route::get('password/reset/{token}','Auth\ResetPasswordController@showResetForm')->name('password.reset');
 
-
+/*
+|--------------------------------------------------------------------------
+| Routes Register
+|--------------------------------------------------------------------------
+*/
 Route::post('register', 'Auth\RegisterController@register')->name('register');
 Route::get('cadastro/{email}/{token}', 'Auth\RegisterController@verifyToken')->name('register.confirm');
 
@@ -142,21 +147,38 @@ Route::get('contato', 'Web\ContactController@index')->name('contact');
 Route::post('contato', 'Web\ContactController@store')->name('contact.store');
 
 
-/*
-|--------------------------------------------------------------------------
-| Routes Pages
-|--------------------------------------------------------------------------
-*/
-Route::get('minha-conta/', 'Web\AccountController@index')->name('account');
-Route::get('minha-conta/lista-de-desejo', 'Web\AccountController@wishlist')->name('account.wishlist');
-Route::get('minha-conta/pedidos', 'Web\AccountController@order')->name('account.order');
-Route::get('minha-conta/pedido/{id}', 'Web\AccountController@orderView')->name('order.view');
-Route::match(['get', 'put'], 'minha-conta/perfil', 'Web\AccountController@profile')->name('account.profile');
-Route::get('minha-conta/endereco-de-entrega', 'Web\AccountController@address')->name('account.address');
-Route::put('minha-conta/endereco-de-entrega/alterar', 'Web\AccountController@addressUpdate')->name('address.update');
 
 
 
 Auth::routes();
+
+/*
+|--------------------------------------------------------------------------
+| Routes Login Post 5 tentativas em 1 minuto
+| Personalizar mensagem no app/Exceptions/Handler
+|--------------------------------------------------------------------------
+*/
+
+Route::get('login','Auth\LoginController@showLoginForm')->name('login');
+Route::post('page-login','Auth\LoginController@pageLogin')
+    ->name('page-login')->middleware("throttle:5,1");
+
+/*
+|--------------------------------------------------------------------------
+| Routes Protected
+|--------------------------------------------------------------------------
+*/
+Route::prefix('minha-conta')->group(function () {
+    Route::get('/', 'Web\AccountController@index')->name('account');
+    Route::get('lista-de-desejo', 'Web\AccountController@wishlist')->name('account.wishlist');
+    Route::get('pedidos', 'Web\AccountController@order')->name('account.order');
+    Route::get('pedido/{id}', 'Web\AccountController@orderView')->name('order.view');
+    Route::match(['get', 'put'], 'perfil', 'Web\AccountController@profile')->name('account.profile');
+    Route::get('endereco-de-entrega', 'Web\AccountController@address')->name('account.address');
+    Route::put('endereco-de-entrega/alterar', 'Web\AccountController@addressUpdate')->name('address.update');
+});
+
+//
+
 
 

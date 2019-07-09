@@ -17,7 +17,6 @@ use AVD\Interfaces\Web\GridProductInterface as interGrid;
 use AVD\Interfaces\Web\ConfigSiteInterface as ConfigSite;
 use AVD\Interfaces\Web\ConfigProductInterface as ConfigProduct;
 use AVD\Interfaces\Web\ConfigKeywordInterface as ConfigKeyword;
-
 use AVD\Interfaces\Web\ConfigColorPositionInterface as ConfigImages;
 
 

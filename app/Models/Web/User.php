@@ -3,10 +3,14 @@
 namespace AVD\Models\Web;
 
 use AVD\Events\UserRegisteredEvent;
-use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
+
+
+class User extends Authenticatable
 {
+
     protected $fillable = [
         'profile_id',
         'type_id',

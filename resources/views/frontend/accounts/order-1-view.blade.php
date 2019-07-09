@@ -1,4 +1,4 @@
-@extends('layouts.template-1')
+@extends('frontend.layouts.template-1')
 @push('title')
 <title> Seu Carrinho - {{config('app.name')}}</title>
 @endpush
@@ -29,7 +29,7 @@
                         <div class="woocommerce">
                             <div class="woocommerce-my-account-wrapper">
 
-                                @include('accounts.sidebar.sidebar-1')
+                                @include('frontend.accounts.sidebar.sidebar-1')
 
                                 <div class="woocommerce-MyAccount-content">
                                     <p>
@@ -145,3 +145,6 @@
         </div>
     </div>
 @endsection
+@push('scripts')
+<script type="text/javascript" src="{{asset('themes/js/functions.min.js')}}"></script>
+@endpush
