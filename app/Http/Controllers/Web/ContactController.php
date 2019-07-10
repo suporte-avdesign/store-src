@@ -2,11 +2,38 @@
 
 namespace AVD\Http\Controllers\Web;
 
-use Illuminate\Http\Request;
 use AVD\Http\Controllers\Controller;
+
+use AVD\Http\Requests\Web\ContactRequest;
+use AVD\Interfaces\Web\ContactInterface as InterModel;
+use AVD\Interfaces\Web\SectionInterface as InterSection;
+use AVD\Interfaces\Web\ConfigKeywordInterface as ConfigKeyword;
+use AVD\Interfaces\Web\AccountTypeInterface as InterAccountType;
+use AVD\Interfaces\Web\ConfigProfileClientInterface as InterProfile;
+
 
 class ContactController extends Controller
 {
+    private $view = 'frontend.contacts';
+
+    public function __construct(
+        InterModel $interModel,
+        InterSection $interSection,
+        InterProfile $interProfile,
+        ConfigKeyword $configKeyword,
+        InterAccountType $interAccountType)
+    {
+        $this->middleware('guest')->except('logout');
+
+        $this->interModel        = $interModel;
+        $this->interSection      = $interSection;
+        $this->interProfile      = $interProfile;
+        $this->configKeyword     = $configKeyword;
+        $this->interAccountType  = $interAccountType;
+
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -14,11 +41,22 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view('contacts.contact-1');
+        $menu          = $this->interSection->getMenu();
+        $types         = $this->interAccountType->getAll();
+        $profiles      = $this->interProfile->getAll();
+        $configKeyword = $this->configKeyword->random();
+
+        return view("{$this->view}.contact-1", compact(
+            'menu',
+            'types',
+            'profiles',
+            'configKeyword')
+
+        );
     }
 
 
-    public function store(Request $request)
+    public function store(ContactRequest $request)
     {
 
 
@@ -30,7 +68,7 @@ class ContactController extends Controller
 
         //return response()->json($out);
 
-        return view('contacts.contact-1');
+        return view("{$this->view}.contact-1");
     }
 
 }

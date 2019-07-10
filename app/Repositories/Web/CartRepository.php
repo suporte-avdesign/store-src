@@ -32,8 +32,16 @@ class CartRepository implements CartInterface
         return $this->model->where('session', $session)->get();
     }
 
-
-
+    /**
+     * Date: 07/04/2019
+     *
+     * @param $key
+     * @return mixed
+     */
+    public function setKey($key)
+    {
+        return $this->model->where('key', $key)->first();
+    }
 
     /**
      * Date: 07/01/2019
@@ -58,6 +66,7 @@ class CartRepository implements CartInterface
         return $this->model->create($input);
     }
 
+
     /**
      * Date: 07/01/2019
      *
@@ -67,8 +76,34 @@ class CartRepository implements CartInterface
      */
     public function update($input, $key)
     {
-        $data   = $this->model->find($key);
+        $data = $this->model->find($key);
         return $data->update($input);
+    }
+
+    /**
+     * Date: 07/01/2019
+     *
+     * @param $input
+     * @param $id
+     * @return bool
+     */
+    public function updateAll($input)
+    {
+        $upds = true;
+        foreach ($input as $key => $values) {
+            foreach ($values as $qty => $value) {
+                if ($value <= 0) {
+                    $delete = $this->delete($key);
+                } else {
+                    $data = $this->setKey($key);
+                    if ($data->quantity != $value) {
+                        $item = ['quantity' => $value];
+                        $upds = $data->update($item);
+                    }
+                }
+            }
+        }
+        return $upds;
     }
 
     /**
@@ -81,18 +116,6 @@ class CartRepository implements CartInterface
     {
         $data = $this->model->where('key', $key)->first();
         return $data->delete();
-    }
-
-
-    /**
-     * Date: 07/04/2019
-     *
-     * @param $key
-     * @return mixed
-     */
-    public function undo($key)
-    {
-        return $this->model->where('key', $key)->first();
     }
 
 

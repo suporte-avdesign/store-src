@@ -172,6 +172,7 @@ return [
          */
         LaravelLegends\PtBrValidator\ValidatorProvider::class,
 
+
         /*
          * Application Service Providers...
          */

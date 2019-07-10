@@ -2,10 +2,11 @@
 
 namespace AVD\Http\Controllers\Auth;
 
-use Illuminate\Http\Request;
+//use Illuminate\Http\Exceptions\ThrottleRequestsException;
 
 use AVD\Http\Controllers\Controller;
 use AVD\Http\Requests\Web\LoginRequest;
+use AVD\Http\Requests\Web\LogoutRequest;
 use AVD\Interfaces\Web\UserInterface as InterModel;
 use AVD\Interfaces\Web\SectionInterface as InterSection;
 use AVD\Interfaces\Web\ConfigKeywordInterface as ConfigKeyword;
@@ -39,7 +40,6 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo = 'account';
-    protected $messsages;
     private $view = 'frontend.auth';
     /**
      * Create a new controller instance.
@@ -103,6 +103,7 @@ class LoginController extends Controller
 
             if(isset($dataForm)) {
 
+
                 $email   = $dataForm['email'];
                 $password = $dataForm['password'];
                 $remember = (isset($dataForm['remember']) ? true : false);
@@ -154,8 +155,18 @@ class LoginController extends Controller
     }
 
 
+    /**
+     * Obrigatório para limitar as tentativas de accesso..
+     *
+     * @return string
+     */
+    public function username()
+    {
+        return 'email';
+    }
 
-    public function logout(Request $request)
+
+    public function logout(LogoutRequest $request)
     {
         if (Auth::check()) {
             $id = Auth::user()->getAuthIdentifier();

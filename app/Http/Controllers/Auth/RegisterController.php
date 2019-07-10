@@ -6,7 +6,7 @@ use AVD\Http\Controllers\Controller;
 use AVD\Events\UserRegisteredNoteEvent;
 use AVD\Events\UserRegisterConfirmedEvent;
 use AVD\Interfaces\Web\UserInterface as InterModel;
-use AVD\Http\Requests\Web\Register as ValidateRegister;
+use AVD\Http\Requests\Web\RegisterRequest as ValidateRegister;
 
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;

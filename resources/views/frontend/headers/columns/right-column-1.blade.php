@@ -1,20 +1,18 @@
 <div class="right-column">
     <div class="header-links my-account-with-text">
         <ul>
-            @if (Route::has('login'))
-                <li class="my-account">
-                    <a href="{{route('account')}}">Minha Conta</a>
+            <li class="my-account">
+                <a href="{{route('account')}}">{{constLang('my_account')}}</a>
+            </li>
+            @auth
+                <li class="logout">
+                    <a href="javascript:logoutUser('{{route('logout')}}', '{{ csrf_token() }}');">{{constLang('exit')}}</a>
                 </li>
-                @auth
-                    <li class="logout">
-                        <a href="#">Sair</a>
-                    </li>
-                @else
-                    <li class="login-side-opener">
-                        <a href="{{route('login')}}">Login</a>
-                    </li>
-                @endauth
-             @endif
+            @else
+                <li class="login-side-opener">
+                    <a href="{{route('login')}}">{{constLang('login')}}</a>
+                </li>
+            @endauth
         </ul>
     </div>
     <div class="search-button basel-search-full-screen">
@@ -23,7 +21,7 @@
         </a>
         <div class="basel-search-wrapper">
             <div class="basel-search-inner">
-                <span class="basel-close-search">Fechar</span>
+                <span class="basel-close-search">{{constLang('close')}}</span>
                 <form role="search" method="get" id="_searchform" class="searchform  basel-ajax-search" action="#" data-thumbnail="1" data-price="1" data-count="5" data-post_type="product">
                     <div>
                         <label class="screen-reader-text">Buscar por 2:</label>
@@ -41,7 +39,7 @@
         </div>
     </div>
     <div class="wishlist-info-widget">
-        <a href="{{route('wishlist')}}">Lista de Desejo
+        <a href="{{route('wishlist')}}">{{constLang('wishlist.text')}}
             <span class="wishlist-count">0</span>
         </a>
     </div>

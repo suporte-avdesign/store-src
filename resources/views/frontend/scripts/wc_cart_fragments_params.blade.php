@@ -1,7 +1,6 @@
 @php
-    $user = null;
-    if ($user) {
-        $session = md5($user_id);
+    if (isset($user)) {
+        $session = md5($user->id);
     } else {
         $session = md5($_SERVER['REMOTE_ADDR']);
     }

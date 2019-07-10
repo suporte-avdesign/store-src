@@ -208,5 +208,6 @@
         "i18n_password_hint" => "Dica: A senha deve ter pelo menos doze caracteres. Para torná-lo mais forte, use letras maiúsculas e minúsculas, números e símbolos como ! \" ? $ % ^ & )."
     ]) !!}
 </script>
-<script type="text/javascript" src="{{asset('banners')}}?ver=3.5.2"></script>
+<!--<script type="text/javascript" src="{{asset('correios/frete.min.js')}}"></script>-->
+
 @endpush

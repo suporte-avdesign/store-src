@@ -79,3 +79,7 @@ mix.scripts('resources/assets/includes/zxcvbn/js/zxcvbn-async.js', 'public/inclu
 mix.scripts('resources/assets/includes/zxcvbn/js/password-strength-meter.js', 'public/includes/zxcvbn/js/password-strength-meter.min.js');
 mix.scripts('resources/assets/plugins/jquery-maskedinput/jquery.maskedinput.min.js', 'public/plugins/jquery-maskedinput/jquery.maskedinput.min.js');
 mix.scripts('resources/assets/themes/js/functions.js', 'public/themes/js/functions.min.js');
+
+
+
+

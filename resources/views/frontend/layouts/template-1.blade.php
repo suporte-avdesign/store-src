@@ -87,6 +87,8 @@
 
 
 <div class="basel-close-side"></div>
+
+
 <a href="#" class="scrollToTop basel-tooltip">Role para cima</a>
 
 @include('frontend.scripts.c-document-body')

@@ -17,7 +17,11 @@ use AVD\Interfaces\Web\GridProductInterface as interGrid;
 use AVD\Interfaces\Web\ConfigSiteInterface as ConfigSite;
 use AVD\Interfaces\Web\ConfigProductInterface as ConfigProduct;
 use AVD\Interfaces\Web\ConfigKeywordInterface as ConfigKeyword;
+use AVD\Interfaces\Web\ConfigShippingInterface as ConfigShipping;
 use AVD\Interfaces\Web\ConfigColorPositionInterface as ConfigImages;
+
+use AVD\Correios\ConsultaFrete;
+
 
 
 
@@ -41,31 +45,37 @@ class CartController extends Controller
         InterProduct $interProduct,
         ConfigImages $configImages,
         ConfigKeyword $configKeyword,
-        ConfigProduct $configProduct)
+        ConsultaFrete $consultaFrete,
+        ConfigProduct $configProduct,
+        ConfigShipping $configShipping)
     {
-        $this->interGrid     = $interGrid;
-        $this->interModel    = $interModel;
-        $this->interState    = $interState;
-        $this->configSite    = $configSite->setId(1);
-        $this->interSection  = $interSection;
-        $this->interProduct  = $interProduct;
-        $this->phatFiles     = env('APP_PANEL_URL');
-        $this->configImages  = $configImages->setName('default', 'T');
-        $this->configKeyword = $configKeyword->random();
-        $this->configProduct = $configProduct->setId(1);
-
+        $this->phatFiles      = env('APP_PANEL_URL');
+        $this->interGrid      = $interGrid;
+        $this->interModel     = $interModel;
+        $this->interState     = $interState;
+        $this->configSite     = $configSite;
+        $this->interSection   = $interSection;
+        $this->interProduct   = $interProduct;
+        $this->configImages   = $configImages;
+        $this->configKeyword  = $configKeyword;
+        $this->configProduct  = $configProduct;
+        $this->consultaFrete  = $consultaFrete;
+        $this->configShipping = $configShipping;
     }
 
 
     public function index()
     {
+
         (session('undo') ? $message = session('undo') : $message = null);
 
         $menu     = $this->interSection->getMenu();
         $states   = $this->interState->getAll();
 
-        $photoUrl = $this->phatFiles.$this->configImages->path;
-        $configKeyword = $this->configKeyword;
+        $configImages   = $this->configImages->setName('default', 'T');
+        $photoUrl       = $this->phatFiles.$configImages->path;
+        $configKeyword  = $this->configKeyword->random();
+        $configShipping = $this->configShipping->getAll();
 
         $user = Auth::user();
 
@@ -77,13 +87,15 @@ class CartController extends Controller
             $session = md5($_SERVER['REMOTE_ADDR']);
         }
 
-        if ($user_id != 0 && $this->configSite->order == 'wishlist'){
+        $configSite = $this->configSite->setId(1);
+        if ($user_id != 0 && $configSite->order == 'wishlist'){
             dd('Cart = Lista de desejo');
         } else {
             $cart = $this->interModel->getall($session);
         }
 
         $total = $this->getTotal($cart);
+
 
         return view("{$this->view}.cart-1", compact(
             'menu',
@@ -93,7 +105,8 @@ class CartController extends Controller
             'session',
             'message',
             'photoUrl',
-            'configKeyword')
+            'configKeyword',
+            'configShipping')
         );
     }
 
@@ -118,8 +131,9 @@ class CartController extends Controller
 
         if ($ac == 'remove_item'){
             /* guardar session */
-            //$undo = $this->interModel->undo($request->input('item'));
-            if ($user_id != 0 && $this->configSite->order == 'wishlist'){
+            //$undo = $this->interModel->setKey($request->input('item'));
+            $configSite = $this->configSite->setId(1);
+            if ($user_id != 0 && $configSite->order == 'wishlist'){
                 dd('Cart = Lista de desejo');
             } else {
                 $delete = $this->interModel->delete($request->input('item'));
@@ -143,18 +157,19 @@ class CartController extends Controller
             $session = md5($_SERVER['REMOTE_ADDR']);
         }
 
-        if ($user_id != 0 && $this->configSite->order == 'wishlist'){
+        $configSite = $this->configSite->setId(1);
+        if ($user_id != 0 && $configSite->order == 'wishlist'){
             dd('Cart = Lista de desejo');
         } else {
             $cart = $this->interModel->getall($session);
         }
 
 
-        $getTotal = $this->getTotal($cart);
-        $total = setReal($getTotal['price_cash']);
+        $getTotal       = $this->getTotal($cart);
+        $total          = setReal($getTotal['price_cash']);
         $total_quantity = $getTotal['quantity'];
-
-        $photoUrl = $this->phatFiles.$this->configImages->path;
+        $configImages   = $this->configImages->setName('default', 'T');
+        $photoUrl       = $this->phatFiles.$configImages->path;
 
         $fragments = view("{$this->view}.render.cart-1-fragments", compact('cart','photoUrl', 'total'))->render();
         $cart_quantity = view("{$this->view}.render.cart-1-quantity", compact('total_quantity'))->render();
@@ -183,20 +198,20 @@ class CartController extends Controller
      */
     public function product(Request $request)
     {
-        $ip = $_SERVER['REMOTE_ADDR'];
-        $quantity = $request->input('quantity');
-        $product_id = $request->input('product_id');
+        $ip              = $_SERVER['REMOTE_ADDR'];
+        $quantity        = $request->input('quantity');
+        $product_id      = $request->input('product_id');
         $grid_product_id = $request->input('variation_id');
 
         $user = Auth::user();
         if ($user) {
-            $user_id = Auth::id();
+            $user_id    = Auth::id();
+            $session    = md5($user_id);
             $profile_id = $user->profile_id;
-            $session = md5($user_id);
         } else {
-            $user_id = 0;
+            $user_id    = 0;
+            $session    = md5($ip);
             $profile_id = 0;
-            $session = md5($ip);
         }
 
         $product = $this->interProduct->setId($product_id);
@@ -218,25 +233,25 @@ class CartController extends Controller
 
         if ($data) {
 
-            if ($user != 0 && $this->configSite->order == 'wishlist'){
+            $configSite = $this->configSite->setId(1);
+            if ($user != 0 && $configSite->order == 'wishlist'){
                 dd('Cart = Lista de desejo');
             } else {
                 $cart = $this->interModel->getall($session);
             }
 
-            $getTotal = $this->getTotal($cart);
-            $total = setReal($getTotal['price_cash']);
+            $getTotal       = $this->getTotal($cart);
+            $total          = setReal($getTotal['price_cash']);
             $total_quantity = $getTotal['quantity'];
 
+            $configImages   = $this->configImages->setName('default', 'T');
+            $photoUrl       = $this->phatFiles.$configImages->path;
 
-            $photoUrl = $this->phatFiles.$this->configImages->path;
 
-
-            $notices   = view("{$this->view}.render.cart-1-notices", compact('product','quantity'))->render();
-            $fragments = view("{$this->view}.render.cart-1-fragments", compact('cart','photoUrl', 'total'))->render();
+            $notices       = view("{$this->view}.render.cart-1-notices", compact('product','quantity'))->render();
+            $fragments     = view("{$this->view}.render.cart-1-fragments", compact('cart','photoUrl', 'total'))->render();
+            $cart_total    = view("{$this->view}.render.cart-1-total", compact('total'))->render();
             $cart_quantity = view("{$this->view}.render.cart-1-quantity", compact('total_quantity'))->render();
-            $cart_total = view("{$this->view}.render.cart-1-total", compact('total'))->render();
-
 
             $out = array(
                 "notices" => $notices,
@@ -277,11 +292,10 @@ class CartController extends Controller
         }
 
 
-        $notices   = view("{$this->view}.render.cart-1-notices", compact('product','quantity'))->render();
-        $fragments = view("{$this->view}.render.cart-1-fragments", compact('cart','photoUrl', 'total'))->render();
+        $notices       = view("{$this->view}.render.cart-1-notices", compact('product','quantity'))->render();
+        $fragments     = view("{$this->view}.render.cart-1-fragments", compact('cart','photoUrl', 'total'))->render();
+        $cart_total    = view("{$this->view}.render.cart-1-total", compact('total'))->render();
         $cart_quantity = view("{$this->view}.render.cart-1-quantity", compact('total_quantity'))->render();
-        $cart_total = view("{$this->view}.render.cart-1-total", compact('total'))->render();
-
 
         $out = array(
             "notices" => $notices,
@@ -298,8 +312,25 @@ class CartController extends Controller
     }
 
 
+    public function update(Request $request)
+    {
+
+        $dataForm = $request['cart'];
+        $update   = $this->interModel->updateAll($dataForm);
+        if ($update) {
+
+            $message = 'success_login';
+            $success = view('frontend.messages.success-1', compact('message'))->render();
+
+            $request->session()->flash('success', $success);
+            return $this->index();
+        }
+    }
 
 
+
+
+/*
 
     public function store(Request $request)
     {
@@ -325,13 +356,14 @@ class CartController extends Controller
 
 
     }
-
+*/
 
 
 
 
     public function shipping(Request $request)
     {
+        dd($request);
         $shipping  = $request['shipping_method'];
         $method    = '';
 
@@ -366,19 +398,6 @@ class CartController extends Controller
 
 
 
-    public function update(Request $request)
-    {
-        // Route('products')
-        $product = array(
-            "category" => "categoria",
-            "section" => "secao",
-            "slug" => "produto-1002"
-        );
-
-        $cart = [1];
-
-        return view('carts.cart-1', compact('product', 'cart'));
-    }
 
     public function undo(Request $request)
     {
@@ -392,9 +411,10 @@ class CartController extends Controller
 
     public function insert($ip, $user_id, $profile_id, $session, $product, $color, $grids, $quantity)
     {
-
+        $configProduct = $this->configProduct->setId(1);
         foreach ($product->prices as $price) {
-            if ($price->profile == $this->configProduct->price_default) {
+
+            if ($price->profile == $configProduct->price_default) {
                 $percent = $price->price_cash_percent;
                 $price_card = $price->price_card;
                 $price_cash = $price->price_cash;

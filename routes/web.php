@@ -21,6 +21,7 @@ Route::get('404', function () {
 });
 
 
+Auth::routes();
 
 
 
@@ -85,13 +86,11 @@ Route::get(setRoute('color').'{slug}', 'Web\ImageColorController@index');
 | Routes Cart
 |--------------------------------------------------------------------------
 */
+Route::get('cart', 'Web\CartController@index')->name('cart');
 Route::post('cart/add/product', 'Web\CartController@product')->name('cart.product');
 Route::post('cart-endpoint', 'Web\CartController@endpoint')->name('cart.endpoint');
-
-
-
-Route::get('cart', 'Web\CartController@index')->name('cart');
 Route::post('cart/update', 'Web\CartController@update')->name('cart.update');
+
 Route::post('cart-shipping', 'Web\CartController@shipping')->name('cart.shipping');
 Route::post('cart/add', 'Web\CartController@store')->name('cart.add');
 Route::post('cart/fragments', 'Web\CartController@fragments')->name('cart.fragments');
@@ -150,7 +149,6 @@ Route::post('contato', 'Web\ContactController@store')->name('contact.store');
 
 
 
-Auth::routes();
 
 /*
 |--------------------------------------------------------------------------
@@ -160,8 +158,7 @@ Auth::routes();
 */
 
 Route::get('login','Auth\LoginController@showLoginForm')->name('login');
-Route::post('page-login','Auth\LoginController@pageLogin')
-    ->name('page-login')->middleware("throttle:5,1");
+Route::post('login','Auth\LoginController@pageLogin')->name('login')->middleware("throttle:5,1");
 
 /*
 |--------------------------------------------------------------------------

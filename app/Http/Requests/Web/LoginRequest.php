@@ -23,13 +23,20 @@ class LoginRequest extends FormRequest
      */
     public function rules()
     {
-        ($this->method() == 'POST' ? $id = 0 : $id = auth()->user()->id);
-        $page = $this->get('page');
+        $form = $this->get('form');
 
-        if ($page) {
+
+        if ($form == 'page') {
             $rules['page.email']    = "required|email";
             $rules['page.password'] = 'required';
+
+        } elseif ($form == 'sidbar') {
+            $rules['user.email']    = "required|email";
+            $rules['user.password'] = 'required';
         }
+
+
+
 
 
         return $rules;
@@ -38,11 +45,15 @@ class LoginRequest extends FormRequest
 
     public function messages()
     {
-        $messages = [
-            'page.email.required' => 'O Email é obrigatório.',
-            'page.email.email' => 'Digite um email valído.',
-            'page.password.required' => 'A senha é obrigatória.',
-        ];
+            $messages = [
+                'page.email.required' => 'O Email é obrigatório.',
+                'page.email.email' => 'Digite um email valído.',
+                'page.password.required' => 'A senha é obrigatória.',
+                'user.email.required' => 'O Email é obrigatório.',
+                'user.email.email' => 'Digite um email valído.',
+                'user.password.required' => 'A senha é obrigatória.',
+            ];
+
 
         return $messages;
     }

@@ -1,4 +1,4 @@
-@extends('layouts.template-1')
+@extends('frontend.layouts.template-1')
 @push('title')
 <title> Fale Conosco - {{config('app.name')}}</title>
 @endpush

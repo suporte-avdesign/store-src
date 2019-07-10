@@ -78,12 +78,6 @@
                                             <a href="javascript:logoutUser('{{route('logout')}}', '{{ csrf_token() }}');">Sair</a>
                                         </div>
                                     </div>
-                                    <div class="woocommerce-notices-wrapper">
-                                        <div class="woocommerce-message" role="alert">
-                                            Você agora está logado como
-                                            <strong>@if($user->type_id == 1) {{$user->last_name}} @else {{$user->first_name}} @endif</strong>
-                                        </div>
-                                    </div>
                                 </div>
 
                             </div>

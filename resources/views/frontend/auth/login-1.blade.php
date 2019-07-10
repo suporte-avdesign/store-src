@@ -57,7 +57,7 @@
 
                                             <h2>Login</h2>
 
-                                            <form id="form_login" method="post" action="{{route('page-login')}}" class="login woocommerce-form woocommerce-form-logi">
+                                            <form id="form_login" method="post" action="{{route('login')}}" class="login woocommerce-form woocommerce-form-logi">
                                                 @csrf
                                                 <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
                                                     <label for="page_email">{{constLang('email')}} <span class="required">*</span></label>
@@ -70,13 +70,14 @@
                                                 <div id="return-form_login"></div>
 
                                                 <p class="form-row">
+                                                    <input type="hidden" name="form" value="page">
                                                     <button type="button" id="form_login-submit" class="button woocommerce-Button" onclick="postFormJson('form_login')">{{constLang('login')}}</button>
                                                 </p>
 
                                                 <div class="login-form-footer">
                                                     <a href="{{route('password.request')}}" class="woocommerce-LostPassword lost_password">{{constLang('password_lost')}}</a>
                                                     <label for="rememberme" class="remember-me-label inline">
-                                                        <input class="woocommerce-form__input woocommerce-form__input-checkbox" name="remember" type="checkbox" value="1" {{ old('remember') ? 'checked' : '' }}/>
+                                                        <input class="woocommerce-form__input woocommerce-form__input-checkbox" name="page[remember]" type="checkbox" value="1" {{ old('remember') ? 'checked' : '' }}/>
                                                         <span>{{constLang('rememberme')}}</span>
                                                     </label>
                                                 </div>

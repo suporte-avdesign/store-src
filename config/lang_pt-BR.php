@@ -98,6 +98,7 @@ return [
         'server' => 'Houve um erro no servidor!',
         '404'  => 'Página não encontrada',
     ],
+    'exit' => 'Sair',
     'featured' => 'Destaque',
     'filter' => 'Filtrar',
     'phone' => 'Preço',
@@ -321,6 +322,7 @@ return [
         'wishlist' => [
             'add' => 'Adicionar a lista de desejos',
             'added' => 'O produto já está na lista de desejos!',
+            'text' => 'Lista de Desejo',
             'view' => 'Ver lista de desejos'
         ],
         'colors' => [

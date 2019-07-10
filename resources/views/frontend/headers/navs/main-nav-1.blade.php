@@ -24,9 +24,6 @@
                 <a href="#">Black Friday</a>
             </li>
 
-            <li id="menu-item-26107" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-26107 menu-item-design-default item-event-hover callto-btn">
-                <button type="button" id="btn-retail" class="submit minus">Varejo</button>
-            </li>
         </ul>
 
 
