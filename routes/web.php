@@ -91,12 +91,20 @@ Route::post('cart/add/product', 'Web\CartController@product')->name('cart.produc
 Route::post('cart-endpoint', 'Web\CartController@endpoint')->name('cart.endpoint');
 Route::post('cart/update', 'Web\CartController@update')->name('cart.update');
 
-Route::post('cart-shipping', 'Web\CartController@shipping')->name('cart.shipping');
 Route::post('cart/add', 'Web\CartController@store')->name('cart.add');
 Route::post('cart/fragments', 'Web\CartController@fragments')->name('cart.fragments');
 Route::get('cart-undo', 'Web\CartController@undo')->name('cart.undo');
 
 Route::post('cart-remove', 'Web\CartController@destroy')->name('cart.remove');
+
+/*
+|--------------------------------------------------------------------------
+| Routes Shipping Method
+|--------------------------------------------------------------------------
+*/
+Route::post('shipping/method', 'Web\ConfigShippingController@method')->name('shipping.method');
+Route::post('shipping/calculator', 'Web\ConfigShippingController@calculateFreight')->name('shipping.calculator');
+
 
 /*
 |--------------------------------------------------------------------------

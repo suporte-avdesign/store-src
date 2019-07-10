@@ -1,9 +1,5 @@
 @php
-    if (isset($user)) {
-        $session = md5($user->id);
-    } else {
-        $session = md5($_SERVER['REMOTE_ADDR']);
-    }
+  $session = md5($_SERVER['REMOTE_ADDR']);
 @endphp
 <script type='text/javascript'>
     var wc_cart_fragments_params = {!! json_encode([

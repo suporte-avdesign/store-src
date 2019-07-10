@@ -1,34 +1,32 @@
 <tr class="woocommerce-shipping-totals shipping">
     <th>{{constLang('messages.shipping.freight')}}</th>
     <td data-title="{{constLang('messages.shipping.freight')}}">
-        <ul id="shipping_method" class="woocommerce-shipping-methods">
 
-            <li>
-                <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_legacy_flat_rate" value="legacy_flat_rate" class="shipping_method"  checked="checked"/>
-                <label for="shipping_method_0_legacy_flat_rate">Taxa fixa</span>
-                </label>
-            </li>
-            <li>
-                <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_legacy_free_shipping" value="transportadora" class="shipping_method"/>
-                <label for="shipping_method_0_legacy_free_shipping">Frete grátis</label>
-            </li>
+        <form class="woocommerce-shipping-calculator" action="{{route('shipping.calculator')}}" method="post">
+            @csrf
+            <ul id="shipping_method" class="woocommerce-shipping-methods">
+                @foreach($configShipping as $method)
 
-            <li>
-                <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_legacy_local_delivery" value="legacy_local_delivery" class="shipping_method"/>
-                <label for="shipping_method_0_legacy_local_delivery">Entrega local:
-                    <span class="woocommerce-Price-amount amount">
-                        <span class="woocommerce-Price-currencySymbol">R$ </span>0.00
-                    </span>
-                </label>
-            </li>
-        </ul>
-        <p class="woocommerce-shipping-destination">
-            Estimativa para <strong>Brasil</strong>.
-        </p>
+                    <li>
+                        <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_legacy_flat_rate" value="{{$method->id}}" class="shipping_method" @if($loop->first) checked @endif/>
+                        @if($method->tax_unique != '0.00')
+                            <label for="shipping_method_0_legacy_flat_rate">{{$method->name}}</span> {{constLang('currency')}} {{setReal($method->tax_unique)}}</label>
+                            <p>{{$method->description}}</p>
+                        @elseif($method->tax == 0)
+                            <label for="shipping_method_0_legacy_flat_rate">{{$method->name}}</span> {{constLang('currency')}} 0,00</label>
+                        @else
+                            <label for="shipping_method_0_legacy_flat_rate">{{$method->name}}</span> </label>
+                        @endif
+                    </li>
+                @endforeach
+            </ul>
+            <p class="woocommerce-shipping-destination">
+                <strong>{{constLang('messages.shipping.send_text')}}</strong>.
+            </p>
+            <p><button type="button" class="shipping-calculator-button btn-color-black">Calcular Frete</button></p>
 
-        <form class="woocommerce-shipping-calculator" action="{{route('cart.shipping')}}" method="post">
 
-            <a href="#" class="shipping-calculator-button">Calcular Frete</a>
+
             <section class="shipping-calculator-form" style="display:none;">
 
                 <p class="form-row form-row-wide hide" id="calc_shipping_country_field">
@@ -57,8 +55,7 @@
 
                 <p><button type="submit" name="calc_shipping" value="1" class="button">Atualizar</button></p>
                 <input type="hidden" id="woocommerce-shipping-calculator-nonce" name="woocommerce-shipping-calculator-nonce" value="{{numLetter('cart_'.time(),'leter')}}" />
-                <input type="hidden" name="_wp_http_referer" value="{{route('cart')}}" />
-                <input type="hidden" name="_token" value="{{csrf_token()}}" />
+                <input type="hidden" name="http_referer" value="{{route('cart')}}" />
             </section>
         </form>
 

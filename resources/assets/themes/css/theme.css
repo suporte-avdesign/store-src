@@ -650,10 +650,11 @@ input[type=submit],
 .basel-dark .login .button,
 .basel-dark .register .button,
 .basel-dark .widget_shopping_cart .buttons a,
+.basel-dark .shipping-calculator-button,
 .basel-dark .yith-woocompare-widget a.button.compare,
 .basel-dark .widget_price_filter .price_slider_amount .button,
 .basel-dark .woocommerce .cart-actions input[name="update_cart"] {
-    background-color: #ECECEC;
+    background-color: #ca6e15;
 }
 
 .button,
@@ -667,7 +668,33 @@ input[type=submit],
 .basel-dark .yith-woocompare-widget a.button.compare,
 .basel-dark .widget_price_filter .price_slider_amount .button,
 .basel-dark .woocommerce .cart-actions input[name="update_cart"] {
-    border-color: #ECECEC;
+    border-color: #ca6e15;
+}
+
+.button:hover,
+.button:focus,
+button:hover,
+button:focus,
+input[type=submit]:hover,
+input[type=submit]:focus,
+.yith-woocompare-widget a.button.compare:hover,
+.yith-woocompare-widget a.button.compare:focus,
+.basel-dark .basel-registration-page .basel-switch-to-register:hover,
+.basel-dark .basel-registration-page .basel-switch-to-register:focus,
+.basel-dark .login .button:hover,
+.basel-dark .login .button:focus,
+.basel-dark .register .button:hover,
+.basel-dark .register .button:focus,
+.basel-dark .shipping-calculator-button .buttons a:hover,
+.basel-dark .widget_shopping_cart .buttons a:hover,
+.basel-dark .widget_shopping_cart .buttons a:focus,
+.basel-dark .yith-woocompare-widget a.button.compare:hover,
+.basel-dark .yith-woocompare-widget a.button.compare:focus,
+.basel-dark .widget_price_filter .price_slider_amount .button:hover,
+.basel-dark .widget_price_filter .price_slider_amount .button:focus,
+.basel-dark .woocommerce .cart-actions input[name="update_cart"]:hover,
+.basel-dark .woocommerce .cart-actions input[name="update_cart"]:focus {
+    background-color: #ca6e15;
 }
 
 .button:hover,
@@ -692,38 +719,14 @@ input[type=submit]:focus,
 .basel-dark .widget_price_filter .price_slider_amount .button:focus,
 .basel-dark .woocommerce .cart-actions input[name="update_cart"]:hover,
 .basel-dark .woocommerce .cart-actions input[name="update_cart"]:focus {
-    background-color: #3E3E3E;
-}
-
-.button:hover,
-.button:focus,
-button:hover,
-button:focus,
-input[type=submit]:hover,
-input[type=submit]:focus,
-.yith-woocompare-widget a.button.compare:hover,
-.yith-woocompare-widget a.button.compare:focus,
-.basel-dark .basel-registration-page .basel-switch-to-register:hover,
-.basel-dark .basel-registration-page .basel-switch-to-register:focus,
-.basel-dark .login .button:hover,
-.basel-dark .login .button:focus,
-.basel-dark .register .button:hover,
-.basel-dark .register .button:focus,
-.basel-dark .widget_shopping_cart .buttons a:hover,
-.basel-dark .widget_shopping_cart .buttons a:focus,
-.basel-dark .yith-woocompare-widget a.button.compare:hover,
-.basel-dark .yith-woocompare-widget a.button.compare:focus,
-.basel-dark .widget_price_filter .price_slider_amount .button:hover,
-.basel-dark .widget_price_filter .price_slider_amount .button:focus,
-.basel-dark .woocommerce .cart-actions input[name="update_cart"]:hover,
-.basel-dark .woocommerce .cart-actions input[name="update_cart"]:focus {
-    border-color: #3E3E3E;
+    border-color: #ca6e15;
 }
 
 .single_add_to_cart_button,
 .basel-sticky-btn .basel-sticky-add-to-cart,
 .woocommerce .cart-actions .coupon .button,
 .added_to_cart.btn-color-black,
+shipping-calculator-button.btn-color-black,
 input[type=submit].btn-color-black,
 .wishlist_table tr td.product-add-to-cart>.add_to_cart.button,
 .basel-hover-quick .quick-shop-btn > a,
@@ -737,6 +740,7 @@ table.compare-list tr.add-to-cart td a,
 .basel-sticky-btn .basel-sticky-add-to-cart,
 .woocommerce .cart-actions .coupon .button,
 .added_to_cart.btn-color-black,
+shipping-calculator-button.btn-color-black,
 input[type=submit].btn-color-black,
 .wishlist_table tr td.product-add-to-cart>.add_to_cart.button,
 .basel-hover-quick .quick-shop-btn > a,
@@ -758,6 +762,8 @@ table.compare-list tr.add-to-cart td a,
 .woocommerce .cart-actions .coupon .button:focus,
 .added_to_cart.btn-color-black:hover,
 .added_to_cart.btn-color-black:focus,
+shipping-calculator-button.btn-color-black:hover,
+shipping-calculator-button.btn-color-black:hover,
 input[type=submit].btn-color-black:hover,
 input[type=submit].btn-color-black:focus,
 .wishlist_table tr td.product-add-to-cart>.add_to_cart.button:hover,
@@ -770,7 +776,7 @@ table.compare-list tr.add-to-cart td a:focus,
 .basel-compare-col .add_to_cart_button:focus,
 .basel-compare-col .added_to_cart:hover,
 .basel-compare-col .added_to_cart:focus {
-    background-color: #ca6e15;
+    background-color: #ca8028;
 }
 
 .single_add_to_cart_button:hover,
@@ -781,6 +787,8 @@ table.compare-list tr.add-to-cart td a:focus,
 .woocommerce .cart-actions .coupon .button:focus,
 .added_to_cart.btn-color-black:hover,
 .added_to_cart.btn-color-black:focus,
+shipping-calculator-button.btn-color-black:hover,
+shipping-calculator-button.btn-color-black:hover,
 input[type=submit].btn-color-black:hover,
 input[type=submit].btn-color-black:focus,
 .wishlist_table tr td.product-add-to-cart>.add_to_cart.button:hover,

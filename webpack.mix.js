@@ -69,8 +69,8 @@ mix.scripts('resources/assets/plugins/product/js/single-product.js', 'public/plu
 mix.styles('resources/assets/plugins/select2/css/select2.css', 'public/plugins/select2/css/select2.css');
 mix.scripts('resources/assets/includes/zxcvbn/js/zxcvbn-async.min.js', 'public/includes/zxcvbn/js/zxcvbn-async.min.js');
 //Cart footer
-mix.scripts('resources/assets/plugins/address/country-select.min.js', 'public/plugins/address/country-select.min.js');
-mix.scripts('resources/assets/plugins/address/address-i18n.min.js', 'public/plugins/address/address-i18n.min.js');
+mix.scripts('resources/assets/plugins/address/country-select.js', 'public/plugins/address/country-select.min.js');
+mix.scripts('resources/assets/plugins/address/address-i18n.js', 'public/plugins/address/address-i18n.min.js');
 mix.scripts('resources/assets/plugins/cart/js/cart.js', 'public/plugins/cart/js/cart.js');
 mix.scripts('resources/assets/plugins/select2/js/select2.full.js', 'public/plugins/select2/js/select2.full.min.js');
 

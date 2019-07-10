@@ -29,7 +29,7 @@ class ConfigShippingRepository implements ConfigShippingInterface
      */
     public function getAll()
     {
-        return $this->model->create();
+        return $this->model->orderBy('order')->where('active', constLang('active_true'))->get();
     }
 
 }

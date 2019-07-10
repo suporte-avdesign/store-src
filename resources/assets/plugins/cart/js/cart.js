@@ -22,6 +22,19 @@ jQuery( function( $ ) {
     };
 
     /**
+     * Gets a url for a given AJAX endpoint.
+     *
+     * @param {String} endpoint The AJAX Endpoint
+     * @return {String} The URL to use for the request
+     */
+    var get_url_freight = function( endpoint ) {
+        return wc_cart_params.ajax_shipping_method.toString().replace(
+            '%%endpoint%%',
+            endpoint
+        );
+    };
+
+    /**
      * Check if a node is blocked for processing.
      *
      * @param {JQuery Object} $node
@@ -199,7 +212,7 @@ jQuery( function( $ ) {
 
             $.ajax( {
                 type:     'post',
-                url:      get_url( 'update_shipping_method' ),
+                url:      get_url_freight( 'update_shipping_method' ),
                 data:     data,
                 dataType: 'html',
                 success:  function( response ) {

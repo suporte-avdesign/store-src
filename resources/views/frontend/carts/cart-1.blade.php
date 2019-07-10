@@ -140,9 +140,9 @@
                                                     </span>
                                                 </td>
                                             </tr>
-
-                                            @include('frontend.carts.includes.freight-1')
-
+                                            @if($configFreight->default == 1)
+                                                @include('frontend.shipping.freight-1')
+                                            @endif
                                             <tr class="order-total">
                                                 <th>{{constLang('total')}}</th>
                                                 <td data-title="{{constLang('total')}}">
@@ -181,8 +181,9 @@
 <script type='text/javascript'>
     var wc_cart_params = {!! json_encode([
         "ajax_url" => route('cart.endpoint'),
+        "ajax_shipping_method" => route('shipping.method'),
         "wc_ajax_url" => route('cart.endpoint')."?ajax=%%endpoint%%",
-        "update_shipping_method_nonce" => "30d19ed44f",
+        "update_shipping_method_nonce" => csrf_token(),
         "apply_coupon_nonce" => "aaa20bd06ftstts",
         "remove_coupon_nonce" => "b676ca36e2tsts",
         "csrf_token" => csrf_token()

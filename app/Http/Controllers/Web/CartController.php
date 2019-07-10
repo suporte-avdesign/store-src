@@ -15,20 +15,11 @@ use AVD\Interfaces\Web\SectionInterface as InterSection;
 use AVD\Interfaces\Web\ProductInterface as InterProduct;
 use AVD\Interfaces\Web\GridProductInterface as interGrid;
 use AVD\Interfaces\Web\ConfigSiteInterface as ConfigSite;
+use AVD\Interfaces\Web\ConfigFreightInterface as ConfigFreight;
 use AVD\Interfaces\Web\ConfigProductInterface as ConfigProduct;
 use AVD\Interfaces\Web\ConfigKeywordInterface as ConfigKeyword;
 use AVD\Interfaces\Web\ConfigShippingInterface as ConfigShipping;
 use AVD\Interfaces\Web\ConfigColorPositionInterface as ConfigImages;
-
-use AVD\Correios\ConsultaFrete;
-
-
-
-
-/*
-use AVD\Interfaces\Web\SocialShareInterface as InterSocial;
-use AVD\Interfaces\Web\ConfigKeywordInterface as ConfigKeyword;
-*/
 
 
 class CartController extends Controller
@@ -45,7 +36,7 @@ class CartController extends Controller
         InterProduct $interProduct,
         ConfigImages $configImages,
         ConfigKeyword $configKeyword,
-        ConsultaFrete $consultaFrete,
+        ConfigFreight $configFreight,
         ConfigProduct $configProduct,
         ConfigShipping $configShipping)
     {
@@ -58,8 +49,8 @@ class CartController extends Controller
         $this->interProduct   = $interProduct;
         $this->configImages   = $configImages;
         $this->configKeyword  = $configKeyword;
+        $this->configFreight  = $configFreight;
         $this->configProduct  = $configProduct;
-        $this->consultaFrete  = $consultaFrete;
         $this->configShipping = $configShipping;
     }
 
@@ -75,17 +66,13 @@ class CartController extends Controller
         $configImages   = $this->configImages->setName('default', 'T');
         $photoUrl       = $this->phatFiles.$configImages->path;
         $configKeyword  = $this->configKeyword->random();
+        $configFreight  = $this->configFreight->setId(1);
         $configShipping = $this->configShipping->getAll();
 
-        $user = Auth::user();
 
-        if ($user) {
-            $user_id = Auth::id();
-            $session = md5($user_id);
-        } else {
-            $user_id = 0;
-            $session = md5($_SERVER['REMOTE_ADDR']);
-        }
+        (Auth::user() ? $user_id = Auth::id() : $user_id = 0);
+        $session = md5($_SERVER['REMOTE_ADDR']);
+
 
         $configSite = $this->configSite->setId(1);
         if ($user_id != 0 && $configSite->order == 'wishlist'){
@@ -105,6 +92,7 @@ class CartController extends Controller
             'session',
             'message',
             'photoUrl',
+            'configFreight',
             'configKeyword',
             'configShipping')
         );
@@ -112,18 +100,10 @@ class CartController extends Controller
 
     public function endpoint(Request $request)
     {
-        $user = Auth::user();
-        if ($user) {
-            $user_id = Auth::id();
-        } else {
-            $user_id = 0;
-        }
+        (Auth::user() ? $user_id = Auth::id() : $user_id = 0);
 
         $ac = $request->input('ajax');
 
-        if ($ac == 'update_shipping_method') {
-            $this->method($request->all());
-        }
 
         if ($ac == 'apply_coupon'){
             $this->coupon($request->all());
@@ -145,17 +125,18 @@ class CartController extends Controller
         }
     }
 
+    /**
+     * Date: 07/01/2019
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function fragments(Request $request)
     {
 
-        $user = Auth::user();
-        if ($user) {
-            $user_id = Auth::id();
-            $session = md5($user_id);
-        } else {
-            $user_id = 0;
-            $session = md5($_SERVER['REMOTE_ADDR']);
-        }
+        (Auth::user() ? $user_id = Auth::id() : $user_id = 0);
+        $session = md5($_SERVER['REMOTE_ADDR']);
+
 
         $configSite = $this->configSite->setId(1);
         if ($user_id != 0 && $configSite->order == 'wishlist'){
@@ -198,19 +179,18 @@ class CartController extends Controller
      */
     public function product(Request $request)
     {
-        $ip              = $_SERVER['REMOTE_ADDR'];
         $quantity        = $request->input('quantity');
         $product_id      = $request->input('product_id');
         $grid_product_id = $request->input('variation_id');
 
+        $session = md5($_SERVER['REMOTE_ADDR']);
+
         $user = Auth::user();
         if ($user) {
-            $user_id    = Auth::id();
-            $session    = md5($user_id);
-            $profile_id = $user->profile_id;
+            $user_id = Auth::id();
+            $profile_id = $user->profile;
         } else {
-            $user_id    = 0;
-            $session    = md5($ip);
+            $user_id = 0;
             $profile_id = 0;
         }
 
@@ -227,7 +207,7 @@ class CartController extends Controller
 
         } else {
 
-            $dataForm = $this->insert($ip, $user_id, $profile_id, $session, $product, $color, $grids, $quantity);
+            $dataForm = $this->insert($_SERVER['REMOTE_ADDR'], $user_id, $profile_id, $session, $product, $color, $grids, $quantity);
             $data   = $this->interModel->create($dataForm);
         }
 
@@ -273,24 +253,29 @@ class CartController extends Controller
     }
 
 
+    /**
+     * Date: 07/01/2019
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function destroy(Request $request)
     {
-        $json = $request['wc-ajax'];
-        $list = 1;
+        $json     = $request['wc-ajax'];
+        $list     = 1;
         $quantity = 0;
-        $total = '0,00';
+        $total    = '0,00';
+        $session  = md5($_SERVER['REMOTE_ADDR']);
+
 
         $user = Auth::user();
         if ($user) {
             $user_id = Auth::id();
             $profile_id = $user->profile_id;
-            $session = md5($user_id);
         } else {
             $user_id = 0;
             $profile_id = 0;
-            $session = md5($_SERVER['REMOTE_ADDR']);
         }
-
 
         $notices       = view("{$this->view}.render.cart-1-notices", compact('product','quantity'))->render();
         $fragments     = view("{$this->view}.render.cart-1-fragments", compact('cart','photoUrl', 'total'))->render();
@@ -312,6 +297,12 @@ class CartController extends Controller
     }
 
 
+    /**
+     * Date: 07/01/2019
+     *
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function update(Request $request)
     {
 

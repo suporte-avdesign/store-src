@@ -356,7 +356,8 @@ return [
             'attempts_limit' => 'Você ultrapassou o limite de tentativas de acesso a sua conta. Sua conta está bloqueada nos próximos 60 segundos',
         ],
         'shipping' => [
-            'freight' => 'Frete'
+            'freight' => 'Frete',
+            'send_text' => 'Enviamos para todo o Brasil'
         ],
 
         'register' => [

@@ -26,6 +26,7 @@ class AppServiceProvider extends ServiceProvider
             'ConfigKeyword',
             'ConfigImages',
             'ConfigColorPosition',
+            'ConfigFreight',
             'ConfigProduct',
             'ConfigProfileClient',
             'ConfigShipping',

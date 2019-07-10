@@ -42,6 +42,5 @@
     "/plugins/select2/js/select2.full.min.js": "/plugins/select2/js/select2.full.min.js",
     "/includes/zxcvbn/js/password-strength-meter.min.js": "/includes/zxcvbn/js/password-strength-meter.min.js",
     "/plugins/jquery-maskedinput/jquery.maskedinput.min.js": "/plugins/jquery-maskedinput/jquery.maskedinput.min.js",
-    "/themes/js/functions.min.js": "/themes/js/functions.min.js",
-    "/correios/frete.min.js": "/correios/frete.min.js"
+    "/themes/js/functions.min.js": "/themes/js/functions.min.js"
 }
