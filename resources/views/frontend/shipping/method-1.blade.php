@@ -36,6 +36,7 @@
                     <p class="woocommerce-shipping-destination">
                         <strong>{{constLang('messages.shipping.send_text')}}</strong>.
                     </p>
+
                     @if($tax == '0.00')
                         <button type="button" class="shipping-calculator-button btn-color-black">
                             {{constLang('messages.shipping.freight_calculator')}}
@@ -67,6 +68,7 @@
                             <input type="text" class="input-text" value="" placeholder="CEP" name="calc_shipping_postcode" id="calc_shipping_postcode" />
                         </p>
 
+                        <div id="error-freight"></div>
                         <p><button type="submit" name="calc_shipping" value="1" class="button">Atualizar</button></p>
                         <input type="hidden" id="woocommerce-shipping-calculator-nonce" name="woocommerce-shipping-calculator-nonce" value="{{numLetter('cart_'.time(),'leter')}}" />
                         <input type="hidden" name="http_referer" value="{{route('cart')}}" />
@@ -90,3 +92,9 @@
         <a href="{{route('checkout')}}" class="checkout-button button alt wc-forward">{{constLang('messages.checkouts.btn_checkout')}}</a>
     </div>
 </div>
+<script type="text/javascript" src="{{asset('plugins/jquery-maskedinput/jquery.maskedinput.min.js')}}"></script>
+<script type='text/javascript'>
+    jQuery( document ).ready(function($) {
+        $("#calc_shipping_postcode").mask('99999-999');
+    });
+</script>

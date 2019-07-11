@@ -71,6 +71,7 @@ return [
     'cell' => 'Celular',
     'close' => 'Fechar',
     'checkout' => 'Finalizar',
+    'city' => 'Cidade',
     'code' => 'Código',
     'color' => 'Cor',
     'colors' => 'Cores',
@@ -195,6 +196,7 @@ return [
     'show' => 'Ver',
     'sidebar' => 'Barra Lateral',
     'sizes' => 'Tamanhos',
+    'state' => 'Estado',
     'status' => 'Status',
     'status_change' => 'Alterar Status',
     'status_true' => 'O status foi alterado',
@@ -233,6 +235,7 @@ return [
     'value' => 'Valor',
     'values' => 'Valores',
     'yes' => 'Sim',
+    'zip_code' => 'CEP',
 
 
     /*
@@ -361,7 +364,8 @@ return [
             'freight' => 'Frete',
             'freight_calculator' => 'Calcular Frete',
             'local_text' => 'Enviar para: ',
-            'send_text' => 'Enviamos para todo o Brasil'
+            'send_text' => 'Enviamos para todo o Brasil',
+            'update' => 'Atualizar'
         ],
 
         'register' => [

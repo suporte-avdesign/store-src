@@ -25,14 +25,15 @@
                 @endforeach
             </ul>
 
-                @if($freight)
-                    <p class="woocommerce-shipping-destination">
-                        {{$local}} - <strong>{{constLang('value')}} {{constLang('currency')}} {{setReal($freight_value)}}</strong>
-                    </p>
-                    <p>{{constLang('messages.shipping.days_text')}} <strong>{{$freight_days}} {{constLang('days')}}</strong></p>
-                @else
-                    <p class="woocommerce-shipping-destination"><strong>{{constLang('messages.shipping.send_text')}}</strong>.</p>
-                @endif
+            @if($freight)
+                <p class="woocommerce-shipping-destination">
+                    {{$local}} - <strong>{{constLang('value')}} {{constLang('currency')}} {{setReal($freight_value)}}</strong>
+                </p>
+                <p>{{constLang('messages.shipping.days_text')}} <strong>{{$freight_days}} {{constLang('days')}}</strong></p>
+            @else
+                <p class="woocommerce-shipping-destination"><strong>{{constLang('messages.shipping.send_text')}}</strong>.</p>
+            @endif
+
 
 
             <button type="button" class="shipping-calculator-button btn-color-black">
@@ -49,7 +50,7 @@
 
                 <p class="form-row form-row-wide" id="calc_shipping_state_field">
                     <span>
-                        <select name="calc_shipping_state" class="state_select" id="calc_shipping_state" placeholder="Estado">
+                        <select name="calc_shipping_state" class="state_select" id="calc_shipping_state" placeholder="{{constLang('state')}}">
                             <option value="">{{constLang('select_state')}}</option>
                             @foreach($states as $state)
                                 <option value="{{$state->uf}}">{{$state->name}}</option>
@@ -58,14 +59,14 @@
                     </span>
                 </p>
                 <p class="form-row form-row-wide" id="calc_shipping_city_field">
-                    <input type="text" class="input-text" value="" placeholder="Cidade" name="calc_shipping_city" id="calc_shipping_city" />
+                    <input type="text" class="input-text" value="" placeholder="{{constLang('city')}}" name="calc_shipping_city" id="calc_shipping_city" />
                 </p>
 
                 <p class="form-row form-row-wide" id="calc_shipping_postcode_field">
-                    <input type="text" class="input-text" value="" placeholder="CEP" name="calc_shipping_postcode" id="calc_shipping_postcode" />
+                    <input type="text" class="input-text" value="" placeholder="{{constLang('zip_code')}}" name="calc_shipping_postcode" id="calc_shipping_postcode" />
                 </p>
-
-                <p><button type="submit" name="calc_shipping" value="1" class="button">Atualizar</button></p>
+                <div id="error-freight"></div>
+                <p><button type="submit" name="calc_shipping" value="1" class="button">{{constLang('messages.shipping.update')}}</button></p>
                 <input type="hidden" id="woocommerce-shipping-calculator-nonce" name="woocommerce-shipping-calculator-nonce" value="{{numLetter('cart_'.time(),'leter')}}" />
                 <input type="hidden" name="http_referer" value="{{route('cart')}}" />
             </section>

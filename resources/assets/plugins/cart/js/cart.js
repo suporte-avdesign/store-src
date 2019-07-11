@@ -249,9 +249,32 @@ jQuery( function( $ ) {
                 type:     $form.attr( 'method' ),
                 url:      $form.attr( 'action' ),
                 data:     $form.serialize(),
-                dataType: 'html',
+                dataType: 'json',
                 success:  function( response ) {
-                    update_wc_div( response );
+                    if (response.success == true) {
+                        $( 'div.cart_totals' ).html(response.html);
+                    } else {
+                        $("#error-freight").show();
+                        $("#error-freight").html(response.message);
+                        setTimeout(function(){ $("#error-freight").hide(); }, 6000);
+                    }
+
+                },
+                error: function(xhr) {
+                    if (xhr.status == 422) {
+                        var obj = $.parseJSON(xhr.responseText), message = '';
+                        $.each( obj, function( key, value ) {
+
+                            if (key == 'errors') {
+                                $.each(obj[key], function(i, error) {
+                                    message += '<li>'+error+'</li>';
+                                });
+                            }
+                        });
+                        $("#error-freight").show();
+                        $("#error-freight").html('<ul class="woocommerce-Message woocommerce-Message--info woocommerce-info">'+ message +'</ul>');
+                        setTimeout(function(){ $("#error-freight").hide(); }, 6000);
+                    }
                 },
                 complete: function() {
                     unblock( $form );
@@ -259,6 +282,8 @@ jQuery( function( $ ) {
                 }
             } );
         }
+
+
     };
 
     /**

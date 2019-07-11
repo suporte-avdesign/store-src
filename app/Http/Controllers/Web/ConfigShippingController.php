@@ -17,10 +17,7 @@ use AVD\Interfaces\Web\SectionInterface as InterSection;
 
 use AVD\Interfaces\Web\ConfigColorPositionInterface as ConfigImages;
 use AVD\Interfaces\Web\ConfigKeywordInterface as ConfigKeyword;
-
-
-
-
+use AVD\Http\Requests\Web\ConfigShippingRequest;
 
 class ConfigShippingController extends Controller
 {
@@ -106,8 +103,9 @@ class ConfigShippingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function calculateFreight(Request $request)
+    public function calculateFreight(ConfigShippingRequest $request)
     {
+
 
         $city     = $request['calc_shipping_city'];
         $route    = $request['http_referer'];
@@ -118,6 +116,7 @@ class ConfigShippingController extends Controller
 
         $selected   = $request['shipping_method'][0];
         if ($selected == 1) {
+            return false;
             //Transportadora
         } elseif ($selected == 2) {
 
@@ -132,18 +131,26 @@ class ConfigShippingController extends Controller
             $session  = md5($_SERVER['REMOTE_ADDR']);
             $cart     = $this->interCart->getAll($session);
 
-
-
             $freight  = $this->configFreight->calculateSedex($postcode, $cart);
         }
 
-        return $this->getCart($freight, $local, $selected);
+        //$html = $this->renderCart($freight, $local, $selected);
+        $message = 'error_freight';
+        $error = 'O CEP é invalido';
+        $success = view('frontend.messages.error-1', compact('message', 'error'))->render();
+
+        $out = array(
+            "success" => false,
+            "message" => $success
+        );
+
+        return response()->json($out);
 
 
     }
 
 
-    public function getCart($freight, $local, $selected)
+    public function renderCart($freight, $local, $selected)
     {
         $message  = null;
         $menu     = $this->interSection->getMenu();
@@ -187,7 +194,7 @@ class ConfigShippingController extends Controller
             'configFreight',
             'configKeyword',
             'configShipping')
-        );
+        )->render();
 
     }
 

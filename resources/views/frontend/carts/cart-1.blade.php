@@ -210,6 +210,11 @@
         "i18n_password_hint" => "Dica: A senha deve ter pelo menos doze caracteres. Para torná-lo mais forte, use letras maiúsculas e minúsculas, números e símbolos como ! \" ? $ % ^ & )."
     ]) !!}
 </script>
-<!--<script type="text/javascript" src="{{asset('correios/frete.min.js')}}"></script>-->
-
+<script type="text/javascript" src="{{asset('plugins/jquery-maskedinput/jquery.maskedinput.min.js')}}"></script>
+<script type='text/javascript'>
+    jQuery( document ).ready(function($) {
+        $("#calc_shipping_postcode").mask('99999-999');
+    });
+</script>
 @endpush
+
