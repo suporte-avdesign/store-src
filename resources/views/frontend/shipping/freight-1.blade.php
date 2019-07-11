@@ -8,24 +8,36 @@
                 @foreach($configShipping as $method)
 
                     <li>
-                        <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_legacy_flat_rate" value="{{$method->id}}" class="shipping_method" @if($loop->first) checked @endif/>
+                        @if($freight)
+                            <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_{{$method->id}}" value="{{$method->id}}" class="shipping_method" @if($method->id == $selected) checked @endif/>
+                        @else
+                            <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_{{$method->id}}" value="{{$method->id}}" class="shipping_method" @if($loop->first) checked @endif/>
+                        @endif
                         @if($method->tax_unique != '0.00')
-                            <label for="shipping_method_0_legacy_flat_rate">{{$method->name}}</span> {{constLang('currency')}} {{setReal($method->tax_unique)}}</label>
+                            <label for="shipping_method_{{$method->id}}">{{$method->name}}</span> {{constLang('currency')}} {{setReal($method->tax_unique)}}</label>
                             <p>{{$method->description}}</p>
                         @elseif($method->tax == 0)
-                            <label for="shipping_method_0_legacy_flat_rate">{{$method->name}}</span> {{constLang('currency')}} 0,00</label>
+                            <label for="shipping_method_{{$method->id}}">{{$method->name}}</span> {{constLang('currency')}} 0,00</label>
                         @else
-                            <label for="shipping_method_0_legacy_flat_rate">{{$method->name}}</span> </label>
+                            <label for="shipping_method_{{$method->id}}">{{$method->name}}</span> </label>
                         @endif
                     </li>
                 @endforeach
             </ul>
-            <p class="woocommerce-shipping-destination">
-                <strong>{{constLang('messages.shipping.send_text')}}</strong>.
-            </p>
-            <p><button type="button" class="shipping-calculator-button btn-color-black">Calcular Frete</button></p>
+
+                @if($freight)
+                    <p class="woocommerce-shipping-destination">
+                        {{$local}} - <strong>{{constLang('value')}} {{constLang('currency')}} {{setReal($freight_value)}}</strong>
+                    </p>
+                    <p>{{constLang('messages.shipping.days_text')}} <strong>{{$freight_days}} {{constLang('days')}}</strong></p>
+                @else
+                    <p class="woocommerce-shipping-destination"><strong>{{constLang('messages.shipping.send_text')}}</strong>.</p>
+                @endif
 
 
+            <button type="button" class="shipping-calculator-button btn-color-black">
+                {{constLang('messages.shipping.freight_calculator')}}
+            </button>
 
             <section class="shipping-calculator-form" style="display:none;">
 

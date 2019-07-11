@@ -30,10 +30,7 @@
                             @if ($message)
                                 @include('frontend.carts.includes.message-1')
                             @endif
-
-
-
-                        @if(count($cart) == 0)
+                            @if(count($cart) == 0)
                                 @include('frontend.carts.includes.cart-empty-1')
                             @else
 
@@ -84,10 +81,10 @@
                                                 <td class="product-quantity" data-title="{{constLang('quantity')}}">
                                                     <div class="quantity">
                                                         <input type="button" value="-" class="minus" />
-                                                        <label class="screen-reader-text" for="quantity_{{numLetter($item->color)}}">{{constLang('quantity')}}</label>
+                                                        <label class="screen-reader-text" for="quantity_{{numLetter($item->color.$item->id)}}">{{constLang('quantity')}}</label>
                                                         <input
                                                             type="number"
-                                                            id="quantity_{{numLetter($item->color)}}"
+                                                            id="quantity_{{numLetter($item->color.$item->id)}}"
                                                             class="input-text qty text"
                                                             step="1"
                                                             min="0"
@@ -129,14 +126,14 @@
 
                                 <div class="cart-collaterals">
                                     <div class="cart_totals ">
-                                        <h2>{{constLang('messages.cart.cart_total')}}</h2>
+                                        <h2>{{constLang('messages.cart.total')}}</h2>
                                         <table cellspacing="0" class="shop_table shop_table_responsive">
                                             <tr class="cart-subtotal">
                                                 <th>{{constLang('subtotal')}}</th>
                                                 <td data-title="{{constLang('subtotal')}}">
                                                     <span class="woocommerce-Price-amount amount">
                                                         <span class="woocommerce-Price-currencySymbol">{{constLang('currency')}} </span>
-                                                        {{$total['price_cash']}}
+                                                        {{setReal($total['price_cash'])}}
                                                     </span>
                                                 </td>
                                             </tr>
@@ -149,7 +146,11 @@
                                                     <strong>
                                                         <span class="woocommerce-Price-amount amount">
                                                             <span class="woocommerce-Price-currencySymbol">{{constLang('currency')}} </span>
-                                                            {{$total['price_cash']}}
+                                                            @if($freight)
+                                                                {{setReal($total['price_cash'] + $freight_value)}}
+                                                            @else
+                                                                {{setReal($total['price_cash'])}}
+                                                            @endif
                                                         </span>
                                                     </strong>
                                                 </td>
@@ -157,7 +158,7 @@
                                         </table>
 
                                         <div class="wc-proceed-to-checkout">
-                                            <a href="#" class="checkout-button button alt wc-forward">{{constLang('messages.checkouts.btn_checkout')}}</a>
+                                            <a href="{{route('checkout')}}" class="checkout-button button alt wc-forward">{{constLang('messages.checkouts.btn_checkout')}}</a>
                                         </div>
                                     </div>
                                 </div>

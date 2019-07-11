@@ -33,6 +33,32 @@ class CartRepository implements CartInterface
     }
 
     /**
+     * Date: 07/02/2019
+     *
+     * @param $cart
+     * @return mixed
+     */
+    public function getTotal($cart)
+    {
+        $quantity   = 0;
+        $price_cash = 0;
+        $price_card = 0;
+        foreach ($cart as $item) {
+            $quantity   += $item->quantity;
+            $price_cash += $item->price_cash * $item->quantity;
+            $price_card += $item->price_card * $item->quantity;
+        }
+
+        $total['quantity']   = $quantity;
+        $total['price_cash'] = $price_cash;
+        $total['price_card'] = $price_card;
+
+        return $total;
+
+    }
+
+
+    /**
      * Date: 07/04/2019
      *
      * @param $key

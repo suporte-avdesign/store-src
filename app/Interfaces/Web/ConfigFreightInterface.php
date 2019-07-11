@@ -10,7 +10,8 @@ interface ConfigFreightInterface
      * @return \AVD\Repositories\Web\ConfigFreightRepository
      */
     public function setId($id);
-    public function calculate($input);
-    public function calculateUser($input);
+    public function calculateSedex($postcode, $input);
+    public function calculatePac($postcode, $input);
+    public function calculateUser($postcode, $input);
 
 }

@@ -38,19 +38,19 @@ class ConfigFreightRepository implements ConfigFreightInterface
         return $this->model->find($id);
     }
 
-    public function calculate($input)
+    public function calculateSedex($postcode, $input)
     {
         $frete = new PrecoPrazo();
         $frete->setCodigoServico(Data::SEDEX)
-            ->setCodigoEmpresa('Codigo')      # opcional
-            ->setSenha('Senha')               # opcional
-            ->setCepOrigem('44530000')   # apenas numeros, sem hifen(-)
-            ->setCepDestino('44600000') # apenas numeros, sem hifen(-)
-            ->setComprimento(30)              # obrigatorio
-            ->setAltura(30)                   # obrigatorio
-            ->setLargura(30)                  # obrigatorio
-            ->setDiametro(30)                 # obrigatorio
-            ->setPeso(0.5);                   # obrigatorio
+            ->setCodigoEmpresa(env('CORREIO_CODIGO_EMPRESA')) # opcional
+            ->setSenha(env('CORREIO_CODIGO_SENHA')) # opcional
+            ->setCepOrigem(env('CORREIO_CODIGO_CEP_ORIGEM')) # apenas numeros, sem hifen(-)
+            ->setCepDestino($postcode) # apenas numeros, sem hifen(-)
+            ->setComprimento(30) # obrigatorio
+            ->setAltura(30)      # obrigatorio
+            ->setLargura(30)     # obrigatorio
+            ->setDiametro(30)    # obrigatorio
+            ->setPeso(3.200 );      # obrigatorio
 
         try {
             $result = $frete->calculate();
@@ -58,18 +58,49 @@ class ConfigFreightRepository implements ConfigFreightInterface
             $result['cServico']['Valor'];
             $result['cServico']['PrazoEntrega'];
 
-            dd($result); // debugge o resultado!
+            return $result;
         }
         catch (FreteException $e) {
-            // trate o erro adequadamente (e não escrevendo na tela)
-            echo $e->getMessage();
-            echo $e->getCode(); // este código é o código de erro dos correios
-            // pode ser usado pra dar mensagens como CEP inválido para o cliente
+            return [
+                'error' => true,
+                'message' => $e->getMessage(),
+                'code' => $e->getCode()
+            ];
         }
     }
 
+    public function calculatePac($postcode, $input)
+    {
+        $frete = new PrecoPrazo();
+        $frete->setCodigoServico(Data::PAC)
+            ->setCodigoEmpresa(env('CORREIO_CODIGO_EMPRESA')) # opcional
+            ->setSenha(env('CORREIO_CODIGO_SENHA')) # opcional
+            ->setCepOrigem(env('CORREIO_CODIGO_CEP_ORIGEM')) # apenas numeros, sem hifen(-)
+            ->setCepDestino($postcode) # apenas numeros, sem hifen(-)
+            ->setComprimento(30) # obrigatorio
+            ->setAltura(30)      # obrigatorio
+            ->setLargura(30)     # obrigatorio
+            ->setDiametro(30)    # obrigatorio
+            ->setPeso(0.5);      # obrigatorio
 
-    public function calculateUser($input)
+        try {
+            $result = $frete->calculate();
+
+            $result['cServico']['Valor'];
+            $result['cServico']['PrazoEntrega'];
+
+            return $result;
+        }
+        catch (FreteException $e) {
+            return [
+                'error' => true,
+                'message' => $e->getMessage(),
+                'code' => $e->getCode()
+            ];
+        }
+    }
+
+    public function calculateUser($postcode, $input)
     {
         $user = Auth::user();
         $frete = new PrecoPrazo();
@@ -90,13 +121,14 @@ class ConfigFreightRepository implements ConfigFreightInterface
             $result['cServico']['Valor'];
             $result['cServico']['PrazoEntrega'];
 
-            dd($result); // debugge o resultado!
+            return $result;
         }
         catch (FreteException $e) {
-            // trate o erro adequadamente (e não escrevendo na tela)
-            echo $e->getMessage();
-            echo $e->getCode(); // este código é o código de erro dos correios
-            // pode ser usado pra dar mensagens como CEP inválido para o cliente
+            return [
+                'error' => true,
+                'message' => $e->getMessage(),
+                'code' => $e->getCode()
+            ];
         }
     }
 

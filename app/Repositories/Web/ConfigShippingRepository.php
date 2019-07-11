@@ -32,4 +32,10 @@ class ConfigShippingRepository implements ConfigShippingInterface
         return $this->model->orderBy('order')->where('active', constLang('active_true'))->get();
     }
 
+
+    public function setId($id)
+    {
+        return $this->model->find($id);
+    }
+
 }

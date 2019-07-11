@@ -9,6 +9,7 @@ interface ConfigShippingInterface
      *
      * @return \AVD\Repositories\Web\ConfigShippingRepository
      */
+    public function setId($id);
     public function getAll();
 
 }

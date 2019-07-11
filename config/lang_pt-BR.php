@@ -83,6 +83,7 @@ return [
     'current' => 'Atual',
     'date' => 'Data',
     'date_birth' => 'Data de Nascimento',
+    'days' => 'Dias',
     'delete' => 'Excluir ',
     'delete_false' => 'Não foi possível excluir o registro',
     'delete_true' => 'O registro foi excluido',
@@ -356,7 +357,10 @@ return [
             'attempts_limit' => 'Você ultrapassou o limite de tentativas de acesso a sua conta. Sua conta está bloqueada nos próximos 60 segundos',
         ],
         'shipping' => [
+            'days_text' => 'O tempo estimado para entrega é de',
             'freight' => 'Frete',
+            'freight_calculator' => 'Calcular Frete',
+            'local_text' => 'Enviar para: ',
             'send_text' => 'Enviamos para todo o Brasil'
         ],
 
