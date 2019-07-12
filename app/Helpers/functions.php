@@ -5,7 +5,7 @@ use AVD\Interfaces\Web\ConfigKeywordInterface as Keyword;
 
 
 /**
- * returns the location
+ * returns the location (ipinfo\ipinfo\IPinfo)
  */
 if ( !function_exists('ipLocation'))
 {

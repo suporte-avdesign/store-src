@@ -10,6 +10,7 @@
                 </span>
             </td>
         </tr>
+
         <tr class="woocommerce-shipping-totals shipping">
             <th>{{constLang('messages.shipping.method')}}</th>
             <td data-title="{{constLang('messages.shipping.method')}}">
@@ -66,16 +67,22 @@
                         <p class="form-row form-row-wide" id="calc_shipping_postcode_field">
                             <input type="text" class="input-text" value="" placeholder="{{constLang('zip_code')}}" name="calc_shipping_postcode" id="calc_shipping_postcode" />
                         </p>
-
                         <p><button type="submit" name="calc_shipping" value="1" class="button">{{constLang('messages.shipping.update')}}</button></p>
                         <input type="hidden" id="woocommerce-shipping-calculator-nonce" name="woocommerce-shipping-calculator-nonce" value="{{numLetter('cart_'.time(),'leter')}}" />
                         <input type="hidden" name="http_referer" value="{{route('cart')}}" />
                         <div id="error-freight"></div>
-
                     </section>
                 </form>
             </td>
         </tr>
+
+        <tr class="cart-subtotal">
+            <th>{{constLang('messages.shipping.freight')}}</th>
+            <td data-title="{{constLang('messages.shipping.freight')}}">
+                {{setReal($total['price_cash'])}}
+            </td>
+        </tr>
+
         <tr class="order-total">
             <th>{{constLang('total')}}</th>
             <td data-title="{{constLang('total')}}">
@@ -92,9 +99,4 @@
         <a href="{{route('checkout')}}" class="checkout-button button alt wc-forward">{{constLang('messages.checkouts.btn_checkout')}}</a>
     </div>
 </div>
-<script type="text/javascript" src="{{asset('plugins/jquery-maskedinput/jquery.maskedinput.min.js')}}"></script>
-<script type='text/javascript'>
-    jQuery( document ).ready(function($) {
-        $("#calc_shipping_postcode").mask('99999-999');
-    });
-</script>
+

@@ -140,23 +140,19 @@
                                             @if($configFreight->default == 1)
                                                 @include('frontend.shipping.freight-1')
                                             @endif
+
                                             <tr class="order-total">
                                                 <th>{{constLang('total')}}</th>
                                                 <td data-title="{{constLang('total')}}">
                                                     <strong>
                                                         <span class="woocommerce-Price-amount amount">
                                                             <span class="woocommerce-Price-currencySymbol">{{constLang('currency')}} </span>
-                                                            @if($freight)
-                                                                {{setReal($total['price_cash'] + $freight_value)}}
-                                                            @else
-                                                                {{setReal($total['price_cash'])}}
-                                                            @endif
+                                                            {{setReal($total['price_cash'])}}
                                                         </span>
                                                     </strong>
                                                 </td>
                                             </tr>
                                         </table>
-
                                         <div class="wc-proceed-to-checkout">
                                             <a href="{{route('checkout')}}" class="checkout-button button alt wc-forward">{{constLang('messages.checkouts.btn_checkout')}}</a>
                                         </div>

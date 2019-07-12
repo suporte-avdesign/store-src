@@ -62,7 +62,6 @@ class CartController extends Controller
 
         $menu    = $this->interSection->getMenu();
         $states  = $this->interState->getAll();
-        $freight = null;
 
         $configImages   = $this->configImages->setName('default', 'T');
         $photoUrl       = $this->phatFiles.$configImages->path;
@@ -91,7 +90,6 @@ class CartController extends Controller
             'cart',
             'total',
             'states',
-            'freight',
             'session',
             'message',
             'photoUrl',

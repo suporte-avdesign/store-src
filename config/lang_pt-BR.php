@@ -361,6 +361,7 @@ return [
         ],
         'shipping' => [
             'days_text' => 'O tempo estimado para entrega é de',
+            'method' => 'Método',
             'freight' => 'Frete',
             'freight_calculator' => 'Calcular Frete',
             'local_text' => 'Enviar para: ',

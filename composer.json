@@ -40,8 +40,9 @@
             "AVD\\": "app/"
         },
         "files": [
-            "app/Helpers/avdHerper.php",
-            "app/Helpers/avdFilesHerper.php"
+            "app/Helpers/functions.php",
+            "app/Helpers/files.php",
+            "app/Helpers/constants.php"
         ],
         "classmap": [
             "database/seeds",
