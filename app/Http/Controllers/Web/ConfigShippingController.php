@@ -22,7 +22,6 @@ class ConfigShippingController extends Controller
     private $phatFiles;
 
 
-
     public function __construct(
         InterCart $interCart,
         InterModel $interModel,
@@ -30,13 +29,13 @@ class ConfigShippingController extends Controller
         ConfigSite $configSite,
         ConfigFreight $configFreight)
     {
-        $this->phatFiles      = env('APP_PANEL_URL');
+        $this->phatFiles = env('APP_PANEL_URL');
 
-        $this->interCart      = $interCart;
-        $this->interModel     = $interModel;
-        $this->configSite     = $configSite;
-        $this->interState     = $interState;
-        $this->configFreight  = $configFreight;
+        $this->interCart = $interCart;
+        $this->interModel = $interModel;
+        $this->configSite = $configSite;
+        $this->interState = $interState;
+        $this->configFreight = $configFreight;
     }
 
     /**
@@ -50,7 +49,7 @@ class ConfigShippingController extends Controller
         $selected = $request['shipping_method'][0];
         if ($selected) {
 
-            $states   = $this->interState->getAll();
+            $states = $this->interState->getAll();
             $configShipping = $this->interModel->getAll();
 
             $configSite = $this->configSite->setId(1);
@@ -58,31 +57,31 @@ class ConfigShippingController extends Controller
             $session = md5($_SERVER['REMOTE_ADDR']);
 
 
-            if ($user_id != 0 && $configSite->order == 'wishlist'){
+            if ($user_id != 0 && $configSite->order == 'wishlist') {
                 dd('Cart = Lista de desejo');
             } else {
                 $cart = $this->interCart->getAll($session);
             }
 
-            $values  = $this->interCart->getTotal($cart);
+            $values = $this->interCart->getTotal($cart);
             $methods = $this->interModel->getAll();
             foreach ($methods as $method) {
-                if ( $method->id == $selected ) {
+                if ($method->id == $selected) {
                     $tax = $method->tax_unique;
                 }
             }
 
-            $total['quantity']   = $values['quantity'];
+            $total['quantity'] = $values['quantity'];
             $total['price_cash'] = $values['price_cash'];
             $total['price_card'] = $values['price_card'];
 
             return view("{$this->view}.method-1", compact(
-                'configShipping',
-                'selected',
-                'states',
-                'total',
-                'cart',
-                'tax')
+                    'configShipping',
+                    'selected',
+                    'states',
+                    'total',
+                    'cart',
+                    'tax')
             );
         }
 
@@ -99,14 +98,14 @@ class ConfigShippingController extends Controller
     {
 
 
-        $city     = $request['calc_shipping_city'];
-        $route    = $request['http_referer'];
-        $state    = $request['calc_shipping_state'];
-        $country  = $request['calc_shipping_country'];
+        $city = $request['calc_shipping_city'];
+        $route = $request['http_referer'];
+        $state = $request['calc_shipping_state'];
+        $country = $request['calc_shipping_country'];
 
-        $local = constLang('messages.shipping.local_text')." {$city}, {$state}";
+        $local = constLang('messages.shipping.local_text') . " {$city}, {$state}";
 
-        $selected   = $request['shipping_method'][0];
+        $selected = $request['shipping_method'][0];
         if ($selected == 1) {
             return false;
             //Transportadora
@@ -114,9 +113,9 @@ class ConfigShippingController extends Controller
 
         if ($selected == 2 || $selected == 2) {
 
-            $postcode = str_replace('-','', $request['calc_shipping_postcode']);
-            $session  = md5($_SERVER['REMOTE_ADDR']);
-            $cart     = $this->interCart->getAll($session);
+            $postcode = str_replace('-', '', $request['calc_shipping_postcode']);
+            $session = md5($_SERVER['REMOTE_ADDR']);
+            $cart = $this->interCart->getAll($session);
 
             $calculator = $this->calculator($postcode, $cart, $selected);
 
@@ -143,6 +142,7 @@ class ConfigShippingController extends Controller
     public function calculator($postcode, $cart, $selected)
     {
         /**
+         * O peso maximo nacional 30 kg estadual 50kg
          * O comprimento não pode ser maior que 105 cm.
          * A largura não pode ser maior que 105 cm.
          * A altura não pode ser maior que 105 cm.
@@ -156,28 +156,26 @@ class ConfigShippingController extends Controller
          * O diâmetro não pode ser inferior a 5 cm.
          * A soma resultante do comprimento + o dobro do diâmetro não deve superar a 200 cm.         *
          */
-        $cart = collect($cart)->toArray();
+        $collection = collect($cart)->toArray();
+
 
         if ($selected == 2) {
 
-            $units = $this->calculatorBox( $cart );
+            $totals = $this->calculatorItems($collection);
 
+            dd($totals);
 
 
             //$freight  = $this->configFreight->calculatePac($postcode, $cart);
 
 
-
         }
 
-        if($selected == 3) {
+        if ($selected == 3) {
 
 
-            $freight  = $this->configFreight->calculateSedex($postcode, $cart);
+            $freight = $this->configFreight->calculateSedex($postcode, $cart);
         }
-
-
-
 
 
     }
@@ -186,7 +184,7 @@ class ConfigShippingController extends Controller
     public function renderFreight($selected, $local)
     {
 
-        $states   = $this->interState->getAll();
+        $states = $this->interState->getAll();
         $configShipping = $this->interModel->getAll();
 
         $configSite = $this->configSite->setId(1);
@@ -194,21 +192,21 @@ class ConfigShippingController extends Controller
         $session = md5($_SERVER['REMOTE_ADDR']);
 
 
-        if ($user_id != 0 && $configSite->order == 'wishlist'){
+        if ($user_id != 0 && $configSite->order == 'wishlist') {
             dd('Cart = Lista de desejo');
         } else {
             $cart = $this->interCart->getAll($session);
         }
 
-        $values  = $this->interCart->getTotal($cart);
+        $values = $this->interCart->getTotal($cart);
         $methods = $this->interModel->getAll();
         foreach ($methods as $method) {
-            if ( $method->id == $selected ) {
+            if ($method->id == $selected) {
                 $tax = $method->tax_unique;
             }
         }
 
-        $total['quantity']   = $values['quantity'];
+        $total['quantity'] = $values['quantity'];
         $total['price_cash'] = $values['price_cash'];
         $total['price_card'] = $values['price_card'];
 
@@ -225,122 +223,63 @@ class ConfigShippingController extends Controller
     }
 
 
-
-    public function calculatorBox( $cart = null )
+    public function calculatorItems($cart)
     {
-
-
-        $box = $this->pattern();
-        // percorrendo lista de produtos realizando calculos devidos ...
+        $box = $this->patternItems();
         foreach ($cart as $item) {
-
-            // incrementa quantidade de itens dentro da caixa...
             $box->qtd_itens += $item['quantity'];
-            $box->kilos += $item['weight'];
-            // @opcional - calculando volume de itens dentro da caixa ...
-            $box->volume_itens += ($item['height'] * $item['width'] * $item['length']) * $item['quantity'];
-            if ($box->volume_itens >= 200) 
-
-            // verifica se produto cabe no espaco remanescente ...
-            if ($box->comprimento_remanescente >= $item['length'] * $item['quantity'] &&
-                $box->largura_remanescente >= $item['width'] * $item['quantity']
-            ) {
-                // se altura do novo produto maior que altura disponivel, incrementa altura da caixa...
-                if ($item['height'] * $item['quantity'] > $box->altura_remanescente) {
-                    $box->altura += ($item['height'] * $item['quantity']) - $box->altura_remanescente;
-                }
-
-                if ($item['length'] * $item['quantity'] > $box->comprimento)
-                    $box->comprimento = $item['length'] * $item['quantity'];
-
-                // calculando volume remanescente do valor remanescente!!!
-                $box->comprimento_remanescente = $box->comprimento - $item['length'] * $item['quantity'];
-
-                // largura restante
-                $box->largura_remanescente = $box->largura_remanescente - $item['width'] * $item['quantity'];
-
-                $box->altura_remanescente = $item['height'] * $item['quantity'] > $box->altura_remanescente ?
-                    $item['height'] * $item['quantity'] : $box->altura_remanescente;
-                // pula para proxima iteracao...
-                continue;
-            }
-
-            // passo (N-1) - altura e' a variavel que sempre incrementa independente de condicao ...
+            $box->kilos += $item['weight'] * $item['quantity'];
             $box->altura += $item['height'] * $item['quantity'];
-
-            // passo N - verificando se item tem dimensoes maiores que a caixa...
-            if ($item['width'] * $item['quantity'] > $box->largura)
-                $box->largura = $item['width'] * $item['quantity'];
-
-            if ($item['length'] * $item['quantity'] > $box->comprimento)
-                $box->comprimento = $item['length'] * $item['quantity'];
-
-            // calculando volume remanescente...
-            $box->comprimento_remanescente = $box->comprimento;
-            $box->largura_remanescente = $box->largura - ($item['width'] * $item['quantity']);
-            $box->altura_remanescente = $item['height'] * $item['quantity'];
-
-
+            $box->largura += $item['width'] * $item['quantity'];
+            $box->comprimento += $item['length'] * $item['quantity'];
+            $box->price_cash += $item['price_cash'] * $item['quantity'];
+            $box->price_card += $item['price_card'] * $item['quantity'];
         }
+        $box->resultante_cla = ($box->altura + $box->largura + $box->comprimento);
 
-        // @opcional - calculando volume da caixa ...
-        $box->volume = ( $box->altura*$box->largura*$box->comprimento ) ;
+        if ($box->altura > MAX_ALTURA) $box->erros->max_altura = "Erro: Altura maior que  " . MAX_ALTURA . 'cm';
+        if ($box->largura > MAX_LARGURA) $box->erros->max_largura = "Erro: Largura maior que  " . MAX_LARGURA . 'cm';
+        if ($box->comprimento > MAX_COMPRIMENTO) $box->erros->max_comprimento = "Erro: Comprimento maior que " . MAX_COMPRIMENTO . 'cm';
 
-        // @opcional - calculando volume vazio! Ar dentro da caixa!
-        $box->volume_vazio = $box->volume - $box->volume_itens ;
+        if (($box->comprimento + $box->largura + $box->altura) < MIN_SOMA_CLA)
+            $box->erros->min_soma_cla = "Erro: Soma dos valores C+L+A menor que " . MIN_SOMA_CLA . 'cm';
 
-        // checa se temos produtos e se conseguimos alcancar a dimensao minima ...
-        if( !empty( $cart ) ) {
-            // verificando se dimensoes minimas sao alcancadas ...
-            if ($box->altura > 0 && $box->altura < MIN_ALTURA) $box->altura = MIN_ALTURA;
-            if ($box->largura > 0 && $box->largura < MIN_LARGURA) $box->largura = MIN_LARGURA;
-            if ($box->comprimento > 0 && $box->comprimento < MIN_COMPRIMENTO) $box->comprimento = MIN_COMPRIMENTO;
-        }
+        if (($box->comprimento + $box->largura + $box->altura) > MAX_SOMA_CLA)
+            $box->erros->max_soma_cla = "Erro: Soma dos valores C+L+A maior que " . MAX_SOMA_CLA . 'cm';
 
-        // verifica se as dimensoes nao ultrapassam valor maximo
-        if( $box->altura > MAX_ALTURA ) $box->message = "Erro: Altura maior que o permitido.";
-        if( $box->largura > MAX_LARGURA ) $box->message = "Erro: Largura maior que o permitido.";
-        if( $box->comprimento > MAX_COMPRIMENTO ) $box->message = "Erro: Comprimento maior que o permitido.";
-
-        // @nota - nao sei se e' uma regra, mas por via das duvidas esta ai
-        // Soma (C+L+A)	MIN 29 cm  e  MAX 200 cm
-        if( ($box->comprimento+$box->comprimento+$box->comprimento) < MIN_SOMA_CLA )
-            $box->message = "Erro: Soma dos valores C+L+A menor que o permitido.";
-
-        if( ($box->comprimento+$box->comprimento+$box->comprimento) > MAX_SOMA_CLA )
-            $box->message = "Erro: Soma dos valores C+L+A maior que o permitido.";
-
-
-        dd($box);
+        if (($box->price_cash || $box->price_card) > MAX_VALOR)
+            $box->erros->max_valor = "Erro: O valor máximo permitido é ".setReal(MAX_VALOR);
 
         return $box;
     }
+
 
     /**
      * Default desig
      *
      * @return json
      */
-    public function pattern()
+    public function patternItems()
     {
         $_box_ = array(
-            'kilos' => 0, 		 /* total kilos */
-            'altura' => 0, 		 /* altura final da caixa */
-            'largura' => 0, 	 /* largura */
-            'comprimento' => 0,  /* ... */
-            'qtd_itens' => 0, 	 /* qtd de itens dentro da caixa */
-            'message' => null,   /* caso erro guarda mensagem */
-            'volume' => 0, 		 /* capacidade total de armazenamento da caixa */
-            'volume_itens' => 0, /* volume armazenado */
-            'volume_vazio' => 0, /* volume livre */
-            'comprimento_remanescente' => 0,
-            'largura_remanescente' => 0,
-            'altura_remanescente' => 0
+            'kilos' => 0,
+            'altura' => 0,
+            'largura' => 0,
+            'comprimento' => 0,
+            'qtd_itens' => 0,
+            'price_cash' => 0,
+            'price_card' => 0,
+            'resultante_cla' => 0,
+            'erros' => array(
+                'max_altura' => null,
+                'max_largura' => null,
+                'max_comprimento' => null,
+                'max_soma_cla' => null,
+                'min_soma_cla' => null,
+            )
         );
 
-        return json_decode(json_encode($_box_,false));
-
+        return json_decode(json_encode($_box_, false));
     }
-
 
 }
