@@ -46,11 +46,13 @@ class ConfigFreightRepository implements ConfigFreightInterface
             ->setSenha(env('CORREIO_CODIGO_SENHA')) # opcional
             ->setCepOrigem(env('CORREIO_CODIGO_CEP_ORIGEM')) # apenas numeros, sem hifen(-)
             ->setCepDestino($postcode) # apenas numeros, sem hifen(-)
+            ->setValorDeclarado(3.200 ) # não obrigatorio
             ->setComprimento(30) # obrigatorio
             ->setAltura(30)      # obrigatorio
             ->setLargura(30)     # obrigatorio
             ->setDiametro(30)    # obrigatorio
-            ->setPeso(3.200 );      # obrigatorio
+            ->setPeso(3.200 );   # obrigatorio
+
 
         try {
             $result = $frete->calculate();

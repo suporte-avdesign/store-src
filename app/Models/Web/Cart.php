@@ -32,6 +32,7 @@ class Cart extends Model
         'brand',
         'unit',
         'measure',
+        'declare',
         'weight',
         'width',
         'height',

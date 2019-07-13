@@ -387,19 +387,10 @@ class CartController extends Controller
         print $render;
     }
 
-
-
-
-
     public function undo(Request $request)
     {
         $undo_item = $request['undo_item'];
     }
-
-
-
-
-
 
     public function insert($ip, $user_id, $profile_id, $session, $product, $color, $grids, $quantity)
     {
@@ -445,6 +436,7 @@ class CartController extends Controller
             'brand' => $product->brand,
             'unit' => $product->unit,
             'measure' => $product->measure,
+            'declare' => $product->declare,
             'weight' => $product->weight,
             'width' => $product->width,
             'height' => $product->height,
@@ -454,9 +446,7 @@ class CartController extends Controller
         ];
 
         return $insert;
-
     }
-
 
 
 }
