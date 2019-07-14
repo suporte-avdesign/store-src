@@ -161,55 +161,78 @@ class ConfigShippingController extends Controller
 
         if ($selected == 2) {
 
-            $limit_c   = MAX_COMPRIMENTO;
-            $limit_l   = MAX_LARGURA;
-            $limit_a   = MAX_ALTURA;
-            $limit_cla = MAX_SOMA_CLA;
 
             $total = $this->calculatorItems($collection);
+            $divisao = ceil($total->unit_soma_cla / MAX_SOMA_CLA);
 
-            $total_c    = $total->comprimento;
-            $total_l    = $total->largura;
-            $total_a    = $total->altura;
-            $total_cla  = 1000;//$total->soma_cla;
-            $total_cash = $total->price_cash_declare;
-            $total_card = $total->price_card_declare;
+            // Comprimento
+            $dividir_c =  ($total->unit_comprimento / $divisao);
+            if (is_int($dividir_c)) {
+                $decimal_c = 0;
+                $inteiro_c = (int) $dividir_c;
+            } else {
+                $decimal_c = 1;
+                $inteiro_c = (str_replace($decimal_c,"", (int) $dividir_c));
+            }
 
-            $equal_cla  =  ceil($total_cla/$limit_cla);
-            $equal_c    =  (int)($total_c / $equal_cla);
-            $equal_l    =  (int)($total_l / $equal_cla);
-            $equal_a    =  (int)($total_a / $equal_cla);
-            $equal_cash =  ($total_cash / $equal_cla);
-            $equal_card =  ($total_card / $equal_cla);
+            // Largura
+            $dividir_l =  ($total->unit_largura / $divisao);
+            if (is_int($dividir_l)) {
+                $decimal_l = 0;
+                $inteiro_l = (int) $dividir_l;
+            } else {
+                $decimal_l = 1;
+                $inteiro_l = (str_replace($decimal_l,"", (int) $dividir_l));
+            }
 
+            // Altura
+            $dividir_a =  ($total->unit_altura / $divisao);
+            if (is_int($dividir_a)) {
+                $decimal_a = 0;
+                $inteiro_a = (int) $dividir_a;
+            } else {
+                $decimal_a = 1;
+                $inteiro_a = (str_replace($decimal_a,"", (int) $dividir_a));
+            }
 
-            $diff_cla  = (int) ($equal_cla-1) * $limit_cla;
-            for ($x = 0; $x <= ($equal_cla-2); $x++) {
-                $array[$x] = $limit_cla;
-                $submit['comprimento'][$x] = $equal_c;
-                $submit['largura'][$x] = $equal_l;
-                $submit['altura'][$x] = $equal_a;
-                $submit['valor'][$x] = $equal_cash;
+            // Peso
+            $dividir_p = number_format(($total->unit_peso / $divisao), 3, '.', '');
+            $decimal_p = substr($dividir_p,(strlen($dividir_p)-4),strlen($dividir_p));
+            $inteiro_p = (str_replace($decimal_p,"",$dividir_p));
+
+            // Cash
+            $cash = number_format($total->price_cash_declare, 2, '.', '');
+            $decimal_cash = substr($cash,(strlen($cash)-3),strlen($cash));
+            $total_cash   = (str_replace($decimal_cash,"",$cash));
+            $inteiro_cash = number_format(($total_cash / $divisao), 2, '.', '');
+
+            // Card
+            $card = number_format($total->price_card_declare, 2, '.', '');
+            $decimal_card = substr($card,(strlen($card)-3),strlen($card));
+            $total_card   = (str_replace($decimal_card,"",$card));
+            $inteiro_card = number_format(($total_card / $divisao), 2, '.', '');
+
+            for ($x = 0; $x <= ($divisao-2); $x++) {
+                $_arr_['valor_declarado'][$x] = $inteiro_cash;
+                $_arr_['comprimento'][$x] = $inteiro_c;
+                $_arr_['largura'][$x] = $inteiro_l;
+                $_arr_['altura'][$x] = $inteiro_a;
+                $_arr_['peso'][$x] = $inteiro_p;
+                $submit = json_decode(json_encode($_arr_, false));
+                $freight[]  = $this->configFreight->calculatePac($postcode, $submit);
 
             }
-            $array[] = ($total_cla -$diff_cla);
-            $submit['comprimento'][] = $equal_c;
-            $submit['largura'][] = $equal_l;
-            $submit['altura'][] = $equal_a;
-            $submit['valor'][] = $equal_cash;
 
+            $_arr_['valor_declarado'][] = $inteiro_cash + $decimal_cash;
+            $_arr_['comprimento'][] = $inteiro_c + $decimal_c;
+            $_arr_['largura'][] = $inteiro_l + $decimal_l;
+            $_arr_['altura'][] = $inteiro_a + $decimal_a;
+            $_arr_['peso'][] = $inteiro_p + $decimal_p;
 
+            $resultante = json_decode(json_encode($_arr_, false));
 
-            dd($submit);
+            $freight[]  = $this->configFreight->calculatePac($postcode, $resultante);
 
-
-
-
-
-
-
-
-            //$freight  = $this->configFreight->calculatePac($postcode, $cart);
 
 
         }
@@ -268,13 +291,24 @@ class ConfigShippingController extends Controller
 
     public function calculatorItems($cart)
     {
-        $box = $this->patternUnit();
+        $box = $this->pattern();
         foreach ($cart as $item) {
-            $box->qtd_itens += $item['quantity'];
-            $box->peso += $item['weight'] * $item['quantity'];
-            $box->altura += $item['height'] * $item['quantity'];
-            $box->largura += $item['width'] * $item['quantity'];
-            $box->comprimento += $item['length'] * $item['quantity'];
+
+            if ($item['kit'] == 1) {
+                $box->kit_qtd_itens += $item['quantity'];
+                $box->kit_peso += $item['weight'] * $item['quantity'];
+                $box->kit_altura += $item['height'] * $item['quantity'];
+                $box->kit_largura += $item['width'] * $item['quantity'];
+                $box->kit_comprimento += $item['length'] * $item['quantity'];
+            } else {
+                $box->unit_qtd_itens += $item['quantity'];
+                $box->unit_peso += $item['weight'] * $item['quantity'];
+                $box->unit_altura += $item['height'] * $item['quantity'];
+                $box->unit_largura += $item['width'] * $item['quantity'];
+                $box->unit_comprimento += $item['length'] * $item['quantity'];
+            }
+
+
             if ($item['declare'] == 1) {
                 $box->price_cash_declare += $item['price_cash'] * $item['quantity'];
                 $box->price_card_declare += $item['price_card'] * $item['quantity'];
@@ -284,18 +318,39 @@ class ConfigShippingController extends Controller
             }
         }
 
-        $box->soma_cla = ($box->altura + $box->largura + $box->comprimento);
+        /************************************************************************************************/
+        /*                                UNITS                                                       */
+        /************************************************************************************************/
+        $box->unit_soma_cla = ($box->unit_altura + $box->unit_largura + $box->unit_comprimento);
 
-        if ($box->altura > MAX_ALTURA) $box->erros->max_altura = "Erro: Altura maior que  " . MAX_ALTURA . 'cm';
-        if ($box->largura > MAX_LARGURA) $box->erros->max_largura = "Erro: Largura maior que  " . MAX_LARGURA . 'cm';
-        if ($box->comprimento > MAX_COMPRIMENTO) $box->erros->max_comprimento = "Erro: Comprimento maior que " . MAX_COMPRIMENTO . 'cm';
+        if ($box->unit_altura > MAX_ALTURA) $box->unit_erros->max_altura = "Erro: Altura maior que  " . MAX_ALTURA . 'cm';
+        if ($box->unit_largura > MAX_LARGURA) $box->unit_erros->max_largura = "Erro: Largura maior que  " . MAX_LARGURA . 'cm';
+        if ($box->unit_comprimento > MAX_COMPRIMENTO) $box->unit_erros->max_comprimento = "Erro: Comprimento maior que " . MAX_COMPRIMENTO . 'cm';
 
-        if (($box->comprimento + $box->largura + $box->altura) < MIN_SOMA_CLA)
-            $box->erros->min_soma_cla = "Erro: Soma dos valores C+L+A menor que " . MIN_SOMA_CLA . 'cm';
+        if (($box->unit_comprimento + $box->unit_largura + $box->unit_altura) < MIN_SOMA_CLA)
+            $box->unit_erros->min_soma_cla = "Erro: Soma dos valores C+L+A menor que " . MIN_SOMA_CLA . 'cm';
 
-        if (($box->comprimento + $box->largura + $box->altura) > MAX_SOMA_CLA)
-            $box->erros->max_soma_cla = "Erro: Soma dos valores C+L+A maior que " . MAX_SOMA_CLA . 'cm';
+        if (($box->unit_comprimento + $box->unit_largura + $box->unit_altura) > MAX_SOMA_CLA)
+            $box->unit_erros->max_soma_cla = "Erro: Soma dos valores C+L+A maior que " . MAX_SOMA_CLA . 'cm';
 
+        /************************************************************************************************/
+        /*                                K I T S                                                       */
+        /************************************************************************************************/
+        $box->kit_soma = ($box->kit_unit_altura + $box->kit_unit_largura + $box->kit_unit_comprimento);
+
+        if ($box->kit_altura > MAX_ALTURA) $box->kit_erros->max_altura = "Erro: Altura maior que  " . MAX_ALTURA . 'cm';
+        if ($box->kit_largura > MAX_LARGURA) $box->kit_erros->max_largura = "Erro: Largura maior que  " . MAX_LARGURA . 'cm';
+        if ($box->kit_comprimento > MAX_COMPRIMENTO) $box->kit_erros->max_comprimento = "Erro: Comprimento maior que " . MAX_COMPRIMENTO . 'cm';
+
+        if (($box->kit_comprimento + $box->kit_largura + $box->kit_altura) < MIN_SOMA_CLA)
+            $box->kit_erros->min_soma_cla = "Erro: Soma dos valores C+L+A menor que " . MIN_SOMA_CLA . 'cm';
+
+        if (($box->kit_comprimento + $box->kit_largura + $box->kit_altura) > MAX_SOMA_CLA)
+            $box->kit_erros->max_soma_cla = "Erro: Soma dos valores C+L+A maior que " . MAX_SOMA_CLA . 'cm';
+
+        /************************************************************************************************/
+        /*                                VALUES DECLARE                                                     */
+        /************************************************************************************************/
         if (($box->price_cash_declare || $box->price_card_declare) > MAX_VALOR)
             $box->erros->max_valor = "Erro: O valor máximo permitido é ".setReal(MAX_VALOR);
 
@@ -304,56 +359,52 @@ class ConfigShippingController extends Controller
     }
 
 
+
+
+
     /**
      * Default desig
      *
      * @return json
      */
-    public function patternUnit()
+    public function pattern()
     {
         $_box_ = array(
-            'peso' => 0,
-            'altura' => 0,
-            'largura' => 0,
-            'comprimento' => 0,
-            'soma_cla' => 0,
-            'qtd_itens' => 0,
-            'price_cash_declare' => 0,
-            'price_cash_not_declare' => 0,
-            'price_card_declare' => 0,
-            'price_card_not_declare' => 0,
-            'erros' => array(
+            'unit_peso' => 0,
+            'unit_altura' => 0,
+            'unit_largura' => 0,
+            'unit_comprimento' => 0,
+            'unit_soma_cla' => 0,
+            'unit_qtd_itens' => 0,
+            'unit_erros' => array(
                 'max_altura' => null,
                 'max_largura' => null,
                 'max_comprimento' => null,
                 'max_soma_cla' => null,
-                'min_soma_cla' => null,
-            )
-        );
+                'min_soma_cla' => null
+            ),
+            'kit_peso' => 0, # kit
+            'kit_altura' => 0,
+            'kit_largura' => 0,
+            'kit_comprimento' => 0,
+            'kit_soma' => 0,
+            'kit_qtd_itens' => 0,
+            'kit_erros' => array(
+                'max_altura' => null, # kit
+                'max_largura' => null,
+                'max_comprimento' => null,
+                'max_soma' => null,
+                'min_soma' => null
+            ),
+            'price_cash_declare' => 0,
+            'price_cash_not_declare' => 0,
+            'price_card_declare' => 0,
+            'price_card_not_declare' => 0
 
+        );
 
         return json_decode(json_encode($_box_, false));
     }
 
-    /**
-     * Retorna um array dividido por limite.
-     *
-     * @param $total
-     * @param $limit
-     * @return array
-     */
-    public function partsUnit($total, $limit)
-    {
-        $equal = ceil($total/$limit);
-        $diff  = (int) ($equal-1) * $limit;
-
-        for ($x = 0; $x <= ($equal-2); $x++) {
-            $array[$x] = $limit;
-        }
-        $array[] = ($total-$diff);
-
-        return $array;
-
-    }
 
 }

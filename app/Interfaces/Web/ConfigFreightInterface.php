@@ -12,6 +12,5 @@ interface ConfigFreightInterface
     public function setId($id);
     public function calculateSedex($postcode, $input);
     public function calculatePac($postcode, $input);
-    public function calculateUser($postcode, $input);
 
 }
