@@ -49,6 +49,13 @@
                             </select>
                         </p>
 
+                        <p class="form-row form-row-wide">
+                            <input type="radio" class="input-radio" id="price_cash" name="price" value="price_cash" checked /> <b>{{constLang('cash')}}</b>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            <input type="radio" class="input-radio" id="price_card" name="price" value="price_card" /> <b>{{constLang('card')}}</b>
+                        </p>
+
+
                         <p class="form-row form-row-wide" id="calc_shipping_state_field">
                     <span>
                         <select name="calc_shipping_state" class="state_select" id="calc_shipping_state" placeholder="{{constLang('state')}}">

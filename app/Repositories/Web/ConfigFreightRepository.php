@@ -40,18 +40,19 @@ class ConfigFreightRepository implements ConfigFreightInterface
 
     public function calculateSedex($postcode, $submit)
     {
+
         $frete = new PrecoPrazo();
         $frete->setCodigoServico(Data::PAC)
             ->setCodigoEmpresa(env('CORREIO_CODIGO_EMPRESA')) # opcional
             ->setSenha(env('CORREIO_CODIGO_SENHA')) # opcional
             ->setCepOrigem(env('CORREIO_CODIGO_CEP_ORIGEM')) # apenas numeros, sem hifen(-)
             ->setCepDestino($postcode) # apenas numeros, sem hifen(-)
-            ->setValorDeclarado(setReal($submit->valor_declarado[0])) # não obrigatorio
-            ->setComprimento($submit->comprimento[0]) # obrigatorio
-            ->setAltura($submit->altura[0])      # obrigatorio
-            ->setLargura($submit->largura[0])     # obrigatorio
+            ->setValorDeclarado(setReal($submit->valor_declarado)) # não obrigatorio
+            ->setComprimento($submit->comprimento) # obrigatorio
+            ->setAltura($submit->altura)      # obrigatorio
+            ->setLargura($submit->largura)     # obrigatorio
             ->setDiametro(30)    # obrigatorio
-            ->setPeso($submit->peso[0]);      # obrigatorio
+            ->setPeso($submit->peso);      # obrigatorio
 
         try {
             $result = $frete->calculate();
@@ -73,18 +74,19 @@ class ConfigFreightRepository implements ConfigFreightInterface
     public function calculatePac($postcode, $submit)
     {
 
+
         $frete = new PrecoPrazo();
         $frete->setCodigoServico(Data::PAC)
             ->setCodigoEmpresa(env('CORREIO_CODIGO_EMPRESA')) # opcional
             ->setSenha(env('CORREIO_CODIGO_SENHA')) # opcional
             ->setCepOrigem(env('CORREIO_CODIGO_CEP_ORIGEM')) # apenas numeros, sem hifen(-)
             ->setCepDestino($postcode) # apenas numeros, sem hifen(-)
-            ->setValorDeclarado(setReal($submit->valor_declarado[0])) # não obrigatorio
-            ->setComprimento($submit->comprimento[0]) # obrigatorio
-            ->setAltura($submit->altura[0])      # obrigatorio
-            ->setLargura($submit->largura[0])     # obrigatorio
+            ->setValorDeclarado(setReal($submit->valor_declarado)) # não obrigatorio
+            ->setComprimento($submit->comprimento) # obrigatorio
+            ->setAltura($submit->altura)      # obrigatorio
+            ->setLargura($submit->largura)     # obrigatorio
             ->setDiametro(30)    # obrigatorio
-            ->setPeso($submit->peso[0]);      # obrigatorio
+            ->setPeso($submit->peso);      # obrigatorio
 
         try {
             $result = $frete->calculate();

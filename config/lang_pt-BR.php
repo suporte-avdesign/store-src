@@ -361,9 +361,11 @@ return [
         ],
         'shipping' => [
             'days_text' => 'O tempo estimado para entrega é de',
+            'delivery_domicile' => 'Entrega no domicílio:',
             'method' => 'Método',
             'freight' => 'Frete',
             'freight_calculator' => 'Calcular Frete',
+            'limit_postcode' => 'Ultrapassou Limite Permitido para entrega pelo correio.',
             'local_text' => 'Enviar para: ',
             'send_text' => 'Enviamos para todo o Brasil',
             'update' => 'Atualizar'
