@@ -66,18 +66,18 @@ if (! function_exists('setRoute')) {
     }
 }
 
-
-
 /**
  * Valor em real
  *
  * @param  string $numero
  */
 if (! function_exists('setReal')) {
-	function setReal($value){
-		return number_format((float)$value,2,',','.');
-	}
+    function setReal($value){
+        return number_format((float)$value,2,',','.');
+    }
 }
+
+
 
 /**
  * Porcentagem

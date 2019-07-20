@@ -5,6 +5,7 @@ namespace AVD\Http\Controllers\Web;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use AVD\Models\Web\ConfigBox;
 use AVD\Http\Controllers\Controller;
 use AVD\Interfaces\Web\CartInterface as InterCart;
 use AVD\Interfaces\Web\StateInterface as InterState;
@@ -45,7 +46,6 @@ class ConfigShippingController extends Controller
      */
     public function method(Request $request)
     {
-
         $selected = $request['shipping_method'][0];
         if ($selected) {
 
@@ -88,7 +88,6 @@ class ConfigShippingController extends Controller
 
     }
 
-
     /**
      * Define o método de envio
      *
@@ -103,24 +102,38 @@ class ConfigShippingController extends Controller
         $state   = $request['calc_shipping_state'];
         $country = $request['calc_shipping_country'];
 
+
+
         $local = constLang('messages.shipping.local_text') . " {$city}, {$state}";
 
         $selected = $request['shipping_method'][0];
         if ($selected == 1) {
+
+            dd('Transportadora');
             return false;
-            //Transportadora
+            //
         }
 
         if ($selected == 2 || $selected == 2) {
 
+
             $postcode = str_replace('-', '', $request['calc_shipping_postcode']);
-            $session = md5($_SERVER['REMOTE_ADDR']);
-            $cart = $this->interCart->getAll($session);
+            $fator    = number_format(6, 3, '.', '');
+            $session  = md5($_SERVER['REMOTE_ADDR']);
+            $cart     = collect($this->interCart->getAll($session))->toArray();
 
-            $calculator = $this->calculator($price, $postcode, $cart, $selected);
+            $types = $this->types($cart);
+            if ($types->kits >= 1) {
+                $configFreight = $this->configFreight->setId(1);
+                if ($configFreight->distribute_box == 1) {
 
+                    $sum    = $this->sum($cart, $price, $fator); # Soma os valores
+                    $divide = $this->divide($sum, $fator); # Divide os valores (cell)
 
-            dd($calculator);
+                    dd($divide);
+
+                }
+            }
 
         }
         //$html = $this->renderCart($freight, $local, $selected);
@@ -140,357 +153,101 @@ class ConfigShippingController extends Controller
     }
 
     /**
-     * Date 07/13/2019
+     * Separa Kits/Units
      *
-     * @param $price
-     * @param $postcode
-     * @param $cart
-     * @param $selected
-     * @return array
-     */
-    public function calculator($price, $postcode, $cart, $selected)
-    {
-        $collection = collect($cart)->toArray();
-
-
-        if ($selected == 2 || $selected == 3) {
-
-            $fator = number_format(6, 3, '.', '');
-
-            $sumCart = $this->sumCart($price, $collection, $fator);
-
-            if (count($sumCart->error)) {
-                return $sumCart->error;
-            } else {
-
-
-
-                $freight[0]  = $this->configFreight->calculatePac($postcode, $sumCart);
-
-                if ($sumCart->next_qtd_itens){
-                   // Verifica se existe kit
-                   $count_kit = count($sumCart->kit);
-                   if ($count_kit >=1) {
-
-
-                       //$freight[]  = $this->configFreight->calculatePac($postcode, $sumCart);
-                   }
-
-                   // Verifica se existe unit
-                   $count_unit = count($sumCart->unit);
-                   if ($count_unit >=1) {
-
-                       $next1 = $this->nextUnitCart($price, $sumCart->unit, $fator);
-                       $freight[1] = $this->configFreight->calculatePac($postcode, $next1);
-
-
-                       if ($next1->next_qtd_itens >= 1) {
-                           $next2 = $this->nextUnitCart($price, $next1->unit, $fator);
-                           $freight[2] = $this->configFreight->calculatePac($postcode, $next2);
-
-                           if ($next2->next_qtd_itens >= 1) {
-                               $next3 = $this->nextUnitCart($price, $next2->unit, $fator);
-                               $freight[3] = $this->configFreight->calculatePac($postcode, $next3);
-
-                               if ($next3->next_qtd_itens >= 1) {
-                                   $next4 = $this->nextUnitCart($price, $next3->unit, $fator);
-                                   $freight[4] = $this->configFreight->calculatePac($postcode, $next4);
-
-                                   if ($next4->next_qtd_itens >= 1){
-                                       $next5 = $this->nextUnitCart($price, $next4->unit, $fator);
-                                       $freight[5] = $this->configFreight->calculatePac($postcode, $next5);
-
-                                       if ($next5->next_qtd_itens >= 1) {
-                                           $next6 = $this->nextUnitCart($price, $next5->unit, $fator);
-                                           $freight[6] = $this->configFreight->calculatePac($postcode, $next6);
-
-                                           if ($next6->next_qtd_itens >= 1) {
-                                               $next7 = $this->nextUnitCart($price, $next6->unit, $fator);
-                                               $freight[7] = $this->configFreight->calculatePac($postcode, $next7);
-
-                                               if ($next7->next_qtd_itens >= 1) {
-                                                   $next8 = $this->nextUnitCart($price, $next7->unit, $fator);
-                                                   $freight[8] = $this->configFreight->calculatePac($postcode, $next8);
-
-                                                   if ($next8->next_qtd_itens >= 1) {
-                                                       $next9 = $this->nextUnitCart($price, $next8->unit, $fator);
-                                                       $freight[9] = $this->configFreight->calculatePac($postcode, $next9);
-
-                                                       if ($next9->next_qtd_itens >= 1) {
-                                                           $next10 = $this->nextUnitCart($price, $next9->unit, $fator);
-                                                           $freight[10] = $this->configFreight->calculatePac($postcode, $next10);
-
-                                                           if ($next10->next_qtd_itens >= 1) {
-                                                               $message = constLang('messages.shipping.limit_postcode');
-                                                           }
-                                                       }
-                                                   }
-                                               }
-                                           }
-                                       }
-                                   }
-                               }
-                           }
-                       }
-                   }
-                }
-            }
-
-
-            $message = $this->messages($freight);
-
-            dd($message);
-        }
-
-        return $message;
-
-
-    }
-
-
-
-
-
-    /**
-     *
-     * Se o peso cúbico, diferente do peso físico em quilogramas, considera o volume da encomenda.
-     * Se o peso cúbico da encomenda for menor ou igual a 10 kg, será atribuído o peso físico (ou real).
-     * Para encomendas com peso cúbico maior que 10 kg, valerá o maior resultado após a comparação
-     * dos resultados entre o peso físico (kg) e o peso cúbico (C x L x A)/6.000.
-     *
-     * (70*60*10)= 42000/6.000 = 7.000 Kg cúbicos - até 7k 81,05
-     * (50*60*15)= 45000/6.000 = 7.500 Kg cúbicos - até 8k 99,55
-     * (43*28*52)= 62608/6.000 = 10.434 Kg cúbicos - até 8k 115,95
-     * (55*31*40)= 68200/6.000 = 11.366 Kg cúbicos - até 14k 142,91
-     *
-     * rodoviário: 1m³ =300kg
-     * aéreo: 1m³ = 166,7kg
-     * marítimo: 1m³ = 1.000kg
-     *
-     * @param $price
-     * @param $cart
-     * @param $factor
+     * @param $items
      * @return json
      */
-    public function sumCart($price, $cart, $fator)
+    private function types($cart)
     {
-        $box  = $this->selectBox($cart, $fator);
-        $sum  = $this->patternSum();
-        $kit  = array();
-        $unit = array();
+        $types['kits']  = null;
+        $types['units'] = null;
 
-        foreach ($cart as $item) {
-
-            if ($item['kit'] == 1) {
-
-                $kit[] = array(
-                    'id' => $item['id'],
-                    'kit' => 1,
-                    'quantity' => $item['quantity'],
-                    'length' => $item['length'],
-                    'width' => $item['width'],
-                    'height' => $item['height'],
-                    'quantity' => $item['quantity'],
-                    'weight' => $item['weight'],
-                    'weight' => $item['weight'],
-                    'declare' => $item['declare'],
-                    'price_cash' => $item['price_cash'],
-                    'price_card' => $item['price_card']
-                );
-
-
+        foreach ($cart as $items) {
+            if ($items['kit'] == 1) {
+                $types['kits'][] = $items;
             } else {
-
-                $sum->total_cubagem += ($item['length'] * $item['width'] * $item['height'] *  $item['quantity']);
-                $sum->kg_cubicos += ($item['length'] * $item['width'] * $item['height'])/$fator;
-                $sum->total_peso += ($item['weight'] * $item['quantity']);
-
-                $sum->comprimento += ($item['length'] * $item['quantity']);
-                $sum->largura += ($item['width'] * $item['quantity']);
-                $sum->altura += ($item['height'] * $item['quantity']);
-                $sum->peso += ($item['weight'] * $item['quantity']);
-                $sum->qtd_itens += $item['quantity'];
-
-                if ($item['declare'] == 1) {
-                    $sum->valor_declarado += $item[$price] * $item['quantity'];
-                }
-
-                if ($sum->total_cubagem > $box->total_cubagem) {
-
-                    $sum->next_cubagem += ($item['length'] * $item['width'] * $item['height'] *  $item['quantity']);
-                    $cubagem_atual = $sum->total_cubagem - $sum->next_cubagem;
-
-                    $sum->next_kg_cubicos += ($item['length'] * $item['width'] * $item['height'])/$fator;
-                    $kg_cubicos_atual = $sum->kg_cubicos - $sum->next_kg_cubicos;
-
-                    $sum->next_valor_declarado += ($item[$price] * $item['quantity']);
-                    $declarado_atual = $sum->valor_declarado - $sum->next_valor_declarado;
-
-                    $sum->next_qtd_itens += $item['quantity'];
-                    $qtd_itens_atual = $sum->qtd_itens - $sum->next_qtd_itens;
-
-                    $sum->next_peso += ($item['weight'] * $item['quantity']);
-                    $peso_atual = $sum->peso - $sum->next_peso;
-
-                    $unit[] = array(
-                        'id' => $item['id'],
-                        'kit' => 0,
-                        'quantity' => $item['quantity'],
-                        'length' => $item['length'],
-                        'width' => $item['width'],
-                        'height' => $item['height'],
-                        'quantity' => $item['quantity'],
-                        'weight' => $item['weight'],
-                        'declare' => $item['declare'],
-                        'price_cash' => $item['price_cash'],
-                        'price_card' => $item['price_card']
-                    );
-                }
+                $types['units'][] = $items;
             }
         }
 
-        $sum->kit  = $kit;
-        $sum->unit = $unit;
-
-        $sum->total_cubagem = $cubagem_atual;
-        $sum->kg_cubicos = $kg_cubicos_atual;
-        $sum->valor_declarado = $declarado_atual;
-        $sum->qtd_itens = $qtd_itens_atual;
-        $sum->peso = $peso_atual;
-
-        $raiz_cubica = (int) round(pow($cubagem_atual, (1 / 3)));
-
-        if ($raiz_cubica < 16) {
-            $sum->comprimento = 16;
-        } else {
-            $sum->comprimento = (int)$raiz_cubica;
-        }
-
-        if ($raiz_cubica < 11) {
-            $sum->largura = 11;
-        } else {
-            $sum->largura = (int)$raiz_cubica;
-        }
-
-        $sum->altura = (int) round($cubagem_atual / ($sum->comprimento * $sum->largura));
-
-        // Validação
-        if ($sum->altura > MAX_ALTURA) {
-            $sum->error = "Erro: Altura maior que  " . MAX_ALTURA . 'cm';
-        } elseif ($sum->largura > MAX_LARGURA) {
-            $sum->error = "Erro: Largura maior que  " . MAX_LARGURA . 'cm';
-        } elseif ($sum->comprimento > MAX_COMPRIMENTO) {
-            $sum->error = "Erro: Comprimento maior que " . MAX_COMPRIMENTO . 'cm';
-        } elseif (($sum->comprimento + $sum->largura + $sum->altura) < MIN_SOMA_CLA) {
-            $sum->error = "Erro: Soma dos valores C+L+A menor que " . MIN_SOMA_CLA . 'cm';
-        } elseif (($sum->comprimento + $sum->largura + $sum->altura) > MAX_SOMA_CLA) {
-            $sum->error = "Erro: Soma dos valores C+L+A maior que " . MAX_SOMA_CLA . 'cm';
-        }
-
-        return $sum;
+        return json_decode(json_encode($types, false));
     }
 
-
-    private function nextUnitCart($price, $cart, $fator)
+    /**
+     * Soma o total CLA QVK e Cubagem
+     *
+     * @param $price
+     * @param $fator
+     * @return json
+     */
+    private function sum($cart, $price, $fator)
     {
-        $box  = $this->selectBox($cart, $fator);
+        $items = json_decode(json_encode($cart, false));
         $sum  = $this->patternSum();
-        $kit  = array();
-        $unit = array();
 
+        foreach ($items as $item) {
 
+            $sum->total_cubagem += ($item->length * $item->width * $item->height *  $item->quantity);
+            $sum->kg_cubicos += ($item->length * $item->width * $item->height)/$fator;
+            $sum->total_peso += ($item->weight * $item->quantity);
 
-        foreach ($cart as $item) {
-
-            $sum->total_cubagem += ($item['length'] * $item['width'] * $item['height'] *  $item['quantity']);
-            $sum->kg_cubicos += ($item['length'] * $item['width'] * $item['height'])/$fator;
-            $sum->total_peso += ($item['weight'] * $item['quantity']);
-
-            $sum->comprimento += ($item['length'] * $item['quantity']);
-            $sum->largura += ($item['width'] * $item['quantity']);
-            $sum->altura += ($item['height'] * $item['quantity']);
-            $sum->peso += ($item['weight'] * $item['quantity']);
-            $sum->qtd_itens += $item['quantity'];
-
-            if ($item['declare'] == 1) {
-                $sum->valor_declarado += $item[$price] * $item['quantity'];
+            $sum->comprimento += ($item->length * $item->quantity);
+            $sum->largura += ($item->width * $item->quantity);
+            $sum->altura += ($item->height * $item->quantity);
+            $sum->peso += ($item->weight * $item->quantity);
+            if ($item->kit == 1) {
+                $sum->qtd_itens += ($item->quantity * $item->unit);
+            } else {
+                $sum->qtd_itens += $item->quantity;
             }
+
+            if ($item->declare == 1) {
+                $sum->valor_declarado += $item->$price * $item->quantity;
+            }
+
+            $box  = $this->selectBox($sum, $fator);
 
             if ($sum->total_cubagem > $box->total_cubagem) {
 
-                $sum->next_cubagem += ($item['length'] * $item['width'] * $item['height'] *  $item['quantity']);
-                $cubagem_atual = $sum->total_cubagem - $sum->next_cubagem;
+                $sum->next_cubagem += ($item->length * $item->width * $item->height *  $item->quantity);
+                $sum->next_kg_cubicos += ($item->length * $item->width * $item->height)/$fator;
+                $sum->next_peso += ($item->weight * $item->quantity);
+                if ($item->kit == 1) {
+                    $sum->next_qtd_itens += ($item->quantity * $item->unit);
+                } else {
+                    $sum->next_qtd_itens += $item->quantity;
+                }
+                if ($item->declare == 1) {
+                    $sum->next_valor_declarado += $item->$price * $item->quantity;
+                }
 
-                $sum->next_kg_cubicos += ($item['length'] * $item['width'] * $item['height'])/$fator;
-                $kg_cubicos_atual = $sum->kg_cubicos - $sum->next_kg_cubicos;
-
-                $sum->next_valor_declarado += ($item[$price] * $item['quantity']);
-                $declarado_atual = $sum->valor_declarado - $sum->next_valor_declarado;
-
-                $sum->next_qtd_itens += $item['quantity'];
-                $qtd_itens_atual = $sum->qtd_itens - $sum->next_qtd_itens;
-
-                $sum->next_peso += ($item['weight'] * $item['quantity']);
-                $peso_atual = $sum->peso - $sum->next_peso;
-
-                $unit[] = array(
-                    'id' => $item['id'],
-                    'kit' => 0,
-                    'quantity' => $item['quantity'],
-                    'length' => $item['length'],
-                    'width' => $item['width'],
-                    'height' => $item['height'],
-                    'quantity' => $item['quantity'],
-                    'weight' => $item['weight'],
-                    'declare' => $item['declare'],
-                    'price_cash' => $item['price_cash'],
-                    'price_card' => $item['price_card']
-                );
-            } else {
-
-
-                $sum->next_cubagem = 0;
-                $cubagem_atual = $sum->total_cubagem - $sum->next_cubagem;
-
-                $sum->next_kg_cubicos = 0;
-                $kg_cubicos_atual = $sum->kg_cubicos - $sum->next_kg_cubicos;
-
-                $sum->next_valor_declarado = 0;
-                $declarado_atual = $sum->valor_declarado - $sum->next_valor_declarado;
-
-                $sum->next_qtd_itens = 0;
-                $qtd_itens_atual = $sum->qtd_itens - $sum->next_qtd_itens;
-
-                $sum->next_peso = 0;
-                $peso_atual = $sum->peso - $sum->next_peso;
+                $sum->comprimento = $box->comprimento;
+                $sum->largura = $box->largura;
+                $sum->altura = $box->altura;
+                $sum->total_peso = $sum->total_peso; // em kilos
 
             }
         }
 
-        $sum->kit  = $kit;
-        $sum->unit = $unit;
+        $sum->total_cubagem = $sum->total_cubagem - $sum->next_cubagem;
+        $sum->kg_cubicos = $sum->kg_cubicos - $sum->next_kg_cubicos;
+        $sum->valor_declarado = $sum->valor_declarado - $sum->next_valor_declarado;
+        $sum->qtd_itens = $sum->qtd_itens - $sum->next_qtd_itens;
+        $sum->peso = $sum->peso - $sum->next_peso;
 
-        $sum->total_cubagem = $cubagem_atual;
-        $sum->kg_cubicos = $kg_cubicos_atual;
-        $sum->valor_declarado = $declarado_atual;
-        $sum->qtd_itens = $qtd_itens_atual;
-        $sum->peso = $peso_atual;
-
-        $raiz_cubica = (int) round(pow($cubagem_atual, (1 / 3)));
-
-        if ($raiz_cubica < 16) {
-            $sum->comprimento = 16;
-        } else {
-            $sum->comprimento = (int)$raiz_cubica;
+        $sum->raiz_cubica += round(pow($sum->total_cubagem, (1 / 3)));
+        if ($sum->raiz_cubica < MIN_COMPRIMENTO) {
+            $sum->comprimento = MIN_COMPRIMENTO; // em centimetros
         }
 
-        if ($raiz_cubica < 11) {
-            $sum->largura = 11;
-        } else {
-            $sum->largura = (int)$raiz_cubica;
+        if ($sum->raiz_cubica < MIN_LARGURA) {
+            $sum->largura = MIN_LARGURA; // em centimetros
         }
 
-        $sum->altura = (int) round($cubagem_atual / ($sum->comprimento * $sum->largura));
+        if ($sum->altura < MIN_ALTURA) {
+            $sum->altura = MIN_ALTURA; // em centimetros
+        }
 
         // Validação
         if ($sum->altura > MAX_ALTURA) {
@@ -506,122 +263,45 @@ class ConfigShippingController extends Controller
         }
 
         return $sum;
-
     }
-
-
-    public function selectBox($cart, $fator)
-    {
-
-        $total_cubagem = 0;
-
-        foreach ($cart as $item) {
-            $total_cubagem += ($item['length'] * $item['width'] * $item['height'] *  $item['quantity']);
-        }
-
-        $box1 = $this->boxsSize(1, $fator);
-        $box2 = $this->boxsSize(2, $fator);
-        $box3 = $this->boxsSize(3, $fator);
-
-        $box1_total_cubagem = $box1->total_cubagem;
-        $box3_total_cubagem = $box3->total_cubagem;
-
-        # verificamos em qual box os produtos se encaixam
-        if ($total_cubagem >= $box1_total_cubagem) {
-            return $box1;
-        } elseif ($total_cubagem > $box3_total_cubagem && $total_cubagem < $box1_total_cubagem) {
-            return $box2;
-        } elseif ($total_cubagem <= $box3_total_cubagem) {
-            return $box2;
-        } else {
-           return false;
-        }
-    }
-
 
     /**
-     * (70*60*10)= 42000/6.000 = 7.000 Kg cúbicos - até 7k 81,05
-     * (50*60*15)= 45000/6.000 = 7.500 Kg cúbicos - até 8k 99,55
-     * (43*28*52)= 62608/6.000 = 10.434 Kg cúbicos - até 8k 115,95
-     * (55*31*40)= 68200/6.000 = 11.366 Kg cúbicos - até 14k 142,91
      *
-     * @return mixed
+     * @param $sum
      */
-    public function boxsSize($size, $fator)
+    private function divide($sum, $fator)
     {
+        $send[] = $this->sendBox($sum, $fator);
 
-        if ($size == 1) {
+        $box = $this->selectBox($sum, $fator);
+        $sumTotal = $sum->total_cubagem;
+        $boxTotal = $box->total_cubagem;
+        $boxKgc   = $box->kg_cubicos;
+        $sumKgc   = $sum->kg_cubicos;
 
-            $valor_declarado = setReal(500);
-            $total_cubagem   = (64 * 42 * 30 * 1); //80640
-            $kg_cubicos      = (64 * 42 * 30)/$fator; //13440.0
-            $raiz_cubica     = round(pow($total_cubagem, (1 / 3)));
-            $_box_ = array(
-                'comprimento' => 62,
-                'largura' => 42,
-                'altura' => 30,
-                'peso' => 12.000,
-                'quantidade' => 12,
-                'kg_cubicos' => $kg_cubicos,
-                'raiz_cubica' => $raiz_cubica,
-                'total_cubagem' => $total_cubagem,
-                'valor_declarado' => $valor_declarado,
-                'total_cubado' => 0,
-                'cart' => array()
-            );
-        } elseif($size == 2) {
+        $count = (int) ceil($sumTotal/$boxTotal);
 
-            $valor_declarado = setReal(500);
-            $total_cubagem   = (50 * 27 * 31 * 1);
-            $kg_cubicos      = (50 * 27 * 31)/$fator;
-            $raiz_cubica     = round(pow($total_cubagem, (1 / 3)));
+        for ($i = 1; $i <= $count; $i++) {
 
+            $next = $this->nextBox($sum, $fator);
 
-            $_box_ = array(
-                'comprimento' => 50,
-                'largura' => 27,
-                'altura' => 31,
-                'peso' => 7.000,
-                'quantidade' => 12,
-                'kg_cubicos' => $kg_cubicos,
-                'raiz_cubica' => $raiz_cubica,
-                'total_cubagem' => $total_cubagem,
-                'valor_declarado' => $valor_declarado,
-                'total_cubado' => 0,
-                'cart' => array()
-            );
-
-        } elseif($size == 3) {
-
-            $valor_declarado = setReal(500);
-            $total_cubagem   = (43 * 20 * 28 * 1);
-            $kg_cubicos      = (43 * 20 * 28)/$fator;
-            $raiz_cubica     = round(pow($total_cubagem, (1 / 3)));
-
-            $_box_ = array(
-                'comprimento' => 43,
-                'largura' => 20,
-                'altura' => 28,
-                'peso' => 3.000,
-                'quantidade' => 12,
-                'kg_cubicos' => $kg_cubicos,
-                'raiz_cubica' => $raiz_cubica,
-                'total_cubagem' => $total_cubagem,
-                'valor_declarado' => $valor_declarado,
-                'total_cubado' => 0,
-                'cart' => array()
-            );
+            //$send[] = $this->sendBox($sum, $fator);
         }
 
-        return json_decode(json_encode($_box_, false));
+        $sum->send = $send;
+
+        return $sum;
+
+
     }
 
+
     /**
-     * Default desig
+     * Modelo do json que retona
      *
      * @return json
      */
-    public function patternSum()
+    private function patternSum()
     {
         $_sum_ = array(
             'comprimento' => 0,
@@ -633,266 +313,136 @@ class ConfigShippingController extends Controller
             'total_peso' => 0,
             'kg_cubicos' => 0,
             'total_cubagem' => 0,
-            'next_peso' => 0,
-            'next_qtd_itens' => 0,
-            'next_valor_declarado' => 0,
+            'raiz_cubica' => 0,
             'next_cubagem' => 0,
             'next_kg_cubicos' => 0,
-            'kit' => array(),
-            'unit' => array(),
+            'next_valor_declarado' => 0,
+            'next_qtd_itens' => 0,
+            'next_peso' => 0,
+            'send' => array(),
             'error' => null
-
         );
 
         return json_decode(json_encode($_sum_, false));
     }
 
 
-    private function messages($freight, $error=0)
-    {
-        $_msg_ = array(
-            'valor' => 0,
-            'prazo' => 0,
-            'domicilio' => 'Não',
-            'error' => array()
-        );
-
-        $message = json_decode(json_encode($_msg_, false));
-
-        foreach ($freight as $value) {
-            $array[] = $value->cServico;
-        }
-
-        $delivery = constLang('messages.shipping.delivery_domicile');
-        $days = constLang('days');
-        $yes  = $delivery.constLang('yes');
-        $not  = $delivery.constLang('not');
-
-        foreach ($array as $val) {
-            $message->valor += (float) str_replace (',', '.', $val['Valor']);
-            $message->prazo = $val['PrazoEntrega'].' '.$days;
-            $message->domicilio = ($val['EntregaDomiciliar'] == 'S' ? $yes : $not);
-        }
-
-        return $message;
-    }
-
-
-
     /**
-     * Valor Cubico
+     * Seleciona o tamanho do box
      *
+     * (70*60*10)= 42000/6.000 = 7.000 Kg cúbicos - até 7k 81,05
+     * (50*60*15)= 45000/6.000 = 7.500 Kg cúbicos - até 8k 99,55
+     * (43*28*52)= 62608/6.000 = 10.434 Kg cúbicos - até 8k 115,95
+     * (55*31*40)= 68200/6.000 = 11.366 Kg cúbicos - até 14k 142,91
+     *
+     * @param $cart
      * @param $fator
-     * @return float|int
+     * @return json|bool
      */
-    public function valueCubico($fator)
+    public function selectBox($sum, $fator)
     {
-        return number_format((1.000/$fator), 3, '.', '');
+
+        //dd($total_cubagem);
+
+        /** 201150  134100 92250
+         * $box1  = (60*42*30);#75600
+         * $box2  = (50*27*31);#41850
+         * $box3  = (43*20*28);#24080
+         */
+
+        # O padrão dos boxes esta no bd config_boxes máximo 3
+        $total_cubagem = $sum->total_cubagem;
+
+        $box1 = $this->boxsSize(1, $fator);
+        $box2 = $this->boxsSize(2, $fator);
+        $box3 = $this->boxsSize(3, $fator);
+
+        $box1_total_cubagem = $box1->total_cubagem;
+        $box3_total_cubagem = $box3->total_cubagem;
+
+
+        # verificamos em qual box os produtos se encaixam
+        if ($total_cubagem >= $box1_total_cubagem) {
+            return $box1;
+        } elseif ($total_cubagem < $box1_total_cubagem && $total_cubagem > $box3_total_cubagem) {
+            return $box2;
+        } else {
+            return $box3;
+        }
     }
 
     /**
-     * Valor Cubico
+     * Retorna o tamanho do box
      *
-     * @param $c comprimento
-     * @param $l largura
-     * @param $a altura
-     * @param $v valor cubagem
-     * @return float
+     * @param $size
+     * @param $fator
+     * @return json
      */
-    public function pesoCubado($c, $l, $a, $f)
+    private function boxsSize($size, $fator)
     {
-        $x = ($c*$l*$a)/$f;
-        $n = number_format($x, 0, '.', '');
-        $d = substr($n,(strlen($n)-3),strlen($n));
-        $i = substr($n, 0, -3);
-        return floatval("{$i}.{$d}");
-    }
-
-    public function renderFreight($selected, $local)
-    {
-
-        $states = $this->interState->getAll();
-        $configShipping = $this->interModel->getAll();
-
-        $configSite = $this->configSite->setId(1);
-        (Auth::user() ? $user_id = Auth::id() : $user_id = 0);
-        $session = md5($_SERVER['REMOTE_ADDR']);
-
-
-        if ($user_id != 0 && $configSite->order == 'wishlist') {
-            dd('Cart = Lista de desejo');
-        } else {
-            $cart = $this->interCart->getAll($session);
-        }
-
-        $values = $this->interCart->getTotal($cart);
-        $methods = $this->interModel->getAll();
-        foreach ($methods as $method) {
-            if ($method->id == $selected) {
-                $tax = $method->tax_unique;
+        $boxes = ConfigBox::all();
+        foreach ($boxes as $box) {
+            if ($box->id == $size) {
+                $valor_declarado = 0;
+                $total_cubagem = ($box->length*$box->width*$box->height);
+                $kg_cubicos = ($box->length*$box->width*$box->height)/$fator;
+                $raiz_cubica = round(pow($total_cubagem, (1/3)));
+                $_box_ = array(
+                    'comprimento' => $box->length,
+                    'largura' => $box->width,
+                    'altura' => $box->height,
+                    'peso' => 0,
+                    'quantidade' => 0,
+                    'kg_cubicos' => $kg_cubicos,
+                    'raiz_cubica' => $raiz_cubica,
+                    'total_cubagem' => $total_cubagem,
+                    'valor_declarado' => $valor_declarado
+                );
             }
         }
 
-        $total['quantity'] = $values['quantity'];
-        $total['price_cash'] = $values['price_cash'];
-        $total['price_card'] = $values['price_card'];
-
-        return view("{$this->view}.calculator-1", compact(
-                'configShipping',
-                'selected',
-                'states',
-                'total',
-                'local',
-                'cart',
-                'tax')
-        )->render();
-
+        return json_decode(json_encode($_box_, false));
     }
 
 
-    public function revisar($price, $postcode, $cart, $selected)
+    private function nextBox($sum, $fator)
     {
-        $collection    = collect($cart)->toArray();
+        $next  = $this->patternSum();
+        $next->peso = $sum->next_peso;
+        $next->total_peso = $sum->next_peso;
+        $next->raiz_cubica = $sum->raiz_cubica;
+        $next->qtd_itens = $sum->next_qtd_itens;
+        $next->kg_cubicos = $sum->next_kg_cubicos;
+        $next->total_cubagem = $sum->next_cubagem;
+        $next->valor_declarado = $sum->next_valor_declarado;
 
-        $fator = number_format(6, 3, '.', '');
+        $box = $this->selectBox($next, $fator);
 
-
-
-        if ($selected == 2) {
-            $total = $this->sumCart($collection, $fator);
-            $divisao = ceil($total->soma_cla / MAX_SOMA_CLA);
-
-            dd($total);
-
-            // Comprimento
-            $dividir_c =  ($total->unit_comprimento / $divisao);
-
-            if (is_int($dividir_c)) {
-                $decimal_c = 0;
-                $inteiro_c = (int) $dividir_c;
-            } else {
-                $decimal_c = 1;
-                $inteiro_c = (str_replace($decimal_c,"", (int) $dividir_c));
-            }
-
-            // Largura
-            $dividir_l =  ($total->unit_largura / $divisao);
-            if (is_int($dividir_l)) {
-                $decimal_l = 0;
-                $inteiro_l = (int) $dividir_l;
-            } else {
-                $decimal_l = 1;
-                $inteiro_l = (str_replace($decimal_l,"", (int) $dividir_l));
-            }
-
-            // Altura
-            $dividir_a =  ($total->unit_altura / $divisao);
-            if (is_int($dividir_a)) {
-                $decimal_a = 0;
-                $inteiro_a = (int) $dividir_a;
-            } else {
-                $decimal_a = 1;
-                $inteiro_a = (str_replace($decimal_a,"", (int) $dividir_a));
-            }
-
-            // Peso
-            $dividir_p = number_format(($total->unit_peso / $divisao), 3, '.', '');
-            $decimal_p = substr($dividir_p,(strlen($dividir_p)-4),strlen($dividir_p));
-            $inteiro_p = (str_replace($decimal_p,"",$dividir_p));
-
-            ($price == 'price_cash' ? $values = $total->unit_prices->cash_declare : $values = $total->unit_prices->card_declare);
-
-            // Values
-            $declare = number_format($values, 2, '.', '');
-            $decimal_declare = substr($declare,(strlen($declare)-3),strlen($declare));
-            $total_declare   = (str_replace($decimal_declare,"",$declare));
-            $inteiro_declare = number_format(($total_declare / $divisao), 2, '.', '');
-
-            for ($x = 0; $x <= ($divisao-2); $x++) {
-                $_arr_['valor_declarado'][$x] = $inteiro_declare;
-                $_arr_['comprimento'][$x] = $inteiro_c;
-                $_arr_['largura'][$x] = $inteiro_l;
-                $_arr_['altura'][$x] = $inteiro_a;
-                $_arr_['peso'][$x] = $inteiro_p;
-                $submit = json_decode(json_encode($_arr_, false));
-                $freight[]  = $this->configFreight->calculatePac($postcode, $submit);
-
-            }
-
-            $_arr_['valor_declarado'][] = $inteiro_declare + $decimal_declare;
-            $_arr_['comprimento'][] = $inteiro_c + $decimal_c;
-            $_arr_['largura'][] = $inteiro_l + $decimal_l;
-            $_arr_['altura'][] = $inteiro_a + $decimal_a;
-            $_arr_['peso'][] = $inteiro_p + $decimal_p;
-
-            /* teste
-            $c = (12.2 * 12); // 146.4
-            $l = (10.2 * 12); // 122.4
-            $a = (30.4  * 12); //364.8
+        $next->altura = $box->altura;
+        $next->largura = $box->largura;
+        $next->comprimento = $box->comprimento;
 
 
-            $dc = ceil($c / MAX_COMPRIMENTO);
-            $dl = ceil($l / MAX_LARGURA);
-            $da = ceil($a / MAX_ALTURA);
-            $sum = ceil(($c+$l+$a) / MAX_SOMA_CLA);
+        dd($next);
 
-
-            $x = [$dc, $dl, $da, $sum];
-            $max = collect($x)->max();
-            */
-            /*
-
-
-            $_arr_['valor_declarado'][] = '300,00';
-            $_arr_['comprimento'][] = 10;
-            $_arr_['largura'][] = 10;
-            $_arr_['altura'][] = 10;
-            $_arr_['peso'][] = 6;
-
-
-            $kgc = $this->pesoCubado(55, 55, 55, $this->valueCubico($fator));
-
-            //dd($kgc);
-
-
-             * Se o peso cúbico, diferente do peso físico em quilogramas, considera o volume da encomenda.
-             * Se o peso cúbico da encomenda for menor ou igual a 10 kg, será atribuído o peso físico (ou real).
-             * Para encomendas com peso cúbico maior que 10 kg, valerá o maior resultado após a comparação
-             * dos resultados entre o peso físico (kg) e o peso cúbico (C x L x A)/6.000.
-             *
-             * (70*60*10)= 42000/6.000 = 7.000 Kg cúbicos - até 7k 81,05
-             * (50*60*15)= 45000/6.000 = 7.500 Kg cúbicos - até 8k 99,55
-             * (43*28*52)= 62608/6.000 = 10.434 Kg cúbicos - até 8k 115,95
-             * (55*31*40)= 68200/6.000 = 11.366 Kg cúbicos - até 14k 142,91
-             *
-             * Fator Cúbico de Peso.
-             * 50cm x 60cm x 15cm
-             *
-             * $kgc = $this->pesoCubado(50, 60, 15, $this->valueCubico($fator));
-             *
-            */
-
-
-
-            $resultante = json_decode(json_encode($_arr_, false));
-
-            $freight[]  = $this->configFreight->calculatePac($postcode, $resultante);
-
-            return $freight;
-
-        }
-
-        if ($selected == 3) {
-
-
-            $freight = $this->configFreight->calculateSedex($postcode, $cart);
-        }
     }
 
 
 
+    private function sendBox($sum, $fator)
+    {
+        $send = [
+            'comprimento' => $sum->comprimento,
+            'largura' => $sum->largura,
+            'altura' => $sum->altura,
+            'peso' => $sum->peso,
+            'valor' => $sum->valor_declarado,
+            'qtd_itens' => $sum->qtd_itens,
+            'total_cubagem' => $sum->total_cubagem,
+            'kg_cubicos' => $sum->kg_cubicos
+        ];
 
-
-
+        return $send;
+    }
 
 }
