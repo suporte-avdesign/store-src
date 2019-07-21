@@ -183,15 +183,13 @@ class ConfigShippingController extends Controller
      */
     private function sum($cart, $price, $fator)
     {
-        $items = json_decode(json_encode($cart, false));
         $sum  = $this->patternSum();
 
+        $items = json_decode(json_encode($cart, false));
         foreach ($items as $item) {
-
             $sum->total_cubagem += ($item->length * $item->width * $item->height *  $item->quantity);
             $sum->kg_cubicos += ($item->length * $item->width * $item->height)/$fator;
             $sum->total_peso += ($item->weight * $item->quantity);
-
             $sum->comprimento += ($item->length * $item->quantity);
             $sum->largura += ($item->width * $item->quantity);
             $sum->altura += ($item->height * $item->quantity);
@@ -201,54 +199,60 @@ class ConfigShippingController extends Controller
             } else {
                 $sum->qtd_itens += $item->quantity;
             }
-
             if ($item->declare == 1) {
                 $sum->valor_declarado += $item->$price * $item->quantity;
             }
 
-            $box  = $this->selectBox($sum, $fator);
+        }
+        $box   = $this->selectBox($sum, $fator);
+        $count = (int) ceil($sum->total_cubagem /$box->total_cubagem);
 
-            if ($sum->total_cubagem > $box->total_cubagem) {
+        dd($count);
 
-                $sum->next_cubagem += ($item->length * $item->width * $item->height *  $item->quantity);
-                $sum->next_kg_cubicos += ($item->length * $item->width * $item->height)/$fator;
-                $sum->next_peso += ($item->weight * $item->quantity);
-                if ($item->kit == 1) {
-                    $sum->next_qtd_itens += ($item->quantity * $item->unit);
-                } else {
-                    $sum->next_qtd_itens += $item->quantity;
-                }
-                if ($item->declare == 1) {
-                    $sum->next_valor_declarado += $item->$price * $item->quantity;
-                }
+        if ($sum->total_cubagem > $box->total_cubagem) {
 
-                $sum->comprimento = $box->comprimento;
-                $sum->largura = $box->largura;
-                $sum->altura = $box->altura;
-                $sum->total_peso = $sum->total_peso; // em kilos
+            $sum->next_cubagem = $sum->total_cubagem - $box->total_cubagem;
+            $sum->next_kg_cubicos = $sum->kg_cubicos - $box->kg_cubicos;
+            $sum->altura = $box->altura;
+            $sum->largura = $box->largura;
+            $sum->comprimento = $box->comprimento;
+            $sum->total_cubagem = $box->total_cubagem;
+            $sum->kg_cubicos = $box->kg_cubicos;
+            $sum->raiz_cubica = round(pow($box->total_cubagem, (1 / 3)));
+            // Caso o volume seja menor ou igual ao box
+            if ($count == 1) {
+                $percent = (float) getPercent($box->total_cubagem, $sum->next_cubagem);
+                $sum->next_valor_declarado = (float) numFormat($this->nextPercent($sum->valor_declarado, $percent), 2);
+                $sum->next_qtd_itens = (int) $this->nextPercent($sum->qtd_itens, $percent);
+                $sum->next_peso = (float) numFormat($this->nextPercent($sum->peso, $percent),3);
+
+            } else {
+                $sum->next_valor_declarado =  $sum->valor_declarado / $count;
+                $sum->next_qtd_itens = $sum->qtd_itens / $count;
+                $sum->next_peso = $sum->peso / $count;
 
             }
+
+
+
+            $sum->qtd_itens = $sum->qtd_itens - $sum->next_qtd_itens;
+            $sum->valor_declarado = $sum->valor_declarado - $sum->next_valor_declarado;
+            $sum->peso =  $sum->peso - $sum->next_peso;
+
+        } else {
+            $sum->raiz_cubica = round(pow($sum->total_cubagem, (1 / 3)));
+            if ($sum->raiz_cubica < $sum->comprimento) {
+                $sum->comprimento = $sum->raiz_cubica;
+            } elseif ($sum->raiz_cubica < MIN_COMPRIMENTO) {
+                $sum->comprimento = MIN_COMPRIMENTO;
+            }
+            if ($sum->raiz_cubica < $sum->largura) {
+                $sum->largura = $sum->raiz_cubica;
+            } elseif ($sum->raiz_cubica < MIN_LARGURA) {
+                $sum->largura = MIN_LARGURA;
+            }
+            $sum->altura = round($sum->total_cubagem / ($sum->comprimento * $sum->largura)); // em centimetros
         }
-
-        $sum->total_cubagem = $sum->total_cubagem - $sum->next_cubagem;
-        $sum->kg_cubicos = $sum->kg_cubicos - $sum->next_kg_cubicos;
-        $sum->valor_declarado = $sum->valor_declarado - $sum->next_valor_declarado;
-        $sum->qtd_itens = $sum->qtd_itens - $sum->next_qtd_itens;
-        $sum->peso = $sum->peso - $sum->next_peso;
-
-        $sum->raiz_cubica += round(pow($sum->total_cubagem, (1 / 3)));
-        if ($sum->raiz_cubica < MIN_COMPRIMENTO) {
-            $sum->comprimento = MIN_COMPRIMENTO; // em centimetros
-        }
-
-        if ($sum->raiz_cubica < MIN_LARGURA) {
-            $sum->largura = MIN_LARGURA; // em centimetros
-        }
-
-        if ($sum->altura < MIN_ALTURA) {
-            $sum->altura = MIN_ALTURA; // em centimetros
-        }
-
         // Validação
         if ($sum->altura > MAX_ALTURA) {
             $sum->error = "Erro: Altura maior que  " . MAX_ALTURA . 'cm';
@@ -262,6 +266,7 @@ class ConfigShippingController extends Controller
             $sum->error = "Erro: Soma dos valores C+L+A maior que " . MAX_SOMA_CLA . 'cm';
         }
 
+
         return $sum;
     }
 
@@ -271,33 +276,29 @@ class ConfigShippingController extends Controller
      */
     private function divide($sum, $fator)
     {
-        $send[] = $this->sendBox($sum, $fator);
-
+        $send[] = $this->groupBox($sum, $fator);
         $box = $this->selectBox($sum, $fator);
         $sumTotal = $sum->total_cubagem;
         $boxTotal = $box->total_cubagem;
-        $boxKgc   = $box->kg_cubicos;
-        $sumKgc   = $sum->kg_cubicos;
-
+        $boxKgc = $box->kg_cubicos;
+        $sumKgc = $sum->kg_cubicos;
         $count = (int) ceil($sumTotal/$boxTotal);
-
-        for ($i = 1; $i <= $count; $i++) {
-
-            $next = $this->nextBox($sum, $fator);
-
-            //$send[] = $this->sendBox($sum, $fator);
+        if ($count >= 1) {
+            for ($i = 1; $i <= 3; $i++) {
+                $next = $this->nextBox($sum, $fator);
+                $send[] = $this->groupBox($next);
+            }
+            # SORT_REGULAR sinalizador para comparar os elementos como eles são.
+            //$next->send = array_unique($send, SORT_REGULAR);
+            $next->send = $send;
+            return $next;
+        } else {
+            return $sum;
         }
-
-        $sum->send = $send;
-
-        return $sum;
-
-
     }
 
-
     /**
-     * Modelo do json que retona
+     * Modelo do json para montar o box
      *
      * @return json
      */
@@ -319,13 +320,14 @@ class ConfigShippingController extends Controller
             'next_valor_declarado' => 0,
             'next_qtd_itens' => 0,
             'next_peso' => 0,
+            'remnant_cubagem' => 0,
+            'remnant_kg_cubicos' => 0,
             'send' => array(),
             'error' => null
         );
 
         return json_decode(json_encode($_sum_, false));
     }
-
 
     /**
      * Seleciona o tamanho do box
@@ -339,18 +341,13 @@ class ConfigShippingController extends Controller
      * @param $fator
      * @return json|bool
      */
-    public function selectBox($sum, $fator)
+    private function selectBox($sum, $fator)
     {
-
-        //dd($total_cubagem);
-
-        /** 201150  134100 92250
-         * $box1  = (60*42*30);#75600
-         * $box2  = (50*27*31);#41850
-         * $box3  = (43*20*28);#24080
+        /**
+         * $box1  = (60*42*30);# C=80640 K=13440
+         * $box2  = (50*27*31);# C=41850 K=6975
+         * $box3  = (43*20*28);# C=24080 K=4013.3
          */
-
-        # O padrão dos boxes esta no bd config_boxes máximo 3
         $total_cubagem = $sum->total_cubagem;
 
         $box1 = $this->boxsSize(1, $fator);
@@ -404,17 +401,23 @@ class ConfigShippingController extends Controller
         return json_decode(json_encode($_box_, false));
     }
 
-
+    /**
+     * Monta o proximo box
+     *
+     * @param $sum
+     * @param $fator
+     */
     private function nextBox($sum, $fator)
     {
         $next  = $this->patternSum();
-        $next->peso = $sum->next_peso;
-        $next->total_peso = $sum->next_peso;
+        $next->total_peso = $sum->total_peso;
         $next->raiz_cubica = $sum->raiz_cubica;
+        $next->peso = $sum->next_peso;
         $next->qtd_itens = $sum->next_qtd_itens;
         $next->kg_cubicos = $sum->next_kg_cubicos;
         $next->total_cubagem = $sum->next_cubagem;
         $next->valor_declarado = $sum->next_valor_declarado;
+
 
         $box = $this->selectBox($next, $fator);
 
@@ -422,15 +425,75 @@ class ConfigShippingController extends Controller
         $next->largura = $box->largura;
         $next->comprimento = $box->comprimento;
 
+        if ($next->total_cubagem > $box->total_cubagem) {
 
-        dd($next);
+            $next->next_cubagem = $next->total_cubagem - $box->total_cubagem;
+            $next->next_kg_cubicos = $next->kg_cubicos - $box->kg_cubicos;
 
+            $count = (int) ceil($next->next_cubagem /$box->total_cubagem);
+            // Caso o volume seja menor ou igual ao box
+            if ($count === 1) {
+                $percent = (float) getPercent($box->total_cubagem, $next->next_cubagem);
+
+                $next->next_valor_declarado = (float) numFormat($this->nextPercent($next->valor_declarado, $percent), 2);
+                $next->next_qtd_itens = (int) $this->nextPercent($next->qtd_itens, $percent);
+                $next->next_peso = (float) numFormat($this->nextPercent($next->peso, $percent),3);
+
+            } else {
+                $next->next_valor_declarado =  $next->valor_declarado / $count;
+                $next->next_qtd_itens = $next->valor_declarado / $count;
+                $next->next_peso = $next->valor_declarado / $count;
+            }
+
+        } else {
+            $next->raiz_cubica = round(pow($next->total_cubagem, (1 / 3)));
+
+            if ($next->raiz_cubica < $next->comprimento) {
+                $next->comprimento = $next->raiz_cubica;
+            } elseif ($next->raiz_cubica < MIN_COMPRIMENTO) {
+                $next->comprimento = MIN_COMPRIMENTO;
+            }
+
+            if ($next->raiz_cubica < $next->largura) {
+                $next->largura = $next->raiz_cubica;
+            } elseif ($next->raiz_cubica < MIN_LARGURA) {
+                $next->largura = MIN_LARGURA;
+            }
+
+            $next->valor_declarado = $sum->next_valor_declarado;
+            $next->peso = $sum->next_peso;
+            $next->qtd_itens = $sum->next_qtd_itens;
+
+            $next->altura = round($next->total_cubagem / ($next->comprimento * $next->largura)); // em centimetros
+        }
+        return $next;
     }
 
-
-
-    private function sendBox($sum, $fator)
+    /**
+     * Calcula o proximo valor do box
+     *
+     * @param $value
+     * @param $percent
+     * @return float|int
+     */
+    private function nextPercent($value, $percent)
     {
+        $total = $value-($percent*$value);
+        $result = ($value-$total)/100;
+        return $result;
+    }
+
+    /**
+     * Agrupa os boxes para ser enviado
+     *
+     * @param $sum
+     * @param $fator
+     * @return array
+     */
+    private function groupBox($sum)
+    {
+
+
         $send = [
             'comprimento' => $sum->comprimento,
             'largura' => $sum->largura,
@@ -443,6 +506,90 @@ class ConfigShippingController extends Controller
         ];
 
         return $send;
+    }
+
+    /**
+     * Reinderiza a view de retorno
+     *
+     * @param $selected
+     * @param $local
+     * @return array|string
+     */
+    private function renderFreight($selected, $local)
+    {
+
+        $states = $this->interState->getAll();
+        $configShipping = $this->interModel->getAll();
+
+        $configSite = $this->configSite->setId(1);
+        (Auth::user() ? $user_id = Auth::id() : $user_id = 0);
+        $session = md5($_SERVER['REMOTE_ADDR']);
+
+
+        if ($user_id != 0 && $configSite->order == 'wishlist') {
+            dd('Cart = Lista de desejo');
+        } else {
+            $cart = $this->interCart->getAll($session);
+        }
+
+        $values = $this->interCart->getTotal($cart);
+        $methods = $this->interModel->getAll();
+        foreach ($methods as $method) {
+            if ($method->id == $selected) {
+                $tax = $method->tax_unique;
+            }
+        }
+
+        $total['quantity'] = $values['quantity'];
+        $total['price_cash'] = $values['price_cash'];
+        $total['price_card'] = $values['price_card'];
+
+        return view("{$this->view}.calculator-1", compact(
+                'configShipping',
+                'selected',
+                'states',
+                'total',
+                'local',
+                'cart',
+                'tax')
+        )->render();
+
+    }
+
+    /**
+     * Mensagens dos resultados
+     *
+     * @param $freight
+     * @param null $error
+     * @return mixed
+     */
+    private function messages($freight, $error=null)
+    {
+        $_msg_ = array(
+            'valor' => 0,
+            'prazo' => 0,
+            'domicilio' => 'Não',
+            'error' => array()
+        );
+
+        $message = json_decode(json_encode($_msg_, false));
+
+        foreach ($freight['unit'] as $value) {
+            $array[] = $value->cServico;
+        }
+
+        $delivery = constLang('messages.shipping.delivery_domicile');
+        $days = constLang('days');
+        $yes  = $delivery.constLang('yes');
+        $not  = $delivery.constLang('not');
+
+        foreach ($array as $val) {
+            $message->valor += (float) str_replace (',', '.', $val['Valor']);
+            $message->prazo = $val['PrazoEntrega'].' '.$days;
+            $message->domicilio = ($val['EntregaDomiciliar'] == 'S' ? $yes : $not);
+        }
+
+        return $message;
     }
 
 }

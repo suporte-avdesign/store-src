@@ -78,18 +78,30 @@ if (! function_exists('setReal')) {
 }
 
 
-
 /**
- * Porcentagem
+ * Porcentagem: Retorna o valor da porcentagem entre dois valores
  *
  * @param  string $numero
  */
-if (! function_exists('setPercent')) {
-    function setPercent($value){
-        return number_format((float)$value,2,'.','.');
+if (! function_exists('getPercent')) {
+    function getPercent($max, $min){
+        $v1 = $max;
+        $v2 = $min;
+        $percent = (($min / $max) * 100);
+        return number_format((float)$percent,2,'.','.');
     }
 }
 
+/**
+ * Porcentagem: Retorna as duas casas decimais
+ *
+ * @param  string $numero
+ */
+if (! function_exists('numFormat')) {
+    function numFormat($v, $d){
+        return number_format((float)$v,$d,'.','.');
+    }
+}
 
 /**
  * Limitar o texto de uma string
