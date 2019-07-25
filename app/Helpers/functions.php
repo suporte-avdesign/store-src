@@ -4,6 +4,7 @@ use AVD\Interfaces\Web\ConfigKeywordInterface as Keyword;
 
 
 
+
 /**
  * returns the location (ipinfo\ipinfo\IPinfo)
  */
@@ -85,8 +86,6 @@ if (! function_exists('setReal')) {
  */
 if (! function_exists('getPercent')) {
     function getPercent($max, $min){
-        $v1 = $max;
-        $v2 = $min;
         $percent = (($min / $max) * 100);
         return number_format((float)$percent,2,'.','.');
     }
@@ -121,6 +120,15 @@ if (! function_exists('limitText')) {
         return substr($limit_str, 0, $last).'...';
     }
 }
+
+
+if (! function_exists('percent')) {
+    function percent($p, $t)
+    {
+        return ($p / 100) * $t;
+    }
+}
+
 
 
 /**
@@ -245,8 +253,32 @@ if (! function_exists('ary_unique')) {
         }
         return $temp_array;
     }
-
 }
+
+
+/**
+ * Return Json
+ */
+if ( !function_exists('arrayJson'))
+{
+    function arrayJson($array)
+    {
+       return json_decode(json_encode($array, false));
+    }
+}
+
+if ( !function_exists('formatCubic'))
+{
+    function formatCubic($value)
+    {
+        $n = number_format($value, 0, '.', '');
+        $d = substr($n, (strlen($n) - 3), strlen($n));
+        $i = substr($n, 0, -3);
+        return floatval("{$i}.{$d}");
+    }
+}
+
+
 
 
 

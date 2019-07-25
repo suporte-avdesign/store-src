@@ -29,7 +29,7 @@ class CartRepository implements CartInterface
      */
     public function getAll($session)
     {
-        return $this->model->where('session', $session)->get();
+        return $this->model->orderBy('id')->where('session', $session)->get();
     }
 
     /**
