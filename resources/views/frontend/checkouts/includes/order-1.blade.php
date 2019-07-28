@@ -81,9 +81,9 @@
 </table>
 <div class="woocommerce-additional-fields__field-wrapper">
     <p class="form-row notes" id="order_comments_field" data-priority="">
-        <label for="order_comments" class="">Order notes&nbsp;<span class="optional">(optional)</span></label>
+        <label for="order_comments" class="">{{constLang('note')}}&nbsp;<span class="optional">({{constLang('optional')}})</span></label>
         <span class="woocommerce-input-wrapper">
-                <textarea name="order_comments" class="input-text " id="order_comments" placeholder="Notes about your order, e.g. special notes for delivery." rows="2" cols="5"></textarea>
+                <textarea name="order_comments" class="input-text " id="order_comments" placeholder="{{constLang('messages.checkouts.note_order')}}" rows="2" cols="5"></textarea>
             </span>
     </p>
 </div>

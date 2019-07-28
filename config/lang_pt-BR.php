@@ -145,6 +145,7 @@ return [
     'orderby' => 'Ordenar por',
     'order_false' => 'Não foi possível alterar a ordem',
     'order_true' => 'A ordem foi alterada',
+    'optional' => 'Opcional',
     'other' => 'Outro',
     'page' => 'Página',
     'parcel' => 'Parcelado',
@@ -355,9 +356,7 @@ return [
             'info' => 'Se você já fez compras conosco, insira seus dados abaixo. Se você é um novo cliente, prossiga para o Faturamento de envio.',
             'is_account' => 'Já é cliente cliente?',
             'title' => 'Finalizar Pedido',
-
-
-
+            'note_order' => 'Caso seja necessário alguma alteração ou observação sobre seu pedido, descreva aqui.'
         ],
         'coupons' => [
             'apply' => 'Aplicar Cupom',
