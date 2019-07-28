@@ -351,12 +351,15 @@ return [
             'view' => 'Ver Carrinho'
         ],
         'checkouts' => [
-            'login_text' => 'Clique aqui para logar',
+            'detail_order' => 'Seu Pedido',
+            'detail_user' => 'Detalhes do faturamento',
             'error' => 'Erro ao processar o checkout. Por favor, tente novamente.',
             'info' => 'Se você já fez compras conosco, insira seus dados abaixo. Se você é um novo cliente, prossiga para o Faturamento de envio.',
+            'indicate_transport' => 'Quer indicar uma transportadora?',
             'is_account' => 'Já é cliente cliente?',
+            'login_text' => 'Clique aqui para logar',
+            'note_order' => 'Caso seja necessário alguma alteração ou observação sobre seu pedido, descreva aqui.',
             'title' => 'Finalizar Pedido',
-            'note_order' => 'Caso seja necessário alguma alteração ou observação sobre seu pedido, descreva aqui.'
         ],
         'coupons' => [
             'apply' => 'Aplicar Cupom',

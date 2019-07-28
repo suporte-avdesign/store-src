@@ -2,23 +2,22 @@
 
 namespace AVD\Http\Controllers\Web;
 
-use AVD\Rules\Web\UserActive;
-use Illuminate\Http\Request;
-
-
 use AVD\Http\Controllers\Controller;
 use AVD\Interfaces\Web\CartInterface as InterCart;
-
 use AVD\Interfaces\Web\UserInterface as InterUser;
 use AVD\Interfaces\Web\StateInterface as InterState;
 use AVD\Interfaces\Web\SectionInterface as InterSection;
+use AVD\Interfaces\Web\ConfigSiteInterface as ConfigSite;
 use AVD\Interfaces\Web\ConfigKeywordInterface as ConfigKeyword;
 use AVD\Interfaces\Web\AccountTypeInterface as InterAccountType;
+use AVD\Interfaces\Web\ConfigShippingInterface as ConfigShipping;
 use AVD\Interfaces\Web\ConfigProfileClientInterface as InterProfile;
 
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
+
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 
 class CheckoutController extends Controller
@@ -38,18 +37,22 @@ class CheckoutController extends Controller
         InterCart $interCart,
         InterUser $interUser,
         InterState $interState,
+        ConfigSite $configSite,
         InterSection $interSection,
         InterProfile $interProfile,
         ConfigKeyword $configKeyword,
+        ConfigShipping $configShipping,
         InterAccountType $interAccountType)
     {
 
         $this->interCart = $interCart;
         $this->interUser = $interUser;
         $this->interState = $interState;
+        $this->configSite = $configSite;
         $this->interSection = $interSection;
         $this->interProfile = $interProfile;
         $this->configKeyword = $configKeyword;
+        $this->configShipping = $configShipping;
         $this->interAccountType  = $interAccountType;
     }
     /**
@@ -65,7 +68,25 @@ class CheckoutController extends Controller
         $profiles       = $this->interProfile->getAll();
 
         $configKeyword  = $this->configKeyword->random();
+        $configShipping = $this->configShipping->getAll();
 
+        (Auth::user() ? $user_id = Auth::id() : $user_id = 0);
+        $session = md5($_SERVER['REMOTE_ADDR']);
+
+
+        $configSite = $this->configSite->setId(1);
+        if ($user_id != 0 && $configSite->order == 'wishlist'){
+            dd('Cart = Lista de desejo');
+        } else {
+            $cart = $this->interCart->getAll($session);
+
+        }
+
+        $total = $this->interCart->getTotal($cart);
+
+
+
+        # Identificar qual método
         $method = null;
         ($method == null ? $method = 'legacy_flat_rate' : $method = $method);
 
@@ -73,45 +94,116 @@ class CheckoutController extends Controller
 
         return view("{$this->view}.checkout-1", compact(
             'menu',
+            'cart',
+            'total',
             'types',
             'states',
             'method',
             'profiles',
-            'configKeyword')
+            'configKeyword',
+            'configShipping')
         );
     }
 
-    public function endpoint(Request $request)
+
+    public function method(Request $request)
     {
-        $ac = $request->input('ajax');
-        if ($ac == 'update_order_review') {
+        $selected = $request['shipping_method'][0];
+        if ($selected) {
 
-            $shipping_method = $request->input('shipping_method');
-            $method = $shipping_method[0];
+            $states = $this->interState->getAll();
+            $configShipping = $this->interModel->getAll();
 
-            ($method == null ? $method = 'legacy_flat_rate' : $method = $method);
+            $configSite = $this->configSite->setId(1);
+            (Auth::user() ? $user_id = Auth::id() : $user_id = 0);
+            $session = md5($_SERVER['REMOTE_ADDR']);
 
 
-            $order = view("{$this->view}.includes.method-1", compact('method'))->render();
-            $payment = view("{$this->view}.includes.payment-1")->render();
+            if ($user_id != 0 && $configSite->order == 'wishlist') {
+                dd('Cart = Lista de desejo');
+            } else {
+                $cart = $this->interCart->getAll($session);
+            }
 
-            $out = array(
-                "result" => "success",
-                "messages" => "",
-                "reload" => "false",
-                "fragments" => array(
-                    ".woocommerce-checkout-review-order-table" => $order,
-                    ".woocommerce-checkout-payment" => $payment
-                )
+            $values = $this->interCart->getTotal($cart);
+            $methods = $this->interModel->getAll();
+            foreach ($methods as $method) {
+                if ($method->id == $selected) {
+                    $tax = $method->tax_unique;
+                }
+            }
+
+            $total['quantity'] = $values['quantity'];
+            $total['price_cash'] = $values['price_cash'];
+            $total['price_card'] = $values['price_card'];
+
+            return view("{$this->view}.method-1", compact(
+                    'configShipping',
+                    'selected',
+                    'states',
+                    'total',
+                    'cart',
+                    'tax')
             );
-
-            return response()->json($out);
-
         }
 
 
+    }
+
+
+
+    /**
+     * Atualizar Valores do frete
+     */
+    public function review(Request $request)
+    {
+        $selected = $request['shipping_method'][0];
+        $configShipping = $this->configShipping->getAll();
+
+
+        $shipping_method = $request->input('shipping_method');
+        $method = $shipping_method[0];
+
+        ($method == null ? $method = 'legacy_flat_rate' : $method = $method);
+
+
+
+
+        (Auth::user() ? $user_id = Auth::id() : $user_id = 0);
+        $session = md5($_SERVER['REMOTE_ADDR']);
+
+
+        $configSite = $this->configSite->setId(1);
+        if ($user_id != 0 && $configSite->order == 'wishlist'){
+            dd('Cart = Lista de desejo');
+        } else {
+            $cart = $this->interCart->getAll($session);
+
+        }
+
+        $order = view("{$this->view}.includes.method-1", compact(
+            'cart',
+            'total',
+            'method',
+            'selected',
+            'configShipping'))->render();
+        $payment = view("{$this->view}.includes.payment-1")->render();
+
+        $out = array(
+            "result" => "success",
+            "messages" => "",
+            "reload" => "false",
+            "fragments" => array(
+                ".woocommerce-checkout-review-order-table" => $order,
+                ".woocommerce-checkout-payment" => $payment
+            )
+        );
+
+        return response()->json($out);
 
     }
+
+
 
     public function login(Request $request)
     {
@@ -169,7 +261,6 @@ class CheckoutController extends Controller
 
     }
 
-
     /**
      * Obrigatório para limitar as tentativas de accesso..
      *
@@ -179,6 +270,10 @@ class CheckoutController extends Controller
     {
         return 'email';
     }
+
+
+
+
 
     public function store(Request $request)
     {
@@ -246,37 +341,37 @@ class CheckoutController extends Controller
         ));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function endpoint(Request $request)
     {
-        //
+        $ac = $request->input('ajax');
+        if ($ac == 'update_order_review') {
+
+
+            $shipping_method = $request->input('shipping_method');
+            $method = $shipping_method[0];
+
+            ($method == null ? $method = 'legacy_flat_rate' : $method = $method);
+
+
+            $order = view("{$this->view}.includes.method-1", compact('method'))->render();
+            $payment = view("{$this->view}.includes.payment-1")->render();
+
+            $out = array(
+                "result" => "success",
+                "messages" => "",
+                "reload" => "false",
+                "fragments" => array(
+                    ".woocommerce-checkout-review-order-table" => $order,
+                    ".woocommerce-checkout-payment" => $payment
+                )
+            );
+
+            return response()->json($out);
+
+        }
+
+
+
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

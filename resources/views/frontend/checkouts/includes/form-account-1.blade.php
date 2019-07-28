@@ -1,7 +1,35 @@
 <!-- FORM FATURED -->
 <div class="woocommerce-billing-fields">
-    <h3>Detalhes do faturamento</h3>
+    <h3>{{constLang('messages.checkouts.detail_user')}}</h3>
 
+    <div class="woocommerce-additional-fields__field-wrapper">
+        <p class="form-row notes" id="order_comments_field" data-priority="">
+            <label for="order_comments" class="">{{constLang('note')}}&nbsp;<span class="optional">({{constLang('optional')}})</span></label>
+            <span class="woocommerce-input-wrapper">
+            <textarea name="order_comments" class="input-text " id="order_comments" placeholder="{{constLang('messages.checkouts.note_order')}}" rows="2" cols="5"></textarea>
+        </span>
+        </p>
+        <p class="form-row form-row-wide create-account woocommerce-validated">
+            <label class="checkbox">
+                <input class="input-checkbox" id="indicate_transport" type="checkbox" name="indicate_transport" value="1">
+                <span>{{constLang('messages.checkouts.indicate_transport')}}</span>
+            </label>
+        </p>
+        <div class="indicate_transport" style="display:none">
+            <p class="form-row form-row-first validate-required">
+                <label for="transport_name" class="">{{constLang('name')}} <span class="required">*</span></label>
+                <span class="woocommerce-input-wrapper">
+                <input type="text" class="input-text" id="transport_name" name="transport[name]" value=""/>
+            </span>
+            </p>
+            <p class="form-row form-row-last validate-required">
+                <label for="transport_phone" class="">{{constLang('phone')}}&nbsp;<span class="required">*</span></label>
+                <span class="woocommerce-input-wrapper">
+                <input type="text" class="input-text" id="transport_phone" name="transport[phone]" value="" />
+            </span>
+            </p>
+        </div>
+    </div>
     <p class="form-row form-row-wide">
         @foreach($profiles as $profile)
             @if($loop->first)
@@ -26,26 +54,26 @@
     </p>
     <div id="person_legal" style="display:block">
         <p class="form-row form-row-first validate-required">
-            <label for="first_name_1" class="">{{constLang('person_legal.first_name')}} <span class="required">*</span></label></label>
+            <label for="first_name_1" class="">{{constLang('person_legal.first_name')}} <span class="required">*</span></label>
             <span class="woocommerce-input-wrapper">
                 <input type="text" class="input-text" id="first_name_1" name="register[first_name_1]" placeholder=""  value=""/>
             </span>
         </p>
         <p class="form-row form-row-last validate-required">
-            <label for="last_name_1">{{constLang('person_legal.last_name')}}&nbsp;<span class="required">*</span></label></label>
+            <label for="last_name_1">{{constLang('person_legal.last_name')}}&nbsp;<span class="required">*</span></label>
             <span class="woocommerce-input-wrapper">
                 <input type="text" class="input-text" id="last_name_1" name="register[last_name_1]" value="" />
             </span>
         </p>
 
         <p class="form-row form-row-first validate-required">
-            <label for="document1_1">{{constLang('person_legal.document1')}} <span class="required">*</span></label></label>
+            <label for="document1_1">{{constLang('person_legal.document1')}} <span class="required">*</span></label>
             <span class="woocommerce-input-wrapper">
                 <input type="text" class="input-text" id="reg_document1_1" name="register[document1_1]" placeholder=""  value=""/>
             </span>
         </p>
         <p class="form-row form-row-last validate-required">
-            <label for="document2_1">{{constLang('person_legal.document2')}}&nbsp;<span class="required">*</span></label></label>
+            <label for="document2_1">{{constLang('person_legal.document2')}}&nbsp;<span class="required">*</span></label>
             <span class="woocommerce-input-wrapper">
                 <input type="text" class="input-text" id="document2_1" name="register[document2_1]" value="" />
             </span>
@@ -53,26 +81,26 @@
     </div>
     <div id="person_physical" style="display: none">
         <p class="form-row form-row-first validate-required">
-            <label for="first_name_2" class="">{{constLang('person_physical.first_name')}} <span class="required">*</span></label></label>
+            <label for="first_name_2" class="">{{constLang('person_physical.first_name')}} <span class="required">*</span></label>
             <span class="woocommerce-input-wrapper">
                 <input type="text" class="input-text" id="first_name_2" name="register[first_name_2]" placeholder=""  value=""/>
             </span>
         </p>
         <p class="form-row form-row-last validate-required">
-            <label for="last_name_2">{{constLang('person_physical.last_name')}}&nbsp;<span class="required">*</span></label></label>
+            <label for="last_name_2">{{constLang('person_physical.last_name')}}&nbsp;<span class="required">*</span></label>
             <span class="woocommerce-input-wrapper">
                 <input type="text" class="input-text" id="last_name_2" name="register[last_name_2]" value="" />
             </span>
         </p>
 
         <p class="form-row form-row-first validate-required">
-            <label for="document1_2">{{constLang('person_physical.document1')}} <span class="required">*</span></label></label>
+            <label for="document1_2">{{constLang('person_physical.document1')}} <span class="required">*</span></label>
             <span class="woocommerce-input-wrapper">
                 <input type="text" class="input-text" id="reg_document1_2" name="register[document1_2]" placeholder=""  value=""/>
             </span>
         </p>
         <p class="form-row form-row-last validate-required">
-            <label for="document2_2">{{constLang('person_physical.document2')}}&nbsp;<span class="required">*</span></label></label>
+            <label for="document2_2">{{constLang('person_physical.document2')}}&nbsp;<span class="required">*</span></label>
             <span class="woocommerce-input-wrapper">
                 <input type="text" class="input-text" id="document2_2" name="register[document2_2]" value="" />
             </span>

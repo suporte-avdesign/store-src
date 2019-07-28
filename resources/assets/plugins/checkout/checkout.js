@@ -58,6 +58,10 @@ jQuery( function( $ ) {
             if ( wc_checkout_params.option_guest_checkout === 'yes' ) {
                 $( 'input#createaccount' ).change( this.toggle_create_account ).change();
             }
+
+            if ( wc_checkout_params.option_indicate_transport === 'yes' ) {
+                $( 'input#indicate_transport' ).change( this.toggle_indicate_transport ).change();
+            }
         },
         init_payment_methods: function() {
             var $payment_methods = $( '.woocommerce-checkout' ).find( 'input[name="payment_method"]' );
@@ -128,6 +132,16 @@ jQuery( function( $ ) {
                 // Ensure password is not pre-populated.
                 $( '#account_password' ).val( '' ).change();
                 $( 'div.create-account' ).slideDown();
+            }
+        },
+        toggle_indicate_transport: function() {
+            $( 'div.indicate_transport' ).hide();
+
+            if ( $( this ).is( ':checked' ) ) {
+                // Ensure password is not pre-populated.
+                $( '#transport_nome' ).val( '' ).change();
+                $( '#transport_phone' ).val( '' ).change();
+                $( 'div.indicate_transport' ).slideDown();
             }
         },
         init_checkout: function() {
@@ -301,7 +315,7 @@ jQuery( function( $ ) {
                 s_address       : s_address,
                 s_address_2     : s_address_2,
                 has_full_address: has_full_address,
-                _token          : wc_checkout_params.csrf_token,
+                _token:         wc_checkout_params.csrf_token,
                 post_data       : $( 'form.checkout' ).serialize()
             };
 
@@ -325,7 +339,7 @@ jQuery( function( $ ) {
 
             wc_checkout_form.xhr = $.ajax({
                 type:		'POST',
-                url:		wc_checkout_params.wc_ajax_url.toString().replace( '%%endpoint%%', 'update_order_review' ),
+                url:		wc_checkout_params.ajax_url_review.toString().replace( '%%endpoint%%', 'update_order_review' ),
                 data:		data,
                 success:	function( data ) {
                     // Reload the page if requested
@@ -568,7 +582,7 @@ jQuery( function( $ ) {
 
             $.ajax({
                 type:		'POST',
-                url:		wc_checkout_params.wc_ajax_coupon.toString().replace( '%%endpoint%%', 'apply_coupon' ),
+                url:		wc_checkout_params.ajax_coupon.toString().replace( '%%endpoint%%', 'apply_coupon' ),
                 data:		data,
                 success:	function( code ) {
                     $( '.woocommerce-error, .woocommerce-message' ).remove();
@@ -608,7 +622,7 @@ jQuery( function( $ ) {
 
             $.ajax({
                 type:    'POST',
-                url:     wc_checkout_params.wc_ajax_coupon.toString().replace( '%%endpoint%%', 'remove_coupon' ),
+                url:     wc_checkout_params.ajax_coupon.toString().replace( '%%endpoint%%', 'remove_coupon' ),
                 data:    data,
                 success: function( code ) {
                     $( '.woocommerce-error, .woocommerce-message' ).remove();

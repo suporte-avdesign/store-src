@@ -1,89 +1,96 @@
+
 <table class="shop_table woocommerce-checkout-review-order-table">
     <thead>
     <tr>
-        <th class="product-name">Produto</th>
-        <th class="product-total">Total</th>
+        <th class="product-name">{{constLang('product')}}</th>
+        <th class="product-total">{{constLang('total')}}</th>
     </tr>
     </thead>
     <tbody>
-    <tr class="cart_item">
-        <td class="product-name">Produto 1&nbsp;<strong class="product-quantity">&times; 2</strong>													</td>
-        <td class="product-total">
-            <span class="woocommerce-Price-amount amount">
-                <span class="woocommerce-Price-currencySymbol">R$ </span>18,00
-            </span>
-        </td>
-    </tr>
-    <tr class="cart_item">
-        <td class="product-name">Produto 4&nbsp;<strong class="product-quantity">&times; 1</strong></td>
-        <td class="product-total">
-            <span class="woocommerce-Price-amount amount">
-                <span class="woocommerce-Price-currencySymbol">R$ </span>22,00
-            </span>
-        </td>
-    </tr>
+    @php
+        $quantity   = 0;
+        $total_cash = 0;
+        $total_card = 0;
+    @endphp
+    @foreach($cart as $item)
+        @php
+            $quantity   += $item->quantity;
+            $total_cash += $item->price_cash * $item->quantity;
+            $total_card += $item->price_card * $item->quantity
+        @endphp
+        <tr class="cart_item">
+            @if($item->kit == 1)
+                <td class="product-name">{{$item->name}}&nbsp;<strong class="product-quantity">&times; {{$item->quantity}} {{$item->kit_name}}</strong></td>
+            @else
+                <td class="product-name">{{$item->name}}&nbsp;<strong class="product-quantity">&times; {{$item->quantity}} {{$item->measure}}</strong></td>
+            @endif
+
+            <td class="product-total">
+                <span class="woocommerce-Price-amount amount">
+                    <span class="woocommerce-Price-currencySymbol">{{constLang('currency')}} </span>{{setReal($item->price_cash * $item->quantity)}}
+                </span>
+            </td>
+        </tr>
+    @endforeach
     </tbody>
     <tfoot>
 
     <tr class="cart-subtotal">
-        <th>Subtotal</th>
+        <th>{{constLang('subtotal')}} {{constLang('cash')}}</th>
         <td>
             <span class="woocommerce-Price-amount amount">
-                <span class="woocommerce-Price-currencySymbol">R$ </span>40,00
+                <span class="woocommerce-Price-currencySymbol">{{constLang('currency')}} </span>{{setReal($total_cash)}}
+            </span>
+        </td>
+    </tr>
+    <tr class="cart-subtotal">
+        <th>{{constLang('subtotal')}} {{constLang('card')}}</th>
+        <td>
+            <span class="woocommerce-Price-amount amount">
+                <span class="woocommerce-Price-currencySymbol">{{constLang('currency')}} </span>{{setReal($total_card)}}
             </span>
         </td>
     </tr>
 
     <tr class="woocommerce-shipping-totals shipping">
-        <th>Frete</th>
-        <td data-title="Frete">
+        <th>{{constLang('message.shipping.freight')}}</th>
+        <td data-title="{{constLang('message.shipping.freight')}}">
             <ul id="shipping_method" class="woocommerce-shipping-methods">
-                <li>
-                    <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_legacy_flat_rate" value="legacy_flat_rate" class="shipping_method"  checked='checked' />
-                    <label for="shipping_method_0_legacy_flat_rate">Frete Fixo:
-                        <span class="woocommerce-Price-amount amount">
-                            <span class="woocommerce-Price-currencySymbol">R$ </span>23,00
-                        </span>
-                    </label>
-                </li>
-                <li>
-                    <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_legacy_free_shipping" value="legacy_free_shipping" class="shipping_method"/>
-                    <label for="shipping_method_0_legacy_free_shipping">Retirar na Loja:
-                        <span class="woocommerce-Price-amount amount">
-                            <span class="woocommerce-Price-currencySymbol">R$ </span>0.00
-                        </span>
-                    </label>
-                </li>
-                <li>
-                    <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_legacy_local_delivery" value="legacy_local_delivery" class="shipping_method"/>
-                    <label for="shipping_method_0_legacy_local_delivery">Transportadora:
-                        <span class="woocommerce-Price-amount amount">
-                            <span class="woocommerce-Price-currencySymbol">R$ </span>28,0000
-                        </span>
-                    </label>
-                </li>
+                @foreach($configShipping as $method)
+                    <li>
+                        <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_{{$method->id}}" value="{{$method->id}}" class="shipping_method"/>
+                        @if($method->tax_unique != '0.00')
+                            <label for="shipping_method_{{$method->id}}">{{$method->name}}</label>
+                            <p>{{$method->description}}</p>
+                        @elseif($method->tax == 0)
+                            <label for="shipping_method_{{$method->id}}">{{$method->name}}</label>
+                        @else
+                            <label for="shipping_method_{{$method->id}}">{{$method->name}} </label>
+                        @endif
+                    </li>
+                @endforeach
             </ul>
         </td>
     </tr>
-
     <tr class="order-total">
-        <th>Total</th>
+        <th>{{constLang('cash')}}</th>
         <td>
             <strong>
                 <span class="woocommerce-Price-amount amount">
-                    <span class="woocommerce-Price-currencySymbol">R$ </span>63,00
+                    <span class="woocommerce-Price-currencySymbol">{{constLang('currency')}} </span>{{setReal($total_cash)}}
                 </span>
             </strong>
         </td>
     </tr>
-
+    <tr class="order-total">
+        <th>{{constLang('card')}}</th>
+        <td>
+            <strong>
+                <span class="woocommerce-Price-amount amount">
+                    <span class="woocommerce-Price-currencySymbol">{{constLang('currency')}} </span>{{setReal($total_card)}}
+                </span>
+            </strong>
+        </td>
+    </tr>
     </tfoot>
 </table>
-<div class="woocommerce-additional-fields__field-wrapper">
-    <p class="form-row notes" id="order_comments_field" data-priority="">
-        <label for="order_comments" class="">{{constLang('note')}}&nbsp;<span class="optional">({{constLang('optional')}})</span></label>
-        <span class="woocommerce-input-wrapper">
-                <textarea name="order_comments" class="input-text " id="order_comments" placeholder="{{constLang('messages.checkouts.note_order')}}" rows="2" cols="5"></textarea>
-            </span>
-    </p>
-</div>

@@ -9,13 +9,13 @@
 
                     <li>
                         <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_{{$method->id}}" value="{{$method->id}}" class="shipping_method" @if($loop->first) checked @endif/>
-                        @if($method->tax_unique != '0.00')
-                            <label for="shipping_method_{{$method->id}}">{{$method->name}}</span> {{constLang('currency')}} {{setReal($method->tax_unique)}}</label>
+                        @if($method->tax_unique != '0.00'){{constLang('currency')}} {{setReal($method->tax_unique)}}
+                            <label for="shipping_method_{{$method->id}}">{{$method->name}} </label>
                             <p>{{$method->description}}</p>
                         @elseif($method->tax == 0)
-                            <label for="shipping_method_{{$method->id}}">{{$method->name}}</span> {{constLang('currency')}} 0,00</label>
+                            <label for="shipping_method_{{$method->id}}">{{$method->name}} {{constLang('currency')}} 0,00</label>
                         @else
-                            <label for="shipping_method_{{$method->id}}">{{$method->name}}</span> </label>
+                            <label for="shipping_method_{{$method->id}}">{{$method->name}} </label>
                         @endif
                     </li>
                 @endforeach

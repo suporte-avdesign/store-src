@@ -35,7 +35,6 @@
                 <article id="post-8" class="post-8 page type-page status-publish hentry">
                     <div class="entry-content">
                         <div class="woocommerce">
-
                             @if ($errors->any())
                                 <div class="woocommerce-notices-wrapper">
                                     <ul class="woocommerce-error" role="alert">
@@ -55,18 +54,14 @@
                                     </ul>
                                 </div>
                             @enderror
-
                             <!-- FORM LOGIN -->
                             @include('frontend.checkouts.includes.form-login-1')
                             <!-- FORM COUPON -->
                             @include('frontend.coupons.coupon-checkout-1')
 
-
-
                             <div class="row">
                                 <form name="checkout" method="post" class="checkout woocommerce-checkout" action="{{route('checkout')}}" enctype="multipart/form-data">
                                     @csrf
-
                                     <div class="col-sm-6">
                                         <div class="row" id="customer_details">
                                             <div class="col-sm-12">
@@ -78,7 +73,7 @@
                                     <!--ORDER -->
                                     <div class="col-sm-6">
                                         <div class="checkout-order-review">
-                                            <h3 id="order_review_heading">SEU PEDIDO</h3>
+                                            <h3 id="order_review_heading">{{constLang('messages.checkouts.detail_order')}}</h3>
                                             <div id="order_review" class="woocommerce-checkout-review-order">
                                                 <!-- METHOD -->
                                                 @include('frontend.checkouts.includes.order-1')
@@ -130,11 +125,13 @@
     var wc_checkout_params = {!! json_encode([
         "ajax_url" => route('checkout')."/?ajax=teste",
         "wc_ajax_url" => route('checkout.endpoint')."/?ajax=%%endpoint%%",
-        "wc_ajax_coupon" => route('coupon.store')."/?ajax=%%endpoint%%",
+        "ajax_url_review" => route('checkout.review'),
+        "ajax_coupon" => route('coupon.store')."/?ajax=%%endpoint%%",
         "update_order_review_nonce" => random_string(),
         "apply_coupon_nonce" => random_string(),
         "remove_coupon_nonce" => random_string(),
         "option_guest_checkout" => "yes",
+        "option_indicate_transport" => "yes",
         "checkout_url" => route('checkout.store'),
         "is_checkout" => "1",
         "debug_mode" => "",
@@ -147,6 +144,7 @@
 <script type="text/javascript" src="{{asset('themes/js/functions.min.js')}}"></script>
 <script type='text/javascript'>
     jQuery( document ).ready(function($) {
+        $("#transport_phone").mask('(99)9999-9999?9');
         $("#reg_phone").mask('(99)9999-9999?9');
         $("#reg_cell").mask('(99)99999-9999');
         $("#reg_date").mask('99/99/9999');
