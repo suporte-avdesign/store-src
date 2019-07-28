@@ -49,7 +49,7 @@ mix.scripts('resources/assets/themes/js/theme-org.js', 'public/themes/js/theme.m
 //footer
 mix.scripts('resources/assets/includes/contact-form-7/js/scripts.js', 'public/includes/contact-form-7/js/scripts.js');
 mix.scripts('resources/assets/plugins/js-cookie/js.cookie.min.js', 'public/plugins/js-cookie/js.cookie.min.js');
-mix.scripts('resources/assets/plugins/frontend/avdesign.min.js', 'public/plugins/frontend/avdesign.min.js');
+mix.scripts('resources/assets/plugins/frontend/avdesign', 'public/plugins/frontend/avdesign.min.js');
 mix.scripts('resources/assets/plugins/cart/js/cart-fragments.min.js', 'public/plugins/cart/js/cart-fragments.min.js');
 mix.scripts('resources/assets/plugins/yith-wishlist/js/jquery.selectBox.min.js', 'public/plugins/yith-wishlist/js/jquery.selectBox.min.js');
 mix.scripts('resources/assets/plugins/yith-wishlist/js/jquery.yith-wcwl.js', 'public/plugins/yith-wishlist/js/jquery.yith-wcwl.js');
@@ -73,6 +73,10 @@ mix.scripts('resources/assets/plugins/address/country-select.js', 'public/plugin
 mix.scripts('resources/assets/plugins/address/address-i18n.js', 'public/plugins/address/address-i18n.min.js');
 mix.scripts('resources/assets/plugins/cart/js/cart.js', 'public/plugins/cart/js/cart.js');
 mix.scripts('resources/assets/plugins/select2/js/select2.full.js', 'public/plugins/select2/js/select2.full.min.js');
+
+//Checkout footer
+mix.scripts('resources/assets/plugins/checkout/checkout.js', 'public/plugins/checkout/checkout.min.js');
+
 
 //Login head
 mix.scripts('resources/assets/includes/zxcvbn/js/zxcvbn-async.js', 'public/includes/zxcvbn/js/zxcvbn-async.min.js');

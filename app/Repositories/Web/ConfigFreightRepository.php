@@ -38,9 +38,8 @@ class ConfigFreightRepository implements ConfigFreightInterface
         return $this->model->find($id);
     }
 
-    public function calculateSedex($postcode, $submit)
+    public function pac($postcode, $submit)
     {
-
         $frete = new PrecoPrazo();
         $frete->setCodigoServico(Data::PAC)
             ->setCodigoEmpresa(env('CORREIO_CODIGO_EMPRESA')) # opcional
@@ -71,10 +70,8 @@ class ConfigFreightRepository implements ConfigFreightInterface
         }
     }
 
-    public function calculatePac($postcode, $submit)
+    public function sedex($postcode, $submit)
     {
-
-
         $frete = new PrecoPrazo();
         $frete->setCodigoServico(Data::PAC)
             ->setCodigoEmpresa(env('CORREIO_CODIGO_EMPRESA')) # opcional
@@ -104,5 +101,6 @@ class ConfigFreightRepository implements ConfigFreightInterface
             ];
         }
     }
+
 
 }

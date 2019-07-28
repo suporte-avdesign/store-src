@@ -7,6 +7,8 @@
         <p>{{constLang('messages.login.attempts_limit')}}</p>
     @elseif($message == 'error_freight')
         <p>{{$error}}</p>
+    @elseif($message == 'apply_coupon')
+        <p>{{$error}}</p>
     @endif
 
 </div>

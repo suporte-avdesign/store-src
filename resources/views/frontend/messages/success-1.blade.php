@@ -7,5 +7,10 @@
     @elseif($message == 'success_login')
         <p>{{constLang('messages.login.success')}}  </p>
 
+    @elseif($message == 'response_freight')
+        <p>{{$note}}</p>
+        <p>{{$value}}</p>
+        <p>{{$days}}</p>
+        <p>{{$delivery}}</p>
     @endif
 </div>

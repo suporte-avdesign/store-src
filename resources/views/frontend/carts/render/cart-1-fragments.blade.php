@@ -31,7 +31,7 @@
         </p>
         <p class="woocommerce-mini-cart__buttons buttons">
             <a href="{{route('cart')}}" class="button btn-cart wc-forward">{{constLang('cart')}}</a>
-            <a href="{{route('checkout')}}" class="button checkout wc-forward">{{constLang('messages.checkouts.checkout')}}</a>
+            <a href="{{route('checkout')}}" class="button checkout wc-forward">{{constLang('messages.cart.btn_checkout_mini_cart')}}</a>
         </p>
     </div>
 

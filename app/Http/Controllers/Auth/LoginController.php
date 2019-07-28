@@ -120,7 +120,7 @@ class LoginController extends Controller
                                 $ip = $_SERVER['REMOTE_ADDR'];
                                 $access = [
                                     "visits" => $visits,
-                                    "last_login	" => date('H:i:s'),
+                                    "last_login	" => date('Y-m-d H:i:s'),
                                     "ip" => $ip
                                 ];
                                 $this->interModel->update($access, $exist->id);
@@ -153,6 +153,9 @@ class LoginController extends Controller
             }
         }
     }
+
+
+
 
 
     /**

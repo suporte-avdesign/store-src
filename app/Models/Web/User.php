@@ -39,6 +39,7 @@ class User extends Authenticatable
     ];
 
 
+
     /**
      *
      * @param array $attributes

@@ -134,10 +134,20 @@ Route::delete('compare/{page}/{id}', 'Web\CompareController@destroy');
 |--------------------------------------------------------------------------
 */
 Route::get('checkout', 'Web\CheckoutController@index')->name('checkout');
-Route::post('checkout', 'Web\CheckoutController@login')->name('checkout.login');
-Route::post('checkout-endpoint', 'Web\CheckoutController@endpoint')->name('checkout.endpoint');
+Route::post('checkout', 'Web\CheckoutController@login')->name('checkout.login')->middleware("throttle:5,1");;
+
+
+
+Route::any('checkout-endpoint', 'Web\CheckoutController@endpoint')->name('checkout.endpoint');
 Route::post('checkout-store', 'Web\CheckoutController@store')->name('checkout.store');
 Route::get('checkout/{order}/{id}', 'Web\CheckoutController@show')->name('checkout.received');
+
+/*
+|--------------------------------------------------------------------------
+| Routes Coupon
+|--------------------------------------------------------------------------
+*/
+Route::any('coupon/store', 'Web\CouponController@store')->name('coupon.store');
 
 
 /*
@@ -167,6 +177,7 @@ Route::post('contato', 'Web\ContactController@store')->name('contact.store');
 
 Route::get('login','Auth\LoginController@showLoginForm')->name('login');
 Route::post('login','Auth\LoginController@pageLogin')->name('login')->middleware("throttle:5,1");
+
 
 /*
 |--------------------------------------------------------------------------

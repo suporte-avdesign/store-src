@@ -71,6 +71,7 @@
 
                                                 <p class="form-row">
                                                     <input type="hidden" name="form" value="page">
+                                                    <input type="hidden" name="page[redirect]" value="{{route('account')}}">
                                                     <button type="button" id="form_login-submit" class="button woocommerce-Button" onclick="postFormJson('form_login')">{{constLang('login')}}</button>
                                                 </p>
 
@@ -83,7 +84,7 @@
                                                 </div>
 
 
-                                            <!--
+                                                <!--
                                                     <span class="social-login-title">{{constLang('messages.login.social_login_title')}}</span>
                                                     <div class="basel-social-login">
                                                         <div class="social-login-btn">
@@ -93,7 +94,7 @@
                                                             <a href="{{route('social.auth')}}/?social_auth=google" class="btn login-goo-link">Google</a>
                                                         </div>
                                                     </div>
-                                                  -->
+                                                 -->
 
                                             </form>
                                         </div>

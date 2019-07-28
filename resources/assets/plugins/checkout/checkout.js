@@ -328,7 +328,6 @@ jQuery( function( $ ) {
                 url:		wc_checkout_params.wc_ajax_url.toString().replace( '%%endpoint%%', 'update_order_review' ),
                 data:		data,
                 success:	function( data ) {
-
                     // Reload the page if requested
                     if ( true === data.reload ) {
                         window.location.reload();
@@ -569,7 +568,7 @@ jQuery( function( $ ) {
 
             $.ajax({
                 type:		'POST',
-                url:		wc_checkout_params.wc_ajax_url.toString().replace( '%%endpoint%%', 'apply_coupon' ),
+                url:		wc_checkout_params.wc_ajax_coupon.toString().replace( '%%endpoint%%', 'apply_coupon' ),
                 data:		data,
                 success:	function( code ) {
                     $( '.woocommerce-error, .woocommerce-message' ).remove();
@@ -603,12 +602,13 @@ jQuery( function( $ ) {
 
             var data = {
                 security: wc_checkout_params.remove_coupon_nonce,
-                coupon:   coupon
+                coupon:   coupon,
+                _token:   wc_checkout_params.csrf_token
             };
 
             $.ajax({
                 type:    'POST',
-                url:     wc_checkout_params.wc_ajax_url.toString().replace( '%%endpoint%%', 'remove_coupon' ),
+                url:     wc_checkout_params.wc_ajax_coupon.toString().replace( '%%endpoint%%', 'remove_coupon' ),
                 data:    data,
                 success: function( code ) {
                     $( '.woocommerce-error, .woocommerce-message' ).remove();

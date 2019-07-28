@@ -50,6 +50,7 @@ return [
     'active_false' => 'Inativo',
     'add' => 'Adicionar',
     'added' => 'Adicionou',
+    'address' => 'Endereço',
     'all' => 'Todos',
     'alert' => [
         'cover_new' => 'O sistema criou uma nova imagem capa.',
@@ -77,6 +78,7 @@ return [
     'colors' => 'Cores',
     'comment' => 'Comentário',
     'compare' => 'Compare',
+    'complement' => 'Complemento',
     'cost' => 'Custo',
     'cover' => 'capa',
     'created' => 'Criado',
@@ -93,6 +95,7 @@ return [
     'description_painel' => 'Painel Administrativo',
     'detail' => 'Detalhe',
     'details_view' => 'Ver Detalhes',
+    'district' => 'Bairro',
     'edit' => 'Editar',
     'email' => 'Email',
     'entry' => 'Entrada',
@@ -134,6 +137,7 @@ return [
     'new' => 'Novo',
     'not' => 'Não',
     'note' => 'Observação',
+    'number' => 'Número',
     'of' => 'de',
     'offer' => 'Oferta',
     'on_offer' => 'Em Oferta',
@@ -333,6 +337,8 @@ return [
             'btn_zoom' => 'Clique para Ampliar',
         ],
         'cart' => [
+            'btn_checkout_cart' => 'Finalizar Pedido',
+            'btn_checkout_mini_cart' => 'Finalizar',
             'empty' => 'Seu carrinho está vazio.',
             'empty_text1' => 'Antes de prosseguir para o checkout, você deve adicionar alguns produtos ao seu carrinho de compras.',
             'empty_text2' => 'Você encontrará muitos produtos interessantes em nossa página "Loja".',
@@ -344,25 +350,44 @@ return [
             'view' => 'Ver Carrinho'
         ],
         'checkouts' => [
-            'btn_checkout' => 'Finalizar Pedido',
-            'checkout' => 'Finalizar',
+            'login_text' => 'Clique aqui para logar',
+            'error' => 'Erro ao processar o checkout. Por favor, tente novamente.',
+            'info' => 'Se você já fez compras conosco, insira seus dados abaixo. Se você é um novo cliente, prossiga para o Faturamento de envio.',
+            'is_account' => 'Já é cliente cliente?',
+            'title' => 'Finalizar Pedido',
+
+
 
         ],
         'coupons' => [
-            'coupon' => 'Cupom',
             'apply' => 'Aplicar Cupom',
             'code' => 'Código do Cupom',
+            'coupon' => 'Cupom',
             'discount' => 'Cupom de desconto',
+            'info' => 'Se você tiver um código de cupom, aplique-o abaixo.',
+            'question' => 'Tem um cupom?',
+            'showcoupon' => 'Clique aqui para inserir seu código',
+            'validate' => 'Por favor insira um código de cupom válido.',
         ],
         'login' => [
+            'attempts_limit' => 'Você ultrapassou o limite de tentativas de acesso a sua conta. Sua conta está bloqueada nos próximos 60 segundos',
+            'pass_unknown' => 'Força da senha desconhecida',
+            'pass_short' => 'Muito fraca',
+            'pass_bad' => 'Fraca',
+            'pass_good' => 'Média',
+            'pass_strong' => 'Forte',
+            'pass_mismatch' => 'Incompatibilidade',
+            'password_hint' => 'Dica: A senha deve ter pelo menos doze caracteres. Para torná-lo mais forte, use letras maiúsculas e minúsculas, números e símbolos como ! \" ? $ % ^ & ).',
+            'password_strong' => 'Por favor, insira uma senha mais forte.',
             'social_login_title' => 'OU FAÇA O LOGIN COM',
             'success' => 'Credenciais correta! Redirecionando para sua conta.',
-            'attempts_limit' => 'Você ultrapassou o limite de tentativas de acesso a sua conta. Sua conta está bloqueada nos próximos 60 segundos',
+
         ],
         'shipping' => [
-            'days_text' => 'O tempo estimado para entrega é de',
+            'days_text' => 'O tempo estimado é de',
             'delivery_domicile' => 'Entrega no domicílio:',
             'method' => 'Método',
+            'value' => 'Valor R$',
             'freight' => 'Frete',
             'freight_calculator' => 'Calcular Frete',
             'limit_postcode' => 'Ultrapassou Limite Permitido para entrega pelo correio.',
@@ -372,7 +397,7 @@ return [
         ],
 
         'register' => [
-            'account_inactive' => 'A sua conta está inativa, entre em contato com o administrador. Para reativala entre em contato com nossa equipe',
+            'account_inactive' => 'sua conta está inativa, entre em contato com o administrador. Para reativala entre em contato com nossa equipe',
             'active_token_null' => 'Sua conta já se encontra ativa. Faça o login abaixo:',
             'error_server1' => 'Desculpe! Infelizmente houve um erro não identificado. Tente novamente mais tarde',
             'error_server2' => 'Caso o problema persista, entre em contato com o administrador.',

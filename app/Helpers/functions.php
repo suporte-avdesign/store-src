@@ -130,6 +130,50 @@ if (! function_exists('percent')) {
 }
 
 
+/**
+ * Só números
+ */
+if (! function_exists('onlyNumber')) {
+    function onlyNumber($str)
+    {
+        return preg_replace("/[^0-9]/", "", $str);
+    }
+}
+
+
+
+if (! function_exists('random_string')) {
+    function random_string($type = 'alnum', $len = 10)
+    {
+        switch ($type) {
+            case 'basic':
+                return mt_rand();
+            case 'alnum':
+            case 'numeric':
+            case 'nozero':
+            case 'alpha':
+                switch ($type) {
+                    case 'alpha':
+                        $pool = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                        break;
+                    case 'alnum':
+                        $pool = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                        break;
+                    case 'numeric':
+                        $pool = '0123456789';
+                        break;
+                    case 'nozero':
+                        $pool = '123456789';
+                        break;
+                }
+                return substr(str_shuffle(str_repeat($pool, ceil($len / strlen($pool)))), 0, $len);
+            case 'md5':
+                return md5(uniqid(mt_rand()));
+            case 'sha1':
+                return sha1(uniqid(mt_rand(), TRUE));
+        }
+    }
+}
 
 /**
  * Trocar números por letras e vice versa.
@@ -259,11 +303,11 @@ if (! function_exists('ary_unique')) {
 /**
  * Return Json
  */
-if ( !function_exists('arrayJson'))
+if ( !function_exists('typeJson'))
 {
-    function arrayJson($array)
+    function typeJson($array)
     {
-       return json_decode(json_encode($array, false));
+       return json_decode(json_encode($array, FALSE));
     }
 }
 

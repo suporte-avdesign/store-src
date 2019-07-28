@@ -111,7 +111,7 @@
 
                                     <div class="row cart-actions">
                                         <div class="col-md-6">
-                                            @include('frontend.carts.includes.coupon-code-1')
+                                            @include('frontend.coupons.coupon-cart-1')
                                         </div>
                                         <div class="col-md-6">
                                             <button type="submit" class="button" name="update_cart" value="{{constLang('messages.cart.update')}}">
@@ -154,7 +154,7 @@
                                             </tr>
                                         </table>
                                         <div class="wc-proceed-to-checkout">
-                                            <a href="{{route('checkout')}}" class="checkout-button button alt wc-forward">{{constLang('messages.checkouts.btn_checkout')}}</a>
+                                            <a href="{{route('checkout')}}" class="checkout-button button alt wc-forward">{{constLang('messages.cart.btn_checkout_cart')}}</a>
                                         </div>
                                     </div>
                                 </div>
@@ -180,6 +180,7 @@
         "ajax_url" => route('cart.endpoint'),
         "ajax_shipping_method" => route('shipping.method'),
         "wc_ajax_url" => route('cart.endpoint')."?ajax=%%endpoint%%",
+        "wc_ajax_coupon" => route('coupon.store')."?ajax=%%endpoint%%",
         "update_shipping_method_nonce" => csrf_token(),
         "apply_coupon_nonce" => "aaa20bd06ftstts",
         "remove_coupon_nonce" => "b676ca36e2tsts",

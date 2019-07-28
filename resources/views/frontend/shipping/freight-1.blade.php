@@ -61,7 +61,7 @@
                 <p><button type="submit" name="calc_shipping" value="1" class="button">{{constLang('messages.shipping.update')}}</button></p>
                 <input type="hidden" id="woocommerce-shipping-calculator-nonce" name="woocommerce-shipping-calculator-nonce" value="{{numLetter('cart_'.time(),'leter')}}" />
                 <input type="hidden" name="http_referer" value="{{route('cart')}}" />
-                <div id="error-freight"></div>
+                <div id="response-freight"></div>
             </section>
         </form>
 

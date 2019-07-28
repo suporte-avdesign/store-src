@@ -2,6 +2,7 @@
 
 namespace AVD\Http\Controllers\Web;
 
+use GuzzleHttp\Psr7\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -113,8 +114,6 @@ class ConfigShippingController extends Controller
         $state   = $request['calc_shipping_state'];
         $country = $request['calc_shipping_country'];
 
-
-
         $local = constLang('messages.shipping.local_text') . " {$city}, {$state}";
 
         $selected = $request['shipping_method'][0];
@@ -125,74 +124,62 @@ class ConfigShippingController extends Controller
             //
         }
 
-        if ($selected == 2 || $selected == 2) {
-
-
+        if ($selected == 2 || $selected == 3) {
             $postcode = str_replace('-', '', $request['calc_shipping_postcode']);
             $fator    = number_format(6, 3, '.', '');
             $session  = md5($_SERVER['REMOTE_ADDR']);
             $cart     = collect($this->interCart->getAll($session))->toArray();
 
-            $types = $this->types($cart);
-            if ($types->kits >= 1) {
-                $configFreight = $this->configFreight->setId(1);
-                if ($configFreight->distribute_box == 1) {
-
-                    $sum    = $this->sumCart($cart, $price, $fator); # Soma os valores
-                    $divide = $this->divide($sum, $fator); # Divide os valores (cell)
-
-                    dd($divide);
-
+            $configFreight = $this->configFreight->setId(1);
+            if ($configFreight->distribute_box == 1) {
+                $sum    = $this->distribute($cart, $price, $fator);
+                $divide = $this->divide($sum, $fator);
+                $submits = typeJson($divide->send);
+                foreach ($submits as $submit) {
+                    if ($selected == 2) {
+                        $send[] = $this->configFreight->pac($postcode, $submit);
+                    } elseif ($selected == 3) {
+                        $send[] = $this->configFreight->sedex($postcode, $submit);
+                    }
                 }
             } else {
-                $configFreight = $this->configFreight->setId(1);
-                if ($configFreight->distribute_box == 1) {
-
-                    $sum    = $this->sumCart($cart, $price, $fator); # Soma os valores
-                    $divide = $this->divide($sum, $fator); # Divide os valores (cell)
-
-                    dd($divide);
-
+                $separate = $this->separate($cart, $price, $fator);
+                if (!empty($separate->kits)){
+                    $submits = typeJson($separate->kits);
+                    foreach ($submits as $submit) {
+                        if ($selected == 2) {
+                            $send[] = $this->configFreight->pac($postcode, $submit);
+                        } elseif ($selected == 3) {
+                            $send[] = $this->configFreight->sedex($postcode, $submit);
+                        }
+                    }
+                }
+                if (!empty($separate->units)){
+                    $sum = $this->distribute($separate->units, $price, $fator);
+                    $units = $this->divide($sum, $fator);
+                    $submits = typeJson($units->send);
+                    foreach ($submits as $submit) {
+                        if ($selected == 2) {
+                            $send[] = $this->configFreight->pac($postcode, $submit);
+                        } elseif ($selected == 3) {
+                            $send[] = $this->configFreight->sedex($postcode, $submit);
+                        }
+                    }
                 }
             }
 
-        }
-        //$html = $this->renderCart($freight, $local, $selected);
-        $message = 'error_freight';
-        $error = 'O CEP é invalido';
-        $success = view('frontend.messages.error-1', compact('message', 'error'))->render();
-        $html = $this->renderFreight($selected, $local);
+            $note='';
 
-        $out = array(
-            "success" => true,
-            "html" => $html
-        );
+            $response = $this->messages($send, $note);
+            if (isset($response->error)) {
+                $html = $response->error;
+            } else {
+                $html = $response;
+            }
+            $out = array("html" => $html);
+        }
 
         return response()->json($out);
-
-
-    }
-
-    /**
-     * Separa Kits/Units
-     *
-     * @param $items
-     * @return json
-     */
-    private function types($cart)
-    {
-        $types['kits']  = null;
-        $types['units'] = null;
-
-        foreach ($cart as $items) {
-            if ($items['kit'] == 1) {
-                $types['kits'][] = $items;
-            } else {
-                $types['units'][] = $items;
-            }
-        }
-
-        return json_decode(json_encode($types, false));
     }
 
     /**
@@ -202,15 +189,15 @@ class ConfigShippingController extends Controller
      * @param $fator
      * @return json
      */
-    private function sumCart($cart, $price, $fator)
+    private function distribute($cart, $price, $fator)
     {
         $sum = $this->patternSum();
         $amount = $this->amountBox();
-        $items = json_decode(json_encode($cart, false));
+        $items = typeJson($cart);
         foreach ($items as $item) {
-            $sum->comprimento += ($item->length * $item->quantity);
-            $sum->largura += ($item->width * $item->quantity);
-            $sum->altura += ($item->height * $item->quantity);
+            $sum->comprimento += (int)($item->length * $item->quantity);
+            $sum->largura += (int)($item->width * $item->quantity);
+            $sum->altura += (int)($item->height * $item->quantity);
             $amount->peso += ($item->weight * $item->quantity);
             if ($item->kit == 1) {
                 $amount->itens += ($item->quantity * $item->unit);
@@ -226,6 +213,7 @@ class ConfigShippingController extends Controller
         }
 
         $sum->volume = $amount->volume;
+        $sum->kg_cubicos = $amount->kg_cubicos;
         $box = $this->selectBox($sum, $fator);
         $amount->divide = (int) ceil($sum->volume/$box->volume);
         # Total da soma do carrinho
@@ -239,19 +227,19 @@ class ConfigShippingController extends Controller
             $sum->raiz_cubica = $box->raiz_cubica;
 
             $next_volume = ($amount->volume-$box->volume);
-            $percent = (float) getPercent($next_volume, $box->volume);
 
             if ($amount->divide == 1) {
                 # Proximo: se o volume seja menor ou igual ao box
-                $sum->next_peso = (float) numFormat($this->nextPercent($amount->peso, $percent),3);
-                $sum->next_itens = (int) $this->nextPercent($amount->itens, $percent);
+                $sum->next_peso = (float) numFormat(($amount->peso/$amount->divide), 3);
+                $sum->next_itens = (int)($amount->itens/ $amount->divide);
                 $sum->next_valor_declarado = ($amount->valor_declarado/$amount->divide);
                 $sum->next_volume = $next_volume;
-                $sum->next_kg_cubicos = $this->nextPercent($amount->volume, $percent);;
+                $sum->next_kg_cubicos = $amount->kg_cubicos/$amount->divide;
+                $sum->raiz_cubica = (int) round(pow($amount->volume, (1 / 3)));
 
             } else {
                 # Proximo: se o volume seja maior ou igual ao box
-                $sum->peso = (float) numFormat(($amount->peso/ $amount->divide), 3);
+                $sum->peso = (float) numFormat(($amount->peso/$amount->divide), 3);
                 $sum->next_peso = (float) numFormat($amount->peso-$sum->peso, 3);
                 $sum->itens = (int)($amount->itens/ $amount->divide);
                 $sum->next_itens = $amount->itens-$sum->itens;
@@ -264,8 +252,9 @@ class ConfigShippingController extends Controller
 
             $sum->peso = $amount->peso;
             $sum->itens = $amount->itens;
+            $sum->valor_declarado = $amount->valor_declarado;
 
-            $sum->raiz_cubica = round(pow($amount->volume, (1 / 3)));
+            $sum->raiz_cubica = (int) round(pow($amount->volume, (1 / 3)));
             if ($sum->raiz_cubica < $sum->comprimento) {
                 $sum->altura = $sum->raiz_cubica;
             } elseif ($sum->raiz_cubica < MIN_COMPRIMENTO) {
@@ -285,10 +274,47 @@ class ConfigShippingController extends Controller
         $sum->remnant_volume = $sum->total->volume-$sum->volume;
         $sum->remnant_kg_cubicos = $sum->total->kg_cubicos-$sum->kg_cubicos;
 
-
-
-
         return $sum;
+    }
+
+    /**
+     * Separa caixas de unidades
+     *
+     * @param $cart
+     * @param $price
+     * @param $fator
+     * @return mixed
+     */
+    private function separate($cart, $price, $fator)
+    {
+        $separate = $this->separateBox();
+        $kits  = [];
+        $units = [];
+        foreach ($cart as $key => $item) {
+            if ($item['kit'] == 1) {
+                $kits[$key]['comprimento'] = (int)($item['length'] * $item['quantity']);
+                $kits[$key]['largura'] = (int)($item['width'] * $item['quantity']);
+                $kits[$key]['altura'] = (int)($item['height'] * $item['quantity']);
+                $kits[$key]['peso'] = ($item['weight'] * $item['quantity']);
+                $kits[$key]['itens'] = $item['quantity'];
+                $kits[$key]['valor'] = $item[$price] * $item['quantity'];
+                if ($item['declare'] == 1) {
+                    $kits[$key]['valor_declarado'] = $item[$price] * $item['quantity'];
+                }
+                $kits[$key]['volume'] = ($item['length'] * $item['width'] * $item['height'] * $item['quantity']);
+                $kits[$key]['kg_cubicos'] = formatCubic(($item['length'] * $item['width'] * $item['height'] * $item['quantity'])/$fator);
+            } else {
+                $units[] = $item;
+            }
+        }
+        if (!empty($kits)) {
+            $separate->kits = $kits;
+        }
+
+        if (!empty($units)) {
+            $separate->units = $units;
+        }
+        return $separate;
     }
 
     /**
@@ -311,7 +337,7 @@ class ConfigShippingController extends Controller
             'kg_cubicos' => $sum->kg_cubicos,
         );
 
-        return json_decode(json_encode($total, false));
+        return typeJson($total);
     }
 
     /**
@@ -331,7 +357,22 @@ class ConfigShippingController extends Controller
             'kg_cubicos' => 0,
         );
 
-        return json_decode(json_encode($total, false));
+        return typeJson($total);
+    }
+
+    /**
+     * Separa Kit de Unidades
+     *
+     * @return mixed
+     */
+    private function separateBox()
+    {
+        $total = array(
+            'kits'=> array(),
+            'units' => array()
+        );
+
+        return typeJson($total);
     }
 
     /**
@@ -354,6 +395,7 @@ class ConfigShippingController extends Controller
             'itens' => $sum->itens,
             'volume' => $sum->volume,
             'kg_cubicos' => $sum->kg_cubicos,
+            'raiz_cubica' => $sum->raiz_cubica
         ];
         if ($count >= 3) {
             for ($i = 1; $i <= $count-2; $i++) {
@@ -372,10 +414,7 @@ class ConfigShippingController extends Controller
 
         $sum->send = array_unique($send, SORT_REGULAR);
 
-        dd($sum);
-
         return $sum;
-
     }
 
     private function nextBox($sum,$divide,$fator)
@@ -431,9 +470,7 @@ class ConfigShippingController extends Controller
                 $sum->altura = round($sum->volume / ($sum->comprimento * $sum->largura));
             }
 
-
             $send = $this->groupBox($sum, $divide);
-
 
             return $send;
         }
@@ -472,7 +509,7 @@ class ConfigShippingController extends Controller
             'error_cla' => null
         );
 
-        return json_decode(json_encode($_sum_, false));
+        return typeJson($_sum_);
     }
 
     /**
@@ -545,7 +582,7 @@ class ConfigShippingController extends Controller
             }
         }
 
-        return json_decode(json_encode($_box_, false));
+        return typeJson($_box_);
     }
 
     /**
@@ -582,13 +619,92 @@ class ConfigShippingController extends Controller
             'itens' => $sum->itens,
             'volume' => $sum->volume,
             'kg_cubicos' => $sum->kg_cubicos,
+            'raiz_cubica' => $sum->raiz_cubica
         ];
 
         return $send;
     }
 
     /**
-     * Reinderiza a view de retorno
+     * Mensagens dos resultados
+     *
+     * @param $freight
+     * @param null $error
+     * @return mixed
+     */
+    private function messages($freight,$note=null)
+    {
+        if (isset($freight['error'])) {
+            $message = 'error_freight';
+            $error = $freight['message'];
+            $html = view('frontend.messages.error-1', compact('message', 'error'))->render();
+            $_msg_ = array('error' => $html);
+            $response = typeJson($_msg_);
+        } else {
+            $_msg_ = array(
+                'valor' => 0,
+                'prazo' => 0,
+                'domicilio' => 'Não',
+                'error' => null
+            );
+
+            $response = typeJson($_msg_);
+
+            $domicile = constLang('messages.shipping.delivery_domicile');
+            $days_text = constLang('messages.shipping.days_text');
+            $value_text = constLang('messages.shipping.value');
+            $day  = constLang('days');
+            $yes  = $domicile.constLang('yes');
+            $not  = $domicile.constLang('not');
+            $value =0;
+
+            foreach ($freight as $keys) {
+                $services[] = $keys->cServico;
+            }
+            foreach ($services as $val) {
+                $value += (float) $val['Valor'];
+                $days = $days_text.' '.$val['PrazoEntrega'].' '.$day;
+                $delivery = ($val['EntregaDomiciliar'] == 'S' ? ' '.$yes : ' '.$not);
+            }
+
+            $value = $value_text.' '. setReal($value);
+
+            $message = 'response_freight';
+            $response = view('frontend.messages.success-1', compact(
+                'message',
+                'value',
+                'days',
+                'delivery',
+                'note'))->render();
+        }
+
+        return $response;
+    }
+
+    /**
+     * Validação CLA
+     *
+     * @param $sum
+     */
+    private function validateCLA($sum)
+    {
+        $error=null;
+        if ($sum->altura > MAX_ALTURA) {
+            $error = "Erro: Altura maior que  " . MAX_ALTURA . 'cm';
+        } elseif ($sum->largura > MAX_LARGURA) {
+            $error = "Erro: Largura maior que  " . MAX_LARGURA . 'cm';
+        } elseif ($sum->comprimento > MAX_COMPRIMENTO) {
+            $error = "Erro: Comprimento maior que " . MAX_COMPRIMENTO . 'cm';
+        } elseif (($sum->comprimento + $sum->largura + $sum->altura) < MIN_SOMA_CLA) {
+            $error = "Erro: Soma dos valores C+L+A menor que " . MIN_SOMA_CLA . 'cm';
+        } elseif (($sum->comprimento + $sum->largura + $sum->altura) > MAX_SOMA_CLA) {
+            $error = "Erro: Soma dos valores C+L+A maior que " . MAX_SOMA_CLA . 'cm';
+        }
+        return $error;
+    }
+
+    /**
+     * View de retorno Métodos
      *
      * @param $selected
      * @param $local
@@ -634,66 +750,6 @@ class ConfigShippingController extends Controller
         )->render();
 
     }
-
-    /**
-     * Mensagens dos resultados
-     *
-     * @param $freight
-     * @param null $error
-     * @return mixed
-     */
-    private function messages($freight, $error=null)
-    {
-        $_msg_ = array(
-            'valor' => 0,
-            'prazo' => 0,
-            'domicilio' => 'Não',
-            'error' => array()
-        );
-
-        $message = json_decode(json_encode($_msg_, false));
-
-        foreach ($freight['unit'] as $value) {
-            $array[] = $value->cServico;
-        }
-
-        $delivery = constLang('messages.shipping.delivery_domicile');
-        $days = constLang('days');
-        $yes  = $delivery.constLang('yes');
-        $not  = $delivery.constLang('not');
-
-        foreach ($array as $val) {
-            $message->valor += (float) str_replace (',', '.', $val['Valor']);
-            $message->prazo = $val['PrazoEntrega'].' '.$days;
-            $message->domicilio = ($val['EntregaDomiciliar'] == 'S' ? $yes : $not);
-        }
-
-        return $message;
-    }
-
-    /**
-     * Validação CLA
-     *
-     * @param $sum
-     */
-    private function validateCLA($sum)
-    {
-        $error=null;
-        if ($sum->altura > MAX_ALTURA) {
-            $error = "Erro: Altura maior que  " . MAX_ALTURA . 'cm';
-        } elseif ($sum->largura > MAX_LARGURA) {
-            $error = "Erro: Largura maior que  " . MAX_LARGURA . 'cm';
-        } elseif ($sum->comprimento > MAX_COMPRIMENTO) {
-            $error = "Erro: Comprimento maior que " . MAX_COMPRIMENTO . 'cm';
-        } elseif (($sum->comprimento + $sum->largura + $sum->altura) < MIN_SOMA_CLA) {
-            $error = "Erro: Soma dos valores C+L+A menor que " . MIN_SOMA_CLA . 'cm';
-        } elseif (($sum->comprimento + $sum->largura + $sum->altura) > MAX_SOMA_CLA) {
-            $error = "Erro: Soma dos valores C+L+A maior que " . MAX_SOMA_CLA . 'cm';
-        }
-        return $error;
-    }
-
-
 
 
 }

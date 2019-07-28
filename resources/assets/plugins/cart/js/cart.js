@@ -21,6 +21,21 @@ jQuery( function( $ ) {
         );
     };
 
+
+    /**
+     * Gets a url for a given AJAX endpoint.
+     *
+     * @param {String} endpoint The AJAX Endpoint
+     * @return {String} The URL to use for the request
+     */
+    var get_url_coupon = function( endpoint ) {
+        return wc_cart_params.wc_ajax_coupon.toString().replace(
+            '%%endpoint%%',
+            endpoint
+        );
+    };
+
+
     /**
      * Gets a url for a given AJAX endpoint.
      *
@@ -251,14 +266,7 @@ jQuery( function( $ ) {
                 data:     $form.serialize(),
                 dataType: 'json',
                 success:  function( response ) {
-                    if (response.success == true) {
-                        $( 'div.cart_totals' ).html(response.html);
-                    } else {
-                        $("#error-freight").show();
-                        $("#error-freight").html(response.message);
-                        setTimeout(function(){ $("#error-freight").hide(); }, 6000);
-                    }
-
+                    $( '#response-freight' ).html(response.html);
                 },
                 error: function(xhr) {
                     if (xhr.status == 422) {
@@ -271,9 +279,9 @@ jQuery( function( $ ) {
                                 });
                             }
                         });
-                        $("#error-freight").show();
-                        $("#error-freight").html('<ul class="woocommerce-Message woocommerce-Message--info woocommerce-info">'+ message +'</ul>');
-                        setTimeout(function(){ $("#error-freight").hide(); }, 6000);
+                        $("#response-freight").show();
+                        $("#response-freight").html('<ul class="woocommerce-Message woocommerce-Message--info woocommerce-info">'+ message +'</ul>');
+                        setTimeout(function(){ $("#response-freight").hide(); }, 6000);
                     }
                 },
                 complete: function() {
@@ -484,7 +492,7 @@ jQuery( function( $ ) {
 
             $.ajax( {
                 type:     'POST',
-                url:      get_url( 'apply_coupon' ),
+                url:      get_url_coupon( 'apply_coupon' ),
                 data:     data,
                 dataType: 'html',
                 success: function( response ) {
@@ -522,7 +530,7 @@ jQuery( function( $ ) {
 
             $.ajax( {
                 type:    'POST',
-                url:      get_url( 'remove_coupon' ),
+                url:      get_url_coupon( 'remove_coupon' ),
                 data:     data,
                 dataType: 'html',
                 success: function( response ) {
