@@ -124,8 +124,12 @@ return [
     ],
     'in' => 'de',
     'inventory' => 'Inventário',
+    'item' => 'item',
+    'items' => 'itens',
     'keywords.required' => 'As tags são obrigatórias',
     'loader' => 'Aguarde',
+    'loading_failed' => 'Falha no carregamento',
+    'loading_more' => 'Carregando mais resultados',
     'login' => 'Login',
     'login_entry' => 'Fez login no sistema.',
     'mail' => 'Email',
@@ -136,6 +140,7 @@ return [
     'name' => 'Nome',
     'new' => 'Novo',
     'not' => 'Não',
+    'not_found' => 'Não Encontrado',
     'note' => 'Observação',
     'number' => 'Número',
     'of' => 'de',
@@ -194,6 +199,7 @@ return [
     'retail' => 'Varejo',
     'save' => 'Salvar',
     'section' => 'Seção',
+    'searching' => 'Procurando',
     'select_state' => 'Selecione o Estado',
     'select_options' => 'Selecione as opções',
     'share' => 'Compartilhar',
@@ -250,6 +256,11 @@ return [
     */
 
     'validation' => [
+        'caracteres' => [
+            '1' => 'caractere',
+            '2' => 'caracteres',
+            'required' => 'ou mais caracteres'
+        ],
         'categories.required' => 'As categorias são obrigatórias',
         'commission' => [
             'required' => 'Comissionado: Sim ou Não?'],
@@ -292,6 +303,8 @@ return [
             'required' => 'A porcentagem é obrigatória.'],
         'phone' => [
             'required' => 'O telefone é obrigatório.'],
+        'please_enter' => 'Por favor, insira',
+        'please_delete' => 'Por favor, exclua',
         'profile_id' => [
             'required' => 'O perfil é obrigatório.'],
         'title' => [
@@ -302,6 +315,9 @@ return [
         'width_photo' => [
             'required' => 'A largura da foto é obrigatória.',
             'numeric' => 'Digite apenas números na largura da foto.'],
+        'selects' => [
+            'select1' => 'Você só pode selecionar'
+        ],
         'status' => [
             'required' => 'O status é obrigatório.'],
         'verifying_credentials' => 'Verificando credenciais',

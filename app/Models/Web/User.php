@@ -53,4 +53,27 @@ class User extends Authenticatable
         return parent::fill($attributes);
     }
 
+
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function profile()
+    {
+        return $this->belongsTo(ConfigProfileClient::class, 'profile_id');
+    }
+
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function adresses()
+    {
+        return $this->hasMany(UserAddress::class);
+    }
+
+
+
+
+
 }

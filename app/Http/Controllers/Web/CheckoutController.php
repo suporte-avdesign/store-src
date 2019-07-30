@@ -12,6 +12,7 @@ use AVD\Interfaces\Web\ConfigKeywordInterface as ConfigKeyword;
 use AVD\Interfaces\Web\AccountTypeInterface as InterAccountType;
 use AVD\Interfaces\Web\ConfigShippingInterface as ConfigShipping;
 use AVD\Interfaces\Web\ConfigProfileClientInterface as InterProfile;
+use AVD\Interfaces\Web\ConfigFormPaymentInterface as ConfigFormPayment;
 
 
 use Illuminate\Http\Request;
@@ -42,7 +43,8 @@ class CheckoutController extends Controller
         InterProfile $interProfile,
         ConfigKeyword $configKeyword,
         ConfigShipping $configShipping,
-        InterAccountType $interAccountType)
+        InterAccountType $interAccountType,
+        ConfigFormPayment $configFormPayment)
     {
 
         $this->interCart = $interCart;
@@ -54,6 +56,7 @@ class CheckoutController extends Controller
         $this->configKeyword = $configKeyword;
         $this->configShipping = $configShipping;
         $this->interAccountType  = $interAccountType;
+        $this->configFormPayment  = $configFormPayment;
     }
     /**
      * Display a listing of the resource.
@@ -62,15 +65,31 @@ class CheckoutController extends Controller
      */
     public function index()
     {
+
         $menu           = $this->interSection->getMenu();
         $types          = $this->interAccountType->getAll();
-        $states         = $this->interState->getAll();
         $profiles       = $this->interProfile->getAll();
-
         $configKeyword  = $this->configKeyword->random();
         $configShipping = $this->configShipping->getAll();
+        $configPayment  = $this->configFormPayment->getAll();
 
-        (Auth::user() ? $user_id = Auth::id() : $user_id = 0);
+        # Json countries
+        $brasil = $this->interState->getAll();
+        $states = collect($brasil)->all();
+        $json_locale    = $this->getLocale();
+        $json_countries = $this->getCountries($states);
+
+
+
+        if (Auth::user()) {
+            $user_id = Auth::id();
+            $user    = $this->interUser->setId($user_id);
+            $adresses = $user->adresses()->orderBy('id','desc')->first();
+        } else {
+            $user = null;
+            $user_id = 0;
+            $adresses = null;
+        }
         $session = md5($_SERVER['REMOTE_ADDR']);
 
 
@@ -91,20 +110,165 @@ class CheckoutController extends Controller
         ($method == null ? $method = 'legacy_flat_rate' : $method = $method);
 
 
-
         return view("{$this->view}.checkout-1", compact(
+            'user',
             'menu',
             'cart',
             'total',
             'types',
             'states',
             'method',
+            'adresses',
             'profiles',
+            'configPayment',
             'configKeyword',
-            'configShipping')
+            'configShipping',
+            'json_locale',
+            'json_countries')
         );
     }
 
+
+    public function getCountries($states)
+    {
+        foreach ($states as $state) {
+            $arr1[$state->uf] = $state->name;
+        }
+        $arr2 = array(
+            "countries" => array(
+                "BR" => $arr1
+             ),
+            "i18n_select_state_text" => constLang('select_state'),
+            "i18n_no_matches" => constLang('not_found'),
+            "i18n_ajax_error" => constLang('loading_failed'),
+            "i18n_input_too_short_1" => constLang('please_enter').' 1 '. constLang('validation.caracteres.required'),
+            "i18n_input_too_short_n" => constLang('please_enter')." %qty% ".constLang('validation.caracteres.required'),
+            "i18n_input_too_long_1" => constLang('please_delete').' 1 '. constLang('validation.caracteres.1'),
+            "i18n_input_too_long_n" => constLang('please_delete')." %qty% ".constLang('validation.caracteres.2'),
+            "i18n_selection_too_long_1" => constLang('validation.selects.select1').' 1 '. constLang('item'),
+            "i18n_selection_too_long_n" => constLang('validation.selects.select1')." %qty% ". constLang('items'),
+            "i18n_load_more" => constLang('loading_more')."...",
+            "i18n_searching" => constLang('searching')."...",
+        );
+        return $arr2;
+    }
+
+
+    public function getLocale()
+    {
+        $arr1 = array(
+           "postcode" => array(
+               "label" => constLang('zip_code'),
+               "required" => true,
+               "hidden" => false
+           ),
+           "state" => array(
+               "label" => constLang('state'),
+               "required" => true,
+               "hidden" => false
+           ),
+            "city" => array(
+                "label" => constLang('city'),
+                "required" => true,
+                "hidden" => false
+            )
+
+        );
+
+        $default = array(
+            "first_name" => array(
+                "label" => constLang('person_physical.first_name'),
+                "required" => true,
+                "class" => ["form-row-first"],
+                "autocomplete" => "given-name",
+                "priority" => 10
+
+            ),
+            "last_name" => array(
+                "label" => constLang('person_physical.last_name'),
+                "required" => true,
+                "class" => ["form-row-last"],
+                "autocomplete" => "family-name",
+                "priority" => 20
+            ),
+            "company" => array(
+                "label" => constLang('person_legal.first_name'),
+                "class" => ["form-row-wide"],
+                "autocomplete" => "organization",
+                "priority" => 30,
+                "required" => false
+            ),
+            "country" => array(
+                "type" => "country",
+                "label" =>  constLang('city'),
+                "required" => true,
+                "class" => ["form-row-wide","address-field","update_totals_on_change"],
+                "autocomplete" => "country",
+                "priority" => 40
+            ),
+
+            "address_1" => array(
+                "label" => constLang('address'),
+                "placeholder" => constLang('address'),
+                "required" => true,
+                "class" => ["form-row-wide", "address-field"],
+                "autocomplete" => "address-line1",
+                "priority" => 50
+
+            ),
+            "address_2" => array(
+                "label" => constLang('cmplement'),
+                "label_class" => ["screen-reader-text"],
+                "placeholder" => constLang('cmplement'),
+                "class" => ["form-row-wide","address-field"],
+                "autocomplete" => "address-line2",
+                "priority" => 60,
+                "required" => false
+            ),
+            "city" => array(
+                "label" => constLang('city'),
+                "required" => true,
+                "class" => ["form-row-wide","address-field"],
+                "autocomplete" => "address-level2",
+                "priority" => 70
+            ),
+            "state" => array(
+                "type" => "state",
+                "label" => constLang('state'),
+                "required" => true,
+                "class" => ["form-row-wide","address-field"],
+                "validate" => ["state"],
+                "autocomplete" => "address-level1",
+                "priority" => 80
+            ),
+            "postcode" => array(
+                "label" => constLang('zip_code'),
+                "required" => true,
+                "class" => ["form-row-wide","address-field"],
+                "validate"=> ["postcode"],
+                "autocomplete" => "postal-code",
+                "priority" => 90
+            )
+        );
+
+        $locale = array(
+            "locale" => array(
+                'BR' => $arr1,
+                "default" => $default
+            ),
+            "locale_fields" => array(
+                "address_1" => "#billing_address_1_field,#shipping_address_1_field",
+                "address_2" => "#billing_address_2_field,#shipping_address_2_field",
+                "state" => "#billing_state_field,#shipping_state_field,#calc_shipping_state_field",
+                "postcode" => "#billing_postcode_field,#shipping_postcode_field,#calc_shipping_postcode_field",
+                "city" => "#billing_city_field,#shipping_city_field,#calc_shipping_city_field"
+            ),
+            "i18n_required_text" => "required",
+            "i18n_optional_text" => "optional"
+        );
+
+        return $locale;
+    }
 
     public function method(Request $request)
     {
@@ -173,6 +337,7 @@ class CheckoutController extends Controller
         $session = md5($_SERVER['REMOTE_ADDR']);
 
 
+
         $configSite = $this->configSite->setId(1);
         if ($user_id != 0 && $configSite->order == 'wishlist'){
             dd('Cart = Lista de desejo');
@@ -187,7 +352,9 @@ class CheckoutController extends Controller
             'method',
             'selected',
             'configShipping'))->render();
-        $payment = view("{$this->view}.includes.payment-1")->render();
+
+        $configPayment  = $this->configFormPayment->getAll();
+        $payment = view("{$this->view}.includes.payment-1", compact('configPayment'))->render();
 
         $out = array(
             "result" => "success",

@@ -1,21 +1,38 @@
 <div id="payment" class="woocommerce-checkout-payment">
     <!-- PAYMENT -->
     <ul class="wc_payment_methods payment_methods methods">
-        <li class="wc_payment_method payment_method_bacs">
-            <input id="payment_method_bacs" type="radio" class="input-radio" name="payment_method" value="bacs"  checked='checked' data-order_button_text=""/>
+        @foreach($configPayment as $payment)
+            @if($payment->id == 1)
+                <li class="wc_payment_method payment_method_cash">
+                    <input id="payment_method_cash" type="radio" class="input-radio" name="payment_method" value="{{$payment->id}}"  checked='checked' data-order_button_text="{{$payment->label}}"/>
 
-            <label for="payment_method_bacs">Depósito em conta</label>
-            <div class="payment_box payment_method_bacs" >
-                <p>Faça seu pagamento diretamente em nossa conta bancária. Por favor, use o número do pedido como referência de pagamento. Seu pedido não será enviado até que os fundos sejam liberados em nossa conta.</p>
-            </div>
-        </li>
-        <li class="wc_payment_method payment_method_cod">
-            <input id="payment_method_cod" type="radio" class="input-radio" name="payment_method" value="cod"  data-order_button_text=""/>
-            <label for="payment_method_cod">Cartão de Crédito em 3X sem juros</label>
-            <div class="payment_box payment_method_cod" style="display:none;">
-                <p>Seus dados pessoais serão usados ​​para processar seu pagamento</p>
-            </div>
-        </li>
+                    <label for="payment_method_cash">{{$payment->label}}</label>
+                    <div class="payment_box payment_method_cash" >
+                        <p>{{$payment->description}}</p>
+                    </div>
+                </li>
+            @endif
+            @if($payment->id == 2)
+                <li class="wc_payment_method payment_method_billet">
+                    <input id="payment_method_billet" type="radio" class="input-radio" name="payment_method" value="{{$payment->id}}"  data-order_button_text=""/>
+                    <label for="payment_method_billet">{{$payment->label}}</label>
+                    <div class="payment_box payment_method_billet" style="display:none;">
+                        <p>{{$payment->description}}</p>
+                    </div>
+                </li>
+            @endif
+            @if($payment->id == 3)
+                <li class="wc_payment_method payment_method_card">
+                    <input id="payment_method_card" type="radio" class="input-radio" name="payment_method" value="{{$payment->id}}"  data-order_button_text=""/>
+                    <label for="payment_method_card">{{$payment->label}}</label>
+                    <div class="payment_box payment_method_card" style="display:none;">
+                        <p>{{$payment->description}}</p>
+                    </div>
+                </li>
+            @endif
+
+
+        @endforeach
     </ul>
     <div class="form-row place-order">
         <noscript>
