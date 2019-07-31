@@ -2,18 +2,23 @@
 
 namespace AVD\Http\Controllers\Web;
 
+use AVD\Events\UserRegisteredNoteEvent;
+use AVD\Events\UserRegisterConfirmedEvent;
+use AVD\Events\UserRegisteredCheckoutEvent;
+
 use AVD\Http\Controllers\Controller;
 use AVD\Interfaces\Web\CartInterface as InterCart;
 use AVD\Interfaces\Web\UserInterface as InterUser;
 use AVD\Interfaces\Web\StateInterface as InterState;
 use AVD\Interfaces\Web\SectionInterface as InterSection;
 use AVD\Interfaces\Web\ConfigSiteInterface as ConfigSite;
+use AVD\Interfaces\Web\UserAddressInterface as InterAddress;
+use AVD\Http\Requests\Web\CheckoutRequest as ValidateCheckout;
 use AVD\Interfaces\Web\ConfigKeywordInterface as ConfigKeyword;
 use AVD\Interfaces\Web\AccountTypeInterface as InterAccountType;
 use AVD\Interfaces\Web\ConfigShippingInterface as ConfigShipping;
 use AVD\Interfaces\Web\ConfigProfileClientInterface as InterProfile;
 use AVD\Interfaces\Web\ConfigFormPaymentInterface as ConfigFormPayment;
-
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -25,7 +30,7 @@ class CheckoutController extends Controller
 {
     use AuthenticatesUsers;
 
-    protected $redirectTo = 'checkout';
+    protected $redirectTo = 'login';
 
     private $view = 'frontend.checkouts';
 
@@ -39,6 +44,7 @@ class CheckoutController extends Controller
         InterUser $interUser,
         InterState $interState,
         ConfigSite $configSite,
+        InterAddress $interAddress,
         InterSection $interSection,
         InterProfile $interProfile,
         ConfigKeyword $configKeyword,
@@ -51,6 +57,7 @@ class CheckoutController extends Controller
         $this->interUser = $interUser;
         $this->interState = $interState;
         $this->configSite = $configSite;
+        $this->interAddress = $interAddress;
         $this->interSection = $interSection;
         $this->interProfile = $interProfile;
         $this->configKeyword = $configKeyword;
@@ -78,7 +85,6 @@ class CheckoutController extends Controller
         $states = collect($brasil)->all();
         $json_locale    = $this->getLocale();
         $json_countries = $this->getCountries($states);
-
 
 
         if (Auth::user()) {
@@ -132,11 +138,11 @@ class CheckoutController extends Controller
     public function getCountries($states)
     {
         foreach ($states as $state) {
-            $arr1[$state->uf] = $state->name;
+            $arr[$state->uf] = $state->name;
         }
-        $arr2 = array(
+        $countries = array(
             "countries" => array(
-                "BR" => $arr1
+                "BR" => $arr
              ),
             "i18n_select_state_text" => constLang('select_state'),
             "i18n_no_matches" => constLang('not_found'),
@@ -150,7 +156,7 @@ class CheckoutController extends Controller
             "i18n_load_more" => constLang('loading_more')."...",
             "i18n_searching" => constLang('searching')."...",
         );
-        return $arr2;
+        return json_encode($countries);
     }
 
 
@@ -159,17 +165,17 @@ class CheckoutController extends Controller
         $arr1 = array(
            "postcode" => array(
                "label" => constLang('zip_code'),
-               "required" => true,
+               "required" => false,
                "hidden" => false
            ),
            "state" => array(
                "label" => constLang('state'),
-               "required" => true,
+               "required" => false,
                "hidden" => false
            ),
             "city" => array(
                 "label" => constLang('city'),
-                "required" => true,
+                "required" => false,
                 "hidden" => false
             )
 
@@ -178,7 +184,7 @@ class CheckoutController extends Controller
         $default = array(
             "first_name" => array(
                 "label" => constLang('person_physical.first_name'),
-                "required" => true,
+                "required" => false,
                 "class" => ["form-row-first"],
                 "autocomplete" => "given-name",
                 "priority" => 10
@@ -186,7 +192,7 @@ class CheckoutController extends Controller
             ),
             "last_name" => array(
                 "label" => constLang('person_physical.last_name'),
-                "required" => true,
+                "required" => false,
                 "class" => ["form-row-last"],
                 "autocomplete" => "family-name",
                 "priority" => 20
@@ -201,7 +207,7 @@ class CheckoutController extends Controller
             "country" => array(
                 "type" => "country",
                 "label" =>  constLang('city'),
-                "required" => true,
+                "required" => false,
                 "class" => ["form-row-wide","address-field","update_totals_on_change"],
                 "autocomplete" => "country",
                 "priority" => 40
@@ -210,7 +216,7 @@ class CheckoutController extends Controller
             "address_1" => array(
                 "label" => constLang('address'),
                 "placeholder" => constLang('address'),
-                "required" => true,
+                "required" => false,
                 "class" => ["form-row-wide", "address-field"],
                 "autocomplete" => "address-line1",
                 "priority" => 50
@@ -227,7 +233,7 @@ class CheckoutController extends Controller
             ),
             "city" => array(
                 "label" => constLang('city'),
-                "required" => true,
+                "required" => false,
                 "class" => ["form-row-wide","address-field"],
                 "autocomplete" => "address-level2",
                 "priority" => 70
@@ -235,7 +241,7 @@ class CheckoutController extends Controller
             "state" => array(
                 "type" => "state",
                 "label" => constLang('state'),
-                "required" => true,
+                "required" => false,
                 "class" => ["form-row-wide","address-field"],
                 "validate" => ["state"],
                 "autocomplete" => "address-level1",
@@ -243,7 +249,7 @@ class CheckoutController extends Controller
             ),
             "postcode" => array(
                 "label" => constLang('zip_code'),
-                "required" => true,
+                "required" => false,
                 "class" => ["form-row-wide","address-field"],
                 "validate"=> ["postcode"],
                 "autocomplete" => "postal-code",
@@ -267,7 +273,7 @@ class CheckoutController extends Controller
             "i18n_optional_text" => "optional"
         );
 
-        return $locale;
+        return json_encode($locale);
     }
 
     public function method(Request $request)
@@ -441,10 +447,55 @@ class CheckoutController extends Controller
 
 
 
-
-    public function store(Request $request)
+    public function store(ValidateCheckout $request)
     {
-        $result = rand(1,2);
+        $dataForm = $request->all();
+        $new_account = $request['new_account'];
+        if ($new_account == 1) {
+            $user = $this->interUser->create($dataForm['register']);
+            if ($user) {
+
+                $note = [
+                    'user_id' => $user->id,
+                    'admin' => constLang('profile_name.user'),
+                    'label' => constLang('register'),
+                    'description' => ipLocation()
+                ];
+
+                event(new UserRegisteredCheckoutEvent($user));
+
+                event(new UserRegisteredNoteEvent($note));
+
+                $dataForm['address']['user_id'] = $user->id;
+                $address = $dataForm['address'];
+                $create_address = $this->interAddress->create($address);
+                if ($create_address) {
+                    $payment_method = $request['payment_method'];
+
+                }
+
+
+
+
+                $message = "Falta pouco para concretizar a compra, entre no Email {$user->email} e clique em concluir cadastro.";
+                $messages = view("{$this->view}.messages.info-1", compact('message'))->render();
+                $out = array(
+                    "result" => "confirmation",
+                    "messages" => $messages,
+                    "refresh" => false,
+                    "reload" => false
+                );
+                return response()->json($out);
+            }
+        } else {
+
+        }
+
+        dd($dataForm);
+
+
+
+        $result = 2;
         if ($result == 2) {
             $terms = $request->input('terms');
             // Error
@@ -452,12 +503,12 @@ class CheckoutController extends Controller
             if (empty($terms)) {
                 $message = 'Por favor ler e aceitar os termos e condições para prosseguir com o seu pedido.';
             }
-            $messages = view('frontend.messages.error-checkout-1', compact('message'))->render();
+            $messages = view("{$this->view}.messages.error-1", compact('message'))->render();
             $out = array(
                 "result" => "failure",
                 "messages" => $messages,
                 "refresh" => false,
-                "reload" => true
+                "reload" => false
             );
         } else {
             $id = (int)(12345);
@@ -470,6 +521,50 @@ class CheckoutController extends Controller
 
 
         return response()->json($out);
+    }
+
+
+    protected function verifyToken($email, $token)
+    {
+
+        if (empty($token)) {
+            return $this->redirectTo;
+        }
+        $user = $this->interUser->setToken($token);
+        if (empty($user)) {
+            return $this->redirectTo;        }
+
+        if ($user) {
+            if ($user->token == $token) {
+
+                if ($user->email != $email) {
+                    return $this->redirectTo;
+                }
+                $visits = $user->visits + 1;
+                $input = [
+                    'active' => constLang('active_true'),
+                    'last_login' => date('Y-m-d H:i:s'),
+                    'visits' => $visits,
+                    'token' => NULL,
+                    'ip' => $_SERVER['REMOTE_ADDR']
+                ];
+                $update = $this->interUser->update($input, $user->id);
+                if ($update) {
+
+                    event(new UserRegisterConfirmedEvent($user));
+
+                    Auth::loginUsingId($user->id, true);
+
+                    return $this->index();
+
+                } else {
+                    session()->flash('error', constLang('error_server1'));
+                    return redirect(route('login'));
+                }
+            }
+
+        }
+
     }
 
 
@@ -540,5 +635,8 @@ class CheckoutController extends Controller
 
 
     }
+
+
+
 
 }

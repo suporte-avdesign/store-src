@@ -2,8 +2,9 @@
 
 namespace AVD\Listeners;
 
-use AVD\Events\UserRegisteredEvent;
 use AVD\Mail\UserRegistered;
+use AVD\Events\UserRegisteredEvent;
+
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 

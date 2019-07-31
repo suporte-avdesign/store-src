@@ -65,8 +65,12 @@
         </div>
 
         <button type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="Finalizar Pedido" data-value="Finalizar Pedido">Finalizar Pedido</button>
-
-        <input type="hidden" id="woocommerce-process-checkout-nonce" name="woocommerce-process-checkout-nonce" value="754af0147e" />
-        <input type="hidden" name="_wp_http_referer" value="/basel/checkout/"/>
+        @auth
+            <input type="hidden" name="new_account" value="0"/>
+        @else
+            <input type="hidden" name="new_account" value="1"/>
+        @endauth
+        <input type="hidden" name="http_referer" value="{{route('checkout')}}"/>
     </div>
+    <div id="check_errors"></div>
 </div>

@@ -34,11 +34,11 @@ class User extends Authenticatable
         'logout'
     ];
 
+    /*
     protected $dispatchesEvents = [
         'created' => UserRegisteredEvent::class,
     ];
-
-
+    */
 
     /**
      *

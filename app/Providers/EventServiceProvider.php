@@ -25,6 +25,10 @@ class EventServiceProvider extends ServiceProvider
             'AVD\Listeners\UserRegisterConfirmedListener',
         ],
 
+        'AVD\Events\UserRegisteredCheckoutEvent' => [
+            'AVD\Listeners\UserRegisteredCheckoutSendMailListener',
+        ]
+
 
     ];
 

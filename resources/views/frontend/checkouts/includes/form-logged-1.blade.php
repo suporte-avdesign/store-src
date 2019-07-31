@@ -30,6 +30,7 @@
             </p>
         </div>
     </div>
+    <input type="hidden" name="register[type_id]" value="{{$user->type_id}}"/>
 
     @if($user->profile_id == 1)
         <p class="form-row form-row-first validate-required">

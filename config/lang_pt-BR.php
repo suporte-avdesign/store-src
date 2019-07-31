@@ -369,7 +369,7 @@ return [
         'checkouts' => [
             'detail_order' => 'Seu Pedido',
             'detail_user' => 'Detalhes do faturamento',
-            'error' => 'Erro ao processar o checkout. Por favor, tente novamente.',
+            'error' => 'Não foi possível processar seu pedido. Tente novamente.',
             'info' => 'Se você já fez compras conosco, insira seus dados abaixo. Se você é um novo cliente, prossiga para o Faturamento de envio.',
             'indicate_transport' => 'Quer indicar uma transportadora?',
             'is_account' => 'Já é cliente cliente?',

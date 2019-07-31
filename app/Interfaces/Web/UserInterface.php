@@ -11,5 +11,7 @@ interface UserInterface
      */
     public function setId($id);
     public function setEmail($email);
+    public function setToken($token);
     public function create($input);
+    public function update($input, $id);
 }

@@ -40,7 +40,8 @@ class AppServiceProvider extends ServiceProvider
             'State',
             'SocialShare',
             'User',
-            'UserNote',
+            'UserAddress',
+            'UserNote'
         );
 
         foreach ($models as $model) {

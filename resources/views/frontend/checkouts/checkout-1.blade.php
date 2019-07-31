@@ -60,7 +60,7 @@
                             @include('frontend.coupons.coupon-checkout-1')
 
                             <div class="row">
-                                <form name="checkout" method="post" class="checkout woocommerce-checkout" action="{{route('checkout')}}" enctype="multipart/form-data">
+                                <form id="form-checkout" name="checkout" method="post" class="checkout woocommerce-checkout" action="{{route('checkout')}}" enctype="multipart/form-data">
                                     @csrf
                                     <div class="col-sm-6">
                                         <div class="row" id="customer_details">
@@ -118,11 +118,11 @@
 </script>
 
 <script type='text/javascript'>
-    var wc_country_select_params = {!! json_encode($json_countries) !!}
+    var wc_country_select_params = {{$json_countries}}
 </script>
 <script type="text/javascript" src="{{asset('plugins/address/country-select.min.js')}}"></script>
 <script type='text/javascript'>
-    var wc_address_i18n_params = {!! json_encode($json_locale) !!}
+    var wc_address_i18n_params = {{ $json_locale }};
 </script>
 <script type="text/javascript" src="{{asset('plugins/address/address-i18n.min.js')}}"></script>
 <script type='text/javascript'>
@@ -143,6 +143,7 @@
         "i18n_checkout_error" => constLang('messages.checkouts.error')
     ]) !!}
 </script>
+
 <script type="text/javascript" src="{{asset('plugins/checkout/checkout.min.js')}}?{{time()}}"></script>
 <script type="text/javascript" src="{{asset('plugins/jquery-maskedinput/jquery.maskedinput.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('themes/js/functions.min.js')}}"></script>

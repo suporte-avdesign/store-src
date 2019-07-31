@@ -136,10 +136,11 @@ Route::delete('compare/{page}/{id}', 'Web\CompareController@destroy');
 Route::get('checkout', 'Web\CheckoutController@index')->name('checkout');
 Route::post('checkout', 'Web\CheckoutController@login')->name('checkout.login')->middleware("throttle:5,1");;
 Route::post('checkout/review', 'Web\CheckoutController@review')->name('checkout.review');
+Route::post('checkout-store', 'Web\CheckoutController@store')->name('checkout.store');
+Route::get('checkout/{email}/{token}', 'Web\CheckoutController@verifyToken')->name('checkout.confirm');
 
 
 Route::any('checkout-endpoint', 'Web\CheckoutController@endpoint')->name('checkout.endpoint');
-Route::post('checkout-store', 'Web\CheckoutController@store')->name('checkout.store');
 Route::get('checkout/{order}/{id}', 'Web\CheckoutController@show')->name('checkout.received');
 
 /*

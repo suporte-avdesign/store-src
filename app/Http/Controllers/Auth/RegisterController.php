@@ -2,13 +2,13 @@
 
 namespace AVD\Http\Controllers\Auth;
 
+use AVD\Events\UserRegisteredEvent;
 use AVD\Http\Controllers\Controller;
 use AVD\Events\UserRegisteredNoteEvent;
 use AVD\Events\UserRegisterConfirmedEvent;
 use AVD\Interfaces\Web\UserInterface as InterModel;
 use AVD\Http\Requests\Web\RegisterRequest as ValidateRegister;
 
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -61,28 +61,20 @@ class RegisterController extends Controller
     {
         $dataForm = $request->all();
 
-        $input               = $dataForm['register'];
-        $input['first_name'] = $input["first_name_{$input['type_id']}"];
-        $input['last_name']  = $input["last_name_{$input['type_id']}"];
-        $input['document1']  = $input["document1_{$input['type_id']}"];
-        $input['document2']  = $input["document2_{$input['type_id']}"];
-        $input['active']     = constLang('active_false');
-        $input['token']      = Str::random(40);
-        $input['ip']         = $request->ip();
-
-        $create = $this->interModel->create($input);
-        if ($create) {
-
+        $user = $this->interModel->create($dataForm['register']);
+        if ($user) {
             $note = [
-                'user_id' => $create->id,
+                'user_id' => $user->id,
                 'admin' => constLang('profile_name.user'),
                 'label' => constLang('register'),
                 'description' => ipLocation()
             ];
 
+            event(new UserRegisteredEvent($user));
+
             event(new UserRegisteredNoteEvent($note));
 
-            $email   = $create->email;
+            $email   = $user->email;
             $message = 'user_register';
             $success = view('frontend.messages.success-1', compact('email','message'))->render();
 
@@ -109,6 +101,9 @@ class RegisterController extends Controller
 
     protected function verifyToken($email, $token)
     {
+        if (empty($token)) {
+            return redirect()->route('login');
+        }
         $user = $this->interModel->setEmail($email);
         if ($user) {
 

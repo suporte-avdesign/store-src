@@ -495,6 +495,9 @@ jQuery( function( $ ) {
                                 } else {
                                     window.location = decodeURI( result.redirect );
                                 }
+                            } else if ( 'confirmation' === result.result ) {
+                                wc_checkout_form.$checkout_form.html(result.messages);
+                                //alert(result.messages);
                             } else if ( 'failure' === result.result ) {
                                 throw 'Result failure';
                             } else {
@@ -522,7 +525,21 @@ jQuery( function( $ ) {
                     },
 
                     error:	function( jqXHR, textStatus, errorThrown ) {
-                        wc_checkout_form.submit_error( '<div class="woocommerce-error">' + errorThrown + '</div>' );
+
+                        if (jqXHR.status == 422) {
+                            var obj = $.parseJSON(jqXHR.responseText), message = '';
+                            $.each( obj, function( key, value ) {
+
+                                if (key == 'errors') {
+                                    $.each(obj[key], function(i, error) {
+                                        message += '<li>'+error+'</li>';
+                                    });
+                                }
+                            });
+                        }
+
+                        wc_checkout_form.submit_error( '<ul class="woocommerce-error">' + message + '</ul>' );
+                        setTimeout(function(){ $(".woocommerce-NoticeGroup-checkout").hide(); }, 8000);
                     }
                 });
             }
@@ -538,7 +555,7 @@ jQuery( function( $ ) {
             $( document.body ).trigger( 'checkout_error' );
         },
         scroll_to_notices: function() {
-            var scrollElement           = $( '.woocommerce-NoticeGroup-updateOrderReview, .woocommerce-NoticeGroup-checkout' );
+            var scrollElement = $( '.woocommerce-NoticeGroup-updateOrderReview, .woocommerce-NoticeGroup-checkout' );
 
             if ( ! scrollElement.length ) {
                 scrollElement = $( '.form.checkout' );

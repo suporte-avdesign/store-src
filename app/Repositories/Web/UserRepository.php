@@ -2,9 +2,10 @@
 
 namespace AVD\Repositories\Web;
 
-
 use AVD\Models\Web\User as Model;
 use AVD\Interfaces\Web\UserInterface;
+
+use Illuminate\Support\Str;
 
 class UserRepository implements UserInterface
 {
@@ -36,7 +37,13 @@ class UserRepository implements UserInterface
 
     public function setEmail($email)
     {
-        return $this->model->where('email', $email)->first();
+        return $this->model->where('email', $email)->firstOrFail();
+    }
+
+
+    public function setToken($token)
+    {
+        return $this->model->where('token', $token)->firstOrFail();
     }
 
 
@@ -48,14 +55,28 @@ class UserRepository implements UserInterface
      */
     public function create($input)
     {
+        $input['first_name'] = $input["first_name_{$input['type_id']}"];
+        $input['last_name']  = $input["last_name_{$input['type_id']}"];
+        $input['document1']  = $input["document1_{$input['type_id']}"];
+        $input['document2']  = $input["document2_{$input['type_id']}"];
+        $input['active']     = constLang('active_false');
+        $input['token']      = Str::random(40);
+        $input['ip']         = $_SERVER['REMOTE_ADDR'];
+
         return $this->model->create($input);
     }
+
+
+
 
     public function update($input, $id)
     {
         $data   = $this->model->find($id);
         return $data->update($input);
     }
+
+
+
 
 
 }

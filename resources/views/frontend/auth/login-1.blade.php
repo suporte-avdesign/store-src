@@ -205,6 +205,8 @@
 
                                                 <p class="woocommerce-FormRow form-row">
                                                     <button type="button" id="form_reg-submit" class="woocommerce-Button button" onclick="postFormJson('form_reg')" value="{{constLang('send')}}">{{constLang('send')}}</button>
+                                                    <input type="hidden" name="new_account" value="1"/>
+                                                    <input type="hidden" name="http_referer" value="{{route('login')}}"/>
                                                 </p>
 
                                             </form>
