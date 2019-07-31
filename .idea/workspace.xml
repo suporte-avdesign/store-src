@@ -2,41 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98b239c8-5e79-4bef-877b-d465e9cffc35" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Interfaces/Web/UserAddressInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Repositories/Web/UserAddressRepository.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/frontend/checkouts/messages/error-1.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/frontend/checkouts/messages/info-1.blade.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-07-17.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-07-18.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-07-19.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-07-20.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-07-21.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-07-22.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-07-23.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-07-24.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-07-25.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-07-26.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-07-27.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-07-28.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-07-29.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/User.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/CheckoutController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/CheckoutController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Interfaces/Web/UserInterface.php" afterPath="$PROJECT_DIR$/app/Interfaces/Web/UserInterface.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Listeners/UserRegisteredSendMailListener.php" afterPath="$PROJECT_DIR$/app/Listeners/UserRegisteredSendMailListener.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Requests/Web/CheckoutRequest.php" afterPath="$PROJECT_DIR$/app/Http/Requests/Web/CheckoutRequest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Requests/Web/ConfigShippingRequest.php" afterPath="$PROJECT_DIR$/app/Http/Requests/Web/ConfigShippingRequest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/Web/User.php" afterPath="$PROJECT_DIR$/app/Models/Web/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Web/UserRepository.php" afterPath="$PROJECT_DIR$/app/Repositories/Web/UserRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/lang_pt-BR.php" afterPath="$PROJECT_DIR$/config/lang_pt-BR.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/plugins/checkout/checkout.min.js" afterPath="$PROJECT_DIR$/public/plugins/checkout/checkout.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/plugins/checkout/checkout.js" afterPath="$PROJECT_DIR$/resources/assets/plugins/checkout/checkout.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/auth/login-1.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/auth/login-1.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/checkouts/checkout-1.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/checkouts/checkout-1.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/checkouts/includes/form-logged-1.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/checkouts/includes/form-logged-1.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/checkouts/includes/form-register-1.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/checkouts/includes/form-register-1.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/checkouts/includes/method-1.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/checkouts/includes/method-1.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/checkouts/includes/payment-1.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/checkouts/includes/payment-1.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-07-30.log" afterPath="$PROJECT_DIR$/storage/logs/laravel-2019-07-30.log" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -48,19 +23,53 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="checkout-1.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/frontend/checkouts/checkout-1.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="341">
+              <caret line="92" column="26" lean-forward="false" selection-start-line="92" selection-start-column="26" selection-end-line="92" selection-end-column="26" />
+              <folding>
+                <marker date="1564600234114" expanded="true" signature="5816:6197" ph="..." />
+                <marker date="1564600234114" expanded="true" signature="5829:6195" ph="..." />
+                <marker date="1564600234114" expanded="true" signature="5830:6194" ph="..." />
+                <marker date="1564600234114" expanded="true" signature="6400:6614" ph="..." />
+                <marker date="1564600234114" expanded="true" signature="6413:6612" ph="..." />
+                <marker date="1564600234114" expanded="true" signature="6414:6611" ph="..." />
+                <marker date="1564600234114" expanded="true" signature="7079:7818" ph="..." />
+                <marker date="1564600234114" expanded="true" signature="7092:7816" ph="..." />
+                <marker date="1564600234114" expanded="true" signature="7093:7815" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="CheckoutController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Web/CheckoutController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="345" column="0" lean-forward="true" selection-start-line="345" selection-start-column="0" selection-end-line="345" selection-end-column="0" />
+            <state relative-caret-position="216">
+              <caret line="323" column="22" lean-forward="false" selection-start-line="323" selection-start-column="22" selection-end-line="323" selection-end-column="22" />
               <folding>
                 <element signature="e#44#83#0#PHP" expanded="true" />
-                <element signature="e#4260#5560#0#PHP" expanded="false" />
-                <element signature="e#5567#9836#0#PHP" expanded="false" />
-                <element signature="e#9842#11194#0#PHP" expanded="false" />
-                <element signature="e#12673#14731#0#PHP" expanded="false" />
-                <element signature="e#19485#20389#0#PHP" expanded="false" />
+                <element signature="e#2445#4138#0#PHP" expanded="false" />
+                <element signature="e#4145#5445#0#PHP" expanded="false" />
+                <element signature="e#5452#9721#0#PHP" expanded="false" />
+                <element signature="e#9727#11079#0#PHP" expanded="false" />
+                <element signature="e#12560#14618#0#PHP" expanded="false" />
+                <element signature="e#14799#18014#0#PHP" expanded="false" />
+                <element signature="e#18021#19264#0#PHP" expanded="false" />
+                <element signature="e#19399#20130#0#PHP" expanded="false" />
+                <element signature="e#20136#21040#0#PHP" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CheckoutRequest.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Requests/Web/CheckoutRequest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1368">
+              <caret line="76" column="11" lean-forward="false" selection-start-line="76" selection-start-column="11" selection-end-line="76" selection-end-column="11" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -68,9 +77,36 @@
       <file leaf-file-name="payment-1.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/frontend/checkouts/includes/payment-1.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="105" lean-forward="false" selection-start-line="6" selection-start-column="91" selection-end-line="6" selection-end-column="105" />
+            <state relative-caret-position="324">
+              <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#li#1;n#ul#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="checkout.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/assets/plugins/checkout/checkout.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="403">
+              <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="method-1.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/frontend/checkouts/includes/method-1.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="54" column="74" lean-forward="true" selection-start-line="54" selection-start-column="74" selection-end-line="54" selection-end-column="74" />
+              <folding>
+                <marker date="1564615752793" expanded="true" signature="265:331" ph="..." />
+                <marker date="1564615752793" expanded="true" signature="398:556" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -79,11 +115,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>data</find>
-      <find>update_order_review</find>
-      <find>btn_checkout</find>
-      <find>order</find>
-      <find>get_url</find>
       <find>method</find>
       <find>apl</find>
       <find>apply_coupon</find>
@@ -97,7 +128,6 @@
       <find>create-account</find>
       <find>toggle_create_account</find>
       <find>Server</find>
-      <find>payment_method</find>
       <find>payment_method_bacs</find>
       <find>}</find>
       <find>}}</find>
@@ -109,6 +139,12 @@
       <find>scroll</find>
       <find>setTimeout</find>
       <find>UserRegisterConfirmedEvent</find>
+      <find>payment_method_selected</find>
+      <find>payment_method</find>
+      <find>'click', 'input[name=&quot;payment_method&quot;]</find>
+      <find>click</find>
+      <find>shipping_method</find>
+      <find>update_checkout</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -124,9 +160,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Web/ConfigShippingController.php" />
-        <option value="$PROJECT_DIR$/webpack.mix.js" />
-        <option value="$PROJECT_DIR$/app/Helpers/functions.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/carts/render/cart-1-fragments.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/checkouts/includes/form-coupon-1.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/messages/error-1.blade.php" />
@@ -143,23 +176,17 @@
         <option value="$PROJECT_DIR$/resources/views/frontend/shipping/freight-1.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/checkouts/includes/form-account-1.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/checkouts/includes/order-1.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/frontend/checkouts/includes/method-1.blade.php" />
         <option value="$PROJECT_DIR$/app/Interfaces/Web/ConfigFormPaymentInterface.php" />
         <option value="$PROJECT_DIR$/app/Repositories/Web/ConfigFormPaymentRepository.php" />
         <option value="$PROJECT_DIR$/app/Models/Web/UserAddress.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/checkouts/includes/form-logged-1.blade.php" />
         <option value="$PROJECT_DIR$/config/lang_pt-BR.php" />
-        <option value="$PROJECT_DIR$/resources/views/frontend/checkouts/checkout-1.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/checkouts/messages/error-1.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/frontend/checkouts/includes/payment-1.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/auth/login-1.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/Web/CheckoutRequest.php" />
-        <option value="$PROJECT_DIR$/resources/assets/plugins/checkout/checkout.js" />
         <option value="$PROJECT_DIR$/resources/views/frontend/checkouts/messages/info-1.blade.php" />
         <option value="$PROJECT_DIR$/app/Mail/UserRegisterConfirmed.php" />
         <option value="$PROJECT_DIR$/app/Listeners/UserRegisterConfirmedListener.php" />
         <option value="$PROJECT_DIR$/app/Events/UserRegisterConfirmedEvent.php" />
-        <option value="$PROJECT_DIR$/app/Models/Web/User.php" />
         <option value="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" />
         <option value="$PROJECT_DIR$/app/Events/UserRegisteredCheckoutEvent.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/emails/users/checkout-registered.blade.php" />
@@ -174,6 +201,15 @@
         <option value="$PROJECT_DIR$/app/Interfaces/Web/UserAddressInterface.php" />
         <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
         <option value="$PROJECT_DIR$/app/Repositories/Web/UserAddressRepository.php" />
+        <option value="$PROJECT_DIR$/app/Models/Web/OrderShipping.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/checkouts/includes/form-register-1.blade.php" />
+        <option value="$PROJECT_DIR$/app/Models/Web/User.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/Web/ConfigShippingRequest.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/Web/CheckoutRequest.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/checkouts/checkout-1.blade.php" />
+        <option value="$PROJECT_DIR$/resources/assets/plugins/checkout/checkout.js" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/checkouts/includes/payment-1.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/checkouts/includes/method-1.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Web/CheckoutController.php" />
       </list>
     </option>
@@ -191,10 +227,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="64" />
-    <option name="y" value="-11" />
-    <option name="width" value="1303" />
-    <option name="height" value="780" />
+    <option name="x" value="65" />
+    <option name="y" value="-4" />
+    <option name="width" value="1301" />
+    <option name="height" value="772" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -362,7 +398,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Repositories" />
+              <option name="myItemId" value="Models" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -402,7 +438,77 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Interfaces" />
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Requests" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -536,22 +642,21 @@
       <updated>1563696515763</updated>
       <workItem from="1563696519041" duration="329647000" />
       <workItem from="1564421226448" duration="27924000" />
-      <workItem from="1564499688817" duration="35865000" />
+      <workItem from="1564499688817" duration="57404000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="393436000" />
+    <option name="totallyTimeSpent" value="414975000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
-    <editor active="true" />
+    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19601594" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32988048" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281493" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -600,36 +705,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Downloads/gtranslate/url_addon/gtranslate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1620">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/checkouts/includes/form-login-1.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="42" column="8" lean-forward="false" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/checkouts/includes/form-logged-1.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="32" column="78" lean-forward="false" selection-start-line="32" selection-start-column="78" selection-end-line="32" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Web/AccountTypeRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/lang_pt-BR.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6336">
@@ -726,22 +801,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Web/ConfigShippingRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="31" column="40" lean-forward="true" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Web/CheckoutRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="766">
-          <caret line="125" column="71" lean-forward="false" selection-start-line="125" selection-start-column="71" selection-end-line="125" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -758,33 +817,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/checkouts/checkout-1.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="62" column="42" lean-forward="false" selection-start-line="62" selection-start-column="42" selection-end-line="62" selection-end-column="55" />
-          <folding>
-            <element signature="e#3681#5468#0#HTML" expanded="false" />
-            <marker date="1564503196928" expanded="true" signature="5816:6197" ph="..." />
-            <marker date="1564503196928" expanded="true" signature="5829:6195" ph="..." />
-            <marker date="1564503196928" expanded="true" signature="5830:6194" ph="..." />
-            <marker date="1564503196928" expanded="true" signature="6400:6614" ph="..." />
-            <marker date="1564503196928" expanded="true" signature="6413:6612" ph="..." />
-            <marker date="1564503196928" expanded="true" signature="6414:6611" ph="..." />
-            <marker date="1564503196928" expanded="true" signature="7079:7818" ph="..." />
-            <marker date="1564503196928" expanded="true" signature="7092:7816" ph="..." />
-            <marker date="1564503196928" expanded="true" signature="7093:7815" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/plugins/checkout/checkout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-216">
-          <caret line="498" column="32" lean-forward="false" selection-start-line="498" selection-start-column="32" selection-end-line="498" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/frontend/emails/users/register-confirmed.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -797,14 +829,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="23" column="42" lean-forward="true" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Web/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -940,7 +964,7 @@
         <state relative-caret-position="288">
           <caret line="70" column="0" lean-forward="true" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
           <folding>
-            <element signature="e#40#73#0#PHP" expanded="true" />
+            <element signature="e#40#73#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1017,33 +1041,136 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Web/OrderShipping.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="19" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/frontend/checkouts/includes/form-register-1.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="199" column="0" lean-forward="true" selection-start-line="199" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
+        <state relative-caret-position="126">
+          <caret line="13" column="110" lean-forward="false" selection-start-line="13" selection-start-column="102" selection-end-line="13" selection-end-column="110" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Web/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1192">
+          <caret line="5" column="2" lean-forward="false" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Web/ConfigShippingRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="43" column="60" lean-forward="false" selection-start-line="43" selection-start-column="60" selection-end-line="43" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/checkouts/checkout-1-received.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1556405355455" expanded="true" signature="9745:9977" ph="..." />
+            <marker date="1556405355455" expanded="true" signature="9758:9975" ph="..." />
+            <marker date="1556405355455" expanded="true" signature="9759:9974" ph="..." />
+            <marker date="1556405355455" expanded="true" signature="10190:10517" ph="..." />
+            <marker date="1556405355455" expanded="true" signature="10203:10515" ph="..." />
+            <marker date="1556405355455" expanded="true" signature="10204:10514" ph="..." />
+            <marker date="1556405355455" expanded="true" signature="49170:49751" ph="..." />
+            <marker date="1556405355455" expanded="true" signature="49183:49749" ph="..." />
+            <marker date="1556405355455" expanded="true" signature="49184:49748" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Web/CheckoutRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1368">
+          <caret line="76" column="11" lean-forward="false" selection-start-line="76" selection-start-column="11" selection-end-line="76" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/plugins/checkout/checkout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/checkouts/checkout-1.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="92" column="26" lean-forward="false" selection-start-line="92" selection-start-column="26" selection-end-line="92" selection-end-column="26" />
+          <folding>
+            <marker date="1564600234114" expanded="true" signature="5816:6197" ph="..." />
+            <marker date="1564600234114" expanded="true" signature="5829:6195" ph="..." />
+            <marker date="1564600234114" expanded="true" signature="5830:6194" ph="..." />
+            <marker date="1564600234114" expanded="true" signature="6400:6614" ph="..." />
+            <marker date="1564600234114" expanded="true" signature="6413:6612" ph="..." />
+            <marker date="1564600234114" expanded="true" signature="6414:6611" ph="..." />
+            <marker date="1564600234114" expanded="true" signature="7079:7818" ph="..." />
+            <marker date="1564600234114" expanded="true" signature="7092:7816" ph="..." />
+            <marker date="1564600234114" expanded="true" signature="7093:7815" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/frontend/checkouts/includes/payment-1.blade.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#li#1;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/checkouts/includes/method-1.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
-          <caret line="6" column="105" lean-forward="false" selection-start-line="6" selection-start-column="91" selection-end-line="6" selection-end-column="105" />
-          <folding />
+          <caret line="54" column="74" lean-forward="true" selection-start-line="54" selection-start-column="74" selection-end-line="54" selection-end-column="74" />
+          <folding>
+            <marker date="1564615752793" expanded="true" signature="265:331" ph="..." />
+            <marker date="1564615752793" expanded="true" signature="398:556" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Web/CheckoutController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="345" column="0" lean-forward="true" selection-start-line="345" selection-start-column="0" selection-end-line="345" selection-end-column="0" />
+        <state relative-caret-position="216">
+          <caret line="323" column="22" lean-forward="false" selection-start-line="323" selection-start-column="22" selection-end-line="323" selection-end-column="22" />
           <folding>
             <element signature="e#44#83#0#PHP" expanded="true" />
-            <element signature="e#4260#5560#0#PHP" expanded="false" />
-            <element signature="e#5567#9836#0#PHP" expanded="false" />
-            <element signature="e#9842#11194#0#PHP" expanded="false" />
-            <element signature="e#12673#14731#0#PHP" expanded="false" />
-            <element signature="e#19485#20389#0#PHP" expanded="false" />
+            <element signature="e#2445#4138#0#PHP" expanded="false" />
+            <element signature="e#4145#5445#0#PHP" expanded="false" />
+            <element signature="e#5452#9721#0#PHP" expanded="false" />
+            <element signature="e#9727#11079#0#PHP" expanded="false" />
+            <element signature="e#12560#14618#0#PHP" expanded="false" />
+            <element signature="e#14799#18014#0#PHP" expanded="false" />
+            <element signature="e#18021#19264#0#PHP" expanded="false" />
+            <element signature="e#19399#20130#0#PHP" expanded="false" />
+            <element signature="e#20136#21040#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>

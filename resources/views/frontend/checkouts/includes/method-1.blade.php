@@ -55,7 +55,7 @@
             <ul id="shipping_method" class="woocommerce-shipping-methods">
                 @foreach($configShipping as $method)
                     <li>
-                        <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_{{$method->id}}" value="{{$method->id}}" class="shipping_method" @if($selected == $method->id) checked @endif/>
+                        <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_{{$method->id}}" value="{{$method->id}}" class="shipping_method" @if($method_selected == $method->id) checked @endif/>
                         @if($method->tax_unique != '0.00')
                             <label for="shipping_method_{{$method->id}}">{{$method->name}}</label>
                             <p>{{$method->description}} {{constLang('currency')}} {{setReal($method->tax_unique)}}</p>

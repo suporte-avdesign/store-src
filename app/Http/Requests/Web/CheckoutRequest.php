@@ -24,10 +24,13 @@ class CheckoutRequest extends FormRequest
     public function rules()
     {
         /**
-         * Rules Users
+         * Users
          */
         $register = $this->get('register');
         $new_account = $this->get('new_account');
+        $method = $this->get('shipping_method');
+
+
         $type = $register['type_id'];
         ($this->method() == 'POST' ? $id = 0 : $id = auth()->user()->id);
         $rules['register.profile_id'] = "required";
@@ -58,7 +61,7 @@ class CheckoutRequest extends FormRequest
         }
 
         /**
-         * Rules Address
+         * Address
          */
         $rules['address.address']  = "required|min:3";
         $rules['address.number']  = "required";
@@ -66,6 +69,18 @@ class CheckoutRequest extends FormRequest
         $rules['address.city']  = "required";
         $rules['address.zip_code']  = "required|formato_cep";
         $rules['address.state']  = "required";
+
+        /**
+         * Método
+         */
+        $rules['shipping_method'] = "required";
+        /**
+         * Payment
+         */
+        $rules['payment_method'] = "required";
+
+
+
 
 
 
@@ -82,7 +97,7 @@ class CheckoutRequest extends FormRequest
 
 
             /**
-             * Mensages Users
+             * Users
              */
             'register.profile_id.required'      => 'O Perfil do cadastro é obrigatório.',
             'register.type_id.required'         => 'O Perfil do cadastro é obrigatório.',
@@ -112,11 +127,9 @@ class CheckoutRequest extends FormRequest
             'register.password.min'             => "A Senha deverá conter no mínimo 6 caracteres.",
             'register.password_confirmation'    => "A Confirmação da senha é obrigatória.",
             'register.password.confirmed'       => "A Confirmação da senha não coincide.",
-
             /**
-             * Massages Address             *
+             * Address             *
              */
-
             "address.address.required"      => "O Endereço é obrigatório.",
             "address.address.min"           => "O Endereço deve ter no mínimo 3 caracters",
             "address.number.required"       => "O Número é obrigatório.",
@@ -125,6 +138,15 @@ class CheckoutRequest extends FormRequest
             "address.zip_code.required"     => "O CEP é obrigatório.",
             "address.zip_code.formato_cep"  => "Digite um CEP válido.",
             "address.state.required"        => "O Estado é obrigatório.",
+            /**
+             * Método
+             */
+            "shipping_method.required"        => "O Método de envio é obrigatório.",
+            /**
+             * Payment
+             */
+            "payment_method.required"        => "A forma de pagamento é obrigatória.",
+
 
         ];
 

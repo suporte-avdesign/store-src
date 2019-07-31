@@ -41,7 +41,7 @@ class ConfigShippingRequest extends FormRequest
             'calc_shipping_country.required' => 'A senha é obrigatória.',
             'calc_shipping_state.required' => 'O Estado é obrigatório.',
             'calc_shipping_city.required' => 'A Cidade é obrigatória.',
-            'shipping_method.required' => 'O Método é obrigatório.',
+            'shipping_method.required' => 'O Método de envio é obrigatório.',
             'http_referer.required' => 'A url é obrigatória.'
         ];
     }

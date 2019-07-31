@@ -11,7 +11,7 @@
         </p>
         <p class="form-row form-row-wide create-account woocommerce-validated">
             <label class="checkbox">
-                <input class="input-checkbox" id="indicate_transport" type="checkbox" name="indicate_transport" value="1">
+                <input class="input-checkbox" id="indicate_transport" type="checkbox" name="transport[indicate]" value="1">
                 <span>{{constLang('messages.checkouts.indicate_transport')}}</span>
             </label>
         </p>

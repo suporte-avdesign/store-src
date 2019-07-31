@@ -64,19 +64,20 @@ jQuery( function( $ ) {
             }
         },
         init_payment_methods: function() {
+
             var $payment_methods = $( '.woocommerce-checkout' ).find( 'input[name="payment_method"]' );
 
-            // If there is one method, we can hide the radio input
+            // Se houver um método, podemos ocultar a entrada de rádio.
             if ( 1 === $payment_methods.length ) {
                 $payment_methods.eq(0).hide();
             }
 
-            // If there was a previously selected method, check that one.
+            // Se houver um método previamente selecionado, verifique esse.
             if ( wc_checkout_form.selectedPaymentMethod ) {
                 $( '#' + wc_checkout_form.selectedPaymentMethod ).prop( 'checked', true );
             }
 
-            // If there are none selected, select the first.
+            // Se não houver nenhum selecionado, selecione o primeiro.
             if ( 0 === $payment_methods.filter( ':checked' ).length ) {
                 $payment_methods.eq(0).prop( 'checked', true );
             }
@@ -87,7 +88,7 @@ jQuery( function( $ ) {
                 $( 'div.payment_box' ).filter( ':visible' ).slideUp( 0 );
             }
 
-            // Trigger click event for selected method
+            // Evento de clique do acionador para o método selecionado
             $payment_methods.filter( ':checked' ).eq(0).trigger( 'click' );
         },
         get_payment_method: function() {
@@ -255,6 +256,7 @@ jQuery( function( $ ) {
             wc_checkout_form.updateTimer = setTimeout( wc_checkout_form.update_checkout_action, '5', args );
         },
         update_checkout_action: function( args ) {
+
             if ( wc_checkout_form.xhr ) {
                 wc_checkout_form.xhr.abort();
             }
@@ -375,12 +377,12 @@ jQuery( function( $ ) {
                         } );
                     }
 
-                    // Recheck the terms and conditions box, if needed
+                    // Verifique novamente a caixa de termos e condições, se necessário
                     if ( termsCheckBoxChecked ) {
                         $( '#terms' ).prop( 'checked', true );
                     }
 
-                    // Fill in the payment details if possible without overwriting data if set.
+                    // Preencha os detalhes de pagamento, se possível, sem substituir os dados, se definidos.
                     if ( ! $.isEmptyObject( paymentDetails ) ) {
                         $( '.payment_box :input' ).each( function() {
                             var ID = $( this ).attr( 'id' );

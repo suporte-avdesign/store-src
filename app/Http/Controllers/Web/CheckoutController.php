@@ -108,29 +108,15 @@ class CheckoutController extends Controller
         }
 
         $total = $this->interCart->getTotal($cart);
-
-
-
-        # Identificar qual método
-        $method = null;
-        ($method == null ? $method = 'legacy_flat_rate' : $method = $method);
-
+        # Identificar qual método de pagamento e envio
+        $payment_selected = 3;
+        $method_selected = 1;
 
         return view("{$this->view}.checkout-1", compact(
-            'user',
-            'menu',
-            'cart',
-            'total',
-            'types',
-            'states',
-            'method',
-            'adresses',
-            'profiles',
-            'configPayment',
-            'configKeyword',
-            'configShipping',
-            'json_locale',
-            'json_countries')
+            'user', 'menu', 'cart', 'total', 'types',
+            'states', 'adresses', 'profiles', 'json_locale',
+            'configPayment', 'configKeyword', 'configShipping',
+            'json_countries', 'method_selected', 'payment_selected')
         );
     }
 
@@ -327,47 +313,41 @@ class CheckoutController extends Controller
      */
     public function review(Request $request)
     {
-        $selected = $request['shipping_method'][0];
-        $configShipping = $this->configShipping->getAll();
-
-
-        $shipping_method = $request->input('shipping_method');
-        $method = $shipping_method[0];
-
-        ($method == null ? $method = 'legacy_flat_rate' : $method = $method);
-
-
-
-
         (Auth::user() ? $user_id = Auth::id() : $user_id = 0);
         $session = md5($_SERVER['REMOTE_ADDR']);
-
-
-
         $configSite = $this->configSite->setId(1);
         if ($user_id != 0 && $configSite->order == 'wishlist'){
             dd('Cart = Lista de desejo');
         } else {
             $cart = $this->interCart->getAll($session);
 
+            dd($cart);
         }
 
-        $order = view("{$this->view}.includes.method-1", compact(
+        $configPayment  = $this->configFormPayment->getAll();
+        $configShipping = $this->configShipping->getAll();
+
+        $shipping_method = $request->input('shipping_method');
+        $method_selected = $shipping_method[0];
+        $payment_selected = $request->input('payment_method').
+
+
+        $order_method = view("{$this->view}.includes.method-1", compact(
             'cart',
             'total',
-            'method',
-            'selected',
+            'method_selected',
             'configShipping'))->render();
 
-        $configPayment  = $this->configFormPayment->getAll();
-        $payment = view("{$this->view}.includes.payment-1", compact('configPayment'))->render();
+        $payment = view("{$this->view}.includes.payment-1", compact(
+            'configPayment',
+            'payment_selected'))->render();
 
         $out = array(
             "result" => "success",
             "messages" => "",
             "reload" => "false",
             "fragments" => array(
-                ".woocommerce-checkout-review-order-table" => $order,
+                ".woocommerce-checkout-review-order-table" => $order_method,
                 ".woocommerce-checkout-payment" => $payment
             )
         );
@@ -450,6 +430,7 @@ class CheckoutController extends Controller
     public function store(ValidateCheckout $request)
     {
         $dataForm = $request->all();
+        //dd($dataForm);
         $new_account = $request['new_account'];
         if ($new_account == 1) {
             $user = $this->interUser->create($dataForm['register']);
@@ -470,7 +451,25 @@ class CheckoutController extends Controller
                 $address = $dataForm['address'];
                 $create_address = $this->interAddress->create($address);
                 if ($create_address) {
-                    $payment_method = $request['payment_method'];
+
+                    $transport = $dataForm['transport'];
+                    # Indicado pelo cliente
+                    if ($transport['indicate'] == 1) {
+                        $create_transport = [
+                            'order_id' => '1', #order->id
+                            'user_id' => $user->id,
+                            'config_shipping_id' => 'Verificar',
+                            'indicate' => $transport['indicate'],
+                            'phone' => $transport['phone'],
+                            'name' => $transport['name']
+                        ];
+                    } else {
+                        # Método de envio
+                        $shipping_method = $dataForm['shipping_method[0]'];
+                        dd($shipping_method);
+
+                    }
+
 
                 }
 
