@@ -118,7 +118,7 @@
                                                 {{constLang('messages.cart.update')}}
                                             </button>
                                             <input type="hidden" id="woocommerce-cart-nonce" name="woocommerce-cart-nonce" value="{{$item->id}}" />
-                                            <input type="hidden" name="_wp_http_referer" value="/basel/cart/" />
+                                            <input type="hidden" name="http_referer" value="cart" />
                                             <input type="hidden" name="_token" value="{{csrf_token()}}" />
                                         </div>
                                     </div>

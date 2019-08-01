@@ -98,8 +98,7 @@
 
                         <p><button type="submit" name="calc_shipping" value="1" class="button">Atualizar</button></p>
                         <input type="hidden" id="woocommerce-shipping-calculator-nonce" name="woocommerce-shipping-calculator-nonce" value="6cedcff10b" />
-                        <input type="hidden" name="_wp_http_referer" value="/basel/cart/" />
-                        <input type="hidden" name="_token" value="/basel/cart/" />
+                        <input type="hidden" name="_http_referer" value="cart" />
                         <input type="hidden" name="_token" value="{{csrf_token()}}" />
                     </section>
                 </form>

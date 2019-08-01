@@ -40,6 +40,7 @@
 
         <div class="woocommerce-terms-and-conditions-wrapper">
             <div class="woocommerce-privacy-policy-text">
+                <p>{{$freight->prazo}}</p>
                 <p>Seus dados pessoais serão usados ​​para processar seu pedido, apoiar sua experiência em todo o site e para outros fins descritos em nossa
                     <a href="#" class="woocommerce-privacy-policy-link" target="_blank">política de privacidade</a>.
                 </p>

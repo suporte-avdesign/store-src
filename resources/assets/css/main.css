@@ -15026,15 +15026,15 @@ p.demo_store {
   .woocommerce-checkout-review-order-table tfoot .shipping p {
     margin-bottom: 0px; }
   .woocommerce-checkout-review-order-table tfoot .order-total th {
-    font-size: 24px;
-    padding-top: 20px; }
+    font-size: 16px;
+    padding-top: 16px; }
   .woocommerce-checkout-review-order-table tfoot .order-total th {
     text-transform: uppercase;
     font-weight: bold; }
   .woocommerce-checkout-review-order-table tfoot .order-total td {
-    padding-top: 20px; }
+    padding-top: 16px; }
     .woocommerce-checkout-review-order-table tfoot .order-total td > strong {
-      font-size: 24px; }
+      font-size: 16px; }
     .woocommerce-checkout-review-order-table tfoot .order-total td .amount {
       color: #1aada3; }
 

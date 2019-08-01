@@ -404,6 +404,7 @@ return [
         'shipping' => [
             'days_text' => 'O tempo estimado é de',
             'delivery_domicile' => 'Entrega no domicílio:',
+            'error' => 'Erro:',
             'method' => 'Método',
             'value' => 'Valor R$',
             'freight' => 'Frete',
