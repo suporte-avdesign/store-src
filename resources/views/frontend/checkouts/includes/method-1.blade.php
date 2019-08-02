@@ -107,7 +107,6 @@
                     </span>
                 </strong>
             </td>
-            <td></td>
         </tr>
     @endif
     @endauth

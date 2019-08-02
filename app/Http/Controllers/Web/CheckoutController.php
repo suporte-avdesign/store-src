@@ -21,6 +21,7 @@ use AVD\Interfaces\Web\AccountTypeInterface as InterAccountType;
 use AVD\Interfaces\Web\ConfigShippingInterface as ConfigShipping;
 use AVD\Interfaces\Web\ConfigProfileClientInterface as InterProfile;
 use AVD\Interfaces\Web\ConfigFormPaymentInterface as ConfigFormPayment;
+use AVD\Interfaces\Web\ContentTermsConditionsInterface as TermsConditions;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -53,6 +54,7 @@ class CheckoutController extends Controller
         ConfigKeyword $configKeyword,
         ConfigShipping $configShipping,
         FreightService $freightService,
+        TermsConditions $termsConditions,
         InterAccountType $interAccountType,
         ConfigFormPayment $configFormPayment)
     {
@@ -67,6 +69,7 @@ class CheckoutController extends Controller
         $this->configKeyword = $configKeyword;
         $this->configShipping = $configShipping;
         $this->freightService  = $freightService;
+        $this->termsConditions  = $termsConditions;
         $this->interAccountType  = $interAccountType;
         $this->configFormPayment  = $configFormPayment;
     }
@@ -79,12 +82,13 @@ class CheckoutController extends Controller
     {
 
 
-        $menu           = $this->interSection->getMenu();
-        $types          = $this->interAccountType->getAll();
-        $profiles       = $this->interProfile->getAll();
-        $configKeyword  = $this->configKeyword->random();
-        $configShipping = $this->configShipping->getAll();
-        $configPayment  = $this->configFormPayment->getAll();
+        $menu            = $this->interSection->getMenu();
+        $types           = $this->interAccountType->getAll();
+        $profiles        = $this->interProfile->getAll();
+        $configKeyword   = $this->configKeyword->random();
+        $configShipping  = $this->configShipping->getAll();
+        $configPayment   = $this->configFormPayment->getAll();
+        $termsConditions = $this->termsConditions->getAll();
 
         # Json countries
         $brasil = $this->interState->getAll();
@@ -124,20 +128,22 @@ class CheckoutController extends Controller
             'user', 'menu', 'cart', 'total', 'types',
             'states', 'freight', 'adresses', 'profiles', 'json_locale',
             'configPayment', 'configKeyword', 'configShipping',
-            'json_countries', 'method_selected', 'payment_selected')
+            'termsConditions','json_countries', 'method_selected', 'payment_selected')
         );
     }
 
 
     public function getCountries($states)
     {
+
         foreach ($states as $state) {
             $arr[$state->uf] = $state->name;
         }
+
+        $countrie = array('BR' => $arr);
+
         $countries = array(
-            "countries" => array(
-                "BR" => $arr
-             ),
+            "countries" => json_encode( $countrie ),
             "i18n_select_state_text" => constLang('select_state'),
             "i18n_no_matches" => constLang('not_found'),
             "i18n_ajax_error" => constLang('loading_failed'),
@@ -150,7 +156,7 @@ class CheckoutController extends Controller
             "i18n_load_more" => constLang('loading_more')."...",
             "i18n_searching" => constLang('searching')."...",
         );
-        return json_encode($countries);
+        return $countries;
     }
 
 
@@ -251,23 +257,23 @@ class CheckoutController extends Controller
             )
         );
 
+        $countrie = array('BR' => $arr1, "default" => $default);
+        $locale_fields = array(
+            "address_1" => "#billing_address_1_field,#shipping_address_1_field",
+            "address_2" => "#billing_address_2_field,#shipping_address_2_field",
+            "state" => "#billing_state_field,#shipping_state_field,#calc_shipping_state_field",
+            "postcode" => "#billing_postcode_field,#shipping_postcode_field,#calc_shipping_postcode_field",
+            "city" => "#billing_city_field,#shipping_city_field,#calc_shipping_city_field"
+        );
+
         $locale = array(
-            "locale" => array(
-                'BR' => $arr1,
-                "default" => $default
-            ),
-            "locale_fields" => array(
-                "address_1" => "#billing_address_1_field,#shipping_address_1_field",
-                "address_2" => "#billing_address_2_field,#shipping_address_2_field",
-                "state" => "#billing_state_field,#shipping_state_field,#calc_shipping_state_field",
-                "postcode" => "#billing_postcode_field,#shipping_postcode_field,#calc_shipping_postcode_field",
-                "city" => "#billing_city_field,#shipping_city_field,#calc_shipping_city_field"
-            ),
+            "locale" => json_encode( $countrie ),
+            "locale_fields" => json_encode( $locale_fields ),
             "i18n_required_text" => "required",
             "i18n_optional_text" => "optional"
         );
 
-        return json_encode($locale);
+        return $locale;
     }
 
     public function method(Request $request)
@@ -321,8 +327,9 @@ class CheckoutController extends Controller
      */
     public function review(Request $request)
     {
-        $configPayment  = $this->configFormPayment->getAll();
-        $configShipping = $this->configShipping->getAll();
+        $configPayment   = $this->configFormPayment->getAll();
+        $configShipping  = $this->configShipping->getAll();
+        $termsConditions = $this->termsConditions->getAll();
 
         $shipping_method = $request->input('shipping_method');
         $method_selected = $shipping_method[0];
@@ -354,16 +361,10 @@ class CheckoutController extends Controller
         }
 
         $order_method = view("{$this->view}.includes.method-1", compact(
-            'cart',
-            'freight',
-            'method_selected',
-            'payment_selected',
-            'configShipping'))->render();
+            'cart','freight','method_selected','payment_selected','configShipping'))->render();
 
         $payment = view("{$this->view}.includes.payment-1", compact(
-            'freight',
-            'configPayment',
-            'payment_selected'))->render();
+            'freight','configPayment','termsConditions','payment_selected'))->render();
 
         $out = array(
             "result" => "success",
@@ -450,10 +451,12 @@ class CheckoutController extends Controller
 
 
 
+
+
+
     public function store(ValidateCheckout $request)
     {
         $dataForm = $request->all();
-        //dd($dataForm);
         $new_account = $request['new_account'];
         if ($new_account == 1) {
             $user = $this->interUser->create($dataForm['register']);
@@ -510,12 +513,8 @@ class CheckoutController extends Controller
                 return response()->json($out);
             }
         } else {
-
+            dd($dataForm);
         }
-
-        dd($dataForm);
-
-
 
         $result = 2;
         if ($result == 2) {

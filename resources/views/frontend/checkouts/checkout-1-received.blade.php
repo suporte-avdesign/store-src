@@ -187,5 +187,5 @@
         "i18n_checkout_error" => "Erro ao processar o checkout. Por favor, tente novamente."
     ]) !!}
 </script>
-<script type="text/javascript" src="{{asset('plugins/checkout/js/checkout.js')}}?ver=3.5.2"></script>
+<script type="text/javascript" src="{{asset('plugins/checkout/js/checkout2.js')}}?ver=3.5.2"></script>
 @endpush

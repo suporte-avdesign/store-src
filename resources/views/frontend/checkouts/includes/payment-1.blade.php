@@ -45,10 +45,11 @@
                     <a href="#" class="woocommerce-privacy-policy-link" target="_blank">política de privacidade</a>.
                 </p>
             </div>
-            <div class="woocommerce-terms-and-conditions" style="display: none; max-height: 200px; overflow: auto;"><h4><b>Terms and Conditions</b></h4>
-                <p>Texto 1</p>
-                <p>Texto 2</p>
-                <p>Texto 3</p>
+            <div class="woocommerce-terms-and-conditions" style="display: none; max-height: 200px; overflow: auto;">
+                @foreach($termsConditions as $terms)
+                    <h4>{{$terms->title}}</h4>
+                    {!! $terms->description !!}
+                @endforeach
             </div>
             <p class="form-row validate-required">
                 <label class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox">

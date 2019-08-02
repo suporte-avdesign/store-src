@@ -64,7 +64,7 @@
         "sticky_desc_scroll" => "1",
         "quickview_in_popup_fix" => "",
         "one_page_menu_offset" => "150",
-        "csrf_token" => csrf_token(),9
+        "csrf_token" => csrf_token()
     ]) !!};
     var basel_variation_gallery_data=null;
 </script>

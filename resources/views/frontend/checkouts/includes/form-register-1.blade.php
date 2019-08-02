@@ -154,16 +154,16 @@
     </p>
 
     <p class="form-row form-row-first validate-required">
-        <label for="reg_number">{{constLang('number')}} <span class="required">*</span></label>
+        <label for="address_number">{{constLang('number')}} <span class="required">*</span></label>
         <span class="woocommerce-input-wrapper">
-            <input type="text" class="input-text" id="reg_number" name="address[number]" value="" />
+            <input type="text" class="input-text" id="address_number" name="address[number]" value="" />
         </span>
     </p>
 
     <p class="form-row form-row-last">
-        <label for="complement">{{constLang('complement')}} <span class="required"></span></label>
+        <label for="address_complement">{{constLang('complement')}} <span class="required"></span></label>
         <span class="woocommerce-input-wrapper">
-           <input type="text" class="input-text" id="reg_phone" name="address[complement]" value="" />
+           <input type="text" class="input-text" id="address_complement" name="address[complement]" value="" />
         </span>
     </p>
     <p class="form-row form-row-first validate-required">
@@ -186,8 +186,8 @@
         </span>
     </p>
 
-    <p class="form-row form-row-last validate-required validate-state">
-        <label for="state" class="">{{constLang('state')}}<span class="required">*</span></label>
+    <p class="form-row form-row-last address-field validate-required validate-state" id="billing_state_field" data-priority="80">
+        <label for="state" class="select2-selection__rendered">{{constLang('state')}}<span class="required">*</span></label>
         <span class="woocommerce-input-wrapper">
             <select name="address[state]" id="state" class="state_select">
                 <option value="">{{constLang('select_state')}}</option>

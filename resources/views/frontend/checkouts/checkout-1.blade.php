@@ -117,14 +117,19 @@
     ]) !!}
 </script>
 
+
+
 <script type='text/javascript'>
-    var wc_country_select_params = {{$json_countries}}
+    var wc_country_select_params = {!! json_encode($json_countries) !!}
 </script>
+
 <script type="text/javascript" src="{{asset('plugins/address/country-select.min.js')}}"></script>
 <script type='text/javascript'>
-    var wc_address_i18n_params = {{ $json_locale }};
+    var wc_address_i18n_params = {!! json_encode($json_locale) !!}
 </script>
 <script type="text/javascript" src="{{asset('plugins/address/address-i18n.min.js')}}"></script>
+
+
 <script type='text/javascript'>
     var wc_checkout_params = {!! json_encode([
         "ajax_url" => route('checkout')."/?ajax=teste",

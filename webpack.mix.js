@@ -49,7 +49,7 @@ mix.scripts('resources/assets/themes/js/theme-org.js', 'public/themes/js/theme.m
 //footer
 mix.scripts('resources/assets/includes/contact-form-7/js/scripts.js', 'public/includes/contact-form-7/js/scripts.js');
 mix.scripts('resources/assets/plugins/js-cookie/js.cookie.min.js', 'public/plugins/js-cookie/js.cookie.min.js');
-mix.scripts('resources/assets/plugins/frontend/avdesign', 'public/plugins/frontend/avdesign.min.js');
+mix.scripts('resources/assets/plugins/frontend/avdesign.js', 'public/plugins/frontend/avdesign.min.js');
 mix.scripts('resources/assets/plugins/cart/js/cart-fragments.min.js', 'public/plugins/cart/js/cart-fragments.min.js');
 mix.scripts('resources/assets/plugins/yith-wishlist/js/jquery.selectBox.min.js', 'public/plugins/yith-wishlist/js/jquery.selectBox.min.js');
 mix.scripts('resources/assets/plugins/yith-wishlist/js/jquery.yith-wcwl.js', 'public/plugins/yith-wishlist/js/jquery.yith-wcwl.js');

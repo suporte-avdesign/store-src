@@ -58,21 +58,26 @@ jQuery( function( $ ) {
             if ( wc_checkout_params.option_guest_checkout === 'yes' ) {
                 $( 'input#createaccount' ).change( this.toggle_create_account ).change();
             }
+
+            if ( wc_checkout_params.option_indicate_transport === 'yes' ) {
+                $( 'input#indicate_transport' ).change( this.toggle_indicate_transport ).change();
+            }
         },
         init_payment_methods: function() {
+
             var $payment_methods = $( '.woocommerce-checkout' ).find( 'input[name="payment_method"]' );
 
-            // If there is one method, we can hide the radio input
+            // Se houver um método, podemos ocultar a entrada de rádio.
             if ( 1 === $payment_methods.length ) {
                 $payment_methods.eq(0).hide();
             }
 
-            // If there was a previously selected method, check that one.
+            // Se houver um método previamente selecionado, verifique esse.
             if ( wc_checkout_form.selectedPaymentMethod ) {
                 $( '#' + wc_checkout_form.selectedPaymentMethod ).prop( 'checked', true );
             }
 
-            // If there are none selected, select the first.
+            // Se não houver nenhum selecionado, selecione o primeiro.
             if ( 0 === $payment_methods.filter( ':checked' ).length ) {
                 $payment_methods.eq(0).prop( 'checked', true );
             }
@@ -83,7 +88,7 @@ jQuery( function( $ ) {
                 $( 'div.payment_box' ).filter( ':visible' ).slideUp( 0 );
             }
 
-            // Trigger click event for selected method
+            // Evento de clique do acionador para o método selecionado
             $payment_methods.filter( ':checked' ).eq(0).trigger( 'click' );
         },
         get_payment_method: function() {
@@ -128,6 +133,16 @@ jQuery( function( $ ) {
                 // Ensure password is not pre-populated.
                 $( '#account_password' ).val( '' ).change();
                 $( 'div.create-account' ).slideDown();
+            }
+        },
+        toggle_indicate_transport: function() {
+            $( 'div.indicate_transport' ).hide();
+
+            if ( $( this ).is( ':checked' ) ) {
+                // Ensure password is not pre-populated.
+                $( '#transport_nome' ).val( '' ).change();
+                $( '#transport_phone' ).val( '' ).change();
+                $( 'div.indicate_transport' ).slideDown();
             }
         },
         init_checkout: function() {
@@ -241,6 +256,7 @@ jQuery( function( $ ) {
             wc_checkout_form.updateTimer = setTimeout( wc_checkout_form.update_checkout_action, '5', args );
         },
         update_checkout_action: function( args ) {
+
             if ( wc_checkout_form.xhr ) {
                 wc_checkout_form.xhr.abort();
             }
@@ -301,7 +317,7 @@ jQuery( function( $ ) {
                 s_address       : s_address,
                 s_address_2     : s_address_2,
                 has_full_address: has_full_address,
-                _token          : wc_checkout_params.csrf_token,
+                _token:         wc_checkout_params.csrf_token,
                 post_data       : $( 'form.checkout' ).serialize()
             };
 
@@ -328,7 +344,6 @@ jQuery( function( $ ) {
                 url:		wc_checkout_params.ajax_url_review.toString().replace( '%%endpoint%%', 'update_order_review' ),
                 data:		data,
                 success:	function( data ) {
-
                     // Reload the page if requested
                     if ( true === data.reload ) {
                         window.location.reload();
@@ -362,12 +377,12 @@ jQuery( function( $ ) {
                         } );
                     }
 
-                    // Recheck the terms and conditions box, if needed
+                    // Verifique novamente a caixa de termos e condições, se necessário
                     if ( termsCheckBoxChecked ) {
                         $( '#terms' ).prop( 'checked', true );
                     }
 
-                    // Fill in the payment details if possible without overwriting data if set.
+                    // Preencha os detalhes de pagamento, se possível, sem substituir os dados, se definidos.
                     if ( ! $.isEmptyObject( paymentDetails ) ) {
                         $( '.payment_box :input' ).each( function() {
                             var ID = $( this ).attr( 'id' );
@@ -482,6 +497,9 @@ jQuery( function( $ ) {
                                 } else {
                                     window.location = decodeURI( result.redirect );
                                 }
+                            } else if ( 'confirmation' === result.result ) {
+                                wc_checkout_form.$checkout_form.html(result.messages);
+                                //alert(result.messages);
                             } else if ( 'failure' === result.result ) {
                                 throw 'Result failure';
                             } else {
@@ -509,6 +527,7 @@ jQuery( function( $ ) {
                     },
 
                     error:	function( jqXHR, textStatus, errorThrown ) {
+
                         if (jqXHR.status == 422) {
                             var obj = $.parseJSON(jqXHR.responseText), message = '';
                             $.each( obj, function( key, value ) {
@@ -520,7 +539,9 @@ jQuery( function( $ ) {
                                 }
                             });
                         }
-                        wc_checkout_form.submit_error( '<div class="woocommerce-error">' + message + '</div>' );
+
+                        wc_checkout_form.submit_error( '<ul class="woocommerce-error">' + message + '</ul>' );
+                        setTimeout(function(){ $(".woocommerce-NoticeGroup-checkout").hide(); }, 8000);
                     }
                 });
             }
@@ -536,7 +557,7 @@ jQuery( function( $ ) {
             $( document.body ).trigger( 'checkout_error' );
         },
         scroll_to_notices: function() {
-            var scrollElement           = $( '.woocommerce-NoticeGroup-updateOrderReview, .woocommerce-NoticeGroup-checkout' );
+            var scrollElement = $( '.woocommerce-NoticeGroup-updateOrderReview, .woocommerce-NoticeGroup-checkout' );
 
             if ( ! scrollElement.length ) {
                 scrollElement = $( '.form.checkout' );
@@ -580,7 +601,7 @@ jQuery( function( $ ) {
 
             $.ajax({
                 type:		'POST',
-                url:		wc_checkout_params.wc_ajax_url.toString().replace( '%%endpoint%%', 'apply_coupon' ),
+                url:		wc_checkout_params.ajax_coupon.toString().replace( '%%endpoint%%', 'apply_coupon' ),
                 data:		data,
                 success:	function( code ) {
                     $( '.woocommerce-error, .woocommerce-message' ).remove();
@@ -614,12 +635,13 @@ jQuery( function( $ ) {
 
             var data = {
                 security: wc_checkout_params.remove_coupon_nonce,
-                coupon:   coupon
+                coupon:   coupon,
+                _token:   wc_checkout_params.csrf_token
             };
 
             $.ajax({
                 type:    'POST',
-                url:     wc_checkout_params.wc_ajax_url.toString().replace( '%%endpoint%%', 'remove_coupon' ),
+                url:     wc_checkout_params.ajax_coupon.toString().replace( '%%endpoint%%', 'remove_coupon' ),
                 data:    data,
                 success: function( code ) {
                     $( '.woocommerce-error, .woocommerce-message' ).remove();

@@ -12,6 +12,8 @@
 */
 
 
+Route::resource('testes/checkout', 'Web\TestesController');
+
 Route::get('/', 'Web\HomeController@index')->name('home');
 
 

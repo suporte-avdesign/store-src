@@ -33,6 +33,7 @@ class AppServiceProvider extends ServiceProvider
             'ConfigShipping',
             'ConfigSite',
             'Contact',
+            'ContentTermsConditions',
             'ImageColor',
             'GridProduct',
             'Product',
