@@ -2,26 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98b239c8-5e79-4bef-877b-d465e9cffc35" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Interfaces/Web/ContentTermsConditionsInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Repositories/Web/ContentTermsConditionsRepository.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/plugins/checkout/checkout2.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/frontend/testes/checkout.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/CheckoutController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/CheckoutController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/plugins/checkout/checkout.min.js" afterPath="$PROJECT_DIR$/public/plugins/checkout/checkout.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/plugins/frontend/avdesign.min.js" afterPath="$PROJECT_DIR$/public/plugins/frontend/avdesign.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/plugins/checkout/checkout.js" afterPath="$PROJECT_DIR$/resources/assets/plugins/checkout/checkout.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/checkouts/checkout-1-received.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/checkouts/checkout-1-received.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/checkouts/checkout-1.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/checkouts/checkout-1.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/checkouts/includes/form-register-1.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/checkouts/includes/form-register-1.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/checkouts/includes/method-1.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/checkouts/includes/method-1.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/checkouts/includes/payment-1.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/checkouts/includes/payment-1.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/template-1.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/template-1.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/scripts/basel_settings.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/scripts/basel_settings.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-08-01.log" afterPath="$PROJECT_DIR$/storage/logs/laravel-2019-08-01.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.mix.js" afterPath="$PROJECT_DIR$/webpack.mix.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -58,11 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CheckoutController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CheckoutController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Web/CheckoutController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="268" column="24" lean-forward="true" selection-start-line="268" selection-start-column="24" selection-end-line="268" selection-end-column="24" />
+            <state relative-caret-position="424">
+              <caret line="272" column="46" lean-forward="true" selection-start-line="272" selection-start-column="46" selection-end-line="272" selection-end-column="46" />
               <folding>
                 <element signature="e#44#83#0#PHP" expanded="true" />
                 <element signature="e#10189#11541#0#PHP" expanded="false" />
@@ -71,32 +53,6 @@
                 <element signature="e#18960#20203#0#PHP" expanded="false" />
                 <element signature="e#21077#21808#0#PHP" expanded="false" />
                 <element signature="e#21814#22718#0#PHP" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="address-i18n.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/assets/plugins/address/address-i18n.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="6" column="5" lean-forward="false" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <marker date="1564715680284" expanded="true" signature="648:654" ph=" " />
-                <marker date="1564715680284" expanded="true" signature="1001:1007" ph=" " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="country-select.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/assets/plugins/address/country-select.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="77" column="5" lean-forward="false" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -112,11 +68,30 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="checkout2.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/assets/plugins/checkout/checkout2.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="302">
+              <caret line="67" column="28" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="707" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="checkout.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/assets/plugins/checkout/checkout.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="577">
+              <caret line="707" column="3" lean-forward="false" selection-start-line="707" selection-start-column="3" selection-end-line="707" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>billing_company_field</find>
       <find>state</find>
       <find>coupon</find>
       <find>token</find>
@@ -146,6 +121,7 @@
       <find>update_checkout_action</find>
       <find>ajax_url_review</find>
       <find>replace</find>
+      <find>indica</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -202,7 +178,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Web/TestesController.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/testes/checkout.blade.php" />
-        <option value="$PROJECT_DIR$/resources/assets/plugins/checkout/checkout.js" />
         <option value="$PROJECT_DIR$/resources/views/frontend/scripts/basel_settings.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/layouts/template-1.blade.php" />
         <option value="$PROJECT_DIR$/resources/assets/plugins/frontend/avdesign.js" />
@@ -212,6 +187,7 @@
         <option value="$PROJECT_DIR$/resources/views/frontend/checkouts/includes/form-register-1.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/checkouts/checkout-1.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Web/CheckoutController.php" />
+        <option value="$PROJECT_DIR$/resources/assets/plugins/checkout/checkout.js" />
       </list>
     </option>
   </component>
@@ -434,6 +410,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugins" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="checkout" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -737,12 +739,12 @@
       <updated>1563696515763</updated>
       <workItem from="1563696519041" duration="329647000" />
       <workItem from="1564421226448" duration="27924000" />
-      <workItem from="1564499688817" duration="105334000" />
+      <workItem from="1564499688817" duration="106675000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="462905000" />
+    <option name="totallyTimeSpent" value="464246000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -757,7 +759,7 @@
     <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.07888446" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22231075" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -805,14 +807,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/resources/assets/plugins/checkout/checkout.js</url>
-          <line>25</line>
-          <properties />
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="17" />
     </breakpoint-manager>
     <watches-manager />
@@ -1254,28 +1248,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/plugins/frontend/avdesign.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="577">
-          <caret line="74" column="3" lean-forward="false" selection-start-line="74" selection-start-column="3" selection-end-line="74" selection-end-column="3" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/frontend/layouts/template-1.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="86">
           <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/plugins/checkout/checkout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="325" column="43" lean-forward="false" selection-start-line="325" selection-start-column="43" selection-end-line="325" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -1288,41 +1264,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/plugins/address/address-i18n.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="6" column="5" lean-forward="false" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1564715680284" expanded="true" signature="648:654" ph=" " />
-            <marker date="1564715680284" expanded="true" signature="1001:1007" ph=" " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/plugins/checkout/checkout2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="343" column="62" lean-forward="false" selection-start-line="343" selection-start-column="47" selection-end-line="343" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/frontend/checkouts/includes/form-register-1.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="644">
           <caret line="190" column="48" lean-forward="false" selection-start-line="190" selection-start-column="48" selection-end-line="190" selection-end-column="48" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/plugins/address/country-select.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="77" column="5" lean-forward="false" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1344,10 +1290,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/plugins/address/country-select.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="77" column="5" lean-forward="false" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/plugins/address/address-i18n.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="5" lean-forward="false" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <marker date="1564715680284" expanded="true" signature="648:654" ph=" " />
+            <marker date="1564715680284" expanded="true" signature="1001:1007" ph=" " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/plugins/frontend/avdesign.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="42" column="41" lean-forward="false" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Web/CheckoutController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="268" column="24" lean-forward="true" selection-start-line="268" selection-start-column="24" selection-end-line="268" selection-end-column="24" />
+        <state relative-caret-position="424">
+          <caret line="272" column="46" lean-forward="true" selection-start-line="272" selection-start-column="46" selection-end-line="272" selection-end-column="46" />
           <folding>
             <element signature="e#44#83#0#PHP" expanded="true" />
             <element signature="e#10189#11541#0#PHP" expanded="false" />
@@ -1357,6 +1333,22 @@
             <element signature="e#21077#21808#0#PHP" expanded="false" />
             <element signature="e#21814#22718#0#PHP" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/plugins/checkout/checkout2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="67" column="28" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="707" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/plugins/checkout/checkout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="577">
+          <caret line="707" column="3" lean-forward="false" selection-start-line="707" selection-start-column="3" selection-end-line="707" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
