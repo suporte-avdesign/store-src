@@ -53,7 +53,7 @@
             </div>
             <p class="form-row validate-required">
                 <label class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox">
-                    <input type="checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox" name="terms"  id="terms"/>
+                    <input type="checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox" name="terms[conditions]"  id="terms"/>
                     <span class="woocommerce-terms-and-conditions-checkbox-text">Li e aceito os
                         <a href="#" class="woocommerce-terms-and-conditions-link" target="_blank">termos e condições</a> do site
                     </span>
@@ -66,6 +66,8 @@
         <button type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="Finalizar Pedido" data-value="Finalizar Pedido">Finalizar Pedido</button>
         @auth
             <input type="hidden" name="new_account" value="0"/>
+            <input type="hidden" name="register[type_id]" value="{{Auth::user()->type_id}}"/>
+            <input type="hidden" name="register[profile_id]" value="{{Auth::user()->profile_id}}"/>
         @else
             <input type="hidden" name="new_account" value="1"/>
         @endauth
@@ -73,3 +75,5 @@
     </div>
     <div id="check_errors"></div>
 </div>
+
+

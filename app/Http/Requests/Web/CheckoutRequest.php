@@ -3,6 +3,7 @@
 namespace AVD\Http\Requests\Web;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class CheckoutRequest extends FormRequest
 {
@@ -23,16 +24,15 @@ class CheckoutRequest extends FormRequest
      */
     public function rules()
     {
-        /**
-         * Users
-         */
         $register = $this->get('register');
+        $type = $register['type_id'];
         $new_account = $this->get('new_account');
         $method = $this->get('shipping_method');
+        $indicate_transport = $this->get('indicate_transport');
+        $terms_conditions = $this->get('terms');
 
-
-        $type = $register['type_id'];
-        ($this->method() == 'POST' ? $id = 0 : $id = auth()->user()->id);
+        #User
+        (Auth::user() ? $id = auth()->user()->id : $id = null);
         $rules['register.profile_id'] = "required";
         $rules['register.type_id']    = "required";
         if ($type == 1) {
@@ -59,32 +59,26 @@ class CheckoutRequest extends FormRequest
             }
             $rules['register.password'] = $password.$password_string.$password_min.$password_confirmed;
         }
-
-        /**
-         * Address
-         */
+        #Address
         $rules['address.address']  = "required|min:3";
-        $rules['address.number']  = "required";
-        $rules['address.district']  = "required";
-        $rules['address.city']  = "required";
-        $rules['address.zip_code']  = "required|formato_cep";
-        $rules['address.state']  = "required";
-
-        /**
-         * Método
-         */
+        $rules['address.number']   = "required";
+        $rules['address.district'] = "required";
+        $rules['address.city']     = "required";
+        $rules['address.zip_code'] = "required|formato_cep";
+        $rules['address.state']    = "required";
+        #Método
         $rules['shipping_method'] = "required";
-        /**
-         * Payment
-         */
+        #Indicate Transport
+        if ($indicate_transport) {
+            $rules['transport.name']  = "required";
+            $rules['transport.phone'] = "required";
+        }
+        #Payment
         $rules['payment_method'] = "required";
-
-
-
-
-
-
-
+        #Terms
+        if (empty($terms_conditions)) {
+            $rules['terms.conditions'] = "required";
+        }
 
         return $rules;
     }
@@ -92,13 +86,8 @@ class CheckoutRequest extends FormRequest
 
     public function messages()
     {
-
         $messages = [
-
-
-            /**
-             * Users
-             */
+            #Users
             'register.profile_id.required'      => 'O Perfil do cadastro é obrigatório.',
             'register.type_id.required'         => 'O Perfil do cadastro é obrigatório.',
             'register.first_name_1.required'    => 'A Razão Social é obrigatória.',
@@ -127,27 +116,24 @@ class CheckoutRequest extends FormRequest
             'register.password.min'             => "A Senha deverá conter no mínimo 6 caracteres.",
             'register.password_confirmation'    => "A Confirmação da senha é obrigatória.",
             'register.password.confirmed'       => "A Confirmação da senha não coincide.",
-            /**
-             * Address             *
-             */
-            "address.address.required"      => "O Endereço é obrigatório.",
-            "address.address.min"           => "O Endereço deve ter no mínimo 3 caracters",
-            "address.number.required"       => "O Número é obrigatório.",
-            "address.district.required"     => "O Bairro é obrigatório.",
-            "address.city.required"         => "A Cidade é obrigatória.",
-            "address.zip_code.required"     => "O CEP é obrigatório.",
-            "address.zip_code.formato_cep"  => "Digite um CEP válido.",
-            "address.state.required"        => "O Estado é obrigatório.",
-            /**
-             * Método
-             */
-            "shipping_method.required"        => "O Método de envio é obrigatório.",
-            /**
-             * Payment
-             */
-            "payment_method.required"        => "A forma de pagamento é obrigatória.",
-
-
+            #Address             *
+            "address.address.required"          => "O Endereço é obrigatório.",
+            "address.address.min"               => "O Endereço deve ter no mínimo 3 caracters",
+            "address.number.required"           => "O Número é obrigatório.",
+            "address.district.required"         => "O Bairro é obrigatório.",
+            "address.city.required"             => "A Cidade é obrigatória.",
+            "address.zip_code.required"         => "O CEP é obrigatório.",
+            "address.zip_code.formato_cep"      => "Digite um CEP válido.",
+            "address.state.required"            => "O Estado é obrigatório.",
+            #Método
+            "shipping_method.required"          => "O Método de envio é obrigatório.",
+            #Indicate Transport
+            "transport.name.required"           => "O nome do transporte é obrigatório.",
+            "transport.phone.required"          => "O telefone de contato do transporte é obrigatório.",
+            #Payment
+            "payment_method.required"           => "A forma de pagamento é obrigatória.",
+            #Terms
+            "terms.conditions.required"          => "É necessário ler e concordar com o termo e condições do site.",
         ];
 
         return $messages;
