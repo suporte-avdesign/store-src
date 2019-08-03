@@ -219,6 +219,7 @@ return [
     'title_update' => 'Alterar',
     'total' => 'Total',
     'trend' => 'Têndencia',
+    'type' => ['Tipo'],
     'type_movement' => [
         'input' => 'Entrada',
         'output' => 'Saida',

@@ -2,7 +2,7 @@
 
 namespace AVD\Http\Controllers\Web;
 
-use AVD\Events\UserRegisteredNoteEvent;
+
 use AVD\Events\UserRegisterConfirmedEvent;
 use AVD\Events\UserRegisteredCheckoutEvent;
 
@@ -80,8 +80,6 @@ class CheckoutController extends Controller
      */
     public function index()
     {
-
-
         $menu            = $this->interSection->getMenu();
         $types           = $this->interAccountType->getAll();
         $profiles        = $this->interProfile->getAll();
@@ -107,14 +105,11 @@ class CheckoutController extends Controller
             $adresses = null;
         }
         $session = md5($_SERVER['REMOTE_ADDR']);
-
-
         $configSite = $this->configSite->setId(1);
         if ($user_id != 0 && $configSite->order == 'wishlist'){
             dd('Cart = Lista de desejo');
         } else {
             $cart = $this->interCart->getAll($session);
-
         }
 
         $total = $this->interCart->getTotal($cart);
@@ -122,7 +117,6 @@ class CheckoutController extends Controller
         $payment_selected = 3;
         $method_selected = 1;
         $freight = $this->jsonfreight();
-
 
         return view("{$this->view}.checkout-1", compact(
             'user', 'menu', 'cart', 'total', 'types',
@@ -133,9 +127,68 @@ class CheckoutController extends Controller
     }
 
 
+    /**
+     * Atualizar Valores do frete
+     */
+    public function review(Request $request)
+    {
+        $configPayment   = $this->configFormPayment->getAll();
+        $configShipping  = $this->configShipping->getAll();
+        $termsConditions = $this->termsConditions->getAll();
+
+        $shipping_method = $request->input('shipping_method');
+        $method_selected = $shipping_method[0];
+        $payment_selected = $request->input('payment_method');
+
+        if (Auth::user()) {
+            $user_id = Auth::id();
+            $user = $this->interUser->setId($user_id);
+        } else {
+            $user = null;
+            $user_id = 0;
+        }
+        $session = md5($_SERVER['REMOTE_ADDR']);
+        $configSite = $this->configSite->setId(1);
+        if ($user_id != 0 && $configSite->order == 'wishlist'){
+            dd('Cart = Lista de desejo');
+        } else {
+            $cart = $this->interCart->getAll($session);
+        }
+
+        $freight = $this->jsonfreight();
+
+        if ($method_selected == 2 || $method_selected == 3) {
+            if ($user) {
+                ($payment_selected == 3 ? $price = 'price_card' : $price = 'price_cash');
+
+                $freight = $this->calacular($cart, $user, $price, $method_selected);
+            }
+        }
+
+        $order_method = view("{$this->view}.includes.method-1", compact(
+            'cart','freight','method_selected','payment_selected','configShipping'))->render();
+
+        $payment = view("{$this->view}.includes.payment-1", compact(
+            'freight','configPayment','termsConditions','payment_selected'))->render();
+
+        $out = array(
+            "result" => "success",
+            "messages" => "",
+            "reload" => "false",
+            "fragments" => array(
+                ".woocommerce-checkout-review-order-table" => $order_method,
+                ".woocommerce-checkout-payment" => $payment
+            )
+        );
+
+        return response()->json($out);
+
+    }
+
+
+
     public function getCountries($states)
     {
-
         foreach ($states as $state) {
             $arr[$state->uf] = $state->name;
         }
@@ -158,7 +211,6 @@ class CheckoutController extends Controller
         );
         return $countries;
     }
-
 
     public function getLocale()
     {
@@ -320,68 +372,6 @@ class CheckoutController extends Controller
 
     }
 
-
-
-    /**
-     * Atualizar Valores do frete
-     */
-    public function review(Request $request)
-    {
-        $configPayment   = $this->configFormPayment->getAll();
-        $configShipping  = $this->configShipping->getAll();
-        $termsConditions = $this->termsConditions->getAll();
-
-        $shipping_method = $request->input('shipping_method');
-        $method_selected = $shipping_method[0];
-        $payment_selected = $request->input('payment_method');
-
-        if (Auth::user()) {
-            $user_id = Auth::id();
-            $user = $this->interUser->setId($user_id);
-        } else {
-            $user = null;
-            $user_id = 0;
-        }
-        $session = md5($_SERVER['REMOTE_ADDR']);
-        $configSite = $this->configSite->setId(1);
-        if ($user_id != 0 && $configSite->order == 'wishlist'){
-            dd('Cart = Lista de desejo');
-        } else {
-            $cart = $this->interCart->getAll($session);
-        }
-
-        $freight = $this->jsonfreight();
-
-        if ($method_selected == 2 || $method_selected == 3) {
-            if ($user) {
-                ($payment_selected == 3 ? $price = 'price_card' : $price = 'price_cash');
-
-                $freight = $this->calacular($cart, $user, $price, $method_selected);
-            }
-        }
-
-        $order_method = view("{$this->view}.includes.method-1", compact(
-            'cart','freight','method_selected','payment_selected','configShipping'))->render();
-
-        $payment = view("{$this->view}.includes.payment-1", compact(
-            'freight','configPayment','termsConditions','payment_selected'))->render();
-
-        $out = array(
-            "result" => "success",
-            "messages" => "",
-            "reload" => "false",
-            "fragments" => array(
-                ".woocommerce-checkout-review-order-table" => $order_method,
-                ".woocommerce-checkout-payment" => $payment
-            )
-        );
-
-        return response()->json($out);
-
-    }
-
-
-
     public function login(Request $request)
     {
 
@@ -421,7 +411,7 @@ class CheckoutController extends Controller
                             "last_login	" => date('Y-m-d H:i:s'),
                             "ip" => $ip
                         ];
-                        $update = $this->interUser->update($access, $exist->id);
+                        $update = $this->interUser->access($access, $exist->id);
                         if ($update)
                             return $this->index();
                     }
@@ -449,72 +439,55 @@ class CheckoutController extends Controller
     }
 
 
-
-
-
-
-
     public function store(ValidateCheckout $request)
     {
         $dataForm = $request->all();
         $new_account = $request['new_account'];
+        # create users and attributes
         if ($new_account == 1) {
-            $user = $this->interUser->create($dataForm['register']);
-            if ($user) {
 
-                $note = [
-                    'user_id' => $user->id,
-                    'admin' => constLang('profile_name.user'),
-                    'label' => constLang('register'),
-                    'description' => ipLocation()
-                ];
+           return $this->create($dataForm);
 
-                event(new UserRegisteredCheckoutEvent($user));
-
-                event(new UserRegisteredNoteEvent($note));
-
-                $dataForm['address']['user_id'] = $user->id;
-                $address = $dataForm['address'];
-                $create_address = $this->interAddress->create($address);
-                if ($create_address) {
-
-                    $transport = $dataForm['transport'];
-                    # Indicado pelo cliente
-                    if ($transport['indicate'] == 1) {
-                        $create_transport = [
-                            'order_id' => '1', #order->id
-                            'user_id' => $user->id,
-                            'config_shipping_id' => 'Verificar',
-                            'indicate' => $transport['indicate'],
-                            'phone' => $transport['phone'],
-                            'name' => $transport['name']
-                        ];
-                    } else {
-                        # Método de envio
-                        $shipping_method = $dataForm['shipping_method[0]'];
-                        dd($shipping_method);
-
-                    }
-
-
-                }
-
-
-
-
-                $message = "Falta pouco para concretizar a compra, entre no Email {$user->email} e clique em concluir cadastro.";
-                $messages = view("{$this->view}.messages.info-1", compact('message'))->render();
-                $out = array(
-                    "result" => "confirmation",
-                    "messages" => $messages,
-                    "refresh" => false,
-                    "reload" => false
-                );
-                return response()->json($out);
-            }
         } else {
-            dd($dataForm);
+            $update = $this->update($dataForm); #Verifica se houve alteração nos campos (user,address) e salva
+
+            $session = md5($_SERVER['REMOTE_ADDR']);
+            $configSite = $this->configSite->setId(1);
+            if ($configSite->order == 'wishlist'){
+                dd('Cart = Lista de desejo');
+            } else {
+                $cart = $this->interCart->getAll($session);
+            }
+
+            //calacular($cart, $user, $price, $method)
+
+            //$order = $this->createOrder($cart);
+
+            //dd($order);
+
+
+
+
+
+            $transport = $dataForm['transport'];
+
+
+            # Indicado pelo cliente
+            if ($transport['indicate'] == 1) {
+                $create_transport = [
+                    'order_id' => '1', #order->id
+                    'user_id' => Auth::id(),
+                    'config_shipping_id' => 'Verificar',
+                    'indicate' => $transport['indicate'],
+                    'phone' => $transport['phone'],
+                    'name' => $transport['name']
+                ];
+            }
         }
+
+
+
+        /*
 
         $result = 2;
         if ($result == 2) {
@@ -542,7 +515,52 @@ class CheckoutController extends Controller
 
 
         return response()->json($out);
+        */
     }
+
+    /**
+     * Cria o usuário e envia uma notificação para validação do email
+     *
+     * @param $dataForm
+     * @return \Illuminate\Http\JsonResponse
+     */
+    protected function create($dataForm)
+    {
+        $user = $this->interUser->create($dataForm['register']);
+        if ($user) {
+
+            event(new UserRegisteredCheckoutEvent($user));
+
+            $dataForm['address']['user_id'] = $user->id;
+            $address = $dataForm['address'];
+            $create_address = $this->interAddress->create($address);
+            if ($create_address) {
+                $message = "Falta pouco para concretizar a compra, entre no Email {$user->email} e clique em concluir cadastro.";
+                $messages = view("{$this->view}.messages.info-1", compact('message'))->render();
+                $out = array(
+                    "result" => "confirmation",
+                    "messages" => $messages,
+                    "refresh" => false,
+                    "reload" => false
+                );
+                return response()->json($out);
+            }
+
+        }
+    }
+
+    /**
+     * Verifica se houve alteração nos campos (user, address) e salva
+     *
+     * @param $dataForm
+     */
+    protected function update($dataForm)
+    {
+        $update_user = $this->interUser->update($dataForm['register'], 'checkout');
+
+        $update_address = $this->interAddress->update($dataForm['address'], 'checkout');
+    }
+
 
 
     protected function verifyToken($email, $token)
@@ -652,41 +670,6 @@ class CheckoutController extends Controller
             'reference_number'
         ));
     }
-
-    public function endpoint(Request $request)
-    {
-        $ac = $request->input('ajax');
-        if ($ac == 'update_order_review') {
-
-
-            $shipping_method = $request->input('shipping_method');
-            $method = $shipping_method[0];
-
-            ($method == null ? $method = 'legacy_flat_rate' : $method = $method);
-
-
-            $order = view("{$this->view}.includes.method-1", compact('method'))->render();
-            $payment = view("{$this->view}.includes.payment-1")->render();
-
-            $out = array(
-                "result" => "success",
-                "messages" => "",
-                "reload" => "false",
-                "fragments" => array(
-                    ".woocommerce-checkout-review-order-table" => $order,
-                    ".woocommerce-checkout-payment" => $payment
-                )
-            );
-
-            return response()->json($out);
-
-        }
-
-
-
-    }
-
-
 
 
 }

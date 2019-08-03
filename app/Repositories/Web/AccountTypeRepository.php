@@ -40,6 +40,12 @@ class AccountTypeRepository implements AccountTypeInterface
         return $this->model->find($id);
     }
 
+    public function getName($id)
+    {
+        $data = $this->model->find($id);
+        return $data->name;
+    }
+
 
 
 }

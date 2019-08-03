@@ -71,7 +71,7 @@
         @else
             <input type="hidden" name="new_account" value="1"/>
         @endauth
-        <input type="hidden" name="http_referer" value="{{route('checkout')}}"/>
+        <input type="hidden" name="http_referer" value="checkout"/>
     </div>
     <div id="check_errors"></div>
 </div>

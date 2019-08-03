@@ -41,5 +41,12 @@ class ConfigProfileClientRepository implements ConfigProfileClientInterface
     }
 
 
+    public function getName($id)
+    {
+        $data = $this->model->find($id);
+        return $data->name;
+    }
+
+
 
 }

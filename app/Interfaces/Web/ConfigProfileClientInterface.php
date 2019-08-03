@@ -11,4 +11,5 @@ interface ConfigProfileClientInterface
      */
     public function getAll();
     public function setId($id);
+    public function getName($id);
 }

@@ -36,6 +36,7 @@ class AppServiceProvider extends ServiceProvider
             'ContentTermsConditions',
             'ImageColor',
             'GridProduct',
+            'Order',
             'Product',
             'Section',
             'State',

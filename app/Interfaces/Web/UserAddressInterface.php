@@ -10,5 +10,7 @@ interface UserAddressInterface
      * @return \AVD\Repositories\Web\UserAddressRepository
      */
     public function create($input);
+    public function update($input, $page);
+
 
 }

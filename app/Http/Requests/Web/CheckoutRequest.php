@@ -133,7 +133,7 @@ class CheckoutRequest extends FormRequest
             #Payment
             "payment_method.required"           => "A forma de pagamento é obrigatória.",
             #Terms
-            "terms.conditions.required"          => "É necessário ler e concordar com o termo e condições do site.",
+            "terms.conditions.required"          => "É necessário ler e aceitar o termo e condições do site.",
         ];
 
         return $messages;
