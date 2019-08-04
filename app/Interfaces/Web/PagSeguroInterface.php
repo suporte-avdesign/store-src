@@ -12,5 +12,6 @@ interface PagSeguroInterface
     public function generate();
     public function getSessionId();
     public function paymentBillet($senderHash);
+    public function paymentCredCard($request);
 
 }

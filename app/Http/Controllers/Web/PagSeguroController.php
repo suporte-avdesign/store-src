@@ -45,19 +45,24 @@ class PagSeguroController extends Controller
         return view("{$this->view}.transparent-1");
     }
 
-    public function transparenteCard()
-    {
-        return view("{$this->view}.card-1");
-    }
 
     public function transparenteCode()
     {
         return $this->pagSeguro->getSessionId();
     }
 
+    public function card()
+    {
+        return view("{$this->view}.card-1");
+    }
+
+    public function cardTransaction(Request $request)
+    {
+        return $this->pagSeguro->paymentCredCard($request);
+    }
+
     public function billet()
     {
-
         return view("{$this->view}.billet-1");
     }
 
