@@ -82,7 +82,6 @@
                                                 @include('frontend.checkouts.includes.order-1')
 
                                                 @include('frontend.checkouts.includes.payment-1')
-
                                             </div>
                                         </div>
                                     </div>
@@ -132,8 +131,6 @@
 
 <script type='text/javascript'>
     var wc_checkout_params = {!! json_encode([
-        "ajax_url" => route('checkout')."/?ajax=teste",
-        "wc_ajax_url" => route('checkout.endpoint')."/?ajax=%%endpoint%%",
         "ajax_url_review" => route('checkout.review'),
         "ajax_coupon" => route('coupon.store')."/?ajax=%%endpoint%%",
         "update_order_review_nonce" => random_string(),

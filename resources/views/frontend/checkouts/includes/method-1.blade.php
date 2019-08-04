@@ -92,23 +92,19 @@
         </td>
     </tr>
     @auth
-    @if($freight->error != 0)
-        <tr class="freight">
-            <th>{{constLang('error')}}</th>
-            <td> {{$freight->error}} </td>
-        </tr>
-    @else
-        <tr class="freight">
-            <th>{{constLang('messages.shipping.freight')}}</th>
-            <td>
-                <strong>
-                    <span class="woocommerce-Price-amount amount">
-                        <span class="woocommerce-Price-currencySymbol">{{constLang('currency')}} </span>{{setReal($freight->valor)}}
-                    </span>
-                </strong>
-            </td>
-        </tr>
-    @endif
+        @if(is_string($freight->error))
+        @else
+            <tr class="freight">
+                <th>{{constLang('messages.shipping.freight')}}</th>
+                <td>
+                    <strong>
+                        <span class="woocommerce-Price-amount amount">
+                            <span class="woocommerce-Price-currencySymbol">{{constLang('currency')}} </span>{{setReal($freight->valor)}}
+                        </span>
+                    </strong>
+                </td>
+            </tr>
+        @endif
     @endauth
 
     </tfoot>

@@ -189,7 +189,7 @@ class CartController extends Controller
         $user = Auth::user();
         if ($user) {
             $user_id = Auth::id();
-            $profile_id = $user->profile;
+            $profile_id = $user->profile_id;
         } else {
             $user_id = 0;
             $profile_id = 0;
@@ -215,7 +215,7 @@ class CartController extends Controller
         if ($data) {
 
             $configSite = $this->configSite->setId(1);
-            if ($user != 0 && $configSite->order == 'wishlist'){
+            if (Auth::user() && $configSite->order == 'wishlist'){
                 dd('Cart = Lista de desejo');
             } else {
                 $cart = $this->interModel->getAll($session);

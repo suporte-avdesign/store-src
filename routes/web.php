@@ -135,13 +135,15 @@ Route::delete('compare/{page}/{id}', 'Web\CompareController@destroy');
 | Routes Checkout
 |--------------------------------------------------------------------------
 */
-Route::get('checkout', 'Web\CheckoutController@index')->name('checkout');
-Route::post('checkout', 'Web\CheckoutController@login')->name('checkout.login')->middleware("throttle:5,1");;
-Route::post('checkout/review', 'Web\CheckoutController@review')->name('checkout.review');
-Route::post('checkout-store', 'Web\CheckoutController@store')->name('checkout.store');
-Route::get('checkout/{email}/{token}', 'Web\CheckoutController@verifyToken')->name('checkout.confirm');
+Route::group(['prefix' => 'checkout',  'middleware' => 'check-items'], function () {
+    Route::get('/', 'Web\CheckoutController@index')->name('checkout');
+    Route::post('/', 'Web\CheckoutController@login')->name('checkout.login')->middleware("throttle:5,1");;
+    Route::post('review', 'Web\CheckoutController@review')->name('checkout.review');
+    Route::post('store', 'Web\CheckoutController@store')->name('checkout.store');
+    Route::get('{email}/{token}', 'Web\CheckoutController@verifyToken')->name('checkout.confirm');
+    Route::get('{order}/{id}', 'Web\CheckoutController@show')->name('checkout.received');
+});
 
-Route::get('checkout/{order}/{id}', 'Web\CheckoutController@show')->name('checkout.received');
 
 
 /*

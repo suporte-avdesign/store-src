@@ -10,6 +10,7 @@ class CartRepository implements CartInterface
 {
 
     public $model;
+    public $session;
 
     /**
      * Create construct.
@@ -18,7 +19,8 @@ class CartRepository implements CartInterface
      */
     public function __construct(Model $model)
     {
-        $this->model = $model;
+        $this->model   = $model;
+        $this->session = md5($_SERVER['REMOTE_ADDR']);;
     }
 
     /**
@@ -56,6 +58,13 @@ class CartRepository implements CartInterface
         return $total;
 
     }
+
+    public function totalItems()
+    {
+        return $this->model->where('session', $this->session)->count();
+    }
+
+
 
 
     /**

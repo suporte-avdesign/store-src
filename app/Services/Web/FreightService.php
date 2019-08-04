@@ -572,9 +572,9 @@ class FreightService
      */
     private function messagesCart($freight,$note=null)
     {
-        if (isset($freight['error'])) {
+        if (isset($freight[0]['error'])) {
             $message = 'error_freight';
-            $error = $freight['message'];
+            $error = $freight[0]['message'];
             $html = view('frontend.messages.error-1', compact('message', 'error'))->render();
             $_msg_ = array('error' => $html);
             $response = typeJson($_msg_);
@@ -628,6 +628,7 @@ class FreightService
      */
     private function messagesCheckout($freight,$note=null)
     {
+
         $days=0; $error=0; $value=0; $delivery=0;
         $_msg_ = array(
             'valor' => $value,
@@ -637,8 +638,8 @@ class FreightService
         );
         $response = typeJson($_msg_);
 
-        if (isset($freight['error'])) {
-            $error = $freight['message'];
+        if (isset($freight[0]['error'])) {
+            $response->error = $freight[0]['message'];
         } else {
             $domicile = constLang('messages.shipping.delivery_domicile');
             $days_text = constLang('messages.shipping.days_text');
@@ -647,7 +648,7 @@ class FreightService
             $yes  = $domicile.constLang('yes');
             $not  = $domicile.constLang('not');
 
-            foreach ($freight as $keys) {
+            foreach ($freight as $keys ) {
                 $services[] = $keys->cServico;
             }
             foreach ($services as $val) {
@@ -661,6 +662,7 @@ class FreightService
             $response->domicilio = $delivery;
             $response->error = $error;
         }
+
 
         return $response;
     }

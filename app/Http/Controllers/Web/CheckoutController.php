@@ -59,6 +59,8 @@ class CheckoutController extends Controller
         ConfigFormPayment $configFormPayment)
     {
 
+        $this->middleware('check-items');
+
         $this->interCart = $interCart;
         $this->interUser = $interUser;
         $this->interState = $interState;
@@ -164,6 +166,7 @@ class CheckoutController extends Controller
                 $freight = $this->calacular($cart, $user, $price, $method_selected);
             }
         }
+
 
         $order_method = view("{$this->view}.includes.method-1", compact(
             'cart','freight','method_selected','payment_selected','configShipping'))->render();
@@ -630,7 +633,7 @@ class CheckoutController extends Controller
             'valor' => 0,
             'prazo' => '',
             'domicilio' => '',
-            'error' => null
+            'error' => 0
         );
         return typeJson($_msg_);
     }

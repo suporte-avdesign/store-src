@@ -16,6 +16,7 @@ interface CartInterface
     public function setKey($key);
     public function getAll($session);
     public function getTotal($cart);
+    public function totalItems();
     public function existProduct($session, $grid_product_id);
 
 }
