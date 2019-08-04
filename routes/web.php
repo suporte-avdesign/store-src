@@ -141,9 +141,26 @@ Route::post('checkout/review', 'Web\CheckoutController@review')->name('checkout.
 Route::post('checkout-store', 'Web\CheckoutController@store')->name('checkout.store');
 Route::get('checkout/{email}/{token}', 'Web\CheckoutController@verifyToken')->name('checkout.confirm');
 
-
-Route::any('checkout-endpoint', 'Web\CheckoutController@endpoint')->name('checkout.endpoint');
 Route::get('checkout/{order}/{id}', 'Web\CheckoutController@show')->name('checkout.received');
+
+
+/*
+|--------------------------------------------------------------------------
+| Routes PagSeguro
+|--------------------------------------------------------------------------
+*/
+Route::get('pagseguro', 'Web\PagSeguroController@pagseguro')->name('pagseguro');
+Route::get('pagseguro-button', 'Web\PagSeguroController@button')->name('pagseguro-button');
+Route::get('pagseguro-lightbox', 'Web\PagSeguroController@lightbox')->name('pagseguro.lightbox');
+Route::post('pagseguro-lightbox', 'Web\PagSeguroController@lightboxCode')->name('pagseguro.lightbox.code');
+Route::get('pagseguro-transparente', 'Web\PagSeguroController@transparente')->name('pagseguro.transparente');
+Route::post('pagseguro-transparente', 'Web\PagSeguroController@transparenteCode')->name('pagseguro.transparente.code');
+Route::get('pagseguro-card', 'Web\PagSeguroController@transparenteCard')->name('pagseguro.card');
+
+
+Route::get('pagseguro-billet', 'Web\PagSeguroController@billet')->name('pagseguro.billet');
+Route::post('pagseguro-billet', 'Web\PagSeguroController@billetCode')->name('pagseguro.billet.code');
+
 
 /*
 |--------------------------------------------------------------------------

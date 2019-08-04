@@ -37,6 +37,7 @@ class AppServiceProvider extends ServiceProvider
             'ImageColor',
             'GridProduct',
             'Order',
+            'PagSeguro',
             'Product',
             'Section',
             'State',
