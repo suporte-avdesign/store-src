@@ -19,6 +19,9 @@ class AppServiceProvider extends ServiceProvider
             $this->app['request']->server->set('HTTPS', true);
         }
 
+        /**
+         * Models
+         */
         $models = array(
             'AccountType',
             'Cart',
@@ -37,7 +40,7 @@ class AppServiceProvider extends ServiceProvider
             'ImageColor',
             'GridProduct',
             'Order',
-            'PagSeguro',
+            'PagSeguroPayment',
             'Product',
             'Section',
             'State',
@@ -50,6 +53,21 @@ class AppServiceProvider extends ServiceProvider
         foreach ($models as $model) {
             $this->app->bind("AVD\Interfaces\Web\\{$model}Interface", "AVD\Repositories\Web\\{$model}Repository");
         }
+
+        /**
+         * Services
+         */
+        $services = array(
+            'PagSeguro'
+        );
+
+        foreach ($services as $service) {
+            $this->app->bind("AVD\Services\Web\\{$service}ServicesInterface", "AVD\Services\Web\\{$service}Services");
+        }
+
+
+
+
 
     }
 

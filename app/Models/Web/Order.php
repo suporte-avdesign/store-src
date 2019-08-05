@@ -25,4 +25,10 @@ class Order extends Model
         'ip',
         'token'
     ];
+
+
+    public function items()
+    {
+        return $this->belongsToMany(OrderItem::class);
+    }
 }

@@ -3,26 +3,30 @@
 namespace AVD\Http\Controllers\Web;
 
 use Illuminate\Http\Request;
-use AVD\Interfaces\Web\PagSeguroInterface as InterPagSeguro;
+use AVD\Services\Web\PagSeguroServicesInterface as ServicePagSeguro;
+use AVD\Interfaces\Web\PagSeguroPaymentInterface as InterPagSeguro;
 use AVD\Http\Controllers\Controller;
 
 class PagSeguroController extends Controller
 {
-    /**
-     * @var InterPagSeguro
-     */
-    private $pagSeguro;
+    private $interPagSeguro;
+    private $servicePagSeguro;
     private $view = 'frontend.pagseguro';
 
-    public function __construct(InterPagSeguro $pagSeguro)
+
+    public function __construct(
+        InterPagSeguro $interPagSeguro,
+        ServicePagSeguro $servicePagSeguro)
     {
 
-        $this->pagSeguro = $pagSeguro;
+        $this->interPagSeguro   = $interPagSeguro;
+        $this->servicePagSeguro = $servicePagSeguro;
+
     }
 
     public function pagseguro()
     {
-        $code = $this->pagSeguro->generate();
+        $code = $this->servicePagSeguro->generate();
 
         $urlRedirect = config('pagseguro.url_redirect_after_request').$code;
 
@@ -37,7 +41,7 @@ class PagSeguroController extends Controller
 
     public function lightboxCode()
     {
-        return $this->pagSeguro->generate();
+        return $this->servicePagSeguro->generate();
     }
 
     public function transparente()
@@ -48,7 +52,7 @@ class PagSeguroController extends Controller
 
     public function transparenteCode()
     {
-        return $this->pagSeguro->getSessionId();
+        return $this->servicePagSeguro->getSessionId();
     }
 
     public function card()
@@ -58,7 +62,7 @@ class PagSeguroController extends Controller
 
     public function cardTransaction(Request $request)
     {
-        return $this->pagSeguro->paymentCredCard($request);
+        return $this->servicePagSeguro->paymentCredCard($request);
     }
 
     public function billet()
@@ -68,7 +72,26 @@ class PagSeguroController extends Controller
 
     public function billetCode(Request $request)
     {
-        return $this->pagSeguro->paymentBillet($request->senderHash);
+        $response = $this->servicePagSeguro->paymentBillet($request->senderHash);
+
+        $input = [
+            'order_id' => 1,
+            'user_id' => auth()->id(),
+            'reference' => $response['reference'],
+            'code' => $response['code'],
+            'status' => 1,
+            'method_payment' => 2,
+            'value' => '',
+            'date' => date('Ymd')
+        ];
+
+        $create = $this->interPagSeguro->paymentBillet($input);
+        if ($create) {
+
+            return $response()->json($response);
+
+        }
+
     }
 
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace AVD\Repositories\Web;
+namespace AVD\Services\Web;
 
 use AVD\Traits\PagSeguroTrait;
 use AVD\Interfaces\Web\CartInterface as InterCart;
-use AVD\Interfaces\Web\PagSeguroInterface;
+use AVD\Services\Web\PagSeguroServicesInterface;
 
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\ServerException;
@@ -14,7 +14,7 @@ use Throwable;
 
 
 
-class PagSeguroRepository implements PagSeguroInterface
+class PagSeguroServices implements PagSeguroServicesInterface
 {
 
     use PagSeguroTrait;
@@ -155,7 +155,13 @@ class PagSeguroRepository implements PagSeguroInterface
         $contents = $body->getContents(); //receber code para redirecionar o usuário
         $xml = simplexml_load_string($contents); // xml para json
 
-        return $xml->paymentLink;
+        return [
+            'success' => true,
+            'payment_link' => (string)$xml->paymentLink,
+            'reference' => $this->reference,
+            'code' => (string)$xml->code,
+        ];
+
 
         //}  catch (Throwable | ServerException | ClientException $e) {
             //return $e->getResponse();

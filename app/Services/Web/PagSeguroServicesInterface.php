@@ -1,13 +1,13 @@
 <?php
 
-namespace AVD\Interfaces\Web;
+namespace AVD\Services\Web;
 
-interface PagSeguroInterface
+interface PagSeguroServicesInterface
 {
     /**
-     * Interface model PagSeguro
+     * Interface model PagSeguroServices
      *
-     * @return \AVD\Repositories\Web\PagSeguroRepository
+     * @return \AVD\Services\Web\PagSeguroServices
      */
     public function generate();
     public function getSessionId();

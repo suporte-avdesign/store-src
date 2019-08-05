@@ -89,9 +89,10 @@
                 method: "POST",
                 data: data,
                 beforeSend: startPreloaderPS()
-            }).done(function (link) {
-                //console.log(data);
-                window.location=link;
+            }).done(function (response) {
+                //console.log(response);
+                if (response.success)
+                    window.location=response.payment_link;
 
             }).fail(function () {
                 console.log('Erro inesperado, tentar novamente mais tarde!');
