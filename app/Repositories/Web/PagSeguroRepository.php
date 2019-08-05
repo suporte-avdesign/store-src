@@ -2,12 +2,14 @@
 
 namespace AVD\Repositories\Web;
 
+use AVD\Traits\PagSeguroTrait;
+use AVD\Interfaces\Web\CartInterface as InterCart;
 use AVD\Interfaces\Web\PagSeguroInterface;
-use GuzzleHttp\Client as Guzzle;
-
 
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\ServerException;
+use GuzzleHttp\Client as Guzzle;
+
 use Throwable;
 
 
@@ -15,15 +17,25 @@ use Throwable;
 class PagSeguroRepository implements PagSeguroInterface
 {
 
+    use PagSeguroTrait;
+
+    private $interCart;
+    private $reference;
+    private $currency = 'BRL';
+    private $country = 'BRA';
+
+
 
     /**
      * Create construct.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(InterCart $interCart)
     {
 
+        $this->interCart = $interCart;
+        $this->reference = uniqid(date('YmdHis'));
     }
 
     /**
@@ -90,27 +102,23 @@ class PagSeguroRepository implements PagSeguroInterface
 
     public function getSessionId()
     {
-        $params = [
-            'email' => config('pagseguro.email'),
-            'token' => config('pagseguro.token'),
-        ];
-
+        $params = $this->getConfigs();
         $params = http_build_query($params); //email=xpto&token=xpto etc...
 
-        try {
-            $guzzle = new Guzzle();
-            $response = $guzzle->request('POST', config('pagseguro.url_transparent_session'), [
-                'query' => $params,
-            ]);
-            $body = $response->getBody();
-            $contents = $body->getContents(); //receber code para redirecionar o usuário
+        //try {
+        $guzzle = new Guzzle();
+        $response = $guzzle->request('POST', config('pagseguro.url_transparent_session'), [
+            'query' => $params,
+        ]);
+        $body = $response->getBody();
+        $contents = $body->getContents(); //receber code para redirecionar o usuário
 
-            $xml = simplexml_load_string($contents); // xml para json
+        $xml = simplexml_load_string($contents); // xml para json
 
-            return $xml->id;
-        }  catch (Throwable | ServerException | ClientException $e) {
-            return $e->getResponse();
-        }
+        return $xml->id;
+        //}  catch (Throwable | ServerException | ClientException $e) {
+            //return $e->getResponse();
+        //}
     }
 
 
@@ -122,58 +130,36 @@ class PagSeguroRepository implements PagSeguroInterface
     public function paymentBillet($senderHash)
     {
         $params = [
-            'email' => config('pagseguro.email'),
-            'token' => config('pagseguro.token'),
             'senderHash' => $senderHash,
             'paymentMode' => 'default',
             'paymentMethod' => 'boleto',
-            'currency' => 'BRL',
-            'itemId1' => '0001',
-            'itemDescription1' => 'Produto PagSeguroI',
-            'itemAmount1' => '99999.99',
-            'itemQuantity1' => '1',
-            'itemWeight1' => '1000',
-            'itemId2' => '0002',
-            'itemDescription2' => 'Produto PagSeguroII',
-            'itemAmount2' => '99999.98',
-            'itemQuantity2' => '2',
-            'itemWeight2' => '750',
-            'reference' => 'REF1234',
-            'senderName' => 'Jose Comprador',
-            'senderCPF' => '19410462070', #cpf do cliente
-            'senderAreaCode' => '99',
-            'senderPhone' => '999999999',
-            'senderEmail' => 'c26301320426701778469@sandbox.pagseguro.com.br',
-            'shippingType' => '1',
-            'shippingAddressRequired' => 'true',
-            'shippingAddressStreet' => 'Av. PagSeguro',
-            'shippingAddressNumber' => '9999',
-            'shippingAddressComplement' => '99o andar',
-            'shippingAddressDistrict' => 'Jardim Internet',
-            'shippingAddressPostalCode' => '99999999',
-            'shippingAddressCity' => 'Cidade Exemplo',
-            'shippingAddressState' => 'SP',
-            'shippingAddressCountry' => 'BRA',
+            'currency' => $this->currency,
+            'reference' => $this->reference,
             'timeout' => '25',
             'enableRecover' => 'false'
         ];
 
-        try {
-            $guzzle = new Guzzle();
-            $response = $guzzle->request('POST', config('pagseguro.url_payment_transparent'), [
-                'form_params' => $params,
-            ]);
-            $body = $response->getBody();
-            $contents = $body->getContents(); //receber code para redirecionar o usuário
+        $cart = $this->interCart->getAll();
 
-            $xml = simplexml_load_string($contents); // xml para json
+        $params = array_merge($params, $this->getConfigs());
+        $params = array_merge($params, $this->getItems());
+        $params = array_merge($params, $this->getSender());
+        $params = array_merge($params, $this->getShipping());
 
-            return $xml->paymentLink;
+        //try {
+        $guzzle = new Guzzle();
+        $response = $guzzle->request('POST', config('pagseguro.url_payment_transparent'), [
+            'form_params' => $params,
+        ]);
+        $body = $response->getBody();
+        $contents = $body->getContents(); //receber code para redirecionar o usuário
+        $xml = simplexml_load_string($contents); // xml para json
 
-        }  catch (Throwable | ServerException | ClientException $e) {
-            return $e->getResponse();
-        }
+        return $xml->paymentLink;
 
+        //}  catch (Throwable | ServerException | ClientException $e) {
+            //return $e->getResponse();
+        //}
     }
 
 

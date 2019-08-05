@@ -14,9 +14,9 @@ interface CartInterface
     public function updateAll($input);
     public function delete($key);
     public function setKey($key);
-    public function getAll($session);
+    public function getAll();
     public function getTotal($cart);
     public function totalItems();
-    public function existProduct($session, $grid_product_id);
+    public function existProduct($grid_product_id);
 
 }

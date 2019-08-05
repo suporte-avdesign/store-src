@@ -106,12 +106,12 @@ class CheckoutController extends Controller
             $user_id = 0;
             $adresses = null;
         }
-        $session = md5($_SERVER['REMOTE_ADDR']);
+
         $configSite = $this->configSite->setId(1);
         if ($user_id != 0 && $configSite->order == 'wishlist'){
             dd('Cart = Lista de desejo');
         } else {
-            $cart = $this->interCart->getAll($session);
+            $cart = $this->interCart->getAll();
         }
 
         $total = $this->interCart->getTotal($cart);
@@ -149,12 +149,12 @@ class CheckoutController extends Controller
             $user = null;
             $user_id = 0;
         }
-        $session = md5($_SERVER['REMOTE_ADDR']);
+
         $configSite = $this->configSite->setId(1);
         if ($user_id != 0 && $configSite->order == 'wishlist'){
             dd('Cart = Lista de desejo');
         } else {
-            $cart = $this->interCart->getAll($session);
+            $cart = $this->interCart->getAll();
         }
 
         $freight = $this->jsonfreight();
@@ -341,13 +341,11 @@ class CheckoutController extends Controller
 
             $configSite = $this->configSite->setId(1);
             (Auth::user() ? $user_id = Auth::id() : $user_id = 0);
-            $session = md5($_SERVER['REMOTE_ADDR']);
-
 
             if ($user_id != 0 && $configSite->order == 'wishlist') {
                 dd('Cart = Lista de desejo');
             } else {
-                $cart = $this->interCart->getAll($session);
+                $cart = $this->interCart->getAll();
             }
 
             $values = $this->interCart->getTotal($cart);
@@ -454,12 +452,11 @@ class CheckoutController extends Controller
         } else {
             $update = $this->update($dataForm); #Verifica se houve alteração nos campos (user,address) e salva
 
-            $session = md5($_SERVER['REMOTE_ADDR']);
             $configSite = $this->configSite->setId(1);
             if ($configSite->order == 'wishlist'){
                 dd('Cart = Lista de desejo');
             } else {
-                $cart = $this->interCart->getAll($session);
+                $cart = $this->interCart->getAll();
             }
 
             //calacular($cart, $user, $price, $method)

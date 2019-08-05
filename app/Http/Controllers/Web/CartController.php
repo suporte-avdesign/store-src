@@ -71,14 +71,12 @@ class CartController extends Controller
 
 
         (Auth::user() ? $user_id = Auth::id() : $user_id = 0);
-        $session = md5($_SERVER['REMOTE_ADDR']);
-
 
         $configSite = $this->configSite->setId(1);
         if ($user_id != 0 && $configSite->order == 'wishlist'){
             dd('Cart = Lista de desejo');
         } else {
-            $cart = $this->interModel->getAll($session);
+            $cart = $this->interModel->getAll();
 
         }
 
@@ -136,14 +134,12 @@ class CartController extends Controller
     {
 
         (Auth::user() ? $user_id = Auth::id() : $user_id = 0);
-        $session = md5($_SERVER['REMOTE_ADDR']);
-
 
         $configSite = $this->configSite->setId(1);
         if ($user_id != 0 && $configSite->order == 'wishlist'){
             dd('Cart = Lista de desejo');
         } else {
-            $cart = $this->interModel->getAll($session);
+            $cart = $this->interModel->getAll();
         }
 
 
@@ -184,8 +180,6 @@ class CartController extends Controller
         $product_id      = $request->input('product_id');
         $grid_product_id = $request->input('variation_id');
 
-        $session = md5($_SERVER['REMOTE_ADDR']);
-
         $user = Auth::user();
         if ($user) {
             $user_id = Auth::id();
@@ -199,7 +193,7 @@ class CartController extends Controller
         $grids   = $this->interGrid->setId($grid_product_id);
         $color   = $grids->color()->first();
 
-        $exist = $this->interModel->existProduct($session, $grid_product_id);
+        $exist = $this->interModel->existProduct($grid_product_id);
         if ($exist) {
             $input = [
                 'quantity' => $quantity
@@ -218,7 +212,7 @@ class CartController extends Controller
             if (Auth::user() && $configSite->order == 'wishlist'){
                 dd('Cart = Lista de desejo');
             } else {
-                $cart = $this->interModel->getAll($session);
+                $cart = $this->interModel->getAll();
             }
 
             $getTotal       = $this->interModel->getTotal($cart);

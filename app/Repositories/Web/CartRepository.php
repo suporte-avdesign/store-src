@@ -29,9 +29,9 @@ class CartRepository implements CartInterface
      * @param $session
      * @return mixed
      */
-    public function getAll($session)
+    public function getAll()
     {
-        return $this->model->orderBy('id')->where('session', $session)->get();
+        return $this->model->orderBy('id')->where('session', $this->session)->get();
     }
 
     /**
@@ -85,9 +85,9 @@ class CartRepository implements CartInterface
      * @param $grid_product_id
      * @return mixed
      */
-    public function existProduct($session, $grid_product_id)
+    public function existProduct($grid_product_id)
     {
-        return $this->model->where(['grid_product_id' => $grid_product_id, 'session' => $session])->first();
+        return $this->model->where(['grid_product_id' => $grid_product_id, 'session' => $this->session])->first();
     }
 
     /**

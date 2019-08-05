@@ -27,8 +27,6 @@ return [
     'url_payment_transparent'       => $urlPaymentTransparent,
     'url_notification'              => $urlNotification,
 
-
-    'teste_email' => 'c26301320426701778469@sandbox.pagseguro.com.br',
     'teste_senha' => 'yrplHgtLv3l18DnW',
     'teste_cartao_bandeira' => 'VISA',
     'teste_cartao_numero' => '4111111111111111',

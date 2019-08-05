@@ -56,7 +56,7 @@ class ConfigShippingController extends Controller
             if ($user_id != 0 && $configSite->order == 'wishlist') {
                 dd('Cart = Lista de desejo');
             } else {
-                $cart = $this->interCart->getAll($session);
+                $cart = $this->interCart->getAll();
             }
 
             $values = $this->interCart->getTotal($cart);
@@ -93,8 +93,8 @@ class ConfigShippingController extends Controller
             "selected" => $request['shipping_method'][0]
         ];
 
-        $session = md5($_SERVER['REMOTE_ADDR']);
-        $cart = $this->interCart->getAll($session);
+
+        $cart = $this->interCart->getAll();
 
         return $this->freightService->calculate($dataForm, $cart, $request['http_referer']);
     }
@@ -113,13 +113,12 @@ class ConfigShippingController extends Controller
 
         $configSite = $this->configSite->setId(1);
         (Auth::user() ? $user_id = Auth::id() : $user_id = 0);
-        $session = md5($_SERVER['REMOTE_ADDR']);
 
 
         if ($user_id != 0 && $configSite->order == 'wishlist') {
             dd('Cart = Lista de desejo');
         } else {
-            $cart = $this->interCart->getAll($session);
+            $cart = $this->interCart->getAll();
         }
 
         $values = $this->interCart->getTotal($cart);
