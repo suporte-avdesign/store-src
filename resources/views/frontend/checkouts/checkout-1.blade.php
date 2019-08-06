@@ -71,8 +71,12 @@
                                                     @include('frontend.checkouts.includes.form-register-1')
                                                 @endauth
                                             </div>
+                                            <div class="col-sm-12">
+                                                @include('frontend.checkouts.includes.additional-fields')
+                                            </div>
                                         </div>
                                     </div>
+
                                     <!--ORDER -->
                                     <div class="col-sm-6">
                                         <div class="checkout-order-review">

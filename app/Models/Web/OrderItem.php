@@ -9,7 +9,6 @@ class OrderItem extends Model
     protected $fillable = [
         'order_id',
         'user_id',
-        'image_color_id',
         'grid',
         'quantity',
         'image',
@@ -28,6 +27,7 @@ class OrderItem extends Model
         'brand',
         'unit',
         'measure',
+        'declare',
         'weight',
         'width',
         'height',

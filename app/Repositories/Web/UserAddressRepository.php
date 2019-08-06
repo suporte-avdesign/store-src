@@ -2,10 +2,13 @@
 
 namespace AVD\Repositories\Web;
 
+use AVD\Events\UserRegisteredNoteEvent;
 
 use AVD\Models\Web\UserAddress as Model;
 use AVD\Interfaces\Web\UserAddressInterface;
 use Illuminate\Support\Facades\Auth;
+
+
 
 
 class UserAddressRepository implements UserAddressInterface
@@ -44,7 +47,8 @@ class UserAddressRepository implements UserAddressInterface
      */
     public function update($input, $page)
     {
-        $user_id = Auth::id();
+        $dataForm = null;
+        $user_id = auth()->id();
         $note = constLang('updated').' '.constLang('address').' ';
         $data = $this->lestAddress($user_id);
         if ($data->address != $input["address"]) {
@@ -76,6 +80,7 @@ class UserAddressRepository implements UserAddressInterface
             $note .= constLang('zip_code').":{$input["zip_code"]}, ";
         }
         if ($dataForm) {
+            $input["user_id"] = $user_id;
             $this->updateNote(substr($note, 0, -2), $page);
             return $this->model->create($input);
         }
@@ -93,11 +98,13 @@ class UserAddressRepository implements UserAddressInterface
     private function updateNote($description, $page)
     {
         $note = [
-            'user_id' => Auth::id(),
+            'user_id' => auth()->id(),
             'admin' => constLang('profile_name.user'),
             'label' => $page,
             'description' => $description." ".ipLocation()
         ];
+
+
 
         event(new UserRegisteredNoteEvent($note));
     }

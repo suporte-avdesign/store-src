@@ -27,9 +27,19 @@ return [
     'url_payment_transparent'       => $urlPaymentTransparent,
     'url_notification'              => $urlNotification,
 
-    'teste_senha' => 'yrplHgtLv3l18DnW',
-    'teste_cartao_bandeira' => 'VISA',
-    'teste_cartao_numero' => '4111111111111111',
-    'teste_cartao_data' => '12/2030',
-    'teste_cartao_cvv' => '123',
+    'status' => [
+        1 => 'Completo',   #Significa que o pagamento já foi concluído e creditado.
+        2 => 'Aprovado',   #O pagamento já foi processado e aprovado.
+        3 => 'Em Análise', #O pagamento foi iniciado mas está sendo analisado pelo PagSeguro.
+        4 => 'Devolvido',  #O pagamento foi devolvido.
+        5 => 'Cancelado',  #A transação foi cancelada.
+    ],
+    'testes' => [
+        'senha' => 'yrplHgtLv3l18DnW',
+        'bandeira' => 'VISA',
+        'numero' => '4111111111111111',
+        'data' => '12/2030',
+        'cvv' => '123',
+    ],
+
 ];

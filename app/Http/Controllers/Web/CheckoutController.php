@@ -8,14 +8,19 @@ use AVD\Events\UserRegisteredCheckoutEvent;
 
 use AVD\Services\Web\FreightService;
 
+
 use AVD\Http\Controllers\Controller;
 use AVD\Interfaces\Web\CartInterface as InterCart;
 use AVD\Interfaces\Web\UserInterface as InterUser;
 use AVD\Interfaces\Web\StateInterface as InterState;
+use AVD\Interfaces\Web\OrderInterface as InterOrder;
 use AVD\Interfaces\Web\SectionInterface as InterSection;
 use AVD\Interfaces\Web\ConfigSiteInterface as ConfigSite;
 use AVD\Interfaces\Web\UserAddressInterface as InterAddress;
+use AVD\Interfaces\Web\OrderNoteInterface as InterOrderNote;
+use AVD\Interfaces\Web\OrderItemInterface as InterOrderItems;
 use AVD\Http\Requests\Web\CheckoutRequest as ValidateCheckout;
+use AVD\Interfaces\Web\CompanyPaymentInterface as CompanyPayment;
 use AVD\Interfaces\Web\ConfigKeywordInterface as ConfigKeyword;
 use AVD\Interfaces\Web\AccountTypeInterface as InterAccountType;
 use AVD\Interfaces\Web\ConfigShippingInterface as ConfigShipping;
@@ -23,8 +28,11 @@ use AVD\Interfaces\Web\ConfigProfileClientInterface as InterProfile;
 use AVD\Interfaces\Web\ConfigFormPaymentInterface as ConfigFormPayment;
 use AVD\Interfaces\Web\ContentTermsConditionsInterface as TermsConditions;
 
+
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -45,16 +53,19 @@ class CheckoutController extends Controller
     public function __construct(
         InterCart $interCart,
         InterUser $interUser,
+        InterOrder $interOrder,
         InterState $interState,
         ConfigSite $configSite,
-
         InterAddress $interAddress,
         InterSection $interSection,
         InterProfile $interProfile,
         ConfigKeyword $configKeyword,
+        InterOrderNote $interOrderNote,
         ConfigShipping $configShipping,
         FreightService $freightService,
+        CompanyPayment $companyPayment,
         TermsConditions $termsConditions,
+        InterOrderItems $interOrderItems,
         InterAccountType $interAccountType,
         ConfigFormPayment $configFormPayment)
     {
@@ -63,14 +74,18 @@ class CheckoutController extends Controller
 
         $this->interCart = $interCart;
         $this->interUser = $interUser;
+        $this->interOrder = $interOrder;
         $this->interState = $interState;
         $this->configSite = $configSite;
         $this->interAddress = $interAddress;
         $this->interSection = $interSection;
         $this->interProfile = $interProfile;
         $this->configKeyword = $configKeyword;
+        $this->interOrderNote = $interOrderNote;
         $this->configShipping = $configShipping;
+        $this->companyPayment = $companyPayment;
         $this->freightService  = $freightService;
+        $this->interOrderItems  = $interOrderItems;
         $this->termsConditions  = $termsConditions;
         $this->interAccountType  = $interAccountType;
         $this->configFormPayment  = $configFormPayment;
@@ -134,13 +149,11 @@ class CheckoutController extends Controller
      */
     public function review(Request $request)
     {
-        $configPayment   = $this->configFormPayment->getAll();
-        $configShipping  = $this->configShipping->getAll();
-        $termsConditions = $this->termsConditions->getAll();
-
-        $shipping_method = $request->input('shipping_method');
-        $method_selected = $shipping_method[0];
-        $payment_selected = $request->input('payment_method');
+        $configPayment    = $this->configFormPayment->getAll();
+        $configShipping   = $this->configShipping->getAll();
+        $termsConditions  = $this->termsConditions->getAll();
+        $method_selected  = $request['shipping_method'][0];
+        $payment_selected = $request['payment_method'];
 
         if (Auth::user()) {
             $user_id = Auth::id();
@@ -157,14 +170,14 @@ class CheckoutController extends Controller
             $cart = $this->interCart->getAll();
         }
 
-        $freight = $this->jsonfreight();
+        if ($user && $method_selected) {
+            ($payment_selected == 3 ? $price = 'price_card' : $price = 'price_cash');
 
-        if ($method_selected == 2 || $method_selected == 3) {
-            if ($user) {
-                ($payment_selected == 3 ? $price = 'price_card' : $price = 'price_cash');
+            $freight = $this->calacular($cart, $user, $price, $method_selected);
 
-                $freight = $this->calacular($cart, $user, $price, $method_selected);
-            }
+
+        } else {
+            $freight = $this->jsonfreight();
         }
 
 
@@ -187,8 +200,6 @@ class CheckoutController extends Controller
         return response()->json($out);
 
     }
-
-
 
     public function getCountries($states)
     {
@@ -442,48 +453,83 @@ class CheckoutController extends Controller
 
     public function store(ValidateCheckout $request)
     {
-        $dataForm = $request->all();
-        $new_account = $request['new_account'];
-        # create users and attributes
-        if ($new_account == 1) {
 
-           return $this->create($dataForm);
+        try{
+            DB::beginTransaction();
 
-        } else {
-            $update = $this->update($dataForm); #Verifica se houve alteração nos campos (user,address) e salva
+            $dataForm = $request->all();
+            $new_account = $request['new_account'];
+            # create users and attributes
+            if ($new_account == 1) {
+               return $this->create($dataForm);
 
-            $configSite = $this->configSite->setId(1);
-            if ($configSite->order == 'wishlist'){
-                dd('Cart = Lista de desejo');
             } else {
-                $cart = $this->interCart->getAll();
+
+                /**
+                 * Verifica se houve alteração nos campos (user,address) e salva
+                 */
+                $update = $this->update($dataForm);
+
+                $configSite = $this->configSite->setId(1);
+                if ($configSite->order == 'wishlist'){
+                    dd('Cart = Lista de desejo');
+                } else {
+                    $items = $this->interCart->getAll();
+                }
+
+
+                $user = auth()->user();
+                $dataForm['payment_method'] == 3 ? $price = 'price_card' : $price = 'price_cash';
+                $shipping_method = $dataForm['shipping_method'][0];
+                $company = $this->getCompany($dataForm['payment_method']);
+                $cart = collect($items)->all();
+
+                $freight = $this->calacular($cart, $user, $price, $shipping_method);
+
+                $order = $this->interOrder->create($cart, $freight, $dataForm, $company);
+
+                $orderItems = $this->interOrderItems->create($cart, $order->id);
+
+                if ($dataForm['order_comments']) {
+                    $orderNote = $this->interOrderNote->create($order->id, $dataForm['order_comments']);
+                }
+
+                $transport = $dataForm['transport'];
+                # Indicado pelo cliente
+                if (!empty($transport['indicate'])) {
+
+
+                    $create_transport = [
+                        'order_id' => $order->id, #order->id
+                        'user_id' => auth()->id(),
+                        'config_shipping_id' => 'Verificar',
+                        'indicate' => $transport['indicate'],
+                        'phone' => $transport['phone'],
+                        'name' => $transport['name']
+                    ];
+
+                    dd($create_transport);
+                }
+
+                dd('Não indicou');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             }
 
-            //calacular($cart, $user, $price, $method)
 
-            //$order = $this->createOrder($cart);
-
-            //dd($order);
-
-
-
-
-
-            $transport = $dataForm['transport'];
-
-
-            # Indicado pelo cliente
-            if ($transport['indicate'] == 1) {
-                $create_transport = [
-                    'order_id' => '1', #order->id
-                    'user_id' => Auth::id(),
-                    'config_shipping_id' => 'Verificar',
-                    'indicate' => $transport['indicate'],
-                    'phone' => $transport['phone'],
-                    'name' => $transport['name']
-                ];
-            }
-        }
+            DB::commit();
 
 
 
@@ -516,6 +562,12 @@ class CheckoutController extends Controller
 
         return response()->json($out);
         */
+
+
+        } catch(\Exception $e){
+            DB::rollback();
+            return $e->getMessage();
+        }
     }
 
     /**
@@ -559,6 +611,22 @@ class CheckoutController extends Controller
         $update_user = $this->interUser->update($dataForm['register'], 'checkout');
 
         $update_address = $this->interAddress->update($dataForm['address'], 'checkout');
+    }
+
+
+    private function getCompany($payment_method)
+    {
+        if ($payment_method == 1) {
+            $company = $this->companyPayment->getCash();
+        } elseif ($payment_method == 2) {
+            $company = $this->companyPayment->getBillet();
+        } elseif ($payment_method == 3) {
+            $company = $this->companyPayment->getCardCred();
+        } elseif ($payment_method == 4) {
+            $company = $this->companyPayment->getCardDebit();
+        }
+
+        return $company;
     }
 
 
@@ -607,21 +675,37 @@ class CheckoutController extends Controller
     }
 
 
-    private function calacular($cart, $user, $price, $method) {
 
-        $address = $user->adresses()->orderBy('id','desc')->first();
-        $dataForm = [
-            "price" => $price,
-            "postcode" => $address->zip_code,
-            "city" => $address->city,
-            "state" => $address->state,
-            "selected" => (int)$method,
-            "country" => 'BR',
-        ];
+
+    private function calacular($cart, $user, $price, $shipping_method) {
+
+        if ($shipping_method == 4) {
+            $dataForm = [
+                "price" => $price,
+                "postcode" => 0,
+                "city" => 0,
+                "state" => 0,
+                "selected" => (int)$shipping_method,
+                "country" => 'BR',
+            ];
+        } else {
+            $address = $user->adresses()->orderBy('id','desc')->first();
+            $dataForm = [
+                "price" => $price,
+                "postcode" => $address->zip_code,
+                "city" => $address->city,
+                "state" => $address->state,
+                "selected" => (int)$shipping_method,
+                "country" => 'BR',
+            ];
+        }
 
         $freight = $this->freightService->calculate($dataForm, $cart, 'checkout');
 
+
         return $freight;
+
+
     }
 
     private function jsonfreight()
@@ -630,6 +714,7 @@ class CheckoutController extends Controller
             'valor' => 0,
             'prazo' => '',
             'domicilio' => '',
+            'description' => '',
             'error' => 0
         );
         return typeJson($_msg_);

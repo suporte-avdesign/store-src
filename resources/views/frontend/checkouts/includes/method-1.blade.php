@@ -56,16 +56,7 @@
                 @foreach($configShipping as $method)
                     <li>
                         <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_{{$method->id}}" value="{{$method->id}}" class="shipping_method" @if($method_selected == $method->id) checked @endif/>
-                        @if($method->tax_unique != '0.00')
-                            <label for="shipping_method_{{$method->id}}">{{$method->name}}</label>
-                            <p>{{$method->description}} {{constLang('currency')}} {{setReal($method->tax_unique)}}</p>
-
-                        @elseif($method->tax == 0)
-                            <label for="shipping_method_{{$method->id}}">{{$method->name}}</label>
-                            <p>{{constLang('currency')}} 0,00</p>
-                        @else
-                            <label for="shipping_method_{{$method->id}}">{{$method->name}} </label>
-                        @endif
+                        <label for="shipping_method_{{$method->id}}">{{$method->name}} </label>
                     </li>
                 @endforeach
             </ul>
@@ -94,7 +85,7 @@
     @auth
         @if(is_string($freight->error))
         @else
-            <tr class="freight">
+            <tr class="order-total">
                 <th>{{constLang('messages.shipping.freight')}}</th>
                 <td>
                     <strong>
@@ -102,6 +93,11 @@
                             <span class="woocommerce-Price-currencySymbol">{{constLang('currency')}} </span>{{setReal($freight->valor)}}
                         </span>
                     </strong>
+                </td>
+            </tr>
+            <tr class="freight">
+                <td colspan="2" align="left">
+                    <strong> {{$freight->description}} </strong>
                 </td>
             </tr>
         @endif

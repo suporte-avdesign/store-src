@@ -372,7 +372,7 @@ return [
             'detail_user' => 'Detalhes do faturamento',
             'error' => 'Não foi possível processar seu pedido. Tente novamente.',
             'info' => 'Se você já fez compras conosco, insira seus dados abaixo. Se você é um novo cliente, prossiga para o Faturamento de envio.',
-            'indicate_transport' => 'Quer indicar uma transportadora?',
+            'indicate_transport' => 'Quero indicar uma transportadora',
             'is_account' => 'Já é cliente cliente?',
             'login_text' => 'Clique aqui para logar',
             'note_order' => 'Caso seja necessário alguma alteração ou observação sobre seu pedido, descreva aqui.',

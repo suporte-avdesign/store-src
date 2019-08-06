@@ -35,7 +35,6 @@ class UserRegisteredNoteListener implements ShouldQueue
      */
     public function handle(UserRegisteredNoteEvent $event)
     {
-        sleep(20);
         $note = $event->getNote();
         $this->userNote->create($note);
     }

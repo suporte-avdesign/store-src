@@ -11,12 +11,7 @@ class OrderShipping extends Model
         'user_id',
         'config_shipping_id',
         'indicate',
-        'code',
-        'url',
         'phone',
-        'name',
-        'note',
-        'status',
-        'date_send'
+        'name'
     ];
 }

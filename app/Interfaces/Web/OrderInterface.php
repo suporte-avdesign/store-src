@@ -9,6 +9,6 @@ interface OrderInterface
      *
      * @return \AVD\Repositories\Web\OrderRepository
      */
-    public function create($input);
+    public function create($cart, $freight, $dataForm, $company);
 
 }

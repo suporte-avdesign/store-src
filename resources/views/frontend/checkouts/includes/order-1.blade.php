@@ -59,14 +59,7 @@
                 @foreach($configShipping as $method)
                     <li>
                         <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_{{$method->id}}" value="{{$method->id}}" class="shipping_method"/>
-                        @if($method->tax_unique != '0.00')
-                            <label for="shipping_method_{{$method->id}}">{{$method->name}}</label>
-                            <p>{{$method->description}}</p>
-                        @elseif($method->tax == 0)
-                            <label for="shipping_method_{{$method->id}}">{{$method->name}}</label>
-                        @else
-                            <label for="shipping_method_{{$method->id}}">{{$method->name}} </label>
-                        @endif
+                        <label for="shipping_method_{{$method->id}}">{{$method->name}}</label>
                     </li>
                 @endforeach
             </ul>

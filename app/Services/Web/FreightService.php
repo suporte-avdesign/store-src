@@ -5,6 +5,7 @@ namespace AVD\Services\Web;
 use AVD\Models\Web\ConfigBox;
 use AVD\Interfaces\Web\CartInterface as InterCart;
 use AVD\Interfaces\Web\ConfigFreightInterface as ConfigFreight;
+use AVD\Interfaces\Web\ConfigShippingInterface as ConfigShipping;
 
 /**
  * $box1  = (64*42*30);# C=80640 K=13440
@@ -32,10 +33,12 @@ class FreightService
 
     public function __construct(
         InterCart $interCart,
-        ConfigFreight $configFreight)
+        ConfigFreight $configFreight,
+        ConfigShipping $configShipping)
     {
-        $this->interCart = $interCart;
-        $this->configFreight = $configFreight;
+        $this->interCart      = $interCart;
+        $this->configFreight  = $configFreight;
+        $this->configShipping = $configShipping;
     }
 
     /**
@@ -45,8 +48,6 @@ class FreightService
      */
     public function calculate($dataForm, $products, $page)
     {
-
-
         $price    = $dataForm['price'];
         $country  = $dataForm['country'];
         $selected = $dataForm['selected'];
@@ -55,13 +56,18 @@ class FreightService
 
 
         if ($selected == 1) {
+            $data = $this->configShipping->setId(1);
+            $_msg_ = array(
+                'valor' => $data->tax_unique,
+                'prazo' => 0,
+                'domicilio' => 0,
+                'error' => 0,
+                'description' => $data->description
+            );
 
-            dd('Transportadora');
-            return false;
-            //
-        }
+            return $response = typeJson($_msg_);
 
-        if ($selected == 2 || $selected == 3) {
+        } elseif ($selected == 2 || $selected == 3) {
             $fator = number_format(6, 3, '.', '');
             $cart  = collect($products)->toArray();
 
@@ -106,7 +112,7 @@ class FreightService
             $note='';
             if ($page == "cart") {
 
-                $response = $this->messagesCart($send, $note);
+                $response = $this->messagesCart($send, $selected, $note);
                 if (isset($response->error)) {
                     $html = $response->error;
                 } else {
@@ -117,9 +123,30 @@ class FreightService
                 return response()->json($out);
 
             } elseif ($page == 'checkout') {
-                return $this->messagesCheckout($send, $note);
+                return $this->messagesCheckout($send, $selected, $note);
             }
 
+        } elseif ($selected == 4) {
+            $data = $this->configShipping->setId($selected);
+            $_msg_ = array(
+                'valor' => $data->tax_unique,
+                'description' => $data->description,
+                'error' => 0
+            );
+
+            return $response = typeJson($_msg_);
+
+        } elseif ($selected == 5) {
+            $data = $this->configShipping->setId($selected);
+            $_msg_ = array(
+                'valor' => $data->tax_unique,
+                'description' => $data->description,
+                'error' => 0
+            );
+
+            return $response = typeJson($_msg_);
+        } else {
+            return false;
         }
 
 
@@ -570,7 +597,7 @@ class FreightService
      * @param null $error
      * @return mixed
      */
-    private function messagesCart($freight,$note=null)
+    private function messagesCart($freight,$selected,$note=null)
     {
         if (isset($freight[0]['error'])) {
             $message = 'error_freight';
@@ -579,10 +606,12 @@ class FreightService
             $_msg_ = array('error' => $html);
             $response = typeJson($_msg_);
         } else {
+            $data = $this->configShipping->setId($selected);
             $_msg_ = array(
                 'valor' => 0,
                 'prazo' => 0,
                 'domicilio' => 'Não',
+                'description' => $data->description,
                 'error' => null
             );
 
@@ -626,14 +655,16 @@ class FreightService
      * @param null $note
      * @return array|mixed|string
      */
-    private function messagesCheckout($freight,$note=null)
+    private function messagesCheckout($freight,$selected,$note=null)
     {
 
         $days=0; $error=0; $value=0; $delivery=0;
+        $data = $this->configShipping->setId($selected);
         $_msg_ = array(
             'valor' => $value,
             'prazo' => $days,
             'domicilio' => $delivery,
+            'description' => $data->description,
             'error' => $error
         );
         $response = typeJson($_msg_);
@@ -667,7 +698,6 @@ class FreightService
         return $response;
     }
 
-
     /**
      * Validação CLA
      *
@@ -689,6 +719,5 @@ class FreightService
         }
         return $error;
     }
-
 
 }
