@@ -28,7 +28,8 @@ class CheckoutRequest extends FormRequest
         $type = $register['type_id'];
         $new_account = $this->get('new_account');
         $method = $this->get('shipping_method');
-        $indicate_transport = $this->get('indicate_transport');
+        $transport = $this->get('transport');
+        //dd($transport);
         $terms_conditions = $this->get('terms');
 
         #User
@@ -69,7 +70,7 @@ class CheckoutRequest extends FormRequest
         #Método
         $rules['shipping_method'] = "required";
         #Indicate Transport
-        if ($indicate_transport) {
+        if (isset($transport['indicate'])) {
             $rules['transport.name']  = "required";
             $rules['transport.phone'] = "required";
         }

@@ -20,7 +20,7 @@ class CartRepository implements CartInterface
     public function __construct(Model $model)
     {
         $this->model   = $model;
-        $this->session = md5($_SERVER['REMOTE_ADDR']);;
+        $this->session = md5($_SERVER['REMOTE_ADDR']);
     }
 
     /**
@@ -151,6 +151,12 @@ class CartRepository implements CartInterface
     {
         $data = $this->model->where('key', $key)->first();
         return $data->delete();
+    }
+
+
+    public function destroy()
+    {
+        return $this->model->where('session', $this->session)->delete();
     }
 
 

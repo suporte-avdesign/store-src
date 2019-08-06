@@ -141,8 +141,14 @@ Route::group(['prefix' => 'checkout',  'middleware' => 'check-items'], function 
     Route::post('review', 'Web\CheckoutController@review')->name('checkout.review');
     Route::post('store', 'Web\CheckoutController@store')->name('checkout.store');
     Route::get('{email}/{token}', 'Web\CheckoutController@verifyToken')->name('checkout.confirm');
-    Route::get('{order}/{id}', 'Web\CheckoutController@show')->name('checkout.received');
 });
+
+/*
+|--------------------------------------------------------------------------
+| Routes Checkout
+|--------------------------------------------------------------------------
+*/
+Route::get('pagamento/{token}', 'Web\PaymentController@index')->name('payment');
 
 
 

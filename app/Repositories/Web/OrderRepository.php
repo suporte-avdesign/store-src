@@ -60,6 +60,7 @@ class OrderRepository implements OrderInterface
             'tax' => 0,
             'ip' => $_SERVER['REMOTE_ADDR'],
             'code' => strtoupper(uniqid(date('YmdHsi'))),
+            'token' => csrf_token()
         ];
 
         return $this->model->create($input);

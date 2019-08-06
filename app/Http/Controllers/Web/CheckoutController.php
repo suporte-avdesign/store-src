@@ -8,7 +8,6 @@ use AVD\Events\UserRegisteredCheckoutEvent;
 
 use AVD\Services\Web\FreightService;
 
-
 use AVD\Http\Controllers\Controller;
 use AVD\Interfaces\Web\CartInterface as InterCart;
 use AVD\Interfaces\Web\UserInterface as InterUser;
@@ -20,13 +19,16 @@ use AVD\Interfaces\Web\UserAddressInterface as InterAddress;
 use AVD\Interfaces\Web\OrderNoteInterface as InterOrderNote;
 use AVD\Interfaces\Web\OrderItemInterface as InterOrderItems;
 use AVD\Http\Requests\Web\CheckoutRequest as ValidateCheckout;
-use AVD\Interfaces\Web\CompanyPaymentInterface as CompanyPayment;
 use AVD\Interfaces\Web\ConfigKeywordInterface as ConfigKeyword;
 use AVD\Interfaces\Web\AccountTypeInterface as InterAccountType;
 use AVD\Interfaces\Web\ConfigShippingInterface as ConfigShipping;
+use AVD\Interfaces\Web\CompanyPaymentInterface as CompanyPayment;
+use AVD\Interfaces\Web\OrderShippingInterface as InterOrderShipping;
 use AVD\Interfaces\Web\ConfigProfileClientInterface as InterProfile;
 use AVD\Interfaces\Web\ConfigFormPaymentInterface as ConfigFormPayment;
 use AVD\Interfaces\Web\ContentTermsConditionsInterface as TermsConditions;
+
+
 
 
 
@@ -67,7 +69,8 @@ class CheckoutController extends Controller
         TermsConditions $termsConditions,
         InterOrderItems $interOrderItems,
         InterAccountType $interAccountType,
-        ConfigFormPayment $configFormPayment)
+        ConfigFormPayment $configFormPayment,
+        InterOrderShipping $interOrderShipping)
     {
 
         $this->middleware('check-items');
@@ -89,6 +92,7 @@ class CheckoutController extends Controller
         $this->termsConditions  = $termsConditions;
         $this->interAccountType  = $interAccountType;
         $this->configFormPayment  = $configFormPayment;
+        $this->interOrderShipping  = $interOrderShipping;
     }
     /**
      * Display a listing of the resource.
@@ -465,10 +469,7 @@ class CheckoutController extends Controller
 
             } else {
 
-                /**
-                 * Verifica se houve alteração nos campos (user,address) e salva
-                 */
-                $update = $this->update($dataForm);
+                $changeUser = $this->update($dataForm);
 
                 $configSite = $this->configSite->setId(1);
                 if ($configSite->order == 'wishlist'){
@@ -476,7 +477,6 @@ class CheckoutController extends Controller
                 } else {
                     $items = $this->interCart->getAll();
                 }
-
 
                 $user = auth()->user();
                 $dataForm['payment_method'] == 3 ? $price = 'price_card' : $price = 'price_cash';
@@ -493,75 +493,22 @@ class CheckoutController extends Controller
                 if ($dataForm['order_comments']) {
                     $orderNote = $this->interOrderNote->create($order->id, $dataForm['order_comments']);
                 }
-
-                $transport = $dataForm['transport'];
-                # Indicado pelo cliente
-                if (!empty($transport['indicate'])) {
-
-
-                    $create_transport = [
-                        'order_id' => $order->id, #order->id
-                        'user_id' => auth()->id(),
-                        'config_shipping_id' => 'Verificar',
-                        'indicate' => $transport['indicate'],
-                        'phone' => $transport['phone'],
-                        'name' => $transport['name']
-                    ];
-
-                    dd($create_transport);
+                # Transporte indicado pelo cliente
+                if (!empty($dataForm['transport']['indicate'])) {
+                    $orderShipping = $this->interOrderShipping->create($dataForm['transport'], $order->id);
                 }
 
-                dd('Não indicou');
+                $remove = $this->interCart->destroy();
 
+                DB::commit();
 
+                $out = array(
+                    "result" => "success",
+                    "redirect" => route('payment', $order->token)
+                );
 
-
-
-
-
-
-
-
-
-
-
-
+                return response()->json($out);
             }
-
-
-            DB::commit();
-
-
-
-        /*
-
-        $result = 2;
-        if ($result == 2) {
-            $terms = $request->input('terms');
-            // Error
-            $message = "Preencha os campos vazios {$result}";
-            if (empty($terms)) {
-                $message = 'Por favor ler e aceitar os termos e condições para prosseguir com o seu pedido.';
-            }
-            $messages = view("{$this->view}.messages.error-1", compact('message'))->render();
-            $out = array(
-                "result" => "failure",
-                "messages" => $messages,
-                "refresh" => false,
-                "reload" => false
-            );
-        } else {
-            $id = (int)(12345);
-            $order_name = 'pedido-recebido';
-            $out = array(
-                "result" => "success",
-                "redirect" => route('checkout.received', [$order_name, $id])
-            );
-        }
-
-
-        return response()->json($out);
-        */
 
 
         } catch(\Exception $e){
@@ -718,42 +665,6 @@ class CheckoutController extends Controller
             'error' => 0
         );
         return typeJson($_msg_);
-    }
-
-
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($order, $id)
-    {
-
-        $bank_name = 'BRADESCO';
-        $account_type = 'Conta Corrente';
-        $account_name = config('app.name');
-        $branch_number = "841";
-        $account_number = "10168-0";
-        $document_name = "CNPJ";
-        $document_number = "65.590.366/0001-03";
-        $reference_name = "Referencia";
-        $reference_number = $id;
-
-
-
-        return view("{$this->view}.checkout-1-received", compact(
-            'bank_name',
-            'account_type',
-            'account_name',
-            'branch_number',
-            'account_number',
-            'document_name',
-            'document_number',
-            'reference_name',
-            'reference_number'
-        ));
     }
 
 

@@ -202,7 +202,7 @@ class CartController extends Controller
 
         } else {
 
-            $dataForm = $this->insert($_SERVER['REMOTE_ADDR'], $user_id, $profile_id, $session, $product, $color, $grids, $quantity);
+            $dataForm = $this->insert($_SERVER['REMOTE_ADDR'], $user_id, $profile_id, $product, $color, $grids, $quantity);
             $data   = $this->interModel->create($dataForm);
         }
 
@@ -235,7 +235,7 @@ class CartController extends Controller
                     "span.basel-cart-number" => $cart_quantity,
                     "span.basel-cart-subtotal" => $cart_total
                 ),
-                "cart_hash" => $session
+                "cart_hash" =>  md5($_SERVER['REMOTE_ADDR'])
             );
         }
 
@@ -260,7 +260,7 @@ class CartController extends Controller
         $list     = 1;
         $quantity = 0;
         $total    = '0,00';
-        $session  = md5($_SERVER['REMOTE_ADDR']);
+
 
 
         $user = Auth::user();
@@ -284,7 +284,7 @@ class CartController extends Controller
                 "span.basel-cart-number" => $cart_quantity,
                 "span.basel-cart-subtotal" => $cart_total
             ),
-            "cart_hash" => $session
+            "cart_hash" => md5($_SERVER['REMOTE_ADDR'])
         );
 
         return response()->json($out);
@@ -386,7 +386,7 @@ class CartController extends Controller
         $undo_item = $request['undo_item'];
     }
 
-    public function insert($ip, $user_id, $profile_id, $session, $product, $color, $grids, $quantity)
+    public function insert($ip, $user_id, $profile_id, $product, $color, $grids, $quantity)
     {
         $configProduct = $this->configProduct->setId(1);
         foreach ($product->prices as $price) {
@@ -406,7 +406,7 @@ class CartController extends Controller
 
         $insert = [
             'user_id' => $user_id,
-            'session' => $session,
+            'session' =>  md5($_SERVER['REMOTE_ADDR']),
             'product_id' => $product->id,
             'image_color_id' => $color->id,
             'grid_product_id' => $grids->id,

@@ -43,6 +43,7 @@ class AppServiceProvider extends ServiceProvider
             'Order',
             'OrderItem',
             'OrderNote',
+            'OrderShipping',
             'PagSeguroPayment',
             'Product',
             'Section',
