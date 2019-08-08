@@ -8,27 +8,35 @@
     @else
         <ul class="wc_payment_methods payment_methods methods">
             @foreach($configPayment as $payment)
-            @if($payment->id == 1)
+                @if($payment->method == 'cash')
                     <li class="wc_payment_method payment_method_cash">
-                        <input id="payment_method_cash" type="radio" class="input-radio" name="payment_method" value="{{$payment->id}}" @if($payment_selected == $payment->id) checked="checked" @endif data-order_button_text=""/>
+                        <input id="payment_method_cash" type="radio" class="input-radio" name="payment_method" value="{{$payment->method}}" @if($payment_selected == $payment->method) checked="checked" @endif data-order_button_text=""/>
                         <label for="payment_method_cash">{{$payment->label}}</label>
                         <div class="payment_box payment_method_cash" >
                             <p>{{$payment->description}}</p>
                         </div>
                     </li>
-                @elseif($payment->id == 2)
+                @elseif($payment->method == 'billet')
                     <li class="wc_payment_method payment_method_billet">
-                        <input id="payment_method_billet" type="radio" class="input-radio" name="payment_method" value="{{$payment->id}}" @if($payment_selected == $payment->id) checked="checked" @endif data-order_button_text=""/>
+                        <input id="payment_method_billet" type="radio" class="input-radio" name="payment_method" value="{{$payment->method}}" @if($payment_selected == $payment->method) checked="checked" @endif data-order_button_text=""/>
                         <label for="payment_method_billet">{{$payment->label}}</label>
                         <div class="payment_box payment_method_billet" style="display:none;">
                             <p>{{$payment->description}}</p>
                         </div>
                     </li>
-                @elseif($payment->id == 3)
-                    <li class="wc_payment_method payment_method_card">
-                        <input id="payment_method_card" type="radio" class="input-radio" name="payment_method" value="{{$payment->id}}" @if($payment_selected == $payment->id) checked="checked" @endif data-order_button_text=""/>
-                        <label for="payment_method_card">{{$payment->label}}</label>
-                        <div class="payment_box payment_method_card" style="display:none;">
+                @elseif($payment->method == 'credit')
+                    <li class="wc_payment_method payment_method_credit">
+                        <input id="payment_method_credit" type="radio" class="input-radio" name="payment_method" value="{{$payment->method}}" @if($payment_selected == $payment->method) checked="checked" @endif data-order_button_text=""/>
+                        <label for="payment_method_credit">{{$payment->label}}</label>
+                        <div class="payment_box payment_method_credit" style="display:none;">
+                            <p>{{$payment->description}}</p>
+                        </div>
+                    </li>
+                @elseif($payment->method == 'debit')
+                    <li class="wc_payment_method payment_method_debit">
+                        <input id="payment_method_debit" type="radio" class="input-radio" name="payment_method" value="{{$payment->method}}" @if($payment_selected == $payment->method) checked="checked" @endif data-order_button_text=""/>
+                        <label for="payment_method_debit">{{$payment->label}}</label>
+                        <div class="payment_box payment_method_debit" style="display:none;">
                             <p>{{$payment->description}}</p>
                         </div>
                     </li>

@@ -251,7 +251,7 @@ jQuery( function( $ ) {
             }
         },
         update_checkout: function( event, args ) {
-            // Small timeout to prevent multiple requests when several fields update at the same time
+            // Tempo limite pequeno para evitar várias solicitações quando vários campos são atualizados ao mesmo tempo
             wc_checkout_form.reset_update_checkout_timer();
             wc_checkout_form.updateTimer = setTimeout( wc_checkout_form.update_checkout_action, '5', args );
         },
@@ -435,7 +435,7 @@ jQuery( function( $ ) {
                 return false;
             }
 
-            // Trigger a handler to let gateways manipulate the checkout if needed
+            // Acionar um manipulador para permitir que gateways manipulem o checkout, se necessário
             if ( $form.triggerHandler( 'checkout_place_order' ) !== false && $form.triggerHandler( 'checkout_place_order_' + wc_checkout_form.get_payment_method() ) !== false ) {
 
                 $form.addClass( 'processing' );
@@ -497,6 +497,13 @@ jQuery( function( $ ) {
                                 } else {
                                     window.location = decodeURI( result.redirect );
                                 }
+                            } else if ( 'payment' === result.result ) {
+                                $(".basel-popup-inner").html(result.form);
+                                $form.removeClass( 'processing' ).unblock();
+                                $('.basel-popup-with-content').trigger('click');
+                               // alert('pagamento');
+                                //wc_checkout_form.$checkout_form.html(result.btn);
+                                //alert(result.messages);
                             } else if ( 'confirmation' === result.result ) {
                                 wc_checkout_form.$checkout_form.html(result.messages);
                                 //alert(result.messages);
@@ -564,6 +571,7 @@ jQuery( function( $ ) {
             }
             $.scroll_to_notices( scrollElement );
         }
+
     };
 
     var wc_checkout_coupons = {

@@ -9,6 +9,7 @@ interface OrderInterface
      *
      * @return \AVD\Repositories\Web\OrderRepository
      */
+    public function setToken($token);
     public function create($cart, $freight, $dataForm, $company);
 
 }

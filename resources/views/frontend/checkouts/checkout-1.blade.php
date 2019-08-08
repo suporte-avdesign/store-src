@@ -32,9 +32,11 @@
     <div class="container">
         <div class="row">
             <div class="site-content col-sm-12" role="main">
+
                 <article id="post-8" class="post-8 page type-page status-publish hentry">
                     <div class="entry-content">
                         <div class="woocommerce">
+
                             @if ($errors->any())
                                 <div class="woocommerce-notices-wrapper">
                                     <ul class="woocommerce-error" role="alert">
@@ -90,11 +92,14 @@
                                         </div>
                                     </div>
                                 </form>
-
                             </div>
                         </div>
                     </div>
                 </article>
+
+                @include('frontend.payments.pagseguro.credit-1')
+
+
             </div>
         </div>
     </div>
@@ -162,6 +167,7 @@
         $("#reg_document1_1").mask('99.999.999/9999-99');
         $("#reg_document1_2").mask('999.999.999-99');
         $("#zip_code").mask('99999-999');
+
     });
 </script>
 @endpush

@@ -112,3 +112,33 @@
     background-size: cover;
     background-position: left center
 }
+
+/* POUP PAYMENT */
+.avd_custom_popup_payment {
+    margin-top: -20px!important;
+    margin-right: -20px!important;
+    margin-bottom: -20px!important;
+    margin-left: -20px!important
+}
+
+
+.avd_custom_popup_payment_inner{
+    padding-top: 30px!important;
+    padding-right: 30px!important;
+    padding-bottom: 15px!important;
+    padding-left: 30px!important
+}
+
+
+.avd_custom_popup_payment_inner_info {
+    padding-top: 30px!important;
+    padding-right: 30px!important;
+    padding-bottom: 30px!important;
+    padding-left: 30px!important;
+    background-color: #ca6e15!important
+}
+
+.payment-contact svg path {
+    stroke: #ffffff!important;
+}
+

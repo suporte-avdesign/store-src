@@ -76,6 +76,8 @@ return [
     'code' => 'Código',
     'color' => 'Cor',
     'colors' => 'Cores',
+    'contact' => 'Contato',
+    'contacts' => 'Contatos',
     'comment' => 'Comentário',
     'compare' => 'Compare',
     'complement' => 'Complemento',
@@ -431,6 +433,14 @@ return [
         ],
         'newsletter' => [
             'register' => 'Quero receber informações e promoçoes de vocês.'
+        ],
+        'payments' => [
+            'title' => 'Pagamento do Pedido',
+            'title_credit' => 'Pagamento com Cartão de Crédito:',
+            'title_debit' => 'Pagamento com Cartão de Débito:',
+            'title_billet' => 'Pagamento com Boleto:',
+            'btn_billet' => 'GERAR BOLETO',
+            'btn_card' => 'PAGAR',
         ]
 
 

@@ -22,6 +22,11 @@ class OrderRepository implements OrderInterface
         $this->model = $model;
     }
 
+    public function setToken($token)
+    {
+        return $this->model->where('token', $token)->firstOrFail();
+    }
+
     /**
      * Create
      *
@@ -39,12 +44,27 @@ class OrderRepository implements OrderInterface
             $price_card += $item->price_card * $item->quantity;
         }
 
-        $subtotal = $dataForm['payment_method'] == 3 ? $price_card : $price_cash;
-        $total = $dataForm['payment_method'] == 3 ? $price_card+$freight->valor : $price_cash+$freight->valor;
+        if ($dataForm['payment_method'] == 'cash') {
+            $total = $price_cash+$freight->valor;
+            $subtotal = $price_cash;
+            $form_payment_id = 1;
+        } elseif ($dataForm['payment_method'] == 'billet') {
+            $total = $price_cash+$freight->valor;
+            $subtotal = $price_cash;
+            $form_payment_id = 2;
+        } elseif ($dataForm['payment_method'] == 'credit') {
+            $total = $price_card+$freight->valor;
+            $subtotal = $price_card;
+            $form_payment_id = 3;
+        } elseif ($dataForm['payment_method'] == 'debit') {
+            $total = $price_card+$freight->valor;
+            $subtotal = $price_card;
+            $form_payment_id = 4;
+        }
 
         $input = [
             'user_id' => auth()->id(),
-            'config_form_payment_id' => (int)$dataForm['payment_method'],
+            'config_form_payment_id' => (int)$form_payment_id,
             'config_status_payment_id' => 3,
             'company' => $company->name,
             'status_label' => config("{$company->slug}.status.3"),
@@ -65,6 +85,8 @@ class OrderRepository implements OrderInterface
 
         return $this->model->create($input);
     }
+
+
 
 
 }

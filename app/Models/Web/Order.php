@@ -28,8 +28,13 @@ class Order extends Model
     ];
 
 
+    /**
+     * Order Items
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
     public function items()
     {
-        return $this->belongsToMany(OrderItem::class);
+        return $this->hasMany(OrderItem::class);
     }
 }

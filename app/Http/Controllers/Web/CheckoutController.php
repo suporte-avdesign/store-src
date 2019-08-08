@@ -28,10 +28,6 @@ use AVD\Interfaces\Web\ConfigProfileClientInterface as InterProfile;
 use AVD\Interfaces\Web\ConfigFormPaymentInterface as ConfigFormPayment;
 use AVD\Interfaces\Web\ContentTermsConditionsInterface as TermsConditions;
 
-
-
-
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -46,6 +42,7 @@ class CheckoutController extends Controller
     protected $redirectTo = 'login';
 
     private $view = 'frontend.checkouts';
+    private $viewPayment = 'frontend.payments';
 
     /**
      * CheckoutController constructor.
@@ -95,9 +92,9 @@ class CheckoutController extends Controller
         $this->interOrderShipping  = $interOrderShipping;
     }
     /**
-     * Display a listing of the resource.
+     * Página Principal.
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function index()
     {
@@ -135,7 +132,7 @@ class CheckoutController extends Controller
 
         $total = $this->interCart->getTotal($cart);
         # Identificar qual método de pagamento e envio
-        $payment_selected = 3;
+        $payment_selected = 'cash';
         $method_selected = 1;
         $freight = $this->jsonfreight();
 
@@ -146,7 +143,6 @@ class CheckoutController extends Controller
             'termsConditions','json_countries', 'method_selected', 'payment_selected')
         );
     }
-
 
     /**
      * Atualizar Valores do frete
@@ -175,7 +171,7 @@ class CheckoutController extends Controller
         }
 
         if ($user && $method_selected) {
-            ($payment_selected == 3 ? $price = 'price_card' : $price = 'price_cash');
+            ($payment_selected == 'card' ? $price = 'price_card' : $price = 'price_cash');
 
             $freight = $this->calacular($cart, $user, $price, $method_selected);
 
@@ -205,6 +201,12 @@ class CheckoutController extends Controller
 
     }
 
+    /**
+     * Retorna os Estados
+     *
+     * @param $states
+     * @return array
+     */
     public function getCountries($states)
     {
         foreach ($states as $state) {
@@ -230,6 +232,11 @@ class CheckoutController extends Controller
         return $countries;
     }
 
+    /**
+     * Retorna as validações do CEP dos estados
+     *
+     * @return array
+     */
     public function getLocale()
     {
         $arr1 = array(
@@ -346,6 +353,12 @@ class CheckoutController extends Controller
         return $locale;
     }
 
+    /**
+     * Retorna os Métodos selecionados
+     *
+     * @param Request $request
+     * @return View
+     */
     public function method(Request $request)
     {
         $selected = $request['shipping_method'][0];
@@ -388,6 +401,12 @@ class CheckoutController extends Controller
 
     }
 
+    /**
+     * Form de login do usuário
+     *
+     * @param Request $request
+     * @return View
+     */
     public function login(Request $request)
     {
 
@@ -454,7 +473,12 @@ class CheckoutController extends Controller
         return 'email';
     }
 
-
+    /**
+     * Valida todos os inputs, e define como e qua empresa é responsavel pelo pagamento.
+     *
+     * @param ValidateCheckout $request
+     * @return \Illuminate\Http\JsonResponse|string
+     */
     public function store(ValidateCheckout $request)
     {
 
@@ -478,6 +502,20 @@ class CheckoutController extends Controller
                     $items = $this->interCart->getAll();
                 }
 
+                $company = $this->getCompany($dataForm['payment_method']);
+                if ($dataForm['payment_method'] == 'cash') {
+                    $popup = 'cash';
+                } elseif ($dataForm['payment_method'] == 'billet') {
+                    $popup = 'billet';
+                } elseif ($dataForm['payment_method'] == 'credit') {
+                    $popup = 'credit';
+                } elseif ($dataForm['payment_method'] == 'debit') {
+                    $popup = 'debit';
+                }
+
+
+
+                /*
                 $user = auth()->user();
                 $dataForm['payment_method'] == 3 ? $price = 'price_card' : $price = 'price_cash';
                 $shipping_method = $dataForm['shipping_method'][0];
@@ -499,12 +537,15 @@ class CheckoutController extends Controller
                 }
 
                 $remove = $this->interCart->destroy();
+                */
 
                 DB::commit();
 
+                $form = view("{$this->viewPayment}.{$company->slug}.popup.{$popup}-1")->render();
+
                 $out = array(
-                    "result" => "success",
-                    "redirect" => route('payment', $order->token)
+                    "result" => "payment",
+                    "form" => $form
                 );
 
                 return response()->json($out);
@@ -560,24 +601,34 @@ class CheckoutController extends Controller
         $update_address = $this->interAddress->update($dataForm['address'], 'checkout');
     }
 
-
+    /**
+     * Retorna a Empresa responsável pelo pagamento
+     *
+     * @param $payment_method
+     * @return \AVD\Repositories\Web\CompanyPaymentRepository
+     */
     private function getCompany($payment_method)
     {
-        if ($payment_method == 1) {
+        if ($payment_method == 'cash') {
             $company = $this->companyPayment->getCash();
-        } elseif ($payment_method == 2) {
+        } elseif ($payment_method == 'billet') {
             $company = $this->companyPayment->getBillet();
-        } elseif ($payment_method == 3) {
+        } elseif ($payment_method == 'credit') {
             $company = $this->companyPayment->getCardCred();
-        } elseif ($payment_method == 4) {
+        } elseif ($payment_method == 'debit') {
             $company = $this->companyPayment->getCardDebit();
         }
 
         return $company;
     }
 
-
-
+    /**
+     * Confirma que o email existe e ativa o usuário através do token
+     *
+     * @param $email
+     * @param $token
+     * @return Redirect (index or login)
+     */
     protected function verifyToken($email, $token)
     {
 
@@ -621,9 +672,15 @@ class CheckoutController extends Controller
 
     }
 
-
-
-
+    /**
+     * Retorna o valor do frete
+     *
+     * @param $cart
+     * @param $user
+     * @param $price
+     * @param $shipping_method
+     * @return Json
+     */
     private function calacular($cart, $user, $price, $shipping_method) {
 
         if ($shipping_method == 4) {
@@ -655,6 +712,11 @@ class CheckoutController extends Controller
 
     }
 
+    /**
+     * Modelo de retorno do frete
+     *
+     * @return mixed
+     */
     private function jsonfreight()
     {
         $_msg_ = array(

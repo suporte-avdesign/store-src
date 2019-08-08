@@ -13,6 +13,7 @@
 
 
 Route::resource('testes/checkout', 'Web\TestesController');
+Route::any('json', 'Web\JsonController@index')->name('json');
 
 Route::get('/', 'Web\HomeController@index')->name('home');
 
