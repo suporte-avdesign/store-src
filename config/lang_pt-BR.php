@@ -439,8 +439,10 @@ return [
             'title_credit' => 'Pagamento com Cartão de Crédito:',
             'title_debit' => 'Pagamento com Cartão de Débito:',
             'title_billet' => 'Pagamento com Boleto:',
+            'title_cash' => 'Pagamento à vista:',
             'btn_billet' => 'GERAR BOLETO',
             'btn_card' => 'PAGAR',
+            'btn_cash' => 'CLIQUE AQUI PARA CONCLUIR O PEDIDO',
         ]
 
 

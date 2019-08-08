@@ -2,39 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98b239c8-5e79-4bef-877b-d465e9cffc35" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/JsonController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/company.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/frontend/payments/bradesco/popup/cash-1.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/credit-1.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/popup/billet-1.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/popup/cash-1.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/popup/credit-1.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/popup/debit-1.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/frontend/testes/popoups.blade.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/themes/images/payments.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/frontend/payments/payment-1.blade.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.env" afterPath="$PROJECT_DIR$/.env" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/popup/cash-1.blade.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.env.example" afterPath="$PROJECT_DIR$/.env.example" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/CheckoutController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/CheckoutController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/PaymentController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/PaymentController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Interfaces/Web/OrderInterface.php" afterPath="$PROJECT_DIR$/app/Interfaces/Web/OrderInterface.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/Web/Order.php" afterPath="$PROJECT_DIR$/app/Models/Web/Order.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Web/OrderRepository.php" afterPath="$PROJECT_DIR$/app/Repositories/Web/OrderRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Web/ConfigFreightRepository.php" afterPath="$PROJECT_DIR$/app/Repositories/Web/ConfigFreightRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/company.php" afterPath="$PROJECT_DIR$/config/company.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/lang_pt-BR.php" afterPath="$PROJECT_DIR$/config/lang_pt-BR.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/plugins/checkout/checkout.min.js" afterPath="$PROJECT_DIR$/public/plugins/checkout/checkout.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/themes/css/styles.min.css" afterPath="$PROJECT_DIR$/public/themes/css/styles.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/themes/css/theme.css" afterPath="$PROJECT_DIR$/public/themes/css/theme.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/plugins/checkout/checkout.js" afterPath="$PROJECT_DIR$/resources/assets/plugins/checkout/checkout.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/style.css" afterPath="$PROJECT_DIR$/resources/assets/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/themes/css/styles.css" afterPath="$PROJECT_DIR$/resources/assets/themes/css/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/themes/css/theme.css" afterPath="$PROJECT_DIR$/resources/assets/themes/css/theme.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/checkouts/checkout-1.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/checkouts/checkout-1.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/checkouts/includes/payment-1.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/checkouts/includes/payment-1.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/contacts/contact-1.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/contacts/contact-1.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-08-06.log" afterPath="$PROJECT_DIR$/storage/logs/laravel-2019-08-06.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/logs/workers.log" afterPath="$PROJECT_DIR$/storage/logs/workers.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/payments/bradesco/popup/cash-1.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/payments/bradesco/popup/cash-1.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/popup/billet-1.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/popup/billet-1.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -94,21 +69,44 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cash-1.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="cash-1.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/frontend/payments/bradesco/popup/cash-1.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="522">
+              <caret line="41" column="189" lean-forward="false" selection-start-line="41" selection-start-column="189" selection-end-line="41" selection-end-column="189" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h3#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lang_pt-BR.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/lang_pt-BR.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="313">
+              <caret line="439" column="49" lean-forward="true" selection-start-line="439" selection-start-column="49" selection-end-line="439" selection-end-column="49" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="company.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="billet-1.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/popup/billet-1.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="24" column="34" lean-forward="false" selection-start-line="21" selection-start-column="24" selection-end-line="24" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="company.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/company.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="19" column="4" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+            <state relative-caret-position="271">
+              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -117,18 +115,8 @@
       <file leaf-file-name=".env" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="74" column="19" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="lang_pt-BR.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/lang_pt-BR.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="545">
-              <caret line="446" column="5" lean-forward="true" selection-start-line="446" selection-start-column="5" selection-end-line="446" selection-end-column="5" />
+            <state relative-caret-position="190">
+              <caret line="67" column="12" lean-forward="true" selection-start-line="67" selection-start-column="12" selection-end-line="67" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -138,8 +126,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>show_login_form</find>
-      <find>blockUI.isBlocked</find>
       <find>triggerHandler</find>
       <find>block</find>
       <find>payment_method_billet</find>
@@ -168,6 +154,8 @@
       <find>theme.css</find>
       <find>wpcf7-response-output wpcf7-display-none</find>
       <find>wpcf7-response-output</find>
+      <find>CORREIO_CODIGO_EMPRESA</find>
+      <find>Agê</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -185,8 +173,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Models/Web/OrderItem.php" />
-        <option value="$PROJECT_DIR$/app/Interfaces/Web/OrderItemInterface.php" />
         <option value="$PROJECT_DIR$/app/Repositories/Web/OrderItemRepository.php" />
         <option value="$PROJECT_DIR$/app/Interfaces/Web/OrderNoteInterface.php" />
         <option value="$PROJECT_DIR$/app/Repositories/Web/OrderNoteRepository.php" />
@@ -229,13 +215,15 @@
         <option value="$PROJECT_DIR$/resources/views/frontend/contacts/contact-1.blade.php" />
         <option value="$PROJECT_DIR$/resources/assets/plugins/checkout/checkout.js" />
         <option value="$PROJECT_DIR$/resources/assets/themes/css/theme.css" />
-        <option value="$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/popup/billet-1.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/popup/credit-1.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/popup/debit-1.blade.php" />
-        <option value="$PROJECT_DIR$/config/lang_pt-BR.php" />
-        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/.env.example" />
+        <option value="$PROJECT_DIR$/app/Repositories/Web/ConfigFreightRepository.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/popup/billet-1.blade.php" />
+        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/config/company.php" />
+        <option value="$PROJECT_DIR$/config/lang_pt-BR.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/payments/bradesco/popup/cash-1.blade.php" />
       </list>
     </option>
   </component>
@@ -430,6 +418,40 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="pagseguro" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="payments" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pagseguro" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="popup" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -1158,12 +1180,12 @@
       <workItem from="1564765835334" duration="50449000" />
       <workItem from="1564868761157" duration="131527000" />
       <workItem from="1565093438855" duration="19071000" />
-      <workItem from="1565116029063" duration="51945000" />
+      <workItem from="1565116029063" duration="58384000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="732842000" />
+    <option name="totallyTimeSpent" value="739281000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1178,7 +1200,7 @@
     <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988048" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30916333" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988048" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1231,14 +1253,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/credit-1.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="5" column="80" lean-forward="false" selection-start-line="5" selection-start-column="80" selection-end-line="5" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/frontend/checkouts/includes/payment-1.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -1603,36 +1617,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/lang_pt-BR.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="446" column="5" lean-forward="true" selection-start-line="446" selection-start-column="5" selection-end-line="446" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/popup/billet-1.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="41" column="28" lean-forward="false" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
-          <folding>
-            <element signature="n#style#0;n#small#0;n#h3#0;n#div#0;n#div#1;n#div#1;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/popup/cash-1.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-54">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/credit-1.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -1669,35 +1657,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/payments/bradesco/popup/cash-1.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Web/ConfigFreightRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="127">
+          <caret line="66" column="46" lean-forward="true" selection-start-line="66" selection-start-column="46" selection-end-line="66" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.env.example">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="71" column="20" lean-forward="true" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="20" />
+        <state relative-caret-position="370">
+          <caret line="76" column="20" lean-forward="true" selection-start-line="76" selection-start-column="20" selection-end-line="76" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/credit-1.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="74" column="19" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="19" />
+        <state relative-caret-position="190">
+          <caret line="67" column="12" lean-forward="true" selection-start-line="67" selection-start-column="12" selection-end-line="67" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/company.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="4" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+        <state relative-caret-position="271">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/popup/billet-1.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="24" column="34" lean-forward="false" selection-start-line="21" selection-start-column="24" selection-end-line="24" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/lang_pt-BR.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="439" column="49" lean-forward="true" selection-start-line="439" selection-start-column="49" selection-end-line="439" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/payments/bradesco/popup/cash-1.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="41" column="189" lean-forward="false" selection-start-line="41" selection-start-column="189" selection-end-line="41" selection-end-column="189" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

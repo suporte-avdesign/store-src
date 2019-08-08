@@ -42,9 +42,9 @@ class ConfigFreightRepository implements ConfigFreightInterface
     {
         $frete = new PrecoPrazo();
         $frete->setCodigoServico(Data::PAC)
-            ->setCodigoEmpresa(env('CORREIO_CODIGO_EMPRESA')) # opcional
-            ->setSenha(env('CORREIO_CODIGO_SENHA')) # opcional
-            ->setCepOrigem(env('CORREIO_CODIGO_CEP_ORIGEM')) # apenas numeros, sem hifen(-)
+            ->setCodigoEmpresa(config('company.post_code')) # opcional
+            ->setSenha(config('company.post_password')) # opcional
+            ->setCepOrigem(config('company.post_origin')) # apenas numeros, sem hifen(-)
             ->setCepDestino($postcode) # apenas numeros, sem hifen(-)
             ->setValorDeclarado(setReal($submit->valor_declarado)) # não obrigatorio
             ->setComprimento($submit->comprimento) # obrigatorio
@@ -74,9 +74,9 @@ class ConfigFreightRepository implements ConfigFreightInterface
     {
         $frete = new PrecoPrazo();
         $frete->setCodigoServico(Data::PAC)
-            ->setCodigoEmpresa(env('CORREIO_CODIGO_EMPRESA')) # opcional
-            ->setSenha(env('CORREIO_CODIGO_SENHA')) # opcional
-            ->setCepOrigem(env('CORREIO_CODIGO_CEP_ORIGEM')) # apenas numeros, sem hifen(-)
+            ->setCodigoEmpresa(config('company.post_code')) # opcional
+            ->setSenha(config('company.post_password')) # opcional
+            ->setCepOrigem(config('company.post_origin')) # apenas numeros, sem hifen(-)
             ->setCepDestino($postcode) # apenas numeros, sem hifen(-)
             ->setValorDeclarado(setReal($submit->valor_declarado)) # não obrigatorio
             ->setComprimento($submit->comprimento) # obrigatorio
