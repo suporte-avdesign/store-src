@@ -6,20 +6,15 @@
                 <div class="row">
                     <div class="col-md-3">
                         <div style="margin-top: 10px">
-                            <img  src="{{asset('themes/images/payment/bradesco-logo.png')}}" alt="{{constLang('messages.payments.title_cash')}}" width="200px">
+                            <img  src="{{asset('themes/images/payment/bradesco-logo.png')}}" alt="{{constLang('messages.payments.title_cash')}}" width="100px">
                         </div>
 
                     </div>
                     <div class="col-md-9">
-
                         <div class="title-wrapper  basel-title-color-default basel-title-style-default basel-title-size-small text-left ">
                             <h3 class="wpb_wrapper" style="margin-top: 10px">
                                 <span>{{constLang('messages.payments.title_cash')}} </span> <strong class="total-value">R$ 142,67</strong>
                             </h3>
-
-                        </div>
-                        <div class="wpb_text_column wpb_content_element">
-
                         </div>
                         <div class="wpb_text_column wpb_content_element vc_custom_1484129453229">
                             <div class="wpb_wrapper">
@@ -29,12 +24,16 @@
                                     <li>{{config('company._agency')}}:<strong> {{config('company.bank_agency_number')}}-{{config('company.bank_agency_digit')}}</strong></li>
                                     <li>{{config('company.bank_account_type')}}:<strong> {{config('company.bank_account_number')}}-{{config('company.bank_account_digit')}}</strong></li>
                                     <li>{{config('company._account_name')}}:<strong> {{config('company.bank_account_name')}}</strong></li>
+                                    <li>{{config('company._cnpj')}}:<strong> {{config('company.document1')}}</strong></li>
 
                                 </ul>
-                                <p>Faça seu pagamento diretamente em nossa conta bancária. Por favor, use o número do pedido como referência de pagamento. Seu pedido não será enviado até que os fundos sejam liberados em nossa conta.</p>
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-12">
+                        <p>Faça seu pagamento diretamente em nossa conta bancária. Por favor, use o número do pedido como referência de pagamento. Seu pedido não será enviado até que os fundos sejam liberados em nossa conta.</p>
+                    </div>
+
                 </div>
 
                 <div class="text-right">

@@ -105,9 +105,12 @@ return [
         'server' => 'Houve um erro no servidor!',
         '404'  => 'Página não encontrada',
     ],
+    'error_server1' => 'Desculpe! Infelizmente houve um erro não identificado. Tente novamente mais tarde',
+    'error_server2' => 'Caso o problema persista, entre em contato com o administrador.',
     'exit' => 'Sair',
     'featured' => 'Destaque',
     'filter' => 'Filtrar',
+    'freight' => 'Frete',
     'phone' => 'Preço',
     'price' => 'Telefone',
     'grid'  => 'Grade',
@@ -160,6 +163,7 @@ return [
     'password' => 'Senha',
     'password_confirm' => 'Confirme a Senha',
     'password_lost' => 'Perdeu a senha?',
+    'payment' => 'Pagamento',
     'payment_cash' => 'Pagamento à Vista',
     'person_legal' => [
         'name' => 'Pessoa Jurídica',
@@ -199,6 +203,7 @@ return [
     'reset' => 'Limpar',
     'results' => 'Resultados',
     'retail' => 'Varejo',
+    'safe_environment' => 'Você está em um ambiente seguro',
     'save' => 'Salvar',
     'section' => 'Seção',
     'searching' => 'Procurando',
@@ -421,8 +426,6 @@ return [
         'register' => [
             'account_inactive' => 'sua conta está inativa, entre em contato com o administrador. Para reativala entre em contato com nossa equipe',
             'active_token_null' => 'Sua conta já se encontra ativa. Faça o login abaixo:',
-            'error_server1' => 'Desculpe! Infelizmente houve um erro não identificado. Tente novamente mais tarde',
-            'error_server2' => 'Caso o problema persista, entre em contato com o administrador.',
             'new_register' => 'O registro para este site permite que você acesse o status e o histórico do seu pedido. Basta preencher os campos abaixo e teremos uma nova conta configurada para você em breve. Só lhe pediremos informações necessárias para tornar o processo de compra mais rápido e fácil.',
             'no_account' => 'Não existe nenhum registro com essas credenciais.',
             'success_text1' => 'Foi enviado um código de validação para seu email',
@@ -443,7 +446,23 @@ return [
             'btn_billet' => 'GERAR BOLETO',
             'btn_card' => 'PAGAR',
             'btn_cash' => 'CLIQUE AQUI PARA CONCLUIR O PEDIDO',
+
+        ],
+        'orders' => [
+            'title_received' => 'Pedido Recebido',
+            'title_print_billet' => 'Imprimir Boleto',
+            'title_thanks' => 'Obrigado. Seu pedido foi recebido.',
+            'title_number' => 'Pedido Número',
+            'title_total' => 'Total',
+            'title_date' => 'Data',
+            'title_payment' => 'Pagamento',
+            'title_freight' => 'Frete',
+            'title_details' => 'Detalhes do Pedido',
+            'title_method' => 'Método de Pagamento',
         ]
+
+
+
 
 
     ]

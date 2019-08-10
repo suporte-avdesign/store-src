@@ -10,5 +10,6 @@ interface OrderShippingInterface
      * @return \AVD\Repositories\Web\OrderShippingRepository
      */
     public function create($input, $order_id);
+    public function setOrder($order_id);
 
 }

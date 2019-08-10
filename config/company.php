@@ -21,6 +21,8 @@ return [
     '_bank' => 'Banco:',
     '_account_name' => 'Favorecido:',
     '_agency' => 'Agência',
+    '_cnpj' => 'CNPJ',
+    '_cpf' => 'CPF',
 
     'bank' => env('BANK'),
     'bank_agency_number' => env('BANK_AGENCY_NUMBER'),

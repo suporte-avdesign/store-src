@@ -176,6 +176,7 @@ class CartController extends Controller
      */
     public function product(Request $request)
     {
+        //sleep(30);
         $quantity        = $request->input('quantity');
         $product_id      = $request->input('product_id');
         $grid_product_id = $request->input('variation_id');

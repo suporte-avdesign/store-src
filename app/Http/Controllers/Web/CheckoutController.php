@@ -22,7 +22,7 @@ use AVD\Http\Requests\Web\CheckoutRequest as ValidateCheckout;
 use AVD\Interfaces\Web\ConfigKeywordInterface as ConfigKeyword;
 use AVD\Interfaces\Web\AccountTypeInterface as InterAccountType;
 use AVD\Interfaces\Web\ConfigShippingInterface as ConfigShipping;
-use AVD\Interfaces\Web\CompanyPaymentInterface as CompanyPayment;
+use AVD\Interfaces\Web\PaymentCompanyInterface as CompanyPayment;
 use AVD\Interfaces\Web\OrderShippingInterface as InterOrderShipping;
 use AVD\Interfaces\Web\ConfigProfileClientInterface as InterProfile;
 use AVD\Interfaces\Web\ConfigFormPaymentInterface as ConfigFormPayment;
@@ -30,7 +30,6 @@ use AVD\Interfaces\Web\ContentTermsConditionsInterface as TermsConditions;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -481,12 +480,17 @@ class CheckoutController extends Controller
      */
     public function store(ValidateCheckout $request)
     {
-
-        try{
-            DB::beginTransaction();
-
             $dataForm = $request->all();
             $new_account = $request['new_account'];
+            $shipping_method = $dataForm['shipping_method'][0];
+            $payment_method = $dataForm['payment_method'];
+            $order_comments = $dataForm['order_comments'];
+
+            !empty($dataForm['transport']['indicate']) ? $indicate = $dataForm['transport']['indicate'] : $indicate = '';
+            !empty($indicate) ? $name = $dataForm['transport']['name'] : $name = '';
+            !empty($indicate) ? $phone = $dataForm['transport']['phone'] : $phone = '';
+
+
             # create users and attributes
             if ($new_account == 1) {
                return $this->create($dataForm);
@@ -501,19 +505,33 @@ class CheckoutController extends Controller
                 } else {
                     $items = $this->interCart->getAll();
                 }
-
-                $company = $this->getCompany($dataForm['payment_method']);
-                if ($dataForm['payment_method'] == 'cash') {
-                    $popup = 'cash';
-                } elseif ($dataForm['payment_method'] == 'billet') {
-                    $popup = 'billet';
-                } elseif ($dataForm['payment_method'] == 'credit') {
-                    $popup = 'credit';
-                } elseif ($dataForm['payment_method'] == 'debit') {
-                    $popup = 'debit';
+                $price_card = 0;
+                $price_cash = 0;
+                foreach ($items as $item) {
+                    $price_card += $item->price_card * $item->quantity;
+                    $price_cash += $item->price_cash * $item->quantity;
                 }
 
+                $company = $this->getCompany($dataForm['payment_method']);
+                $company_name = $company->name;
+                if ($dataForm['payment_method'] == 'cash') {
+                    $popup = 'cash';
+                    $price = 'price_cash';
+                } elseif ($dataForm['payment_method'] == 'billet') {
+                    $popup = 'billet';
+                    $price = 'price_cash';
+                } elseif ($dataForm['payment_method'] == 'credit') {
+                    $popup = 'credit';
+                    $price = 'price_card';
+                } elseif ($dataForm['payment_method'] == 'debit') {
+                    $popup = 'debit';
+                    $price = 'price_card';
+                }
 
+                $user = auth()->user();
+
+                $freight = $this->calacular($items, $user, $price, $shipping_method);
+                $price == 'price_cash' ? $value = $price_cash : $value = $price_card;
 
                 /*
                 $user = auth()->user();
@@ -539,9 +557,9 @@ class CheckoutController extends Controller
                 $remove = $this->interCart->destroy();
                 */
 
-                DB::commit();
-
-                $form = view("{$this->viewPayment}.{$company->slug}.popup.{$popup}-1")->render();
+                $form = view("{$this->viewPayment}.{$company->slug}.popup.{$popup}-1",
+                    compact('shipping_method', 'payment_method', 'order_comments',
+                       'company_name', 'indicate', 'name', 'phone', 'value', 'freight'))->render();
 
                 $out = array(
                     "result" => "payment",
@@ -552,10 +570,7 @@ class CheckoutController extends Controller
             }
 
 
-        } catch(\Exception $e){
-            DB::rollback();
-            return $e->getMessage();
-        }
+
     }
 
     /**
@@ -605,7 +620,7 @@ class CheckoutController extends Controller
      * Retorna a Empresa responsável pelo pagamento
      *
      * @param $payment_method
-     * @return \AVD\Repositories\Web\CompanyPaymentRepository
+     * @return \AVD\Repositories\Web\PaymentCompanyRepository
      */
     private function getCompany($payment_method)
     {
@@ -614,9 +629,9 @@ class CheckoutController extends Controller
         } elseif ($payment_method == 'billet') {
             $company = $this->companyPayment->getBillet();
         } elseif ($payment_method == 'credit') {
-            $company = $this->companyPayment->getCardCred();
+            $company = $this->companyPayment->getCredit();
         } elseif ($payment_method == 'debit') {
-            $company = $this->companyPayment->getCardDebit();
+            $company = $this->companyPayment->getDebit();
         }
 
         return $company;

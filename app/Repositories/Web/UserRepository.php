@@ -230,5 +230,13 @@ class UserRepository implements UserInterface
     }
 
 
+    public function logout($id)
+    {
+        $data  = $this->setId($id);
+        $input = ["logout" => date('Y-m-d H:i:s')];
+        return $data->update($input);
+    }
+
+
 
 }

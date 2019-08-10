@@ -84,6 +84,7 @@ mix.scripts('resources/assets/includes/zxcvbn/js/password-strength-meter.js', 'p
 mix.scripts('resources/assets/plugins/jquery-maskedinput/jquery.maskedinput.min.js', 'public/plugins/jquery-maskedinput/jquery.maskedinput.min.js');
 mix.scripts('resources/assets/themes/js/functions.js', 'public/themes/js/functions.min.js');
 
+mix.scripts('resources/assets/plugins/pagseguro/pagseguro.js', 'public/plugins/pagseguro/pagseguro.min.js');
 
 
 

@@ -35,7 +35,7 @@ class PagSeguroServices implements PagSeguroServicesInterface
     {
 
         $this->interCart = $interCart;
-        $this->reference = uniqid(date('YmdHis'));
+        $this->reference = onlyNumber(uniqid(date('YmdHis')));
     }
 
     /**
@@ -146,26 +146,30 @@ class PagSeguroServices implements PagSeguroServicesInterface
         $params = array_merge($params, $this->getSender());
         $params = array_merge($params, $this->getShipping());
 
-        //try {
+
         $guzzle = new Guzzle();
         $response = $guzzle->request('POST', config('pagseguro.url_payment_transparent'), [
             'form_params' => $params,
         ]);
+
         $body = $response->getBody();
         $contents = $body->getContents(); //receber code para redirecionar o usuário
         $xml = simplexml_load_string($contents); // xml para json
 
-        return [
-            'success' => true,
-            'payment_link' => (string)$xml->paymentLink,
-            'reference' => $this->reference,
-            'code' => (string)$xml->code,
-        ];
+        if ($xml->code) {
+            return [
+                'success' => true,
+                'payment_link' => (string)$xml->paymentLink,
+                'reference' => $this->reference,
+                'code' => (string)$xml->code
+            ];
+        } else {
+            dd('error');
+        }
 
 
-        //}  catch (Throwable | ServerException | ClientException $e) {
-            //return $e->getResponse();
-        //}
+
+
     }
 
 

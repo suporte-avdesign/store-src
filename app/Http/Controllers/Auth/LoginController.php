@@ -123,12 +123,14 @@ class LoginController extends Controller
                                     "last_login	" => date('Y-m-d H:i:s'),
                                     "ip" => $ip
                                 ];
-                                $this->interModel->update($access, $exist->id);
 
-                                $message = 'success_login';
-                                $success = view('frontend.messages.success-1', compact('message'))->render();
+                                $note = $this->interModel->access($access, $exist->id);
+                                if ($note) {
+                                    $message = 'success_login';
+                                    $success = view('frontend.messages.success-1', compact('message'))->render();
 
-                                return response()->json(['success' => $success, 'redirect' => route('account')]);
+                                    return response()->json(['success' => $success, 'redirect' => route('account')]);
+                                }
 
                             } else {
 
@@ -173,8 +175,7 @@ class LoginController extends Controller
     {
         if (Auth::check()) {
             $id = Auth::user()->getAuthIdentifier();
-            $input = ["logout" => date('Y-m-d H:i:s')];
-            $logout = $this->interModel->update($input, $id);
+            $logout = $this->interModel->logout($id);
             if ($logout) {
                 $this->guard()->logout();
             }

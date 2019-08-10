@@ -3,11 +3,11 @@
 namespace AVD\Repositories\Web;
 
 
-use AVD\Models\Web\PagSeguroPayment as Model;
-use AVD\Interfaces\Web\PagSeguroPaymentInterface;
+use AVD\Models\Web\PaymentCard as Model;
+use AVD\Interfaces\Web\PaymentCardInterface;
 
 
-class PagSeguroPaymentRepository implements PagSeguroPaymentInterface
+class PaymentCardRepository implements PaymentCardInterface
 {
 
     public $model;
@@ -28,13 +28,7 @@ class PagSeguroPaymentRepository implements PagSeguroPaymentInterface
      * @param  array $input
      * @return mixed
      */
-    public function paymentBillet($input)
-    {
-        return $this->model->create($input);
-    }
-
-
-    public function paymentCredCard($input)
+    public function create($input)
     {
         return $this->model->create($input);
     }

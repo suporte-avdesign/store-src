@@ -43,5 +43,6 @@
     "/plugins/checkout/checkout.min.js": "/plugins/checkout/checkout.min.js",
     "/includes/zxcvbn/js/password-strength-meter.min.js": "/includes/zxcvbn/js/password-strength-meter.min.js",
     "/plugins/jquery-maskedinput/jquery.maskedinput.min.js": "/plugins/jquery-maskedinput/jquery.maskedinput.min.js",
-    "/themes/js/functions.min.js": "/themes/js/functions.min.js"
+    "/themes/js/functions.min.js": "/themes/js/functions.min.js",
+    "/plugins/pagseguro/pagseguro.min.js": "/plugins/pagseguro/pagseguro.min.js"
 }

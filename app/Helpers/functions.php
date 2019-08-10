@@ -34,7 +34,6 @@ if ( !function_exists('constLang'))
 {
     function constLang($key)
     {
-
         return config('lang_pt-BR.'. $key);
     }
 }

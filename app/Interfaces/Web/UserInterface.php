@@ -15,4 +15,5 @@ interface UserInterface
     public function create($input);
     public function update($input, $page);
     public function access($access, $id);
+    public function logout($id);
 }

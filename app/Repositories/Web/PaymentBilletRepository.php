@@ -3,11 +3,11 @@
 namespace AVD\Repositories\Web;
 
 
-use AVD\Models\Web\OrderShipping as Model;
-use AVD\Interfaces\Web\OrderShippingInterface;
+use AVD\Models\Web\PaymentBillet as Model;
+use AVD\Interfaces\Web\PaymentBilletInterface;
 
 
-class OrderShippingRepository implements OrderShippingInterface
+class PaymentBilletRepository implements PaymentBilletInterface
 {
 
     public $model;
@@ -28,14 +28,9 @@ class OrderShippingRepository implements OrderShippingInterface
      * @param  array $input
      * @return mixed
      */
-    public function create($input, $order_id)
+    public function create($input)
     {
         return $this->model->create($input);
-    }
-
-    public function setOrder($order_id)
-    {
-        return $this->model->where('order_id', $order_id)->firstOrFail();
     }
 
 

@@ -22,9 +22,9 @@ class OrderRepository implements OrderInterface
         $this->model = $model;
     }
 
-    public function setToken($token)
+    public function setToken($code, $token)
     {
-        return $this->model->where('token', $token)->firstOrFail();
+        return $this->model->where(['code' => $code, 'token' => $token])->firstOrFail();
     }
 
     /**
@@ -33,7 +33,7 @@ class OrderRepository implements OrderInterface
      * @param  array $input
      * @return mixed
      */
-    public function create($cart, $freight, $dataForm, $company)
+    public function create($cart, $freight, $payment, $shipping, $company, $status)
     {
         $qty=0;
         $price_cash=0;
@@ -44,19 +44,19 @@ class OrderRepository implements OrderInterface
             $price_card += $item->price_card * $item->quantity;
         }
 
-        if ($dataForm['payment_method'] == 'cash') {
+        if ($payment == 'cash') {
             $total = $price_cash+$freight->valor;
             $subtotal = $price_cash;
             $form_payment_id = 1;
-        } elseif ($dataForm['payment_method'] == 'billet') {
+        } elseif ($payment == 'billet') {
             $total = $price_cash+$freight->valor;
             $subtotal = $price_cash;
             $form_payment_id = 2;
-        } elseif ($dataForm['payment_method'] == 'credit') {
+        } elseif ($payment == 'credit') {
             $total = $price_card+$freight->valor;
             $subtotal = $price_card;
             $form_payment_id = 3;
-        } elseif ($dataForm['payment_method'] == 'debit') {
+        } elseif ($payment == 'debit') {
             $total = $price_card+$freight->valor;
             $subtotal = $price_card;
             $form_payment_id = 4;
@@ -65,7 +65,8 @@ class OrderRepository implements OrderInterface
         $input = [
             'user_id' => auth()->id(),
             'config_form_payment_id' => (int)$form_payment_id,
-            'config_status_payment_id' => 3,
+            'config_status_payment_id' => $status,
+            'config_shipping_id' => $shipping,
             'company' => $company->name,
             'status_label' => config("{$company->slug}.status.3"),
             'qty' => $qty,

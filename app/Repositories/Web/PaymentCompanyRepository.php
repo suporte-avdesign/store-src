@@ -3,11 +3,11 @@
 namespace AVD\Repositories\Web;
 
 
-use AVD\Models\Web\CompanyPayment as Model;
-use AVD\Interfaces\Web\CompanyPaymentInterface;
+use AVD\Models\Web\PaymentCompany as Model;
+use AVD\Interfaces\Web\PaymentCompanyInterface;
 
 
-class CompanyPaymentRepository implements CompanyPaymentInterface
+class PaymentCompanyRepository implements PaymentCompanyInterface
 {
 
     public $model;
@@ -32,14 +32,14 @@ class CompanyPaymentRepository implements CompanyPaymentInterface
         return $this->model->where('billet',1)->firstOrFail();
     }
 
-    public function getCardCred()
+    public function getCredit()
     {
-        return $this->model->where('credit_card',1)->firstOrFail();
+        return $this->model->where('credit',1)->firstOrFail();
     }
 
-    public function getCardDebit()
+    public function getDebit()
     {
-        return $this->model->where('debit_card',1)->firstOrFail();
+        return $this->model->where('debit',1)->firstOrFail();
     }
 
 

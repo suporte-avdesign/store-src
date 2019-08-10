@@ -7,10 +7,6 @@
 
                         <img id="visa" src="{{asset('themes/images/payment/visa.gif')}}" alt="Visa" />
                         <img id="mastercard" src="{{asset('themes/images/payment/master.gif')}}" alt="Mastercard" />
-                        <img id="diners" src="{{asset('themes/images/payment/diners.gif')}}" alt=" Diners Club" />
-                        <img id="hipercard" src="{{asset('themes/images/payment/hipercard.gif')}}" alt="Hipercard" />
-                        <img id="amex" src="{{asset('themes/images/payment/amex.gif')}}" alt="American Express" />
-                        <img id="elo" src="{{asset('themes/images/payment/elo.gif')}}" alt="ELO" >
                     </div>
                     <div class="liner-continer" style="margin-top: 10px"> <span class="left-line"></span>
                         <h4 class="title"> {{constLang('messages.payments.title_debit')}}

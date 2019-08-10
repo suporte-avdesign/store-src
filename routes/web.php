@@ -146,10 +146,10 @@ Route::group(['prefix' => 'checkout',  'middleware' => 'check-items'], function 
 
 /*
 |--------------------------------------------------------------------------
-| Routes Checkout
+| Routes Orders
 |--------------------------------------------------------------------------
 */
-Route::get('pagamento/{token}', 'Web\PaymentController@index')->name('payment');
+Route::get('order/received/{code}/{token}', 'Web\OrderController@index')->name('order.received');
 
 
 
@@ -163,13 +163,14 @@ Route::get('pagseguro-button', 'Web\PagSeguroController@button')->name('pagsegur
 Route::get('pagseguro-lightbox', 'Web\PagSeguroController@lightbox')->name('pagseguro.lightbox');
 Route::post('pagseguro-lightbox', 'Web\PagSeguroController@lightboxCode')->name('pagseguro.lightbox.code');
 Route::get('pagseguro-transparente', 'Web\PagSeguroController@transparente')->name('pagseguro.transparente');
-Route::post('pagseguro-transparente', 'Web\PagSeguroController@transparenteCode')->name('pagseguro.transparente.code');
+
 Route::get('pagseguro-card', 'Web\PagSeguroController@card')->name('pagseguro.card');
 Route::post('pagseguro-card-transaction', 'Web\PagSeguroController@cardTransaction')->name('pagseguro.card.transaction');
 
 
-Route::get('pagseguro-billet', 'Web\PagSeguroController@billet')->name('pagseguro.billet');
-Route::post('pagseguro-billet', 'Web\PagSeguroController@billetCode')->name('pagseguro.billet.code');
+
+Route::post('pagseguro-billet', 'Web\PagSeguroController@billet')->name('pagseguro.billet');
+Route::post('pagseguro-transparente', 'Web\PagSeguroController@transparenteCode')->name('pagseguro.transparente.code');
 
 
 /*

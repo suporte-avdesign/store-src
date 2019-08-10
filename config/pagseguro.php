@@ -27,12 +27,58 @@ return [
     'url_payment_transparent'       => $urlPaymentTransparent,
     'url_notification'              => $urlNotification,
 
+    'return' => [
+        1 => [
+            'label' => 'Aguardando',
+            'description' => 'O comprador iniciou a transação, mas até o momento o PagSeguro não recebeu nenhuma informação sobre o pagamento. Quando a resposta da instituição financeira é muito rápida, omitimos esta notificação.'
+        ],
+        2 => [
+            'label' => 'Em análise',
+            'description' => 'O comprador optou por pagar com um cartão de crédito e o PagSeguro está analisando o risco da transação.'
+        ],
+        3 => [
+            'label' => 'Paga',
+            'description' => 'A transação foi paga pelo comprador e o PagSeguro já recebeu uma confirmação da instituição financeira responsável pelo processamento. Quando uma transação tem seu status alterado para Paga, isso significa que você já pode liberar o produto vendido ou prestar o serviço contratado. Porém, note que o valor da transação pode ainda não estar disponível para retirada de sua conta, pois o PagSeguro pode esperar o fim do prazo de liberação da transação.'
+        ],
+        4 => [
+            'label' => 'Disponível',
+            'description' => 'A transação foi paga e chegou ao final de seu prazo de liberação sem ter sido retornada e sem que haja nenhuma disputa aberta. Este status indica que o valor da transação está disponível para saque.'
+        ],
+        5 => [
+            'label' => 'Em disputa',
+            'description' => 'O comprador, dentro do prazo de liberação da transação, abriu uma disputa. A disputa é um processo iniciado pelo comprador para indicar que não recebeu o produto ou serviço adquirido, ou que o mesmo foi entregue com problemas.'
+        ],
+        6 => [
+            'label' => 'Devolvida',
+            'description' => 'O valor da transação foi devolvido para o comprador. Se você não possui mais o produto vendido em estoque, ou não pode por alguma razão prestar o serviço contratado, você pode devolver o valor da transação para o comprador. Esta também é a ação tomada quando uma disputa é resolvida em favor do comprador. Transações neste status não afetam o seu saldo no PagSeguro, pois não são nem um crédito e nem um débito.'
+        ],
+        7 => [
+            'label' => 'Cancelada',
+            'description' => 'A transação foi cancelada sem ter sido finalizada. Quando o comprador opta por pagar com débito online ou boleto bancário e não finaliza o pagamento, a transação assume este status. Isso também ocorre quando o comprador escolhe pagar com um cartão de crédito e o pagamento não é aprovado pelo PagSeguro ou pela operadora.'
+        ],
+        8 => [
+            'label' => 'Debitado',
+            'description' => 'A valor da transação foi devolvido para o comprador.'
+        ],
+        9 => [
+            'label' => 'Retenção',
+            'description' => 'O comprador abriu uma solicitação de chargeback junto à operadora do cartão de crédito.'
+        ]
+    ],
+
     'status' => [
-        1 => 'Completo',   #Significa que o pagamento já foi concluído e creditado.
-        2 => 'Aprovado',   #O pagamento já foi processado e aprovado.
-        3 => 'Em Análise', #O pagamento foi iniciado mas está sendo analisado pelo PagSeguro.
-        4 => 'Devolvido',  #O pagamento foi devolvido.
-        5 => 'Cancelado',  #A transação foi cancelada.
+        'credit' => [
+            1 => 'Completo',   #Significa que o pagamento já foi concluído e creditado.
+            2 => 'Aprovado',   #O pagamento já foi processado e aprovado.
+            3 => 'Em Análise', #O pagamento foi iniciado mas está sendo analisado pelo PagSeguro.
+            4 => 'Devolvido',  #O pagamento foi devolvido.
+            5 => 'Cancelado',  #A transação foi cancelada.
+        ],
+        'billet' => [
+            1 => 'Aguardando',
+            4 => 'Cancelado',
+            5 => 'Pago'
+        ]
     ],
     'testes' => [
         'senha' => 'yrplHgtLv3l18DnW',
