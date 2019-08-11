@@ -105,7 +105,6 @@ class PagSeguroServices implements PagSeguroServicesInterface
         $params = $this->getConfigs();
         $params = http_build_query($params); //email=xpto&token=xpto etc...
 
-        //try {
         $guzzle = new Guzzle();
         $response = $guzzle->request('POST', config('pagseguro.url_transparent_session'), [
             'query' => $params,
@@ -116,9 +115,6 @@ class PagSeguroServices implements PagSeguroServicesInterface
         $xml = simplexml_load_string($contents); // xml para json
 
         return $xml->id;
-        //}  catch (Throwable | ServerException | ClientException $e) {
-            //return $e->getResponse();
-        //}
     }
 
 
@@ -139,8 +135,6 @@ class PagSeguroServices implements PagSeguroServicesInterface
             'enableRecover' => 'false'
         ];
 
-        $cart = $this->interCart->getAll();
-
         $params = array_merge($params, $this->getConfigs());
         $params = array_merge($params, $this->getItems());
         $params = array_merge($params, $this->getSender());
@@ -156,51 +150,41 @@ class PagSeguroServices implements PagSeguroServicesInterface
         $contents = $body->getContents(); //receber code para redirecionar o usuário
         $xml = simplexml_load_string($contents); // xml para json
 
-        if ($xml->code) {
-            return [
-                'success' => true,
-                'payment_link' => (string)$xml->paymentLink,
-                'reference' => $this->reference,
-                'code' => (string)$xml->code
-            ];
-        } else {
-            dd('error');
-        }
-
-
-
-
+        return [
+            'success' => true,
+            'payment_link' => (string)$xml->paymentLink,
+            'reference' => $this->reference,
+            'code' => (string)$xml->code
+        ];
     }
 
 
     public function paymentCredCard($request)
     {
+
         $params = [
-            'email' => config('pagseguro.email'),
-            'token' => config('pagseguro.token'),
+
             'paymentMode' => 'default',
             'paymentMethod' => 'creditCard',
-            'currency' => 'BRL',
+            'currency' => $this->currency,
+            'reference' => $this->reference,
             'creditCardToken' => $request->cardToken,
             'senderHash' => $request->senderHash,
+
             'notificationURL' => 'sualoja.com.br/notificacao.html',
 
             'extraAmount' => '0.00',
-            'itemId1' => '0001',
-            'itemDescription1' => 'Notebook Prata',
-            'itemAmount1' => '10300.00',
-            'itemQuantity1' => '1',
-            'itemId2' => '0002',
-            'itemDescription2' => 'Notebook Azul',
-            'itemAmount2' => '10000.00',
-            'itemQuantity2' => '1',
 
-            'reference' => 'REF1234',
-            'senderName' => 'Jose Comprador',
-            'senderCPF' => '19410462070',
-            'senderAreaCode' => '11',
-            'senderPhone' => '56273440',
-            'senderEmail' => 'c26301320426701778469@sandbox.pagseguro.com.br',
+            'creditCardHolderName' => 'Jose Comprador',
+            'creditCardHolderCPF' => '22111944785',
+
+            'creditCardHolderBirthDate' => '27/10/1987',
+            'creditCardHolderAreaCode' => '11',
+            'creditCardHolderPhone' => '56273440',
+
+
+
+
 
             'shippingAddressStreet' => 'Av. Brig. Faria Lima',
             'shippingAddressNumber' => '1384',
@@ -217,12 +201,9 @@ class PagSeguroServices implements PagSeguroServicesInterface
             'installmentQuantity' => '7',
             'installmentValue' => '3030.94',
             'noInterestInstallmentQuantity' => '5',
-            'creditCardHolderName' => 'Jose Comprador',
-            'creditCardHolderCPF' => '22111944785',
 
-            'creditCardHolderBirthDate' => '27/10/1987',
-            'creditCardHolderAreaCode' => '11',
-            'creditCardHolderPhone' => '56273440',
+
+
 
             'billingAddressStreet' => 'Av. Brig. Faria Lima',
             'billingAddressNumber' => '1384',
@@ -234,21 +215,24 @@ class PagSeguroServices implements PagSeguroServicesInterface
             'billingAddressCountry' => 'BRA',
         ];
 
-        try {
+        $params = array_merge($params, $this->getConfigs());
+        $params = array_merge($params, $this->getItems());
+        $params = array_merge($params, $this->getSender());
+
+
             $guzzle = new Guzzle();
             $response = $guzzle->request('POST', config('pagseguro.url_payment_transparent'), [
                 'form_params' => $params,
             ]);
             $body = $response->getBody();
+
             $contents = $body->getContents(); //receber code para redirecionar o usuário
+
+
 
             $xml = simplexml_load_string($contents); // xml para json
 
             return $xml->code;
-
-        }  catch (Throwable | ServerException | ClientException $e) {
-            return $e->getResponse();
-        }
 
     }
 

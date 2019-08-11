@@ -168,6 +168,7 @@ Route::get('pagseguro-card', 'Web\PagSeguroController@card')->name('pagseguro.ca
 Route::post('pagseguro-card-transaction', 'Web\PagSeguroController@cardTransaction')->name('pagseguro.card.transaction');
 
 
+Route::get('pagseguro-installments', 'Web\PagSeguroController@installments')->name('pagseguro.installments');
 
 Route::post('pagseguro-billet', 'Web\PagSeguroController@billet')->name('pagseguro.billet');
 Route::post('pagseguro-transparente', 'Web\PagSeguroController@transparenteCode')->name('pagseguro.transparente.code');

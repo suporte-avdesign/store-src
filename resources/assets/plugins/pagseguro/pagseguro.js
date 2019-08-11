@@ -14,14 +14,12 @@
             data: data,
             beforeSend: startPreloaderPS(cls)
         }).done(function (data) {
-            console.log(data);
-
+            //console.log(data);
             PagSeguroDirectPayment.setSessionId(data);
-
             paymentBillet(btn, cls);
 
         }).fail(function () {
-            console.log(_pagSeguroSettings.text_error);
+            //console.log(_pagSeguroSettings.text_error);
             stopPreloaderPS(btn, cls);
         }).always(function () {
 

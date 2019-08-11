@@ -49,6 +49,10 @@ trait PagSeguroTrait
     }
 
 
+    /**
+     *  Retorna informações do cliente
+     * @return array
+     */
     public function getSender()
     {
         $user = Auth::user();
@@ -77,6 +81,8 @@ trait PagSeguroTrait
     }
 
     /**
+     * Retorna o endereço do clienet
+     *
      * @return array
      */
     public function getShipping()

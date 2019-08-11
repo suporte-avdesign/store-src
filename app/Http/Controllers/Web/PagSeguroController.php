@@ -182,6 +182,12 @@ class PagSeguroController extends Controller
     }
 
 
+    public function installments(Request $request)
+    {
+        dd($request);
+    }
+
+
 
     private function calacular($cart, $user, $price, $shipping_method) {
 
@@ -207,11 +213,7 @@ class PagSeguroController extends Controller
         }
 
         $freight = $this->freightService->calculate($dataForm, $cart, 'checkout');
-
-
         return $freight;
-
-
     }
 
 
