@@ -32,17 +32,19 @@ trait PagSeguroTrait
 
 
 
-    public function getItems()
+    public function getItems($price)
     {
+
         $itemsCart =$this->interCart->getAll();
         $i=1;
         $items=[];
         foreach ($itemsCart as $item) {
-            $items["itemId{$i}"]          = $item->product_id;
-            $items["itemWeight{$i}"]      = $item->width;
-            $items["itemAmount{$i}"]      = $item->price_cash;
-            $items["itemQuantity{$i}"]    = $item->quantity;
-            $items["itemDescription{$i}"] = $item->name;
+
+            $items["itemId{$i}"]          = (string) $item->product_id;
+            $items["itemWeight{$i}"]      = (string) $item->width;
+            $items["itemAmount{$i}"]      = number_format($item->$price, 2, '.', '');
+            $items["itemQuantity{$i}"]    = (string) $item->quantity;
+            $items["itemDescription{$i}"] = (string) $item->name;
             $i++;
         }
         return $items;
@@ -88,19 +90,57 @@ trait PagSeguroTrait
     public function getShipping()
     {
         $data = Auth::user()->adresses()->orderBy('id','desc')->first();
+
         return [
-            'shippingType' => '1',
             'shippingAddressRequired' => 'true',
-            'shippingAddressStreet' => utf8_decode($data->address),
+            'shippingAddressStreet' => $data->address,
             'shippingAddressNumber' => $data->number,
-            'shippingAddressComplement' => utf8_decode($data->complement),
-            'shippingAddressDistrict' => utf8_decode($data->district),
+            'shippingAddressComplement' => $data->complement,
+            'shippingAddressDistrict' => $data->district,
             'shippingAddressPostalCode' => preg_replace("/[^0-9]/", "", $data->zip_code),
-            'shippingAddressCity' => utf8_decode($data->city),
+            'shippingAddressCity' => $data->city,
             'shippingAddressState' => $data->state,
-            'shippingAddressCountry' => 'BRA',
+            'shippingAddressCountry' => $data->country
         ];
     }
+
+
+    public function getShippingType($type, $freight)
+    {
+        if ($type == 2) {
+            $shippingType = 1;
+        } elseif ($type == 3) {
+            $shippingType = 2;
+        } else {
+            $shippingType = 3;
+        }
+
+        return [
+            'shippingType' => $shippingType,
+            'shippingCost' => number_format($freight, 2, '.', ''),
+        ];
+
+    }
+
+    public function getBilling()
+    {
+        $data = Auth::user()->adresses()->orderBy('id','desc')->first();
+        return [
+            'billingAddressStreet' => $data->address,
+            'billingAddressNumber' => $data->number,
+            'billingAddressComplement' => $data->complement,
+            'billingAddressDistrict' => $data->district,
+            'billingAddressPostalCode' => preg_replace("/[^0-9]/", "", $data->zip_code),
+            'billingAddressCity' => $data->city,
+            'billingAddressState' => $data->state,
+            'billingAddressCountry' => $data->country
+        ];
+    }
+
+
+
+
+
 
     /**
      * Moeda

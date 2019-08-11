@@ -42,7 +42,7 @@ class PagSeguroController extends Controller
         ServicePagSeguro $servicePagSeguro,
         InterOrderShipping $interOrderShipping)
     {
-
+        $this->middleware('auth');
 
         $this->interUser = $interUser;
         $this->interCard = $interCard;
@@ -55,46 +55,6 @@ class PagSeguroController extends Controller
         $this->interOrderShipping = $interOrderShipping;
     }
 
-    public function pagseguro()
-    {
-        $code = $this->servicePagSeguro->generate();
-
-        $urlRedirect = config('pagseguro.url_redirect_after_request').$code;
-
-        return redirect()->away($urlRedirect);
-
-    }
-
-    public function lightbox()
-    {
-        return view("{$this->view}.lightbox-1");
-    }
-
-    public function lightboxCode()
-    {
-        return $this->servicePagSeguro->generate();
-    }
-
-    public function transparente()
-    {
-        return view("{$this->view}.transparent-1");
-    }
-
-
-    public function transparenteCode()
-    {
-        return $this->servicePagSeguro->getSessionId();
-    }
-
-    public function card()
-    {
-        return view("{$this->view}.card-1");
-    }
-
-    public function cardTransaction(Request $request)
-    {
-        return $this->servicePagSeguro->paymentCredCard($request);
-    }
 
     public function billet(Request $request)
     {
@@ -173,6 +133,49 @@ class PagSeguroController extends Controller
         }
 
     }
+
+    public function pagseguro()
+    {
+        $code = $this->servicePagSeguro->generate();
+
+        $urlRedirect = config('pagseguro.url_redirect_after_request').$code;
+
+        return redirect()->away($urlRedirect);
+
+    }
+
+    public function lightbox()
+    {
+        return view("{$this->view}.lightbox-1");
+    }
+
+    public function lightboxCode()
+    {
+        return $this->servicePagSeguro->generate();
+    }
+
+    public function transparente()
+    {
+        return view("{$this->view}.transparent-1");
+    }
+
+
+    public function transparenteCode()
+    {
+        return $this->servicePagSeguro->getSessionId();
+    }
+
+    public function card()
+    {
+        return view("{$this->view}.card-1");
+    }
+
+    public function cardTransaction(Request $request)
+    {
+        return $this->servicePagSeguro->paymentCredCard($request);
+    }
+
+
 
 
 

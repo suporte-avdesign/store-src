@@ -533,6 +533,11 @@ class CheckoutController extends Controller
                 $freight = $this->calacular($items, $user, $price, $shipping_method);
                 $price == 'price_cash' ? $value = $price_cash : $value = $price_card;
 
+                $extraAmount = 0.00; # Valor Taxa(+) ou -Desconto(-)
+                $maxInstallment = 2; # numero de parcelas sem juros
+
+
+
                 /*
                 $user = auth()->user();
                 $dataForm['payment_method'] == 3 ? $price = 'price_card' : $price = 'price_cash';
@@ -558,8 +563,8 @@ class CheckoutController extends Controller
                 */
 
                 $form = view("{$this->viewPayment}.{$company->slug}.popup.{$popup}-1",
-                    compact('shipping_method', 'payment_method', 'order_comments',
-                       'company_name', 'indicate', 'name', 'phone', 'value', 'freight'))->render();
+                    compact('shipping_method', 'payment_method', 'order_comments', 'maxInstallment',
+                       'company_name', 'indicate', 'name', 'phone', 'price', 'value', 'freight', 'extraAmount'))->render();
 
                 $out = array(
                     "result" => "payment",
