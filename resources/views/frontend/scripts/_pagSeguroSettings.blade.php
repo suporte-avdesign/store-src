@@ -2,6 +2,7 @@
     var _pagSeguroSettings = {!! json_encode([
         "ajax_billet" => route('pagseguro.billet'),
         "ajax_transparente" => route('pagseguro.transparente.code'),
+        "ajax_transaction" => route('pagseguro.card.transaction'),
         "btn_billet" => constLang('messages.payments.btn_billet'),
         "btn_card" => constLang('messages.payments.btn_card'),
         "text_loading" => constLang('loader'),

@@ -533,8 +533,9 @@ class CheckoutController extends Controller
                 $freight = $this->calacular($items, $user, $price, $shipping_method);
                 $price == 'price_cash' ? $value = $price_cash : $value = $price_card;
 
-                $extraAmount = 0.00; # Valor Taxa(+) ou -Desconto(-)
+                $extraAmount = '0.00'; # Valor Taxa(+) ou -Desconto(-)
                 $maxInstallment = 2; # numero de parcelas sem juros
+                $freight = number_format($freight->valor, 2, '.', '.');
 
 
 

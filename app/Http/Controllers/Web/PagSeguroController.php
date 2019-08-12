@@ -55,13 +55,24 @@ class PagSeguroController extends Controller
         $this->interOrderShipping = $interOrderShipping;
     }
 
+    public function cardTransaction(Request $request)
+    {
+        return $this->servicePagSeguro->paymentCredCard($request);
+    }
 
+
+    /**
+     * Payment: Billet
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse|string
+     */
     public function billet(Request $request)
     {
         try{
             DB::beginTransaction();
 
-            $response = $this->servicePagSeguro->paymentBillet($request->senderHash);
+            $response = $this->servicePagSeguro->paymentBillet($request);
 
             $user = auth()->user();
             $price = 'price_cash';
@@ -134,6 +145,9 @@ class PagSeguroController extends Controller
 
     }
 
+
+
+
     public function pagseguro()
     {
         $code = $this->servicePagSeguro->generate();
@@ -169,12 +183,6 @@ class PagSeguroController extends Controller
     {
         return view("{$this->view}.card-1");
     }
-
-    public function cardTransaction(Request $request)
-    {
-        return $this->servicePagSeguro->paymentCredCard($request);
-    }
-
 
 
 

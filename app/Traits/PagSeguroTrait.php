@@ -40,11 +40,11 @@ trait PagSeguroTrait
         $items=[];
         foreach ($itemsCart as $item) {
 
-            $items["itemId{$i}"]          = (string) $item->product_id;
-            $items["itemWeight{$i}"]      = (string) $item->width;
+            $items["itemId{$i}"]          = $item->product_id;
+            $items["itemWeight{$i}"]      = $item->width;
             $items["itemAmount{$i}"]      = number_format($item->$price, 2, '.', '');
-            $items["itemQuantity{$i}"]    = (string) $item->quantity;
-            $items["itemDescription{$i}"] = (string) $item->name;
+            $items["itemQuantity{$i}"]    = $item->quantity;
+            $items["itemDescription{$i}"] = $item->name;
             $i++;
         }
         return $items;
@@ -93,19 +93,19 @@ trait PagSeguroTrait
 
         return [
             'shippingAddressRequired' => 'true',
-            'shippingAddressStreet' => $data->address,
-            'shippingAddressNumber' => $data->number,
-            'shippingAddressComplement' => $data->complement,
-            'shippingAddressDistrict' => $data->district,
+            'shippingAddressStreet' => utf8_decode($data->address),
+            'shippingAddressNumber' => utf8_decode($data->number),
+            'shippingAddressComplement' => utf8_decode($data->complement),
+            'shippingAddressDistrict' => utf8_decode($data->district),
             'shippingAddressPostalCode' => preg_replace("/[^0-9]/", "", $data->zip_code),
-            'shippingAddressCity' => $data->city,
+            'shippingAddressCity' => utf8_decode($data->city),
             'shippingAddressState' => $data->state,
             'shippingAddressCountry' => $data->country
         ];
     }
 
 
-    public function getShippingType($type, $freight)
+    public function getShippingType($type, $freight, $amount)
     {
         if ($type == 2) {
             $shippingType = 1;
@@ -117,7 +117,7 @@ trait PagSeguroTrait
 
         return [
             'shippingType' => $shippingType,
-            'shippingCost' => number_format($freight, 2, '.', ''),
+            'shippingCost' => '0'.number_format($freight, 2, '.', ''),
         ];
 
     }
@@ -126,12 +126,12 @@ trait PagSeguroTrait
     {
         $data = Auth::user()->adresses()->orderBy('id','desc')->first();
         return [
-            'billingAddressStreet' => $data->address,
-            'billingAddressNumber' => $data->number,
-            'billingAddressComplement' => $data->complement,
-            'billingAddressDistrict' => $data->district,
+            'billingAddressStreet' => utf8_decode($data->address),
+            'billingAddressNumber' => utf8_decode($data->number),
+            'billingAddressComplement' => utf8_decode($data->complement),
+            'billingAddressDistrict' => utf8_decode($data->district),
             'billingAddressPostalCode' => preg_replace("/[^0-9]/", "", $data->zip_code),
-            'billingAddressCity' => $data->city,
+            'billingAddressCity' => utf8_decode($data->city),
             'billingAddressState' => $data->state,
             'billingAddressCountry' => $data->country
         ];

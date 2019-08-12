@@ -10,6 +10,7 @@ use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\ServerException;
 use GuzzleHttp\Client as Guzzle;
 
+use Illuminate\Support\Facades\Auth;
 use Throwable;
 
 
@@ -123,10 +124,11 @@ class PagSeguroServices implements PagSeguroServicesInterface
      * @param $sendHash
      * @return null|\Psr\Http\Message\ResponseInterface|string
      */
-    public function paymentBillet($senderHash)
+    public function paymentBillet($request)
     {
+        /*
         $params = [
-            'senderHash'    => $senderHash,
+            'senderHash'    => $request->senderHash,
             'paymentMode'   => 'default',
             'paymentMethod' => 'boleto',
             'currency'      => $this->currency,
@@ -138,10 +140,15 @@ class PagSeguroServices implements PagSeguroServicesInterface
         ];
 
         $params = array_merge($params, $this->getConfigs());
-        $params = array_merge($params, $this->getItems());
+        $params = array_merge($params, $this->getItems($request->price));
         $params = array_merge($params, $this->getSender());
         $params = array_merge($params, $this->getShipping());
+        */
 
+        $params = $this->defaultBillet($request);
+        $params = array_merge($params, $this->getConfigs());
+
+        //dd($params);
 
         $guzzle = new Guzzle();
         $response = $guzzle->request('POST', config('pagseguro.url_payment_transparent'), [
@@ -171,6 +178,8 @@ class PagSeguroServices implements PagSeguroServicesInterface
         // $this->cart->total() / $installmentQuantity)
         $installmentValue = number_format($installments[1], 2, '.', '');
 
+        $extraAmount =
+
         $params = [
             'paymentMode' => 'default',
             'paymentMethod' => 'creditCard',
@@ -178,18 +187,14 @@ class PagSeguroServices implements PagSeguroServicesInterface
             'senderHash' => $request->senderHash,
             'creditCardToken' => $request->cardToken,
             'reference' => $this->reference,
-            'extraAmount' => number_format($request->extraAmount,2),
+            'extraAmount' =>  $request->extraAmount,
 
             'installmentQuantity' => $installmentQuantity,
             'installmentValue' => $installmentValue,
             'noInterestInstallmentQuantity' => $request->maxInstallment,// Quantidade de parcelas sem juros
 
-            'senderName' => 'Jose Comprador',
-            'senderCPF' => '22111944785',
-            'senderAreaCode' => '11',
-            'senderPhone' => '56273440',
 
-            'senderEmail' => 'comprador@sandbox.pagseguro.com.br',
+
             'creditCardHolderName' => 'Jose Comprador',
             'creditCardHolderCPF' => '22111944785',
             'creditCardHolderBirthDate' => '27/10/1987',
@@ -202,16 +207,24 @@ class PagSeguroServices implements PagSeguroServicesInterface
 
         $params = array_merge($params, $this->getConfigs());
         $params = array_merge($params, $this->getItems($request->price));
+        $params = array_merge($params, $this->getSender());
         $params = array_merge($params, $this->getShipping());
         $params = array_merge($params, $this->getBilling());
         $params = array_merge($params, $this->getShippingType(
-            $request->shipping_method, $request->freight)
+            $request->shipping_method, $request->freight, $request->extraAmount)
         );
 
 
-
+        //$params = $this->defaultCredit($request);
+        //$params = array_merge($params, $this->getConfigs());
 
         //dd($params);
+
+
+
+
+
+
 
         $guzzle = new Guzzle();
         $response = $guzzle->request('POST', config('pagseguro.url_payment_transparent'), [
@@ -229,62 +242,120 @@ class PagSeguroServices implements PagSeguroServicesInterface
 
     }
 
+    /**
+     * Usar para teste
+     *
+     * @param $request
+     * @return array
+     */
+    public function defaultBillet($request)
+    {
+        $user     = Auth::user();
+        $adresses = $user->adresses()->orderBy('id','desc')->first();
+        return [
+            'paymentMode' => 'default',
+            'paymentMethod' => 'boleto',
+            'currency' => $this->currency,
+            'extraAmount' => '0.00',
+            'itemId1' => '85765',
+            'itemDescription1' => 'Notebook Prata',
+            'itemAmount1' => $request->value,
+            'itemQuantity1' => 1,
+            'notificationURL' => 'http://anselmovelame.com.br',
+            'senderName' => 'Jose Comprador',
+            'senderCPF' => '22111944785',
+            'senderAreaCode' => '75',
+            'senderPhone' => '36272414',
+            'senderEmail' => 'teste@sandbox.pagseguro.com.br',
+            'senderHash' => $request->senderHash,
+            'shippingAddressRequired' => 'true',
+            'shippingType' => $request->shipping_method,
+            'shippingCost' => '0'.$request->freight,
+
+            'shippingAddressStreet' => $adresses->address,
+            'shippingAddressNumber' => $adresses->number,
+            'shippingAddressComplement' => $adresses->complement,
+            'shippingAddressDistrict' => $adresses->district,
+            'shippingAddressPostalCode' => preg_replace("/[^0-9]/", "", $adresses->zip_code),
+            'shippingAddressCity' => $adresses->city,
+            'shippingAddressState' => $adresses->state,
+            'shippingAddressCountry' => $adresses->country,
+
+        ];
+    }
+
+    /**
+     * Usar para teste
+     *
+     * @param $request
+     * @return array
+     */
+    public function defaultCredit($request)
+    {
+
+        $user     = Auth::user();
+        $adresses = $user->adresses()->orderBy('id','desc')->first();
+        // Pega as informações de parcelas (installments) selecionada pelo usuário
+        $installments = explode('|', $request->installments);
+        // Quantidade de parcelas
+        $installmentQuantity = $installments[0];
+        // (O valor da parcela também pode ser calculado dividindo o total do carrinho pela quantidade de parcelas:
+        // $this->cart->total() / $installmentQuantity)
+        $installmentValue = number_format($installments[1], 2, '.', '');
+
+        return [
+            'paymentMode' => 'default',
+            'paymentMethod' => 'creditCard',
+            'currency' => 'BRL',
+            'extraAmount' => '0.00',
+            'itemId1' => '174788848',
+            'itemDescription1' => 'Notebook Prata',
+            'itemAmount1' => '435.36',
+            'itemQuantity1' => '1',
+            'notificationURL' => 'http://anselmovelame.com.br',
+            'reference' => $this->reference,
+            'senderName' => 'Jose Comprador',
+            'senderCPF' => '22111944785',
+            'senderAreaCode' => '75',
+            'senderPhone' => '36272414',
+            'senderEmail' => 'teste@sandbox.pagseguro.com.br',
+            'senderHash' => $request->senderHash,
+
+            'shippingAddressStreet' => $adresses->address,
+            'shippingAddressNumber' => $adresses->number,
+            'shippingAddressComplement' => $adresses->complement,
+            'shippingAddressDistrict' => $adresses->district,
+            'shippingAddressPostalCode' => preg_replace("/[^0-9]/", "", $adresses->zip_code),
+            'shippingAddressCity' => $adresses->city,
+            'shippingAddressState' => $adresses->state,
+            'shippingAddressCountry' => $adresses->country,
+
+            'shippingType' => '3',
+            'shippingCost' => '0'.$request->freight,
+            'creditCardToken' => $request->cardToken,
+            'installmentQuantity' => $installmentQuantity,
+            'installmentValue' => $installmentValue,
+            'noInterestInstallmentQuantity' => $request->maxInstallment,
+            'creditCardHolderName' => 'Jose Comprador',
+            'creditCardHolderCPF' => '22111944785',
+            'creditCardHolderBirthDate' => '27/10/1987',
+            'creditCardHolderAreaCode' => '75',
+            'creditCardHolderPhone' => '36272414',
+
+            'billingAddressStreet' => $adresses->address,
+            'billingAddressNumber' => $adresses->number,
+            'billingAddressComplement' => $adresses->complement,
+            'billingAddressDistrict' => $adresses->district,
+            'billingAddressPostalCode' => preg_replace("/[^0-9]/", "", $adresses->zip_code),
+            'billingAddressCity' => $adresses->city,
+            'billingAddressState' => $adresses->state,
+            'billingAddressCountry' => $adresses->country,
+        ];
 
 
-    /*
-    $params = [
-        'paymentMode' => 'default',
-        'paymentMethod' => 'creditCard',
-        'currency' => 'BRL',
-        'extraAmount' => '0.00',
-        'itemId1' => '0001',
-        'itemDescription1' => 'Notebook Prata',
-        'itemAmount1' => '10300.00',
-        'itemQuantity1' => '1',
-        'itemId2' => '0002',
-        'itemDescription2' => 'Notebook Azul',
-        'itemAmount2' => '10000.00',
-        'itemQuantity2' => '1',
-        'notificationURL' => 'http://anselmovelame.com.br',
-        'reference' => $this->reference,
-        'senderName' => 'Jose Comprador',
-        'senderCPF' => '22111944785',
-        'senderAreaCode' => '11',
-        'senderPhone' => '56273440',
-        'senderEmail' => 'comprador@sandbox.pagseguro.com.br',
-        'senderHash' => $request->senderHash,
-        'shippingAddressStreet' => 'Av. Brig. Faria Lima',
-        'shippingAddressNumber' => '1384',
-        'shippingAddressComplement' => '5o andar',
-        'shippingAddressDistrict' => 'Jardim Paulistano',
-        'shippingAddressPostalCode' => '01452002',
-        'shippingAddressCity' => 'Sao Paulo',
-        'shippingAddressState' => 'SP',
-        'shippingAddressCountry' => 'BRA',
-        'shippingType' => '1',
-        'shippingCost' => '01.00',
-        'creditCardToken' => $request->cardToken,
-        'installmentQuantity' => '7',
-        'installmentValue' => '3030.94',
-        'noInterestInstallmentQuantity' => '5',
-        'creditCardHolderName' => 'Jose Comprador',
-        'creditCardHolderCPF' => '22111944785',
-        'creditCardHolderBirthDate' => '27/10/1987',
-        'creditCardHolderAreaCode' => '11',
-        'creditCardHolderPhone' => '56273440',
-        'billingAddressStreet' => 'Av. Brig. Faria Lima',
-        'billingAddressNumber' => '1384',
-        'billingAddressComplement' => '5o andar',
-        'billingAddressDistrict' => 'Jardim Paulistano',
-        'billingAddressPostalCode' => '01452002',
-        'billingAddressCity' => 'Sao Paulo',
-        'billingAddressState' => 'SP',
-        'billingAddressCountry' => 'BRA',
+    }
 
-    ];
 
-    $params = array_merge($params, $this->getConfigs());
-    */
 
 
 }

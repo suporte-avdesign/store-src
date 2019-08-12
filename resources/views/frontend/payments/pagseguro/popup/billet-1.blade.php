@@ -14,6 +14,10 @@
                         <input type="hidden" id="indicate" name="indicate" value="{{$indicate}}" />
                         <input type="hidden" id="name" name="name" value="{{$name}}" />
                         <input type="hidden" id="phone" name="phone" value="{{$phone}}" />
+                        <input type="hidden" id="freight" name="freight" value="{{$freight}}" />
+                        <input type="hidden" id="price" name="price" value="{{$price}}" />
+                        <input type="hidden" id="value" name="value" value="{{$value}}" />
+                        <input type="hidden" id="extraAmount" name="extraAmount" value="{{$extraAmount}}" />
                     </form>
 
                 </div>
@@ -36,9 +40,9 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>{{setReal($value)}}</td>
-                                            <td>{{$freight->valor}}</td>
-                                            <td>{{setReal($value+$freight->valor)}}</td>
+                                            <td>R$ {{setReal($value)}}</td>
+                                            <td>R$ {{setReal($freight)}}</td>
+                                            <td>R$ {{setReal($value+$freight)}}</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -79,7 +83,7 @@
 </div>
 @include('frontend.scripts._pagSeguroSettings')
 <script src="{{config('pagseguro.url_transparent_js')}}"></script>
-<script type="text/javascript" src="{{asset('plugins/pagseguro/pagseguro.min.js')}}?v=1"></script>
+<script type="text/javascript" src="{{asset('plugins/pagseguro/payment.min.js')}}?v=1"></script>
 
 
 

@@ -3,7 +3,8 @@
         <div class="vc_column-inner avd_custom_popup_payment_inner">
             <div class="wpb_wrapper">
                 <div class="row">
-                    <div class="col-md-7" style="margin-bottom: 10px">
+                    <div class="col-md-4" style="margin-bottom: 10px">
+                        <strong>PAGUE COM:</strong><br>
                         <img id="visa" src="{{asset('themes/images/payment/visa.gif')}}" alt="Visa" />
                         <img id="mastercard" src="{{asset('themes/images/payment/master.gif')}}" alt="Mastercard" />
                         <img id="diners" src="{{asset('themes/images/payment/diners.gif')}}" alt=" Diners Club" />
@@ -12,8 +13,8 @@
                         <img id="elo" src="{{asset('themes/images/payment/elo.gif')}}" alt="ELO" >
 
                     </div>
-                    <div class="col-md-5">
-                        <table style="margin-bottom: 10px">
+                    <div class="col-md-8">
+                        <table style="margin-bottom: 10px; background-color: #e6e2e2">
                             <thead>
                             <tr>
                                 <td><strong>Pedido</strong></td>
@@ -23,9 +24,9 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <td>{{setReal($value)}}</td>
-                                <td>{{$freight->valor}}</td>
-                                <td>{{setReal($value+$freight->valor)}}</td>
+                                <td>R$ {{setReal($value)}}</td>
+                                <td>R$ {{setReal($freight)}}</td>
+                                <td>R$ {{setReal($value+$freight)}}</td>
                             </tr>
                             </tbody>
                         </table>
@@ -95,9 +96,9 @@
                     <input type="hidden" id="indicate" name="indicate" value="{{$indicate}}" />
                     <input type="hidden" id="name" name="name" value="{{$name}}" />
                     <input type="hidden" id="phone" name="phone" value="{{$phone}}" />
-                    <input type="hidden" id="freight" name="freight" value="{{$freight->valor}}" />
+                    <input type="hidden" id="freight" name="freight" value="{{$freight}}" />
                     <input type="hidden" id="price" name="price" value="{{$price}}" />
-                    <input type="hidden" id="amount" name="amount" value="{{$value}}" />
+                    <input type="hidden" id="amount" name="amount" value="{{$value+$freight}}" />
                     <input type="hidden" id="extraAmount" name="extraAmount" value="{{$extraAmount}}" />
                     <input type="hidden" id="maxInstallment" name="maxInstallment" value="{{$maxInstallment}}" />
                 </form>
@@ -127,336 +128,7 @@
 
 <script src="{{config('pagseguro.url_transparent_js')}}"></script>
 @include('frontend.scripts._pagSeguroSettings')
-<script>
-    (function ( $ ) {
-
-        $(".btn-payment-card").click(function () {
-            if (validateCard() == 0) {
-                createCredCardToken();
-            }
-            return false;
-        });
-
-
-
-
-        var typingTimer; //timer identifier
-        var doneTypingInterval = 5000; //time in ms, 1 second for example
-        var btn = _pagSeguroSettings.btn_card
-        var cls = _pagSeguroSettings.class_card;
-
-        //on keyup, start the countdown
-        $('#cardNumber').keyup(function() {
-            clearTimeout(typingTimer);
-            if ($('#cardNumber').val) {
-                typingTimer = setTimeout(setSessionCreditId, doneTypingInterval);
-            }
-        });
-
-        //user is "finished typing," do something
-        function doneTyping() {
-           // alert('parei de digitar');
-        }
-        /**
-         * Passo 1: Gerando uma sessão
-         */
-        setSessionCreditId = function () {
-            var data = $('#form-pagseguro').serialize();
-            $.ajax({
-                url: "{{route('pagseguro.transparente.code')}}",
-                method: "POST",
-                data: data,
-                //beforeSend: startPreloaderPS()
-            }).done(function (data) {
-                console.log(data);
-                PagSeguroDirectPayment.setSessionId(data);
-                getBrand();
-            }).fail(function () {
-                console.log(_pagSeguroSettings.text_error);
-            }).always(function () {
-
-            });
-        }
-
-        /**
-         * Passo 2: Varificar a Bandeira do Cartão
-         */
-        getBrand = function () {
-            PagSeguroDirectPayment.getBrand({
-                cardBin: $('input[name=cardNumber]').val().replace(/ /g, ''),
-                success: function (response) {
-                    //console.log(response.brand.name);
-                    $('input[name=brandName]').val(response.brand.name);
-                    getInstallments(response.brand.name);
-                },
-                error: function (response) {
-                    console.log(response);
-                },
-                complete: function (response) {
-                    //console.log(response);
-                }
-            });
-        }
-
-        /**
-         * Passo 3: Retorna as opções de parcelamento disponíveis         *
-         *
-         * @param brandName
-         */
-        getInstallments = function (brandName) {
-
-            var text_interest_true = ' (sem juros)';
-            var text_interest_false = ' (com juros)';
-            var text_currency = 'x de R$ ';
-            var text_option = '';
-            PagSeguroDirectPayment.getInstallments({
-                amount: $('input[name=amount]').val(),
-                maxInstallmentNoInterest: $('input[name=maxInstallment]').val(),
-                brand: brandName,
-                success: function(response){
-                    var obj = response.installments,
-                        data = obj[brandName];
-                        console.log(data);
-                    if (data.length > 0){
-                        //console.log(data);
-                        var option ='';
-                        $.each(data, function(index, value){
-                            if (index === 0) {
-                                text_option = value.quantity+text_currency+value.totalAmount+text_interest_true
-                            } else {
-                                if (value.interestFree == true) {
-                                    text_option = value.quantity+text_currency+value.installmentAmount+text_interest_true
-                                } else {
-                                    text_option = value.quantity+text_currency+value.installmentAmount+text_interest_false
-                                }
-                            }
-                            option += '<option value="'+value.quantity+'|'+value.installmentAmount+'">'+text_option+'</option>';
-                        })
-                        $('#label1').html('<span>Parcele em até '+data.length+'x</span>');
-                        $('#installments').show();
-                        $('#installments').html(option);
-
-
-                    }else{
-                        $('#label1').html('<span>Não Parcelamos</span>');
-                        $('#installments').hide();
-                    }
-
-                    //createCredCardToken(brandName);
-                },
-                error: function(response) {
-                    contole.log(response);
-                },
-                complete: function(response){
-                    // Callback para todas chamadas.
-                }
-            });
-
-        }
-
-
-        /**
-         * Passo 4: Utiliza os dados do cartão de crédito para gerar um token.
-         * Esse método é necessário somente para o meio de pagamento cartão de crédito.
-         *
-         * @param brandName
-         */
-
-        createCredCardToken = function () {
-            var cardCVV =  $('input[name=cardCVV]').val(),
-                cardExpiryMonth = $("#cardExpiryMonth option:selected").val(),
-                cardExpiryYear = $("#cardExpiryYear option:selected").val();
-
-            PagSeguroDirectPayment.createCardToken({
-                cardNumber: $('input[name=cardNumber]').val().replace(/ /g, ''),
-                brand: $('input[name=brandName]').val(),
-                //brand: $('input[name=brandName]').val(),
-                cvv: cardCVV,
-                expirationMonth: cardExpiryMonth,
-                expirationYear: cardExpiryYear,
-                success: function (response) {
-                    //console.log(response);
-                    $('input[name=cardToken]').val(response.card.token);
-                    createTransactionCard();
-
-                },
-                error: function (response) {
-                    console.log(response);
-                    stopPreloaderPS()
-                },
-                complete: function (response) {
-                    //console.log(response);
-
-                }
-            });
-
-        }
-
-        createTransactionCard = function () {
-            var senderHash = PagSeguroDirectPayment.getSenderHash();
-            $('#senderHash').val(senderHash);
-            var data = $('#form-pagseguro').serialize();
-            $.ajax({
-                url: "{{route('pagseguro.card.transaction')}}",
-                method: "POST",
-                data: data,
-                beforeSend: startPreloaderPS()
-            }).done(function (code) {
-                //console.log(code);
-                $(".message-return").html("Seu pagamento foi realizado com sucesso! Código da Transação: "+code);
-
-            }).fail(function (error) {
-                console.log(error.responseJSON.message);
-                stopPreloaderPS();
-            }).always(function () {
-                stopPreloaderPS();
-            });
-        }
-
-
-        /**
-         *  Validação dos Cartões
-         */
-        validateCard = function () {
-            var error = 0,
-                html = '',
-                cardNumber =  $('input[name=cardNumber]').val(),
-                cardName =  $('input[name=cardName]').val(),
-                cardCVV =  $('input[name=cardCVV]').val();
-
-            if (cardNumber.length < 19) {
-                error = 1;
-                $('input[name=cardNumber]').css("border", "red solid 1px");
-                html = '<li>'+_pagSeguroSettings.required_number+'</li>';
-            }
-
-            if (cardName.length < 6) {
-                error = 1;
-                $('input[name=cardName]').css("border", "red solid 1px");
-                html += '<li>'+_pagSeguroSettings.required_name+'</li>';
-            }
-
-            if (cardCVV.length < 3) {
-                error = 1;
-                $('input[name=cardCVV]').css("border", "red solid 1px");
-                html += '<li>'+_pagSeguroSettings.required_cvv+'</li>';
-            }
-
-            if (error == 0) {
-                $('input[name=cardNumber]').css("border", "rgba(136, 135, 135, 0.25) solid 1px");
-                $('input[name=cardName]').css("border", "rgba(136, 135, 135, 0.25) solid 1px");
-                $('input[name=cardCVV]').css("border", "rgba(136, 135, 135, 0.25) solid 1px");
-            } else {
-                $("#return-payment").show();
-                $("#return-payment").html('<ul class="woocommerce-error" role="alert">'+html+'</ul>');
-                setTimeout(function(){
-                    $("#return-payment").hide();
-                }, 5000);
-            }
-
-            return error;
-        }
-
-
-        /**************************************************************************************************************/
-        /*                                            B I L L E T                                                     */
-        /**************************************************************************************************************/
-        $(".btn-payment-billet").click(function () {
-            setSessionBilletId();
-            return false;
-        });
-
-        setSessionBilletId = function () {
-            var data = $('#form-pagseguro').serialize();
-            $.ajax({
-                url: _pagSeguroSettings.ajax_transparente,
-                method: "POST",
-                data: data,
-                beforeSend: startPreloaderPS()
-            }).done(function (data) {
-                //console.log(data);
-                PagSeguroDirectPayment.setSessionId(data);
-                paymentBillet();
-
-            }).fail(function () {
-                //console.log(_pagSeguroSettings.text_error);
-                stopPreloaderPS();
-            }).always(function () {
-
-            });
-        }
-
-        /**
-         * Pagamento com boleto
-         */
-        paymentBillet = function () {
-            var senderHash = PagSeguroDirectPayment.getSenderHash();
-            $('#senderHash').val(senderHash);
-            var data = $('#form-pagseguro').serialize();
-            $.ajax({
-                url: _pagSeguroSettings.ajax_billet,
-                method: "POST",
-                data: data
-            }).done(function (response) {
-                //console.log(response);
-                if (response.success)
-                    window.location=response.redirect;
-
-            }).fail(function () {
-                console.log(_pagSeguroSettings.text_error);
-                stopPreloaderPS();
-            }).always(function () {
-                stopPreloaderPS();
-            });
-        }
-
-        /**************************************************************************************************************/
-        /*                                     P R E L O A D E R                                                      */
-        /**************************************************************************************************************/
-
-        startPreloaderPS = function () {
-            $(cls).attr("disabled", true).addClass(_pagSeguroSettings.class_loading).text(_pagSeguroSettings.text_loading);
-        }
-
-        stopPreloaderPS = function () {
-            $(cls).attr("disabled", false).removeClass(_pagSeguroSettings.class_loading).text(btn);
-        }
-
-
-
-
-        /**
-         * Retorna as formas de pagamentos
-         */
-        getPaymentMethods = function () {
-
-            startPreloaderPS();
-
-            PagSeguroDirectPayment.getPaymentMethods({
-                success: function (response) {
-                    console.log(response);
-                    if (response.error == false) {
-                        $.each(response.paymentMethods, function (key, value) {
-                            $('.payment-methods').append(key+"<br>");
-                        })
-                    }
-                },
-                error: function (response) {
-                    console.log(response);
-                    stopPreloaderPS();
-                },
-                complete: function (response) {
-                    console.log(response);
-
-                }
-            });
-        }
-
-
-
-    })( window.jQuery );
-</script>
-
+<script type="text/javascript" src="{{asset('plugins/pagseguro/payment.min.js')}}?v=3"></script>
 <script type="text/javascript" src="{{asset('plugins/jquery-maskedinput/jquery.maskedinput.min.js')}}"></script>
 <script type='text/javascript'>
     jQuery( document ).ready(function($) {
