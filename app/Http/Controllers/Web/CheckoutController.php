@@ -480,100 +480,103 @@ class CheckoutController extends Controller
      */
     public function store(ValidateCheckout $request)
     {
-            $dataForm = $request->all();
-            $new_account = $request['new_account'];
-            $shipping_method = $dataForm['shipping_method'][0];
-            $payment_method = $dataForm['payment_method'];
-            $order_comments = $dataForm['order_comments'];
 
-            !empty($dataForm['transport']['indicate']) ? $indicate = $dataForm['transport']['indicate'] : $indicate = '';
-            !empty($indicate) ? $name = $dataForm['transport']['name'] : $name = '';
-            !empty($indicate) ? $phone = $dataForm['transport']['phone'] : $phone = '';
+        $dataForm = $request->all();
+        $new_account = $request['new_account'];
+        $shipping_method = $dataForm['shipping_method'][0];
+        $payment_method = $dataForm['payment_method'];
+        $order_comments = $dataForm['order_comments'];
+
+        !empty($dataForm['transport']['indicate']) ? $indicate = $dataForm['transport']['indicate'] : $indicate = '';
+        !empty($indicate) ? $name = $dataForm['transport']['name'] : $name = '';
+        !empty($indicate) ? $phone = $dataForm['transport']['phone'] : $phone = '';
 
 
-            # create users and attributes
-            if ($new_account == 1) {
-               return $this->create($dataForm);
+        # create users and attributes
+        if ($new_account == 1) {
+           return $this->create($dataForm);
 
+        } else {
+
+            $changeUser = $this->update($dataForm);
+
+            $configSite = $this->configSite->setId(1);
+            if ($configSite->order == 'wishlist'){
+                dd('Cart = Lista de desejo');
             } else {
-
-                $changeUser = $this->update($dataForm);
-
-                $configSite = $this->configSite->setId(1);
-                if ($configSite->order == 'wishlist'){
-                    dd('Cart = Lista de desejo');
-                } else {
-                    $items = $this->interCart->getAll();
-                }
-                $price_card = 0;
-                $price_cash = 0;
-                foreach ($items as $item) {
-                    $price_card += $item->price_card * $item->quantity;
-                    $price_cash += $item->price_cash * $item->quantity;
-                }
-
-                $company = $this->getCompany($dataForm['payment_method']);
-                $company_name = $company->name;
-                if ($dataForm['payment_method'] == 'cash') {
-                    $popup = 'cash';
-                    $price = 'price_cash';
-                } elseif ($dataForm['payment_method'] == 'billet') {
-                    $popup = 'billet';
-                    $price = 'price_cash';
-                } elseif ($dataForm['payment_method'] == 'credit') {
-                    $popup = 'credit';
-                    $price = 'price_card';
-                } elseif ($dataForm['payment_method'] == 'debit') {
-                    $popup = 'debit';
-                    $price = 'price_card';
-                }
-
-                $user = auth()->user();
-
-                $freight = $this->calacular($items, $user, $price, $shipping_method);
-                $price == 'price_cash' ? $value = $price_cash : $value = $price_card;
-
-                $extraAmount = '0.00'; # Valor Taxa(+) ou -Desconto(-)
-                $maxInstallment = 2; # numero de parcelas sem juros
-                $freight = number_format($freight->valor, 2, '.', '.');
-
-
-
-                /*
-                $user = auth()->user();
-                $dataForm['payment_method'] == 3 ? $price = 'price_card' : $price = 'price_cash';
-                $shipping_method = $dataForm['shipping_method'][0];
-                $company = $this->getCompany($dataForm['payment_method']);
-                $cart = collect($items)->all();
-
-                $freight = $this->calacular($cart, $user, $price, $shipping_method);
-
-                $order = $this->interOrder->create($cart, $freight, $dataForm, $company);
-
-                $orderItems = $this->interOrderItems->create($cart, $order->id);
-
-                if ($dataForm['order_comments']) {
-                    $orderNote = $this->interOrderNote->create($order->id, $dataForm['order_comments']);
-                }
-                # Transporte indicado pelo cliente
-                if (!empty($dataForm['transport']['indicate'])) {
-                    $orderShipping = $this->interOrderShipping->create($dataForm['transport'], $order->id);
-                }
-
-                $remove = $this->interCart->destroy();
-                */
-
-                $form = view("{$this->viewPayment}.{$company->slug}.popup.{$popup}-1",
-                    compact('shipping_method', 'payment_method', 'order_comments', 'maxInstallment',
-                       'company_name', 'indicate', 'name', 'phone', 'price', 'value', 'freight', 'extraAmount'))->render();
-
-                $out = array(
-                    "result" => "payment",
-                    "form" => $form
-                );
-
-                return response()->json($out);
+                $items = $this->interCart->getAll();
             }
+            $price_card = 0;
+            $price_cash = 0;
+            foreach ($items as $item) {
+                $price_card += $item->price_card * $item->quantity;
+                $price_cash += $item->price_cash * $item->quantity;
+            }
+
+            $company = $this->getCompany($dataForm['payment_method']);
+            $company_name = $company->name;
+            if ($dataForm['payment_method'] == 'cash') {
+                $popup = 'cash';
+                $price = 'price_cash';
+            } elseif ($dataForm['payment_method'] == 'billet') {
+                $popup = 'billet';
+                $price = 'price_cash';
+            } elseif ($dataForm['payment_method'] == 'credit') {
+                $popup = 'credit';
+                $price = 'price_card';
+            } elseif ($dataForm['payment_method'] == 'debit') {
+                $popup = 'debit';
+                $price = 'price_card';
+            }
+
+            $user = auth()->user();
+
+            $freight = $this->calacular($items, $user, $price, $shipping_method);
+            $price == 'price_cash' ? $value = $price_cash : $value = $price_card;
+
+            $extraAmount = '0.00'; # Valor Taxa(+) ou -Desconto(-)
+            $maxInstallment = 2; # numero de parcelas sem juros
+            $freight = number_format($freight->valor, 2, '.', '.');
+
+
+
+
+            /*
+            $user = auth()->user();
+            $dataForm['payment_method'] == 3 ? $price = 'price_card' : $price = 'price_cash';
+            $shipping_method = $dataForm['shipping_method'][0];
+            $company = $this->getCompany($dataForm['payment_method']);
+            $cart = collect($items)->all();
+
+            $freight = $this->calacular($cart, $user, $price, $shipping_method);
+
+            $order = $this->interOrder->create($cart, $freight, $dataForm, $company);
+
+            $orderItems = $this->interOrderItems->create($cart, $order->id);
+
+            if ($dataForm['order_comments']) {
+                $orderNote = $this->interOrderNote->create($order->id, $dataForm['order_comments']);
+            }
+            # Transporte indicado pelo cliente
+            if (!empty($dataForm['transport']['indicate'])) {
+                $orderShipping = $this->interOrderShipping->create($dataForm['transport'], $order->id);
+            }
+
+            $remove = $this->interCart->destroy();
+            */
+
+            $form = view("{$this->viewPayment}.{$company->slug}.popup.{$popup}-1",
+                compact('shipping_method', 'payment_method', 'order_comments', 'maxInstallment',
+                   'company_name', 'indicate', 'name', 'phone', 'price', 'value', 'freight', 'extraAmount'))->render();
+
+            $out = array(
+                "result" => "payment",
+                "popup" => $popup,
+                "form" => $form
+            );
+
+            return response()->json($out);
+        }
 
 
 

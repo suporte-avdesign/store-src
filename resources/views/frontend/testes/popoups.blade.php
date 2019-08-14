@@ -355,7 +355,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="wpb_column vc_column_container vc_col-sm-6">
+                            <div class="payment-card wpb_column vc_column_container vc_col-sm-6">
                                 <div class="vc_column-inner">
                                     <div class="wpb_wrapper">
                                         <div class="title-wrapper  basel-title-color-primary basel-title-style-bordered basel-title-size-default text-center vc_custom_1489066450648"><span class="title-subtitle font-default">XTEMOS ELEMENT</span>
@@ -363,7 +363,9 @@
                                                 <h4 class="title">IMAGES GALLERY IN POPUP<span class="title-separator"><span></span></span></h4> <span class="right-line"></span></div>
                                         </div>
                                         <div class="basel-button-wrapper text-center"><a href="#gallery-example" title="" class="btn btn-color-primary btn-style-default btn-size-default basel-popup-with-content ">SHOW GALLERY</a></div>
-                                        <div id="gallery-example" class="mfp-with-anim basel-content-popup mfp-hide" style="max-width:800px;">
+                                        <div id="gallery-example" class="gallery-example mfp-with-anim basel-content-popup mfp-hide" style="max-width:800px;">
+
+
                                             <div class="basel-popup-inner">
                                                 <div class="vc_row wpb_row vc_inner vc_row-fluid">
                                                     <div class="wpb_column vc_column_container vc_col-sm-12">
@@ -390,6 +392,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -402,9 +405,17 @@
     </div>
 
 
+
+    <a href="path-to-file.html" class="popup-modal">Show inline popup</a>
+
+
 @endsection
 @push('scripts')
 <script type="text/javascript" src="{{asset('plugins/select2/js/select2.full.min.js')}}?ver=1.0.4"></script>
+<script type="text/javascript">
+
+
+</script>
 
 
 @endpush

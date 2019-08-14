@@ -6,6 +6,7 @@ use AVD\Traits\PagSeguroTrait;
 use AVD\Interfaces\Web\CartInterface as InterCart;
 use AVD\Services\Web\PagSeguroServicesInterface;
 
+
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\ServerException;
 use GuzzleHttp\Client as Guzzle;
@@ -126,7 +127,6 @@ class PagSeguroServices implements PagSeguroServicesInterface
      */
     public function paymentBillet($request)
     {
-        /*
         $params = [
             'senderHash'    => $request->senderHash,
             'paymentMode'   => 'default',
@@ -134,19 +134,17 @@ class PagSeguroServices implements PagSeguroServicesInterface
             'currency'      => $this->currency,
             'reference'     => $this->reference,
             'timeout'       => '25',
-            'enableRecover' => 'false',
-            'shippingType' => '1', #metodo de envio
-            'shippingCost' => '01.00', #frete
+            'enableRecover' => 'false'
         ];
 
         $params = array_merge($params, $this->getConfigs());
         $params = array_merge($params, $this->getItems($request->price));
         $params = array_merge($params, $this->getSender());
         $params = array_merge($params, $this->getShipping());
-        */
+        $params = array_merge($params, $this->getShippingType(
+            $request->shipping_method, $request->freight, $request->extraAmount)
+        );
 
-        $params = $this->defaultBillet($request);
-        $params = array_merge($params, $this->getConfigs());
 
         //dd($params);
 
@@ -170,16 +168,9 @@ class PagSeguroServices implements PagSeguroServicesInterface
 
     public function paymentCredCard($request)
     {
-        // Pega as informações de parcelas (installments) selecionada pelo usuário
         $installments = explode('|', $request->installments);
-        // Quantidade de parcelas
         $installmentQuantity = $installments[0];
-        // (O valor da parcela também pode ser calculado dividindo o total do carrinho pela quantidade de parcelas:
-        // $this->cart->total() / $installmentQuantity)
         $installmentValue = number_format($installments[1], 2, '.', '');
-
-        $extraAmount =
-
         $params = [
             'paymentMode' => 'default',
             'paymentMethod' => 'creditCard',
@@ -188,21 +179,15 @@ class PagSeguroServices implements PagSeguroServicesInterface
             'creditCardToken' => $request->cardToken,
             'reference' => $this->reference,
             'extraAmount' =>  $request->extraAmount,
-
             'installmentQuantity' => $installmentQuantity,
             'installmentValue' => $installmentValue,
-            'noInterestInstallmentQuantity' => $request->maxInstallment,// Quantidade de parcelas sem juros
-
-
-
+            'noInterestInstallmentQuantity' => $request->maxInstallment,
             'creditCardHolderName' => 'Jose Comprador',
             'creditCardHolderCPF' => '22111944785',
             'creditCardHolderBirthDate' => '27/10/1987',
             'creditCardHolderAreaCode' => '11',
             'creditCardHolderPhone' => '56273440',
             'notificationURL' => 'https://sualoja.com.br/notificacao.html',
-
-            
         ];
 
         $params = array_merge($params, $this->getConfigs());
@@ -214,25 +199,11 @@ class PagSeguroServices implements PagSeguroServicesInterface
             $request->shipping_method, $request->freight, $request->extraAmount)
         );
 
-
-        //$params = $this->defaultCredit($request);
-        //$params = array_merge($params, $this->getConfigs());
-
-        //dd($params);
-
-
-
-
-
-
-
         $guzzle = new Guzzle();
         $response = $guzzle->request('POST', config('pagseguro.url_payment_transparent'), [
             'form_params' => $params,
         ]);
         $statusCode = $response->getStatusCode();
-
-
         $body = $response->getBody();
 
         $contents = $body->getContents(); //receber code para redirecionar o usuário

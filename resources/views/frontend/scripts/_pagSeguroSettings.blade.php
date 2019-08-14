@@ -14,6 +14,11 @@
         "required_number" => "O número é obrigatŕio",
         "required_cvv" => "O código de segurança é obrigatŕio",
         "required_installment" => "O número de parcelas é obrigatŕio",
+        "interest_true" => "(sem juros)",
+        "interest_false" => "(com juros)",
+        "error_card_token" => "Os dados do cartão estão inválido",
+        "currency_x" => "x de R$",
+        "currency_x" => "x de R$",
 
     ]) !!};
 </script>

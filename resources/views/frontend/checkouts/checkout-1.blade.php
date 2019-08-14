@@ -99,7 +99,6 @@
 
                 @include('frontend.payments.pagseguro.credit-1')
 
-
             </div>
         </div>
     </div>
@@ -160,7 +159,7 @@
 <script type="text/javascript" src="{{asset('themes/js/functions.min.js')}}"></script>
 <script type='text/javascript'>
     jQuery( document ).ready(function($) {
-        $("#transport_phone").mask('(99)9999-9999?9');
+        $("#transport_phone").mask('(99) 9999-9999?9');
         $("#reg_phone").mask('(99)9999-9999?9');
         $("#reg_cell").mask('(99)99999-9999');
         $("#reg_date").mask('99/99/9999');

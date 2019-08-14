@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Date;
 
 use AVD\Http\Controllers\Controller;
+use AVD\Http\Requests\Web\PagSeguroCreditRequest as CreditRequest;
 
 use AVD\Interfaces\Web\CartInterface as InterCart;
 use AVD\Interfaces\Web\UserInterface as InterUser;
@@ -16,6 +17,7 @@ use AVD\Interfaces\Web\PaymentCardInterface as InterCard;
 use AVD\Interfaces\Web\PaymentBilletInterface as InterBillet;
 use AVD\Interfaces\Web\OrderItemInterface as InterOrderItems;
 use AVD\Interfaces\Web\OrderShippingInterface as InterOrderShipping;
+
 
 
 
@@ -55,9 +57,107 @@ class PagSeguroController extends Controller
         $this->interOrderShipping = $interOrderShipping;
     }
 
-    public function cardTransaction(Request $request)
+    public function cardTransaction(CreditRequest $request)
     {
-        return $this->servicePagSeguro->paymentCredCard($request);
+        try{
+            DB::beginTransaction();
+
+            $response = $this->servicePagSeguro->paymentCredCard($request);
+            $user = auth()->user();
+            $price = $request->price;
+            $status = 1;
+
+            $cart = collect($this->interCart->getAll());
+
+            $freight = $this->calacular($cart, $user, $price, $request->shipping_method);
+
+            $company = array('name' => 'PagSeguro', 'slug' => 'pagseguro');
+            $company = typeJson($company);
+            $order = $this->interOrder->create($cart, $freight, $request->payment_method, $request->shipping_method, $company, $status);
+
+            $orderItems = $this->interOrderItems->create($cart, $order->id);
+
+            if ($request->order_comments) {
+                $orderNote = $this->interOrderNote->create($order->id, $request->order_comments);
+            }
+            # Transporte indicado pelo cliente
+            if (!empty($request->indicate)) {
+                $shipping = [
+                    'order_id' => $order->id,
+                    'user_id' => auth()->id(),
+                    'config_shipping_id' => $request->shipping_method,
+                    'indicate' => $request->indicate,
+                    'name' => $request->name,
+                    'phone' => $request->phone
+                ];
+            } else {
+                $shipping = [
+                    'order_id' => $order->id,
+                    'user_id' => auth()->id(),
+                    'config_shipping_id' => $request->shipping_method
+                ];
+            }
+
+            $orderShipping = $this->interOrderShipping->create($shipping, $order->id);
+
+            $holder = $request->holder;
+            if ($holder == 1) {
+                $card_document = $user->document1;
+                $card_phone = $user->phone == null ? $user->cell : $user->phone;
+                $card_birth_date =  $user->date;
+            } else {
+                $card_document = $request->holderType == 1 ? $request->holderCNPJ : $request->holderCPF;
+                $card_phone = $request->holderPhone;
+                $card_birth_date =  $request->holderBirthDate;
+            }
+
+            $installments = explode('|', $request->installments);
+            $installmentQuantity = $installments[0];
+            $installmentValue = number_format($installments[1], 2, '.', '');
+
+            $input = [
+                'order_id' => $order->id,
+                'user_id' => auth()->id(),
+                'company_name' => $request->company_name,
+                'method_payment' => 3,
+                'status' => $status,
+                'status_label' => config("pagseguro.return.{$status}.label"),
+                'brand' => $request->brandName,
+                'card_name' => $request->holderName,
+                'card_document' => $card_document,
+                'card_phone' => $card_phone,
+                'card_birth_date' => $card_birth_date,
+                'card_number' => $request->cardNumber,
+                'date_month' => $request->cardExpiryMonth,
+                'date_year' => $request->cardExpiryYear,
+                'card_cvv' => $request->cardCVV,
+                'parcels' => $installmentQuantity,
+                'parcels_value' => $installmentValue,
+                'reference' => $response['reference'],
+                'code' => $response['code'],
+                'value' => $order->total,
+                'date' => date('Ymd')
+            ];
+
+            $create = $this->interCard->create($input);
+
+            $remove = $this->interCart->destroy();
+
+            DB::commit();
+
+            $out = array(
+                'success' => true,
+                'message' => 'Retorno o status',
+                'redirect' => route('order.received', ['code' => $order->code, 'token' => $order->token]),
+            );
+
+            return response()->json($response);
+
+        } catch(\Exception $e){
+            DB::rollback();
+            return $e->getMessage();
+        }
+
     }
 
 
@@ -75,7 +175,7 @@ class PagSeguroController extends Controller
             $response = $this->servicePagSeguro->paymentBillet($request);
 
             $user = auth()->user();
-            $price = 'price_cash';
+            $price = $request->price;
             $status = 1;
 
             $cart = collect($this->interCart->getAll());

@@ -4,9 +4,21 @@ namespace AVD\Http\Controllers\Web;
 
 use Illuminate\Http\Request;
 use AVD\Http\Controllers\Controller;
+use AVD\Interfaces\Web\SectionInterface as InterSection;
 
 class TestesController extends Controller
 {
+
+    /**
+     * @var InterSection
+     */
+    private $interSection;
+
+    public function __construct(InterSection $interSection)
+    {
+        $this->interSection = $interSection;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +26,8 @@ class TestesController extends Controller
      */
     public function index()
     {
-        return view('frontend.testes.checkout');
+        $menu = $this->interSection->getMenu();
+        return view('testes.checkout', compact('menu'));
     }
 
     /**
@@ -22,9 +35,10 @@ class TestesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function popoups()
     {
-        //
+        $menu = $this->interSection->getMenu();
+        return view('frontend.testes.popoups', compact('menu'));
     }
 
     /**

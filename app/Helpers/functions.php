@@ -3,7 +3,23 @@
 use AVD\Interfaces\Web\ConfigKeywordInterface as Keyword;
 
 
-
+if ( !function_exists('optionsYears'))
+{
+    function optionsYears($total=20)
+    {
+        $this_year = (int)date("Y"); // Run this only once
+        dd($this_year);
+        $options = '';
+        for ($year = $this_year; $year <= $this_year + $total; $year++) {
+            if ($year == $this_year) {
+                $options .= '<option value="' . $year . '" selected>' . $year . '</option>';
+            } else {
+                $options .= '<option value="' . $year . '">' . $year . '</option>';
+            }
+        }
+        return $options;
+    }
+}
 
 /**
  * returns the location (ipinfo\ipinfo\IPinfo)

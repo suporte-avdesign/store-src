@@ -1,22 +1,39 @@
 (function ( $ ) {
-
-    $(".btn-payment-card").click(function () {
-        if (validateCard() == 0) {
-            var btn = _pagSeguroSettings.btn_card
-            var cls = _pagSeguroSettings.class_card;
-            createCredCardToken(btn, cls);
-        }
-        return false;
+    $( ".select--epiry-month" ).select2({
+        placeholder: "Mês",
+        allowClear: false
     });
+    $( ".select--epiry-year" ).select2({
+        placeholder: "Ano",
+        allowClear: false
+    });
+    $( ".select-installments" ).select2({
+        placeholder: "Parcelamento",
+        allowClear: false
+    });
+
     // Start keyup cardNumber countdown
-    var typingTimer;
-    var doneTypingInterval = 5000
+    var typingTimer,
+        doneTypingInterval = 3000;
     //on keyup, start the countdown
     $('#cardNumber').keyup(function() {
         clearTimeout(typingTimer);
         if ($('#cardNumber').val) {
             typingTimer = setTimeout(setSessionCreditId, doneTypingInterval);
         }
+    });
+
+    $( ".other_holder" ).click(function() {
+        $( "#card-holder" ).toggle( "show" );
+    });
+
+    $(".btn-payment-card").click(function () {
+        if (validateCard() == 0) {
+            var btn = _pagSeguroSettings.btn_card,
+                cls = _pagSeguroSettings.class_card;
+            createCredCardToken(btn, cls);
+        }
+        return false;
     });
 
     /**
@@ -67,10 +84,10 @@
      */
     getInstallments = function (brandName) {
 
-        var text_interest_true = ' (sem juros)';
-        var text_interest_false = ' (com juros)';
-        var text_currency = 'x de R$ ';
-        var text_option = '';
+        var text_interest_true = ' '+_pagSeguroSettings+interest_true,
+            text_interest_false = ' '+_pagSeguroSettings+interest_false,
+            text_currency = _pagSeguroSettings+currency_x+' ',
+            text_option = '';
         PagSeguroDirectPayment.getInstallments({
             amount: $('input[name=amount]').val(),
             maxInstallmentNoInterest: $('input[name=maxInstallment]').val(),
@@ -80,29 +97,30 @@
                     data = obj[brandName];
                 console.log(data);
                 if (data.length > 0){
-                    //console.log(data);
-                    var option ='';
+
+                    var option = [];
                     $.each(data, function(index, value){
                         if (index === 0) {
-                            text_option = value.quantity+text_currency+value.totalAmount+text_interest_true
+                            text_option = value.quantity+text_currency+value.totalAmount+text_interest_true;
                         } else {
                             if (value.interestFree == true) {
-                                text_option = value.quantity+text_currency+value.installmentAmount+text_interest_true
+                                text_option = value.quantity+text_currency+value.installmentAmount+text_interest_true;
                             } else {
-                                text_option = value.quantity+text_currency+value.installmentAmount+text_interest_false
+                                text_option = value.quantity+text_currency+value.installmentAmount+text_interest_false;
                             }
                         }
-                        option += '<option value="'+value.quantity+'|'+value.installmentAmount+'">'+text_option+'</option>';
-                    })
-                    $('#label1').html('<span>Parcele em até '+data.length+'x</span>');
-                    $('#installments').show();
-                    $('#installments').html(option);
+                        option.push({
+                            id: value.quantity +'|'+ value.installmentAmount,
+                            text: text_option
+                        });
+                    });
 
-
-                }else{
-                    $('#label1').html('<span>Não Parcelamos</span>');
-                    $('#installments').hide();
+                    $(".select-installments").select2({
+                        data: option
+                    });
                 }
+
+
 
                 //createCredCardToken(brandName);
             },
@@ -113,7 +131,6 @@
                 // Callback para todas chamadas.
             }
         });
-
     }
 
 
