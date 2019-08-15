@@ -4,14 +4,10 @@ namespace AVD\Services\Web;
 
 use AVD\Traits\PagSeguroTrait;
 use AVD\Interfaces\Web\CartInterface as InterCart;
-use AVD\Services\Web\PagSeguroServicesInterface;
-
 
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\ServerException;
 use GuzzleHttp\Client as Guzzle;
-
-use Illuminate\Support\Facades\Auth;
 use Throwable;
 
 
@@ -106,7 +102,7 @@ class PagSeguroServices implements PagSeguroServicesInterface
     public function getSessionId()
     {
         $params = $this->getConfigs();
-        $params = http_build_query($params); //email=xpto&token=xpto etc...
+        $params = http_build_query($params);
 
         $guzzle = new Guzzle();
         $response = $guzzle->request('POST', config('pagseguro.url_transparent_session'), [
@@ -207,9 +203,7 @@ class PagSeguroServices implements PagSeguroServicesInterface
         $params = array_merge($params, $this->getShippingType(
             $request->shipping_method, $request->freight, $request->extraAmount)
         );
-
-        dd($params);
-
+       
         try {
             $guzzle = new Guzzle();
             $response = $guzzle->request('POST', config('pagseguro.url_payment_transparent'), [

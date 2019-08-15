@@ -37,7 +37,7 @@
                         <div class="col-md-6" style="margin-top: 10px" >
                             <label>Número do Cartão<span class="required">*</span></label>
                             <span class="card-number">
-                                <input type="text" class="input-text" placeholder="0000 0000 0000 0000" name="cardNumber" id="cardNumber" value="4111111111111111" size="19" style="width: 160px" />
+                                <input type="text" class="input-text" placeholder="0000 0000 0000 0000" name="cardNumber" id="cardNumber" value="" size="19" style="width: 160px" />
                             </span>
                             <span id="img_brand"></span>
                         </div>
@@ -51,20 +51,21 @@
                         <div class="col-md-3" style="margin-top: 10px">
                             <label>Expiração <span class="required">*</span></label>
                             <select name="cardExpiryYear" id="cardExpiryYear" class="select-epiry-year">
-                                <option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option><option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option><option value="2025">2025</option><option value="2026">2026</option><option value="2027">2027</option><option value="2028">2028</option><option value="2029">2029</option><option value="2030" selected>2030</option><option value="2031">2031</option><option value="2032">2032</option><option value="2033">2033</option><option value="2034">2034</option><option value="2035">2035</option><option value="2036">2036</option><option value="2037">2037</option><option value="2038">2038</option>
+                                <option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option><option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option><option value="2025">2025</option><option value="2026">2026</option><option value="2027">2027</option><option value="2028">2028</option><option value="2029">2029</option><option value="2030">2030</option><option value="2031">2031</option><option value="2032">2032</option><option value="2033">2033</option><option value="2034">2034</option><option value="2035">2035</option><option value="2036">2036</option><option value="2037">2037</option><option value="2038">2038</option>
                             </select>
                         </div>
                         <div class="col-md-8">
                             <p style="margin-top: 10px">
                                 <label id="label1">Parcelamento (Digite os dados do seu cartão) <span class="required">*</span></label>
-                                <select name="installments" id="installments" class="select-installments" ></select>
+                                <select name="installments" id="installments" class="select-installments" style="width: 50%" ></select>
+
                             </p>
                         </div>
                         <div class="col-md-4" style="margin-top: 10px">
                             <p>
                                 <label>Código de Segurança <span class="required">*</span></label>
                                 <span class="">
-                                    <input type="text" placeholder="000" name="cardCVV" id="cardCVV" value="123" size="3" class="in" style="width: 60px"/>
+                                    <input type="text" placeholder="000" name="cardCVV" id="cardCVV" value="" size="3" class="in" style="width: 60px"/>
                                 </span>
                                 <a href="javascript:void(0)" title="Os 3 últimos números atrás do cartão"><i class="fa fa-question-circle"></i></a>
                                 <span style="margin-left: 10px"><img src="{{asset('themes/images/payment/securitycode.gif')}}" /></span>
@@ -185,6 +186,94 @@
         $("#cardExpiryMonth").mask('99');
         $("#cardExpiryYear").mask('9999-9999?');
         $("#cardCVV").mask('999');
+
+
     });
+</script>
+
+<script type='text/javascript'>
+
+    (function ( $ ) {
+
+        // Start keyup cardNumber countdown
+        var typingTimer;
+        var doneTypingInterval = 3000
+        //on keyup, start the countdown
+        $('#cardNumber').keyup(function() {
+            var btn = _pagSeguroSettings.btn_card,
+                cls = _pagSeguroSettings.class_card;
+            clearTimeout(typingTimer);
+            if ($('#cardNumber').val) {
+                typingTimer = setTimeout(setSessionCreditId, doneTypingInterval);
+            }
+        });
+
+        $( ".select-epiry-month" ).select2({
+            placeholder: "Mês",
+            allowClear: false
+        });
+        $( ".select-epiry-year" ).select2({
+            placeholder: "Ano",
+            allowClear: false
+        });
+
+
+        var profile = _pagSeguroSettings.profile;
+        $('#doc_additional').hide();
+        $('.doc_type_cpf, .doc_type_cnpj').on('click',function(){
+                $('.holder_cpf, .holder_cnpj').toggle()
+            }
+        );
+
+        if (profile == 1) {
+            $('.holder_cnpj').hide();
+            // Titular do Cartão
+            $("#holder_1").click(function() {
+                $('#card-holder').show();
+                $('#doc_additional').hide();
+            });
+            // Outro Titular
+            $("#holder_2").click(function() {
+                $('#card-holder').show();
+                $('#doc_additional').show();
+
+            });
+
+        } else if(profile == 2) {
+            $('#card-holder').hide();
+            $('#doc_additional').hide();
+            // Titular do Cartão
+            $("#holder_1").click(function() {
+                $('#card-holder').hide();
+                $('#doc_additional').hide();
+                $('.holder_cnpj').hide();
+                $('.doc_type_cpf').hide();
+
+            });
+            // Outro Titular
+            $("#holder_2").click(function() {
+                $('#card-holder').show();
+                $('#doc_additional').show();
+                $('.doc_type_cpf').show();
+                $('.holder_cnpj').hide();
+            });
+        }
+
+        $('#installments').select2({
+            allowClear: true,
+            escapeMarkup: function (markup) { return markup; },
+            placeholder: "Selecione",
+            language: {
+                noResults: function () {
+                    var brandName = $('input[name=brandName]').val(),
+                        btn = _pagSeguroSettings.btn_card,
+                        cls = _pagSeguroSettings.class_card;
+                        return getInstallments(brandName, btn, cls);
+                }
+            }
+        });
+
+
+    })( window.jQuery );
 </script>
 

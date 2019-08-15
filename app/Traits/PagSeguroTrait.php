@@ -57,10 +57,17 @@ trait PagSeguroTrait
      */
     public function getSender()
     {
+
         $user = Auth::user();
+        # Obrigatório 2 nomes
+        $verify_name  = explode(' ', $user->first_name);
         if ($user->profile_id == 1) {
             $senderDoc = 'senderCNPJ';
-            $name = $user->first_name;
+            if (count($verify_name) >=2) {
+                $name = $user->first_name;
+            } else {
+                $name = $user->first_name. ' '.$user->last_name;
+            }
 
         } else {
             $senderDoc = 'senderCPF';
@@ -139,29 +146,55 @@ trait PagSeguroTrait
 
     public function getHolder($request)
     {
-        if ($request->holder == 1) {
 
-            $user = auth()->user();
+        $user = auth()->user();
+        # Pessoa Física: Titular do Cartão
+        if ($request->holder == 1 && $user->profile_id == 2) {
             $holderBirthDate = $user->date;
             $number = $user->phone != '' ? dddPhone($user->phone) : dddPhone($user->cell);
+            $doc_name   = 'creditCardHolderCPF';
+            $doc_number = $user->document1;
+        }
 
-        } else {
-
+        # Pessoa Física: Outro Titular
+        if ($request->holder == 2 && $user->profile_id == 2) {
             $holderBirthDate = $request->holderBirthDate;
             $number = dddPhone($request->holderPhone);
+            if ($request->doc_type == 1) {
+                $doc_name   = 'creditCardHolderCNPJ';
+                $doc_number = $request->holderCNPJ;
+            } else {
+                $doc_name   = 'creditCardHolderCPF';
+                $doc_number = $request->holderCPF;
+            }
         }
 
-        $doc_type = $request->doc_type;
-        if ($doc_type == 1) {
-            $doc_name   = 'creditCardHolderCNPJ';
-            $doc_number = $request->holderCNPJ;
-
-        } else {
-            $doc_name   = 'creditCardHolderCPF';
-            $doc_number = $request->holderCPF;
+        # Pessoa Jurídica: Titular do Cartão
+        if ($request->holder == 1 && $user->profile_id == 1) {
+            $holderBirthDate = $user->date;
+            $number = $user->phone != '' ? dddPhone($user->phone) : dddPhone($user->cell);
+            if ($request->doc_type == 1) {
+                $doc_name   = 'creditCardHolderCNPJ';
+                $doc_number = $request->holderCNPJ;
+            } else {
+                $doc_name   = 'creditCardHolderCPF';
+                $doc_number = $request->holderCPF;
+            }
         }
 
-        return [
+        # Pessoa Jurídica: Outro Titular
+        if ($request->holder == 2 && $user->profile_id == 1) {
+            $holderBirthDate = $request->holderBirthDate;
+            $number = dddPhone($request->holderPhone);
+            if ($request->doc_type == 1) { #CNPJ
+                $doc_name   = 'creditCardHolderCNPJ';
+                $doc_number = $request->holderCNPJ;
+            } else {
+                $doc_name   = 'creditCardHolderCPF';
+                $doc_number = $request->holderCPF;
+            }
+        }
+        return  [
             'creditCardHolderName' => $request->holderName,
             'creditCardHolderBirthDate' => $holderBirthDate,
             'creditCardHolderAreaCode' => $number->ddd,

@@ -12,9 +12,11 @@
         "class_loading" => "single_add_to_cart_button loading",
         "interest_true" => "(sem juros)",
         "interest_false" => "(com juros)",
-        "error_card_token" => "Os dados do cartão estão inválido",
+        "select_installments" => "Selecione o número de parcelas",
+        "error_method" => "Método de pagamento inválido",
         "error_card_token" => "Os dados do cartão estão inválido",
         "error_session" => "Sua sessão expirou, atualize a página",
+        "error_brend" => "Digite um número de cartão válido",
         "currency_x" => "x de R$",
         "profile" => auth()->user()->profile_id
     ]) !!};

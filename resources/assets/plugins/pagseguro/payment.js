@@ -1,77 +1,9 @@
 (function ( $ ) {
 
     /**************************************************************************************************************/
-    /*                                       C L I C K S                                                          */
-    /**************************************************************************************************************/
-
-    // Start keyup cardNumber countdown
-    var typingTimer;
-    var doneTypingInterval = 3000
-    //on keyup, start the countdown
-    $('#cardNumber').keyup(function() {
-        var btn = _pagSeguroSettings.btn_card,
-            cls = _pagSeguroSettings.class_card;
-        clearTimeout(typingTimer);
-        if ($('#cardNumber').val) {
-            typingTimer = setTimeout(setSessionCreditId, doneTypingInterval);
-        }
-    });
-
-    $( ".select-epiry-month" ).select2({
-        placeholder: "Mês",
-        allowClear: false
-    });
-    $( ".select-epiry-year" ).select2({
-        placeholder: "Ano",
-        allowClear: false
-    });
-    $( ".select-installments" ).select2({
-        allowClear: false
-    });
-
-    var profile = _pagSeguroSettings.profile;
-    $('#doc_additional').hide();
-    $('.doc_type_cpf, .doc_type_cnpj').on('click',function(){
-            $('.holder_cpf, .holder_cnpj').toggle()
-        }
-    );
-
-    if (profile == 1) {
-        $('.holder_cnpj').hide();
-        // Titular do Cartão
-        $("#holder_1").click(function() {
-            $('#card-holder').show();
-            $('#doc_additional').hide();
-        });
-        // Outro Titular
-        $("#holder_2").click(function() {
-            $('#card-holder').show();
-            $('#doc_additional').show();
-
-        });
-
-    } else if(profile == 2) {
-        $('#card-holder').hide();
-        $('#doc_additional').hide();
-        // Titular do Cartão
-        $("#holder_1").click(function() {
-            $('#card-holder').hide();
-            $('#doc_additional').hide();
-            $('.holder_cnpj').hide();
-            $('.doc_type_cpf').hide();
-
-        });
-        // Outro Titular
-        $("#holder_2").click(function() {
-            $('#card-holder').show();
-            $('#doc_additional').show();
-            $('.holder_cnpj').hide();
-        });
-    }
-
-    /**************************************************************************************************************/
     /*                                       C A R D - C E D I T                                                  */
     /**************************************************************************************************************/
+
 
     $(".btn-payment-card").click(function () {
         var btn = _pagSeguroSettings.btn_card,
@@ -151,13 +83,15 @@
 
                     var option = [];
                     $.each(data, function(index, value){
+                        var rst = value.totalAmount.toFixed(2);
+                        var rs  = value.installmentAmount.toFixed(2);
                         if (index === 0) {
-                            text_option = value.quantity+text_currency+value.totalAmount+text_interest_true;
+                            text_option = value.quantity+text_currency+rst.replace('.',',')+text_interest_true;
                         } else {
                             if (value.interestFree == true) {
-                                text_option = value.quantity+text_currency+value.installmentAmount+text_interest_true;
+                                text_option = value.quantity+text_currency+rs.replace('.',',')+text_interest_true;
                             } else {
-                                text_option = value.quantity+text_currency+value.installmentAmount+text_interest_false;
+                                text_option = value.quantity+text_currency+rs.replace('.',',')+text_interest_false;
                             }
                         }
                         option.push({
@@ -169,11 +103,12 @@
                     $(".select-installments").select2({
                         data: option
                     });
+
                 }
                 //createCredCardToken(brandName);
             },
             error: function(response) {
-                errorPayment(btn, cls, _pagSeguroSettings.error_card_token);
+                errorPayment(btn, cls, _pagSeguroSettings.error_method);
             },
             complete: function(response){
                 // Callback para todas chamadas.

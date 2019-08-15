@@ -63,7 +63,7 @@ class PagSeguroController extends Controller
      */
     public function transparenteCode()
     {
-        return $this->servicePagSeguro->getSessionId();
+      return $this->servicePagSeguro->getSessionId();
     }
 
     /**

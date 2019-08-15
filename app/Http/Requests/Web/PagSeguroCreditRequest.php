@@ -38,23 +38,38 @@ class PagSeguroCreditRequest extends FormRequest
         $rules["cardExpiryMonth"]     = "required";
         $rules["holderName"]          = "required";
 
-        #info user
-        if ($holder == 2) {
-            $rules["holderPhone"]     = "required";
-            $rules["holderBirthDate"] = "required|data";
 
+
+        # Pessoa Física: Outro Titular
+        if ($holder == 2 && $user->profile_id == 2) {
             if ($doc_type== 1) {
                 $rules["holderCNPJ"]  = "required|formato_cnpj";
             } else {
                 $rules["holderCPF"]   = "required|formato_cpf";
             }
-        } else {
-            if ($user->profile_id == 1) {
+            $rules["holderPhone"]     = "required";
+            $rules["holderBirthDate"] = "required|data";
+        }
+
+        # Pessoa Jurídica: Titular do Cartão
+        if ($holder == 1 && $user->profile_id == 1) {
+            if ($doc_type== 1) {
+                $rules["holderCNPJ"]  = "required|formato_cnpj";
+            } else {
                 $rules["holderCPF"]   = "required|formato_cpf";
             }
         }
 
-
+        # Pessoa Jurídica: Outro Titular
+        if ($holder == 2 && $user->profile_id == 1) {
+            if ($doc_type== 1) {
+                $rules["holderCNPJ"]  = "required|formato_cnpj";
+            } else {
+                $rules["holderCPF"]   = "required|formato_cpf";
+            }
+            $rules["holderPhone"]     = "required";
+            $rules["holderBirthDate"] = "required|data";
+        }
 
         # Info Cart
         $rules["price"]               = "required";
@@ -86,9 +101,9 @@ class PagSeguroCreditRequest extends FormRequest
 
             "holderName.required"              =>  "O nome impresso no cartão é obrigatório",
             "holderPhone.required"             =>  "O telefone do titular do cartão é obrigatório",
-            "holderBirthDate.required"         =>  "A data de nascimento é obrigatória",
+            "holderBirthDate.required"         =>  "A data de nascimento do titular do cartão é obrigatória",
             "holderBirthDate.data"             =>  "Digite uma data de nascimento valida",
-            "holderCNPJ.required"              =>  "O CNPJ é obrigatório",
+            "holderCNPJ.required"              =>  "O CNPJ do titular do cartão é obrigatório",
             "holderCNPJ.formato_cnpj"          =>  "Digite um CNPJ valido",
             "holderCPF.required"               =>  "O CPF do titular do cartão é obrigatório",
             "holderCPF.formato_cpf"            =>  "Digite um CPF valido",
