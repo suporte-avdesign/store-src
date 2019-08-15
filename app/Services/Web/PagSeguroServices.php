@@ -37,7 +37,8 @@ class PagSeguroServices implements PagSeguroServicesInterface
     {
 
         $this->interCart = $interCart;
-        $this->reference = onlyNumber(uniqid(date('YmdHis')));
+        $uniqid          = uniqid(date('YmdHis'));
+        $this->reference = returnNumber($uniqid);
     }
 
     /**
@@ -145,24 +146,35 @@ class PagSeguroServices implements PagSeguroServicesInterface
             $request->shipping_method, $request->freight, $request->extraAmount)
         );
 
+        try {
+            $guzzle = new Guzzle();
+            $response = $guzzle->request('POST', config('pagseguro.url_payment_transparent'), [
+                'form_params' => $params,
+            ]);
 
-        //dd($params);
+            $body = $response->getBody();
+            $contents = $body->getContents(); //receber code para redirecionar o usuário
+            $xml = simplexml_load_string($contents); // xml para json
 
-        $guzzle = new Guzzle();
-        $response = $guzzle->request('POST', config('pagseguro.url_payment_transparent'), [
-            'form_params' => $params,
-        ]);
+            $out = [
+                'success'      => true,
+                'payment_link' => (string)$xml->paymentLink,
+                'reference'    => $this->reference,
+                'code'         => (string)$xml->code,
+                'status'       => (string)$xml->status,
+                'reference'    => $this->reference,
+                'error'        => false
+            ];
+        } catch (ClientException $e) {
+            $out = [
+                'success'      => false,
+                'reference'    => (string)$e->getMessage(),
+                'code'         => (string)$e->getCode(),
+                'error'        => (string)$e->getMessage()
+            ];
+        }
 
-        $body = $response->getBody();
-        $contents = $body->getContents(); //receber code para redirecionar o usuário
-        $xml = simplexml_load_string($contents); // xml para json
-
-        return [
-            'success' => true,
-            'payment_link' => (string)$xml->paymentLink,
-            'reference' => $this->reference,
-            'code' => (string)$xml->code
-        ];
+        return typeJson($out);
     }
 
 
@@ -182,148 +194,53 @@ class PagSeguroServices implements PagSeguroServicesInterface
             'installmentQuantity' => $installmentQuantity,
             'installmentValue' => $installmentValue,
             'noInterestInstallmentQuantity' => $request->maxInstallment,
-            'creditCardHolderName' => 'Jose Comprador',
-            'creditCardHolderCPF' => '22111944785',
-            'creditCardHolderBirthDate' => '27/10/1987',
-            'creditCardHolderAreaCode' => '11',
-            'creditCardHolderPhone' => '56273440',
             'notificationURL' => 'https://sualoja.com.br/notificacao.html',
+
         ];
 
         $params = array_merge($params, $this->getConfigs());
         $params = array_merge($params, $this->getItems($request->price));
         $params = array_merge($params, $this->getSender());
+        $params = array_merge($params, $this->getHolder($request));
         $params = array_merge($params, $this->getShipping());
         $params = array_merge($params, $this->getBilling());
         $params = array_merge($params, $this->getShippingType(
             $request->shipping_method, $request->freight, $request->extraAmount)
         );
 
-        $guzzle = new Guzzle();
-        $response = $guzzle->request('POST', config('pagseguro.url_payment_transparent'), [
-            'form_params' => $params,
-        ]);
-        $statusCode = $response->getStatusCode();
-        $body = $response->getBody();
+        dd($params);
 
-        $contents = $body->getContents(); //receber code para redirecionar o usuário
-        $xml = simplexml_load_string($contents); // xml para json
+        try {
+            $guzzle = new Guzzle();
+            $response = $guzzle->request('POST', config('pagseguro.url_payment_transparent'), [
+                'form_params' => $params,
+            ]);
+            $statusCode = $response->getStatusCode();
+            $body = $response->getBody();
 
-        return $xml->code;
+            $contents = $body->getContents(); //receber code para redirecionar o usuário
+            $xml = simplexml_load_string($contents); // xml para json
 
-    }
+            $out = [
+                'success'       => true,
+                'reference'     => $this->reference,
+                'code'          => (string)$xml->code,
+                'reference'     => $this->reference,
+                'status'        => (string)$xml->status,
+                'error'         => false,
+            ];
 
-    /**
-     * Usar para teste
-     *
-     * @param $request
-     * @return array
-     */
-    public function defaultBillet($request)
-    {
-        $user     = Auth::user();
-        $adresses = $user->adresses()->orderBy('id','desc')->first();
-        return [
-            'paymentMode' => 'default',
-            'paymentMethod' => 'boleto',
-            'currency' => $this->currency,
-            'extraAmount' => '0.00',
-            'itemId1' => '85765',
-            'itemDescription1' => 'Notebook Prata',
-            'itemAmount1' => $request->value,
-            'itemQuantity1' => 1,
-            'notificationURL' => 'http://anselmovelame.com.br',
-            'senderName' => 'Jose Comprador',
-            'senderCPF' => '22111944785',
-            'senderAreaCode' => '75',
-            'senderPhone' => '36272414',
-            'senderEmail' => 'teste@sandbox.pagseguro.com.br',
-            'senderHash' => $request->senderHash,
-            'shippingAddressRequired' => 'true',
-            'shippingType' => $request->shipping_method,
-            'shippingCost' => '0'.$request->freight,
+        } catch (Throwable | ServerException | ClientException $e) {
+            $out = [
+                'success'       => false,
+                'reference'     => (string)$e->getMessage(),
+                'code'          => (string)$e->getCode(),
+                'status'        => false,
+                'error'         => (string)$e->getMessage()
+            ];
+        }
 
-            'shippingAddressStreet' => $adresses->address,
-            'shippingAddressNumber' => $adresses->number,
-            'shippingAddressComplement' => $adresses->complement,
-            'shippingAddressDistrict' => $adresses->district,
-            'shippingAddressPostalCode' => preg_replace("/[^0-9]/", "", $adresses->zip_code),
-            'shippingAddressCity' => $adresses->city,
-            'shippingAddressState' => $adresses->state,
-            'shippingAddressCountry' => $adresses->country,
-
-        ];
-    }
-
-    /**
-     * Usar para teste
-     *
-     * @param $request
-     * @return array
-     */
-    public function defaultCredit($request)
-    {
-
-        $user     = Auth::user();
-        $adresses = $user->adresses()->orderBy('id','desc')->first();
-        // Pega as informações de parcelas (installments) selecionada pelo usuário
-        $installments = explode('|', $request->installments);
-        // Quantidade de parcelas
-        $installmentQuantity = $installments[0];
-        // (O valor da parcela também pode ser calculado dividindo o total do carrinho pela quantidade de parcelas:
-        // $this->cart->total() / $installmentQuantity)
-        $installmentValue = number_format($installments[1], 2, '.', '');
-
-        return [
-            'paymentMode' => 'default',
-            'paymentMethod' => 'creditCard',
-            'currency' => 'BRL',
-            'extraAmount' => '0.00',
-            'itemId1' => '174788848',
-            'itemDescription1' => 'Notebook Prata',
-            'itemAmount1' => '435.36',
-            'itemQuantity1' => '1',
-            'notificationURL' => 'http://anselmovelame.com.br',
-            'reference' => $this->reference,
-            'senderName' => 'Jose Comprador',
-            'senderCPF' => '22111944785',
-            'senderAreaCode' => '75',
-            'senderPhone' => '36272414',
-            'senderEmail' => 'teste@sandbox.pagseguro.com.br',
-            'senderHash' => $request->senderHash,
-
-            'shippingAddressStreet' => $adresses->address,
-            'shippingAddressNumber' => $adresses->number,
-            'shippingAddressComplement' => $adresses->complement,
-            'shippingAddressDistrict' => $adresses->district,
-            'shippingAddressPostalCode' => preg_replace("/[^0-9]/", "", $adresses->zip_code),
-            'shippingAddressCity' => $adresses->city,
-            'shippingAddressState' => $adresses->state,
-            'shippingAddressCountry' => $adresses->country,
-
-            'shippingType' => '3',
-            'shippingCost' => '0'.$request->freight,
-            'creditCardToken' => $request->cardToken,
-            'installmentQuantity' => $installmentQuantity,
-            'installmentValue' => $installmentValue,
-            'noInterestInstallmentQuantity' => $request->maxInstallment,
-            'creditCardHolderName' => 'Jose Comprador',
-            'creditCardHolderCPF' => '22111944785',
-            'creditCardHolderBirthDate' => '27/10/1987',
-            'creditCardHolderAreaCode' => '75',
-            'creditCardHolderPhone' => '36272414',
-
-            'billingAddressStreet' => $adresses->address,
-            'billingAddressNumber' => $adresses->number,
-            'billingAddressComplement' => $adresses->complement,
-            'billingAddressDistrict' => $adresses->district,
-            'billingAddressPostalCode' => preg_replace("/[^0-9]/", "", $adresses->zip_code),
-            'billingAddressCity' => $adresses->city,
-            'billingAddressState' => $adresses->state,
-            'billingAddressCountry' => $adresses->country,
-        ];
-
-
+        return typeJson($out);
     }
 
 

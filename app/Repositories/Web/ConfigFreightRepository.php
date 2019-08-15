@@ -40,18 +40,24 @@ class ConfigFreightRepository implements ConfigFreightInterface
 
     public function pac($postcode, $submit)
     {
+
+        $altura = $submit->altura < MIN_ALTURA ? MIN_ALTURA : $submit->altura;
+        $largura = $submit->largura < MIN_LARGURA? MIN_LARGURA: $submit->largura;
+        $comprimento = $submit->comprimento < MIN_COMPRIMENTO ? MIN_COMPRIMENTO : $submit->comprimento;
+        $raiz_cubica = $submit->raiz_cubica;
+
         $frete = new PrecoPrazo();
         $frete->setCodigoServico(Data::PAC)
-            ->setCodigoEmpresa(config('company.post_code')) # opcional
-            ->setSenha(config('company.post_password')) # opcional
-            ->setCepOrigem(config('company.post_origin')) # apenas numeros, sem hifen(-)
-            ->setCepDestino($postcode) # apenas numeros, sem hifen(-)
+            ->setCodigoEmpresa(config('company.post_code'))    # opcional
+            ->setSenha(config('company.post_password'))        # opcional
+            ->setCepOrigem(config('company.post_origin'))      # apenas numeros, sem hifen(-)
+            ->setCepDestino($postcode)                             # apenas numeros, sem hifen(-)
             ->setValorDeclarado(setReal($submit->valor_declarado)) # não obrigatorio
-            ->setComprimento($submit->comprimento) # obrigatorio
-            ->setAltura($submit->altura)      # obrigatorio
-            ->setLargura($submit->largura)     # obrigatorio
-            ->setDiametro(30)    # obrigatorio
-            ->setPeso($submit->peso);      # obrigatorio
+            ->setComprimento($comprimento)                         # obrigatorio
+            ->setAltura($altura)                                   # obrigatorio
+            ->setLargura($largura)                                 # obrigatorio
+            ->setDiametro($raiz_cubica)                            # obrigatorio
+            ->setPeso($submit->peso);                              # obrigatorio
 
         try {
             $result = $frete->calculate();
@@ -72,18 +78,23 @@ class ConfigFreightRepository implements ConfigFreightInterface
 
     public function sedex($postcode, $submit)
     {
+        $altura = $submit->altura < MIN_ALTURA ? MIN_ALTURA : $submit->altura;
+        $largura = $submit->largura < MIN_LARGURA? MIN_LARGURA: $submit->largura;
+        $comprimento = $submit->comprimento < MIN_COMPRIMENTO ? MIN_COMPRIMENTO : $submit->comprimento;
+        $raiz_cubica = $submit->raiz_cubica;
+
         $frete = new PrecoPrazo();
         $frete->setCodigoServico(Data::PAC)
-            ->setCodigoEmpresa(config('company.post_code')) # opcional
-            ->setSenha(config('company.post_password')) # opcional
-            ->setCepOrigem(config('company.post_origin')) # apenas numeros, sem hifen(-)
-            ->setCepDestino($postcode) # apenas numeros, sem hifen(-)
+            ->setCodigoEmpresa(config('company.post_code'))    # opcional
+            ->setSenha(config('company.post_password'))        # opcional
+            ->setCepOrigem(config('company.post_origin'))      # apenas numeros, sem hifen(-)
+            ->setCepDestino($postcode)                             # apenas numeros, sem hifen(-)
             ->setValorDeclarado(setReal($submit->valor_declarado)) # não obrigatorio
-            ->setComprimento($submit->comprimento) # obrigatorio
-            ->setAltura($submit->altura)      # obrigatorio
-            ->setLargura($submit->largura)     # obrigatorio
-            ->setDiametro(30)    # obrigatorio
-            ->setPeso($submit->peso);      # obrigatorio
+            ->setComprimento($comprimento)                         # obrigatorio
+            ->setAltura($altura)                                   # obrigatorio
+            ->setLargura($largura)                                 # obrigatorio
+            ->setDiametro($raiz_cubica)                            # obrigatorio
+            ->setPeso($submit->peso);                              # obrigatorio
 
         try {
             $result = $frete->calculate();

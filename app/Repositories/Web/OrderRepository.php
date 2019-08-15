@@ -22,9 +22,9 @@ class OrderRepository implements OrderInterface
         $this->model = $model;
     }
 
-    public function setToken($code, $token)
+    public function newOrder($reference, $token)
     {
-        return $this->model->where(['code' => $code, 'token' => $token])->firstOrFail();
+        return $this->model->where(['reference' => $reference, 'token' => $token])->firstOrFail();
     }
 
     /**
@@ -33,7 +33,7 @@ class OrderRepository implements OrderInterface
      * @param  array $input
      * @return mixed
      */
-    public function create($cart, $freight, $payment, $shipping, $company, $status)
+    public function create($cart, $freight, $payment, $shipping, $company, $status, $reference, $code)
     {
         $qty=0;
         $price_cash=0;
@@ -80,7 +80,8 @@ class OrderRepository implements OrderInterface
             'freight' => $freight->valor,
             'tax' => 0,
             'ip' => $_SERVER['REMOTE_ADDR'],
-            'code' => strtoupper(uniqid(date('YmdHsi'))),
+            'code' => $code,
+            'reference' => $reference,
             'token' => csrf_token()
         ];
 

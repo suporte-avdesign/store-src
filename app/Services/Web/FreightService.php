@@ -425,7 +425,6 @@ class FreightService
                 $sum->volume = $sum->remnant_volume;
                 $sum->kg_cubicos = $sum->remnant_kg_cubicos;
 
-
                 $sum->raiz_cubica = round(pow($amount->volume, (1 / 3)));
                 if ($sum->raiz_cubica < $sum->comprimento) {
                     $sum->altura = $sum->raiz_cubica;
@@ -439,8 +438,9 @@ class FreightService
                 }
                 $sum->altura = round($sum->volume / ($sum->comprimento * $sum->largura));
             }
-
             $send = $this->groupBox($sum, $divide);
+
+
 
             return $send;
         }

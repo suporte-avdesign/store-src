@@ -11,7 +11,6 @@
                         <img id="hipercard" src="{{asset('themes/images/payment/hipercard.gif')}}" alt="Hipercard" />
                         <img id="amex" src="{{asset('themes/images/payment/amex.gif')}}" alt="American Express" />
                         <img id="elo" src="{{asset('themes/images/payment/elo.gif')}}" alt="ELO" >
-
                     </div>
                     <div class="col-md-8">
                         <table style="margin-bottom: 10px; background-color: #e6e2e2">
@@ -44,14 +43,14 @@
                         </div>
                         <div class="col-md-3" style="margin-top: 10px">
                             <label>Expiração <span class="required">*</span></label>
-                            <select name="cardExpiryMonth" id="cardExpiryMonth" class="select--epiry-month">
+                            <select name="cardExpiryMonth" id="cardExpiryMonth" class="select-epiry-month">
                                 <option value="">Mês</option>
                                 <option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option>
                             </select>
                         </div>
                         <div class="col-md-3" style="margin-top: 10px">
                             <label>Expiração <span class="required">*</span></label>
-                            <select name="cardExpiryYear" id="cardExpiryYear" class="select--epiry-year">
+                            <select name="cardExpiryYear" id="cardExpiryYear" class="select-epiry-year">
                                 <option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option><option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option><option value="2025">2025</option><option value="2026">2026</option><option value="2027">2027</option><option value="2028">2028</option><option value="2029">2029</option><option value="2030" selected>2030</option><option value="2031">2031</option><option value="2032">2032</option><option value="2033">2033</option><option value="2034">2034</option><option value="2035">2035</option><option value="2036">2036</option><option value="2037">2037</option><option value="2038">2038</option>
                             </select>
                         </div>
@@ -80,24 +79,40 @@
                         </div>
                         <div class="col-md-12">
                             <p>
-                                <label>Nome (Exatamente como impresso no cartão) <span class="required">*</span></label>
+                                <label>Nome do Titular (Exatamente como impresso no cartão) <span class="required">*</span></label>
                                 <span class="holder_name">
                                    <input type="text" name="holderName" id="holderName" value="José Comprador" size="40" class="input-text"/>
                                </span>
                             </p>
                         </div>
-                        <div  id="card-holder" style="display:none">
-                            <div class="col-md-6">
-                                <p>
-                                    <label>CPF <span class="required">*</span></label>
-                                    <span class="holder_cpf">
-                                       <input type="text" name="holderCPF" id="holderCPF" value="" size="40" class="input-text"/>
-                                   </span>
+                        <div id="card-holder">
+                            <div id="btns-doc-type" class="col-md-6">
+                                <label>Tipo de documento do titular <span class="required">*</span></label>
+                                <p class="form-row form-row-wide">
+                                    <input type="radio" class="doc_type_cpf input-radio" id="doc_type_1" name="doc_type" value="2" checked /> <b>CPF</b>
+                                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    <input type="radio" class="doc_type_cnpj input-radio" id="do_type_2" name="doc_type" value="1" /> <b>CNPJ</b>
                                 </p>
                             </div>
                             <div class="col-md-6">
+                                <p class="holder_cpf">
+                                    <label>CPF <span class="required">*</span></label>
+                                    <span>
+                                       <input type="text" name="holderCPF" id="holderCPF" value="" class="input-text"/>
+                                   </span>
+                                </p>
+                                <p class="holder_cnpj">
+                                    <label>CNPJ <span class="required">*</span></label>
+                                    <span >
+                                       <input type="text" name="holderCNPJ" id="holderCNPJ" value="" class="input-text"/>
+                                   </span>
+                                </p>
+                            </div>
+                        </div>
+                        <div id="doc_additional">
+                            <div class="col-md-6">
                                 <p>
-                                    <label>Data de Nascimento <span class="required">*</span></label>
+                                    <label>Data de nascimento do titular <span class="required">*</span></label>
                                     <span class="holder_birth_date">
                                        <input type="text" name="holderBirthDate" id="holderBirthDate" value="" size="40" class="input-text"/>
                                    </span>
@@ -105,13 +120,14 @@
                             </div>
                             <div class="col-md-6">
                                 <p>
-                                    <label>DDD com telefone<span class="required">*</span></label>
+                                    <label>DDD com telefone do titular <span class="required">*</span></label>
                                     <span class="holder_phone">
                                        <input type="text" name="holderPhone" id="holderPhone" value="" size="40" class="input-text"/>
                                    </span>
                                 </p>
                             </div>
                         </div>
+
 
                         <input type="hidden" name="brandName" value="" />
                         <input type="hidden" name="cardToken" value="" />
@@ -145,11 +161,7 @@
                             Você está em um ambiente seguro
                         </p>
                     </div>
-
                 </div>
-
-
-
             </div>
         </div>
     </div>
@@ -161,7 +173,7 @@
 
 <script src="{{config('pagseguro.url_transparent_js')}}"></script>
 @include('frontend.scripts._pagSeguroSettings')
-<!--<script type="text/javascript" src="{{asset('plugins/pagseguro/payment.min.js')}}?v=4"></script>-->
+<script type="text/javascript" src="{{asset('plugins/pagseguro/payment.min.js')}}?{{time()}}"></script>
 <script type="text/javascript" src="{{asset('plugins/jquery-maskedinput/jquery.maskedinput.min.js')}}"></script>
 <script type='text/javascript'>
     jQuery( document ).ready(function($) {
@@ -173,307 +185,6 @@
         $("#cardExpiryMonth").mask('99');
         $("#cardExpiryYear").mask('9999-9999?');
         $("#cardCVV").mask('999');
-
-        $( ".select--epiry-month" ).select2({
-            placeholder: "Mês",
-            allowClear: false
-        });
-        $( ".select--epiry-year" ).select2({
-            placeholder: "Ano",
-            allowClear: false
-        });
-        $( ".select-installments" ).select2({
-            placeholder: "Parcelamento",
-            allowClear: false
-        });
     });
 </script>
 
-<script type='text/javascript'>
-    (function ( $ ) {
-
-        $(".btn-payment-card").click(function () {
-            var btn = _pagSeguroSettings.btn_card,
-                cls = _pagSeguroSettings.class_card;
-            createCredCardToken(btn, cls);
-            return false;
-        });
-
-        // Start keyup cardNumber countdown
-        var typingTimer;
-        var doneTypingInterval = 3000
-        //on keyup, start the countdown
-        $('#cardNumber').keyup(function() {
-            var btn = _pagSeguroSettings.btn_card,
-                cls = _pagSeguroSettings.class_card;
-            clearTimeout(typingTimer);
-            if ($('#cardNumber').val) {
-                typingTimer = setTimeout(setSessionCreditId, doneTypingInterval);
-            }
-        });
-
-        $( ".other_holder" ).click(function() {
-            $( "#card-holder" ).toggle( "show" );
-        });
-
-        /**
-         * Passo 1: Gerando uma sessão
-         */
-        setSessionCreditId = function () {
-            var data = $('#form-pagseguro').serialize();
-            $.ajax({
-                url: _pagSeguroSettings.ajax_transparente,
-                method: "POST",
-                data: data,
-                //beforeSend: startPreloaderPS()
-            }).done(function (data) {
-                console.log(data);
-                PagSeguroDirectPayment.setSessionId(data);
-                getBrand();
-            }).fail(function () {
-                console.log(_pagSeguroSettings.text_error);
-            }).always(function () {
-
-            });
-        }
-
-        /**
-         * Passo 2: Varificar a Bandeira do Cartão
-         */
-        getBrand = function () {
-            PagSeguroDirectPayment.getBrand({
-                cardBin: $('input[name=cardNumber]').val().replace(/ /g, ''),
-                success: function (response) {
-                    //console.log(response.brand.name);
-                    $('input[name=brandName]').val(response.brand.name);
-                    getInstallments(response.brand.name);
-                    var brand = $("#"+response.brand.name).attr('src');
-                    $("#img_brand").html('<img src="'+brand +'" alt="'+response.brand.name+'"/>');
-                },
-                error: function (response) {
-                    stopPreloaderPS(btn, cls);
-                    $("#img_brand").html('');
-                    $("#return-payment").show();
-                    $("#return-payment").html('<ul class="woocommerce-error"><li>Digite um número de cartão valido</li></ul>');
-                    setTimeout(function(){ $("#return-payment").hide(); }, 3000);
-                },
-                complete: function (response) {
-                    //console.log(response);
-                }
-            });
-        }
-
-        /**
-         * Passo 3: Retorna as opções de parcelamento disponíveis         *
-         *
-         * @param brandName
-         */
-        getInstallments = function (brandName) {
-
-            var text_interest_true = ' '+_pagSeguroSettings.interest_true;
-            var text_interest_false = ' '+_pagSeguroSettings.interest_true;
-            var text_currency = _pagSeguroSettings.currency_x+' ';
-            var text_option = '';
-            PagSeguroDirectPayment.getInstallments({
-                amount: $('input[name=amount]').val(),
-                maxInstallmentNoInterest: $('input[name=maxInstallment]').val(),
-                brand: brandName,
-                success: function(response){
-                    var obj = response.installments,
-                        data = obj[brandName];
-                    console.log(data);
-                    if (data.length > 0){
-
-                        var option = [];
-                        $.each(data, function(index, value){
-                            if (index === 0) {
-                                text_option = value.quantity+text_currency+value.totalAmount+text_interest_true;
-                            } else {
-                                if (value.interestFree == true) {
-                                    text_option = value.quantity+text_currency+value.installmentAmount+text_interest_true;
-                                } else {
-                                    text_option = value.quantity+text_currency+value.installmentAmount+text_interest_false;
-                                }
-                            }
-                            option.push({
-                                id: value.quantity +'|'+ value.installmentAmount,
-                                text: text_option
-                            });
-                        });
-
-                        $(".select-installments").select2({
-                            data: option
-                        });
-                    }
-                    //createCredCardToken(brandName);
-                },
-                error: function(response) {
-                    contole.log(response);
-                },
-                complete: function(response){
-                    // Callback para todas chamadas.
-                }
-            });
-        }
-
-        /**
-         * Passo 4: Utiliza os dados do cartão de crédito para gerar um token.
-         * Esse método é necessário somente para o meio de pagamento cartão de crédito.
-         *
-         * @param brandName
-         */
-
-        createCredCardToken = function (btn, cls) {
-            var cardCVV =  $('input[name=cardCVV]').val(),
-                cardExpiryMonth = $("#cardExpiryMonth option:selected").val(),
-                cardExpiryYear = $("#cardExpiryYear option:selected").val();
-
-            PagSeguroDirectPayment.createCardToken({
-                cardNumber: $('input[name=cardNumber]').val().replace(/ /g, ''),
-                brand: $('input[name=brandName]').val(),
-                //brand: $('input[name=brandName]').val(),
-                cvv: cardCVV,
-                expirationMonth: cardExpiryMonth,
-                expirationYear: cardExpiryYear,
-                success: function (response) {
-                    //console.log(response);
-                    $('input[name=cardToken]').val(response.card.token);
-                    createTransactionCard(btn, cls);
-
-                },
-                error: function (response) {
-                    stopPreloaderPS(btn, cls);
-                    validateCard();
-                    $("#return-payment").show();
-                    $("#return-payment").html('<ul class="woocommerce-error"><li>'+_pagSeguroSettings.error_card_token+'</li></ul>');
-                    setTimeout(function(){ $("#return-payment").hide(); }, 3000);
-                },
-                complete: function (response) {
-                    //console.log(response);
-
-                }
-            });
-
-        }
-
-        createTransactionCard = function (btn, cls) {
-            var senderHash = PagSeguroDirectPayment.getSenderHash();
-            $('#senderHash').val(senderHash);
-            var data = $('#form-pagseguro').serialize();
-            $.ajax({
-                url: _pagSeguroSettings.ajax_transaction,
-                method: "POST",
-                data: data,
-                beforeSend: startPreloaderPS(cls)
-            }).done(function (response) {
-                stopPreloaderPS(btn, cls);
-                console.log(response);
-                $("#return-payment").html("Seu pagamento foi realizado com sucesso! Código da Transação: "+code);
-
-            }).fail(function (jqXHR) {
-
-                stopPreloaderPS(btn, cls);
-
-                if (jqXHR.status == 422) {
-                    var obj = $.parseJSON(jqXHR.responseText), message = '';
-                    $.each( obj, function( key, value ) {
-
-                        if (key == 'errors') {
-                            $.each(obj[key], function(i, error) {
-                                message += '<li>'+error+'</li>';
-                            });
-                        }
-                    });
-                }
-                $("#return-payment").show();
-                $("#return-payment").html('<ul class="woocommerce-error">' + message + '</ul>');
-                setTimeout(function(){ $("#return-payment").hide(); }, 6000);
-
-            }).always(function () {
-
-            });
-        }
-
-
-        startPreloaderPS = function (cls) {
-            $(cls).attr("disabled", true).addClass(_pagSeguroSettings.class_loading).text(_pagSeguroSettings.text_loading);
-        }
-
-        stopPreloaderPS = function (btn, cls) {
-            $(cls).attr("disabled", false).removeClass(_pagSeguroSettings.class_loading).text(btn);
-        }
-
-        /**
-         *  Validação dos Cartões
-         */
-
-
-
-        validateCard = function () {
-           // alert('pegou');
-            var error = 0,
-                cardNumber =  $('#cardNumber').val(),
-                cardName =  $('#cardName').val(),
-                cardCVV =  $('#cardCVV').val();
-
-            if (cardNumber=='') {
-                error = 1;
-                $('#cardNumber').css("border", "red solid 1px");
-            }
-
-            if (cardName=='') {
-                error = 1;
-                $('#cardName').css("border", "red solid 1px");
-            }
-
-            if (cardCVV=='') {
-                alert(cardCVV);
-                error = 1;
-                $('#cardCVV').css("border", "red solid 1px");
-            }
-
-            if (error == 0) {
-                $('#cardNumber').css("border", "rgba(136, 135, 135, 0.25) solid 1px");
-                $('#cardName').css("border", "rgba(136, 135, 135, 0.25) solid 1px");
-                $('#cardCVV').css("border", "rgba(136, 135, 135, 0.25) solid 1px");
-            }
-
-            //return error;
-        }
-
-
-
-
-        /**************************************************************************************************************/
-        /*                                       RETURN FORM PAYMENTS                                                 */
-        /**************************************************************************************************************/
-        /**
-         * Retorna as formas de pagamentos
-         */
-        getPaymentMethods = function () {
-
-            startPreloaderPS();
-
-            PagSeguroDirectPayment.getPaymentMethods({
-                success: function (response) {
-                    console.log(response);
-                    if (response.error == false) {
-                        $.each(response.paymentMethods, function (key, value) {
-                            $('.payment-methods').append(key+"<br>");
-                        })
-                    }
-                },
-                error: function (response) {
-                    console.log(response);
-                    stopPreloaderPS();
-                },
-                complete: function (response) {
-                    console.log(response);
-
-                }
-            });
-        }
-
-
-    })( window.jQuery );
-</script>

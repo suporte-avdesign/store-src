@@ -10,15 +10,12 @@
         "class_billet" => ".btn-payment-billet",
         "class_card" => ".btn-payment-card",
         "class_loading" => "single_add_to_cart_button loading",
-        "required_name" => "O nome é obrigatŕio",
-        "required_number" => "O número é obrigatŕio",
-        "required_cvv" => "O código de segurança é obrigatŕio",
-        "required_installment" => "O número de parcelas é obrigatŕio",
         "interest_true" => "(sem juros)",
         "interest_false" => "(com juros)",
         "error_card_token" => "Os dados do cartão estão inválido",
+        "error_card_token" => "Os dados do cartão estão inválido",
+        "error_session" => "Sua sessão expirou, atualize a página",
         "currency_x" => "x de R$",
-        "currency_x" => "x de R$",
-
+        "profile" => auth()->user()->profile_id
     ]) !!};
 </script>

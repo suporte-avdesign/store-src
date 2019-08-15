@@ -3,6 +3,44 @@
 use AVD\Interfaces\Web\ConfigKeywordInterface as Keyword;
 
 
+/**
+ * Retorna o número do DDD do telefone;
+ */
+if ( !function_exists('dddPhone'))
+{
+    function dddPhone($phone)
+    {
+        $phone  = returnNumber($phone);
+        $ddd    = $phone[0] . $phone[1];
+        $number = substr( $phone , 2 );
+
+        $out = array(
+            'ddd' => $ddd,
+            'phone' => str_replace('-','',$number)
+        );
+
+        return typeJson($out);
+    }
+}
+
+
+/**
+ * Retorna o número do DDD do telefone;
+ */
+if ( !function_exists('returnNumber'))
+{
+    function returnNumber($str)
+    {
+        return preg_replace("/[^0-9]/", "", $str);
+    }
+}
+
+
+
+
+/**
+ * Criar opçoes de validação de ano cartão de crédito
+ */
 if ( !function_exists('optionsYears'))
 {
     function optionsYears($total=20)

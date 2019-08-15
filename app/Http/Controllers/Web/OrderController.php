@@ -55,10 +55,10 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($code,$token)
+    public function index($reference,$token)
     {
         $menu  = $this->interSection->getMenu();
-        $order = $this->interOrder->setToken($code,$token);
+        $order = $this->interOrder->newOrder($reference,$token);
 
         $items           = $order->items;
         $content         = $this->content;

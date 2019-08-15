@@ -2,35 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98b239c8-5e79-4bef-877b-d465e9cffc35" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-07-30.log" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Helpers/functions.php" afterPath="$PROJECT_DIR$/app/Helpers/functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/CheckoutController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/CheckoutController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/OrderController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/OrderController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/PagSeguroController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/PagSeguroController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/TestesController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/TestesController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/Web/PaymentCard.php" afterPath="$PROJECT_DIR$/app/Models/Web/PaymentCard.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Requests/Web/PagSeguroCreditRequest.php" afterPath="$PROJECT_DIR$/app/Http/Requests/Web/PagSeguroCreditRequest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Interfaces/Web/OrderInterface.php" afterPath="$PROJECT_DIR$/app/Interfaces/Web/OrderInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/Web/Order.php" afterPath="$PROJECT_DIR$/app/Models/Web/Order.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Web/ConfigFreightRepository.php" afterPath="$PROJECT_DIR$/app/Repositories/Web/ConfigFreightRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Web/OrderRepository.php" afterPath="$PROJECT_DIR$/app/Repositories/Web/OrderRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Services/Web/FreightService.php" afterPath="$PROJECT_DIR$/app/Services/Web/FreightService.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Services/Web/PagSeguroServices.php" afterPath="$PROJECT_DIR$/app/Services/Web/PagSeguroServices.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Traits/PagSeguroTrait.php" afterPath="$PROJECT_DIR$/app/Traits/PagSeguroTrait.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/plugins/pagseguro/payment.min.js" afterPath="$PROJECT_DIR$/public/plugins/pagseguro/payment.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/plugins/checkout/checkout.js" afterPath="$PROJECT_DIR$/resources/assets/plugins/checkout/checkout.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/plugins/pagseguro/payment.js" afterPath="$PROJECT_DIR$/resources/assets/plugins/pagseguro/payment.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/checkouts/checkout-1.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/checkouts/checkout-1.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/credit-1.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/credit-1.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/popup/billet-1.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/popup/billet-1.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/popup/credit-1.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/popup/credit-1.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/popup/debit-1.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/popup/debit-1.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/scripts/_pagSeguroSettings.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/scripts/_pagSeguroSettings.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/testes/popoups.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/testes/popoups.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-07-31.log" afterPath="$PROJECT_DIR$/storage/logs/laravel-2019-07-31.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-08-01.log" afterPath="$PROJECT_DIR$/storage/logs/laravel-2019-08-01.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-08-02.log" afterPath="$PROJECT_DIR$/storage/logs/laravel-2019-08-02.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-08-03.log" afterPath="$PROJECT_DIR$/storage/logs/laravel-2019-08-03.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-08-04.log" afterPath="$PROJECT_DIR$/storage/logs/laravel-2019-08-04.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-08-05.log" afterPath="$PROJECT_DIR$/storage/logs/laravel-2019-08-05.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-08-06.log" afterPath="$PROJECT_DIR$/storage/logs/laravel-2019-08-06.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-08-07.log" afterPath="$PROJECT_DIR$/storage/logs/laravel-2019-08-07.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-08-08.log" afterPath="$PROJECT_DIR$/storage/logs/laravel-2019-08-08.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-08-09.log" afterPath="$PROJECT_DIR$/storage/logs/laravel-2019-08-09.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-08-11.log" afterPath="$PROJECT_DIR$/storage/logs/laravel-2019-08-11.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-08-12.log" afterPath="$PROJECT_DIR$/storage/logs/laravel-2019-08-12.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/logs/workers.log" afterPath="$PROJECT_DIR$/storage/logs/workers.log" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -56,34 +48,25 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="checkout.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/assets/plugins/checkout/checkout.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-414">
-              <caret line="1" column="23" lean-forward="true" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="avdesign.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/assets/plugins/frontend/avdesign.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="67" column="6" lean-forward="false" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="credit-1.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/popup/credit-1.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="93" column="88" lean-forward="false" selection-start-line="93" selection-start-column="79" selection-end-line="93" selection-end-column="88" />
+            <state relative-caret-position="101">
+              <caret line="170" column="6" lean-forward="false" selection-start-line="170" selection-start-column="6" selection-end-line="170" selection-end-column="6" />
               <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PagSeguroCreditRequest.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Requests/Web/PagSeguroCreditRequest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="10">
+              <caret line="51" column="38" lean-forward="false" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -91,10 +74,35 @@
       <file leaf-file-name="payment.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/assets/plugins/pagseguro/payment.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="17" column="35" lean-forward="true" selection-start-line="198" selection-start-column="4" selection-end-line="198" selection-end-column="16" />
+            <state relative-caret-position="126">
+              <caret line="31" column="45" lean-forward="true" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_pagSeguroSettings.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/frontend/scripts/_pagSeguroSettings.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
               <folding>
-                <element signature="e#2466#4427#0" expanded="false" />
+                <marker date="1565845594278" expanded="true" signature="64:1031" ph="..." />
+                <marker date="1565845594278" expanded="true" signature="77:1029" ph="..." />
+                <marker date="1565845594278" expanded="true" signature="78:1028" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PagSeguroController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Web/PagSeguroController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-231">
+              <caret line="75" column="5" lean-forward="false" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
+              <folding>
+                <element signature="e#6941#10469#0#PHP" expanded="false" />
+                <element signature="e#10653#11530#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -103,37 +111,36 @@
       <file leaf-file-name="PagSeguroServices.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Services/Web/PagSeguroServices.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="172" column="72" lean-forward="true" selection-start-line="170" selection-start-column="8" selection-end-line="172" selection-end-column="72" />
+            <state relative-caret-position="324">
+              <caret line="21" column="17" lean-forward="false" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
               <folding>
                 <element signature="e#36#66#0#PHP" expanded="true" />
-                <element signature="e#3581#4978#0#PHP" expanded="false" />
-                <element signature="e#8742#11715#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PagSeguroController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Web/PagSeguroController.php">
+      <file leaf-file-name="PagSeguroTrait.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Traits/PagSeguroTrait.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="128" column="54" lean-forward="true" selection-start-line="125" selection-start-column="16" selection-end-line="128" selection-end-column="54" />
-              <folding>
-                <element signature="e#45#73#0#PHP" expanded="true" />
-                <element signature="e#8756#8975#0#PHP" expanded="false" />
-                <element signature="e#9649#10526#0#PHP" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="billet-1.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/popup/billet-1.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="68" lean-forward="false" selection-start-line="2" selection-start-column="68" selection-end-line="2" selection-end-column="68" />
+            <state relative-caret-position="162">
+              <caret line="141" column="28" lean-forward="false" selection-start-line="141" selection-start-column="22" selection-end-line="141" selection-end-column="28" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="debit-1.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/popup/debit-1.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-198">
+              <caret line="13" column="32" lean-forward="false" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#7;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -142,12 +149,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>woocommerce_checkout_place_order</find>
-      <find>popoups</find>
-      <find>place_order</find>
-      <find>mfp-hid</find>
-      <find>mfp-h</find>
-      <find>mfp-</find>
       <find>mfp-swo</find>
       <find>mfp-swh</find>
       <find>mfp-sw</find>
@@ -172,6 +173,12 @@
       <find>return-payment</find>
       <find>validateCard</find>
       <find>wc_checkout_form</find>
+      <find>date</find>
+      <find>url_transparent_session</find>
+      <find>i</find>
+      <find>ip</find>
+      <find>pagseguro.transparente.code</find>
+      <find>getInstallments</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -189,9 +196,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
-        <option value="$PROJECT_DIR$/app/Interfaces/Web/PaymentCashInterface.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/Web/PaymentCashRepository.php" />
         <option value="$PROJECT_DIR$/app/Repositories/Web/PaymentCompanyRepository.php" />
         <option value="$PROJECT_DIR$/app/Interfaces/Web/PaymentCompanyInterface.php" />
         <option value="$PROJECT_DIR$/app/Models/Web/PaymentCash.php" />
@@ -200,10 +204,6 @@
         <option value="$PROJECT_DIR$/resources/views/frontend/orders/received/cache-1.blade.php" />
         <option value="$PROJECT_DIR$/app/Interfaces/Web/OrderShippingInterface.php" />
         <option value="$PROJECT_DIR$/app/Repositories/Web/OrderShippingRepository.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/Web/OrderRepository.php" />
-        <option value="$PROJECT_DIR$/app/Interfaces/Web/OrderInterface.php" />
-        <option value="$PROJECT_DIR$/app/Models/Web/Order.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Web/OrderController.php" />
         <option value="$PROJECT_DIR$/app/Interfaces/Web/UserInterface.php" />
         <option value="$PROJECT_DIR$/app/Repositories/Web/UserRepository.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" />
@@ -214,32 +214,39 @@
         <option value="$PROJECT_DIR$/resources/assets/plugins/pagseguro/pajseguro.js" />
         <option value="$PROJECT_DIR$/config/lang_pt-BR.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/contacts-1.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/popup/debit-1.blade.php" />
         <option value="$PROJECT_DIR$/resources/assets/plugins/pagseguro/pagseguro.js" />
         <option value="$PROJECT_DIR$/app/Models/Web/UserAddress.php" />
         <option value="$PROJECT_DIR$/webpack.mix.js" />
         <option value="$PROJECT_DIR$/config/pagseguro.php" />
-        <option value="$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/popup/billet-1.blade.php" />
-        <option value="$PROJECT_DIR$/app/Traits/PagSeguroTrait.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/auth/login-1.blade.php" />
-        <option value="$PROJECT_DIR$/app/Helpers/functions.php" />
         <option value="$PROJECT_DIR$/resources/assets/plugins/pagseguro/payment2.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Web/TestesController.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/testes/popoups.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/credit-1.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/popup/teste.blade.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/checkouts/checkout-1.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Web/CheckoutController.php" />
-        <option value="$PROJECT_DIR$/resources/assets/plugins/pagseguro/payment.js" />
         <option value="$PROJECT_DIR$/app/Http/Requests/Web/PagSeguroRequest.php" />
-        <option value="$PROJECT_DIR$/app/Services/Web/PagSeguroServices.php" />
         <option value="$PROJECT_DIR$/resources/assets/plugins/checkout/checkout.js" />
+        <option value="$PROJECT_DIR$/app/Models/Web/PaymentCard.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/popup/billet-1.blade.php" />
+        <option value="$PROJECT_DIR$/config/app.php" />
+        <option value="$PROJECT_DIR$/app/Models/Web/Order.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Web/OrderRepository.php" />
+        <option value="$PROJECT_DIR$/app/Interfaces/Web/OrderInterface.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Web/OrderController.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/app/Services/Web/FreightService.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Web/ConfigFreightRepository.php" />
+        <option value="$PROJECT_DIR$/app/Helpers/functions.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/popup/debit-1.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Web/PagSeguroController.php" />
+        <option value="$PROJECT_DIR$/app/Services/Web/PagSeguroServices.php" />
+        <option value="$PROJECT_DIR$/app/Traits/PagSeguroTrait.php" />
+        <option value="$PROJECT_DIR$/resources/assets/plugins/pagseguro/payment.js" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/popup/credit-1.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/Web/PagSeguroCreditRequest.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/scripts/_pagSeguroSettings.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/popup/credit-1.blade.php" />
-        <option value="$PROJECT_DIR$/app/Models/Web/PaymentCard.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Web/PagSeguroController.php" />
       </list>
     </option>
   </component>
@@ -656,73 +663,21 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pagseguro" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="saoroque" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -865,6 +820,72 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saoroque" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Helpers" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -1017,12 +1038,12 @@
       <workItem from="1565093438855" duration="19071000" />
       <workItem from="1565116029063" duration="248221000" />
       <workItem from="1565643224878" duration="27409000" />
-      <workItem from="1565705883989" duration="24724000" />
+      <workItem from="1565705883989" duration="77549000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="981251000" />
+    <option name="totallyTimeSpent" value="1034076000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -1037,7 +1058,7 @@
     <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="7.9681276E-4" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988048" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1045,7 +1066,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985073" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34900397" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23027888" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -1057,6 +1078,27 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985073" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985073" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15139443" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988048" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32686567" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23027888" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -1074,102 +1116,15 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/Helpers/functions.php</url>
-          <line>154</line>
+          <line>192</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="30" />
+      <option name="time" value="31" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/messages/error-1.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/checkouts/messages/info-1.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/checkouts/messages/error-1.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/messages/login-attempts-limit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/pagseguro/billet-1.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Web/UserAddress.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="19" lean-forward="true" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Web/AccountController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="29" column="33" lean-forward="false" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/psr/http-message/src/StreamInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="142" column="20" lean-forward="false" selection-start-line="142" selection-start-column="20" selection-end-line="142" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/laravel-pagseguro/app/Models/PagSeguro.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-540">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.lock">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="29" lean-forward="true" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/storage/framework/views/286f792a1b35b4745f2fe74106b4367f64c8f521.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -1182,26 +1137,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="482">
           <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/pagseguro.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1584">
-          <caret line="88" column="5" lean-forward="false" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Traits/PagSeguroTrait.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="57" column="31" lean-forward="false" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="31" />
-          <folding>
-            <element signature="e#489#1032#0#PHP" expanded="false" />
-            <element signature="e#2196#2929#0#PHP" expanded="false" />
-            <element signature="e#3335#4009#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1237,14 +1172,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1386">
           <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Helpers/functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="10" column="23" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1307,14 +1234,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/popup/debit-1.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="882">
-          <caret line="91" column="47" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/popup/teste.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1854">
@@ -1331,29 +1250,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="144" column="0" lean-forward="false" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Web/CheckoutController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="451">
           <caret line="754" column="0" lean-forward="false" selection-start-line="754" selection-start-column="0" selection-end-line="754" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/plugins/pagseguro/payment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="17" column="35" lean-forward="true" selection-start-line="198" selection-start-column="4" selection-end-line="198" selection-end-column="16" />
-          <folding>
-            <element signature="e#2466#4427#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1399,38 +1300,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Web/CheckoutRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="89" column="21" lean-forward="true" selection-start-line="87" selection-start-column="4" selection-end-line="89" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/lang_pt-BR.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1517">
           <caret line="468" column="2" lean-forward="true" selection-start-line="468" selection-start-column="2" selection-end-line="468" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/scripts/_pagSeguroSettings.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="25" lean-forward="false" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="25" />
-          <folding>
-            <marker date="1565742168552" expanded="true" signature="64:1123" ph="..." />
-            <marker date="1565742168552" expanded="true" signature="77:1121" ph="..." />
-            <marker date="1565742168552" expanded="true" signature="78:1120" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/popup/billet-1.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="68" lean-forward="false" selection-start-line="2" selection-start-column="68" selection-end-line="2" selection-end-column="68" />
           <folding />
         </state>
       </provider>
@@ -1459,44 +1332,225 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/AuthServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-17">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-540">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="173" column="0" lean-forward="false" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/popup/billet-1.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-49">
+          <caret line="66" column="24" lean-forward="false" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="24" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Web/Order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="17" lean-forward="true" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Interfaces/Web/OrderInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Web/OrderController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="57" column="44" lean-forward="false" selection-start-line="57" selection-start-column="44" selection-end-line="57" selection-end-column="44" />
+          <folding>
+            <element signature="e#44#72#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/pagseguro.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Interfaces/Web/ConfigFreightInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="50" lean-forward="false" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="80" column="20" lean-forward="false" selection-start-line="80" selection-start-column="12" selection-end-line="80" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/Web/FreightService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-121">
+          <caret line="367" column="46" lean-forward="true" selection-start-line="367" selection-start-column="29" selection-end-line="367" selection-end-column="46" />
+          <folding>
+            <element signature="e#36#65#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Web/ConfigFreightRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-413">
+          <caret line="60" column="8" lean-forward="false" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Helpers/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="11" column="5" lean-forward="false" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Web/CheckoutRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="29" column="32" lean-forward="false" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/popup/debit-1.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-198">
+          <caret line="13" column="32" lean-forward="false" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#7;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Web/OrderRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-90">
+          <caret line="20" column="5" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="166" column="2" lean-forward="true" selection-start-line="166" selection-start-column="2" selection-end-line="166" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Web/PagSeguroController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-231">
+          <caret line="75" column="5" lean-forward="false" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
+          <folding>
+            <element signature="e#6941#10469#0#PHP" expanded="false" />
+            <element signature="e#10653#11530#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/Web/PagSeguroServicesInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="10" lean-forward="false" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Services/Web/PagSeguroServices.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="172" column="72" lean-forward="true" selection-start-line="170" selection-start-column="8" selection-end-line="172" selection-end-column="72" />
+        <state relative-caret-position="324">
+          <caret line="21" column="17" lean-forward="false" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
           <folding>
             <element signature="e#36#66#0#PHP" expanded="true" />
-            <element signature="e#3581#4978#0#PHP" expanded="false" />
-            <element signature="e#8742#11715#0#PHP" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Traits/PagSeguroTrait.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="141" column="28" lean-forward="false" selection-start-line="141" selection-start-column="22" selection-end-line="141" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/plugins/pagseguro/payment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="31" column="45" lean-forward="true" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Requests/Web/PagSeguroCreditRequest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="25" column="39" lean-forward="true" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="39" />
+        <state relative-caret-position="10">
+          <caret line="51" column="38" lean-forward="false" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/frontend/payments/pagseguro/popup/credit-1.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="93" column="88" lean-forward="false" selection-start-line="93" selection-start-column="79" selection-end-line="93" selection-end-column="88" />
+        <state relative-caret-position="101">
+          <caret line="170" column="6" lean-forward="false" selection-start-line="170" selection-start-column="6" selection-end-line="170" selection-end-column="6" />
           <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Web/PagSeguroController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/scripts/_pagSeguroSettings.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="128" column="54" lean-forward="true" selection-start-line="125" selection-start-column="16" selection-end-line="128" selection-end-column="54" />
+        <state relative-caret-position="360">
+          <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
           <folding>
-            <element signature="e#45#73#0#PHP" expanded="true" />
-            <element signature="e#8756#8975#0#PHP" expanded="false" />
-            <element signature="e#9649#10526#0#PHP" expanded="false" />
+            <marker date="1565845594278" expanded="true" signature="64:1031" ph="..." />
+            <marker date="1565845594278" expanded="true" signature="77:1029" ph="..." />
+            <marker date="1565845594278" expanded="true" signature="78:1028" ph="..." />
           </folding>
         </state>
       </provider>

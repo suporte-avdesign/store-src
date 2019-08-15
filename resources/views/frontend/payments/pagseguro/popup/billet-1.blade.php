@@ -59,6 +59,11 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-md-12">
+                        <div id="return-payment" class="woocommerce-notices-wrapper" style="display: none"></div>
+                    </div>
+
                     <br>
 
                     <div class="text-right">

@@ -1,46 +1,93 @@
 (function ( $ ) {
-    $( ".select--epiry-month" ).select2({
-        placeholder: "Mês",
-        allowClear: false
-    });
-    $( ".select--epiry-year" ).select2({
-        placeholder: "Ano",
-        allowClear: false
-    });
-    $( ".select-installments" ).select2({
-        placeholder: "Parcelamento",
-        allowClear: false
-    });
+
+    /**************************************************************************************************************/
+    /*                                       C L I C K S                                                          */
+    /**************************************************************************************************************/
 
     // Start keyup cardNumber countdown
-    var typingTimer,
-        doneTypingInterval = 3000;
+    var typingTimer;
+    var doneTypingInterval = 3000
     //on keyup, start the countdown
     $('#cardNumber').keyup(function() {
+        var btn = _pagSeguroSettings.btn_card,
+            cls = _pagSeguroSettings.class_card;
         clearTimeout(typingTimer);
         if ($('#cardNumber').val) {
             typingTimer = setTimeout(setSessionCreditId, doneTypingInterval);
         }
     });
 
-    $( ".other_holder" ).click(function() {
-        $( "#card-holder" ).toggle( "show" );
+    $( ".select-epiry-month" ).select2({
+        placeholder: "Mês",
+        allowClear: false
+    });
+    $( ".select-epiry-year" ).select2({
+        placeholder: "Ano",
+        allowClear: false
+    });
+    $( ".select-installments" ).select2({
+        allowClear: false
     });
 
-    $(".btn-payment-card").click(function () {
-        if (validateCard() == 0) {
-            var btn = _pagSeguroSettings.btn_card,
-                cls = _pagSeguroSettings.class_card;
-            createCredCardToken(btn, cls);
+    var profile = _pagSeguroSettings.profile;
+    $('#doc_additional').hide();
+    $('.doc_type_cpf, .doc_type_cnpj').on('click',function(){
+            $('.holder_cpf, .holder_cnpj').toggle()
         }
+    );
+
+    if (profile == 1) {
+        $('.holder_cnpj').hide();
+        // Titular do Cartão
+        $("#holder_1").click(function() {
+            $('#card-holder').show();
+            $('#doc_additional').hide();
+        });
+        // Outro Titular
+        $("#holder_2").click(function() {
+            $('#card-holder').show();
+            $('#doc_additional').show();
+
+        });
+
+    } else if(profile == 2) {
+        $('#card-holder').hide();
+        $('#doc_additional').hide();
+        // Titular do Cartão
+        $("#holder_1").click(function() {
+            $('#card-holder').hide();
+            $('#doc_additional').hide();
+            $('.holder_cnpj').hide();
+            $('.doc_type_cpf').hide();
+
+        });
+        // Outro Titular
+        $("#holder_2").click(function() {
+            $('#card-holder').show();
+            $('#doc_additional').show();
+            $('.holder_cnpj').hide();
+        });
+    }
+
+    /**************************************************************************************************************/
+    /*                                       C A R D - C E D I T                                                  */
+    /**************************************************************************************************************/
+
+    $(".btn-payment-card").click(function () {
+        var btn = _pagSeguroSettings.btn_card,
+            cls = _pagSeguroSettings.class_card;
+        createCredCardToken(btn, cls);
         return false;
     });
+
 
     /**
      * Passo 1: Gerando uma sessão
      */
-    setSessionCreditId = function (btn, cls) {
-        var data = $('#form-pagseguro').serialize();
+    setSessionCreditId = function () {
+        var data = $('#form-pagseguro').serialize(),
+            btn = _pagSeguroSettings.btn_card,
+            cls = _pagSeguroSettings.class_card;
         $.ajax({
             url: _pagSeguroSettings.ajax_transparente,
             method: "POST",
@@ -49,9 +96,10 @@
         }).done(function (data) {
             console.log(data);
             PagSeguroDirectPayment.setSessionId(data);
-            getBrand();
-        }).fail(function () {
-            console.log(_pagSeguroSettings.text_error);
+            getBrand(btn, cls);
+        }).fail(function (error) {
+            console.log(error);
+            errorPayment(btn, cls, _pagSeguroSettings.error_session);
         }).always(function () {
 
         });
@@ -60,16 +108,19 @@
     /**
      * Passo 2: Varificar a Bandeira do Cartão
      */
-    getBrand = function () {
+    getBrand = function (btn, cls) {
         PagSeguroDirectPayment.getBrand({
             cardBin: $('input[name=cardNumber]').val().replace(/ /g, ''),
             success: function (response) {
                 //console.log(response.brand.name);
                 $('input[name=brandName]').val(response.brand.name);
-                getInstallments(response.brand.name);
+                getInstallments(response.brand.name, btn, cls);
+                var brand = $("#"+response.brand.name).attr('src');
+                $("#img_brand").html('<img src="'+brand +'" alt="'+response.brand.name+'"/>');
             },
             error: function (response) {
-                console.log(response);
+                $("#img_brand").html('');
+                errorPayment(btn, cls, _pagSeguroSettings.error_card_number);
             },
             complete: function (response) {
                 //console.log(response);
@@ -82,12 +133,12 @@
      *
      * @param brandName
      */
-    getInstallments = function (brandName) {
+    getInstallments = function (brandName, btn, cls) {
 
-        var text_interest_true = ' '+_pagSeguroSettings+interest_true,
-            text_interest_false = ' '+_pagSeguroSettings+interest_false,
-            text_currency = _pagSeguroSettings+currency_x+' ',
-            text_option = '';
+        var text_interest_true = ' '+_pagSeguroSettings.interest_true;
+        var text_interest_false = ' '+_pagSeguroSettings.interest_true;
+        var text_currency = _pagSeguroSettings.currency_x+' ';
+        var text_option = '';
         PagSeguroDirectPayment.getInstallments({
             amount: $('input[name=amount]').val(),
             maxInstallmentNoInterest: $('input[name=maxInstallment]').val(),
@@ -119,20 +170,16 @@
                         data: option
                     });
                 }
-
-
-
                 //createCredCardToken(brandName);
             },
             error: function(response) {
-                contole.log(response);
+                errorPayment(btn, cls, _pagSeguroSettings.error_card_token);
             },
             complete: function(response){
                 // Callback para todas chamadas.
             }
         });
     }
-
 
     /**
      * Passo 4: Utiliza os dados do cartão de crédito para gerar um token.
@@ -157,15 +204,13 @@
                 //console.log(response);
                 $('input[name=cardToken]').val(response.card.token);
                 createTransactionCard(btn, cls);
-
             },
             error: function (response) {
                 console.log(response);
-                stopPreloaderPS(btn, cls)
+                errorPayment(btn, cls, _pagSeguroSettings.error_card_token);
             },
             complete: function (response) {
-                //console.log(response);
-
+                console.log(response);
             }
         });
 
@@ -180,60 +225,37 @@
             method: "POST",
             data: data,
             beforeSend: startPreloaderPS(cls)
-        }).done(function (code) {
-            //console.log(code);
-            $("#return-payment").html("Seu pagamento foi realizado com sucesso! Código da Transação: "+code);
-
-        }).fail(function (error) {
-            console.log(error.responseJSON.message);
+        }).done(function (response) {
             stopPreloaderPS(btn, cls);
-        }).always(function () {
+            if (response.success == true) {
+                window.location= response.redirect;
 
-        });
-    }
+            } else {
+                errorPayment(btn, cls, _pagSeguroSettings.text_error);
+            }
 
+        }).fail(function (jqXHR) {
 
-    /**
-     *  Validação dos Cartões
-     */
-    validateCard = function () {
-        var error = 0,
-            html = '',
-            cardNumber =  $('input[name=cardNumber]').val(),
-            cardName =  $('input[name=cardName]').val(),
-            cardCVV =  $('input[name=cardCVV]').val();
+            stopPreloaderPS(btn, cls);
 
-        if (cardNumber.length < 19) {
-            error = 1;
-            $('input[name=cardNumber]').css("border", "red solid 1px");
-            html = '<li>'+_pagSeguroSettings.required_number+'</li>';
-        }
+            if (jqXHR.status == 422) {
+                var obj = $.parseJSON(jqXHR.responseText), message = '';
+                $.each( obj, function( key, value ) {
 
-        if (cardName.length < 6) {
-            error = 1;
-            $('input[name=cardName]').css("border", "red solid 1px");
-            html += '<li>'+_pagSeguroSettings.required_name+'</li>';
-        }
-
-        if (cardCVV.length < 3) {
-            error = 1;
-            $('input[name=cardCVV]').css("border", "red solid 1px");
-            html += '<li>'+_pagSeguroSettings.required_cvv+'</li>';
-        }
-
-        if (error == 0) {
-            $('input[name=cardNumber]').css("border", "rgba(136, 135, 135, 0.25) solid 1px");
-            $('input[name=cardName]').css("border", "rgba(136, 135, 135, 0.25) solid 1px");
-            $('input[name=cardCVV]').css("border", "rgba(136, 135, 135, 0.25) solid 1px");
-        } else {
+                    if (key == 'errors') {
+                        $.each(obj[key], function(i, error) {
+                            message += '<li>'+error+'</li>';
+                        });
+                    }
+                });
+            }
             $("#return-payment").show();
-            $("#return-payment").html('<ul class="woocommerce-error" role="alert">'+html+'</ul>');
-            setTimeout(function(){
-                $("#return-payment").hide();
-            }, 5000);
-        }
+            $("#return-payment").html('<ul class="woocommerce-error">' + message + '</ul>');
+            setTimeout(function(){ $("#return-payment").hide(); }, 6000);
 
-        return error;
+        }).always(function () {
+            stopPreloaderPS(btn, cls);
+        });
     }
 
     /**************************************************************************************************************/
@@ -260,8 +282,7 @@
             paymentBillet(btn, cls);
 
         }).fail(function () {
-            //console.log(_pagSeguroSettings.text_error);
-            stopPreloaderPS(btn, cls);
+            errorPayment(btn, cls, _pagSeguroSettings.error_session);
         }).always(function () {
 
         });
@@ -280,15 +301,23 @@
             data: data
         }).done(function (response) {
             //console.log(response);
-            if (response.success)
+            if (response.success == true) {
                 window.location=response.redirect;
-
+            } else {
+                errorPayment(btn, cls, _pagSeguroSettings.text_error);
+            }
         }).fail(function () {
-            console.log(_pagSeguroSettings.text_error);
-            stopPreloaderPS(btn, cls);
+            errorPayment(btn, cls, _pagSeguroSettings.text_error);
         }).always(function () {
             stopPreloaderPS(btn,cls);
         });
+    }
+
+    errorPayment = function (btn, cls, message) {
+        stopPreloaderPS(btn, cls);
+        $("#return-payment").show();
+        $("#return-payment").html('<ul class="woocommerce-error"><li>' + message + '</li></ul>');
+        setTimeout(function(){ $("#return-payment").hide(); }, 6000);
     }
 
 

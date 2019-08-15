@@ -66,19 +66,18 @@ trait PagSeguroTrait
             $senderDoc = 'senderCPF';
             $name = $user->first_name. ' '.$user->last_name;
         }
-        $numero = preg_replace("/[^0-9]/", "", $user->cell);
-        $ddd_cliente = preg_replace('/\A.{2}?\K[\d]+/', '', $numero);
-        $numero_cliente = preg_replace('/^\d{2}/', '', $numero);
+        $number = $user->phone != '' ? dddPhone($user->phone) : dddPhone($user->cell);
         $environment = env('PAGSEGURO_ENVORINMENT');
         $isSandbox   = ($environment == 'sandbox') ? true : false;
         $email = ($isSandbox) ? uniqid(date('YmdHsi'))."@sandbox.pagseguro.com.br" : $user->email;
 
         return [
             'senderName' => $name,
-            $senderDoc => preg_replace("/[^0-9]/", "", $user->document1),
-            'senderAreaCode' => $ddd_cliente,
-            'senderPhone' => $numero_cliente,
+            $senderDoc => returnNumber($user->document1),
+            'senderAreaCode' => $number->ddd,
+            'senderPhone' => $number->phone,
             'senderEmail' => $email,
+            'sender.ip' => $_SERVER["REMOTE_ADDR"]
         ];
     }
 
@@ -97,7 +96,7 @@ trait PagSeguroTrait
             'shippingAddressNumber' => utf8_decode($data->number),
             'shippingAddressComplement' => utf8_decode($data->complement),
             'shippingAddressDistrict' => utf8_decode($data->district),
-            'shippingAddressPostalCode' => preg_replace("/[^0-9]/", "", $data->zip_code),
+            'shippingAddressPostalCode' => returnNumber($data->zip_code),
             'shippingAddressCity' => utf8_decode($data->city),
             'shippingAddressState' => $data->state,
             'shippingAddressCountry' => $data->country
@@ -130,7 +129,7 @@ trait PagSeguroTrait
             'billingAddressNumber' => utf8_decode($data->number),
             'billingAddressComplement' => utf8_decode($data->complement),
             'billingAddressDistrict' => utf8_decode($data->district),
-            'billingAddressPostalCode' => preg_replace("/[^0-9]/", "", $data->zip_code),
+            'billingAddressPostalCode' => returnNumber($data->zip_code),
             'billingAddressCity' => utf8_decode($data->city),
             'billingAddressState' => $data->state,
             'billingAddressCountry' => $data->country
@@ -138,9 +137,38 @@ trait PagSeguroTrait
     }
 
 
+    public function getHolder($request)
+    {
+        if ($request->holder == 1) {
 
+            $user = auth()->user();
+            $holderBirthDate = $user->date;
+            $number = $user->phone != '' ? dddPhone($user->phone) : dddPhone($user->cell);
 
+        } else {
 
+            $holderBirthDate = $request->holderBirthDate;
+            $number = dddPhone($request->holderPhone);
+        }
+
+        $doc_type = $request->doc_type;
+        if ($doc_type == 1) {
+            $doc_name   = 'creditCardHolderCNPJ';
+            $doc_number = $request->holderCNPJ;
+
+        } else {
+            $doc_name   = 'creditCardHolderCPF';
+            $doc_number = $request->holderCPF;
+        }
+
+        return [
+            'creditCardHolderName' => $request->holderName,
+            'creditCardHolderBirthDate' => $holderBirthDate,
+            'creditCardHolderAreaCode' => $number->ddd,
+            'creditCardHolderPhone' => $number->phone,
+            $doc_name => returnNumber($doc_number)
+        ];
+    }
 
     /**
      * Moeda

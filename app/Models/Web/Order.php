@@ -25,6 +25,7 @@ class Order extends Model
         'tax',
         'ip',
         'code',
+        'reference',
         'token'
     ];
 

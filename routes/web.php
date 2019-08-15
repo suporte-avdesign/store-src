@@ -84,6 +84,14 @@ Route::get(setRoute('product').'search', 'Web\ImageColorController@search');
 */
 Route::get(setRoute('color').'{slug}', 'Web\ImageColorController@index');
 
+
+/*
+|--------------------------------------------------------------------------
+| Routes Coupon
+|--------------------------------------------------------------------------
+*/
+Route::any('coupon/store', 'Web\CouponController@store')->name('coupon.store');
+
 /*
 |--------------------------------------------------------------------------
 | Routes Cart
@@ -147,16 +155,18 @@ Route::group(['prefix' => 'checkout',  'middleware' => 'check-items'], function 
 
 /*
 |--------------------------------------------------------------------------
-| Routes Orders
+| Routes PagSeguro
 |--------------------------------------------------------------------------
 */
-Route::get('order/received/{code}/{token}', 'Web\OrderController@index')->name('order.received');
+Route::get('pagseguro-card', 'Web\PagSeguroController@card')->name('pagseguro.card');
+Route::post('pagseguro-card-transaction', 'Web\PagSeguroController@cardTransaction')->name('pagseguro.card.transaction');
 
-
+Route::post('pagseguro-billet', 'Web\PagSeguroController@billet')->name('pagseguro.billet');
+Route::post('pagseguro-transparente', 'Web\PagSeguroController@transparenteCode')->name('pagseguro.transparente.code');
 
 /*
 |--------------------------------------------------------------------------
-| Routes PagSeguro
+| Routes PagSeguro Testes
 |--------------------------------------------------------------------------
 */
 Route::get('pagseguro', 'Web\PagSeguroController@pagseguro')->name('pagseguro');
@@ -165,22 +175,15 @@ Route::get('pagseguro-lightbox', 'Web\PagSeguroController@lightbox')->name('pags
 Route::post('pagseguro-lightbox', 'Web\PagSeguroController@lightboxCode')->name('pagseguro.lightbox.code');
 Route::get('pagseguro-transparente', 'Web\PagSeguroController@transparente')->name('pagseguro.transparente');
 
-Route::get('pagseguro-card', 'Web\PagSeguroController@card')->name('pagseguro.card');
-Route::post('pagseguro-card-transaction', 'Web\PagSeguroController@cardTransaction')->name('pagseguro.card.transaction');
-
-
-Route::get('pagseguro-installments', 'Web\PagSeguroController@installments')->name('pagseguro.installments');
-
-Route::post('pagseguro-billet', 'Web\PagSeguroController@billet')->name('pagseguro.billet');
-Route::post('pagseguro-transparente', 'Web\PagSeguroController@transparenteCode')->name('pagseguro.transparente.code');
-
-
 /*
 |--------------------------------------------------------------------------
-| Routes Coupon
+| Routes Orders
 |--------------------------------------------------------------------------
 */
-Route::any('coupon/store', 'Web\CouponController@store')->name('coupon.store');
+Route::get('order/received/{reference}/{token}', 'Web\OrderController@index')->name('order.received');
+
+
+
 
 
 /*

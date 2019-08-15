@@ -23,8 +23,11 @@ class PagSeguroCreditRequest extends FormRequest
      */
     public function rules()
     {
-        $holder = $this->get('holder');
-        $user   = auth()->user();
+
+
+        $user     = auth()->user();
+        $holder   = $this->get('holder');
+        $doc_type = $this->get('doc_type');
 
         # Info card
         $rules["cardCVV"]             = "required";
@@ -38,14 +41,20 @@ class PagSeguroCreditRequest extends FormRequest
         #info user
         if ($holder == 2) {
             $rules["holderPhone"]     = "required";
-            $rules["holderBirthDate"] = "required";
+            $rules["holderBirthDate"] = "required|data";
 
-            if ($user->type_id == 1) {
-                $rules["holderCNPJ"]  = "required";
+            if ($doc_type== 1) {
+                $rules["holderCNPJ"]  = "required|formato_cnpj";
             } else {
-                $rules["holderCPF"]   = "required";
+                $rules["holderCPF"]   = "required|formato_cpf";
+            }
+        } else {
+            if ($user->profile_id == 1) {
+                $rules["holderCPF"]   = "required|formato_cpf";
             }
         }
+
+
 
         # Info Cart
         $rules["price"]               = "required";
@@ -78,8 +87,11 @@ class PagSeguroCreditRequest extends FormRequest
             "holderName.required"              =>  "O nome impresso no cartão é obrigatório",
             "holderPhone.required"             =>  "O telefone do titular do cartão é obrigatório",
             "holderBirthDate.required"         =>  "A data de nascimento é obrigatória",
+            "holderBirthDate.data"             =>  "Digite uma data de nascimento valida",
             "holderCNPJ.required"              =>  "O CNPJ é obrigatório",
+            "holderCNPJ.formato_cnpj"          =>  "Digite um CNPJ valido",
             "holderCPF.required"               =>  "O CPF do titular do cartão é obrigatório",
+            "holderCPF.formato_cpf"            =>  "Digite um CPF valido",
 
 
             # Info Cart
