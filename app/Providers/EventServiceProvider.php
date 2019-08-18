@@ -18,9 +18,13 @@ class EventServiceProvider extends ServiceProvider
         'AVD\Events\UserRegisteredEvent' => [
             'AVD\Listeners\UserRegisteredSendMailListener',
         ],
+        'AVD\Events\UserRegisteredNewsletterEvent' => [
+            'AVD\Listeners\UserRegisteredNewsletterListener',
+        ],
         'AVD\Events\UserRegisteredNoteEvent' => [
             'AVD\Listeners\UserRegisteredNoteListener',
         ],
+
         'AVD\Events\UserRegisterConfirmedEvent' => [
             'AVD\Listeners\UserRegisterConfirmedListener',
         ],

@@ -55,7 +55,6 @@ class CategoryController extends Controller
             $category = $this->interModel->getColors($configSite, $configProduct, $slug);
         }
 
-
         //sleep(10);
         $_pjax = '';
         $orderby = '';

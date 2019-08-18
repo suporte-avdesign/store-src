@@ -67,11 +67,13 @@
                                     <div class="col-sm-6">
                                         <div class="row" id="customer_details">
                                             <div class="col-sm-12">
-                                                @auth
-                                                    @include('frontend.checkouts.includes.form-logged-1')
-                                                @else
-                                                    @include('frontend.checkouts.includes.form-register-1')
-                                                @endauth
+                                                <div class="woocommerce-billing-fields">
+                                                    @auth
+                                                        @include('frontend.checkouts.includes.form-logged-1')
+                                                    @else
+                                                        @include('frontend.checkouts.includes.form-register-1')
+                                                    @endauth
+                                                </div>
                                             </div>
                                             <div class="col-sm-12">
                                                 @include('frontend.checkouts.includes.additional-fields')

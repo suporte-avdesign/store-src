@@ -23,8 +23,12 @@ class RegisterRequest extends FormRequest
      */
     public function rules()
     {
-
+        sleep(2);
+        /*********************************************************************************/
+        /*                           U S E R
+        /*********************************************************************************/
         $register = $this->get('register');
+        $transport = $this->get('transport');
         $type = $register['type_id'];
 
         ($this->method() == 'POST' ? $id = 0 : $id = auth()->user()->id);
@@ -59,6 +63,20 @@ class RegisterRequest extends FormRequest
 
         $rules['register.password'] = $password.$password_string.$password_min.$password_confirmed;
 
+        /*********************************************************************************/
+        /*                           A D D R R S S
+        /*********************************************************************************/
+        $rules['address.address']  = "required|min:3";
+        $rules['address.number']   = "required";
+        $rules['address.district'] = "required";
+        $rules['address.city']     = "required";
+        $rules['address.zip_code'] = "required|formato_cep";
+        $rules['address.state']    = "required";
+        #Indicate Transport
+        if (isset($transport['indicate'])) {
+            $rules['transport.name']  = "required";
+            $rules['transport.phone'] = "required";
+        }
 
 
         return $rules;
@@ -69,6 +87,11 @@ class RegisterRequest extends FormRequest
     {
 
         $messages = [
+
+            /***************************************************************************/
+            /*                            U S E R
+            /***************************************************************************/
+
             'register.profile_id.required'      => 'O Perfil do cadastro é obrigatório.',
             'register.type_id.required'         => 'O Perfil do cadastro é obrigatório.',
 
@@ -99,7 +122,23 @@ class RegisterRequest extends FormRequest
             'register.password.required'        => "A Senha é obrigatória.",
             'register.password.min'             => "A Senha deverá conter no mínimo 6 caracteres.",
             'register.password_confirmation'    => "A Confirmação da senha é obrigatória.",
-            'register.password.confirmed'       => "A Confirmação da senha não coincide."
+            'register.password.confirmed'       => "A Confirmação da senha não coincide.",
+
+            /***************************************************************************/
+            /*                      A D D R E S S
+            /***************************************************************************/
+            "address.address.required"          => "O Endereço é obrigatório.",
+            "address.address.min"               => "O Endereço deve ter no mínimo 3 caracters",
+            "address.number.required"           => "O Número é obrigatório.",
+            "address.district.required"         => "O Bairro é obrigatório.",
+            "address.city.required"             => "A Cidade é obrigatória.",
+            "address.zip_code.required"         => "O CEP é obrigatório.",
+            "address.zip_code.formato_cep"      => "Digite um CEP válido.",
+            "address.state.required"            => "O Estado é obrigatório.",
+
+            "transport.name.required"           => "O nome do transporte é obrigatório.",
+            "transport.phone.required"          => "O telefone de contato do transporte é obrigatório.",
+
         ];
 
         return $messages;

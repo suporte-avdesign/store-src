@@ -108,7 +108,6 @@ class ImageColorController extends Controller
 
         return view('frontend.products.product-1', compact(
             'product_variations',
-            'product_prices_id',
             'configKeyword',
             'configProduct',
             'schema_org',

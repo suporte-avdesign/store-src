@@ -91,7 +91,6 @@ class ProductController extends Controller
 
         return view('frontend.products.quick-view.quick-view-1', compact(
             'product_variations',
-                'product_prices_id',
                 'configProduct',
                 'configSite',
                 'attributes',

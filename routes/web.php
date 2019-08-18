@@ -214,6 +214,13 @@ Route::post('contato', 'Web\ContactController@store')->name('contact.store');
 Route::get('login','Auth\LoginController@showLoginForm')->name('login');
 Route::post('login','Auth\LoginController@pageLogin')->name('login')->middleware("throttle:5,1");
 
+/*
+|--------------------------------------------------------------------------
+| Routes Register
+|--------------------------------------------------------------------------
+*/
+Route::get('cadastro','Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('cadastro','Auth\RegisterController@register')->name('register');
 
 /*
 |--------------------------------------------------------------------------

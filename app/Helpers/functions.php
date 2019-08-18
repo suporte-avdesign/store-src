@@ -69,12 +69,18 @@ if ( !function_exists('ipLocation'))
         (env('IP_PRODUCTION') == true ? $ip = $_SERVER['REMOTE_ADDR'] : $ip = null);
         ($ip == '127.0.0.1' ? $details = constLang('access_local') : $details = '');
         if ($ip != '127.0.0.1') {
-            $client   =  new \ipinfo\ipinfo\IPinfo(env('TOKEN_IPINFO'));
-            $location =  $client->getDetails($ip);
-            foreach ($location->all as $key => $value) {
-                $details .= "{$key}:{$value}, ";
+            try {
+                $client   =  new \ipinfo\ipinfo\IPinfo(env('TOKEN_IPINFO'));
+                $location =  $client->getDetails($ip);
+                foreach ($location->all as $key => $value) {
+                    $details .= "{$key}:{$value}, ";
+                }
+                $details = substr($details, 0, -2);
+
+            } catch(\Exception $e){
+                $details = 'IPinfo: Sem resposta';
             }
-            $details = substr($details, 0, -2);
+
         }
         return $details;
     }

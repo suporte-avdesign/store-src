@@ -77,6 +77,9 @@ mix.scripts('resources/assets/plugins/select2/js/select2.full.js', 'public/plugi
 //Checkout footer
 mix.scripts('resources/assets/plugins/checkout/checkout.js', 'public/plugins/checkout/checkout.min.js');
 
+//Account footer
+mix.scripts('resources/assets/plugins/account/register.js', 'public/plugins/account/register.min.js');
+
 
 //Login head
 mix.scripts('resources/assets/includes/zxcvbn/js/zxcvbn-async.js', 'public/includes/zxcvbn/js/zxcvbn-async.min.js');

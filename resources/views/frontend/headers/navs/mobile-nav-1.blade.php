@@ -77,8 +77,11 @@
             <li class="wishlist">
                 <a href="{{route('wishlist')}}">Lista de Desejo</a>
             </li>
+            <li class="register">
+                <a href="{{route('register')}}">Cadastre-se</a>
+            </li>
             <li class="login-side-opener">
-                <a href="{{route('login')}}">Login / Cadastre-se</a>
+                <a href="{{route('login')}}">Login</a>
             </li>
         </ul>
     </div>

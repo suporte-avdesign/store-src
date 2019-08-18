@@ -68,8 +68,7 @@ class CheckoutController extends Controller
         ConfigFormPayment $configFormPayment,
         InterOrderShipping $interOrderShipping)
     {
-
-        $this->middleware('check-items');
+        $this->middleware(['auth', 'check-items']);
 
         $this->interCart = $interCart;
         $this->interUser = $interUser;

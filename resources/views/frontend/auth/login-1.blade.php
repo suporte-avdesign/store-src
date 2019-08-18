@@ -118,7 +118,6 @@
                                                     @endforeach
                                                 </p>
 
-
                                                 <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
                                                     @foreach($types as $type)
                                                         @if($loop->first)
@@ -185,6 +184,9 @@
                                                     <label for="reg_email">{{constLang('email')}} <span class="required">*</span></label>
                                                     <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" id="reg_email" name="register[email]" autocomplete="email" value="" />
                                                 </p>
+
+
+
                                                 <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
                                                     <label for="reg_password">{{constLang('password')}}&nbsp;<span class="required">*</span></label>
                                                     <input type="password" class="woocommerce-Input woocommerce-Input--text input-text" id="reg_password" name="register[password]" value=""/>

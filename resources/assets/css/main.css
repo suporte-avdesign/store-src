@@ -2837,7 +2837,7 @@ input[type="submit"] {
   -o-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
   background-color: #ECECEC;
-  color: #3E3E3E;
+  color: white;
   border-color: #ECECEC; }
   .btn:hover, .btn:focus,
   .button:hover,

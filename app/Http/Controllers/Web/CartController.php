@@ -70,6 +70,7 @@ class CartController extends Controller
         $configShipping = $this->configShipping->getAll();
 
 
+
         (Auth::user() ? $user_id = Auth::id() : $user_id = 0);
 
         $configSite = $this->configSite->setId(1);
@@ -84,17 +85,8 @@ class CartController extends Controller
 
 
         return view("{$this->view}.cart-1", compact(
-            'menu',
-            'cart',
-            'total',
-            'states',
-            'session',
-            'message',
-            'photoUrl',
-            'configFreight',
-            'configKeyword',
-            'configShipping')
-        );
+            'menu','cart','total','states','message','photoUrl',
+            'configFreight','configKeyword','configShipping'));
     }
 
     public function endpoint(Request $request)

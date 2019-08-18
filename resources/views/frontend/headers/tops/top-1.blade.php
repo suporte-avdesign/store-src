@@ -14,7 +14,7 @@
                                 <a href="#"><i class="fa fa-user"></i>Minha Conta</a>
                             </li>
                             <li id="menu-item-22845" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22845 menu-item-design-default item-event-hover">
-                                <a href="{{route('login')}}"><i class="fa fa-file-text-o"></i>Cadastre-se</a>
+                                <a href="{{route('register')}}"><i class="fa fa-file-text-o"></i>Cadastre-se</a>
                             </li>
                             <!--
                             <li id="menu-item-20484" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20484 menu-item-design-default item-event-hover">

@@ -2,8 +2,8 @@
 
 namespace AVD\Providers;
 
-use AVD\Models\Web\User;
-use AVD\Observers\UserObserver;
+//use AVD\Models\Web\User;
+//use AVD\Observers\UserObserver;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -39,6 +39,7 @@ class AppServiceProvider extends ServiceProvider
             'ContentTermsConditions',
             'ImageColor',
             'GridProduct',
+            'Newsletter',
             'Order',
             'OrderItem',
             'OrderNote',
@@ -53,7 +54,8 @@ class AppServiceProvider extends ServiceProvider
             'SocialShare',
             'User',
             'UserAddress',
-            'UserNote'
+            'UserNote',
+            'UserTransport'
         );
 
         foreach ($models as $model) {

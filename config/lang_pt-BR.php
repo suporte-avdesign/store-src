@@ -424,6 +424,7 @@ return [
         ],
 
         'register' => [
+            'account_failure' => 'Não foi possível processar seu cadastro. Tente novamente mais tarde.',
             'account_inactive' => 'sua conta está inativa, entre em contato com o administrador. Para reativala entre em contato com nossa equipe',
             'active_token_null' => 'Sua conta já se encontra ativa. Faça o login abaixo:',
             'new_register' => 'O registro para este site permite que você acesse o status e o histórico do seu pedido. Basta preencher os campos abaixo e teremos uma nova conta configurada para você em breve. Só lhe pediremos informações necessárias para tornar o processo de compra mais rápido e fácil.',
@@ -432,10 +433,17 @@ return [
             'success_text2' => 'Abra este email e clique em concluir o registro.',
             'success_text3' => 'Se você não receber este e-mail em sua caixa de entrada dentro de 15 minutos,procure na pasta de lixo eletrônico. Se ele estiver ali, marque-o como "Não é lixo eletrônico"',
             'success_confirmed' => 'A sua conta foi confirmada com sucesso. Entre com seu email e senha abaixo:',
+            'note_register' => 'Fez o Cadastro',
+            'note_confirmed' => 'Email Confirmado',
 
         ],
         'newsletter' => [
-            'register' => 'Quero receber informações e promoçoes de vocês.'
+            'label_newsletter' => 'Quero receber informações e promoções da',
+            'create_true'      => 'Email cadastrado com sucesso.',
+            'create_false'     => 'Não foi possível cadastra este email, tente mais tarde.',
+            'create_exist'     => 'Este email já consta em nosso sistema.',
+            'update_true'      => 'Seu cadastro em nossa newsletter foi alterado com sucesso.',
+            'update_false'     => 'Não foi possível alterar seu cadastro em nossa newsletter'
         ],
         'payments' => [
             'title' => 'Pagamento do Pedido',
