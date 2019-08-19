@@ -69,7 +69,7 @@
 
 @include('frontend.messages.body-1')
 
-@include('auth.login-1-sidbar')
+@include('frontend.auth.login-1-sidbar')
 
 <div class="website-wrapper">
 

@@ -139,6 +139,7 @@ return [
     'login_entry' => 'Fez login no sistema.',
     'mail' => 'Email',
     'max' => 'Máximo',
+    'message' => 'Mensagem',
     'min' => 'Mínimo',
     'movement' => 'Movimento',
     'my_account' => 'Minha Conta',
@@ -220,6 +221,7 @@ return [
     'status_true' => 'O status foi alterado',
     'status_false' => 'Não foi possível alterar o status',
     'stock' => 'Estoque',
+    'subject' => 'Assunto',
     'subtotal' => 'Subtotal',
     'tables_preference' => 'a configuração das cores das tabelas por uma de sua preferência',
     'ticket' => 'Boleto',
@@ -467,11 +469,10 @@ return [
             'title_freight' => 'Frete',
             'title_details' => 'Detalhes do Pedido',
             'title_method' => 'Método de Pagamento',
+        ],
+        'contact' => [
+            'success_text1' => 'sua mensagem foi enviada com sucesso!',
+            'success_text2' => 'Alguém de nossa equipe entrará em contato com você.',
         ]
-
-
-
-
-
     ]
 ];

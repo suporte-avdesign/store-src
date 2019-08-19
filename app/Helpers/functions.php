@@ -64,7 +64,7 @@ if ( !function_exists('optionsYears'))
  */
 if ( !function_exists('ipLocation'))
 {
-    function ipLocation()
+    function ipLocation($return='string')
     {
         (env('IP_PRODUCTION') == true ? $ip = $_SERVER['REMOTE_ADDR'] : $ip = null);
         ($ip == '127.0.0.1' ? $details = constLang('access_local') : $details = '');
@@ -72,17 +72,20 @@ if ( !function_exists('ipLocation'))
             try {
                 $client   =  new \ipinfo\ipinfo\IPinfo(env('TOKEN_IPINFO'));
                 $location =  $client->getDetails($ip);
-                foreach ($location->all as $key => $value) {
-                    $details .= "{$key}:{$value}, ";
+                if ($return == 'json') {
+                    return typeJson($location->all);
+                } elseif ($return == 'string') {
+                    foreach ($location->all as $key => $value) {
+                        $details .= "{$key}:{$value}, ";
+                    }
+
+                    return substr($details, 0, -2);
                 }
-                $details = substr($details, 0, -2);
-
             } catch(\Exception $e){
-                $details = 'IPinfo: Sem resposta';
-            }
 
+                return false;
+            }
         }
-        return $details;
     }
 }
 

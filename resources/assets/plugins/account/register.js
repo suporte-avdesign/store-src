@@ -29,7 +29,7 @@ jQuery( function( $ ) {
             // Manual trigger
             this.$register_form.on( 'update', this.trigger_update_register );
             // Update on page load
-            if ( avd_config_register.is_checkout === '1' ) {
+            if ( avd_config_register.is_register === '1' ) {
                 $( document.body ).trigger( 'init_register' );
             }
 
@@ -203,7 +203,7 @@ jQuery( function( $ ) {
 
                 $.ajax({
                     type:		'POST',
-                    url:		avd_config_register.checkout_url,
+                    url:		avd_config_register.register_url,
                     data:		$form.serialize(),
                     dataType:   'json',
                     beforeSend: function(){

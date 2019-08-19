@@ -1,7 +1,7 @@
 <script type="text/javascript">
     var wpcf7  = {!! json_encode([
         "apiSettings" => array(
-            "root" => route('contact.store'),
+            "root" => route('contact'),
             "namespace" => "form/contact-form-7/v1"
         ),
         "recaptcha" => array(

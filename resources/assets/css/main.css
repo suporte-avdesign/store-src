@@ -2961,8 +2961,7 @@ input[type="submit"] {
     padding: 0;
     border-top: none;
     border-left: none;
-    border-right: none;
-    text-transform: capitalize; }
+    border-right: none; }
   .btn.btn-round, .btn.btn-style-round,
   .button.btn-round,
   .button.btn-style-round,

@@ -24,12 +24,41 @@ mix.styles('resources/assets/plugins/prettyPhoto/css/prettyPhoto.css', 'public/p
 mix.styles('resources/assets/plugins/yith-wishlist/css/jquery.selectBox.css', 'public/plugins/yith-wishlist/css/jquery.selectBox.css');
 mix.styles('resources/assets/plugins/yith-wishlist/css/style.css', 'public/plugins/yith-wishlist/css/style.css');
 mix.styles('resources/assets/plugins/js_composer/css/js_composer.min.css', 'public/plugins/js_composer/css/js_composer.min.css');
+// ie9
+mix.styles('resources/assets/plugins/js_composer/css/vc_lte_ie9.min.css', 'public/plugins/js_composer/css/vc_lte_ie9.min.css');
+// Contact
+mix.styles('resources/assets/plugins/js_composer/css/js_composer_tta.min.css', 'public/plugins/js_composer/css/js_composer_tta.min.css');
+
 mix.styles('resources/assets/plugins/mailchimp/css/form-basic.min.css', 'public/plugins/mailchimp/css/form-basic.min.css');
 
 mix.styles('resources/assets/css/main.css', 'public/css/main.css');
 
-// ie9
-mix.styles('resources/assets/plugins/js_composer/css/vc_lte_ie9.min.css', 'public/plugins/js_composer/css/vc_lte_ie9.min.css');
+
+// Home
+mix.styles('resources/assets/plugins/revslider/css/settings.css', 'public/plugins/revslider/css/settings.min.css');
+mix.styles('resources/assets/themes/css/theme-home-1.css', 'public/themes/css/home-1-min.css');
+mix.copy('resources/assets/plugins/revslider/fonts/pe-icon-7-stroke', 'public/fonts/pe-icon-7-stroke');
+mix.copy('resources/assets/plugins/revslider/fonts/revicons', 'public/fonts/revicons');
+
+
+
+mix.scripts('resources/assets/plugins/revslider/js/jquery.themepunch.tools.min.js', 'public/plugins/revslider/js/jquery.themepunch.tools.min.js');
+mix.scripts('resources/assets/plugins/revslider/js/jquery.themepunch.revolution.min.js', 'public/plugins/revslider/js/jquery.themepunch.revolution.min.js');
+mix.scripts('resources/assets/plugins/revslider/js/extensions/revolution.extension.actions.min.js', 'public/plugins/revslider/js/extensions/revolution.extension.actions.min.js');
+mix.scripts('resources/assets/plugins/revslider/js/extensions/revolution.extension.carousel.min.js', 'public/plugins/revslider/js/extensions/revolution.extension.carousel.min.js');
+mix.scripts('resources/assets/plugins/revslider/js/extensions/revolution.extension.kenburn.min.js', 'public/plugins/revslider/js/extensions/revolution.extension.kenburn.min.js');
+mix.scripts('resources/assets/plugins/revslider/js/extensions/revolution.extension.layeranimation.min.js', 'public/plugins/revslider/js/extensions/revolution.extension.layeranimation.min.js');
+mix.scripts('resources/assets/plugins/revslider/js/extensions/revolution.extension.migration.min.js', 'public/plugins/revslider/js/extensions/revolution.extension.migration.min.js');
+mix.scripts('resources/assets/plugins/revslider/js/extensions/revolution.extension.navigation.min.js', 'public/plugins/revslider/js/extensions/revolution.extension.navigation.min.js');
+mix.scripts('resources/assets/plugins/revslider/js/extensions/revolution.extension.parallax.min.js', 'public/plugins/revslider/js/extensions/revolution.extension.parallax.min.js');
+mix.scripts('resources/assets/plugins/revslider/js/extensions/revolution.extension.slideanims.min.js', 'public/plugins/revslider/js/extensions/revolution.extension.slideanims.min.js');
+mix.scripts('resources/assets/plugins/revslider/js/extensions/revolution.extension.video.min.js', 'public/plugins/revslider/js/extensions/revolution.extension.video.min.js');
+
+
+
+
+
+
 
 mix.styles('resources/assets/themes/css/styles.css', 'public/themes/css/styles.min.css');
 mix.styles('resources/assets/themes/css/theme.css', 'public/themes/css/theme.css');
@@ -46,6 +75,8 @@ mix.scripts('resources/assets/themes/js/device.min.js', 'public/themes/js/device
 mix.scripts('resources/assets/themes/js/theme-org.js', 'public/themes/js/theme.min.js');
 
 
+
+
 //footer
 mix.scripts('resources/assets/includes/contact-form-7/js/scripts.js', 'public/includes/contact-form-7/js/scripts.js');
 mix.scripts('resources/assets/plugins/js-cookie/js.cookie.min.js', 'public/plugins/js-cookie/js.cookie.min.js');
@@ -56,6 +87,20 @@ mix.scripts('resources/assets/plugins/yith-wishlist/js/jquery.yith-wcwl.js', 'pu
 mix.scripts('resources/assets/plugins/isotope/isotope.pkgd.min.js', 'public/plugins/isotope/isotope.pkgd.min.js');
 mix.scripts('resources/assets/plugins/waypoints/waypoints.min.js', 'public/plugins/waypoints/waypoints.min.js');
 mix.scripts('resources/assets/plugins/js_composer/js/js_composer_front.min.js', 'public/plugins/js_composer/js/js_composer_front.min.js');
+
+/*
+mix.scripts('resources/assets/plugins/js_composer/js/dist/frontend-editor.min.js', 'public/plugins/js_composer/js/dist/frontend-editor.min.js');
+mix.scripts('resources/assets/plugins/js_composer/js/frontend_editor/shortcodes/tta/tta_events.js', 'public/plugins/js_composer/js/frontend_editor/shortcodes/tta/tta_events.min.js');
+mix.scripts('resources/assets/plugins/js_composer/js/frontend_editor/shortcodes/tta/vc_tta_accordion.js', 'public/plugins/js_composer/js/frontend_editor/shortcodes/tta/vc_tta_accordion.min.js');
+mix.scripts('resources/assets/plugins/js_composer/js/frontend_editor/shortcodes/tta/vc_tta_pageable.js', 'public/plugins/js_composer/js/frontend_editor/shortcodes/tta/vc_tta_pageable.min.js');
+mix.scripts('resources/assets/plugins/js_composer/js/frontend_editor/shortcodes/tta/vc_tta_section.js', 'public/plugins/js_composer/js/frontend_editor/shortcodes/tta/vc_tta_section.min.js');
+mix.scripts('resources/assets/plugins/js_composer/js/frontend_editor/shortcodes/tta/vc_tta_tabs.js', 'public/plugins/js_composer/js/frontend_editor/shortcodes/tta/vc_tta_tabs.min.js');
+mix.scripts('resources/assets/plugins/js_composer/js/frontend_editor/shortcodes/tta/vc_tta_tour.js', 'public/plugins/js_composer/js/frontend_editor/shortcodes/tta/vc_tta_tour.min.js');
+*/
+
+
+
+
 mix.scripts('resources/assets/includes/underscore/js/underscore.min.js', 'public/includes/underscore/js/underscore.min.js');
 mix.scripts('resources/assets/includes/util/avd-util.min.js', 'public/includes/util/avd-util.min.js');
 mix.scripts('resources/assets/plugins/cart/js/add-to-cart-variation.js', 'public/plugins/cart/js/add-to-cart-variation.min.js');
@@ -89,5 +134,7 @@ mix.scripts('resources/assets/themes/js/functions.js', 'public/themes/js/functio
 
 mix.scripts('resources/assets/plugins/pagseguro/payment.js', 'public/plugins/pagseguro/payment.min.js');
 
+//Contact footer
+mix.scripts('resources/assets/plugins/avdesign/js/avd-tabs-accordion.js', 'public/plugins/avdesign/js/avd-tabs-accordion.min.js');
 
 

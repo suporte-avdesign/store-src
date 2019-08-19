@@ -99,120 +99,6 @@
                                             </form>
                                         </div>
 
-                                        <div class="u-column2 col-2 col-register">
-
-                                            <h2>{{constLang('register')}}</h2>
-
-                                            <form id="form_reg" method="post" action="{{route('register')}}" class="woocommerce-form woocommerce-form-register register">
-                                                @csrf
-
-                                                <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
-                                                    @foreach($profiles as $profile)
-                                                        @if($loop->first)
-                                                            <input type="radio" class="input-radio" id="profile_{{$profile->id}}" name="register[profile_id]" value="{{$profile->id}}" checked /> <b>{{$profile->name}}</b>
-                                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                                                        @endif
-                                                        @if($loop->last)
-                                                            <input type="radio" class="input-radio" id="profile_{{$profile->id}}" name="register[profile_id]" value="{{$profile->id}}" /> <b>{{$profile->name}}</b>
-                                                        @endif
-                                                    @endforeach
-                                                </p>
-
-                                                <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
-                                                    @foreach($types as $type)
-                                                        @if($loop->first)
-                                                            <input type="radio" class="input-radio" id="register_type_{{$type->id}}" name="register[type_id]" value="{{$type->id}}" checked /> <b>{{$type->name}}</b>
-                                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                                                        @endif
-                                                        @if($loop->last)
-                                                            <input type="radio" class="input-radio" id="register_type_{{$type->id}}" name="register[type_id]" value="{{$type->id}}" /> <b>{{$type->name}}</b>
-                                                        @endif
-                                                    @endforeach
-                                                </p>
-
-                                                <div id="person_legal" style="display:block">
-                                                    <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
-                                                        <label for="first_name_1">{{constLang('person_legal.first_name')}} &nbsp;<span class="required">*</span></label>
-                                                        <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" id="first_name_1" name="register[first_name_1]" value="" />
-                                                    </p>
-                                                    <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
-                                                        <label for="last_name_1">{{constLang('person_legal.last_name')}} &nbsp;<span class="required">*</span></label>
-                                                        <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" id="last_name_1" name="register[last_name_1]" value="" />
-                                                    </p>
-                                                    <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
-                                                        <label for="document1_1">{{constLang('person_legal.document1')}} &nbsp;<span class="required">*</span></label>
-                                                        <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" id="reg_document1_1" name="register[document1_1]" value="" />
-                                                    </p>
-                                                    <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
-                                                        <label for="document2_1">{{constLang('person_legal.document2')}} &nbsp;<span class="required">*</span></label>
-                                                        <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" id="document2_1" name="register[document2_1]" value="" />
-                                                    </p>
-                                                </div>
-
-                                                <div id="person_physical" style="display: none">
-                                                    <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
-                                                        <label for="first_name_2">{{constLang('person_physical.first_name')}} &nbsp;<span class="required">*</span></label>
-                                                        <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" id="first_name_2" name="register[first_name_2]" value="" />
-                                                    </p>
-                                                    <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
-                                                        <label for="last_name_2">{{constLang('person_physical.last_name')}} &nbsp;<span class="required">*</span></label>
-                                                        <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" id="last_name_2" name="register[last_name_2]" value="" />
-                                                    </p>
-                                                    <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
-                                                        <label for="document1_2">{{constLang('person_physical.document1')}} &nbsp;<span class="required">*</span></label>
-                                                        <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" id="reg_document1_2" name="register[document1_2]" value="" />
-                                                    </p>
-                                                    <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
-                                                        <label for="document2_2">{{constLang('person_physical.document2')}} &nbsp;<span class="required">*</span></label>
-                                                        <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" id="document2_2" name="register[document2_2]" value="" />
-                                                    </p>
-                                                </div>
-
-                                                <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
-                                                    <label for="reg_date">{{constLang('date_birth')}} &nbsp;<span class="required">*</span></label>
-                                                    <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" id="reg_date" name="register[date]" value="" />
-                                                </p>
-                                                <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
-                                                    <label for="reg_cell">{{constLang('cell')}}/Whatsapp <span class="required">*</span></label>
-                                                    <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" id="reg_cell" name="register[cell]" value="" />
-                                                </p>
-                                                <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
-                                                    <label for="reg_phone">{{constLang('other')}} {{constLang('phone')}}</label>
-                                                    <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" id="reg_phone" name="register[phone]" value="" />
-                                                </p>
-                                                <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
-                                                    <label for="reg_email">{{constLang('email')}} <span class="required">*</span></label>
-                                                    <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" id="reg_email" name="register[email]" autocomplete="email" value="" />
-                                                </p>
-
-
-
-                                                <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
-                                                    <label for="reg_password">{{constLang('password')}}&nbsp;<span class="required">*</span></label>
-                                                    <input type="password" class="woocommerce-Input woocommerce-Input--text input-text" id="reg_password" name="register[password]" value=""/>
-                                                </p>
-                                                <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
-                                                    <label for="reg_password_confirm">{{constLang('password_confirm')}} &nbsp;<span class="required">*</span></label>
-                                                    <input type="password" class="woocommerce-Input woocommerce-Input--text input-text" id="reg_password_confirm" name="register[password_confirmation]" value="" />
-                                                </p>
-
-                                                <div class="login-form-footer">
-                                                    <label for="newsletter" class="remember-me-label inline">
-                                                        <input class="woocommerce-form__input woocommerce-form__input-checkbox" name="register[newsletter]" type="checkbox" value="1" checked/>
-                                                        <span>{{constLang('messages.newsletter.register')}}</span>
-                                                    </label>
-                                                </div>
-
-                                                <div id="return-form_reg"></div>
-
-                                                <p class="woocommerce-FormRow form-row">
-                                                    <button type="button" id="form_reg-submit" class="woocommerce-Button button" onclick="postFormJson('form_reg')" value="{{constLang('send')}}">{{constLang('send')}}</button>
-                                                    <input type="hidden" name="new_account" value="1"/>
-                                                    <input type="hidden" name="http_referer" value="{{route('login')}}"/>
-                                                </p>
-
-                                            </form>
-                                        </div>
 
 
                                         <div class="col-2 col-register-text">
@@ -222,7 +108,7 @@
 
                                                 <div id="spoon-plugin-kncgbdglledmjmpnikebkagnchfdehbm-2" style="display: none;"></div>
                                             </div>
-                                            <a href="#" class="btn btn-color-black basel-switch-to-register" data-login="Login" data-register="{{constLang('registry')}}">{{constLang('registry')}}</a>
+                                            <a href="{{route('register')}}" class="btn btn-color-black" data-login="Login" data-register="{{constLang('registry')}}">{{constLang('registry')}}</a>
                                         </div>
                                     </div>
                                 </div>

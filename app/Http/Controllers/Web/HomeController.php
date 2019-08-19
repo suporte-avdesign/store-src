@@ -4,18 +4,36 @@ namespace AVD\Http\Controllers\Web;
 
 use AVD\Http\Controllers\Controller;
 
-use Illuminate\Http\Request;
+use AVD\Interfaces\Web\SectionInterface as InterSection;
+use AVD\Interfaces\Web\ConfigKeywordInterface as ConfigKeyword;
+
+
 
 class HomeController extends Controller
 {
+    public $content;
+    public $view = "frontend.home";
+
+
+
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(
+        InterSection $interSection,
+        ConfigKeyword $configKeyword)
     {
-        //$this->middleware('auth');
+        $this->middleware('guest');
+
+        $this->interSection           = $interSection;
+        $this->configKeyword          = $configKeyword;
+
+        $this->content = array(
+            "title" => "Bem vindo ao site da ".config('company.name'),
+        );
+
     }
 
     /**
@@ -26,7 +44,16 @@ class HomeController extends Controller
     public function index()
     {
 
-        return view('home.home-1');
+        $menu = $this->interSection->getMenu();
+
+        $content = typeJson($this->content);
+
+        $configKeyword = $this->configKeyword->random();
+
+
+
+        return view("{$this->view}.home-1", compact(
+            'menu','content','configKeyword'));
 
 
     }

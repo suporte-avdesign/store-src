@@ -35,6 +35,7 @@ class AppServiceProvider extends ServiceProvider
             'ConfigProfileClient',
             'ConfigShipping',
             'ConfigSite',
+            'ConfigSubjectContact',
             'Contact',
             'ContentTermsConditions',
             'ImageColor',

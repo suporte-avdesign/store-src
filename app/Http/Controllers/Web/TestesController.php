@@ -41,16 +41,12 @@ class TestesController extends Controller
         return view('frontend.testes.popoups', compact('menu'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function contato()
     {
-        //
+        $menu = $this->interSection->getMenu();
+        return view('frontend.testes.contato', compact('menu'));
     }
+
 
     /**
      * Display the specified resource.

@@ -12,7 +12,7 @@
 */
 
 
-Route::get('testes/popoups', 'Web\TestesController@popoups');
+Route::get('testes/contato', 'Web\TestesController@contato');
 Route::any('json', 'Web\JsonController@index')->name('json');
 
 Route::get('/', 'Web\HomeController@index')->name('home');
@@ -197,7 +197,7 @@ Route::get('politica-de-privacidade', 'Web\PagesController@privacy')->name('priv
 
 
 Route::get('contato', 'Web\ContactController@index')->name('contact');
-Route::post('contato', 'Web\ContactController@store')->name('contact.store');
+Route::post('contato', 'Web\ContactController@store')->name('contact');
 
 
 

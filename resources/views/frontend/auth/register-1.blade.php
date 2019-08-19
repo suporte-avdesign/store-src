@@ -88,8 +88,8 @@
                                                         <p class="form-row form-row-last validate-required">
                                                             <label for="document2_1">{{constLang('person_legal.document2')}}&nbsp;<span class="required">*</span></label>
                                                             <span class="woocommerce-input-wrapper">
-                                                            <input type="text" class="input-text" id="document2_1" name="register[document2_1]" autocomplete="off" value="" />
-                                                        </span>
+                                                                <input type="text" class="input-text" id="document2_1" name="register[document2_1]" autocomplete="off" value="" />
+                                                            </span>
                                                         </p>
                                                     </div>
                                                     <div id="person_physical" style="display: none">

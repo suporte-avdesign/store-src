@@ -10,15 +10,15 @@
                                     <img
                                             width="760"
                                             height="800"
-                                            src="{{asset('storage/faker/popup/news-later-popap-760x800.jpg')}}"
+                                            src="{{asset('faker/popup/news-later-popap-760x800.jpg')}}"
                                             class="vc_single_image-img attachment-full"
                                             alt=""
-                                            srcset="{{asset('storage/faker/popup/news-later-popap-760x800.jpg')}} 760w,
-                                                {{asset('storage/faker/popup/news-later-popap-285x300.jpg')}} 285w,
-                                                {{asset('storage/faker/popup/news-later-popap-270x284.jpg')}} 270w,
-                                                {{asset('storage/faker/popup/news-later-popap-266x280.jpg')}} 266w,
-                                                {{asset('storage/faker/popup/news-later-popap-263x277.jpg')}} 263w,
-                                                {{asset('storage/faker/popup/news-later-popap-526x554.jpg')}} 526w"
+                                            srcset="{{asset('faker/popup/news-later-popap-760x800.jpg')}} 760w,
+                                                {{asset('faker/popup/news-later-popap-285x300.jpg')}} 285w,
+                                                {{asset('faker/popup/news-later-popap-270x284.jpg')}} 270w,
+                                                {{asset('faker/popup/news-later-popap-266x280.jpg')}} 266w,
+                                                {{asset('faker/popup/news-later-popap-263x277.jpg')}} 263w,
+                                                {{asset('faker/popup/news-later-popap-526x554.jpg')}} 526w"
                                             sizes="(max-width: 760px) 100vw, 760px"
                                     />
                                 </div>
