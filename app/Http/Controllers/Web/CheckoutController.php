@@ -110,23 +110,19 @@ class CheckoutController extends Controller
         $json_locale    = $this->getLocale();
         $json_countries = $this->getCountries($states);
 
-
-        if (Auth::user()) {
-            $user_id = Auth::id();
-            $user    = $this->interUser->setId($user_id);
-            $adresses = $user->adresses()->orderBy('id','desc')->first();
-        } else {
-            $user = null;
-            $user_id = 0;
-            $adresses = null;
-        }
+        $user_id   = auth()->id();
+        $user      = $this->interUser->setId($user_id);
+        $adresses  = $user->adresses()->orderBy('id','desc')->first();
+        $transport = $user->transport()->orderBy('id','desc')->first();
 
         $configSite = $this->configSite->setId(1);
-        if ($user_id != 0 && $configSite->order == 'wishlist'){
+        if ($configSite->order == 'wishlist'){
             dd('Cart = Lista de desejo');
         } else {
             $cart = $this->interCart->getAll();
         }
+
+
 
         $total = $this->interCart->getTotal($cart);
         # Identificar qual método de pagamento e envio
@@ -137,7 +133,7 @@ class CheckoutController extends Controller
         return view("{$this->view}.checkout-1", compact(
             'user', 'menu', 'cart', 'total', 'types',
             'states', 'freight', 'adresses', 'profiles', 'json_locale',
-            'configPayment', 'configKeyword', 'configShipping',
+            'transport','configPayment', 'configKeyword', 'configShipping',
             'termsConditions','json_countries', 'method_selected', 'payment_selected')
         );
     }
@@ -399,67 +395,6 @@ class CheckoutController extends Controller
 
     }
 
-    /**
-     * Form de login do usuário
-     *
-     * @param Request $request
-     * @return View
-     */
-    public function login(Request $request)
-    {
-
-        $messages = [
-            'page.password.required' => constLang('validation.password.required'),
-            'page.email.required' => constLang('validation.email.required'),
-            'page.email.email' => constLang('validation.email.email'),
-            'page.email.exists' => constLang('messages.register.no_account')
-        ];
-
-        $validator = Validator::make($request->all(), [
-            'page.password' => 'required',
-            'page.email' => 'required|email|exists:users,email,active,'.constLang('active_true')
-        ],$messages);
-
-
-        if ($validator->fails()) {
-            return redirect('checkout')
-                ->withErrors($validator)
-                ->withInput();
-        }
-
-        $dataForm = $request['page'];
-        $email    = $dataForm['email'];
-        $password = $dataForm['password'];
-        $remember = (isset($dataForm['remember']) ? true : false);
-
-        $exist = $this->interUser->setEmail($email);
-        if ($exist) {
-            if ($exist->active == constLang('active_true')) {
-                if (Auth::attempt(['email' => $email, 'password' => $password ], $remember)) {
-                    if(Auth::check()) {
-                        $visits = $exist->visits + 1;
-                        $ip = $_SERVER['REMOTE_ADDR'];
-                        $access = [
-                            "visits" => $visits,
-                            "last_login	" => date('Y-m-d H:i:s'),
-                            "ip" => $ip
-                        ];
-                        $update = $this->interUser->access($access, $exist->id);
-                        if ($update)
-                            return $this->index();
-                    }
-                }
-            } else {
-                $message = 'Nome de usuário ou senha inválido. <a href="'.route('password.request').'">Esqueceu a senha?</a>';
-                $validator->errors()->add('inactive', $message);
-            }
-
-        } else {
-            $message = 'login';
-        }
-
-
-    }
 
     /**
      * Obrigatório para limitar as tentativas de accesso..
@@ -481,136 +416,70 @@ class CheckoutController extends Controller
     {
 
         $dataForm = $request->all();
-        $new_account = $request['new_account'];
         $shipping_method = $dataForm['shipping_method'][0];
-        $payment_method = $dataForm['payment_method'];
-        $order_comments = $dataForm['order_comments'];
+        $payment_method  = $dataForm['payment_method'];
+        $order_comments  = $dataForm['order_comments'];
 
         !empty($dataForm['transport']['indicate']) ? $indicate = $dataForm['transport']['indicate'] : $indicate = '';
         !empty($indicate) ? $name = $dataForm['transport']['name'] : $name = '';
         !empty($indicate) ? $phone = $dataForm['transport']['phone'] : $phone = '';
 
 
-        # create users and attributes
-        if ($new_account == 1) {
-           return $this->create($dataForm);
+        $changeUser = $this->update($dataForm);
 
+        $configSite = $this->configSite->setId(1);
+        if ($configSite->order == 'wishlist'){
+            dd('Cart = Lista de desejo');
         } else {
-
-            $changeUser = $this->update($dataForm);
-
-            $configSite = $this->configSite->setId(1);
-            if ($configSite->order == 'wishlist'){
-                dd('Cart = Lista de desejo');
-            } else {
-                $items = $this->interCart->getAll();
-            }
-            $price_card = 0;
-            $price_cash = 0;
-            foreach ($items as $item) {
-                $price_card += $item->price_card * $item->quantity;
-                $price_cash += $item->price_cash * $item->quantity;
-            }
-
-            $company = $this->getCompany($dataForm['payment_method']);
-            $company_name = $company->name;
-            if ($dataForm['payment_method'] == 'cash') {
-                $popup = 'cash';
-                $price = 'price_cash';
-            } elseif ($dataForm['payment_method'] == 'billet') {
-                $popup = 'billet';
-                $price = 'price_cash';
-            } elseif ($dataForm['payment_method'] == 'credit') {
-                $popup = 'credit';
-                $price = 'price_card';
-            } elseif ($dataForm['payment_method'] == 'debit') {
-                $popup = 'debit';
-                $price = 'price_card';
-            }
-
-            $user = auth()->user();
-
-            $freight = $this->calacular($items, $user, $price, $shipping_method);
-            $price == 'price_cash' ? $value = $price_cash : $value = $price_card;
-
-            $extraAmount = '0.00'; # Valor Taxa(+) ou -Desconto(-)
-            $maxInstallment = 2; # numero de parcelas sem juros
-            $freight = number_format($freight->valor, 2, '.', '.');
-
-
-
-
-            /*
-            $user = auth()->user();
-            $dataForm['payment_method'] == 3 ? $price = 'price_card' : $price = 'price_cash';
-            $shipping_method = $dataForm['shipping_method'][0];
-            $company = $this->getCompany($dataForm['payment_method']);
-            $cart = collect($items)->all();
-
-            $freight = $this->calacular($cart, $user, $price, $shipping_method);
-
-            $order = $this->interOrder->create($cart, $freight, $dataForm, $company);
-
-            $orderItems = $this->interOrderItems->create($cart, $order->id);
-
-            if ($dataForm['order_comments']) {
-                $orderNote = $this->interOrderNote->create($order->id, $dataForm['order_comments']);
-            }
-            # Transporte indicado pelo cliente
-            if (!empty($dataForm['transport']['indicate'])) {
-                $orderShipping = $this->interOrderShipping->create($dataForm['transport'], $order->id);
-            }
-
-            $remove = $this->interCart->destroy();
-            */
-
-            $form = view("{$this->viewPayment}.{$company->slug}.popup.{$popup}-1",
-                compact('shipping_method', 'payment_method', 'order_comments', 'maxInstallment',
-                   'company_name', 'indicate', 'name', 'phone', 'price', 'value', 'freight', 'extraAmount'))->render();
-
-            $out = array(
-                "result" => "payment",
-                "popup" => $popup,
-                "form" => $form
-            );
-
-            return response()->json($out);
+            $items = $this->interCart->getAll();
+        }
+        $price_card = 0;
+        $price_cash = 0;
+        foreach ($items as $item) {
+            $price_card += $item->price_card * $item->quantity;
+            $price_cash += $item->price_cash * $item->quantity;
         }
 
+        $company = $this->getCompany($dataForm['payment_method']);
+        $company_name = $company->name;
+        if ($dataForm['payment_method'] == 'cash') {
+            $popup = 'cash';
+            $price = 'price_cash';
+        } elseif ($dataForm['payment_method'] == 'billet') {
+            $popup = 'billet';
+            $price = 'price_cash';
+        } elseif ($dataForm['payment_method'] == 'credit') {
+            $popup = 'credit';
+            $price = 'price_card';
+        } elseif ($dataForm['payment_method'] == 'debit') {
+            $popup = 'debit';
+            $price = 'price_card';
+        }
 
+        $user = auth()->user();
+
+        $freight = $this->calacular($items, $user, $price, $shipping_method);
+        $price == 'price_cash' ? $value = $price_cash : $value = $price_card;
+
+        $extraAmount = '0.00'; # Valor Taxa(+) ou -Desconto(-)
+        $maxInstallment = 1; # numero de parcelas sem juros
+        $freight = number_format($freight->valor, 2, '.', '.');
+
+        $form = view("{$this->viewPayment}.{$company->slug}.popup.{$popup}-1",
+            compact('shipping_method', 'payment_method', 'order_comments', 'maxInstallment',
+               'company_name', 'indicate', 'name', 'phone', 'price', 'value', 'freight', 'extraAmount'))->render();
+
+        $out = array(
+            "result" => "payment",
+            "popup" => $popup,
+            "form" => $form
+        );
+
+        return response()->json($out);
 
     }
 
-    /**
-     * Cria o usuário e envia uma notificação para validação do email
-     *
-     * @param $dataForm
-     * @return \Illuminate\Http\JsonResponse
-     */
-    protected function create($dataForm)
-    {
-        $user = $this->interUser->create($dataForm['register']);
-        if ($user) {
 
-            event(new UserRegisteredCheckoutEvent($user));
-
-            $dataForm['address']['user_id'] = $user->id;
-            $address = $dataForm['address'];
-            $create_address = $this->interAddress->create($address);
-            if ($create_address) {
-                $message = "Falta pouco para concretizar a compra, entre no Email {$user->email} e clique em concluir cadastro.";
-                $messages = view("{$this->view}.messages.info-1", compact('message'))->render();
-                $out = array(
-                    "result" => "confirmation",
-                    "messages" => $messages,
-                    "refresh" => false,
-                    "reload" => false
-                );
-                return response()->json($out);
-            }
-
-        }
-    }
 
     /**
      * Verifica se houve alteração nos campos (user, address) e salva

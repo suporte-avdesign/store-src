@@ -68,7 +68,7 @@
     getInstallments = function (brandName, btn, cls) {
 
         var text_interest_true = ' '+_pagSeguroSettings.interest_true;
-        var text_interest_false = ' '+_pagSeguroSettings.interest_true;
+        var text_interest_false = ' '+_pagSeguroSettings.interest_false;
         var text_currency = _pagSeguroSettings.currency_x+' ';
         var text_option = '';
         PagSeguroDirectPayment.getInstallments({
@@ -80,7 +80,7 @@
                     data = obj[brandName];
                 console.log(data);
                 if (data.length > 0){
-
+                    $("#label1").text(_pagSeguroSettings.select_installments);
                     var option = [];
                     $.each(data, function(index, value){
                         var rst = value.totalAmount.toFixed(2);

@@ -1,5 +1,59 @@
 const mix = require('laravel-mix');
 
+
+/*
+ |--------------------------------------------------------------------------
+ | home-1
+ |--------------------------------------------------------------------------
+ */
+
+mix.scripts([
+    'resources/assets/scrips/head/js_active.js',
+    'resources/assets/scrips/head/MonsterInsights.js',
+    'resources/assets/includes/js/jquery/jquery-migrate.min.js',
+    'resources/assets/plugins/jquery-blockui/jquery.blockUI.min.js',
+    'resources/assets/plugins/cart/js/add-to-cart.js',
+    'resources/assets/plugins/cart/js/avd-add-to-cart.js',
+    'resources/assets/scrips/head/scrollMenu.js',
+    'resources/assets/scrips/head/setREVStartSize.min.js',
+    'resources/assets/scrips/carousel/carousel-home-first.js',
+    'resources/assets/scrips/carousel/carousel-home-second.js',
+    'resources/assets/scrips/carousel/carousel-home-third.js',
+    'resources/assets/footer/className.replace.js',
+    'resources/assets/scripts/revslider/revslider_showDoubleJqueryError.js',
+    'resources/assets/plugins/yith-wishlist/js/jquery.selectBox.min.js',
+    'resources/assets/plugins/yith-wishlist/js/jquery.yith-wcwl.js',
+    'resources/assets/includes/contact-form-7/js/scripts.js',
+    'resources/assets/plugins/revslider/js/jquery.themepunch.tools.min.js',
+    'resources/assets/plugins/revslider/js/jquery.themepunch.revolution.min.js',
+    'resources/assets/plugins/revslider/js/extensions/revolution.extension.actions.min.js',
+    'resources/assets/plugins/revslider/js/extensions/revolution.extension.carousel.min.js',
+    'resources/assets/plugins/revslider/js/extensions/revolution.extension.kenburn.min.js',
+    'resources/assets/plugins/revslider/js/extensions/revolution.extension.layeranimation.min.js',
+    'resources/assets/plugins/revslider/js/extensions/revolution.extension.navigation.min.js',
+    'resources/assets/plugins/revslider/js/extensions/revolution.extension.navigation.min.js',
+    'resources/assets/plugins/revslider/js/extensions/revolution.extension.parallax.min.js',
+    'resources/assets/plugins/revslider/js/extensions/revolution.extension.slideanims.min.js',
+    'resources/assets/plugins/revslider/js/extensions/revolution.extension.video.min.js',
+    'resources/assets/plugins/js-cookie/js.cookie.js',
+    'resources/assets/plugins/frontend/avdesign.js',
+    'resources/assets/plugins/cart/js/cart-fragments.js',
+    'resources/assets/plugins/isotope/isotope.pkgd.js', // Remover o min
+    'resources/assets/plugins/waypoints/waypoints.min.js',
+    'resources/assets/plugins/js_composer/js/dist/js_composer_front.min.js',
+    'resources/assets/themes/js/theme-org.js',
+    'resources/assets/includes/underscore/js/underscore.js',
+    'resources/assets/includes/util/avd-util.js',
+    'resources/assets/plugins/cart/js/add-to-cart-variation.js',
+    'resources/assets/scrips/head/rs-plugin-settings-inline-css.js',  // Talvez revslider e no head também
+    //'resources/assets/scripts/revslider/setREVStartSize.js',
+    'resources/assets/scripts/revslider/revsliderOnLoad.js',
+    'resources/assets/footer/mc4wp.js'
+], 'public/cache/js/home-1.min.js');
+
+
+
+
 /*
  |--------------------------------------------------------------------------
  | bootstrap, font-awesome
@@ -42,68 +96,49 @@ mix.copy('resources/assets/plugins/revslider/fonts/revicons', 'public/fonts/revi
 
 
 
-mix.scripts('resources/assets/plugins/revslider/js/jquery.themepunch.tools.min.js', 'public/plugins/revslider/js/jquery.themepunch.tools.min.js');
-mix.scripts('resources/assets/plugins/revslider/js/jquery.themepunch.revolution.min.js', 'public/plugins/revslider/js/jquery.themepunch.revolution.min.js');
-mix.scripts('resources/assets/plugins/revslider/js/extensions/revolution.extension.actions.min.js', 'public/plugins/revslider/js/extensions/revolution.extension.actions.min.js');
-mix.scripts('resources/assets/plugins/revslider/js/extensions/revolution.extension.carousel.min.js', 'public/plugins/revslider/js/extensions/revolution.extension.carousel.min.js');
-mix.scripts('resources/assets/plugins/revslider/js/extensions/revolution.extension.kenburn.min.js', 'public/plugins/revslider/js/extensions/revolution.extension.kenburn.min.js');
-mix.scripts('resources/assets/plugins/revslider/js/extensions/revolution.extension.layeranimation.min.js', 'public/plugins/revslider/js/extensions/revolution.extension.layeranimation.min.js');
-mix.scripts('resources/assets/plugins/revslider/js/extensions/revolution.extension.migration.min.js', 'public/plugins/revslider/js/extensions/revolution.extension.migration.min.js');
-mix.scripts('resources/assets/plugins/revslider/js/extensions/revolution.extension.navigation.min.js', 'public/plugins/revslider/js/extensions/revolution.extension.navigation.min.js');
-mix.scripts('resources/assets/plugins/revslider/js/extensions/revolution.extension.parallax.min.js', 'public/plugins/revslider/js/extensions/revolution.extension.parallax.min.js');
-mix.scripts('resources/assets/plugins/revslider/js/extensions/revolution.extension.slideanims.min.js', 'public/plugins/revslider/js/extensions/revolution.extension.slideanims.min.js');
-mix.scripts('resources/assets/plugins/revslider/js/extensions/revolution.extension.video.min.js', 'public/plugins/revslider/js/extensions/revolution.extension.video.min.js');
-
-
-
-
 
 
 
 mix.styles('resources/assets/themes/css/styles.css', 'public/themes/css/styles.min.css');
 mix.styles('resources/assets/themes/css/theme.css', 'public/themes/css/theme.css');
 
+
+
+mix.scripts([
+    'resources/assets/scrips/head/js_active.js',
+    'resources/assets/scrips/head/MonsterInsights.js',
+    'resources/assets/includes/js/jquery/jquery-migrate.min.js',
+    'resources/assets/plugins/jquery-blockui/jquery.blockUI.min.js',
+    'resources/assets/plugins/cart/js/add-to-cart.js',
+    'resources/assets/plugins/cart/js/avd-add-to-cart.js',
+    'resources/assets/scrips/head/scrollMenu.js',
+    'resources/assets/includes/contact-form-7/js/scripts.js',
+    'resources/assets/plugins/js-cookie/js.cookie.js',
+    'resources/assets/plugins/frontend/avdesign.js',
+    'resources/assets/plugins/cart/js/cart-fragments.js',
+    'resources/assets/plugins/yith-wishlist/js/jquery.selectBox.min.js',
+    'resources/assets/plugins/yith-wishlist/js/jquery.yith-wcwl.js',
+    'resources/assets/plugins/isotope/isotope.pkgd.js', // Remover o min
+    'resources/assets/plugins/waypoints/waypoints.min.js',
+    'resources/assets/plugins/js_composer/js/dist/js_composer_front.min.js',
+    'resources/assets/themes/js/theme-org.js',
+    'resources/assets/includes/underscore/js/underscore.js',
+    'resources/assets/includes/util/avd-util.js',
+    'resources/assets/plugins/cart/js/add-to-cart-variation.js',
+    'resources/assets/footer/mc4wp.js'
+], 'public/cache/js/main.min.js');
+
+
 // template
 mix.scripts('resources/assets/plugins/google/analytics-frontend.js', 'public/plugins/google/analytics-frontend.min.js');
 mix.scripts('resources/assets/includes/js/jquery/jquery.min.js', 'public/includes/js/jquery/jquery.min.js');
-mix.scripts('resources/assets/includes/js/jquery/jquery-migrate.min.js', 'public/includes/js/jquery/jquery-migrate.min.js');
-mix.scripts('resources/assets/plugins/jquery-blockui/jquery.blockUI.min.js', 'public/plugins/jquery-blockui/jquery.blockUI.min.js');
-mix.scripts('resources/assets/plugins/cart/js/add-to-cart.js', 'public/plugins/cart/js/add-to-cart.min.js');
-mix.scripts('resources/assets/plugins/cart/js/avd-add-to-cart.js', 'public/plugins/cart/js/avd-add-to-cart.js');
 mix.scripts('resources/assets/themes/js/html5.min.js', 'public/themes/js/html5.min.js');
 mix.scripts('resources/assets/themes/js/device.min.js', 'public/themes/js/device.min.js');
-mix.scripts('resources/assets/themes/js/theme-org.js', 'public/themes/js/theme.min.js');
 
 
 
 
-//footer
-mix.scripts('resources/assets/includes/contact-form-7/js/scripts.js', 'public/includes/contact-form-7/js/scripts.js');
-mix.scripts('resources/assets/plugins/js-cookie/js.cookie.min.js', 'public/plugins/js-cookie/js.cookie.min.js');
-mix.scripts('resources/assets/plugins/frontend/avdesign.js', 'public/plugins/frontend/avdesign.min.js');
-mix.scripts('resources/assets/plugins/cart/js/cart-fragments.min.js', 'public/plugins/cart/js/cart-fragments.min.js');
-mix.scripts('resources/assets/plugins/yith-wishlist/js/jquery.selectBox.min.js', 'public/plugins/yith-wishlist/js/jquery.selectBox.min.js');
-mix.scripts('resources/assets/plugins/yith-wishlist/js/jquery.yith-wcwl.js', 'public/plugins/yith-wishlist/js/jquery.yith-wcwl.js');
-mix.scripts('resources/assets/plugins/isotope/isotope.pkgd.min.js', 'public/plugins/isotope/isotope.pkgd.min.js');
-mix.scripts('resources/assets/plugins/waypoints/waypoints.min.js', 'public/plugins/waypoints/waypoints.min.js');
-mix.scripts('resources/assets/plugins/js_composer/js/js_composer_front.min.js', 'public/plugins/js_composer/js/js_composer_front.min.js');
 
-/*
-mix.scripts('resources/assets/plugins/js_composer/js/dist/frontend-editor.min.js', 'public/plugins/js_composer/js/dist/frontend-editor.min.js');
-mix.scripts('resources/assets/plugins/js_composer/js/frontend_editor/shortcodes/tta/tta_events.js', 'public/plugins/js_composer/js/frontend_editor/shortcodes/tta/tta_events.min.js');
-mix.scripts('resources/assets/plugins/js_composer/js/frontend_editor/shortcodes/tta/vc_tta_accordion.js', 'public/plugins/js_composer/js/frontend_editor/shortcodes/tta/vc_tta_accordion.min.js');
-mix.scripts('resources/assets/plugins/js_composer/js/frontend_editor/shortcodes/tta/vc_tta_pageable.js', 'public/plugins/js_composer/js/frontend_editor/shortcodes/tta/vc_tta_pageable.min.js');
-mix.scripts('resources/assets/plugins/js_composer/js/frontend_editor/shortcodes/tta/vc_tta_section.js', 'public/plugins/js_composer/js/frontend_editor/shortcodes/tta/vc_tta_section.min.js');
-mix.scripts('resources/assets/plugins/js_composer/js/frontend_editor/shortcodes/tta/vc_tta_tabs.js', 'public/plugins/js_composer/js/frontend_editor/shortcodes/tta/vc_tta_tabs.min.js');
-mix.scripts('resources/assets/plugins/js_composer/js/frontend_editor/shortcodes/tta/vc_tta_tour.js', 'public/plugins/js_composer/js/frontend_editor/shortcodes/tta/vc_tta_tour.min.js');
-*/
-
-
-
-
-mix.scripts('resources/assets/includes/underscore/js/underscore.min.js', 'public/includes/underscore/js/underscore.min.js');
-mix.scripts('resources/assets/includes/util/avd-util.min.js', 'public/includes/util/avd-util.min.js');
-mix.scripts('resources/assets/plugins/cart/js/add-to-cart-variation.js', 'public/plugins/cart/js/add-to-cart-variation.min.js');
 
 //Product footer
 mix.scripts('resources/assets/plugins/zoom/js/jquery.zoom.js', 'public/plugins/zoom/js/jquery.zoom.min.js');

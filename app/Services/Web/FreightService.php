@@ -637,7 +637,7 @@ class FreightService
             $value = $value_text.' '. setReal($value);
 
             $message = 'response_freight';
-            $response = view('frontend.messages.success-1', compact(
+            $response = view('frontend.carts.messages.success-1', compact(
                 'message',
                 'value',
                 'days',

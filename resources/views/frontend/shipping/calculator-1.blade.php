@@ -72,10 +72,11 @@
                         <p class="form-row form-row-wide" id="calc_shipping_postcode_field">
                             <input type="text" class="input-text" value="" placeholder="{{constLang('zip_code')}}" name="calc_shipping_postcode" id="calc_shipping_postcode" />
                         </p>
+                        <div id="response-freight"></div>
                         <p><button type="submit" name="calc_shipping" value="1" class="button">{{constLang('messages.shipping.update')}}</button></p>
                         <input type="hidden" id="woocommerce-shipping-calculator-nonce" name="woocommerce-shipping-calculator-nonce" value="{{numLetter('cart_'.time(),'leter')}}" />
                         <input type="hidden" name="http_referer" value="cart" />
-                        <div id="response-freight"></div>
+
                     </section>
                 </form>
             </td>

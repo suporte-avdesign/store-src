@@ -140,8 +140,6 @@ jQuery( function( $ ) {
 
             if ( $( this ).is( ':checked' ) ) {
                 // Ensure password is not pre-populated.
-                $( '#transport_nome' ).val( '' ).change();
-                $( '#transport_phone' ).val( '' ).change();
                 $( 'div.indicate_transport' ).slideDown();
             }
         },

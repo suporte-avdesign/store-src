@@ -74,6 +74,7 @@ class PagSeguroController extends Controller
      */
     public function cardTransaction(CreditRequest $request)
     {
+
         try{
             DB::beginTransaction();
 

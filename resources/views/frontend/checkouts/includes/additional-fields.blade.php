@@ -9,14 +9,30 @@
     <div class="indicate_transport" style="display:none">
         <div class="woocommerce-shipping-fields__field-wrapper">
 
-            <p class="form-row form-row-first validate-required">
-                <label for="transport_name" class="">{{constLang('name')}} <span class="required">*</span></label>
-                <input type="text" class="input-text" id="transport_name" autocomplete="off" name="transport[name]" value=""/>
-            </p>
-            <p class="form-row form-row-last validate-required">
-                <label for="transport_phone" class="">{{constLang('phone')}}&nbsp;<span class="required">*</span></label>
-                <input type="text" class="input-text" id="transport_phone" name="transport[phone]" autocomplete="off" value="" />
-            </p>
+            @if(empty($transport))
+
+                <p class="form-row form-row-first validate-required">
+                    <label for="transport_name" class="">{{constLang('name')}} <span class="required">*</span></label>
+                    <input type="text" class="input-text" id="transport_name" autocomplete="off" name="transport[name]" value=""/>
+                </p>
+                <p class="form-row form-row-last validate-required">
+                    <label for="transport_phone" class="">{{constLang('phone')}}&nbsp;<span class="required">*</span></label>
+                    <input type="text" class="input-text" id="transport_phone" name="transport[phone]" autocomplete="off" value=""/>
+                </p>
+
+             @else
+
+                <p class="form-row form-row-first validate-required">
+                    <label for="transport_name" class="">{{constLang('name')}} <span class="required">*</span></label>
+                    <input type="text" class="input-text" id="transport_name" name="transport[name]" value="{{$transport->name}}"/>
+                </p>
+                <p class="form-row form-row-last validate-required">
+                    <label for="transport_phone" class="">{{constLang('phone')}}&nbsp;<span class="required">*</span></label>
+                    <input type="text" class="input-text" id="transport_phone" name="transport[phone2]" value="{{$transport->phone}}"/>
+                </p>
+
+            @endif
+
         </div>
     </div>
 </div>

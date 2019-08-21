@@ -25,10 +25,8 @@ class HomeController extends Controller
         InterSection $interSection,
         ConfigKeyword $configKeyword)
     {
-        $this->middleware('guest');
-
-        $this->interSection           = $interSection;
-        $this->configKeyword          = $configKeyword;
+        $this->interSection  = $interSection;
+        $this->configKeyword = $configKeyword;
 
         $this->content = array(
             "title" => "Bem vindo ao site da ".config('company.name'),

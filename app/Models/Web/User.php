@@ -91,6 +91,16 @@ class User extends Authenticatable
     }
 
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function transport()
+    {
+        return $this->hasMany(UserTransport::class);
+    }
+
+
+
 
 
 

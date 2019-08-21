@@ -109,8 +109,8 @@ class RegisterController extends Controller
 
 
         return view("{$this->view}.register-1", compact(
-            'menu', 'types','states', 'content','adresses','profiles',
-            'json_locale','configKeyword','json_countries','method_selected'));
+            'menu', 'types','states', 'content','profiles',
+            'json_locale','configKeyword','json_countries'));
     }
 
 
@@ -153,7 +153,7 @@ class RegisterController extends Controller
             DB::commit();
 
             $email   = $user->email;
-            $message = view("$this->view.render.register-success-1", compact('email','message'))->render();
+            $message = view("$this->view.render.register-success-1", compact('email'))->render();
             $out = array(
                 'result' => 'success',
                 'success' => $message
@@ -163,7 +163,7 @@ class RegisterController extends Controller
 
         } catch(\Exception $e){
             DB::rollback();
-            //return $e->getMessage();
+            return $e->getMessage();
             $message = view("$this->view.render.register-error-1")->render();
 
             $out = array(

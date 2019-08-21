@@ -77,14 +77,6 @@
             </div>
 
             <button type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="Finalizar Pedido" data-value="Finalizar Pedido">Finalizar Pedido</button>
-            @auth
-                <input type="hidden" name="new_account" value="0"/>
-                <input type="hidden" name="register[type_id]" value="{{Auth::user()->type_id}}"/>
-                <input type="hidden" name="register[profile_id]" value="{{Auth::user()->profile_id}}"/>
-
-            @else
-                <input type="hidden" name="new_account" value="1"/>
-            @endauth
             <input type="hidden" name="http_referer" value="checkout"/>
         </div>
    @endif

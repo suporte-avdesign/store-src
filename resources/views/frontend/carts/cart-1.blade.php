@@ -187,7 +187,7 @@
         "csrf_token" => csrf_token()
      ]) !!}
 </script>
-<script type="text/javascript" src="{{asset('plugins/cart/js/cart.js')}}"></script>
+<script type="text/javascript" src="{{asset('plugins/cart/js/cart.js')}}?{{time()}}"></script>
 <script type="text/javascript" src="{{asset('plugins/select2/js/select2.full.min.js')}}"></script>
 <script type="text/javascript">
     var pwsL10n = {!! json_encode([

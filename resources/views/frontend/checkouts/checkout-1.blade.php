@@ -56,10 +56,12 @@
                                     </ul>
                                 </div>
                             @enderror
-                            <!-- FORM LOGIN -->
-                            @include('frontend.checkouts.includes.form-login-1')
-                            <!-- FORM COUPON -->
-                            @include('frontend.coupons.coupon-checkout-1')
+                            <!-- FORM LOGIN
+                            include('frontend.checkouts.includes.form-login-1')
+                            ->
+                            <!-- FORM COUPON
+                            include('frontend.coupons.coupon-checkout-1')
+                            -->
 
                             <div class="row">
                                 <form id="form-checkout" name="checkout" method="post" class="checkout woocommerce-checkout" action="{{route('checkout')}}" enctype="multipart/form-data">
@@ -68,11 +70,7 @@
                                         <div class="row" id="customer_details">
                                             <div class="col-sm-12">
                                                 <div class="woocommerce-billing-fields">
-                                                    @auth
-                                                        @include('frontend.checkouts.includes.form-logged-1')
-                                                    @else
-                                                        @include('frontend.checkouts.includes.form-register-1')
-                                                    @endauth
+                                                    @include('frontend.checkouts.includes.form-customer-1')
                                                 </div>
                                             </div>
                                             <div class="col-sm-12">
@@ -151,6 +149,7 @@
         "checkout_url" => route('checkout.store'),
         "is_checkout" => "1",
         "debug_mode" => "",
+        "transport_phone" => $user->transport_phone,
         "csrf_token" => csrf_token(),
         "i18n_checkout_error" => constLang('messages.checkouts.error')
     ]) !!}
@@ -161,7 +160,7 @@
 <script type="text/javascript" src="{{asset('themes/js/functions.min.js')}}"></script>
 <script type='text/javascript'>
     jQuery( document ).ready(function($) {
-        $("#transport_phone").mask('(99) 9999-9999?9');
+        $("#transport_phone").mask('(99)9999-9999?9');
         $("#reg_phone").mask('(99)9999-9999?9');
         $("#reg_cell").mask('(99)99999-9999');
         $("#reg_date").mask('99/99/9999');
