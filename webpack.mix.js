@@ -6,6 +6,11 @@ const mix = require('laravel-mix');
  | home-1
  |--------------------------------------------------------------------------
  */
+mix.styles('resources/assets/plugins/revslider/css/settings.css', 'public/plugins/revslider/css/settings.min.css');
+mix.styles('resources/assets/themes/css/theme-home-1.css', 'public/themes/css/home-1-min.css');
+mix.copy('resources/assets/plugins/revslider/fonts/pe-icon-7-stroke', 'public/plugins/revslider/fonts/pe-icon-7-stroke');
+mix.copy('resources/assets/plugins/revslider/fonts/revicons', 'public/plugins/revslider/fonts/revicons');
+mix.copy('resources/assets/plugins/revslider', 'public/revslider');
 
 mix.scripts([
     'resources/assets/scrips/head/js_active.js',
@@ -15,7 +20,7 @@ mix.scripts([
     'resources/assets/plugins/cart/js/add-to-cart.js',
     'resources/assets/plugins/cart/js/avd-add-to-cart.js',
     'resources/assets/scrips/head/scrollMenu.js',
-    'resources/assets/scrips/head/setREVStartSize.min.js',
+    'resources/assets/scrips/revslider/setREVStartSize.min.js',
     'resources/assets/scrips/carousel/carousel-home-first.js',
     'resources/assets/scrips/carousel/carousel-home-second.js',
     'resources/assets/scrips/carousel/carousel-home-third.js',
@@ -45,11 +50,10 @@ mix.scripts([
     'resources/assets/includes/underscore/js/underscore.js',
     'resources/assets/includes/util/avd-util.js',
     'resources/assets/plugins/cart/js/add-to-cart-variation.js',
-    'resources/assets/scrips/head/rs-plugin-settings-inline-css.js',  // Talvez revslider e no head também
-    //'resources/assets/scripts/revslider/setREVStartSize.js',
+    'resources/assets/scrips/revslider/rs-plugin-settings-inline-css.js',  // Talvez revslider e no head também
     'resources/assets/scripts/revslider/revsliderOnLoad.js',
     'resources/assets/footer/mc4wp.js'
-], 'public/cache/js/home-1.min.js');
+], 'public/cache/js/home-1.min.js').version();
 
 
 
@@ -88,11 +92,8 @@ mix.styles('resources/assets/plugins/mailchimp/css/form-basic.min.css', 'public/
 mix.styles('resources/assets/css/main.css', 'public/css/main.css');
 
 
-// Home
-mix.styles('resources/assets/plugins/revslider/css/settings.css', 'public/plugins/revslider/css/settings.min.css');
-mix.styles('resources/assets/themes/css/theme-home-1.css', 'public/themes/css/home-1-min.css');
-mix.copy('resources/assets/plugins/revslider/fonts/pe-icon-7-stroke', 'public/fonts/pe-icon-7-stroke');
-mix.copy('resources/assets/plugins/revslider/fonts/revicons', 'public/fonts/revicons');
+
+
 
 
 

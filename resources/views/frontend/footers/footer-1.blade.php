@@ -85,7 +85,14 @@
                             <p><i class="fa fa-whatsapp" style="width: 15px; text-align: center; marright-columnsight: 4px; color: #ffffff;"></i> WhatsApp: {{env('WHATSAPP')}}<br></p>
                         </div>
                         <br>
-                        <p><img width="100px" src="{{asset('themes/images/payments.png')}}"></p>
+                        <p>
+                            <img id="visa" src="{{asset('themes/images/payment/visa.gif')}}" width="50" alt="Visa" />
+                            <img id="mastercard" src="{{asset('themes/images/payment/master.gif')}}" width="50" alt="Mastercard" />
+                            <img id="diners" src="{{asset('themes/images/payment/diners.gif')}}" width="50" alt=" Diners Club" />
+                            <img id="hipercard" src="{{asset('themes/images/payment/hipercard.gif')}}" width="50" alt="Hipercard" />
+                            <img id="amex" src="{{asset('themes/images/payment/amex.gif')}}" width="50" alt="American Express" />
+                            <img id="elo" src="{{asset('themes/images/payment/elo.gif')}}" width="50" alt="ELO" >
+                        </p>
                     </div>
                 </div>
             </div>

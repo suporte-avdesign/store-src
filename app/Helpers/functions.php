@@ -36,6 +36,21 @@ if ( !function_exists('returnNumber'))
 }
 
 
+/**
+ * Retorna o número do DDD do telefone;
+ */
+if ( !function_exists('titleImage'))
+{
+    function titleImage($str)
+    {
+        $name  = substr($str, 0 , -4);
+        $words =  preg_replace('/\d+/u', '', $name);
+        return  str_replace('-', ' ', $words);
+
+    }
+}
+
+
 
 
 /**
