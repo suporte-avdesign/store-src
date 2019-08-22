@@ -24,22 +24,22 @@ class PaymentCompanyRepository implements PaymentCompanyInterface
 
     public function getCash()
     {
-        return $this->model->where('cash',1)->firstOrFail();
+        return $this->model->where('cash',1)->first();
     }
 
     public function getBillet()
     {
-        return $this->model->where('billet',1)->firstOrFail();
+        return $this->model->where('billet',1)->first();
     }
 
     public function getCredit()
     {
-        return $this->model->where('credit',1)->firstOrFail();
+        return $this->model->where('credit',1)->first();
     }
 
     public function getDebit()
     {
-        return $this->model->where('debit',1)->firstOrFail();
+        return $this->model->where('debit',1)->first();
     }
 
 

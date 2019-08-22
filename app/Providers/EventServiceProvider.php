@@ -15,6 +15,9 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
+        'AVD\Events\SendContactEvent' => [
+            'AVD\Listeners\SendContactListener',
+        ],
         'AVD\Events\UserRegisteredEvent' => [
             'AVD\Listeners\UserRegisteredSendMailListener',
         ],
@@ -28,11 +31,9 @@ class EventServiceProvider extends ServiceProvider
         'AVD\Events\UserRegisterConfirmedEvent' => [
             'AVD\Listeners\UserRegisterConfirmedListener',
         ],
-
         'AVD\Events\UserRegisteredCheckoutEvent' => [
             'AVD\Listeners\UserRegisteredCheckoutSendMailListener',
         ]
-
 
     ];
 

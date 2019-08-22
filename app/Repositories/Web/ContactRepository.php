@@ -32,4 +32,5 @@ class ContactRepository implements ContactInterface
         return $this->model->create($input);
     }
 
+
 }

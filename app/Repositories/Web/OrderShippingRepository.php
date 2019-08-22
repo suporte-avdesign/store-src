@@ -35,7 +35,7 @@ class OrderShippingRepository implements OrderShippingInterface
 
     public function setOrder($order_id)
     {
-        return $this->model->where('order_id', $order_id)->firstOrFail();
+        return $this->model->where('order_id', $order_id)->first();
     }
 
 

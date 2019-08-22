@@ -59,13 +59,13 @@ class UserRepository implements UserInterface
 
     public function setEmail($email)
     {
-        return $this->model->where('email', $email)->firstOrFail();
+        return $this->model->where('email', $email)->first();
     }
 
 
     public function setToken($token)
     {
-        return $this->model->where('token', $token)->firstOrFail();
+        return $this->model->where('token', $token)->first();
     }
 
 

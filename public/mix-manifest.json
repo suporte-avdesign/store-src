@@ -30,6 +30,7 @@
     "/plugins/select2/js/select2.full.min.js": "/plugins/select2/js/select2.full.min.js?id=6139bd8ff1780a5b16dd",
     "/plugins/checkout/checkout.min.js": "/plugins/checkout/checkout.min.js?id=fb7452c5e4e8786d53af",
     "/plugins/account/register.min.js": "/plugins/account/register.min.js?id=fcea182e693e2b0cfaaa",
+    "/plugins/contacts/contact.min.js": "/plugins/contacts/contact.min.js?id=821ba18c132fd75181eb",
     "/includes/zxcvbn/js/password-strength-meter.min.js": "/includes/zxcvbn/js/password-strength-meter.min.js?id=2e93c2ca119b767899d4",
     "/plugins/jquery-maskedinput/jquery.maskedinput.min.js": "/plugins/jquery-maskedinput/jquery.maskedinput.min.js?id=093a010e0343d1ef3257",
     "/themes/js/functions.min.js": "/themes/js/functions.min.js?id=97fe0a10ab729c1e65ac",

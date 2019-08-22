@@ -5,6 +5,7 @@ namespace AVD\Repositories\Web;
 
 use AVD\Models\Web\ConfigSubjectContact as Model;
 use AVD\Interfaces\Web\ConfigSubjectContactInterface;
+use Illuminate\Support\Facades\Auth;
 
 
 class ConfigSubjectContactRepository implements ConfigSubjectContactInterface
@@ -41,6 +42,5 @@ class ConfigSubjectContactRepository implements ConfigSubjectContactInterface
             ->where('active', constLang('active_true'))
             ->get();
     }
-
 
 }

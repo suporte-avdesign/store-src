@@ -60,7 +60,7 @@ class NewsletterRepository implements NewsletterInterface
 
     public function exist($input)
     {
-        return $this->model->where('email', $input['email'])->firstOrFail();
+        return $this->model->where('email', $input['email'])->first();
     }
 
 

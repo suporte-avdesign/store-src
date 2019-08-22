@@ -24,7 +24,7 @@ class OrderRepository implements OrderInterface
 
     public function newOrder($reference, $token)
     {
-        return $this->model->where(['reference' => $reference, 'token' => $token])->firstOrFail();
+        return $this->model->where(['reference' => $reference, 'token' => $token])->first();
     }
 
     /**

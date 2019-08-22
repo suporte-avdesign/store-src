@@ -471,8 +471,15 @@ return [
             'title_method' => 'Método de Pagamento',
         ],
         'contact' => [
+            'btn_send' => 'Enviar',
+            'title' => 'Fale Conosco',
+            'sub_title' => 'Contacte-nos para todas as perguntas',
+            'error_json' => 'Erro: josn inválido',
+            'placeholder_subject' => 'Selecione um',
+            'send_error' => 'Não foi possível processar sua mensagem. Tente novamente mais tarde.',
             'success_text1' => 'sua mensagem foi enviada com sucesso!',
             'success_text2' => 'Alguém de nossa equipe entrará em contato com você.',
+            ''
         ]
     ]
 ];

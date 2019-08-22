@@ -31,7 +31,7 @@ class ConfigKeywordRepository implements ConfigKeywordInterface
      */
     public function random()
     {
-        return $this->model->inRandomOrder()->firstOrFail();
+        return $this->model->inRandomOrder()->first();
     }
 
     /**

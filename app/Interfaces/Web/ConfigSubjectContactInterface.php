@@ -11,5 +11,4 @@ interface ConfigSubjectContactInterface
      */
     public function setId($id);
     public function getAll();
-
 }

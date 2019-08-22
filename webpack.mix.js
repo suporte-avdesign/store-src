@@ -161,6 +161,8 @@ mix.scripts('resources/assets/plugins/checkout/checkout.js', 'public/plugins/che
 //Account footer
 mix.scripts('resources/assets/plugins/account/register.js', 'public/plugins/account/register.min.js');
 
+mix.scripts('resources/assets/plugins/contacts/contact.js', 'public/plugins/contacts/contact.min.js');
+
 
 //Login head
 mix.scripts('resources/assets/includes/zxcvbn/js/zxcvbn-async.js', 'public/includes/zxcvbn/js/zxcvbn-async.min.js');
