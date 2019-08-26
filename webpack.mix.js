@@ -52,6 +52,7 @@ mix.scripts([
     'resources/assets/plugins/cart/js/add-to-cart-variation.js',
     'resources/assets/scrips/revslider/rs-plugin-settings-inline-css.js',  // Talvez revslider e no head também
     'resources/assets/scripts/revslider/revsliderOnLoad.js',
+    'resources/assets/themes/js/functions.js',
     'resources/assets/footer/mc4wp.js'
 ], 'public/cache/js/home-1.min.js').version();
 
@@ -126,6 +127,7 @@ mix.scripts([
     'resources/assets/includes/underscore/js/underscore.js',
     'resources/assets/includes/util/avd-util.js',
     'resources/assets/plugins/cart/js/add-to-cart-variation.js',
+    'resources/assets/themes/js/functions.js',
     'resources/assets/footer/mc4wp.js'
 ], 'public/cache/js/main.min.js');
 
@@ -160,6 +162,8 @@ mix.scripts('resources/assets/plugins/checkout/checkout.js', 'public/plugins/che
 
 //Account footer
 mix.scripts('resources/assets/plugins/account/register.js', 'public/plugins/account/register.min.js');
+mix.scripts('resources/assets/plugins/account/address.js', 'public/plugins/account/address.min.js');
+mix.scripts('resources/assets/plugins/account/profile.js', 'public/plugins/account/profile.min.js');
 
 mix.scripts('resources/assets/plugins/contacts/contact.js', 'public/plugins/contacts/contact.min.js');
 
@@ -168,7 +172,6 @@ mix.scripts('resources/assets/plugins/contacts/contact.js', 'public/plugins/cont
 mix.scripts('resources/assets/includes/zxcvbn/js/zxcvbn-async.js', 'public/includes/zxcvbn/js/zxcvbn-async.min.js');
 mix.scripts('resources/assets/includes/zxcvbn/js/password-strength-meter.js', 'public/includes/zxcvbn/js/password-strength-meter.min.js');
 mix.scripts('resources/assets/plugins/jquery-maskedinput/jquery.maskedinput.min.js', 'public/plugins/jquery-maskedinput/jquery.maskedinput.min.js');
-mix.scripts('resources/assets/themes/js/functions.js', 'public/themes/js/functions.min.js');
 
 mix.scripts('resources/assets/plugins/pagseguro/payment.js', 'public/plugins/pagseguro/payment.min.js');
 

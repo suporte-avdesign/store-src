@@ -1,0 +1,661 @@
+[2019-08-24 11:12:24][147] Processing: AVD\Listeners\UserRegisteredNoteListener
+[2019-08-24 11:12:24][147] Failed:     AVD\Listeners\UserRegisteredNoteListener
+
+   UnexpectedValueException  : The stream or file "/home/avdesign/Projects/saoroque/storage/logs/laravel-2019-08-24.log" could not be opened: failed to open stream: Permission denied
+
+  at /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+    103|             }
+    104|             restore_error_handler();
+    105|             if (!is_resource($this->stream)) {
+    106|                 $this->stream = null;
+  > 107|                 throw new \UnexpectedValueException(sprintf('The stream or file "%s" could not be opened: '.$this->errorMessage, $this->url));
+    108|             }
+    109|         }
+    110| 
+    111|         if ($this->useLocking) {
+
+  Exception trace:
+
+  1   Monolog\Handler\StreamHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/RotatingFileHandler.php:119
+
+  2   Monolog\Handler\RotatingFileHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php:39
+
+  Please use the argument -v to see more details.
+[2019-08-24 12:00:44][148] Processing: AVD\Listeners\UserRegisteredNoteListener
+
+   UnexpectedValueException  : The stream or file "/home/avdesign/Projects/saoroque/storage/logs/laravel-2019-08-24.log" could not be opened: failed to open stream: Permission denied
+
+  at /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+    103|             }
+    104|             restore_error_handler();
+    105|             if (!is_resource($this->stream)) {
+    106|                 $this->stream = null;
+  > 107|                 throw new \UnexpectedValueException(sprintf('The stream or file "%s" could not be opened: '.$this->errorMessage, $this->url));
+    108|             }
+    109|         }
+    110| 
+    111|         if ($this->useLocking) {
+
+  Exception trace:
+
+  1   Monolog\Handler\StreamHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/RotatingFileHandler.php:119
+
+  2   Monolog\Handler\RotatingFileHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php:39
+
+  Please use the argument -v to see more details.
+[2019-08-24 12:00:45][149] Processing: AVD\Listeners\UserRegisteredNoteListener
+
+   UnexpectedValueException  : The stream or file "/home/avdesign/Projects/saoroque/storage/logs/laravel-2019-08-24.log" could not be opened: failed to open stream: Permission denied
+
+  at /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+    103|             }
+    104|             restore_error_handler();
+    105|             if (!is_resource($this->stream)) {
+    106|                 $this->stream = null;
+  > 107|                 throw new \UnexpectedValueException(sprintf('The stream or file "%s" could not be opened: '.$this->errorMessage, $this->url));
+    108|             }
+    109|         }
+    110| 
+    111|         if ($this->useLocking) {
+
+  Exception trace:
+
+  1   Monolog\Handler\StreamHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/RotatingFileHandler.php:119
+
+  2   Monolog\Handler\RotatingFileHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php:39
+
+  Please use the argument -v to see more details.
+[2019-08-24 12:00:45][150] Processing: AVD\Listeners\UserRegisteredNoteListener
+[2019-08-24 12:00:45][150] Failed:     AVD\Listeners\UserRegisteredNoteListener
+
+   UnexpectedValueException  : The stream or file "/home/avdesign/Projects/saoroque/storage/logs/laravel-2019-08-24.log" could not be opened: failed to open stream: Permission denied
+
+  at /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+    103|             }
+    104|             restore_error_handler();
+    105|             if (!is_resource($this->stream)) {
+    106|                 $this->stream = null;
+  > 107|                 throw new \UnexpectedValueException(sprintf('The stream or file "%s" could not be opened: '.$this->errorMessage, $this->url));
+    108|             }
+    109|         }
+    110| 
+    111|         if ($this->useLocking) {
+
+  Exception trace:
+
+  1   Monolog\Handler\StreamHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/RotatingFileHandler.php:119
+
+  2   Monolog\Handler\RotatingFileHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php:39
+
+  Please use the argument -v to see more details.
+[2019-08-24 12:03:49][151] Processing: AVD\Listeners\UserRegisteredNoteListener
+
+   UnexpectedValueException  : The stream or file "/home/avdesign/Projects/saoroque/storage/logs/laravel-2019-08-24.log" could not be opened: failed to open stream: Permission denied
+
+  at /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+    103|             }
+    104|             restore_error_handler();
+    105|             if (!is_resource($this->stream)) {
+    106|                 $this->stream = null;
+  > 107|                 throw new \UnexpectedValueException(sprintf('The stream or file "%s" could not be opened: '.$this->errorMessage, $this->url));
+    108|             }
+    109|         }
+    110| 
+    111|         if ($this->useLocking) {
+
+  Exception trace:
+
+  1   Monolog\Handler\StreamHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/RotatingFileHandler.php:119
+
+  2   Monolog\Handler\RotatingFileHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php:39
+
+  Please use the argument -v to see more details.
+[2019-08-24 12:03:50][152] Processing: AVD\Listeners\UserRegisteredNoteListener
+
+   UnexpectedValueException  : The stream or file "/home/avdesign/Projects/saoroque/storage/logs/laravel-2019-08-24.log" could not be opened: failed to open stream: Permission denied
+
+  at /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+    103|             }
+    104|             restore_error_handler();
+    105|             if (!is_resource($this->stream)) {
+    106|                 $this->stream = null;
+  > 107|                 throw new \UnexpectedValueException(sprintf('The stream or file "%s" could not be opened: '.$this->errorMessage, $this->url));
+    108|             }
+    109|         }
+    110| 
+    111|         if ($this->useLocking) {
+
+  Exception trace:
+
+  1   Monolog\Handler\StreamHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/RotatingFileHandler.php:119
+
+  2   Monolog\Handler\RotatingFileHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php:39
+
+  Please use the argument -v to see more details.
+[2019-08-24 12:03:50][153] Processing: AVD\Listeners\UserRegisteredNoteListener
+[2019-08-24 12:03:50][153] Failed:     AVD\Listeners\UserRegisteredNoteListener
+
+   UnexpectedValueException  : The stream or file "/home/avdesign/Projects/saoroque/storage/logs/laravel-2019-08-24.log" could not be opened: failed to open stream: Permission denied
+
+  at /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+    103|             }
+    104|             restore_error_handler();
+    105|             if (!is_resource($this->stream)) {
+    106|                 $this->stream = null;
+  > 107|                 throw new \UnexpectedValueException(sprintf('The stream or file "%s" could not be opened: '.$this->errorMessage, $this->url));
+    108|             }
+    109|         }
+    110| 
+    111|         if ($this->useLocking) {
+
+  Exception trace:
+
+  1   Monolog\Handler\StreamHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/RotatingFileHandler.php:119
+
+  2   Monolog\Handler\RotatingFileHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php:39
+
+  Please use the argument -v to see more details.
+[2019-08-24 12:04:29][154] Processing: AVD\Listeners\UserRegisteredNoteListener
+
+   UnexpectedValueException  : The stream or file "/home/avdesign/Projects/saoroque/storage/logs/laravel-2019-08-24.log" could not be opened: failed to open stream: Permission denied
+
+  at /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+    103|             }
+    104|             restore_error_handler();
+    105|             if (!is_resource($this->stream)) {
+    106|                 $this->stream = null;
+  > 107|                 throw new \UnexpectedValueException(sprintf('The stream or file "%s" could not be opened: '.$this->errorMessage, $this->url));
+    108|             }
+    109|         }
+    110| 
+    111|         if ($this->useLocking) {
+
+  Exception trace:
+
+  1   Monolog\Handler\StreamHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/RotatingFileHandler.php:119
+
+  2   Monolog\Handler\RotatingFileHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php:39
+
+  Please use the argument -v to see more details.
+[2019-08-24 12:04:30][155] Processing: AVD\Listeners\UserRegisteredNoteListener
+
+   UnexpectedValueException  : The stream or file "/home/avdesign/Projects/saoroque/storage/logs/laravel-2019-08-24.log" could not be opened: failed to open stream: Permission denied
+
+  at /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+    103|             }
+    104|             restore_error_handler();
+    105|             if (!is_resource($this->stream)) {
+    106|                 $this->stream = null;
+  > 107|                 throw new \UnexpectedValueException(sprintf('The stream or file "%s" could not be opened: '.$this->errorMessage, $this->url));
+    108|             }
+    109|         }
+    110| 
+    111|         if ($this->useLocking) {
+
+  Exception trace:
+
+  1   Monolog\Handler\StreamHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/RotatingFileHandler.php:119
+
+  2   Monolog\Handler\RotatingFileHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php:39
+
+  Please use the argument -v to see more details.
+[2019-08-24 12:04:31][156] Processing: AVD\Listeners\UserRegisteredNoteListener
+[2019-08-24 12:04:31][156] Failed:     AVD\Listeners\UserRegisteredNoteListener
+
+   UnexpectedValueException  : The stream or file "/home/avdesign/Projects/saoroque/storage/logs/laravel-2019-08-24.log" could not be opened: failed to open stream: Permission denied
+
+  at /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+    103|             }
+    104|             restore_error_handler();
+    105|             if (!is_resource($this->stream)) {
+    106|                 $this->stream = null;
+  > 107|                 throw new \UnexpectedValueException(sprintf('The stream or file "%s" could not be opened: '.$this->errorMessage, $this->url));
+    108|             }
+    109|         }
+    110| 
+    111|         if ($this->useLocking) {
+
+  Exception trace:
+
+  1   Monolog\Handler\StreamHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/RotatingFileHandler.php:119
+
+  2   Monolog\Handler\RotatingFileHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php:39
+
+  Please use the argument -v to see more details.
+[2019-08-24 12:05:10][157] Processing: AVD\Listeners\UserRegisteredNoteListener
+
+   UnexpectedValueException  : The stream or file "/home/avdesign/Projects/saoroque/storage/logs/laravel-2019-08-24.log" could not be opened: failed to open stream: Permission denied
+
+  at /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+    103|             }
+    104|             restore_error_handler();
+    105|             if (!is_resource($this->stream)) {
+    106|                 $this->stream = null;
+  > 107|                 throw new \UnexpectedValueException(sprintf('The stream or file "%s" could not be opened: '.$this->errorMessage, $this->url));
+    108|             }
+    109|         }
+    110| 
+    111|         if ($this->useLocking) {
+
+  Exception trace:
+
+  1   Monolog\Handler\StreamHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/RotatingFileHandler.php:119
+
+  2   Monolog\Handler\RotatingFileHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php:39
+
+  Please use the argument -v to see more details.
+[2019-08-24 12:05:11][158] Processing: AVD\Listeners\UserRegisteredNoteListener
+
+   UnexpectedValueException  : The stream or file "/home/avdesign/Projects/saoroque/storage/logs/laravel-2019-08-24.log" could not be opened: failed to open stream: Permission denied
+
+  at /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+    103|             }
+    104|             restore_error_handler();
+    105|             if (!is_resource($this->stream)) {
+    106|                 $this->stream = null;
+  > 107|                 throw new \UnexpectedValueException(sprintf('The stream or file "%s" could not be opened: '.$this->errorMessage, $this->url));
+    108|             }
+    109|         }
+    110| 
+    111|         if ($this->useLocking) {
+
+  Exception trace:
+
+  1   Monolog\Handler\StreamHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/RotatingFileHandler.php:119
+
+  2   Monolog\Handler\RotatingFileHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php:39
+
+  Please use the argument -v to see more details.
+[2019-08-24 12:05:11][159] Processing: AVD\Listeners\UserRegisteredNoteListener
+[2019-08-24 12:05:11][159] Failed:     AVD\Listeners\UserRegisteredNoteListener
+
+   UnexpectedValueException  : The stream or file "/home/avdesign/Projects/saoroque/storage/logs/laravel-2019-08-24.log" could not be opened: failed to open stream: Permission denied
+
+  at /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+    103|             }
+    104|             restore_error_handler();
+    105|             if (!is_resource($this->stream)) {
+    106|                 $this->stream = null;
+  > 107|                 throw new \UnexpectedValueException(sprintf('The stream or file "%s" could not be opened: '.$this->errorMessage, $this->url));
+    108|             }
+    109|         }
+    110| 
+    111|         if ($this->useLocking) {
+
+  Exception trace:
+
+  1   Monolog\Handler\StreamHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/RotatingFileHandler.php:119
+
+  2   Monolog\Handler\RotatingFileHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php:39
+
+  Please use the argument -v to see more details.
+[2019-08-24 12:06:43][160] Processing: AVD\Listeners\UserRegisteredNoteListener
+
+   UnexpectedValueException  : The stream or file "/home/avdesign/Projects/saoroque/storage/logs/laravel-2019-08-24.log" could not be opened: failed to open stream: Permission denied
+
+  at /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+    103|             }
+    104|             restore_error_handler();
+    105|             if (!is_resource($this->stream)) {
+    106|                 $this->stream = null;
+  > 107|                 throw new \UnexpectedValueException(sprintf('The stream or file "%s" could not be opened: '.$this->errorMessage, $this->url));
+    108|             }
+    109|         }
+    110| 
+    111|         if ($this->useLocking) {
+
+  Exception trace:
+
+  1   Monolog\Handler\StreamHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/RotatingFileHandler.php:119
+
+  2   Monolog\Handler\RotatingFileHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php:39
+
+  Please use the argument -v to see more details.
+[2019-08-24 12:06:44][161] Processing: AVD\Listeners\UserRegisteredNoteListener
+
+   UnexpectedValueException  : The stream or file "/home/avdesign/Projects/saoroque/storage/logs/laravel-2019-08-24.log" could not be opened: failed to open stream: Permission denied
+
+  at /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+    103|             }
+    104|             restore_error_handler();
+    105|             if (!is_resource($this->stream)) {
+    106|                 $this->stream = null;
+  > 107|                 throw new \UnexpectedValueException(sprintf('The stream or file "%s" could not be opened: '.$this->errorMessage, $this->url));
+    108|             }
+    109|         }
+    110| 
+    111|         if ($this->useLocking) {
+
+  Exception trace:
+
+  1   Monolog\Handler\StreamHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/RotatingFileHandler.php:119
+
+  2   Monolog\Handler\RotatingFileHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php:39
+
+  Please use the argument -v to see more details.
+[2019-08-24 12:06:45][162] Processing: AVD\Listeners\UserRegisteredNoteListener
+[2019-08-24 12:06:45][162] Failed:     AVD\Listeners\UserRegisteredNoteListener
+
+   UnexpectedValueException  : The stream or file "/home/avdesign/Projects/saoroque/storage/logs/laravel-2019-08-24.log" could not be opened: failed to open stream: Permission denied
+
+  at /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+    103|             }
+    104|             restore_error_handler();
+    105|             if (!is_resource($this->stream)) {
+    106|                 $this->stream = null;
+  > 107|                 throw new \UnexpectedValueException(sprintf('The stream or file "%s" could not be opened: '.$this->errorMessage, $this->url));
+    108|             }
+    109|         }
+    110| 
+    111|         if ($this->useLocking) {
+
+  Exception trace:
+
+  1   Monolog\Handler\StreamHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/RotatingFileHandler.php:119
+
+  2   Monolog\Handler\RotatingFileHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php:39
+
+  Please use the argument -v to see more details.
+[2019-08-24 12:58:39][163] Processing: AVD\Listeners\UserRegisteredNoteListener
+
+   UnexpectedValueException  : The stream or file "/home/avdesign/Projects/saoroque/storage/logs/laravel-2019-08-24.log" could not be opened: failed to open stream: Permission denied
+
+  at /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+    103|             }
+    104|             restore_error_handler();
+    105|             if (!is_resource($this->stream)) {
+    106|                 $this->stream = null;
+  > 107|                 throw new \UnexpectedValueException(sprintf('The stream or file "%s" could not be opened: '.$this->errorMessage, $this->url));
+    108|             }
+    109|         }
+    110| 
+    111|         if ($this->useLocking) {
+
+  Exception trace:
+
+  1   Monolog\Handler\StreamHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/RotatingFileHandler.php:119
+
+  2   Monolog\Handler\RotatingFileHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php:39
+
+  Please use the argument -v to see more details.
+[2019-08-24 12:58:41][164] Processing: AVD\Listeners\UserRegisteredNoteListener
+
+   UnexpectedValueException  : The stream or file "/home/avdesign/Projects/saoroque/storage/logs/laravel-2019-08-24.log" could not be opened: failed to open stream: Permission denied
+
+  at /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+    103|             }
+    104|             restore_error_handler();
+    105|             if (!is_resource($this->stream)) {
+    106|                 $this->stream = null;
+  > 107|                 throw new \UnexpectedValueException(sprintf('The stream or file "%s" could not be opened: '.$this->errorMessage, $this->url));
+    108|             }
+    109|         }
+    110| 
+    111|         if ($this->useLocking) {
+
+  Exception trace:
+
+  1   Monolog\Handler\StreamHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/RotatingFileHandler.php:119
+
+  2   Monolog\Handler\RotatingFileHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php:39
+
+  Please use the argument -v to see more details.
+[2019-08-24 12:58:42][165] Processing: AVD\Listeners\UserRegisteredNoteListener
+[2019-08-24 12:58:42][165] Failed:     AVD\Listeners\UserRegisteredNoteListener
+
+   UnexpectedValueException  : The stream or file "/home/avdesign/Projects/saoroque/storage/logs/laravel-2019-08-24.log" could not be opened: failed to open stream: Permission denied
+
+  at /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+    103|             }
+    104|             restore_error_handler();
+    105|             if (!is_resource($this->stream)) {
+    106|                 $this->stream = null;
+  > 107|                 throw new \UnexpectedValueException(sprintf('The stream or file "%s" could not be opened: '.$this->errorMessage, $this->url));
+    108|             }
+    109|         }
+    110| 
+    111|         if ($this->useLocking) {
+
+  Exception trace:
+
+  1   Monolog\Handler\StreamHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/RotatingFileHandler.php:119
+
+  2   Monolog\Handler\RotatingFileHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php:39
+
+  Please use the argument -v to see more details.
+[2019-08-24 13:04:45][166] Processing: AVD\Listeners\UserRegisteredNoteListener
+
+   UnexpectedValueException  : The stream or file "/home/avdesign/Projects/saoroque/storage/logs/laravel-2019-08-24.log" could not be opened: failed to open stream: Permission denied
+
+  at /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+    103|             }
+    104|             restore_error_handler();
+    105|             if (!is_resource($this->stream)) {
+    106|                 $this->stream = null;
+  > 107|                 throw new \UnexpectedValueException(sprintf('The stream or file "%s" could not be opened: '.$this->errorMessage, $this->url));
+    108|             }
+    109|         }
+    110| 
+    111|         if ($this->useLocking) {
+
+  Exception trace:
+
+  1   Monolog\Handler\StreamHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/RotatingFileHandler.php:119
+
+  2   Monolog\Handler\RotatingFileHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php:39
+
+  Please use the argument -v to see more details.
+[2019-08-24 13:04:47][167] Processing: AVD\Listeners\UserRegisteredNoteListener
+
+   UnexpectedValueException  : The stream or file "/home/avdesign/Projects/saoroque/storage/logs/laravel-2019-08-24.log" could not be opened: failed to open stream: Permission denied
+
+  at /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+    103|             }
+    104|             restore_error_handler();
+    105|             if (!is_resource($this->stream)) {
+    106|                 $this->stream = null;
+  > 107|                 throw new \UnexpectedValueException(sprintf('The stream or file "%s" could not be opened: '.$this->errorMessage, $this->url));
+    108|             }
+    109|         }
+    110| 
+    111|         if ($this->useLocking) {
+
+  Exception trace:
+
+  1   Monolog\Handler\StreamHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/RotatingFileHandler.php:119
+
+  2   Monolog\Handler\RotatingFileHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php:39
+
+  Please use the argument -v to see more details.
+[2019-08-24 13:04:47][168] Processing: AVD\Listeners\UserRegisteredNoteListener
+[2019-08-24 13:04:47][168] Failed:     AVD\Listeners\UserRegisteredNoteListener
+
+   UnexpectedValueException  : The stream or file "/home/avdesign/Projects/saoroque/storage/logs/laravel-2019-08-24.log" could not be opened: failed to open stream: Permission denied
+
+  at /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+    103|             }
+    104|             restore_error_handler();
+    105|             if (!is_resource($this->stream)) {
+    106|                 $this->stream = null;
+  > 107|                 throw new \UnexpectedValueException(sprintf('The stream or file "%s" could not be opened: '.$this->errorMessage, $this->url));
+    108|             }
+    109|         }
+    110| 
+    111|         if ($this->useLocking) {
+
+  Exception trace:
+
+  1   Monolog\Handler\StreamHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/RotatingFileHandler.php:119
+
+  2   Monolog\Handler\RotatingFileHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php:39
+
+  Please use the argument -v to see more details.
+[2019-08-24 13:19:49][169] Processing: AVD\Listeners\UserRegisteredNoteListener
+
+   UnexpectedValueException  : The stream or file "/home/avdesign/Projects/saoroque/storage/logs/laravel-2019-08-24.log" could not be opened: failed to open stream: Permission denied
+
+  at /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+    103|             }
+    104|             restore_error_handler();
+    105|             if (!is_resource($this->stream)) {
+    106|                 $this->stream = null;
+  > 107|                 throw new \UnexpectedValueException(sprintf('The stream or file "%s" could not be opened: '.$this->errorMessage, $this->url));
+    108|             }
+    109|         }
+    110| 
+    111|         if ($this->useLocking) {
+
+  Exception trace:
+
+  1   Monolog\Handler\StreamHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/RotatingFileHandler.php:119
+
+  2   Monolog\Handler\RotatingFileHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php:39
+
+  Please use the argument -v to see more details.
+[2019-08-24 13:19:50][170] Processing: AVD\Listeners\UserRegisteredNoteListener
+
+   UnexpectedValueException  : The stream or file "/home/avdesign/Projects/saoroque/storage/logs/laravel-2019-08-24.log" could not be opened: failed to open stream: Permission denied
+
+  at /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+    103|             }
+    104|             restore_error_handler();
+    105|             if (!is_resource($this->stream)) {
+    106|                 $this->stream = null;
+  > 107|                 throw new \UnexpectedValueException(sprintf('The stream or file "%s" could not be opened: '.$this->errorMessage, $this->url));
+    108|             }
+    109|         }
+    110| 
+    111|         if ($this->useLocking) {
+
+  Exception trace:
+
+  1   Monolog\Handler\StreamHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/RotatingFileHandler.php:119
+
+  2   Monolog\Handler\RotatingFileHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php:39
+
+  Please use the argument -v to see more details.
+[2019-08-24 13:19:52][171] Processing: AVD\Listeners\UserRegisteredNoteListener
+[2019-08-24 13:19:52][171] Failed:     AVD\Listeners\UserRegisteredNoteListener
+
+   UnexpectedValueException  : The stream or file "/home/avdesign/Projects/saoroque/storage/logs/laravel-2019-08-24.log" could not be opened: failed to open stream: Permission denied
+
+  at /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+    103|             }
+    104|             restore_error_handler();
+    105|             if (!is_resource($this->stream)) {
+    106|                 $this->stream = null;
+  > 107|                 throw new \UnexpectedValueException(sprintf('The stream or file "%s" could not be opened: '.$this->errorMessage, $this->url));
+    108|             }
+    109|         }
+    110| 
+    111|         if ($this->useLocking) {
+
+  Exception trace:
+
+  1   Monolog\Handler\StreamHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/RotatingFileHandler.php:119
+
+  2   Monolog\Handler\RotatingFileHandler::write()
+      /home/avdesign/Projects/saoroque/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php:39
+
+  Please use the argument -v to see more details.
+[2019-08-24 13:48:16][172] Processing: AVD\Listeners\UserRegisteredNoteListener
+[2019-08-24 13:48:16][172] Processed:  AVD\Listeners\UserRegisteredNoteListener
+[2019-08-24 13:49:40][173] Processing: AVD\Listeners\UserRegisteredNoteListener
+[2019-08-24 13:49:40][173] Processed:  AVD\Listeners\UserRegisteredNoteListener
+[2019-08-24 13:50:16][174] Processing: AVD\Listeners\UserRegisteredNoteListener
+[2019-08-24 13:50:16][174] Processed:  AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 03:12:38][175] Processing: AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 03:12:38][175] Processed:  AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 03:25:44][176] Processing: AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 03:25:44][176] Processed:  AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 03:30:00][177] Processing: AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 03:30:00][177] Processed:  AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 03:42:15][178] Processing: AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 03:42:15][178] Processed:  AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 04:40:11][179] Processing: AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 04:40:11][179] Processed:  AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 04:41:17][180] Processing: AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 04:41:17][180] Processed:  AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 04:43:02][181] Processing: AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 04:43:02][181] Processed:  AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 04:43:38][182] Processing: AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 04:43:38][182] Processed:  AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 11:02:03][183] Processing: AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 11:02:03][183] Processed:  AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 11:25:57][184] Processing: AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 11:25:58][184] Processed:  AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 11:33:55][185] Processing: AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 11:33:55][185] Processed:  AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 11:37:19][186] Processing: AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 11:37:19][186] Processed:  AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 11:41:16][187] Processing: AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 11:41:16][187] Processed:  AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 11:47:53][188] Processing: AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 11:47:53][188] Processed:  AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 11:48:14][189] Processing: AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 11:48:14][189] Processed:  AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 12:05:53][190] Processing: AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 12:05:53][190] Processed:  AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 12:23:54][191] Processing: AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 12:23:54][191] Processed:  AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 12:36:09][192] Processing: AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 12:36:09][192] Processed:  AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 13:21:02][193] Processing: AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 13:21:02][193] Processed:  AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 13:21:38][194] Processing: AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 13:21:38][194] Processed:  AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 13:22:51][195] Processing: AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 13:22:51][195] Processed:  AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 13:23:50][196] Processing: AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 13:23:50][196] Processed:  AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 13:25:17][197] Processing: AVD\Listeners\UserRegisteredNoteListener
+[2019-08-25 13:25:17][197] Processed:  AVD\Listeners\UserRegisteredNoteListener

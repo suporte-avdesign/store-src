@@ -231,10 +231,11 @@ Route::prefix('minha-conta')->group(function () {
     Route::get('/', 'Web\AccountController@index')->name('account');
     Route::get('lista-de-desejo', 'Web\AccountController@wishlist')->name('account.wishlist');
     Route::get('pedidos', 'Web\AccountController@order')->name('account.order');
-    Route::get('pedido/{id}', 'Web\AccountController@orderView')->name('order.view');
-    Route::match(['get', 'put'], 'perfil', 'Web\AccountController@profile')->name('account.profile');
+    Route::get('pedido/{reference}', 'Web\AccountController@orderView')->name('order.view');
+    Route::get('perfil', 'Web\AccountController@profile')->name('account.profile');
+    Route::put('perfil', 'Web\AccountController@profileUpdate')->name('account.profile');
     Route::get('endereco-de-entrega', 'Web\AccountController@address')->name('account.address');
-    Route::put('endereco-de-entrega/alterar', 'Web\AccountController@addressUpdate')->name('address.update');
+    Route::put('endereco-de-entrega', 'Web\AccountController@addressUpdate')->name('address.update');
 });
 
 //

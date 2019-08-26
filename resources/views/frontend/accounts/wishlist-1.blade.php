@@ -44,6 +44,3 @@
         </div>
     </div>
 @endsection
-@push('scripts')
-<script type="text/javascript" src="{{asset('themes/js/functions.min.js')}}"></script>
-@endpush

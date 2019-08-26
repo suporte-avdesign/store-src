@@ -43,25 +43,22 @@
                     <div class="container">
                         <ul class="sub-menu color-scheme-dark">
                             <li id="menu-item-22149" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22149 menu-item-design-default item-event-hover">
-                                <a href="#">Logar</a>
+                                <a href="{{route('login')}}">Logar</a>
                             </li>
                             <li id="menu-item-22150" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22150 menu-item-design-default item-event-hover">
-                                <a href="#">Meus Pedidos</a>
-                            </li>
-                            <li id="menu-item-22152" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22152 menu-item-design-default item-event-hover">
-                                <a href="#">Lista de Desejo</a>
+                                <a href="{{route('account.order')}}">Meus Pedidos</a>
                             </li>
                             <li id="menu-item-22154" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22154 menu-item-design-default item-event-hover">
-                                <a href="#">Alterar Senha</a>
+                                <a href="{{route('account.profile')}}">Alterar Senha</a>
                             </li>
                             <li id="menu-item-27153" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27153 menu-item-design-default item-event-hover">
-                                <a href="#">Alterar Dados</a>
+                                <a href="{{route('account.profile')}}">Alterar Dados</a>
                             </li>
                             <li id="menu-item-22151" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22151 menu-item-design-default item-event-hover">
-                                <a href="#">Endereço de Entrega</a>
+                                <a href="{{route('account.address')}}">Endereço de Entrega</a>
                             </li>
                             <li id="menu-item-22156" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22156 menu-item-design-default item-event-hover">
-                                <a href="#">Sair da Conta</a>
+                                <a href="javascript:logoutUser('{{route('logout')}}', '{{ csrf_token() }}');"">Sair da Conta</a>
                             </li>
                         </ul>
                     </div>
@@ -74,9 +71,6 @@
     </div>
     <div class="header-links my-account-with-text">
         <ul>
-            <li class="wishlist">
-                <a href="{{route('wishlist')}}">Lista de Desejo</a>
-            </li>
             <li class="register">
                 <a href="{{route('register')}}">Cadastre-se</a>
             </li>

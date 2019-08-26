@@ -46,6 +46,7 @@ return [
     |--------------------------------------------------------------------------
     */
     'access_local' => 'Acesso "DUVIDOSO" ou um teste do administrador do sistema, entre em contato',
+    'account' => 'Conta',
     'active_true' => 'Ativo',
     'active_false' => 'Inativo',
     'add' => 'Adicionar',
@@ -163,7 +164,9 @@ return [
     'parcel' => 'Parcelado',
     'password' => 'Senha',
     'password_confirm' => 'Confirme a Senha',
+    'password_current' => 'Senha Atual',
     'password_lost' => 'Perdeu a senha?',
+    'password_new' => 'Nova Senha',
     'payment' => 'Pagamento',
     'payment_cash' => 'Pagamento à Vista',
     'person_legal' => [
@@ -201,6 +204,7 @@ return [
     'remove' => 'Remover',
     'rememberme' => 'Lembre de mim',
     'reports' => 'Relatórios',
+    'required' => 'Campo Obrigatório',
     'reset' => 'Limpar',
     'results' => 'Resultados',
     'retail' => 'Varejo',
@@ -227,8 +231,10 @@ return [
     'ticket' => 'Boleto',
     'title_update' => 'Alterar',
     'total' => 'Total',
+    'token_expired' => 'Sua sessão expirou por inatividade',
+    'transport' => 'Transportadora',
     'trend' => 'Têndencia',
-    'type' => ['Tipo'],
+    'type' => 'Tipo',
     'type_movement' => [
         'input' => 'Entrada',
         'output' => 'Saida',

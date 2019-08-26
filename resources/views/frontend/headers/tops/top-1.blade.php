@@ -10,9 +10,15 @@
                     <div class="menu-top-bar-container">
 
                         <ul id="menu-top-bar" class="menu">
-                            <li id="menu-item-22357" class="login-side-opener menu-item menu-item-type-post_type menu-item-object-page menu-item-22357 menu-item-design-default item-event-hover">
-                                <a href="#"><i class="fa fa-user"></i>Minha Conta</a>
-                            </li>
+                            @auth
+                                <li id="menu-item-22357" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22357 menu-item-design-default item-event-hover">
+                                    <a href="{{route('account')}}"><i class="fa fa-user"></i>Minha Conta</a>
+                                </li>
+                            @else
+                                <li id="menu-item-22357" class="login-side-opener menu-item menu-item-type-post_type menu-item-object-page menu-item-22357 menu-item-design-default item-event-hover">
+                                    <a href="#"><i class="fa fa-user"></i>Minha Conta</a>
+                                </li>
+                            @endauth
                             <li id="menu-item-22845" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22845 menu-item-design-default item-event-hover">
                                 <a href="{{route('register')}}"><i class="fa fa-file-text-o"></i>Cadastre-se</a>
                             </li>

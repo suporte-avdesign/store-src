@@ -141,7 +141,6 @@
     ]) !!}
 </script>
 <script type="text/javascript" src="{{asset('plugins/jquery-maskedinput/jquery.maskedinput.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('themes/js/functions.min.js')}}"></script>
 <script type='text/javascript'>
     jQuery( document ).ready(function($) {
         $("#reg_phone").mask('(99)9999-9999?9');

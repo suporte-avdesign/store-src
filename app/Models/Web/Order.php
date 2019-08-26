@@ -2,6 +2,7 @@
 
 namespace AVD\Models\Web;
 
+use AVD\Models\WebConfigStatusPayment;
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
@@ -40,9 +41,24 @@ class Order extends Model
         return $this->hasMany(OrderItem::class);
     }
 
+    public function notes()
+    {
+        return $this->hasMany(OrderNote::class);
+    }
+
+    public function shippings()
+    {
+        return $this->hasMany(OrderShipping::class);
+    }
+
     public function configFormPayment()
     {
         return $this->belongsTo(ConfigFormPayment::class);
+    }
+
+    public function ConfigStatusPayment()
+    {
+        return $this->belongsTo(ConfigStatusPayment::class);
     }
 
     public function configShipping()

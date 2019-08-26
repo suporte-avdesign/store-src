@@ -4,10 +4,11 @@ namespace AVD\Repositories\Web;
 
 use AVD\Models\Web\User as Model;
 use AVD\Interfaces\Web\UserInterface;
+use AVD\Events\UserRegisteredNoteEvent;
 use AVD\Interfaces\Web\AccountTypeInterface as InterAccountType;
 use AVD\Interfaces\Web\ConfigProfileClientInterface as InterProfile;
 
-use AVD\Events\UserRegisteredNoteEvent;
+
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -106,13 +107,12 @@ class UserRepository implements UserInterface
      * @param $input
      * @return bool|string
      */
-    public function update($input, $page)
+    public function update($input)
     {
         $id   = Auth::id();
         $note = constLang('updated')." ";
         $data = $this->model->find($id);
         $dataForm = null;
-
         if ($data->profile_id != $input['profile_id']) {
             $dataForm['profile_id'] = $input['profile_id'];
             $note .= constLang('profile').
@@ -122,7 +122,7 @@ class UserRepository implements UserInterface
             $dataForm['type_id'] = $input['type_id'];
             $note .= constLang('type')
                 .":".$this->interAccountType->getName($data->type_id).
-                "/".$this->interProfile->getName($input['type_id']).", ";
+                "/".$this->interAccountType->getName($input['type_id']).", ";
         }
         if ($data->first_name != $input["first_name_{$input['type_id']}"]) {
             $dataForm['first_name'] = $input["first_name_{$input['type_id']}"];
@@ -134,7 +134,6 @@ class UserRepository implements UserInterface
                     ":{$data->first_name}/".$input["first_name_{$input['type_id']}"].", ";
             }
         }
-
         if ($data->last_name != $input["last_name_{$input['type_id']}"]) {
             $dataForm['last_name'] = $input["last_name_{$input['type_id']}"];
             if ($input['type_id'] == 1) {
@@ -145,7 +144,6 @@ class UserRepository implements UserInterface
                     ":{$data->last_name}/".$input["last_name_{$input['type_id']}"].", ";
             }
         }
-
         if ($data->document1 != $input["document1_{$input['type_id']}"]) {
             $dataForm['document1'] = $input["document1_{$input['type_id']}"];
             if ($input['type_id'] == 1) {
@@ -156,7 +154,6 @@ class UserRepository implements UserInterface
                     ":{$data->document1}/".$input["document1_{$input['type_id']}"].", ";
             }
         }
-
         if ($data->document2 != $input["document2_{$input['type_id']}"]) {
             $dataForm['document2'] = $input["document2_{$input['type_id']}"];
             if ($input['type_id'] == 1) {
@@ -167,7 +164,6 @@ class UserRepository implements UserInterface
                     ":{$data->document2}/".$input["document2_{$input['type_id']}"].", ";
             }
         }
-
         if ($data->email != $input["email"]) {
             $dataForm['email'] = $input["email"];
             $note .= constLang('email').
@@ -189,7 +185,7 @@ class UserRepository implements UserInterface
                 ":{$data->date}/".$input["date"].", ";
         }
 
-        if (isset($input["password"])) {
+        if (!empty($input["password_current"]) && !empty($input["password"])) {
             $dataForm['password'] = $input["password"];
             $note .= constLang('password')."*****, ";
         }
@@ -197,11 +193,13 @@ class UserRepository implements UserInterface
         if ($dataForm) {
             $update = $data->update($dataForm);
             if ($update) {
-                $this->updateNote(substr($note, 0, -2), $page);
+                $page = constLang('account');
+                $this->updateNote($note, $page);
                 return $update;
             }
+        } else {
+            return true;
         }
-        return false;
     }
 
 
@@ -229,13 +227,15 @@ class UserRepository implements UserInterface
         event(new UserRegisteredNoteEvent($note));
     }
 
-
     public function logout($id)
     {
         $data  = $this->setId($id);
         $input = ["logout" => date('Y-m-d H:i:s')];
         return $data->update($input);
     }
+
+
+
 
 
 

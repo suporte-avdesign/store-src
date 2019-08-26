@@ -22,6 +22,16 @@ class OrderRepository implements OrderInterface
         $this->model = $model;
     }
 
+    public function getAll($user)
+    {
+        return $this->model->where('user_id', $user->id)->get();
+    }
+
+    public function setOrder($user, $reference)
+    {
+        return $this->model->where(['user_id' => $user->id, 'reference' => $reference])->first();
+    }
+
     public function newOrder($reference, $token)
     {
         return $this->model->where(['reference' => $reference, 'token' => $token])->first();

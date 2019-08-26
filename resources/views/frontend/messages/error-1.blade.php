@@ -9,6 +9,8 @@
         <p>{{$error}}</p>
     @elseif($message == 'apply_coupon')
         <p>{{$error}}</p>
+    @elseif($message == 'token_expired')
+        <p>{{$error}}</p>
     @endif
 
 </div>

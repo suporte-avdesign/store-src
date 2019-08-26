@@ -13,6 +13,7 @@ use AVD\Http\Requests\Web\PagSeguroCreditRequest as CreditRequest;
 use AVD\Interfaces\Web\CartInterface as InterCart;
 use AVD\Interfaces\Web\UserInterface as InterUser;
 use AVD\Interfaces\Web\OrderInterface as InterOrder;
+use AVD\Interfaces\Web\OrderNoteInterface as interOrderNote;
 use AVD\Interfaces\Web\PaymentCardInterface as InterCard;
 use AVD\Interfaces\Web\PaymentBilletInterface as InterBillet;
 use AVD\Interfaces\Web\OrderItemInterface as InterOrderItems;
@@ -39,6 +40,7 @@ class PagSeguroController extends Controller
         InterCart $interCart,
         InterOrder $interOrder,
         InterBillet $interBillet,
+        InterOrderNote $interOrderNote,
         FreightService $freightService,
         InterOrderItems $interOrderItems,
         ServicePagSeguro $servicePagSeguro,
@@ -51,6 +53,7 @@ class PagSeguroController extends Controller
         $this->interCart = $interCart;
         $this->interOrder = $interOrder;
         $this->interBillet = $interBillet;
+        $this->interOrderNote = $interOrderNote;
         $this->freightService = $freightService;
         $this->interOrderItems = $interOrderItems;
         $this->servicePagSeguro = $servicePagSeguro;

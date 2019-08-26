@@ -10,5 +10,7 @@ interface UserTransportInterface
      * @return \AVD\Repositories\Web\UserTransportRepository
      */
     public function create($input);
+    public function update($input, $user);
+    public function delete($user);
 
 }

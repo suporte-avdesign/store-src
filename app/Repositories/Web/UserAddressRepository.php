@@ -49,41 +49,28 @@ class UserAddressRepository implements UserAddressInterface
     {
         $dataForm = null;
         $user_id = auth()->id();
-        $note = constLang('updated').' '.constLang('address').' ';
         $data = $this->lestAddress($user_id);
-        if ($data->address != $input["address"]) {
-            $dataForm["address"] = $input["address"];
-               $note .=":{$input['address']}, ";
-        }
-        if ($data->number != $input["number"]) {
-            $dataForm["number"] = $input["number"];
-            $note .= constLang('number').":{$input["number"]}, ";
-        }
-        if ($data->complement != $input["complement"]) {
-            $dataForm["complement"] = $input["complement"];
-            $note .= constLang('complement').":{$input["complement"]}, ";
-        }
-        if ($data->district != $input["district"]) {
-            $dataForm["district"] = $input["district"];
-            $note .= constLang('district').":{$input["district"]}, ";
-        }
-        if ($data->city != $input["city"]) {
-            $dataForm["city"] = $input["city"];
-            $note .= constLang('city').":{$input["city"]}, ";
-        }
-        if ($data->state != $input["state"]) {
-            $dataForm["state"] = $input["state"];
-            $note .= constLang('state').":{$input["state"]}, ";
-        }
-        if ($data->zip_code != $input["zip_code"]) {
-            $dataForm["zip_code"] = $input["zip_code"];
-            $note .= constLang('zip_code').":{$input["zip_code"]}, ";
-        }
-        if ($dataForm) {
-            $input["user_id"] = $user_id;
+
+        $current = array(
+            "address" => $data->address,
+            "number" => $data->number,
+            "complement" => $data->complement,
+            "district" => $data->district,
+            "city" => $data->city,
+            "state" => $data->state,
+            "zip_code" => $data->zip_code
+        );
+
+
+
+        if($current != $input) {
+            $note = constLang('updated').' '.constLang('address').' ';
             $this->updateNote(substr($note, 0, -2), $page);
+
+            $input["user_id"] = $user_id;
             return $this->model->create($input);
         }
+
         return true;
     }
 
@@ -104,14 +91,8 @@ class UserAddressRepository implements UserAddressInterface
             'description' => $description." ".ipLocation()
         ];
 
-
-
         event(new UserRegisteredNoteEvent($note));
     }
-
-
-
-
 
 
 }

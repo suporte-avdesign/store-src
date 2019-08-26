@@ -1,6 +1,6 @@
 @extends('frontend.layouts.template-1')
 @push('title')
-<title> Seu Carrinho - {{config('app.name')}}</title>
+<title> {{$content->orders->title}} - {{config('app.name')}}</title>
 @endpush
 @push('styles')
 <link rel="stylesheet" id="select2-css"  href="{{asset('plugins/select2/css/select2.css')}}?ver=3.5.2" type="text/css" media="all" />
@@ -14,7 +14,7 @@
             <header class="entry-header">
                 <div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
                     <a href="{{route('home')}}" rel="v:url" property="v:title">Home</a> &raquo;
-                    <span class="current">Minha Conta</span>
+                    <span class="current">{{$content->title}}</span>
                 </div>
             </header>
         </div>
@@ -24,58 +24,69 @@
         <div class="row">
             <div class="site-content col-sm-12" role="main">
                 <article id="post-9" class="post-9 page type-page status-publish hentry">
-
                     <div class="entry-content">
                         <div class="woocommerce">
+
                             <div class="woocommerce-my-account-wrapper">
 
                                 @include('frontend.accounts.sidebar.sidebar-1')
 
                                 <div class="woocommerce-MyAccount-content">
-                                    <table class="woocommerce-orders-table woocommerce-MyAccount-orders shop_table shop_table_responsive my_account_orders account-orders-table">
+                                    @if(empty($order))
+                                        <div class="woocommerce-Message woocommerce-Message--info woocommerce-info">
+                                            {{$content->orders->text_empty_order}}
+                                        </div>
+                                    @else
+                                        <table class="woocommerce-orders-table woocommerce-MyAccount-orders shop_table shop_table_responsive my_account_orders account-orders-table">
                                         <thead>
                                         <tr>
                                             <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-number">
-                                                <span class="nobr">Pedido</span>
+                                                <span class="nobr">{{$content->orders->order}}</span>
                                             </th>
                                             <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-date">
-                                                <span class="nobr">Data</span>
+                                                <span class="nobr">{{$content->orders->date}}</span>
                                             </th>
                                             <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-status">
-                                                <span class="nobr">Status</span>
+                                                <span class="nobr">{{$content->orders->status}}</span>
                                             </th>
                                             <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-total">
-                                                <span class="nobr">Total</span>
+                                                <span class="nobr">{{$content->orders->total}}</span>
                                             </th>
                                             <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-actions">.
-                                                <span class="nobr">Ações</span>
+                                                <span class="nobr">{{$content->orders->actions}}</span>
                                             </th>
                                         </tr>
                                         </thead>
 
                                         <tbody>
-                                        <tr class="woocommerce-orders-table__row woocommerce-orders-table__row--status-on-hold order">
-                                            <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-number" data-title="Pedido">
-                                                <a href="https://demo.xtemos.com/basel/my-account/view-order/29697/"># 73773</a>
-                                            </td>
-                                            <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-date" data-title="Data">
-                                                <time datetime="2019-05-01T01:02:41+00:00">01 de Maio 2019</time>
-                                            </td>
-                                            <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-status" data-title="Status">
-                                                Aguardando
-                                            </td>
-                                            <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-total" data-title="Total">
-                                                <span class="woocommerce-Price-amount amount">
-                                                    <span class="woocommerce-Price-currencySymbol">R$ </span>366,00
-                                                </span> para 2 itens
-                                            </td>
-                                            <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-actions" data-title="Ações">
-                                                <a href="{{route('order.view', [$id])}}" class="woocommerce-button button view">Ver Ordem</a>
-                                            </td>
-                                        </tr>
+
+                                            @foreach($orders as $order)
+
+                                                <tr class="woocommerce-orders-table__row woocommerce-orders-table__row--status-on-hold order">
+                                                    <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-number" data-title="{{$content->orders->order}}">
+                                                        <a href="{{route('order.view', $order->reference)}}">{{$order->reference}}</a>
+                                                    </td>
+                                                    <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-date" data-title="{{$content->orders->date}}">
+                                                        <time>{{$order->created_at->diffForHumans()}}</time>
+                                                    </td>
+                                                    <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-status" data-title="{{$content->orders->status}}">
+                                                        {{$order->ConfigStatusPayment->label}}
+                                                    </td>
+                                                    <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-total" data-title="{{$content->orders->total}}">
+                                                        <span class="woocommerce-Price-amount amount">
+                                                            <span class="woocommerce-Price-currencySymbol">R$ </span>{{setReal($order->total)}}
+                                                        </span>
+                                                    </td>
+                                                    <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-actions" data-title="{{$content->orders->actions}}">
+                                                        <a href="{{route('order.view', $order->reference)}}" class="woocommerce-button button view">Ver Ordem</a>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
                                         </tbody>
-                                    </table>
+                                        </table>
+                                    @endif
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -84,6 +95,3 @@
         </div>
     </div>
 @endsection
-@push('scripts')
-<script type="text/javascript" src="{{asset('themes/js/functions.min.js')}}"></script>
-@endpush

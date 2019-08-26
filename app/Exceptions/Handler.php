@@ -53,8 +53,15 @@ class Handler extends ExceptionHandler
         if ($exception instanceof ThrottleRequestsException) {
             return $this->response409();
         }
+
+        if ($exception instanceof \Illuminate\Session\TokenMismatchException) {
+            return $this->response419($request);
+        }
+
         return parent::render($request, $exception);
     }
+
+
 
     public function response409()
     {
@@ -62,5 +69,25 @@ class Handler extends ExceptionHandler
         $error = view('frontend.messages.error-1', compact('message'))->render();
 
         return response()->json(['success' => $error]);
+    }
+
+
+    public function response419($request)
+    {
+        if ($request->ajax()) {
+            $message = 'token_expired';
+            $error   = constLang('token_expired');
+            $html    = view('frontend.messages.error-1', compact('message', 'error'))->render();
+            $out = array(
+                'result' => 'redirect',
+                'message' => $html,
+                'redirect' => url()->current()
+            );
+            return response()->json($out);
+
+        } else {
+            return redirect()->url()->current();
+        }
+
     }
 }

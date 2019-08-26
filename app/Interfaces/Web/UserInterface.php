@@ -13,7 +13,7 @@ interface UserInterface
     public function setEmail($email);
     public function setToken($token);
     public function create($input);
-    public function update($input, $page);
+    public function update($input);
     public function access($access, $id);
     public function logout($id);
 }

@@ -1,8 +1,6 @@
 @extends('frontend.layouts.template-1')
 @push('title')
-<title>{{constLang('my_account')}} {{$configKeyword->description}} {{config('app.name')}}</title>
-    <meta name="description" content="{{$configKeyword->description}} , {{$configKeyword->genders}}">
-    <meta name="keywords" content="{{$configKeyword->keywords}},{{$configKeyword->categories}},{{$configKeyword->genders}}">
+<title>{{$content->title}} {{config('app.name')}}</title>
 @endpush
 @push('styles')
 <link rel="stylesheet" id="select2-css"  href="{{asset('plugins/select2/css/select2.css')}}" type="text/css" media="all" />
@@ -16,7 +14,7 @@
             <header class="entry-header">
                 <div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
                     <a href="{{route('home')}}" rel="v:url" property="v:title">Home</a> &raquo;
-                    <span class="current">{{constLang('my_account')}}</span>
+                    <span class="current">{{$content->title}}</span>
                 </div>
             </header>
         </div>
@@ -35,47 +33,26 @@
 
                                 <!-- .basel-my-account-sidebar -->
                                 <div class="woocommerce-MyAccount-content">
-
-                                    <p>Olá
-                                        <strong>@if($user->type_id == 1) {{$user->last_name}} @else {{$user->first_name}} @endif</strong>
-                                        (não é  <strong>@if($user->type_id == 1) {{$user->last_name}} @else {{$user->first_name}} @endif</strong>?
-                                        <a href="{{route('logout')}}">Sair da conta</a>)
+                                    <p>
+                                        <strong>{{$content->dashboard->text_salutation}}</strong>
                                     </p>
-
-                                    <p>No painel da sua conta, você pode visualizar seus
-                                        <a href="#">pedidos recentes</a>
-                                            , gerenciar seus
-                                        <a href="#">
-                                            endereços de entrega
-                                        </a>
-                                        , e
-                                        <a href="#">
-                                            editar sua senha
-                                        </a>
-                                        .
-                                    </p>
+                                    <p>{{$content->dashboard->text}}</p>
 
                                     <div class="basel-my-account-links">
                                         <div class="dashboard-link">
-                                            <a href="{{route('account')}}">Painel</a>
+                                            <a href="{{route('account')}}">{{$content->sidebar->dashboard}}</a>
                                         </div>
                                         <div class="orders-link">
-                                            <a href="#">Pedidos</a>
-                                        </div>
-                                        <div class="downloads-link">
-                                            <a href="#">Downloads</a>
+                                            <a href="{{route('account.order')}}">{{$content->sidebar->orders}}</a>
                                         </div>
                                         <div class="edit-address-link">
-                                            <a href="#">Endereço</a>
+                                            <a href="{{route('account.address')}}">{{$content->sidebar->address}}</a>
                                         </div>
                                         <div class="edit-account-link">
-                                            <a href="#">Detalhes da conta</a>
-                                        </div>
-                                        <div class="wishlist-link">
-                                            <a href="#">Lista de Desejo</a></li>
+                                            <a href="{{route('account.profile')}}">{{$content->sidebar->profile}}</a>
                                         </div>
                                         <div class="logout-link">
-                                            <a href="javascript:logoutUser('{{route('logout')}}', '{{ csrf_token() }}');">Sair</a>
+                                            <a href="javascript:logoutUser('{{route('logout')}}', '{{ csrf_token() }}');">{{$content->sidebar->logout}}</a>
                                         </div>
                                     </div>
                                 </div>
@@ -88,6 +65,3 @@
         </div>
     </div>
 @endsection
-@push('scripts')
-<script type="text/javascript" src="{{asset('themes/js/functions.min.js')}}"></script>
-@endpush

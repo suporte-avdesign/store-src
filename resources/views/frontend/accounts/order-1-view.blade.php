@@ -1,9 +1,6 @@
 @extends('frontend.layouts.template-1')
 @push('title')
-<title> Seu Carrinho - {{config('app.name')}}</title>
-@endpush
-@push('styles')
-<link rel="stylesheet" id="select2-css"  href="{{asset('plugins/select2/css/select2.css')}}?ver=3.5.2" type="text/css" media="all" />
+<title> {{$content->orders->title}} - {{config('app.name')}}</title>
 @endpush
 @push('body')
 <body class="page-template-default page page-id-9 logged-in woocommerce-account woocommerce-page woocommerce-no-js wrapper-full-width global-cart-design-1 global-search-full-screen global-header-shop mobile-nav-from-left basel-light catalog-mode-off categories-accordion-on global-wishlist-enable basel-top-bar-on basel-ajax-shop-on basel-ajax-search-on enable-sticky-header header-full-width sticky-header-real offcanvas-sidebar-mobile offcanvas-sidebar-tablet wpb-js-composer js-comp-ver-5.6 vc_responsive">
@@ -14,7 +11,7 @@
             <header class="entry-header">
                 <div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
                     <a href="{{route('home')}}" rel="v:url" property="v:title">Home</a> &raquo;
-                    <span class="current">Minha Conta</span>
+                    <span class="current">{{$content->title}}</span>
                 </div>
             </header>
         </div>
@@ -33,74 +30,79 @@
 
                                 <div class="woocommerce-MyAccount-content">
                                     <p>
-                                        Pedido #
-                                        <mark class="order-number">123456</mark> foi feita em
-                                        <mark class="order-date">1º de maio de 2019</mark> e o status é
-                                        <mark class="order-status">Aguardando</mark>.
+                                        {{$content->orders->order}}
+                                        <mark class="order-number">#{{$order->reference}}</mark> {{ $content->orders->text_created }}
+                                        <mark class="order-date">{{$order->created_at->diffForHumans()}}</mark>, {{ $content->orders->text_status }}
+                                        <mark class="order-status">{{$order->ConfigStatusPayment->label}}</mark>.
                                     </p>
 
                                     <section class="woocommerce-order-details">
-                                        <h2 class="woocommerce-order-details__title">Detalhes do Pedido</h2>
+                                        <h2 class="woocommerce-order-details__title">{{$content->orders->text_details}}</h2>
                                         <table class="woocommerce-table woocommerce-table--order-details shop_table order_details">
                                             <thead>
                                                 <tr>
-                                                    <th class="woocommerce-table__product-name product-name">Produto</th>
-                                                    <th class="woocommerce-table__product-table product-total">Total</th>
+                                                    <th class="woocommerce-table__product-name product-name">{{$content->orders->product}}</th>
+                                                    <th class="woocommerce-table__product-table product-total">{{$content->orders->total}}</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr class="woocommerce-table__line-item order_item">
-                                                    <td class="woocommerce-table__product-name product-name">
-                                                        <a href="#">Produto 1</a>
-                                                        <strong class="product-quantity">&times; 1</strong>
-                                                    </td>
-                                                    <td class="woocommerce-table__product-total product-total">
-                                                        <span class="woocommerce-Price-amount amount">
-                                                            <span class="woocommerce-Price-currencySymbol">R$ </span>275,00
-                                                        </span>
-                                                    </td>
-                                                </tr>
-                                                <tr class="woocommerce-table__line-item order_item">
-                                                    <td class="woocommerce-table__product-name product-name">
-                                                        <a href="#">Produto 2</a>
-                                                        <strong class="product-quantity">&times; 1</strong>
-                                                    </td>
-
-                                                    <td class="woocommerce-table__product-total product-total">
-                                                        <span class="woocommerce-Price-amount amount">
-                                                            <span class="woocommerce-Price-currencySymbol">R$ </span>79,00
-                                                        </span>
-                                                    </td>
-                                                </tr>
+                                                @foreach($items as $item)
+                                                    <tr class="woocommerce-table__line-item order_item">
+                                                        <td class="woocommerce-table__product-name product-name">
+                                                            <a href="#">{{$item->name}}</a>
+                                                            <strong class="product-quantity">&times; {{$item->quantity}}</strong> -
+                                                            @if($order->config_form_payment_id <= 2)
+                                                                {{$content->orders->value}}: <strong> {{setReal($item->price_cash)}}</strong>
+                                                            @else
+                                                                {{$content->orders->value}}: <strong> {{setReal($item->price_card)}}</strong>
+                                                            @endif
+                                                            <p>
+                                                                {{$content->orders->grid}}: <strong>{{$item->grid}}</strong> -
+                                                                {{$content->orders->color}}: <strong>{{$item->color}}</strong>
+                                                            </p>
+                                                        </td>
+                                                        <td class="woocommerce-table__product-total product-total">
+                                                            <span class="woocommerce-Price-amount amount">
+                                                                @if($order->config_form_payment_id <= 2)
+                                                                    <span class="woocommerce-Price-currencySymbol">{{constLang('currency')}} </span>
+                                                                    {{setReal($item->price_cash * $item->quantity)}}
+                                                                @else
+                                                                    <span class="woocommerce-Price-currencySymbol">{{constLang('currency')}} </span>
+                                                                    {{setReal($item->price_card * $item->quantity)}}
+                                                                @endif
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
                                             </tbody>
 
                                             <tfoot>
                                             <tr>
-                                                <th scope="row">Subtotal:</th>
+                                                <th scope="row">{{$content->orders->subtotal}}:</th>
                                                 <td>
                                                     <span class="woocommerce-Price-amount amount">
-                                                        <span class="woocommerce-Price-currencySymbol">R$ </span>354,00
+                                                        <span class="woocommerce-Price-currencySymbol">{{constLang('currency')}} </span>{{setReal($order->subtotal)}}
                                                     </span>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">Frete:</th>
+                                                <th scope="row">{{$content->orders->freight}}:</th>
                                                 <td>
                                                     <span class="woocommerce-Price-amount amount">
-                                                        <span class="woocommerce-Price-currencySymbol">R$ </span>12,00
+                                                        <span class="woocommerce-Price-currencySymbol">{{constLang('currency')}} </span>{{setReal($order->freight)}}
                                                     </span>&nbsp;
-                                                    <small class="shipped_via">Correio (PAC)</small>
+                                                    <small class="shipped_via">{{$order->configShipping->label}}</small>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">Méodo e Pagamento:</th>
-                                                <td>Depósito em conta</td>
+                                                <th scope="row">{{$content->orders->method_payment}}:</th>
+                                                <td>{{$order->configShipping->label}}</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">Total:</th>
+                                                <th scope="row">{{$content->orders->total}}:</th>
                                                 <td>
                                                     <span class="woocommerce-Price-amount amount">
-                                                        <span class="woocommerce-Price-currencySymbol">R$ </span>366,00
+                                                        <span class="woocommerce-Price-currencySymbol">{{constLang('currency')}} </span>{{setReal($order->total)}}
                                                     </span>
                                                 </td>
                                             </tr>
@@ -111,25 +113,35 @@
                                     <section class="woocommerce-customer-details">
                                         <section class="woocommerce-columns woocommerce-columns--2 woocommerce-columns--addresses col2-set addresses">
                                             <div class="woocommerce-column woocommerce-column--1 woocommerce-column--billing-address col-1">
-                                                <h2 class="woocommerce-column__title">Endereço de Cobrança</h2>
+                                                <h2 class="woocommerce-column__title"> {{$content->sidebar->address}}</h2>
                                                 <address>
-                                                    São Roque Calçados<br>
-                                                    Rua Cavalheiro, 243<br>
-                                                    Brás - São Paulo<br>
-                                                    CEP: 03010-000
-                                                    <p class="woocommerce-customer-details--phone">Telefone: (11)969384849</p>
-                                                    <p class="woocommerce-customer-details--email">Email: maniadepizza@gmail.com</p>
+                                                    {{$name}}<br>
+                                                    {{$address->address}}, {{$address->number}}<br>
+                                                    @if($address->complement)
+                                                        {{$address->complement}}<br>
+                                                    @endif
+                                                    {{$address->district}} - {{$address->city}}-{{$address->state}}<br>
+                                                    {{constLang('zip_code')}}: {{$address->zip_code}}
+                                                    <p class="woocommerce-customer-details--phone">{{constLang('phone')}}: {{$user->cell}} {{$user->phone}}</p>
+                                                    <p class="woocommerce-customer-details--email">{{constLang('email')}}: {{$user->email}}</p>
                                                 </address>
                                             </div>
-                                            <!-- /.col-1 -->
                                             <div class="woocommerce-column woocommerce-column--2 woocommerce-column--shipping-address col-2">
-                                                <h2 class="woocommerce-column__title">Endereço de Entrega</h2>
+                                                <h2 class="woocommerce-column__title">{{$content->orders->title_note}}</h2>
                                                 <address>
-                                                    São Roque Calçados<br>
-                                                    Rua Cavalheiro, 243<br>
-                                                    Brás - São Paulo<br>
-                                                    CEP: 03010-000
-                                                    <p class="woocommerce-customer-details--phone">Telefone: (11)969384849</p>
+                                                    @foreach($notes as $note)
+                                                        @if($note->who === 2)
+                                                            <p>{{$note->name}}: {{$note->description}}</p>
+                                                        @endif
+                                                    @endforeach
+
+                                                    @foreach($shippings as $shipping)
+                                                        @if($shipping->indicate === 1)
+                                                            <h4>{{$content->orders->text_indicate}}</h4>
+                                                            <p>{{constLang('name')}}: {{$shipping->name}}</p>
+                                                            <p>{{constLang('phone')}}: {{$shipping->phone}}</p>
+                                                        @endif
+                                                    @endforeach
                                                 </address>
                                             </div>
                                         </section>
@@ -145,6 +157,3 @@
         </div>
     </div>
 @endsection
-@push('scripts')
-<script type="text/javascript" src="{{asset('themes/js/functions.min.js')}}"></script>
-@endpush

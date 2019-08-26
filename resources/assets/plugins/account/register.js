@@ -285,11 +285,6 @@ jQuery( function( $ ) {
             avd_register_form.scroll_to_notices();
             $( document.body ).trigger( 'register_error' );
         },
-        return_success: function (message) {
-            alert('pegou');
-            $( '.return-register, .woocommerce-error, .woocommerce-message' ).remove();
-            avd_register_form.$register_form.html( '<div class="return-register">'+message+'</div>' );
-        },
         scroll_to_notices: function() {
             var scrollElement = $( '.return-register' );
 
