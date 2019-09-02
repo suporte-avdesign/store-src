@@ -79,6 +79,10 @@ class FreightService
                 foreach ($submits as $submit) {
                     if ($selected == 2) {
                         $send[] = $this->configFreight->pac($postcode, $submit);
+                        //$send[] = $this->configFreight->multiplo($postcode, $submit);
+
+                        //dd($send);
+
                     } elseif ($selected == 3) {
                         $send[] = $this->configFreight->sedex($postcode, $submit);
                     }

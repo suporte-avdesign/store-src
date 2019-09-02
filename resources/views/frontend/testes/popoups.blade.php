@@ -38,7 +38,9 @@
                                     <div class="wpb_wrapper">
                                         <div class="title-wrapper  basel-title-color-primary basel-title-style-bordered basel-title-size-default text-center vc_custom_1534844170235"><span class="title-subtitle font-default">XTEMOS ELEMENT</span>
                                             <div class="liner-continer"> <span class="left-line"></span>
-                                                <h4 class="title">POPUP SUBSCRIBE FORM<span class="title-separator"><span></span></span></h4> <span class="right-line"></span></div>
+                                                <h4 class="title">POPUP SUBSCRIBE FORM
+                                                    <span class="title-separator"><span></span></span>
+                                                </h4> <span class="right-line"></span></div>
                                         </div>
                                         <div class="basel-button-wrapper text-center"><a href="#newsletter-popup" title="" class="btn btn-color-primary btn-style-default btn-size-default basel-popup-with-content ">SUBSCRIBE TO OUR NEWSLETTER</a></div>
                                         <div id="newsletter-popup" class="mfp-with-anim basel-content-popup mfp-hide" style="max-width:800px;">
@@ -287,6 +289,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="vc_row wpb_row vc_row-fluid vc_custom_1534239777924 vc_row-o-content-top vc_row-flex">
                             <div class="wpb_column vc_column_container vc_col-sm-6">
                                 <div class="vc_column-inner vc_custom_1489065426716">
@@ -398,6 +401,9 @@
                                 </div>
                             </div>
                         </div>
+
+
+
                     </div>
                 </article>
             </div>

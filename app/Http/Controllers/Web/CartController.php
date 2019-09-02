@@ -371,7 +371,7 @@ class CartController extends Controller
             $render =view('messages.message-1-erro', compact('message'))->render();
         }
 
-        print $render;
+        return $render;
     }
 
     public function undo(Request $request)

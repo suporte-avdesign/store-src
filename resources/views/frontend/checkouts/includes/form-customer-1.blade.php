@@ -6,7 +6,7 @@
     <input type="hidden" name="register[profile_id]" value="{{$user->profile_id}}"/>
 </div>
 
-@if($user->profile_id == 1)
+@if($user->type_id == 1)
     <p class="form-row form-row-first validate-required">
         <label for="first_name_1" class="">{{constLang('person_legal.first_name')}} <span class="required">*</span></label>
         <span class="woocommerce-input-wrapper">

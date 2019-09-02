@@ -18,6 +18,6 @@
         "error_session" => "Sua sessão expirou, atualize a página",
         "error_brend" => "Digite um número de cartão válido",
         "currency_x" => "x de R$",
-        "profile" => auth()->user()->profile_id
+        "profile" => auth()->user()->type_id
     ]) !!};
 </script>

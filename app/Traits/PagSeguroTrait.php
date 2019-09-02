@@ -61,7 +61,7 @@ trait PagSeguroTrait
         $user = Auth::user();
         # Obrigatório 2 nomes
         $verify_name  = explode(' ', $user->first_name);
-        if ($user->profile_id == 1) {
+        if ($user->type_id == 1) {
             $senderDoc = 'senderCNPJ';
             if (count($verify_name) >=2) {
                 $name = $user->first_name;
@@ -149,7 +149,7 @@ trait PagSeguroTrait
 
         $user = auth()->user();
         # Pessoa Física: Titular do Cartão
-        if ($request->holder == 1 && $user->profile_id == 2) {
+        if ($request->holder == 1 && $user->type_id == 2) {
             $holderBirthDate = $user->date;
             $number = $user->phone != '' ? dddPhone($user->phone) : dddPhone($user->cell);
             $doc_name   = 'creditCardHolderCPF';
@@ -157,7 +157,7 @@ trait PagSeguroTrait
         }
 
         # Pessoa Física: Outro Titular
-        if ($request->holder == 2 && $user->profile_id == 2) {
+        if ($request->holder == 2 && $user->type_id == 2) {
             $holderBirthDate = $request->holderBirthDate;
             $number = dddPhone($request->holderPhone);
             if ($request->doc_type == 1) {
@@ -170,7 +170,7 @@ trait PagSeguroTrait
         }
 
         # Pessoa Jurídica: Titular do Cartão
-        if ($request->holder == 1 && $user->profile_id == 1) {
+        if ($request->holder == 1 && $user->type_id == 1) {
             $holderBirthDate = $user->date;
             $number = $user->phone != '' ? dddPhone($user->phone) : dddPhone($user->cell);
             if ($request->doc_type == 1) {
@@ -183,7 +183,7 @@ trait PagSeguroTrait
         }
 
         # Pessoa Jurídica: Outro Titular
-        if ($request->holder == 2 && $user->profile_id == 1) {
+        if ($request->holder == 2 && $user->type_id == 1) {
             $holderBirthDate = $request->holderBirthDate;
             $number = dddPhone($request->holderPhone);
             if ($request->doc_type == 1) { #CNPJ

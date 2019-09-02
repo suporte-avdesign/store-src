@@ -60,13 +60,13 @@
                                                     </span>
                                                 </p>
                                                 <p class="form-row form-row-last">
-                                                    <label for="complement" class="">{{constLang('complement')}}&nbsp;<abbr class="required">&nbsp;</abbr></label>
+                                                    <label for="complement" class="">{{constLang('complement')}}&nbsp;<abbr class="required"></abbr>({{constLang('optional')}})</label>
                                                     <span class="woocommerce-input-wrapper">
                                                         <input type="text" class="input-text" name="address[complement]" id="complement" value="{{$address->complement}}">
                                                     </span>
                                                 </p>
                                                 <p class="form-row form-row-first validate-required">
-                                                    <label for="district" class="">{{constLang('district')}}&nbsp;<span class="optional">({{constLang('optional')}})</span></label>
+                                                    <label for="district" class="">{{constLang('district')}}&nbsp;<abbr class="required" title="{{constLang('required')}}">*</abbr></label>
                                                     <span class="woocommerce-input-wrapper">
                                                         <input type="text" class="input-text" name="address[district]" id="district" value="{{$address->district}}">
                                                     </span>

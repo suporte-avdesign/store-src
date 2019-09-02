@@ -189,6 +189,9 @@ class PagSeguroServices implements PagSeguroServicesInterface
             'extraAmount' =>  $request->extraAmount,
             'installmentQuantity' => $installmentQuantity,
             'installmentValue' => $installmentValue,
+            //'paymentMethodGroup1' => 'CREDIT_CARD',
+            //'paymentMethodConfigKey1_1' => 'MAX_INSTALLMENTS_NO_INTEREST',
+            //'paymentMethodConfigValue1_1' => '1',
             'noInterestInstallmentQuantity' => $request->maxInstallment,
             'notificationURL' => 'https://sualoja.com.br/notificacao.html',
 
@@ -203,7 +206,9 @@ class PagSeguroServices implements PagSeguroServicesInterface
         $params = array_merge($params, $this->getShippingType(
             $request->shipping_method, $request->freight, $request->extraAmount)
         );
-       
+
+        //dd($params);
+
         try {
             $guzzle = new Guzzle();
             $response = $guzzle->request('POST', config('pagseguro.url_payment_transparent'), [

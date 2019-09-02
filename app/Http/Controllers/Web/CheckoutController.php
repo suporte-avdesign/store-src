@@ -462,7 +462,7 @@ class CheckoutController extends Controller
         $price == 'price_cash' ? $value = $price_cash : $value = $price_card;
 
         $extraAmount = '0.00'; # Valor Taxa(+) ou -Desconto(-)
-        $maxInstallment = 1; # numero de parcelas sem juros
+        $maxInstallment = 2; # numero de parcelas sem juros // Obs: com 1 está dando erro.
         $freight = number_format($freight->valor, 2, '.', '.');
 
         $form = view("{$this->viewPayment}.{$company->slug}.popup.{$popup}-1",

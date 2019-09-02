@@ -13,6 +13,7 @@
 
 
 Route::get('testes/contato', 'Web\TestesController@contato');
+Route::get('testes/popoups', 'Web\TestesController@popoups');
 Route::any('json', 'Web\JsonController@index')->name('json');
 
 Route::get('/', 'Web\HomeController@index')->name('home');
