@@ -1833,3 +1833,343 @@ In StreamHandler.php line 107:
   d                                                                            
                                                                                
 
+[2019-09-02 21:30:36][1] Processing: AVD\Listeners\UserRegisteredNoteListener
+[2019-09-02 21:30:36][2] Processing: AVD\Listeners\UserRegisteredNoteListener
+[2019-09-02 21:30:37][1] Processed:  AVD\Listeners\UserRegisteredNoteListener
+[2019-09-02 21:30:37][2] Processed:  AVD\Listeners\UserRegisteredNoteListener
+
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `config_keywo  
+  rds` where `config_keywords`.`id` = 2 limit 1)                               
+                                                                               
+
+In Connector.php line 70:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `config_keywo  
+  rds` where `config_keywords`.`id` = 2 limit 1)                               
+                                                                               
+
+In Connector.php line 70:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `config_keywo  
+  rds` where `config_keywords`.`id` = 2 limit 1)                               
+                                                                               
+
+In Connector.php line 70:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `config_keywo  
+  rds` where `config_keywords`.`id` = 2 limit 1)                               
+                                                                               
+
+In Connector.php line 70:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `config_keywo  
+  rds` where `config_keywords`.`id` = 2 limit 1)                               
+                                                                               
+
+In Connector.php line 70:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `config_keywo  
+  rds` where `config_keywords`.`id` = 2 limit 1)                               
+                                                                               
+
+In Connector.php line 70:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `config_keywo  
+  rds` where `config_keywords`.`id` = 2 limit 1)                               
+                                                                               
+
+In Connector.php line 70:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `config_keywo  
+  rds` where `config_keywords`.`id` = 2 limit 1)                               
+                                                                               
+
+In Connector.php line 70:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `config_keywo  
+  rds` where `config_keywords`.`id` = 2 limit 1)                               
+                                                                               
+
+In Connector.php line 70:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `config_keywo  
+  rds` where `config_keywords`.`id` = 2 limit 1)                               
+                                                                               
+
+In Connector.php line 70:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `config_keywo  
+  rds` where `config_keywords`.`id` = 2 limit 1)                               
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `config_keywo  
+  rds` where `config_keywords`.`id` = 2 limit 1)                               
+                                                                               
+
+In Connector.php line 70:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In Connector.php line 70:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+[2019-09-05 14:06:13][1] Processing: AVD\Mail\ResetPassword
+[2019-09-05 14:06:16][1] Processed:  AVD\Mail\ResetPassword
+[2019-09-05 14:14:10][2] Processing: AVD\Mail\ResetPassword
+[2019-09-05 14:14:12][2] Processed:  AVD\Mail\ResetPassword
+[2019-09-05 14:20:22][3] Processing: AVD\Mail\ResetPassword
+[2019-09-05 14:20:23][4] Processing: AVD\Mail\ResetPassword
+[2019-09-05 14:20:23][5] Processing: AVD\Mail\ResetPassword
+[2019-09-05 14:20:23][5] Failed:     AVD\Mail\ResetPassword
+[2019-09-05 14:23:05][6] Processing: AVD\Mail\ResetPassword
+[2019-09-05 14:23:05][7] Processing: AVD\Mail\ResetPassword
+[2019-09-05 14:23:06][8] Processing: AVD\Mail\ResetPassword
+[2019-09-05 14:23:06][8] Failed:     AVD\Mail\ResetPassword
+[2019-09-05 14:29:15][9] Processing: AVD\Mail\ResetPassword
+[2019-09-05 14:29:15][10] Processing: AVD\Mail\ResetPassword
+[2019-09-05 14:29:15][11] Processing: AVD\Mail\ResetPassword
+[2019-09-05 14:29:15][11] Failed:     AVD\Mail\ResetPassword
+[2019-09-05 14:38:13][12] Processing: AVD\Mail\ResetPassword
+[2019-09-05 14:38:13][13] Processing: AVD\Mail\ResetPassword
+[2019-09-05 14:38:13][14] Processing: AVD\Mail\ResetPassword
+[2019-09-05 14:38:13][14] Failed:     AVD\Mail\ResetPassword
+[2019-09-05 14:44:53][15] Processing: AVD\Mail\ResetPassword
+[2019-09-05 14:44:53][16] Processing: AVD\Mail\ResetPassword
+[2019-09-05 14:44:53][17] Processing: AVD\Mail\ResetPassword
+[2019-09-05 14:44:53][17] Failed:     AVD\Mail\ResetPassword
+[2019-09-05 14:50:53][18] Processing: AVD\Mail\ResetPassword
+[2019-09-05 14:50:53][19] Processing: AVD\Mail\ResetPassword
+[2019-09-05 14:50:53][20] Processing: AVD\Mail\ResetPassword
+[2019-09-05 14:50:53][20] Failed:     AVD\Mail\ResetPassword
+[2019-09-05 14:58:11][21] Processing: AVD\Mail\ResetPassword
+[2019-09-05 14:58:14][21] Processed:  AVD\Mail\ResetPassword
+[2019-09-05 15:18:26][22] Processing: AVD\Mail\ResetPassword
+[2019-09-05 15:18:29][22] Processed:  AVD\Mail\ResetPassword
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `config_keywo  
+  rds` where `config_keywords`.`id` = 2 limit 1)                               
+                                                                               
+
+In Connector.php line 70:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `config_keywo  
+  rds` where `config_keywords`.`id` = 2 limit 1)                               
+                                                                               
+
+In Connector.php line 70:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `config_keywo  
+  rds` where `config_keywords`.`id` = 2 limit 1)                               
+                                                                               
+
+In Connector.php line 70:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `config_keywo  
+  rds` where `config_keywords`.`id` = 2 limit 1)                               
+                                                                               
+
+In Connector.php line 70:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `config_keywo  
+  rds` where `config_keywords`.`id` = 2 limit 1)                               
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `config_keywo  
+  rds` where `config_keywords`.`id` = 2 limit 1)                               
+                                                                               
+
+In Connector.php line 70:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In Connector.php line 70:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `config_keywo  
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `config_keywo  
+  rds` where `config_keywords`.`id` = 2 limit 1)                               
+                                                                               
+
+  rds` where `config_keywords`.`id` = 2 limit 1)                               
+                                                                               
+
+In Connector.php line 70:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In Connector.php line 70:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `config_keywo  
+  rds` where `config_keywords`.`id` = 2 limit 1)                               
+                                                                               
+
+In Connector.php line 70:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `config_keywo  
+  rds` where `config_keywords`.`id` = 2 limit 1)                               
+                                                                               
+
+In Connector.php line 70:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+[2019-09-06 10:25:40][1] Processing: AVD\Mail\ResetPassword
+[2019-09-06 10:25:41][2] Processing: AVD\Mail\ResetPassword
+[2019-09-06 10:25:48][3] Processing: AVD\Mail\ResetPassword
+[2019-09-06 10:25:48][4] Processing: AVD\Mail\ResetPassword
+[2019-09-06 10:25:48][5] Processing: AVD\Mail\ResetPassword
+[2019-09-06 10:25:48][6] Processing: AVD\Mail\ResetPassword
+[2019-09-06 10:25:48][7] Processing: AVD\Mail\ResetPassword
+[2019-09-06 10:25:48][8] Processing: AVD\Mail\ResetPassword
+[2019-09-06 10:25:49][9] Processing: AVD\Mail\ResetPassword
+[2019-09-06 10:25:49][10] Processing: AVD\Mail\ResetPassword
+[2019-09-06 10:25:49][11] Processing: AVD\Mail\ResetPassword
+[2019-09-06 10:25:49][12] Processing: AVD\Mail\ResetPassword
+[2019-09-06 10:25:50][13] Processing: AVD\Mail\ResetPassword
+[2019-09-06 10:25:50][14] Processing: AVD\Mail\ResetPassword
+[2019-09-06 10:25:50][13] Failed:     AVD\Mail\ResetPassword
+[2019-09-06 10:25:50][14] Failed:     AVD\Mail\ResetPassword
+[2019-09-06 10:25:51][15] Processing: AVD\Mail\ResetPassword
+[2019-09-06 10:25:52][16] Processing: AVD\Mail\ResetPassword
+[2019-09-06 10:25:52][15] Failed:     AVD\Mail\ResetPassword
+[2019-09-06 10:25:52][16] Failed:     AVD\Mail\ResetPassword
+[2019-09-06 10:25:52][17] Processing: AVD\Mail\ResetPassword
+[2019-09-06 10:25:53][17] Failed:     AVD\Mail\ResetPassword
+[2019-09-06 10:25:53][18] Processing: AVD\Mail\ResetPassword
+[2019-09-06 10:25:53][18] Failed:     AVD\Mail\ResetPassword
+[2019-09-06 10:39:58][19] Processing: AVD\Mail\ResetPassword
+[2019-09-06 10:40:00][19] Processed:  AVD\Mail\ResetPassword
+[2019-09-06 10:49:12][20] Processing: AVD\Mail\ResetPassword
+[2019-09-06 10:49:15][20] Processed:  AVD\Mail\ResetPassword
+[2019-09-06 11:23:43][21] Processing: AVD\Mail\ResetPassword
+[2019-09-06 11:23:44][21] Processed:  AVD\Mail\ResetPassword
+[2019-09-06 11:25:08][22] Processing: AVD\Mail\ResetPassword
+[2019-09-06 11:25:10][22] Processed:  AVD\Mail\ResetPassword
+[2019-09-06 12:44:12][23] Processing: AVD\Mail\ResetPassword
+[2019-09-06 12:44:13][24] Processing: AVD\Mail\ResetPassword
+[2019-09-06 12:44:13][25] Processing: AVD\Mail\ResetPassword
+[2019-09-06 12:44:13][25] Failed:     AVD\Mail\ResetPassword
+[2019-09-06 12:45:49][26] Processing: AVD\Mail\ResetPassword
+[2019-09-06 12:45:51][26] Processed:  AVD\Mail\ResetPassword
+[2019-09-06 12:57:48][27] Processing: AVD\Mail\ResetPassword
+[2019-09-06 12:57:51][27] Processed:  AVD\Mail\ResetPassword

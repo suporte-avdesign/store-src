@@ -214,6 +214,8 @@ Route::post('contato', 'Web\ContactController@store')->name('contact');
 
 Route::get('login','Auth\LoginController@showLoginForm')->name('login');
 Route::post('login','Auth\LoginController@pageLogin')->name('login')->middleware("throttle:5,1");
+Route::get('recuperar-senha','Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::get('password/reset/{token}','Auth\ResetPasswordController@showResetForm')->name('password.reset');
 
 /*
 |--------------------------------------------------------------------------
@@ -228,7 +230,8 @@ Route::post('cadastro','Auth\RegisterController@register')->name('register');
 | Routes Protected
 |--------------------------------------------------------------------------
 */
-Route::prefix('minha-conta')->group(function () {
+Route::group(['prefix' => 'minha-conta',  'middleware' => 'auth'], function () {
+
     Route::get('/', 'Web\AccountController@index')->name('account');
     Route::get('lista-de-desejo', 'Web\AccountController@wishlist')->name('account.wishlist');
     Route::get('pedidos', 'Web\AccountController@order')->name('account.order');

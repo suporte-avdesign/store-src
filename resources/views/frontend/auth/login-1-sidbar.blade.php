@@ -27,7 +27,7 @@
             </p>
 
             <div class="login-form-footer">
-                <a href="{{route('password.update')}}" class="woocommerce-LostPassword lost_password">Perdeu sua senha?</a>
+                <a href="{{route('password.request')}}" class="woocommerce-LostPassword lost_password">Perdeu sua senha?</a>
                 <label for="rememberme" class="remember-me-label inline">
                     <input class="woocommerce-form__input woocommerce-form__input-checkbox" name="user[remember]" id="remember" type="checkbox"> <span>Lembre de mim</span>
                 </label>

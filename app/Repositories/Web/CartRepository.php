@@ -20,7 +20,6 @@ class CartRepository implements CartInterface
     public function __construct(Model $model)
     {
         $this->model   = $model;
-        $this->session = md5($_SERVER['REMOTE_ADDR']);
     }
 
     /**
@@ -31,7 +30,8 @@ class CartRepository implements CartInterface
      */
     public function getAll()
     {
-        return $this->model->orderBy('id')->where('session', $this->session)->get();
+        $session = md5($_SERVER['REMOTE_ADDR']);
+        return $this->model->orderBy('id')->where('session', $session)->get();
     }
 
     /**
@@ -61,7 +61,9 @@ class CartRepository implements CartInterface
 
     public function totalItems()
     {
-        return $this->model->where('session', $this->session)->count();
+        $session = md5($_SERVER['REMOTE_ADDR']);
+
+        return $this->model->where('session', $session)->count();
     }
 
 
@@ -87,7 +89,9 @@ class CartRepository implements CartInterface
      */
     public function existProduct($grid_product_id)
     {
-        return $this->model->where(['grid_product_id' => $grid_product_id, 'session' => $this->session])->first();
+        $session = md5($_SERVER['REMOTE_ADDR']);
+
+        return $this->model->where(['grid_product_id' => $grid_product_id, 'session' => $session])->first();
     }
 
     /**
@@ -156,7 +160,9 @@ class CartRepository implements CartInterface
 
     public function destroy()
     {
-        return $this->model->where('session', $this->session)->delete();
+        $session = md5($_SERVER['REMOTE_ADDR']);
+
+        return $this->model->where('session', $session)->delete();
     }
 
 

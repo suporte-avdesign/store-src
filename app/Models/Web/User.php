@@ -4,12 +4,17 @@ namespace AVD\Models\Web;
 
 //use AVD\Events\UserRegisteredEvent;
 //use Illuminate\Contracts\Auth\MustVerifyEmail;
+use AVD\Mail\ResetPassword;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 
 
 class User extends Authenticatable
 {
+
+    use Notifiable;
+
 
     protected $fillable = [
         'profile_id',
@@ -99,6 +104,19 @@ class User extends Authenticatable
         return $this->hasMany(UserTransport::class);
     }
 
+
+    /**
+     * Send the password reset notification.
+     *
+     * @param  string  $token
+     * @return void
+     */
+    public function sendPasswordResetNotification($token)
+    {
+        $this->type_id == 1 ? $name = $this->last_name : $name = $this->first_name;
+
+        \Mail::to($this->email)->send(new ResetPassword($name, $token));
+    }
 
 
 
