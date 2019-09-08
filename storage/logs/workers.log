@@ -2173,3 +2173,51 @@ In Connector.php line 70:
 [2019-09-06 12:45:51][26] Processed:  AVD\Mail\ResetPassword
 [2019-09-06 12:57:48][27] Processing: AVD\Mail\ResetPassword
 [2019-09-06 12:57:51][27] Processed:  AVD\Mail\ResetPassword
+
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `config_keywo  
+  rds` where `config_keywords`.`id` = 2 limit 1)                               
+                                                                               
+
+In Connector.php line 70:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `config_keywo  
+  rds` where `config_keywords`.`id` = 2 limit 1)                               
+                                                                               
+
+In Connector.php line 70:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `config_keywo  
+  rds` where `config_keywords`.`id` = 2 limit 1)                               
+                                                                               
+
+In Connection.php line 664:
+                                                                               
+  SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `config_keywo  
+  rds` where `config_keywords`.`id` = 2 limit 1)                               
+                                                                               
+
+In Connector.php line 70:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+In Connector.php line 70:
+                                             
+  SQLSTATE[HY000] [2002] Connection refused  
+                                             
+
+                                             
+

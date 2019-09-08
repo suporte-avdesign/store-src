@@ -55,13 +55,13 @@
             <div class="woocommerce-terms-and-conditions-wrapper">
                 <div class="woocommerce-privacy-policy-text">
                     <p>Seus dados pessoais serão usados ​​para processar seu pedido, apoiar sua experiência em todo o site e para outros fins descritos em nossa
-                        <a href="#" class="woocommerce-privacy-policy-link" target="_blank">política de privacidade</a>.
+                        <a href="{{route('privacy-policy')}}" class="woocommerce-privacy-policy-link" target="_blank">política de privacidade</a>.
                     </p>
                 </div>
                 <div class="woocommerce-terms-and-conditions" style="display: none; max-height: 200px; overflow: auto;">
                     @foreach($termsConditions as $terms)
-                        <h4>{{$terms->title}}</h4>
-                        {!! $terms->description !!}
+                        <p><strong>{{$terms->title}}</strong></p>
+                        <p>{!! nl2br($terms->description) !!}</p>
                     @endforeach
                 </div>
                 <p class="form-row validate-required">

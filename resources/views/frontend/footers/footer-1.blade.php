@@ -35,10 +35,10 @@
                     <h5 class="widget-title">Informações</h5>
                     <div class="textwidget">
                         <ul class="menu">
-                            <li><a href="{{route('privacy-policy')}}">Compras no Atacado</a></li>
-                            <li><a href="{{route('privacy-policy')}}">Trocas e Devoluções</a></li>
-                            <li><a href="{{route('privacy-policy')}}">Forma de Pagamento</a></li>
-                            <li><a href="{{route('privacy-policy')}}">Sobre Entregas</a></li>
+                            <li><a href="{{route('contract')}}">Contrato Compra e Venda</a></li>
+                            <li><a href="{{route('delivery-return')}}">Trocas e Devoluções</a></li>
+                            <li><a href="{{route('form-payment')}}">Forma de Pagamento</a></li>
+                            <li><a href="{{route('deliveries')}}">Sobre Entregas</a></li>
                         </ul>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                     <h5 class="widget-title">Outros</h5>
                     <div class="textwidget">
                         <ul class="menu">
-                            <li><a href="{{route('login')}}">Cadastre-se</a></li>
+                            <li><a href="{{route('register')}}">Cadastre-se</a></li>
                             <li><a href="{{route('contact')}}">Fale Conosco</a></li>
                             <li><a href="{{route('privacy-policy')}}">Política de Privacidade</a></li>
                             <li><a href="{{route('terms-conditions')}}">Termos e Condições</a></li>

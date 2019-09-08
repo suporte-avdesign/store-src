@@ -195,6 +195,11 @@ Route::get('order/received/{reference}/{token}', 'Web\OrderController@index')->n
 
 Route::get('termos-e-condicoes', 'Web\PagesController@terms')->name('terms-conditions');
 Route::get('politica-de-privacidade', 'Web\PagesController@privacy')->name('privacy-policy');
+Route::get('sobre-entregas', 'Web\PagesController@deliveries')->name('deliveries');
+Route::get('trocas-e-devolucoes', 'Web\PagesController@deliveryReturn')->name('delivery-return');
+Route::get('forma-de-pagamento', 'Web\PagesController@payment')->name('form-payment');
+Route::get('contrato-de-compra-e-venda', 'Web\PagesController@contract')->name('contract');
+
 
 
 Route::get('contato', 'Web\ContactController@index')->name('contact');
