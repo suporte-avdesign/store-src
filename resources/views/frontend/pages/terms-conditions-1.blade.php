@@ -56,7 +56,7 @@
                                             </div>
                                         </div>
                                         <div class="basel-button-wrapper text-center">
-                                            <a class="btn btn-color-primary btn-style-link btn-size-default">More about cookies law</a>
+                                            <a href="{{route('deliveries')}}" class="btn btn-color-primary btn-style-link btn-size-default">Mais Sobre Entregas</a>
                                         </div>
                                     </div>
                                 </div>

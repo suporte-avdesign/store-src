@@ -9,6 +9,7 @@ use AVD\Http\Requests\Web\ContactRequest;
 use AVD\Interfaces\Web\UserInterface as InterUser;
 use AVD\Interfaces\Web\StateInterface as InterState;
 use AVD\Interfaces\Web\ContactInterface as InterModel;
+use AVD\Interfaces\Web\ContentFaqInterface as InterFaq;
 use AVD\Interfaces\Web\SectionInterface as InterSection;
 use AVD\Interfaces\Web\ConfigKeywordInterface as ConfigKeyword;
 use AVD\Interfaces\Web\AccountTypeInterface as InterAccountType;
@@ -27,6 +28,7 @@ class ContactController extends Controller
      */
 
     public function __construct(
+        InterFaq $interFaq,
         InterUser $interUser,
         InterModel $interModel,
         InterState $interState,
@@ -37,6 +39,7 @@ class ContactController extends Controller
         InterAccountType $interAccountType)
     {
 
+        $this->interFaq          = $interFaq;
         $this->interUser         = $interUser;
         $this->interModel        = $interModel;
         $this->interState        = $interState;
@@ -69,6 +72,7 @@ class ContactController extends Controller
     {
         $menu          = $this->interSection->getMenu();
         $types         = $this->interAccountType->getAll();
+        $faqs          = $this->interFaq->getAll();
         $content       = typeJson($this->content);
         $profiles      = $this->interProfile->getAll();
         $configKeyword = $this->configKeyword->random();
@@ -81,8 +85,8 @@ class ContactController extends Controller
         $json_countries = $this->getCountries($states);
 
         return view("{$this->view}.contact-1", compact(
-            'menu','types','states','content','profiles','json_locale','json_countries',
-            'configKeyword','configSubject')
+            'menu','faqs', 'types','states','content','profiles',
+            'json_locale','json_countries', 'configKeyword','configSubject')
         );
     }
 

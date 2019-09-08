@@ -40,6 +40,7 @@ class AppServiceProvider extends ServiceProvider
             'ConfigSubjectContact',
             'Contact',
             'ContentContract',
+            'ContentFaq',
             'ContentFormPayment',
             'ContentDelivery',
             'ContentDeliveryReturn',

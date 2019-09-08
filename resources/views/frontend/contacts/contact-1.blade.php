@@ -66,18 +66,8 @@
                                                     <div class="vc_tta-tabs-container">
                                                         <ul class="vc_tta-tabs-list">
                                                             <li class="vc_tta-tab vc_active" data-vc-tab>
-                                                                <a href="#sobre-compras" data-vc-tabs data-vc-container=".vc_tta">
-                                                                    <span class="vc_tta-title-text">Sobre Compras</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="vc_tta-tab" data-vc-tab>
-                                                                <a href="#termos-condicoes" data-vc-tabs data-vc-container=".vc_tta">
-                                                                    <span class="vc_tta-title-text">Termos</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="vc_tta-tab" data-vc-tab>
-                                                                <a href="#politica-de-privacidade" data-vc-tabs data-vc-container=".vc_tta">
-                                                                    <span class="vc_tta-title-text">Privacidade</span>
+                                                                <a href="#faqs" data-vc-tabs data-vc-container=".vc_tta">
+                                                                    <span class="vc_tta-title-text">Perguntas Frequentes</span>
                                                                 </a>
                                                             </li>
                                                         </ul>
@@ -88,125 +78,22 @@
                                                             <div class="vc_tta-panel vc_active" id="sobre-compras" data-vc-content=".vc_tta-panel-body">
                                                                 <div class="vc_tta-panel-heading">
                                                                     <h4 class="vc_tta-panel-title">
-                                                                        <a href="#sobre-compras" data-vc-accordion data-vc-container=".vc_tta-container">
-                                                                            <span class="vc_tta-title-text">Sobre Compras</span>
+                                                                        <a href="#faqs" data-vc-accordion data-vc-container=".vc_tta-container">
+                                                                            <span class="vc_tta-title-text">Perguntas Frequentes</span>
                                                                         </a>
                                                                     </h4>
                                                                 </div>
                                                                 <div class="vc_tta-panel-body">
-                                                                    <div id="1234" class="vc_toggle vc_toggle_arrow vc_toggle_color_grey vc_toggle_size_md vc_toggle_active">
-                                                                        <div class="vc_toggle_title">
-                                                                            <h4><strong>Pergunta sobre compra 1?</strong></h4><i class="vc_toggle_icon"></i>
+                                                                    @foreach($faqs as $faq)
+                                                                        <div id="{{$faq->id}}" class="vc_toggle vc_toggle_arrow vc_toggle_color_black vc_toggle_size_md @if ($loop->first)vc_toggle_active @endif">
+                                                                            <div class="vc_toggle_title">
+                                                                                <h4><strong>{{$faq->question}}</strong></h4><i class="vc_toggle_icon"></i>
+                                                                            </div>
+                                                                            <div class="vc_toggle_content">
+                                                                                <p>{{$faq->response}}</p>
+                                                                            </div>
                                                                         </div>
-                                                                        <div class="vc_toggle_content">
-                                                                            <p>Resposta sobre compra 1</p>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="vc_toggle vc_toggle_arrow vc_toggle_color_grey vc_toggle_size_md">
-                                                                        <div class="vc_toggle_title">
-                                                                            <h4><strong>Pergunta sobre compra 2?</strong></h4><i class="vc_toggle_icon"></i>
-                                                                        </div>
-                                                                        <div class="vc_toggle_content">
-                                                                            <p>Resposta sobre compra 2</p>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="vc_toggle vc_toggle_arrow vc_toggle_color_grey vc_toggle_size_md">
-                                                                        <div class="vc_toggle_title">
-                                                                            <h4><strong>Pergunta sobre compra 2?</strong></h4><i class="vc_toggle_icon"></i>
-                                                                        </div>
-                                                                        <div class="vc_toggle_content">
-                                                                            <p>Resposta sobre compra 3</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <!-- TERMOS & CONDIÇÕES -->
-                                                            <div class="vc_tta-panel" id="termos-condicoes" data-vc-content=".vc_tta-panel-body">
-                                                                <div class="vc_tta-panel-heading">
-                                                                    <h4 class="vc_tta-panel-title">
-                                                                        <a href="#termos-condicoes" data-vc-accordion data-vc-container=".vc_tta-container">
-                                                                            <span class="vc_tta-title-text">Termos & Condições</span>
-                                                                        </a>
-                                                                    </h4>
-                                                                </div>
-                                                                <div id="12345" class="vc_toggle vc_toggle_arrow vc_toggle_color_grey vc_toggle_size_md vc_toggle_active">
-                                                                    <div class="vc_toggle_title">
-                                                                        <h4><strong>Titulo 1?</strong></h4><i class="vc_toggle_icon"></i>
-                                                                    </div>
-                                                                    <div class="vc_toggle_content">
-                                                                        <p>Conteudo titulo 1</p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="vc_toggle vc_toggle_arrow vc_toggle_color_grey vc_toggle_size_md">
-                                                                    <div class="vc_toggle_title">
-                                                                        <h4><strong>Titulo 2?</strong></h4><i class="vc_toggle_icon"></i>
-                                                                    </div>
-                                                                    <div class="vc_toggle_content">
-                                                                        <p>Conteudo titulo 2</p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="vc_toggle vc_toggle_arrow vc_toggle_color_grey vc_toggle_size_md">
-                                                                    <div class="vc_toggle_title">
-                                                                        <h4><strong>Titulo 3?</strong></h4><i class="vc_toggle_icon"></i>
-                                                                    </div>
-                                                                    <div class="vc_toggle_content">
-                                                                        <p>Conteudo titulo 3</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <!-- POLÍTICA DE PRIVACIDADE -->
-                                                            <div class="vc_tta-panel" id="politica-de-privacidade" data-vc-content=".vc_tta-panel-body">
-                                                                <div class="vc_tta-panel-heading">
-                                                                    <h4 class="vc_tta-panel-title"><a href="#politica-de-privacidade" data-vc-accordion data-vc-container=".vc_tta-container"><span class="vc_tta-title-text">Privacy Policy</span></a></h4></div>
-                                                                <div class="vc_tta-panel-body">
-                                                                    <div id="14348" class="vc_toggle vc_toggle_arrow vc_toggle_color_grey vc_toggle_size_md">
-                                                                        <div class="vc_toggle_title">
-                                                                            <h4><strong>Titulo 1?</strong></h4><i class="vc_toggle_icon"></i>
-                                                                        </div>
-                                                                        <div class="vc_toggle_content">
-                                                                            <p>Conteudo titulo 1</p>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="vc_toggle vc_toggle_arrow vc_toggle_color_grey vc_toggle_size_md">
-                                                                        <div class="vc_toggle_title">
-                                                                            <h4><strong>Titulo 1?</strong></h4><i class="vc_toggle_icon"></i>
-                                                                        </div>
-                                                                        <div class="vc_toggle_content">
-                                                                            <p>Conteudo titulo 1</p>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div id="15348" class="vc_toggle vc_toggle_arrow vc_toggle_color_grey vc_toggle_size_md vc_toggle_active">
-                                                                        <div class="vc_toggle_title">
-                                                                            <h4><strong>Titulo 1?</strong></h4><i class="vc_toggle_icon"></i>
-                                                                        </div>
-                                                                        <div class="vc_toggle_content">
-                                                                            <p>Conteudo titulo 1</p>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="vc_toggle vc_toggle_arrow vc_toggle_color_grey vc_toggle_size_md">
-                                                                        <div class="vc_toggle_title">
-                                                                            <h4><strong>Titulo 1?</strong></h4><i class="vc_toggle_icon"></i>
-                                                                        </div>
-                                                                        <div class="vc_toggle_content">
-                                                                            <p>Conteudo titulo 1</p>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div id="271806" class="vc_toggle vc_toggle_arrow vc_toggle_color_grey vc_toggle_size_md">
-                                                                        <div class="vc_toggle_title">
-                                                                            <h4><strong>Titulo 1?</strong></h4><i class="vc_toggle_icon"></i>
-                                                                        </div>
-                                                                        <div class="vc_toggle_content">
-                                                                            <p>Conteudo titulo 1</p>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div id="337089" class="vc_toggle vc_toggle_arrow vc_toggle_color_grey vc_toggle_size_md">
-                                                                        <div class="vc_toggle_title">
-                                                                            <h4><strong>Titulo 1?</strong></h4><i class="vc_toggle_icon"></i>
-                                                                        </div>
-                                                                        <div class="vc_toggle_content">
-                                                                            <p>Conteudo titulo 1</p>
-                                                                        </div>
-                                                                    </div>
+                                                                    @endforeach
                                                                 </div>
                                                             </div>
                                                         </div>
