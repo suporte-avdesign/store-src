@@ -10,5 +10,6 @@ interface ImageColorInterface
      * @return \AVD\Repositories\Web\ImageColorRepository
      */
     public function get($slug);
+    public function search($search);
 
 }

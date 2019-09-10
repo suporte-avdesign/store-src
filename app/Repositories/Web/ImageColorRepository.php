@@ -77,10 +77,14 @@ class ImageColorRepository implements ImageColorInterface
     }
 
 
+    public function search($search)
+    {
+        $query =  $this->model->where('slug','LIKE',"%{$search}%")
+            ->orWhere('description', 'LIKE',"%{$search}%")
+            ->get();
 
+        return $query;
 
-
-
-
+    }
 
 }

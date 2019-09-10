@@ -84,6 +84,7 @@ jQuery( function( $ ) {
         });
 
         $.post( wc_add_to_cart_params.wc_ajax_url.toString().replace( '%%endpoint%%', 'remove_from_cart' ), { cart_item_key : $thisbutton.data( 'cart_item_key'),  _token : wc_add_to_cart_params.csrf_token }, function( response ) {
+            alert('remover');
             if ( ! response || ! response.fragments ) {
                 window.location = $thisbutton.attr( 'href' );
                 return;

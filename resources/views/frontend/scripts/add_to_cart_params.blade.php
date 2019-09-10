@@ -2,6 +2,7 @@
     var wc_add_to_cart_params = {!! json_encode([
             "ajax_url" => route('cart.add'),
             "wc_ajax_url" => route('cart.remove')."/?wc-ajax=%%endpoint%%",
+            //"ajax_remove" => route('cart.remove'),
             "i18n_view_cart" => "Ver Carrrinho",
             "cart_url" => route('cart'),
             "is_cart" => "",

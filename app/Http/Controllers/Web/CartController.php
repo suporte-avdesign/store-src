@@ -247,8 +247,9 @@ class CartController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function destroy(Request $request)
+    public function destroy($item)
     {
+        /*
         $json     = $request['wc-ajax'];
         $list     = 1;
         $quantity = 0;
@@ -281,6 +282,7 @@ class CartController extends Controller
         );
 
         return response()->json($out);
+        */
 
     }
 

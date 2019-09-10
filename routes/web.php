@@ -107,7 +107,7 @@ Route::post('cart/add', 'Web\CartController@store')->name('cart.add');
 Route::post('cart/fragments', 'Web\CartController@fragments')->name('cart.fragments');
 Route::get('cart-undo', 'Web\CartController@undo')->name('cart.undo');
 
-Route::post('cart-remove', 'Web\CartController@destroy')->name('cart.remove');
+Route::any('cart-remove', 'Web\CartController@destroy')->name('cart.remove');
 
 /*
 |--------------------------------------------------------------------------
