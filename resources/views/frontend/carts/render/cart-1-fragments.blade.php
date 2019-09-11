@@ -1,13 +1,14 @@
 @if (empty($cart))
     <div class="widget_shopping_cart_content">
-        <p class="woocommerce-mini-cart__empty-message empty">{{constLang('messages.cart.cart_empty')}}</p>
+        <p class="woocommerce-mini-cart__empty-message empty">{{constLang('messages.cart.empty')}}</p>
     </div>
 @else
     <div class="widget_shopping_cart_content">
         <ul class="woocommerce-mini-cart cart_list product_list_widget ">
             @foreach($cart as $item)
                 <li class="woocommerce-mini-cart-item mini_cart_item">
-                    <a href="{{url('cart-remove)}}/?remove_item={{$item->key}}&_wpnonce={{numLetter($item->id, 'leter').numLetter($item->color)}}" class="remove remove_from_cart_button" aria-label="{{constLang('messages.cart.remove_item')}}" data-product_id="{{$item->product_id}}" data-cart_item_key="{{$item->key}}" data-product_sku="">&times;</a>
+                    <!--
+                    -->
                     <a href="#">
                         <img width="100" height="100" src="{{asset($photoUrl.$item->image)}}" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="{{$item->name}} {{$item->color}} {{$item->grid}}" />
                         {{$item->name}}
@@ -36,12 +37,3 @@
     </div>
 
 @endif
-
-
-
-
-
-
-
-
-

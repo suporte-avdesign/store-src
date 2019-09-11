@@ -141,7 +141,10 @@ class CartController extends Controller
         $configImages   = $this->configImages->setName('default', 'T');
         $photoUrl       = $this->phatFiles.$configImages->path;
 
+
         $fragments = view("{$this->view}.render.cart-1-fragments", compact('cart','photoUrl', 'total'))->render();
+
+
         $cart_quantity = view("{$this->view}.render.cart-1-quantity", compact('total_quantity'))->render();
         $cart_total = view("{$this->view}.render.cart-1-total", compact('total'))->render();
 
