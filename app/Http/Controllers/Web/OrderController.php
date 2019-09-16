@@ -4,10 +4,8 @@ namespace AVD\Http\Controllers\Web;
 
 use AVD\Http\Controllers\Controller;
 
-
-
+use AVD\Services\Web\FreightService;
 use AVD\Interfaces\Web\CartInterface as InterCart;
-
 use AVD\Interfaces\Web\OrderInterface as InterOrder;
 use AVD\Interfaces\Web\SectionInterface as InterSection;
 use AVD\Http\Requests\Web\OrderRequest as ValidateOrder;
@@ -16,6 +14,7 @@ use AVD\Interfaces\Web\OrderNoteInterface as interOrderNote;
 use AVD\Interfaces\Web\OrderItemInterface as InterOrderItems;
 use AVD\Interfaces\Web\ConfigKeywordInterface as ConfigKeyword;
 use AVD\Interfaces\Web\OrderShippingInterface as InterOrderShipping;
+use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
@@ -34,6 +33,7 @@ class OrderController extends Controller
         InterSection $interSection,
         ConfigKeyword $configKeyword,
         InterOrderNote $interOrderNote,
+        FreightService $freightService,
         InterOrderItems $interOrderItems,
         InterOrderShipping $interOrderShipping)
     {
@@ -45,6 +45,7 @@ class OrderController extends Controller
         $this->interSection = $interSection;
         $this->configKeyword = $configKeyword;
         $this->interOrderNote = $interOrderNote;
+        $this->freightService  = $freightService;
         $this->interOrderItems = $interOrderItems;
         $this->interOrderShipping = $interOrderShipping;
 
@@ -110,26 +111,17 @@ class OrderController extends Controller
      */
     public function paymentCash(ValidateOrder $request)
     {
-        sleep(10);
-        dd($request->all());
 
         try{
             DB::beginTransaction();
 
-            $response = $this->servicePagSeguro->paymentCredCard($request);
-            if ($response->error) {
-                $out = array(
-                    'success' => false ,
-                    'error' => $response->error
-                );
-            } else {
 
 
                 $user = auth()->user();
 
-                $code = $response->code;
+                $code = 0;
                 $price = $request->price;
-                $status = $response->status;
+                $status = 2;
                 $payment = $request->payment_method;
                 $shipping = $request->shipping_method;
 
@@ -169,18 +161,6 @@ class OrderController extends Controller
 
                 $orderShipping = $this->interOrderShipping->create($shipping, $order->id);
 
-                $holder = $request->holder;
-                if ($holder == 1) {
-                    $card_document = $user->document1;
-                    $card_phone = $user->phone == null ? $user->cell : $user->phone;
-                    $card_birth_date = $user->date;
-                } else {
-                    $card_document = $request->doc_type == 1 ? $request->holderCNPJ : $request->holderCPF;
-                    $card_phone = $request->holderPhone;
-                    $card_birth_date = $request->holderBirthDate;
-                }
-
-
 
                 $input = [
                     'order_id' => $order->id,
@@ -190,7 +170,7 @@ class OrderController extends Controller
                     'status' => $status,
                     'status_label' => 'Aguardando',
                     'reference' => $reference,
-                    'code' => $response->code,
+                    'code' => $code,
                     'value' => $order->total,
                     'date' => date('Ymd')
                 ];
@@ -203,10 +183,9 @@ class OrderController extends Controller
 
                 $out = array(
                     'success' => true,
-                    'status' =>  $response->status,
+                    'status' =>  $status,
                     'redirect' => route('order.received', ['reference' => $order->reference, 'token' => $order->token]),
                 );
-            }
 
             return response()->json($out);
 
