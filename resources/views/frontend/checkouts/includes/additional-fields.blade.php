@@ -28,7 +28,7 @@
                 </p>
                 <p class="form-row form-row-last validate-required">
                     <label for="transport_phone" class="">{{constLang('phone')}}&nbsp;<span class="required">*</span></label>
-                    <input type="text" class="input-text" id="transport_phone" name="transport[phone2]" value="{{$transport->phone}}"/>
+                    <input type="text" class="input-text" id="transport_phone" name="transport[phone]" value="{{$transport->phone}}"/>
                 </p>
 
             @endif

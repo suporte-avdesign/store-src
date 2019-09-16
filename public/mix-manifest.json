@@ -29,6 +29,7 @@
     "/plugins/cart/js/cart.js": "/plugins/cart/js/cart.js?id=8653c66a1891c3e701f6",
     "/plugins/select2/js/select2.full.min.js": "/plugins/select2/js/select2.full.min.js?id=6139bd8ff1780a5b16dd",
     "/plugins/checkout/checkout.min.js": "/plugins/checkout/checkout.min.js?id=fb7452c5e4e8786d53af",
+    "/plugins/checkout/payment.cash.min.js": "/plugins/checkout/payment.cash.min.js?id=d52c88d00e8aa6d8cdd5",
     "/plugins/account/register.min.js": "/plugins/account/register.min.js?id=2137c34ce6861c837ff6",
     "/plugins/account/address.min.js": "/plugins/account/address.min.js?id=9321ed5440e3730c1595",
     "/plugins/account/profile.min.js": "/plugins/account/profile.min.js?id=a022d1d514f7970489e6",

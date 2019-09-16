@@ -76,7 +76,7 @@
                 </p>
             </div>
 
-            <button type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="Finalizar Pedido" data-value="Finalizar Pedido">Finalizar Pedido</button>
+            <button type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order">Finalizar Pedido</button>
             <input type="hidden" name="http_referer" value="checkout"/>
         </div>
    @endif

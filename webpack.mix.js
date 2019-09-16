@@ -159,6 +159,7 @@ mix.scripts('resources/assets/plugins/select2/js/select2.full.js', 'public/plugi
 
 //Checkout footer
 mix.scripts('resources/assets/plugins/checkout/checkout.js', 'public/plugins/checkout/checkout.min.js');
+mix.scripts('resources/assets/plugins/checkout/payment.cash.js', 'public/plugins/checkout/payment.cash.min.js');
 
 //Account footer
 mix.scripts('resources/assets/plugins/account/register.js', 'public/plugins/account/register.min.js');

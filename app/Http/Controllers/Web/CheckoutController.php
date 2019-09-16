@@ -196,158 +196,6 @@ class CheckoutController extends Controller
     }
 
     /**
-     * Retorna os Estados
-     *
-     * @param $states
-     * @return array
-     */
-    public function getCountries($states)
-    {
-        foreach ($states as $state) {
-            $arr[$state->uf] = $state->name;
-        }
-
-        $countrie = array('BR' => $arr);
-
-        $countries = array(
-            "countries" => json_encode( $countrie ),
-            "i18n_select_state_text" => constLang('select_state'),
-            "i18n_no_matches" => constLang('not_found'),
-            "i18n_ajax_error" => constLang('loading_failed'),
-            "i18n_input_too_short_1" => constLang('please_enter').' 1 '. constLang('validation.caracteres.required'),
-            "i18n_input_too_short_n" => constLang('please_enter')." %qty% ".constLang('validation.caracteres.required'),
-            "i18n_input_too_long_1" => constLang('please_delete').' 1 '. constLang('validation.caracteres.1'),
-            "i18n_input_too_long_n" => constLang('please_delete')." %qty% ".constLang('validation.caracteres.2'),
-            "i18n_selection_too_long_1" => constLang('validation.selects.select1').' 1 '. constLang('item'),
-            "i18n_selection_too_long_n" => constLang('validation.selects.select1')." %qty% ". constLang('items'),
-            "i18n_load_more" => constLang('loading_more')."...",
-            "i18n_searching" => constLang('searching')."...",
-        );
-        return $countries;
-    }
-
-    /**
-     * Retorna as validações do CEP dos estados
-     *
-     * @return array
-     */
-    public function getLocale()
-    {
-        $arr1 = array(
-           "postcode" => array(
-               "label" => constLang('zip_code'),
-               "required" => false,
-               "hidden" => false
-           ),
-           "state" => array(
-               "label" => constLang('state'),
-               "required" => false,
-               "hidden" => false
-           ),
-            "city" => array(
-                "label" => constLang('city'),
-                "required" => false,
-                "hidden" => false
-            )
-
-        );
-
-        $default = array(
-            "first_name" => array(
-                "label" => constLang('person_physical.first_name'),
-                "required" => false,
-                "class" => ["form-row-first"],
-                "autocomplete" => "given-name",
-                "priority" => 10
-
-            ),
-            "last_name" => array(
-                "label" => constLang('person_physical.last_name'),
-                "required" => false,
-                "class" => ["form-row-last"],
-                "autocomplete" => "family-name",
-                "priority" => 20
-            ),
-            "company" => array(
-                "label" => constLang('person_legal.first_name'),
-                "class" => ["form-row-wide"],
-                "autocomplete" => "organization",
-                "priority" => 30,
-                "required" => false
-            ),
-            "country" => array(
-                "type" => "country",
-                "label" =>  constLang('city'),
-                "required" => false,
-                "class" => ["form-row-wide","address-field","update_totals_on_change"],
-                "autocomplete" => "country",
-                "priority" => 40
-            ),
-
-            "address_1" => array(
-                "label" => constLang('address'),
-                "placeholder" => constLang('address'),
-                "required" => false,
-                "class" => ["form-row-wide", "address-field"],
-                "autocomplete" => "address-line1",
-                "priority" => 50
-
-            ),
-            "address_2" => array(
-                "label" => constLang('cmplement'),
-                "label_class" => ["screen-reader-text"],
-                "placeholder" => constLang('cmplement'),
-                "class" => ["form-row-wide","address-field"],
-                "autocomplete" => "address-line2",
-                "priority" => 60,
-                "required" => false
-            ),
-            "city" => array(
-                "label" => constLang('city'),
-                "required" => false,
-                "class" => ["form-row-wide","address-field"],
-                "autocomplete" => "address-level2",
-                "priority" => 70
-            ),
-            "state" => array(
-                "type" => "state",
-                "label" => constLang('state'),
-                "required" => false,
-                "class" => ["form-row-wide","address-field"],
-                "validate" => ["state"],
-                "autocomplete" => "address-level1",
-                "priority" => 80
-            ),
-            "postcode" => array(
-                "label" => constLang('zip_code'),
-                "required" => false,
-                "class" => ["form-row-wide","address-field"],
-                "validate"=> ["postcode"],
-                "autocomplete" => "postal-code",
-                "priority" => 90
-            )
-        );
-
-        $countrie = array('BR' => $arr1, "default" => $default);
-        $locale_fields = array(
-            "address_1" => "#billing_address_1_field,#shipping_address_1_field",
-            "address_2" => "#billing_address_2_field,#shipping_address_2_field",
-            "state" => "#billing_state_field,#shipping_state_field,#calc_shipping_state_field",
-            "postcode" => "#billing_postcode_field,#shipping_postcode_field,#calc_shipping_postcode_field",
-            "city" => "#billing_city_field,#shipping_city_field,#calc_shipping_city_field"
-        );
-
-        $locale = array(
-            "locale" => json_encode( $countrie ),
-            "locale_fields" => json_encode( $locale_fields ),
-            "i18n_required_text" => "required",
-            "i18n_optional_text" => "optional"
-        );
-
-        return $locale;
-    }
-
-    /**
      * Retorna os Métodos selecionados
      *
      * @param Request $request
@@ -478,8 +326,6 @@ class CheckoutController extends Controller
         return response()->json($out);
 
     }
-
-
 
     /**
      * Verifica se houve alteração nos campos (user, address) e salva
@@ -620,6 +466,160 @@ class CheckoutController extends Controller
         );
         return typeJson($_msg_);
     }
+
+
+    /**
+     * Retorna os Estados
+     *
+     * @param $states
+     * @return array
+     */
+    public function getCountries($states)
+    {
+        foreach ($states as $state) {
+            $arr[$state->uf] = $state->name;
+        }
+
+        $countrie = array('BR' => $arr);
+
+        $countries = array(
+            "countries" => json_encode( $countrie ),
+            "i18n_select_state_text" => constLang('select_state'),
+            "i18n_no_matches" => constLang('not_found'),
+            "i18n_ajax_error" => constLang('loading_failed'),
+            "i18n_input_too_short_1" => constLang('please_enter').' 1 '. constLang('validation.caracteres.required'),
+            "i18n_input_too_short_n" => constLang('please_enter')." %qty% ".constLang('validation.caracteres.required'),
+            "i18n_input_too_long_1" => constLang('please_delete').' 1 '. constLang('validation.caracteres.1'),
+            "i18n_input_too_long_n" => constLang('please_delete')." %qty% ".constLang('validation.caracteres.2'),
+            "i18n_selection_too_long_1" => constLang('validation.selects.select1').' 1 '. constLang('item'),
+            "i18n_selection_too_long_n" => constLang('validation.selects.select1')." %qty% ". constLang('items'),
+            "i18n_load_more" => constLang('loading_more')."...",
+            "i18n_searching" => constLang('searching')."...",
+        );
+        return $countries;
+    }
+
+    /**
+     * Retorna as validações do CEP dos estados
+     *
+     * @return array
+     */
+    public function getLocale()
+    {
+        $arr1 = array(
+            "postcode" => array(
+                "label" => constLang('zip_code'),
+                "required" => false,
+                "hidden" => false
+            ),
+            "state" => array(
+                "label" => constLang('state'),
+                "required" => false,
+                "hidden" => false
+            ),
+            "city" => array(
+                "label" => constLang('city'),
+                "required" => false,
+                "hidden" => false
+            )
+
+        );
+
+        $default = array(
+            "first_name" => array(
+                "label" => constLang('person_physical.first_name'),
+                "required" => false,
+                "class" => ["form-row-first"],
+                "autocomplete" => "given-name",
+                "priority" => 10
+
+            ),
+            "last_name" => array(
+                "label" => constLang('person_physical.last_name'),
+                "required" => false,
+                "class" => ["form-row-last"],
+                "autocomplete" => "family-name",
+                "priority" => 20
+            ),
+            "company" => array(
+                "label" => constLang('person_legal.first_name'),
+                "class" => ["form-row-wide"],
+                "autocomplete" => "organization",
+                "priority" => 30,
+                "required" => false
+            ),
+            "country" => array(
+                "type" => "country",
+                "label" =>  constLang('city'),
+                "required" => false,
+                "class" => ["form-row-wide","address-field","update_totals_on_change"],
+                "autocomplete" => "country",
+                "priority" => 40
+            ),
+
+            "address_1" => array(
+                "label" => constLang('address'),
+                "placeholder" => constLang('address'),
+                "required" => false,
+                "class" => ["form-row-wide", "address-field"],
+                "autocomplete" => "address-line1",
+                "priority" => 50
+
+            ),
+            "address_2" => array(
+                "label" => constLang('cmplement'),
+                "label_class" => ["screen-reader-text"],
+                "placeholder" => constLang('cmplement'),
+                "class" => ["form-row-wide","address-field"],
+                "autocomplete" => "address-line2",
+                "priority" => 60,
+                "required" => false
+            ),
+            "city" => array(
+                "label" => constLang('city'),
+                "required" => false,
+                "class" => ["form-row-wide","address-field"],
+                "autocomplete" => "address-level2",
+                "priority" => 70
+            ),
+            "state" => array(
+                "type" => "state",
+                "label" => constLang('state'),
+                "required" => false,
+                "class" => ["form-row-wide","address-field"],
+                "validate" => ["state"],
+                "autocomplete" => "address-level1",
+                "priority" => 80
+            ),
+            "postcode" => array(
+                "label" => constLang('zip_code'),
+                "required" => false,
+                "class" => ["form-row-wide","address-field"],
+                "validate"=> ["postcode"],
+                "autocomplete" => "postal-code",
+                "priority" => 90
+            )
+        );
+
+        $countrie = array('BR' => $arr1, "default" => $default);
+        $locale_fields = array(
+            "address_1" => "#billing_address_1_field,#shipping_address_1_field",
+            "address_2" => "#billing_address_2_field,#shipping_address_2_field",
+            "state" => "#billing_state_field,#shipping_state_field,#calc_shipping_state_field",
+            "postcode" => "#billing_postcode_field,#shipping_postcode_field,#calc_shipping_postcode_field",
+            "city" => "#billing_city_field,#shipping_city_field,#calc_shipping_city_field"
+        );
+
+        $locale = array(
+            "locale" => json_encode( $countrie ),
+            "locale_fields" => json_encode( $locale_fields ),
+            "i18n_required_text" => "required",
+            "i18n_optional_text" => "optional"
+        );
+
+        return $locale;
+    }
+
 
 
 }

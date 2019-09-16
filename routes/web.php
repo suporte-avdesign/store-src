@@ -182,6 +182,8 @@ Route::get('pagseguro-transparente', 'Web\PagSeguroController@transparente')->na
 |--------------------------------------------------------------------------
 */
 Route::get('order/received/{reference}/{token}', 'Web\OrderController@index')->name('order.received');
+Route::post('cash', 'Web\OrderController@paymentCash')->name('order.cash');
+
 
 
 

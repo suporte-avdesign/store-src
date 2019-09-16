@@ -11,11 +11,25 @@
 
                     </div>
                     <div class="col-md-9">
-                        <div class="title-wrapper  basel-title-color-default basel-title-style-default basel-title-size-small text-left ">
-                            <h3 class="wpb_wrapper" style="margin-top: 10px">
-                                <span>{{constLang('messages.payments.title_cash')}} </span> <strong class="total-value">R$ 142,67</strong>
-                            </h3>
+                        <div class="info">
+                            <table style="margin-bottom: 10px">
+                                <thead>
+                                <tr>
+                                    <th>Pedido</th>
+                                    <th>Frete</th>
+                                    <th>Total</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>R$ {{setReal($value)}}</td>
+                                    <td>R$ {{setReal($freight)}}</td>
+                                    <td>R$ {{setReal($value+$freight)}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
                         </div>
+
                         <div class="wpb_text_column wpb_content_element vc_custom_1484129453229">
                             <div class="wpb_wrapper">
                                 <ul>
@@ -23,7 +37,7 @@
                                     <li>{{config('company._bank')}}:<strong> {{config('company.bank')}}</strong></li>
                                     <li>{{config('company._agency')}}:<strong> {{config('company.bank_agency_number')}}-{{config('company.bank_agency_digit')}}</strong></li>
                                     <li>{{config('company.bank_account_type')}}:<strong> {{config('company.bank_account_number')}}-{{config('company.bank_account_digit')}}</strong></li>
-                                    <li>{{config('company._account_name')}}:<strong> {{config('company.bank_account_name')}}</strong></li>
+                                    <li><strong> {{config('company.bank_account_name')}}</strong></li>
                                     <li>{{config('company._cnpj')}}:<strong> {{config('company.document1')}}</strong></li>
 
                                 </ul>
@@ -34,16 +48,31 @@
                         <p>Faça seu pagamento diretamente em nossa conta bancária. Por favor, use o número do pedido como referência de pagamento. Seu pedido não será enviado até que os fundos sejam liberados em nossa conta.</p>
                     </div>
 
+                    <div id="return-payment"></div>
+
                 </div>
 
                 <div class="text-right">
-                    <p>
-                        <a href="#" title="{{constLang('messages.payments.btn_cash')}}" class="wpcf7-form-control wpcf7-submit btn btn-color-primary">{{constLang('messages.payments.btn_cash')}}</a>
-                    </p>
+                    <form id="form-payment-cash" method="post" action="{{route('order.cash')}}">
+                        <div style="display: none">
+                            <input type="hidden" id="company_name" name="company_name" value="{{$company_name}}" />
+                            <input type="hidden" id="shipping_method" name="shipping_method" value="{{$shipping_method}}" />
+                            <input type="hidden" id="payment_method" name="payment_method" value="{{$payment_method}}" />
+                            <input type="hidden" id="order_comments" name="order_comments" value="{{$order_comments}}" />
+                            <input type="hidden" id="indicate" name="indicate" value="{{$indicate}}" />
+                            <input type="hidden" id="name" name="name" value="{{$name}}" />
+                            <input type="hidden" id="phone" name="phone" value="{{$phone}}" />
+                            <input type="hidden" id="freight" name="freight" value="{{$freight}}" />
+                            <input type="hidden" id="price" name="price" value="{{$price}}" />
+                            <input type="hidden" id="_token" name="_token" value="{{csrf_token()}}" />
+                        </div>
+                        <p>
+                            <button type="submit" class="button btn-payment-cash" name="woocommerce_checkout_place_order" id="btn_payment_cash">{{constLang('messages.payments.btn_cash')}}</button>
+                        </p>
+                    </form>
                 </div>
             </div>
         </div>
-
 
     </div>
     <div class="wpb_column vc_column_container vc_col-sm-4 vc_col-has-fill">
@@ -127,3 +156,6 @@
         </div>
     </div>
 </div>
+@include('frontend.scripts._pagCash');
+<script type="text/javascript" src="{{asset('plugins/checkout/payment.cash.min.js')}}?{{time()}}"></script>
+
