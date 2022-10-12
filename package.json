@@ -23,7 +23,7 @@
     },
     "dependencies": {
         "moment": "^2.18.1",
-        "node-correios": "^2.2.0",
+        "node-correios": "^3.0.2",
         "soap": "^0.28.0"
     }
 }
